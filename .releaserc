@@ -41,28 +41,6 @@
               }
             ],
             "countMatches": true
-          },
-          # uv.lock records this project's own version in its [[package]]
-          # entry. Nothing else in the lock derives from it, so stamp that one
-          # line directly. Running `uv lock` here instead would re-resolve the
-          # whole graph to rewrite a string, which needs registry metadata the
-          # release job has no reason to be holding.
-          #
-          # The lookbehind pins the match to the pysnmp-mibs entry so a
-          # dependency that happens to share the version cannot be hit.
-          {
-            "files": ["uv.lock"],
-            "from": "(?<=name = \"pysnmp-mibs\"\\nversion = \")[^\"]+",
-            "to": "${nextRelease.version}",
-            "results": [
-              {
-                "file": "uv.lock",
-                "hasChanged": true,
-                "numMatches": 1,
-                "numReplacements": 1
-              }
-            ],
-            "countMatches": true
           }
         ]
       }
@@ -74,17 +52,10 @@
     [
       "@semantic-release/git",
       {
-        "assets": ["NOTICE", "charts/mibserver/Chart.yaml", "pyproject.toml", "uv.lock"],
+        "assets": ["NOTICE", "charts/mibserver/Chart.yaml", "pyproject.toml"],
         "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}",
         },
     ],
-    ["@semantic-release/github", { "assets": [
-        "NOTICE",
-        { "path": "dist/mibs-asn1.zip", "label": "MIB sources (ASN.1)" },
-        { "path": "dist/mibs-json.zip", "label": "Compiled to JSON" },
-        { "path": "dist/mibs-index.zip", "label": "OID indexes and standard.txt" },
-        { "path": "dist/mibs-compact.zip", "label": "Compact corpus (ASN.1 + index, no standard tree)" },
-        { "path": "dist/mibs-core-db.zip", "label": "Corpus database (core.db)" },
-      ] }],
+    ["@semantic-release/github", { "assets": ["NOTICE"] }],
   ],
 }
