@@ -24,4 +24,4 @@ poetry run mibdump \
 	 $mib
 
 
-cp -f $1/* output/asn1
+find "$1" -type f -exec sh -c 'cp -f "$@" output/asn1/' sh {} +

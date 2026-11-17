@@ -20,7 +20,7 @@ RUN apt install -y python3-pip
 RUN apt-get update && apt-get install -y --no-install-recommends pipx
 ENV PIPX_HOME=/opt/pipx \
     PIPX_BIN_DIR=/usr/local/bin
-RUN pipx install 'poetry>=2.1,<3' \
+RUN pipx install 'poetry==2.1.2' \
  && chmod -R a+rX /opt/pipx
 
 # Create directory for poetry's virtual environment

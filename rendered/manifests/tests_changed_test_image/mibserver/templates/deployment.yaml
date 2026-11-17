@@ -37,11 +37,13 @@ spec:
             runAsNonRoot: true
             runAsUser: 10001
             runAsGroup: 10001
-          image: "ghcr.io/pysnmp/mibs/container:CURRENT-VERSION"
+          image: "ghcr.io/splunk/mibs/container:CURRENT-VERSION"
           imagePullPolicy: IfNotPresent
           env:
             - name: NGINX_ENTRYPOINT_QUIET_LOGS
               value: "1"
+            - name: MIBSERVER_IPV6_ENABLED
+              value: "false"
           ports:
             - name: http
               containerPort: 8000
