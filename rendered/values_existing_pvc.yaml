@@ -1,3 +1,0 @@
-localMibs:
-  persistence:
-    existingClaim: mibs-hostpath-pvc

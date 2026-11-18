@@ -1,5 +1,0 @@
-test:
-  image:
-    repository: repository
-    tag: "new-tag"
-    pullPolicy: Always
