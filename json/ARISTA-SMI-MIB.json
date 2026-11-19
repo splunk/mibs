@@ -1,0 +1,82 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "NOTIFICATION-TYPE",
+      "iso",
+      "IpAddress",
+      "TimeTicks",
+      "OBJECT-TYPE",
+      "Bits",
+      "Counter64",
+      "Unsigned32",
+      "enterprises",
+      "MibIdentifier",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Gauge32",
+      "Counter32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "arista": {
+    "name": "arista",
+    "oid": "1.3.6.1.4.1.30065",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2014-08-15 00:00",
+        "description": "Updated postal and e-mail addresses"
+      },
+      {
+        "revision": "2011-03-31 13:00",
+        "description": "Updated postal address and telephone"
+      },
+      {
+        "revision": "2008-10-27 18:30",
+        "description": "Initial version."
+      }
+    ]
+  },
+  "aristaProducts": {
+    "name": "aristaProducts",
+    "oid": "1.3.6.1.4.1.30065.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "aristaModules": {
+    "name": "aristaModules",
+    "oid": "1.3.6.1.4.1.30065.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "aristaMibs": {
+    "name": "aristaMibs",
+    "oid": "1.3.6.1.4.1.30065.3",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "aristaExperiment": {
+    "name": "aristaExperiment",
+    "oid": "1.3.6.1.4.1.30065.4",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/arista/ARISTA-SMI-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:30:49 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "ARISTA-SMI-MIB"
+  }
+}

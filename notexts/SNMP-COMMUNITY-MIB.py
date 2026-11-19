@@ -1,0 +1,76 @@
+#
+# PySNMP MIB module SNMP-COMMUNITY-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/output/asn1/SNMP-COMMUNITY-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:25 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+SnmpAdminString, SnmpEngineID = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString", "SnmpEngineID")
+snmpTargetAddrEntry, SnmpTagValue = mibBuilder.importSymbols("SNMP-TARGET-MIB", "snmpTargetAddrEntry", "SnmpTagValue")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, snmpModules, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "snmpModules", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, StorageType, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "StorageType", "RowStatus", "TextualConvention")
+snmpCommunityMIB = ModuleIdentity((1, 3, 6, 1, 6, 3, 18))
+snmpCommunityMIB.setRevisions(('2003-08-06 00:00', '2000-03-06 00:00',))
+if mibBuilder.loadTexts: snmpCommunityMIB.setLastUpdated('200308060000Z')
+if mibBuilder.loadTexts: snmpCommunityMIB.setOrganization('SNMPv3 Working Group')
+snmpCommunityMIBObjects = MibIdentifier((1, 3, 6, 1, 6, 3, 18, 1))
+snmpCommunityMIBConformance = MibIdentifier((1, 3, 6, 1, 6, 3, 18, 2))
+snmpCommunityTable = MibTable((1, 3, 6, 1, 6, 3, 18, 1, 1), )
+if mibBuilder.loadTexts: snmpCommunityTable.setStatus('current')
+snmpCommunityEntry = MibTableRow((1, 3, 6, 1, 6, 3, 18, 1, 1, 1), ).setIndexNames((1, "SNMP-COMMUNITY-MIB", "snmpCommunityIndex"))
+if mibBuilder.loadTexts: snmpCommunityEntry.setStatus('current')
+snmpCommunityIndex = MibTableColumn((1, 3, 6, 1, 6, 3, 18, 1, 1, 1, 1), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(1, 32)))
+if mibBuilder.loadTexts: snmpCommunityIndex.setStatus('current')
+snmpCommunityName = MibTableColumn((1, 3, 6, 1, 6, 3, 18, 1, 1, 1, 2), OctetString()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: snmpCommunityName.setStatus('current')
+snmpCommunitySecurityName = MibTableColumn((1, 3, 6, 1, 6, 3, 18, 1, 1, 1, 3), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(1, 32))).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: snmpCommunitySecurityName.setStatus('current')
+snmpCommunityContextEngineID = MibTableColumn((1, 3, 6, 1, 6, 3, 18, 1, 1, 1, 4), SnmpEngineID()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: snmpCommunityContextEngineID.setStatus('current')
+snmpCommunityContextName = MibTableColumn((1, 3, 6, 1, 6, 3, 18, 1, 1, 1, 5), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(0, 32)).clone(hexValue="")).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: snmpCommunityContextName.setStatus('current')
+snmpCommunityTransportTag = MibTableColumn((1, 3, 6, 1, 6, 3, 18, 1, 1, 1, 6), SnmpTagValue().clone(hexValue="")).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: snmpCommunityTransportTag.setStatus('current')
+snmpCommunityStorageType = MibTableColumn((1, 3, 6, 1, 6, 3, 18, 1, 1, 1, 7), StorageType()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: snmpCommunityStorageType.setStatus('current')
+snmpCommunityStatus = MibTableColumn((1, 3, 6, 1, 6, 3, 18, 1, 1, 1, 8), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: snmpCommunityStatus.setStatus('current')
+snmpTargetAddrExtTable = MibTable((1, 3, 6, 1, 6, 3, 18, 1, 2), )
+if mibBuilder.loadTexts: snmpTargetAddrExtTable.setStatus('current')
+snmpTargetAddrExtEntry = MibTableRow((1, 3, 6, 1, 6, 3, 18, 1, 2, 1), )
+snmpTargetAddrEntry.registerAugmentions(("SNMP-COMMUNITY-MIB", "snmpTargetAddrExtEntry"))
+snmpTargetAddrExtEntry.setIndexNames(*snmpTargetAddrEntry.getIndexNames())
+if mibBuilder.loadTexts: snmpTargetAddrExtEntry.setStatus('current')
+snmpTargetAddrTMask = MibTableColumn((1, 3, 6, 1, 6, 3, 18, 1, 2, 1, 1), OctetString().subtype(subtypeSpec=ValueSizeConstraint(0, 255)).clone(hexValue="")).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: snmpTargetAddrTMask.setStatus('current')
+snmpTargetAddrMMS = MibTableColumn((1, 3, 6, 1, 6, 3, 18, 1, 2, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(ValueRangeConstraint(0, 0), ValueRangeConstraint(484, 2147483647), )).clone(484)).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: snmpTargetAddrMMS.setStatus('current')
+snmpTrapAddress = MibScalar((1, 3, 6, 1, 6, 3, 18, 1, 3), IpAddress()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: snmpTrapAddress.setStatus('current')
+snmpTrapCommunity = MibScalar((1, 3, 6, 1, 6, 3, 18, 1, 4), OctetString()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: snmpTrapCommunity.setStatus('current')
+snmpCommunityMIBCompliances = MibIdentifier((1, 3, 6, 1, 6, 3, 18, 2, 1))
+snmpCommunityMIBGroups = MibIdentifier((1, 3, 6, 1, 6, 3, 18, 2, 2))
+snmpCommunityMIBCompliance = ModuleCompliance((1, 3, 6, 1, 6, 3, 18, 2, 1, 1)).setObjects(("SNMP-COMMUNITY-MIB", "snmpCommunityTableGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    snmpCommunityMIBCompliance = snmpCommunityMIBCompliance.setStatus('current')
+snmpProxyTrapForwardCompliance = ModuleCompliance((1, 3, 6, 1, 6, 3, 18, 2, 1, 2)).setObjects(("SNMP-COMMUNITY-MIB", "snmpProxyTrapForwardGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    snmpProxyTrapForwardCompliance = snmpProxyTrapForwardCompliance.setStatus('current')
+snmpCommunityMIBFullCompliance = ModuleCompliance((1, 3, 6, 1, 6, 3, 18, 2, 1, 3)).setObjects(("SNMP-COMMUNITY-MIB", "snmpCommunityTableGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    snmpCommunityMIBFullCompliance = snmpCommunityMIBFullCompliance.setStatus('current')
+snmpCommunityTableGroup = ObjectGroup((1, 3, 6, 1, 6, 3, 18, 2, 2, 1)).setObjects(("SNMP-COMMUNITY-MIB", "snmpCommunityName"), ("SNMP-COMMUNITY-MIB", "snmpCommunitySecurityName"), ("SNMP-COMMUNITY-MIB", "snmpCommunityContextEngineID"), ("SNMP-COMMUNITY-MIB", "snmpCommunityContextName"), ("SNMP-COMMUNITY-MIB", "snmpCommunityTransportTag"), ("SNMP-COMMUNITY-MIB", "snmpCommunityStorageType"), ("SNMP-COMMUNITY-MIB", "snmpCommunityStatus"), ("SNMP-COMMUNITY-MIB", "snmpTargetAddrTMask"), ("SNMP-COMMUNITY-MIB", "snmpTargetAddrMMS"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    snmpCommunityTableGroup = snmpCommunityTableGroup.setStatus('current')
+snmpProxyTrapForwardGroup = ObjectGroup((1, 3, 6, 1, 6, 3, 18, 2, 2, 3)).setObjects(("SNMP-COMMUNITY-MIB", "snmpTrapAddress"), ("SNMP-COMMUNITY-MIB", "snmpTrapCommunity"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    snmpProxyTrapForwardGroup = snmpProxyTrapForwardGroup.setStatus('current')
+mibBuilder.exportSymbols("SNMP-COMMUNITY-MIB", snmpProxyTrapForwardGroup=snmpProxyTrapForwardGroup, snmpCommunityTransportTag=snmpCommunityTransportTag, snmpCommunityIndex=snmpCommunityIndex, snmpTargetAddrExtTable=snmpTargetAddrExtTable, snmpCommunityTableGroup=snmpCommunityTableGroup, snmpCommunityName=snmpCommunityName, snmpTargetAddrMMS=snmpTargetAddrMMS, snmpCommunityStorageType=snmpCommunityStorageType, snmpCommunityMIB=snmpCommunityMIB, snmpTrapAddress=snmpTrapAddress, snmpTargetAddrTMask=snmpTargetAddrTMask, snmpTargetAddrExtEntry=snmpTargetAddrExtEntry, snmpCommunityMIBConformance=snmpCommunityMIBConformance, snmpProxyTrapForwardCompliance=snmpProxyTrapForwardCompliance, snmpCommunityMIBCompliances=snmpCommunityMIBCompliances, snmpCommunityMIBGroups=snmpCommunityMIBGroups, snmpTrapCommunity=snmpTrapCommunity, snmpCommunitySecurityName=snmpCommunitySecurityName, snmpCommunityMIBCompliance=snmpCommunityMIBCompliance, snmpCommunityContextEngineID=snmpCommunityContextEngineID, snmpCommunityTable=snmpCommunityTable, snmpCommunityStatus=snmpCommunityStatus, snmpCommunityContextName=snmpCommunityContextName, snmpCommunityEntry=snmpCommunityEntry, PYSNMP_MODULE_ID=snmpCommunityMIB, snmpCommunityMIBFullCompliance=snmpCommunityMIBFullCompliance, snmpCommunityMIBObjects=snmpCommunityMIBObjects)

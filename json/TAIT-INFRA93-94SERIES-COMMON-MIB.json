@@ -1,0 +1,60 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "Gauge32",
+      "IpAddress",
+      "MibIdentifier",
+      "Bits",
+      "Counter64",
+      "NOTIFICATION-TYPE",
+      "Unsigned32",
+      "TimeTicks",
+      "Integer32",
+      "OBJECT-TYPE",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "Counter32"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ],
+    "TAIT-COMMON-MIB": [
+      "taitModules"
+    ]
+  },
+  "infra93_94MibModule": {
+    "name": "infra93_94MibModule",
+    "oid": "1.3.6.1.4.1.3570.1.1.10",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2014-06-17 11:00",
+        "description": "Define the module and product root OIDs for monitored Tait 93/94-series Base Stations"
+      },
+      {
+        "revision": "2014-01-26 00:00",
+        "description": "1.04.00 - Remove unused import"
+      },
+      {
+        "revision": "2014-01-14 11:00",
+        "description": "1.01.01 - Initial version prior to change log entries"
+      }
+    ]
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/tait/TAIT-INFRA93-94SERIES-COMMON-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:40:23 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "TAIT-INFRA93-94SERIES-COMMON-MIB"
+  }
+}

@@ -1,0 +1,316 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "IpAddress",
+      "TimeTicks",
+      "MibIdentifier",
+      "Integer32",
+      "Unsigned32",
+      "Bits",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "Counter32",
+      "transmission",
+      "Counter64",
+      "NOTIFICATION-TYPE",
+      "iso"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "mplsTCMIB": {
+    "name": "mplsTCMIB",
+    "oid": "1.3.6.1.2.1.10.9999.1",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2001-01-04 12:00",
+        "description": "Initial version published as part of RFC XXXX."
+      }
+    ]
+  },
+  "mplsMIB": {
+    "name": "mplsMIB",
+    "oid": "1.3.6.1.2.1.10.9999",
+    "class": "objectidentity"
+  },
+  "MplsAtmVcIdentifier": {
+    "name": "MplsAtmVcIdentifier",
+    "class": "textualconvention",
+    "type": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 32,
+            "max": 65535
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "MplsBitRate": {
+    "name": "MplsBitRate",
+    "class": "textualconvention",
+    "type": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 2147483647
+          }
+        ]
+      }
+    },
+    "displayhint": "d",
+    "status": "current"
+  },
+  "MplsBurstSize": {
+    "name": "MplsBurstSize",
+    "class": "textualconvention",
+    "type": {
+      "type": "Unsigned32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 4294967295
+          }
+        ]
+      }
+    },
+    "displayhint": "d",
+    "status": "current"
+  },
+  "MplsExtendedTunnelId": {
+    "name": "MplsExtendedTunnelId",
+    "class": "textualconvention",
+    "type": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "status": "current"
+  },
+  "MplsInitialCreationSource": {
+    "name": "MplsInitialCreationSource",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "other": 1,
+          "snmp": 2,
+          "ldp": 3,
+          "rsvp": 4,
+          "crldp": 5,
+          "policyAgent": 6,
+          "unknown": 7
+        }
+      }
+    },
+    "status": "current"
+  },
+  "MplsLSPID": {
+    "name": "MplsLSPID",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 31
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "MplsLabel": {
+    "name": "MplsLabel",
+    "class": "textualconvention",
+    "type": {
+      "type": "Unsigned32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 4294967295
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "MplsLdpGenAddr": {
+    "name": "MplsLdpGenAddr",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 64
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "MplsLdpIdentifier": {
+    "name": "MplsLdpIdentifier",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 6,
+            "max": 6
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "MplsLdpLabelTypes": {
+    "name": "MplsLdpLabelTypes",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "generic": 1,
+          "atm": 2,
+          "frameRelay": 3
+        }
+      }
+    },
+    "status": "current"
+  },
+  "MplsLsrIdentifier": {
+    "name": "MplsLsrIdentifier",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 4,
+            "max": 4
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "MplsPathIndex": {
+    "name": "MplsPathIndex",
+    "class": "textualconvention",
+    "type": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "status": "current"
+  },
+  "MplsPathIndexOrZero": {
+    "name": "MplsPathIndexOrZero",
+    "class": "textualconvention",
+    "type": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "status": "current"
+  },
+  "MplsPortNumber": {
+    "name": "MplsPortNumber",
+    "class": "textualconvention",
+    "type": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 65535
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "MplsTunnelAffinity": {
+    "name": "MplsTunnelAffinity",
+    "class": "textualconvention",
+    "type": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "status": "current"
+  },
+  "MplsTunnelIndex": {
+    "name": "MplsTunnelIndex",
+    "class": "textualconvention",
+    "type": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 65535
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "MplsTunnelInstanceIndex": {
+    "name": "MplsTunnelInstanceIndex",
+    "class": "textualconvention",
+    "type": {
+      "type": "Unsigned32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 65535
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/standard/ietf/MPLS-TC-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:29:56 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "MPLS-TC-MIB"
+  }
+}

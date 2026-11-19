@@ -1,0 +1,57 @@
+#
+# PySNMP MIB module ARUBAWIRED-FAN-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/arubaos/ARUBAWIRED-FAN-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:53 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+arubaWiredChassisMIB, = mibBuilder.importSymbols("ARUBAWIRED-CHASSIS-MIB", "arubaWiredChassisMIB")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection", "SingleValueConstraint")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+iso, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Counter64, Unsigned32, Bits, Gauge32, TimeTicks, ModuleIdentity, MibIdentifier, Integer32, ObjectIdentity, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "iso", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Counter64", "Unsigned32", "Bits", "Gauge32", "TimeTicks", "ModuleIdentity", "MibIdentifier", "Integer32", "ObjectIdentity", "NotificationType")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+arubaWiredFan = ModuleIdentity((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5))
+arubaWiredFan.setRevisions(('2020-02-13 00:00',))
+if mibBuilder.loadTexts: arubaWiredFan.setLastUpdated('202002130000Z')
+if mibBuilder.loadTexts: arubaWiredFan.setOrganization('HPE/Aruba Networking Division')
+arubaWiredFanNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 0))
+arubaWiredFanStateNotification = NotificationType((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 0, 1)).setObjects(("ARUBAWIRED-FAN-MIB", "arubaWiredFanName"), ("ARUBAWIRED-FAN-MIB", "arubaWiredFanState"))
+if mibBuilder.loadTexts: arubaWiredFanStateNotification.setStatus('current')
+arubaWiredFanTable = MibTable((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1), )
+if mibBuilder.loadTexts: arubaWiredFanTable.setStatus('current')
+arubaWiredFanEntry = MibTableRow((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1, 1), ).setIndexNames((0, "ARUBAWIRED-FAN-MIB", "arubaWiredFanGroupIndex"), (0, "ARUBAWIRED-FAN-MIB", "arubaWiredFanTrayIndex"), (0, "ARUBAWIRED-FAN-MIB", "arubaWiredFanSlotIndex"))
+if mibBuilder.loadTexts: arubaWiredFanEntry.setStatus('current')
+arubaWiredFanGroupIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: arubaWiredFanGroupIndex.setStatus('current')
+arubaWiredFanTrayIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1, 1, 2), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: arubaWiredFanTrayIndex.setStatus('current')
+arubaWiredFanSlotIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1, 1, 3), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: arubaWiredFanSlotIndex.setStatus('current')
+arubaWiredFanName = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1, 1, 4), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 20))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredFanName.setStatus('current')
+arubaWiredFanState = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1, 1, 5), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 20))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredFanState.setStatus('current')
+arubaWiredFanProductName = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1, 1, 6), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 20))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredFanProductName.setStatus('current')
+arubaWiredFanSerialNumber = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1, 1, 7), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 20))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredFanSerialNumber.setStatus('current')
+arubaWiredFanRPM = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1, 1, 8), Integer32()).setUnits('RPM').setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredFanRPM.setStatus('current')
+arubaWiredFanAirflowDirection = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 1, 1, 9), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 20))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredFanAirflowDirection.setStatus('current')
+arubaWiredFanConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 99))
+arubaWiredFanCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 99, 1))
+arubaWiredFanGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 99, 2))
+arubaWiredFanCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 99, 1, 1)).setObjects(("ARUBAWIRED-FAN-MIB", "arubaWiredFanTable"), ("ARUBAWIRED-FAN-MIB", "arubaWiredFanNotificationsGroup"), ("ARUBAWIRED-FAN-MIB", "arubaWiredFanTableGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    arubaWiredFanCompliance = arubaWiredFanCompliance.setStatus('current')
+arubaWiredFanTableGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 99, 2, 1)).setObjects(("ARUBAWIRED-FAN-MIB", "arubaWiredFanName"), ("ARUBAWIRED-FAN-MIB", "arubaWiredFanState"), ("ARUBAWIRED-FAN-MIB", "arubaWiredFanProductName"), ("ARUBAWIRED-FAN-MIB", "arubaWiredFanSerialNumber"), ("ARUBAWIRED-FAN-MIB", "arubaWiredFanRPM"), ("ARUBAWIRED-FAN-MIB", "arubaWiredFanAirflowDirection"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    arubaWiredFanTableGroup = arubaWiredFanTableGroup.setStatus('current')
+arubaWiredFanNotificationsGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 5, 99, 2, 2)).setObjects(("ARUBAWIRED-FAN-MIB", "arubaWiredFanStateNotification"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    arubaWiredFanNotificationsGroup = arubaWiredFanNotificationsGroup.setStatus('current')
+mibBuilder.exportSymbols("ARUBAWIRED-FAN-MIB", arubaWiredFanSlotIndex=arubaWiredFanSlotIndex, arubaWiredFanNotificationsGroup=arubaWiredFanNotificationsGroup, arubaWiredFanState=arubaWiredFanState, arubaWiredFanCompliance=arubaWiredFanCompliance, arubaWiredFanGroups=arubaWiredFanGroups, arubaWiredFanStateNotification=arubaWiredFanStateNotification, arubaWiredFanEntry=arubaWiredFanEntry, arubaWiredFanRPM=arubaWiredFanRPM, arubaWiredFanTable=arubaWiredFanTable, arubaWiredFanGroupIndex=arubaWiredFanGroupIndex, arubaWiredFanConformance=arubaWiredFanConformance, arubaWiredFan=arubaWiredFan, arubaWiredFanName=arubaWiredFanName, arubaWiredFanSerialNumber=arubaWiredFanSerialNumber, PYSNMP_MODULE_ID=arubaWiredFan, arubaWiredFanNotifications=arubaWiredFanNotifications, arubaWiredFanTableGroup=arubaWiredFanTableGroup, arubaWiredFanCompliances=arubaWiredFanCompliances, arubaWiredFanTrayIndex=arubaWiredFanTrayIndex, arubaWiredFanAirflowDirection=arubaWiredFanAirflowDirection, arubaWiredFanProductName=arubaWiredFanProductName)

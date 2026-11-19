@@ -1,0 +1,197 @@
+{
+  "imports": {
+    "class": "imports",
+    "IANAifType-MIB": [
+      "IANAifType"
+    ],
+    "IF-MIB": [
+      "InterfaceIndex",
+      "ifIndex"
+    ],
+    "RUCKUS-ROOT-MIB": [
+      "ruckusUnleashedWLANModule"
+    ],
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "MibIdentifier",
+      "TimeTicks",
+      "Integer32",
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY",
+      "iso",
+      "Counter64",
+      "IpAddress",
+      "NOTIFICATION-TYPE",
+      "OBJECT-TYPE",
+      "Gauge32",
+      "Unsigned32",
+      "Bits",
+      "Counter32"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "PhysAddress",
+      "RowStatus",
+      "TruthValue",
+      "DisplayString",
+      "MacAddress"
+    ]
+  },
+  "ruckusUnleashedWLANMIB": {
+    "name": "ruckusUnleashedWLANMIB",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1",
+    "class": "moduleidentity"
+  },
+  "ruckusUnleashedWLANObjects": {
+    "name": "ruckusUnleashedWLANObjects",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1",
+    "class": "objectidentity"
+  },
+  "ruckusUnleashedWLANInfo": {
+    "name": "ruckusUnleashedWLANInfo",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.1",
+    "class": "objectidentity"
+  },
+  "ruckusUnleashedWLANAPInfo": {
+    "name": "ruckusUnleashedWLANAPInfo",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.2",
+    "class": "objectidentity"
+  },
+  "ruckusUnleashedWLANAPEthStatusTable": {
+    "name": "ruckusUnleashedWLANAPEthStatusTable",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.2.8",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "ruckusUnleashedWLANAPEthStatusEntry": {
+    "name": "ruckusUnleashedWLANAPEthStatusEntry",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.2.8.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "RUCKUS-UNLEASHED-WLAN-MIB",
+        "object": "ruckusUnleashedWLANAPMacAddress",
+        "implied": 0
+      },
+      {
+        "module": "RUCKUS-UNLEASHED-WLAN-MIB",
+        "object": "ruckusUnleashedWLANAPEthPortId",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "ruckusUnleashedWLANAPMacAddress": {
+    "name": "ruckusUnleashedWLANAPMacAddress",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.2.8.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "MacAddress",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "ruckusUnleashedWLANAPEthPortId": {
+    "name": "ruckusUnleashedWLANAPEthPortId",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.2.8.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "ruckusUnleashedWLANAPEthIfname": {
+    "name": "ruckusUnleashedWLANAPEthIfname",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.2.8.1.5",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "OCTET STRING",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "ruckusUnleashedWLANAPEthPhyStatus": {
+    "name": "ruckusUnleashedWLANAPEthPhyStatus",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.2.8.1.8",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "up": 1,
+          "down": 2
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "ruckusUnleashedWLANAPEthPhyIfSpeed": {
+    "name": "ruckusUnleashedWLANAPEthPhyIfSpeed",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.2.8.1.9",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "ruckusUnleashedWLANAPEthPhyLinkStatus": {
+    "name": "ruckusUnleashedWLANAPEthPhyLinkStatus",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.2.8.1.10",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "full": 1,
+          "half": 2
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "ruckusUnleashedWLANAPEthLabel": {
+    "name": "ruckusUnleashedWLANAPEthLabel",
+    "oid": "1.3.6.1.4.1.25053.1.15.2.1.1.2.8.1.11",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "OCTET STRING",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ruckus/RUCKUS-UNLEASHED-WLAN-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:39:42 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "RUCKUS-UNLEASHED-WLAN-MIB"
+  }
+}

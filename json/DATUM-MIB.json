@@ -1,0 +1,89 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "Bits",
+      "Counter64",
+      "Gauge32",
+      "Unsigned32",
+      "OBJECT-TYPE",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "TimeTicks",
+      "enterprises",
+      "Integer32",
+      "OBJECT-IDENTITY",
+      "Counter32",
+      "IpAddress",
+      "MODULE-IDENTITY"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "datum": {
+    "name": "datum",
+    "oid": "1.3.6.1.4.1.601",
+    "class": "objectidentity"
+  },
+  "bancomm": {
+    "name": "bancomm",
+    "oid": "1.3.6.1.4.1.601.1",
+    "class": "objectidentity"
+  },
+  "timing": {
+    "name": "timing",
+    "oid": "1.3.6.1.4.1.601.2",
+    "class": "objectidentity"
+  },
+  "austron": {
+    "name": "austron",
+    "oid": "1.3.6.1.4.1.601.3",
+    "class": "objectidentity"
+  },
+  "fts": {
+    "name": "fts",
+    "oid": "1.3.6.1.4.1.601.4",
+    "class": "objectidentity"
+  },
+  "efratom": {
+    "name": "efratom",
+    "oid": "1.3.6.1.4.1.601.5",
+    "class": "objectidentity"
+  },
+  "experiment": {
+    "name": "experiment",
+    "oid": "1.3.6.1.4.1.601.99",
+    "class": "objectidentity"
+  },
+  "products": {
+    "name": "products",
+    "oid": "1.3.6.1.4.1.601.3.1",
+    "class": "objectidentity"
+  },
+  "ssu2000": {
+    "name": "ssu2000",
+    "oid": "1.3.6.1.4.1.601.3.1.1",
+    "class": "objectidentity"
+  },
+  "ot21": {
+    "name": "ot21",
+    "oid": "1.3.6.1.4.1.601.3.1.2",
+    "class": "objectidentity"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/microsemi/DATUM-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:37:26 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "DATUM-MIB"
+  }
+}

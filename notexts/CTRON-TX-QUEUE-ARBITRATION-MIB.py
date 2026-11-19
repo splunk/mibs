@@ -1,0 +1,36 @@
+#
+# PySNMP MIB module CTRON-TX-QUEUE-ARBITRATION-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/enterasys/CTRON-TX-QUEUE-ARBITRATION-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:34:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueRangeConstraint")
+ctTxQArb, = mibBuilder.importSymbols("CTRON-MIB-NAMES", "ctTxQArb")
+ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+Counter32, TimeTicks, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, IpAddress, NotificationType, Gauge32, MibIdentifier, Integer32, Unsigned32, Bits, Counter64, ModuleIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "TimeTicks", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "IpAddress", "NotificationType", "Gauge32", "MibIdentifier", "Integer32", "Unsigned32", "Bits", "Counter64", "ModuleIdentity")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ctTxQArbConfig = MibIdentifier((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 1))
+ctTxQBufferConfig = MibIdentifier((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 2))
+ctTxQPortGroupMapTable = MibTable((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 1, 1), )
+if mibBuilder.loadTexts: ctTxQPortGroupMapTable.setStatus('mandatory')
+ctTxQPortGroupEntry = MibTableRow((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 1, 1, 1), ).setIndexNames((0, "IF-MIB", "ifIndex"))
+if mibBuilder.loadTexts: ctTxQPortGroupEntry.setStatus('mandatory')
+ctTxQPortGroup = MibTableColumn((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 1, 1, 1, 1), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ctTxQPortGroup.setStatus('mandatory')
+ctTxQArbTable = MibTable((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 1, 2), )
+if mibBuilder.loadTexts: ctTxQArbTable.setStatus('mandatory')
+ctTxQArbEntry = MibTableRow((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 1, 2, 1), ).setIndexNames((0, "CTRON-TX-QUEUE-ARBITRATION-MIB", "ctTxQPortGroup"))
+if mibBuilder.loadTexts: ctTxQArbEntry.setStatus('mandatory')
+ctTxQArbNumQueues = MibTableColumn((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 1, 2, 1, 2), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ctTxQArbNumQueues.setStatus('mandatory')
+ctTxQArbNumSlices = MibTableColumn((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 1, 2, 1, 3), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ctTxQArbNumSlices.setStatus('mandatory')
+ctTxQArbSetting = MibTableColumn((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 1, 2, 1, 4), OctetString()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ctTxQArbSetting.setStatus('mandatory')
+ctTxQBufferOptimizeEnable = MibScalar((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 12, 2, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("enable", 1), ("disable", 2)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ctTxQBufferOptimizeEnable.setStatus('optional')
+mibBuilder.exportSymbols("CTRON-TX-QUEUE-ARBITRATION-MIB", ctTxQArbNumSlices=ctTxQArbNumSlices, ctTxQBufferConfig=ctTxQBufferConfig, ctTxQArbConfig=ctTxQArbConfig, ctTxQBufferOptimizeEnable=ctTxQBufferOptimizeEnable, ctTxQPortGroupEntry=ctTxQPortGroupEntry, ctTxQPortGroupMapTable=ctTxQPortGroupMapTable, ctTxQArbTable=ctTxQArbTable, ctTxQArbSetting=ctTxQArbSetting, ctTxQArbNumQueues=ctTxQArbNumQueues, ctTxQArbEntry=ctTxQArbEntry, ctTxQPortGroup=ctTxQPortGroup)

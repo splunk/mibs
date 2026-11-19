@@ -1,0 +1,210 @@
+{
+  "imports": {
+    "class": "imports",
+    "S5-ROOT-MIB": [
+      "s5Tcs"
+    ],
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "Counter64",
+      "OBJECT-IDENTITY",
+      "Bits",
+      "MibIdentifier",
+      "OBJECT-TYPE",
+      "Integer32",
+      "IpAddress",
+      "Gauge32",
+      "Counter32",
+      "TimeTicks",
+      "iso",
+      "NOTIFICATION-TYPE",
+      "MODULE-IDENTITY"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "s5TcsMib": {
+    "name": "s5TcsMib",
+    "oid": "1.3.6.1.4.1.45.1.6.17.0",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2013-10-10 00:00",
+        "description": "Version 114: Add Integer32 to IMPORTS."
+      },
+      {
+        "revision": "2004-07-20 00:00",
+        "description": "Version 113: Conversion to SMIv2"
+      }
+    ]
+  },
+  "IpxAddress": {
+    "name": "IpxAddress",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 10,
+            "max": 10
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "TimeIntervalHrd": {
+    "name": "TimeIntervalHrd",
+    "class": "textualconvention",
+    "type": {
+      "type": "Integer32",
+      "class": "type"
+    },
+    "status": "current"
+  },
+  "TimeIntervalSec": {
+    "name": "TimeIntervalSec",
+    "class": "textualconvention",
+    "type": {
+      "type": "Integer32",
+      "class": "type"
+    },
+    "status": "current"
+  },
+  "SrcIndx": {
+    "name": "SrcIndx",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 999999
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "MediaType": {
+    "name": "MediaType",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "other": 1,
+          "eth": 2,
+          "tok": 3,
+          "fddi": 4
+        }
+      }
+    },
+    "status": "current"
+  },
+  "FddiBkNetMode": {
+    "name": "FddiBkNetMode",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "other": 1,
+          "thruLow": 2,
+          "thruHigh": 3,
+          "thruLowThruHigh": 4
+        }
+      }
+    },
+    "status": "current"
+  },
+  "BkNetId": {
+    "name": "BkNetId",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "BkChan": {
+    "name": "BkChan",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "LocChan": {
+    "name": "LocChan",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "AttId": {
+    "name": "AttId",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": -255,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/nortel/S5-TCS-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:37:58 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "S5-TCS-MIB"
+  }
+}

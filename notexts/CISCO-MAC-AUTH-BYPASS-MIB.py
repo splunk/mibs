@@ -1,0 +1,57 @@
+#
+# PySNMP MIB module CISCO-MAC-AUTH-BYPASS-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MAC-AUTH-BYPASS-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+TextualConvention, DisplayString, TruthValue, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue", "MacAddress")
+ciscoMabMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 654))
+ciscoMabMIB.setRevisions(('2008-04-18 00:00',))
+if mibBuilder.loadTexts: ciscoMabMIB.setLastUpdated('200804180000Z')
+if mibBuilder.loadTexts: ciscoMabMIB.setOrganization('Cisco Systems Inc.')
+cmabNotification = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 654, 0))
+cmabMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 654, 1))
+cmabMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 654, 2))
+cmabInterfaceConfig = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 1))
+cmabSession = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 2))
+cmabIfConfigTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 1, 1), )
+if mibBuilder.loadTexts: cmabIfConfigTable.setStatus('current')
+cmabIfConfigEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 1, 1, 1), ).setIndexNames((0, "IF-MIB", "ifIndex"))
+if mibBuilder.loadTexts: cmabIfConfigEntry.setStatus('current')
+cmabIfAuthEnabled = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 1, 1, 1, 1), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cmabIfAuthEnabled.setStatus('current')
+cmabIfAuthMethod = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 1, 1, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("radius", 1), ("eap", 2)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cmabIfAuthMethod.setStatus('current')
+cmabClientInfoTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 2, 1), )
+if mibBuilder.loadTexts: cmabClientInfoTable.setStatus('current')
+cmabClientInfoEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 2, 1, 1), ).setIndexNames((0, "IF-MIB", "ifIndex"), (1, "CISCO-MAC-AUTH-BYPASS-MIB", "cmabClientSessionId"))
+if mibBuilder.loadTexts: cmabClientInfoEntry.setStatus('current')
+cmabClientSessionId = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 2, 1, 1, 1), OctetString().subtype(subtypeSpec=ValueSizeConstraint(1, 64)))
+if mibBuilder.loadTexts: cmabClientSessionId.setStatus('current')
+cmabClientMacAddress = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 2, 1, 1, 2), MacAddress()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cmabClientMacAddress.setStatus('current')
+cmabClientMabState = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 2, 1, 1, 3), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5))).clone(namedValues=NamedValues(("other", 1), ("initialize", 2), ("acquiring", 3), ("authorizing", 4), ("terminate", 5)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cmabClientMabState.setStatus('current')
+cmabClientAuthStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 654, 1, 2, 1, 1, 4), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("authorized", 1), ("unauthorized", 2)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cmabClientAuthStatus.setStatus('current')
+cmabMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 654, 2, 1))
+cmabCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 654, 2, 1, 1)).setObjects(("CISCO-MAC-AUTH-BYPASS-MIB", "cmabIfConfigGroup"), ("CISCO-MAC-AUTH-BYPASS-MIB", "cmabClientInfoGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cmabCompliance = cmabCompliance.setStatus('current')
+cmabMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 654, 2, 2))
+cmabIfConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 654, 2, 2, 1)).setObjects(("CISCO-MAC-AUTH-BYPASS-MIB", "cmabIfAuthEnabled"), ("CISCO-MAC-AUTH-BYPASS-MIB", "cmabIfAuthMethod"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cmabIfConfigGroup = cmabIfConfigGroup.setStatus('current')
+cmabClientInfoGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 654, 2, 2, 2)).setObjects(("CISCO-MAC-AUTH-BYPASS-MIB", "cmabClientMacAddress"), ("CISCO-MAC-AUTH-BYPASS-MIB", "cmabClientMabState"), ("CISCO-MAC-AUTH-BYPASS-MIB", "cmabClientAuthStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cmabClientInfoGroup = cmabClientInfoGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-MAC-AUTH-BYPASS-MIB", cmabCompliance=cmabCompliance, PYSNMP_MODULE_ID=ciscoMabMIB, cmabIfAuthMethod=cmabIfAuthMethod, ciscoMabMIB=ciscoMabMIB, cmabIfConfigEntry=cmabIfConfigEntry, cmabClientInfoGroup=cmabClientInfoGroup, cmabSession=cmabSession, cmabClientInfoEntry=cmabClientInfoEntry, cmabIfConfigGroup=cmabIfConfigGroup, cmabNotification=cmabNotification, cmabClientMabState=cmabClientMabState, cmabMIBConformance=cmabMIBConformance, cmabIfConfigTable=cmabIfConfigTable, cmabMIBCompliances=cmabMIBCompliances, cmabMIBGroups=cmabMIBGroups, cmabIfAuthEnabled=cmabIfAuthEnabled, cmabInterfaceConfig=cmabInterfaceConfig, cmabClientInfoTable=cmabClientInfoTable, cmabClientMacAddress=cmabClientMacAddress, cmabMIBObjects=cmabMIBObjects, cmabClientAuthStatus=cmabClientAuthStatus, cmabClientSessionId=cmabClientSessionId)

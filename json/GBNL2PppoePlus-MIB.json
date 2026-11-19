@@ -1,0 +1,85 @@
+{
+  "imports": {
+    "class": "imports",
+    "ADMIN-MASTER-MIB": [
+      "gbnL2"
+    ],
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "TimeTicks",
+      "Counter32",
+      "IpAddress",
+      "iso",
+      "Gauge32",
+      "Bits",
+      "MibIdentifier",
+      "MODULE-IDENTITY",
+      "OBJECT-TYPE",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Unsigned32",
+      "Counter64",
+      "NOTIFICATION-TYPE"
+    ],
+    "SNMPv2-TC": [
+      "TruthValue",
+      "DisplayString",
+      "TEXTUAL-CONVENTION",
+      "RowStatus"
+    ]
+  },
+  "gbnL2PppoePlus": {
+    "name": "gbnL2PppoePlus",
+    "oid": "1.3.6.1.4.1.13464.1.2.4.6",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2007-11-22 00:00",
+        "description": "Initial MIB creation."
+      }
+    ]
+  },
+  "pppoeplusOnOff": {
+    "name": "pppoeplusOnOff",
+    "oid": "1.3.6.1.4.1.13464.1.2.4.6.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TruthValue",
+      "class": "type"
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "pppoeplusType": {
+    "name": "pppoeplusType",
+    "oid": "1.3.6.1.4.1.13464.1.2.4.6.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "standard": 0,
+          "huawei": 1
+        }
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/fs/GBNL2PppoePlus-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:35:12 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "GBNL2PppoePlus-MIB"
+  }
+}

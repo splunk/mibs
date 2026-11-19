@@ -1,0 +1,91 @@
+#
+# PySNMP MIB module DLINKSW-CPU-PROTECT-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-CPU-PROTECT-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:46 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint")
+dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Bits, TimeTicks, ModuleIdentity, NotificationType, ObjectIdentity, Unsigned32, MibIdentifier, Gauge32, Counter32, Counter64, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Bits", "TimeTicks", "ModuleIdentity", "NotificationType", "ObjectIdentity", "Unsigned32", "MibIdentifier", "Gauge32", "Counter32", "Counter64", "IpAddress")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+dlinkSwCpuProtectMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 19))
+dlinkSwCpuProtectMIB.setRevisions(('2012-08-08 00:00',))
+if mibBuilder.loadTexts: dlinkSwCpuProtectMIB.setLastUpdated('201208080000Z')
+if mibBuilder.loadTexts: dlinkSwCpuProtectMIB.setOrganization('D-Link Corp.')
+class CpuProtectProtocolType(TextualConvention, Integer32):
+    status = 'current'
+    subtypeSpec = Integer32.subtypeSpec + ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27))
+    namedValues = NamedValues(("arp", 1), ("bgp", 2), ("dhcp", 3), ("dhcpv6", 4), ("dns", 5), ("dot1x", 6), ("dvmrp", 7), ("gvrp", 8), ("icmp", 9), ("icmpv6Ndp", 10), ("icmpv6Other", 11), ("igmp", 12), ("lacp", 13), ("ntp", 14), ("ospf", 15), ("ospfv3", 16), ("pim", 17), ("pppoe", 18), ("rip", 19), ("ripng", 20), ("snmp", 21), ("ssh", 22), ("stp", 23), ("telnet", 24), ("tftp", 25), ("vrrp", 26), ("web", 27))
+
+class MaxRate(TextualConvention, Integer32):
+    status = 'current'
+    subtypeSpec = Integer32.subtypeSpec + ConstraintsUnion(ValueRangeConstraint(-1, -1), ValueRangeConstraint(0, 65535), )
+class UnitID(TextualConvention, Integer32):
+    status = 'current'
+    subtypeSpec = Integer32.subtypeSpec + ConstraintsUnion(ValueRangeConstraint(0, 0), ValueRangeConstraint(1, 64), )
+dCpuProtectMIBNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 19, 0))
+dCpuProtectMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 19, 1))
+dCpuProtectMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 19, 2))
+dCpuProtectMIBObjectsCtrl = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2))
+dCpuProtectProtoRateLimitTable = MibTable((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2, 1), )
+if mibBuilder.loadTexts: dCpuProtectProtoRateLimitTable.setStatus('current')
+dCpuProtectProtoRateLimitEntry = MibTableRow((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2, 1, 1), ).setIndexNames((0, "DLINKSW-CPU-PROTECT-MIB", "dCpuProtectProtoRLType"))
+if mibBuilder.loadTexts: dCpuProtectProtoRateLimitEntry.setStatus('current')
+dCpuProtectProtoRLType = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2, 1, 1, 1), CpuProtectProtocolType())
+if mibBuilder.loadTexts: dCpuProtectProtoRLType.setStatus('current')
+dCpuProtectProtoRLRate = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2, 1, 1, 2), MaxRate().clone(-1)).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: dCpuProtectProtoRLRate.setStatus('current')
+dCpuProtectProtoRLClearCounter = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2, 1, 1, 3), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("clear", 1), ("noOp", 2))).clone('noOp')).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: dCpuProtectProtoRLClearCounter.setStatus('current')
+dCpuProtectSubIntfRLTable = MibTable((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2, 2), )
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLTable.setStatus('current')
+dCpuProtectSubIntfRLEntry = MibTableRow((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2, 2, 1), ).setIndexNames((0, "DLINKSW-CPU-PROTECT-MIB", "dCpuProtectSubIntfRLType"))
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLEntry.setStatus('current')
+dCpuProtectSubIntfRLType = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2, 2, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("manage", 1), ("protocol", 2), ("route", 3))))
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLType.setStatus('current')
+dCpuProtectSubIntfRLRate = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2, 2, 1, 2), MaxRate().clone(-1)).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLRate.setStatus('current')
+dCpuProtectSubIntfRLClearCounter = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 2, 2, 1, 3), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("clear", 1), ("noOp", 2))).clone('noOp')).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLClearCounter.setStatus('current')
+dCpuProtectMIBObjectsCounters = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3))
+dCpuProtectProtoRLCntTable = MibTable((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 1), )
+if mibBuilder.loadTexts: dCpuProtectProtoRLCntTable.setStatus('current')
+dCpuProtectProtoRLCntEntry = MibTableRow((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 1, 1), ).setIndexNames((0, "DLINKSW-CPU-PROTECT-MIB", "dCpuProtectProtoRLCntType"), (0, "DLINKSW-CPU-PROTECT-MIB", "dCpuProtectProtoRLCntUnitID"))
+if mibBuilder.loadTexts: dCpuProtectProtoRLCntEntry.setStatus('current')
+dCpuProtectProtoRLCntType = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 1, 1, 1), CpuProtectProtocolType())
+if mibBuilder.loadTexts: dCpuProtectProtoRLCntType.setStatus('current')
+dCpuProtectProtoRLCntUnitID = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 1, 1, 2), UnitID())
+if mibBuilder.loadTexts: dCpuProtectProtoRLCntUnitID.setStatus('current')
+dCpuProtectProtoRLCntTotalCnt = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 1, 1, 3), Counter64()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: dCpuProtectProtoRLCntTotalCnt.setStatus('current')
+dCpuProtectProtoRLCntDropCnt = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 1, 1, 4), Counter64()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: dCpuProtectProtoRLCntDropCnt.setStatus('current')
+dCpuProtectSubIntfRLCounterTable = MibTable((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 2), )
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLCounterTable.setStatus('current')
+dCpuProtectSubIntfRLCounterEntry = MibTableRow((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 2, 1), ).setIndexNames((0, "DLINKSW-CPU-PROTECT-MIB", "dCpuProtectSubIntfRLCntType"), (0, "DLINKSW-CPU-PROTECT-MIB", "dCpuProtectSubIntfRLCntUnitID"))
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLCounterEntry.setStatus('current')
+dCpuProtectSubIntfRLCntType = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 2, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("manage", 1), ("protocol", 2), ("route", 3))))
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLCntType.setStatus('current')
+dCpuProtectSubIntfRLCntUnitID = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 2, 1, 2), UnitID())
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLCntUnitID.setStatus('current')
+dCpuProtectSubIntfRLCntTotalCnt = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 2, 1, 3), Counter64()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLCntTotalCnt.setStatus('current')
+dCpuProtectSubIntfRLCntDropCnt = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 3, 2, 1, 4), Counter64()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: dCpuProtectSubIntfRLCntDropCnt.setStatus('current')
+dCpuProtectMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 19, 2, 1))
+dCpuProtectMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 171, 14, 19, 2, 1, 1)).setObjects(("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectProtoGroup"), ("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectSubIntfGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dCpuProtectMIBCompliance = dCpuProtectMIBCompliance.setStatus('current')
+dCpuProtectMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 19, 2, 2))
+dCpuProtectProtoGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 19, 2, 2, 1)).setObjects(("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectProtoRLRate"), ("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectProtoRLClearCounter"), ("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectProtoRLCntTotalCnt"), ("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectProtoRLCntDropCnt"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dCpuProtectProtoGroup = dCpuProtectProtoGroup.setStatus('current')
+dCpuProtectSubIntfGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 19, 2, 2, 2)).setObjects(("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectSubIntfRLRate"), ("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectSubIntfRLClearCounter"), ("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectSubIntfRLCntTotalCnt"), ("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectSubIntfRLCntDropCnt"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dCpuProtectSubIntfGroup = dCpuProtectSubIntfGroup.setStatus('current')
+mibBuilder.exportSymbols("DLINKSW-CPU-PROTECT-MIB", dlinkSwCpuProtectMIB=dlinkSwCpuProtectMIB, dCpuProtectProtoRLType=dCpuProtectProtoRLType, dCpuProtectProtoRLClearCounter=dCpuProtectProtoRLClearCounter, dCpuProtectMIBCompliance=dCpuProtectMIBCompliance, MaxRate=MaxRate, dCpuProtectMIBObjects=dCpuProtectMIBObjects, CpuProtectProtocolType=CpuProtectProtocolType, dCpuProtectProtoRLCntEntry=dCpuProtectProtoRLCntEntry, dCpuProtectSubIntfGroup=dCpuProtectSubIntfGroup, dCpuProtectSubIntfRLType=dCpuProtectSubIntfRLType, UnitID=UnitID, PYSNMP_MODULE_ID=dlinkSwCpuProtectMIB, dCpuProtectSubIntfRLCntDropCnt=dCpuProtectSubIntfRLCntDropCnt, dCpuProtectProtoRLCntType=dCpuProtectProtoRLCntType, dCpuProtectProtoRateLimitTable=dCpuProtectProtoRateLimitTable, dCpuProtectMIBGroups=dCpuProtectMIBGroups, dCpuProtectProtoRateLimitEntry=dCpuProtectProtoRateLimitEntry, dCpuProtectSubIntfRLClearCounter=dCpuProtectSubIntfRLClearCounter, dCpuProtectSubIntfRLCntUnitID=dCpuProtectSubIntfRLCntUnitID, dCpuProtectProtoRLCntUnitID=dCpuProtectProtoRLCntUnitID, dCpuProtectProtoRLCntTable=dCpuProtectProtoRLCntTable, dCpuProtectProtoGroup=dCpuProtectProtoGroup, dCpuProtectSubIntfRLCntType=dCpuProtectSubIntfRLCntType, dCpuProtectSubIntfRLTable=dCpuProtectSubIntfRLTable, dCpuProtectMIBObjectsCounters=dCpuProtectMIBObjectsCounters, dCpuProtectProtoRLCntDropCnt=dCpuProtectProtoRLCntDropCnt, dCpuProtectMIBCompliances=dCpuProtectMIBCompliances, dCpuProtectSubIntfRLCounterEntry=dCpuProtectSubIntfRLCounterEntry, dCpuProtectMIBObjectsCtrl=dCpuProtectMIBObjectsCtrl, dCpuProtectProtoRLRate=dCpuProtectProtoRLRate, dCpuProtectProtoRLCntTotalCnt=dCpuProtectProtoRLCntTotalCnt, dCpuProtectMIBNotifications=dCpuProtectMIBNotifications, dCpuProtectMIBConformance=dCpuProtectMIBConformance, dCpuProtectSubIntfRLEntry=dCpuProtectSubIntfRLEntry, dCpuProtectSubIntfRLRate=dCpuProtectSubIntfRLRate, dCpuProtectSubIntfRLCntTotalCnt=dCpuProtectSubIntfRLCntTotalCnt, dCpuProtectSubIntfRLCounterTable=dCpuProtectSubIntfRLCounterTable)

@@ -1,0 +1,51 @@
+#
+# PySNMP MIB module CISCO-DS0BUNDLE-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DS0BUNDLE-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
+InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+RowStatus, DisplayString, TextualConvention, TestAndIncr = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention", "TestAndIncr")
+ds0Bundle = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 32))
+if mibBuilder.loadTexts: ds0Bundle.setLastUpdated('9805242010Z')
+if mibBuilder.loadTexts: ds0Bundle.setOrganization('Cisco Systems, Inc.')
+if mibBuilder.loadTexts: ds0Bundle.setContactInfo('        Cisco Systems\n                         Customer Service\n\n              Postal: 170 W Tasman Drive\n                       San Jose, CA  95134\n                       USA\n\n                 Tel: +1 800 553-NETS\n\n              E-mail: cs-snmp@cisco.com')
+if mibBuilder.loadTexts: ds0Bundle.setDescription('The MIB module to describe DS0 Bundle interfaces\n\t\tobjects.\n\n\n\t\tNote: This contains a subset of the MIB objects\n\t\tdefined in DS0BUNDLE-MIB of\n\t\tdraft-ietf-trunkmib-ds0-mib-06.txt, section 6; it does\n\t\tnot include the DS0 Bonding group.')
+dsx0BundleNextIndex = MibScalar((1, 3, 6, 1, 4, 1, 9, 10, 32, 2), TestAndIncr()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dsx0BundleNextIndex.setStatus('current')
+if mibBuilder.loadTexts: dsx0BundleNextIndex.setDescription('This object is used to assist the manager in\n                selecting a value for dsx0BundleIndex.  Because\n                this object is of syntax TestAndIncr (see the\n                SNMPv2-TC document, RFC1903) it can also be used to\n                avoid race conditions with multiple managers trying to\n                create rows in the table. \n\n\t\tIf the result of the SET for dsx0BundleNextIndex is\n\t\tnot success, this means the value has been changed\n\t\tfrom index (i.e. another manager used the value), so a\n\t\tnew value is required.\n\n\t\tThe algorithm is:\n\t\tdone = false\n                while done == false \n                      index = GET (dsx0BundleNextIndex.0) \n                      SET (dsx0BundleNextIndex.0=index)\n\t\t      if (set failed)\n\t\t\tdone = false\n\t\t      else\n\t\t\tSET(dsx0BundleRowStatus.index=createAndGo) \n\t\t\tif (set failed)\n\t\t\t  done = false\n\t\t\telse\n                          done = true \n                          other error handling')
+dsx0BundleTable = MibTable((1, 3, 6, 1, 4, 1, 9, 10, 32, 3), )
+if mibBuilder.loadTexts: dsx0BundleTable.setStatus('current')
+if mibBuilder.loadTexts: dsx0BundleTable.setDescription("There is a row in this table for each ds0Bundle in\n\t\tthe system.  This table can be used to (indirectly)\n\t\tcreate rows in the ifTable with ifType =\n\t\t'ds0Bundle(82)'.")
+dsx0BundleEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 10, 32, 3, 1), ).setIndexNames((0, "CISCO-DS0BUNDLE-MIB", "dsx0BundleIndex"))
+if mibBuilder.loadTexts: dsx0BundleEntry.setStatus('current')
+if mibBuilder.loadTexts: dsx0BundleEntry.setDescription('There is a row in this table for each ds0Bundle\n\t\tinterface.')
+dsx0BundleIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 32, 3, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 2147483647)))
+if mibBuilder.loadTexts: dsx0BundleIndex.setStatus('current')
+if mibBuilder.loadTexts: dsx0BundleIndex.setDescription('A unique identifier for a ds0Bundle. This is not the\n\t\tsame value as ifIndex. This table is not indexed by\n\t\tifIndex because the manager has to choose the index in\n\t\ta createable row and the agent must be allowed to\n\t\tselect ifIndex values.')
+dsx0BundleIfIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 32, 3, 1, 2), InterfaceIndex()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: dsx0BundleIfIndex.setStatus('current')
+if mibBuilder.loadTexts: dsx0BundleIfIndex.setDescription('The ifIndex value the agent selected for the (new) \n                ds0Bundle interface.')
+dsx0BundleRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 32, 3, 1, 3), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: dsx0BundleRowStatus.setStatus('current')
+if mibBuilder.loadTexts: dsx0BundleRowStatus.setDescription('This object is used to create and delete rows in \n                this table.')
+ds0BundleConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 32, 4))
+ds0BundleGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 32, 4, 1))
+ds0BundleCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 32, 4, 2))
+ds0BundleCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 10, 32, 4, 2, 1)).setObjects(("CISCO-DS0BUNDLE-MIB", "ds0BundleConfigGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ds0BundleCompliance = ds0BundleCompliance.setStatus('current')
+if mibBuilder.loadTexts: ds0BundleCompliance.setDescription('The compliance statement for DS0Bundle interfaces.')
+ds0BundleConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 32, 4, 1, 2)).setObjects(("CISCO-DS0BUNDLE-MIB", "dsx0BundleNextIndex"), ("CISCO-DS0BUNDLE-MIB", "dsx0BundleIfIndex"), ("CISCO-DS0BUNDLE-MIB", "dsx0BundleRowStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ds0BundleConfigGroup = ds0BundleConfigGroup.setStatus('current')
+if mibBuilder.loadTexts: ds0BundleConfigGroup.setDescription('A collection of objects providing the ability to \n                      create a new ds0Bundle in the ifTable.')
+mibBuilder.exportSymbols("CISCO-DS0BUNDLE-MIB", ds0BundleConformance=ds0BundleConformance, ds0BundleConfigGroup=ds0BundleConfigGroup, dsx0BundleNextIndex=dsx0BundleNextIndex, dsx0BundleEntry=dsx0BundleEntry, dsx0BundleIndex=dsx0BundleIndex, ds0Bundle=ds0Bundle, dsx0BundleIfIndex=dsx0BundleIfIndex, ds0BundleCompliances=ds0BundleCompliances, dsx0BundleTable=dsx0BundleTable, dsx0BundleRowStatus=dsx0BundleRowStatus, ds0BundleGroups=ds0BundleGroups, PYSNMP_MODULE_ID=ds0Bundle, ds0BundleCompliance=ds0BundleCompliance)

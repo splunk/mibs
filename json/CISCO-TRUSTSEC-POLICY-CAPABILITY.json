@@ -1,0 +1,85 @@
+{
+  "imports": {
+    "class": "imports",
+    "CISCO-SMI": [
+      "ciscoAgentCapability"
+    ],
+    "SNMP-FRAMEWORK-MIB": [
+      "SnmpAdminString"
+    ],
+    "SNMPv2-CONF": [
+      "AGENT-CAPABILITIES",
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "MODULE-IDENTITY",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "Counter64",
+      "IpAddress",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Counter32",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "TimeTicks"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ciscoTrustSecPolicyCapability": {
+    "name": "ciscoTrustSecPolicyCapability",
+    "oid": "1.3.6.1.4.1.9.7.601",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2013-05-01 00:00",
+        "description": "Added the following VARIATION clauses in capability statement ciscoTrustSecPolicyCapV15R0101SYPCat6kSup720: - ctspPeerPolicyUpdatedNotifEnable - ctspOldPeerSgt - ctspPeerPolicyUpdatedNotif"
+      },
+      {
+        "revision": "2013-01-09 00:00",
+        "description": "Added capability statement ciscoTrustSecPolicyCapV15R0101SYPCat6kSup2T and ciscoTrustSecPolicyCapV15R0101SYPCat6kSup720."
+      },
+      {
+        "revision": "2010-11-16 00:00",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "ciscoTrustSecPolicyCapV12R0250SYPCat6k": {
+    "name": "ciscoTrustSecPolicyCapV12R0250SYPCat6k",
+    "oid": "1.3.6.1.4.1.9.7.601.1",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS 12.2(50)SY on Catalyst 6000/6500\n                    series devices.",
+    "status": "current"
+  },
+  "ciscoTrustSecPolicyCapV15R0101SYPCat6kSup2T": {
+    "name": "ciscoTrustSecPolicyCapV15R0101SYPCat6kSup2T",
+    "oid": "1.3.6.1.4.1.9.7.601.2",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS 15.1(1)SY on Catalyst 6000/6500\n                    series devices with Supervisor 2T present.",
+    "status": "current"
+  },
+  "ciscoTrustSecPolicyCapV15R0101SYPCat6kSup720": {
+    "name": "ciscoTrustSecPolicyCapV15R0101SYPCat6kSup720",
+    "oid": "1.3.6.1.4.1.9.7.601.3",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS 15.1(1)SY on Catalyst 6000/6500\n                    series devices with Supervisor 720 present.",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-TRUSTSEC-POLICY-CAPABILITY",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:49 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CISCO-TRUSTSEC-POLICY-CAPABILITY"
+  }
+}

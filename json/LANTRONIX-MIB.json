@@ -1,0 +1,103 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "enterprises",
+      "TimeTicks",
+      "Integer32",
+      "IpAddress",
+      "iso",
+      "OBJECT-TYPE",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "MibIdentifier",
+      "Counter64",
+      "Counter32",
+      "Bits",
+      "Gauge32",
+      "MODULE-IDENTITY",
+      "Unsigned32"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "lantronix": {
+    "name": "lantronix",
+    "oid": "1.3.6.1.4.1.244",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2007-03-01 00:00",
+        "description": "Added legacy products."
+      },
+      {
+        "revision": "2006-11-10 00:00",
+        "description": "Added sls product."
+      },
+      {
+        "revision": "2004-12-13 00:00",
+        "description": "The initial version of the MIB module."
+      }
+    ]
+  },
+  "products": {
+    "name": "products",
+    "oid": "1.3.6.1.4.1.244.1",
+    "class": "objectidentity"
+  },
+  "slc": {
+    "name": "slc",
+    "oid": "1.3.6.1.4.1.244.1.1",
+    "class": "objectidentity"
+  },
+  "slk": {
+    "name": "slk",
+    "oid": "1.3.6.1.4.1.244.1.8",
+    "class": "objectidentity"
+  },
+  "slp": {
+    "name": "slp",
+    "oid": "1.3.6.1.4.1.244.1.9",
+    "class": "objectidentity"
+  },
+  "slm": {
+    "name": "slm",
+    "oid": "1.3.6.1.4.1.244.1.10",
+    "class": "objectidentity"
+  },
+  "sls": {
+    "name": "sls",
+    "oid": "1.3.6.1.4.1.244.1.11",
+    "class": "objectidentity"
+  },
+  "ltxlna": {
+    "name": "ltxlna",
+    "oid": "1.3.6.1.4.1.244.10",
+    "class": "objectidentity"
+  },
+  "ltxlrp": {
+    "name": "ltxlrp",
+    "oid": "1.3.6.1.4.1.244.11",
+    "class": "objectidentity"
+  },
+  "ltxlsw": {
+    "name": "ltxlsw",
+    "oid": "1.3.6.1.4.1.244.12",
+    "class": "objectidentity"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/lantronix/LANTRONIX-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:37:11 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "LANTRONIX-MIB"
+  }
+}

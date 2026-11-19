@@ -1,0 +1,152 @@
+#
+# PySNMP MIB module CISCO-ENTITY-ALARM-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ENTITY-ALARM-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+PhysicalIndex, entPhysicalIndex = mibBuilder.importSymbols("ENTITY-MIB", "PhysicalIndex", "entPhysicalIndex")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+TruthValue, TimeStamp, AutonomousType, RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "TimeStamp", "AutonomousType", "RowStatus", "DisplayString", "TextualConvention")
+ciscoEntityAlarmMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 138))
+if mibBuilder.loadTexts: ciscoEntityAlarmMIB.setLastUpdated('9907062150Z')
+if mibBuilder.loadTexts: ciscoEntityAlarmMIB.setOrganization('Cisco Systems, Inc.')
+class AlarmType(TextualConvention, Integer32):
+    status = 'current'
+    subtypeSpec = Integer32.subtypeSpec + ValueRangeConstraint(0, 255)
+
+class AlarmSeverity(TextualConvention, Integer32):
+    reference = 'Bellcore Technical Reference TR-NWT-000474 Issue 4, December 1993, OTGR Section 4. Network Maintenance: Alarm and Control - Network Element.'
+    status = 'current'
+    subtypeSpec = Integer32.subtypeSpec + ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4))
+    namedValues = NamedValues(("critical", 1), ("major", 2), ("minor", 3), ("info", 4))
+
+class AlarmSeverityOrZero(TextualConvention, Integer32):
+    status = 'current'
+    subtypeSpec = Integer32.subtypeSpec + ValueRangeConstraint(0, 4)
+
+class AlarmList(TextualConvention, OctetString):
+    status = 'current'
+    subtypeSpec = OctetString.subtypeSpec + ValueSizeConstraint(0, 32)
+
+class AlarmFilterProfileType(TextualConvention, Unsigned32):
+    status = 'current'
+
+ciscoEntityAlarmMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 138, 1))
+ceAlarmDescription = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 1))
+ceAlarmMonitoring = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 2))
+ceAlarmHistory = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3))
+ceAlarmFiltering = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4))
+ceAlarmDescrMapTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 1, 1), )
+if mibBuilder.loadTexts: ceAlarmDescrMapTable.setStatus('current')
+ceAlarmDescrMapEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 1, 1, 1), ).setIndexNames((0, "CISCO-ENTITY-ALARM-MIB", "ceAlarmDescrIndex"))
+if mibBuilder.loadTexts: ceAlarmDescrMapEntry.setStatus('current')
+ceAlarmDescrIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 1, 1, 1, 1), Unsigned32())
+if mibBuilder.loadTexts: ceAlarmDescrIndex.setStatus('current')
+ceAlarmDescrVendorType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 1, 1, 1, 2), AutonomousType()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmDescrVendorType.setStatus('current')
+ceAlarmDescrTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 1, 2), )
+if mibBuilder.loadTexts: ceAlarmDescrTable.setStatus('current')
+ceAlarmDescrEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 1, 2, 1), ).setIndexNames((0, "CISCO-ENTITY-ALARM-MIB", "ceAlarmDescrIndex"), (0, "CISCO-ENTITY-ALARM-MIB", "ceAlarmDescrAlarmType"))
+if mibBuilder.loadTexts: ceAlarmDescrEntry.setStatus('current')
+ceAlarmDescrAlarmType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 1, 2, 1, 1), AlarmType())
+if mibBuilder.loadTexts: ceAlarmDescrAlarmType.setStatus('current')
+ceAlarmDescrSeverity = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 1, 2, 1, 2), AlarmSeverityOrZero()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ceAlarmDescrSeverity.setStatus('current')
+ceAlarmDescrText = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 1, 2, 1, 3), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmDescrText.setStatus('current')
+ceAlarmCriticalCount = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 2, 1), Gauge32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmCriticalCount.setStatus('current')
+ceAlarmMajorCount = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 2, 2), Gauge32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmMajorCount.setStatus('current')
+ceAlarmMinorCount = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 2, 3), Gauge32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmMinorCount.setStatus('current')
+ceAlarmCutOff = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 2, 4), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ceAlarmCutOff.setStatus('current')
+ceAlarmTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 2, 5), )
+if mibBuilder.loadTexts: ceAlarmTable.setStatus('current')
+ceAlarmEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 2, 5, 1), ).setIndexNames((0, "ENTITY-MIB", "entPhysicalIndex"))
+if mibBuilder.loadTexts: ceAlarmEntry.setStatus('current')
+ceAlarmFilterProfile = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 2, 5, 1, 1), AlarmFilterProfileType()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ceAlarmFilterProfile.setStatus('current')
+ceAlarmSeverity = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 2, 5, 1, 2), AlarmSeverityOrZero()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmSeverity.setStatus('current')
+ceAlarmList = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 2, 5, 1, 3), AlarmList()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmList.setStatus('current')
+ceAlarmHistTableSize = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 500))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ceAlarmHistTableSize.setStatus('current')
+ceAlarmHistLastIndex = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3, 2), Unsigned32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmHistLastIndex.setStatus('current')
+ceAlarmHistTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3, 3), )
+if mibBuilder.loadTexts: ceAlarmHistTable.setStatus('current')
+ceAlarmHistEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3, 3, 1), ).setIndexNames((0, "CISCO-ENTITY-ALARM-MIB", "ceAlarmHistIndex"))
+if mibBuilder.loadTexts: ceAlarmHistEntry.setStatus('current')
+ceAlarmHistIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3, 3, 1, 1), Unsigned32())
+if mibBuilder.loadTexts: ceAlarmHistIndex.setStatus('current')
+ceAlarmHistType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3, 3, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("asserted", 1), ("cleared", 2)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmHistType.setStatus('current')
+ceAlarmHistEntPhysicalIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3, 3, 1, 3), PhysicalIndex()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmHistEntPhysicalIndex.setStatus('current')
+ceAlarmHistAlarmType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3, 3, 1, 4), AlarmType()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmHistAlarmType.setStatus('current')
+ceAlarmHistSeverity = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3, 3, 1, 5), AlarmSeverity()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmHistSeverity.setStatus('current')
+ceAlarmHistTimeStamp = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 3, 3, 1, 6), TimeStamp()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmHistTimeStamp.setStatus('current')
+ceAlarmNotifiesEnable = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 1), AlarmSeverityOrZero()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ceAlarmNotifiesEnable.setStatus('current')
+ceAlarmSyslogEnable = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 2), AlarmSeverityOrZero()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ceAlarmSyslogEnable.setStatus('current')
+ceAlarmFilterProfileIndexNext = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 3), AlarmFilterProfileType()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAlarmFilterProfileIndexNext.setStatus('current')
+ceAlarmFilterProfileTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 4), )
+if mibBuilder.loadTexts: ceAlarmFilterProfileTable.setStatus('current')
+ceAlarmFilterProfileEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 4, 1), ).setIndexNames((0, "CISCO-ENTITY-ALARM-MIB", "ceAlarmFilterIndex"))
+if mibBuilder.loadTexts: ceAlarmFilterProfileEntry.setStatus('current')
+ceAlarmFilterIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 4, 1, 1), AlarmFilterProfileType())
+if mibBuilder.loadTexts: ceAlarmFilterIndex.setStatus('current')
+ceAlarmFilterStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 4, 1, 2), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ceAlarmFilterStatus.setStatus('current')
+ceAlarmFilterAlias = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 4, 1, 3), DisplayString()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ceAlarmFilterAlias.setStatus('current')
+ceAlarmFilterAlarmsEnabled = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 4, 1, 4), AlarmList()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ceAlarmFilterAlarmsEnabled.setStatus('current')
+ceAlarmFilterNotifiesEnabled = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 4, 1, 5), AlarmList()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ceAlarmFilterNotifiesEnabled.setStatus('current')
+ceAlarmFilterSyslogEnabled = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 138, 1, 4, 4, 1, 6), AlarmList()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ceAlarmFilterSyslogEnabled.setStatus('current')
+ciscoEntityAlarmMIBNotificationsPrefix = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 138, 2))
+ciscoEntityAlarmMIBNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 138, 2, 0))
+ceAlarmAsserted = NotificationType((1, 3, 6, 1, 4, 1, 9, 9, 138, 2, 0, 1)).setObjects(("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistEntPhysicalIndex"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistAlarmType"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistSeverity"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistTimeStamp"))
+if mibBuilder.loadTexts: ceAlarmAsserted.setStatus('current')
+ceAlarmCleared = NotificationType((1, 3, 6, 1, 4, 1, 9, 9, 138, 2, 0, 2)).setObjects(("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistEntPhysicalIndex"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistAlarmType"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistSeverity"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistTimeStamp"))
+if mibBuilder.loadTexts: ceAlarmCleared.setStatus('current')
+ciscoEntityAlarmMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 138, 3))
+ciscoEntityAlarmMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 138, 3, 1))
+ciscoEntityAlarmMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 138, 3, 2))
+ceAlarmMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 138, 3, 1, 1)).setObjects(("CISCO-ENTITY-ALARM-MIB", "ceAlarmDescriptionGroup"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmGroup"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistGroup"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmFilterGroup"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmFilterProfileGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceAlarmMIBCompliance = ceAlarmMIBCompliance.setStatus('current')
+ceAlarmDescriptionGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 138, 3, 2, 1)).setObjects(("CISCO-ENTITY-ALARM-MIB", "ceAlarmDescrVendorType"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmDescrSeverity"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmDescrText"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceAlarmDescriptionGroup = ceAlarmDescriptionGroup.setStatus('current')
+ceAlarmGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 138, 3, 2, 2)).setObjects(("CISCO-ENTITY-ALARM-MIB", "ceAlarmCriticalCount"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmMajorCount"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmMinorCount"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmCutOff"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmFilterProfile"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmSeverity"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmList"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceAlarmGroup = ceAlarmGroup.setStatus('current')
+ceAlarmHistGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 138, 3, 2, 3)).setObjects(("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistTableSize"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistLastIndex"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistType"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistEntPhysicalIndex"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistAlarmType"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistSeverity"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmHistTimeStamp"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceAlarmHistGroup = ceAlarmHistGroup.setStatus('current')
+ceAlarmFilterGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 138, 3, 2, 4)).setObjects(("CISCO-ENTITY-ALARM-MIB", "ceAlarmNotifiesEnable"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmSyslogEnable"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceAlarmFilterGroup = ceAlarmFilterGroup.setStatus('current')
+ceAlarmFilterProfileGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 138, 3, 2, 5)).setObjects(("CISCO-ENTITY-ALARM-MIB", "ceAlarmFilterProfileIndexNext"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmFilterStatus"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmFilterAlias"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmFilterAlarmsEnabled"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmFilterNotifiesEnabled"), ("CISCO-ENTITY-ALARM-MIB", "ceAlarmFilterSyslogEnabled"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceAlarmFilterProfileGroup = ceAlarmFilterProfileGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-ENTITY-ALARM-MIB", ciscoEntityAlarmMIBConformance=ciscoEntityAlarmMIBConformance, ceAlarmDescrSeverity=ceAlarmDescrSeverity, ceAlarmDescrText=ceAlarmDescrText, ceAlarmFilterProfileTable=ceAlarmFilterProfileTable, PYSNMP_MODULE_ID=ciscoEntityAlarmMIB, ceAlarmFilterNotifiesEnabled=ceAlarmFilterNotifiesEnabled, ceAlarmCutOff=ceAlarmCutOff, ciscoEntityAlarmMIBNotificationsPrefix=ciscoEntityAlarmMIBNotificationsPrefix, ciscoEntityAlarmMIBCompliances=ciscoEntityAlarmMIBCompliances, ceAlarmNotifiesEnable=ceAlarmNotifiesEnable, AlarmSeverityOrZero=AlarmSeverityOrZero, ceAlarmFilterAlias=ceAlarmFilterAlias, ceAlarmFilterProfile=ceAlarmFilterProfile, ceAlarmDescrVendorType=ceAlarmDescrVendorType, ceAlarmHistType=ceAlarmHistType, ceAlarmEntry=ceAlarmEntry, ciscoEntityAlarmMIB=ciscoEntityAlarmMIB, ceAlarmHistIndex=ceAlarmHistIndex, ceAlarmFilterProfileIndexNext=ceAlarmFilterProfileIndexNext, ceAlarmHistTimeStamp=ceAlarmHistTimeStamp, ceAlarmFilterProfileEntry=ceAlarmFilterProfileEntry, ceAlarmFilterGroup=ceAlarmFilterGroup, ciscoEntityAlarmMIBObjects=ciscoEntityAlarmMIBObjects, ceAlarmHistSeverity=ceAlarmHistSeverity, ceAlarmFiltering=ceAlarmFiltering, ceAlarmDescription=ceAlarmDescription, ceAlarmDescrAlarmType=ceAlarmDescrAlarmType, ceAlarmCriticalCount=ceAlarmCriticalCount, ceAlarmMinorCount=ceAlarmMinorCount, ceAlarmList=ceAlarmList, ceAlarmDescrMapEntry=ceAlarmDescrMapEntry, ceAlarmHistLastIndex=ceAlarmHistLastIndex, AlarmFilterProfileType=AlarmFilterProfileType, ceAlarmFilterStatus=ceAlarmFilterStatus, ceAlarmHistGroup=ceAlarmHistGroup, AlarmList=AlarmList, ceAlarmSyslogEnable=ceAlarmSyslogEnable, ceAlarmFilterIndex=ceAlarmFilterIndex, ceAlarmFilterAlarmsEnabled=ceAlarmFilterAlarmsEnabled, AlarmType=AlarmType, ceAlarmHistEntPhysicalIndex=ceAlarmHistEntPhysicalIndex, ceAlarmSeverity=ceAlarmSeverity, ceAlarmDescriptionGroup=ceAlarmDescriptionGroup, ceAlarmDescrMapTable=ceAlarmDescrMapTable, ceAlarmHistory=ceAlarmHistory, ceAlarmDescrEntry=ceAlarmDescrEntry, ceAlarmFilterSyslogEnabled=ceAlarmFilterSyslogEnabled, ceAlarmTable=ceAlarmTable, ceAlarmAsserted=ceAlarmAsserted, ceAlarmMIBCompliance=ceAlarmMIBCompliance, ceAlarmHistAlarmType=ceAlarmHistAlarmType, ceAlarmHistEntry=ceAlarmHistEntry, ceAlarmMonitoring=ceAlarmMonitoring, ciscoEntityAlarmMIBNotifications=ciscoEntityAlarmMIBNotifications, ceAlarmFilterProfileGroup=ceAlarmFilterProfileGroup, ceAlarmHistTableSize=ceAlarmHistTableSize, ceAlarmGroup=ceAlarmGroup, ceAlarmDescrIndex=ceAlarmDescrIndex, ceAlarmCleared=ceAlarmCleared, ceAlarmMajorCount=ceAlarmMajorCount, ceAlarmDescrTable=ceAlarmDescrTable, ceAlarmHistTable=ceAlarmHistTable, AlarmSeverity=AlarmSeverity, ciscoEntityAlarmMIBGroups=ciscoEntityAlarmMIBGroups)

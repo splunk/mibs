@@ -1,0 +1,48 @@
+#
+# PySNMP MIB module CISCOSB-SOCKET-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-SOCKET-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+rlSocket = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 85))
+rlSocket.setRevisions(('2007-01-02 00:00',))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    if mibBuilder.loadTexts: rlSocket.setRevisionsDescriptions(('Initial revision.',))
+if mibBuilder.loadTexts: rlSocket.setLastUpdated('200701020000Z')
+if mibBuilder.loadTexts: rlSocket.setOrganization('Cisco Small Business')
+if mibBuilder.loadTexts: rlSocket.setContactInfo('Postal: 170 West Tasman Drive\n\t\t\t\tSan Jose , CA 95134-1706\n\t\t\t\tUSA\n\n\t\t\t\tWebsite: Cisco Small Business Home http://www.cisco.com/smb>;,\n\t\t\t\tCisco Small Business Support Community <http://www.cisco.com/go/smallbizsupport>')
+if mibBuilder.loadTexts: rlSocket.setDescription('This private MIB module defines socket private MIBs.')
+rlSocketMibVersion = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 85, 1), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: rlSocketMibVersion.setStatus('current')
+if mibBuilder.loadTexts: rlSocketMibVersion.setDescription("MIB's version, the current version is 1.")
+rlSocketTable = MibTable((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 85, 2), )
+if mibBuilder.loadTexts: rlSocketTable.setStatus('current')
+if mibBuilder.loadTexts: rlSocketTable.setDescription('The (conceptual) table listing the sockets which are currently\n        open in the system.')
+rlSocketEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 85, 2, 1), ).setIndexNames((0, "CISCOSB-SOCKET-MIB", "rlSocketId"))
+if mibBuilder.loadTexts: rlSocketEntry.setStatus('current')
+if mibBuilder.loadTexts: rlSocketEntry.setDescription('An entry (conceptual row) in the SocketTable.')
+rlSocketId = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 85, 2, 1, 1), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: rlSocketId.setStatus('current')
+if mibBuilder.loadTexts: rlSocketId.setDescription('The value of the id of the socket. ')
+rlSocketType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 85, 2, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("stream", 1), ("dgram", 2), ("raw", 3)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: rlSocketType.setStatus('current')
+if mibBuilder.loadTexts: rlSocketType.setDescription('Specifies the type of the socket. ')
+rlSocketState = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 85, 2, 1, 3), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5))).clone(namedValues=NamedValues(("connected", 1), ("notConnected", 2), ("recvClosed", 3), ("sendClosed", 4), ("closed", 5)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: rlSocketState.setStatus('current')
+if mibBuilder.loadTexts: rlSocketState.setDescription('Specifies the state in which the socket is in. ')
+rlSocketBlockMode = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 85, 2, 1, 4), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("blocking", 1), ("nonBlocking", 2)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: rlSocketBlockMode.setStatus('current')
+if mibBuilder.loadTexts: rlSocketBlockMode.setDescription('Specifies the blocking mode of the socket. ')
+rlSocketUpTime = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 85, 2, 1, 5), TimeTicks()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: rlSocketUpTime.setStatus('current')
+if mibBuilder.loadTexts: rlSocketUpTime.setDescription('The time elapsed since this socket was created.')
+mibBuilder.exportSymbols("CISCOSB-SOCKET-MIB", rlSocketUpTime=rlSocketUpTime, rlSocketMibVersion=rlSocketMibVersion, rlSocketState=rlSocketState, rlSocket=rlSocket, PYSNMP_MODULE_ID=rlSocket, rlSocketBlockMode=rlSocketBlockMode, rlSocketType=rlSocketType, rlSocketId=rlSocketId, rlSocketTable=rlSocketTable, rlSocketEntry=rlSocketEntry)

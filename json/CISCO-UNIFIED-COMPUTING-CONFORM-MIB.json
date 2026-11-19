@@ -1,0 +1,167 @@
+{
+  "imports": {
+    "class": "imports",
+    "CISCO-SMI": [
+      "ciscoMgmt"
+    ],
+    "CISCO-UNIFIED-COMPUTING-FAULT-MIB": [
+      "cucsFaultAffectedObjectDn",
+      "cucsFaultAffectedObjectId",
+      "cucsFaultProbableCause",
+      "cucsFaultSeverity",
+      "cucsFaultDescription",
+      "cucsFaultLastModificationTime",
+      "cucsFaultOccur",
+      "cucsFaultCreationTime",
+      "cucsFaultCode",
+      "cucsFaultType"
+    ],
+    "CISCO-UNIFIED-COMPUTING-MIB": [
+      "ciscoUnifiedComputingMIBObjects",
+      "ciscoUnifiedComputingMIB"
+    ],
+    "CISCO-UNIFIED-COMPUTING-NOTIFS-MIB": [
+      "cucsFaultClearNotif",
+      "cucsFaultActiveNotif"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "MODULE-IDENTITY",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "Counter64",
+      "IpAddress",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Counter32",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "TimeTicks"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ciscoUnifiedComputingMIBConform": {
+    "name": "ciscoUnifiedComputingMIBConform",
+    "oid": "1.3.6.1.4.1.9.9.719.2",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2010-01-29 00:00",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "cucsFaultMIBConform": {
+    "name": "cucsFaultMIBConform",
+    "oid": "1.3.6.1.4.1.9.9.719.2.1",
+    "class": "objectidentity"
+  },
+  "cucsFaultMIBCompliances": {
+    "name": "cucsFaultMIBCompliances",
+    "oid": "1.3.6.1.4.1.9.9.719.2.1.1",
+    "class": "objectidentity"
+  },
+  "cucsFaultMIBGroups": {
+    "name": "cucsFaultMIBGroups",
+    "oid": "1.3.6.1.4.1.9.9.719.2.1.2",
+    "class": "objectidentity"
+  },
+  "cucsFaultMIBCompliance": {
+    "name": "cucsFaultMIBCompliance",
+    "oid": "1.3.6.1.4.1.9.9.719.2.1.1.1",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "cucsFaultsNotifGroup",
+        "module": "CISCO-UNIFIED-COMPUTING-CONFORM-MIB"
+      },
+      {
+        "object": "cucsFaultsGroup",
+        "module": "CISCO-UNIFIED-COMPUTING-CONFORM-MIB"
+      }
+    ],
+    "status": "current"
+  },
+  "cucsFaultsGroup": {
+    "name": "cucsFaultsGroup",
+    "oid": "1.3.6.1.4.1.9.9.719.2.1.2.1",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultDescription"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultAffectedObjectId"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultAffectedObjectDn"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultCreationTime"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultLastModificationTime"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultCode"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultType"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultProbableCause"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultSeverity"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultOccur"
+      }
+    ],
+    "status": "current"
+  },
+  "cucsFaultsNotifGroup": {
+    "name": "cucsFaultsNotifGroup",
+    "oid": "1.3.6.1.4.1.9.9.719.2.1.2.2",
+    "class": "notificationgroup",
+    "objects": [
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-NOTIFS-MIB",
+        "object": "cucsFaultActiveNotif"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-NOTIFS-MIB",
+        "object": "cucsFaultClearNotif"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-UNIFIED-COMPUTING-CONFORM-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:50 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CISCO-UNIFIED-COMPUTING-CONFORM-MIB"
+  }
+}

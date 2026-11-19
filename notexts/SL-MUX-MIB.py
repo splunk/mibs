@@ -1,0 +1,36 @@
+#
+# PySNMP MIB module SL-MUX-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/packetlight/SL-MUX-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:38:28 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
+PerfTotalCount, PerfCurrentCount, PerfIntervalCount = mibBuilder.importSymbols("PerfHist-TC-MIB", "PerfTotalCount", "PerfCurrentCount", "PerfIntervalCount")
+CleiCode, = mibBuilder.importSymbols("SL-ENTITY-MIB", "CleiCode")
+sitelight, = mibBuilder.importSymbols("SL-NE-MIB", "sitelight")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
+Counter64, Counter32, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, NotificationType, ModuleIdentity, Bits, Gauge32, Integer32, TimeTicks, IpAddress, iso, MibIdentifier, Unsigned32 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "Counter32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "NotificationType", "ModuleIdentity", "Bits", "Gauge32", "Integer32", "TimeTicks", "IpAddress", "iso", "MibIdentifier", "Unsigned32")
+DisplayString, TimeStamp, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TimeStamp", "TruthValue", "TextualConvention")
+slMux = ModuleIdentity((1, 3, 6, 1, 4, 1, 4515, 1, 5))
+if mibBuilder.loadTexts: slMux.setLastUpdated('200008280000Z')
+if mibBuilder.loadTexts: slMux.setOrganization('PacketLight Networks Ltd.')
+muxIfTable = MibTable((1, 3, 6, 1, 4, 1, 4515, 1, 5, 1), )
+if mibBuilder.loadTexts: muxIfTable.setStatus('current')
+muxIfEntry = MibTableRow((1, 3, 6, 1, 4, 1, 4515, 1, 5, 1, 1), ).setIndexNames((0, "SL-MUX-MIB", "muxIfIndex"))
+if mibBuilder.loadTexts: muxIfEntry.setStatus('current')
+muxIfIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 5, 1, 1, 1), InterfaceIndex()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: muxIfIndex.setStatus('current')
+muxIfType = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 5, 1, 1, 2), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: muxIfType.setStatus('current')
+muxIfWaveSpacing = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 5, 1, 1, 3), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(0, 1, 2, 3, 4, 5))).clone(namedValues=NamedValues(("ghzNone", 0), ("ghz400", 1), ("ghz200", 2), ("ghz100", 3), ("ghz50", 4), ("ghz2500", 5)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: muxIfWaveSpacing.setStatus('current')
+muxIfWaveLengthNm = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 5, 1, 1, 4), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: muxIfWaveLengthNm.setStatus('current')
+muxIfOscWaveLengthNm = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 5, 1, 1, 5), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: muxIfOscWaveLengthNm.setStatus('current')
+mibBuilder.exportSymbols("SL-MUX-MIB", muxIfOscWaveLengthNm=muxIfOscWaveLengthNm, muxIfType=muxIfType, muxIfWaveSpacing=muxIfWaveSpacing, muxIfIndex=muxIfIndex, slMux=slMux, muxIfTable=muxIfTable, PYSNMP_MODULE_ID=slMux, muxIfEntry=muxIfEntry, muxIfWaveLengthNm=muxIfWaveLengthNm)

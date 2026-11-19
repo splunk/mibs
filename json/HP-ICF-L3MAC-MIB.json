@@ -1,0 +1,155 @@
+{
+  "imports": {
+    "class": "imports",
+    "HP-ICF-OID": [
+      "hpSwitch",
+      "hpicfCommon"
+    ],
+    "IF-MIB": [
+      "ifRcvAddressEntry",
+      "ifIndex"
+    ],
+    "SNMPv2-CONF": [
+      "OBJECT-GROUP",
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "Integer32",
+      "Unsigned32",
+      "Bits",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "Counter64",
+      "MibIdentifier",
+      "IpAddress",
+      "OBJECT-IDENTITY",
+      "Counter32",
+      "MODULE-IDENTITY",
+      "TimeTicks",
+      "OBJECT-TYPE"
+    ],
+    "SNMPv2-TC": [
+      "PhysAddress",
+      "RowStatus",
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "hpicfL3MacConfigMIB": {
+    "name": "hpicfL3MacConfigMIB",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.36",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2006-08-08 16:00",
+        "description": "Initial version."
+      }
+    ]
+  },
+  "hpicfL3MacConfigObjects": {
+    "name": "hpicfL3MacConfigObjects",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.36.1",
+    "class": "objectidentity"
+  },
+  "hpicfL3MacConfigConformance": {
+    "name": "hpicfL3MacConfigConformance",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.36.2",
+    "class": "objectidentity"
+  },
+  "hpicfL3MacConfigIfTable": {
+    "name": "hpicfL3MacConfigIfTable",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.36.1.1",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "hpicfL3MacConfigIfEntry": {
+    "name": "hpicfL3MacConfigIfEntry",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.36.1.1.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "augmention": {
+      "name": "hpicfL3MacConfigIfEntry",
+      "module": "HP-ICF-L3MAC-MIB",
+      "object": "ifRcvAddressEntry"
+    },
+    "status": "current"
+  },
+  "hpicfL3MacConfigIfAdvTimer": {
+    "name": "hpicfL3MacConfigIfAdvTimer",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.36.1.1.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 60,
+        "format": "decimal"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "hpicfL3MacConfigMIBCompliances": {
+    "name": "hpicfL3MacConfigMIBCompliances",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.36.2.1",
+    "class": "objectidentity"
+  },
+  "hpicfL3MacConfigMIBGroups": {
+    "name": "hpicfL3MacConfigMIBGroups",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.36.2.2",
+    "class": "objectidentity"
+  },
+  "hpicfL3MacConfigMIBCompliance": {
+    "name": "hpicfL3MacConfigMIBCompliance",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.36.2.1.1",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "hpicfL3MacConfigGroup",
+        "module": "HP-ICF-L3MAC-MIB"
+      },
+      {
+        "object": "hpicfL3MacConfigGroup",
+        "module": "HP-ICF-L3MAC-MIB"
+      }
+    ],
+    "status": "current"
+  },
+  "hpicfL3MacConfigGroup": {
+    "name": "hpicfL3MacConfigGroup",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.36.2.2.1",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "HP-ICF-L3MAC-MIB",
+        "object": "hpicfL3MacConfigIfAdvTimer"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hp/HP-ICF-L3MAC-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:08 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "HP-ICF-L3MAC-MIB"
+  }
+}

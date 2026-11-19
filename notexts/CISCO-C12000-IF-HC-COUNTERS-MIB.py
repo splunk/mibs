@@ -1,0 +1,51 @@
+#
+# PySNMP MIB module CISCO-C12000-IF-HC-COUNTERS-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-C12000-IF-HC-COUNTERS-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
+ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoC12000IfHcCountersMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 31))
+if mibBuilder.loadTexts: ciscoC12000IfHcCountersMIB.setLastUpdated('9805270000Z')
+if mibBuilder.loadTexts: ciscoC12000IfHcCountersMIB.setOrganization('Cisco Systems, Inc.')
+cHCCounterMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 31, 1))
+cHCCounterTable = MibTable((1, 3, 6, 1, 4, 1, 9, 10, 31, 1, 1), )
+if mibBuilder.loadTexts: cHCCounterTable.setStatus('current')
+cHCCounterEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 10, 31, 1, 1, 1), ).setIndexNames((0, "IF-MIB", "ifIndex"))
+if mibBuilder.loadTexts: cHCCounterEntry.setStatus('current')
+cHCCounterIfInOctetsUpper = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 31, 1, 1, 1, 1), Counter32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cHCCounterIfInOctetsUpper.setStatus('current')
+cHCCounterIfInOctetsLower = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 31, 1, 1, 1, 2), Counter32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cHCCounterIfInOctetsLower.setStatus('current')
+cHCCounterIfInUcastPktsUpper = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 31, 1, 1, 1, 3), Counter32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cHCCounterIfInUcastPktsUpper.setStatus('current')
+cHCCounterIfInUcastPktsLower = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 31, 1, 1, 1, 4), Counter32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cHCCounterIfInUcastPktsLower.setStatus('current')
+cHCCounterIfOutOctetsUpper = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 31, 1, 1, 1, 5), Counter32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cHCCounterIfOutOctetsUpper.setStatus('current')
+cHCCounterIfOutOctetsLower = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 31, 1, 1, 1, 6), Counter32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cHCCounterIfOutOctetsLower.setStatus('current')
+cHCCounterIfOutUcastPktsUpper = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 31, 1, 1, 1, 7), Counter32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cHCCounterIfOutUcastPktsUpper.setStatus('current')
+cHCCounterIfOutUcastPktsLower = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 31, 1, 1, 1, 8), Counter32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cHCCounterIfOutUcastPktsLower.setStatus('current')
+ciscoHCCountersMIBNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 31, 2))
+ciscoHCCountersMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 31, 3))
+ciscoHCCountersMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 31, 3, 1))
+ciscoHCCountersMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 31, 3, 2))
+ciscoHCCountersMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 10, 31, 3, 1, 1)).setObjects(("CISCO-C12000-IF-HC-COUNTERS-MIB", "ciscoHCCountersMIBGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoHCCountersMIBCompliance = ciscoHCCountersMIBCompliance.setStatus('current')
+ciscoHCCountersMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 31, 3, 2, 1)).setObjects(("CISCO-C12000-IF-HC-COUNTERS-MIB", "cHCCounterIfInOctetsUpper"), ("CISCO-C12000-IF-HC-COUNTERS-MIB", "cHCCounterIfInOctetsLower"), ("CISCO-C12000-IF-HC-COUNTERS-MIB", "cHCCounterIfInUcastPktsUpper"), ("CISCO-C12000-IF-HC-COUNTERS-MIB", "cHCCounterIfInUcastPktsLower"), ("CISCO-C12000-IF-HC-COUNTERS-MIB", "cHCCounterIfOutOctetsUpper"), ("CISCO-C12000-IF-HC-COUNTERS-MIB", "cHCCounterIfOutOctetsLower"), ("CISCO-C12000-IF-HC-COUNTERS-MIB", "cHCCounterIfOutUcastPktsUpper"), ("CISCO-C12000-IF-HC-COUNTERS-MIB", "cHCCounterIfOutUcastPktsLower"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoHCCountersMIBGroup = ciscoHCCountersMIBGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-C12000-IF-HC-COUNTERS-MIB", ciscoHCCountersMIBCompliance=ciscoHCCountersMIBCompliance, cHCCounterIfInOctetsLower=cHCCounterIfInOctetsLower, cHCCounterIfOutOctetsUpper=cHCCounterIfOutOctetsUpper, ciscoHCCountersMIBGroup=ciscoHCCountersMIBGroup, cHCCounterTable=cHCCounterTable, ciscoC12000IfHcCountersMIB=ciscoC12000IfHcCountersMIB, ciscoHCCountersMIBGroups=ciscoHCCountersMIBGroups, cHCCounterIfOutUcastPktsLower=cHCCounterIfOutUcastPktsLower, PYSNMP_MODULE_ID=ciscoC12000IfHcCountersMIB, cHCCounterEntry=cHCCounterEntry, ciscoHCCountersMIBConformance=ciscoHCCountersMIBConformance, ciscoHCCountersMIBNotifications=ciscoHCCountersMIBNotifications, cHCCounterMIBObjects=cHCCounterMIBObjects, cHCCounterIfInOctetsUpper=cHCCounterIfInOctetsUpper, ciscoHCCountersMIBCompliances=ciscoHCCountersMIBCompliances, cHCCounterIfInUcastPktsLower=cHCCounterIfInUcastPktsLower, cHCCounterIfInUcastPktsUpper=cHCCounterIfInUcastPktsUpper, cHCCounterIfOutOctetsLower=cHCCounterIfOutOctetsLower, cHCCounterIfOutUcastPktsUpper=cHCCounterIfOutUcastPktsUpper)

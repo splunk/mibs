@@ -1,0 +1,48 @@
+#
+# PySNMP MIB module UCD-DLMOD-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/netsnmp/UCD-DLMOD-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:37:42 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsIntersection, SingleValueConstraint, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+MibIdentifier, NotificationType, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, Integer32, ObjectIdentity, Unsigned32, TimeTicks, ModuleIdentity, Counter64, Counter32, iso, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "MibIdentifier", "NotificationType", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "Integer32", "ObjectIdentity", "Unsigned32", "TimeTicks", "ModuleIdentity", "Counter64", "Counter32", "iso", "IpAddress")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ucdExperimental, = mibBuilder.importSymbols("UCD-SNMP-MIB", "ucdExperimental")
+ucdDlmodMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 2021, 13, 14))
+ucdDlmodMIB.setRevisions(('2000-01-26 00:00', '1999-12-10 00:00',))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    if mibBuilder.loadTexts: ucdDlmodMIB.setRevisionsDescriptions(('Renamed MIB root object', 'SMIv2 version converted from older MIB definitions.',))
+if mibBuilder.loadTexts: ucdDlmodMIB.setLastUpdated('200001260000Z')
+if mibBuilder.loadTexts: ucdDlmodMIB.setOrganization('University of California, Davis')
+if mibBuilder.loadTexts: ucdDlmodMIB.setContactInfo('This mib is no longer being maintained by the University of\n\t California and is now in life-support-mode and being\n\t maintained by the net-snmp project.  The best place to write\n\t for public questions about the net-snmp-coders mailing list\n\t at net-snmp-coders@lists.sourceforge.net.\n\n         postal:   Wes Hardaker\n                   P.O. Box 382\n                   Davis CA  95617\n\n         email:    net-snmp-coders@lists.sourceforge.net\n        ')
+if mibBuilder.loadTexts: ucdDlmodMIB.setDescription('This file defines the MIB objects for dynamic \n\t loadable MIB modules.')
+dlmodNextIndex = MibScalar((1, 3, 6, 1, 4, 1, 2021, 13, 14, 1), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: dlmodNextIndex.setStatus('current')
+if mibBuilder.loadTexts: dlmodNextIndex.setDescription('The index number of next appropiate unassigned entry\n\t in the dlmodTable.')
+dlmodTable = MibTable((1, 3, 6, 1, 4, 1, 2021, 13, 14, 2), )
+if mibBuilder.loadTexts: dlmodTable.setStatus('current')
+if mibBuilder.loadTexts: dlmodTable.setDescription('A table of dlmodEntry.')
+dlmodEntry = MibTableRow((1, 3, 6, 1, 4, 1, 2021, 13, 14, 2, 1), ).setIndexNames((0, "UCD-DLMOD-MIB", "dlmodIndex"))
+if mibBuilder.loadTexts: dlmodEntry.setStatus('current')
+if mibBuilder.loadTexts: dlmodEntry.setDescription('The parameters of dynamically loaded MIB module.')
+dlmodIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 2021, 13, 14, 2, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 65535)))
+if mibBuilder.loadTexts: dlmodIndex.setStatus('current')
+if mibBuilder.loadTexts: dlmodIndex.setDescription('An index that uniqely identifies an entry in the dlmodTable.')
+dlmodName = MibTableColumn((1, 3, 6, 1, 4, 1, 2021, 13, 14, 2, 1, 2), DisplayString()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dlmodName.setStatus('current')
+if mibBuilder.loadTexts: dlmodName.setDescription('The module name.')
+dlmodPath = MibTableColumn((1, 3, 6, 1, 4, 1, 2021, 13, 14, 2, 1, 3), DisplayString()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dlmodPath.setStatus('current')
+if mibBuilder.loadTexts: dlmodPath.setDescription('The path of the module executable file.')
+dlmodError = MibTableColumn((1, 3, 6, 1, 4, 1, 2021, 13, 14, 2, 1, 4), DisplayString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: dlmodError.setStatus('current')
+if mibBuilder.loadTexts: dlmodError.setDescription('The last error from dlmod_load_module.')
+dlmodStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 2021, 13, 14, 2, 1, 5), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5, 6, 7))).clone(namedValues=NamedValues(("loaded", 1), ("unloaded", 2), ("error", 3), ("load", 4), ("unload", 5), ("create", 6), ("delete", 7)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dlmodStatus.setStatus('current')
+if mibBuilder.loadTexts: dlmodStatus.setDescription('The current status of the loaded module.')
+mibBuilder.exportSymbols("UCD-DLMOD-MIB", dlmodName=dlmodName, dlmodStatus=dlmodStatus, PYSNMP_MODULE_ID=ucdDlmodMIB, dlmodIndex=dlmodIndex, ucdDlmodMIB=ucdDlmodMIB, dlmodEntry=dlmodEntry, dlmodError=dlmodError, dlmodTable=dlmodTable, dlmodNextIndex=dlmodNextIndex, dlmodPath=dlmodPath)

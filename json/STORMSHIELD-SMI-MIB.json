@@ -1,0 +1,54 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "IpAddress",
+      "TimeTicks",
+      "MibIdentifier",
+      "OBJECT-TYPE",
+      "iso",
+      "Bits",
+      "Unsigned32",
+      "Gauge32",
+      "Integer32",
+      "MODULE-IDENTITY",
+      "Counter32",
+      "OBJECT-IDENTITY",
+      "NOTIFICATION-TYPE",
+      "enterprises",
+      "Counter64"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "stormshield": {
+    "name": "stormshield",
+    "oid": "1.3.6.1.4.1.11256",
+    "class": "objectidentity"
+  },
+  "stormshieldMIB": {
+    "name": "stormshieldMIB",
+    "oid": "1.3.6.1.4.1.11256.1",
+    "class": "objectidentity"
+  },
+  "snsNotifications": {
+    "name": "snsNotifications",
+    "oid": "1.3.6.1.4.1.11256.1.6",
+    "class": "objectidentity"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/stormshield/STORMSHIELD-SMI-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:40:17 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "STORMSHIELD-SMI-MIB"
+  }
+}

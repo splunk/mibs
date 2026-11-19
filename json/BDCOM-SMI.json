@@ -1,0 +1,86 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "MODULE-IDENTITY",
+      "Counter32",
+      "iso",
+      "OBJECT-IDENTITY",
+      "Unsigned32",
+      "Counter64",
+      "IpAddress",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "enterprises",
+      "TimeTicks",
+      "OBJECT-TYPE",
+      "Bits",
+      "Integer32"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "bdcom": {
+    "name": "bdcom",
+    "oid": "1.3.6.1.4.1.3320",
+    "class": "moduleidentity"
+  },
+  "bdcomProducts": {
+    "name": "bdcomProducts",
+    "oid": "1.3.6.1.4.1.3320.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "bdlocal": {
+    "name": "bdlocal",
+    "oid": "1.3.6.1.4.1.3320.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "bdtemporary": {
+    "name": "bdtemporary",
+    "oid": "1.3.6.1.4.1.3320.3",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "bdMgmt": {
+    "name": "bdMgmt",
+    "oid": "1.3.6.1.4.1.3320.9",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "bdcomModules": {
+    "name": "bdcomModules",
+    "oid": "1.3.6.1.4.1.3320.12",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "bdcomPolicyAuto": {
+    "name": "bdcomPolicyAuto",
+    "oid": "1.3.6.1.4.1.3320.18",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "bdcomPibToMib": {
+    "name": "bdcomPibToMib",
+    "oid": "1.3.6.1.4.1.3320.18.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/bdcom/BDCOM-SMI",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:31:18 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "BDCOM-SMI"
+  }
+}

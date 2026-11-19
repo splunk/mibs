@@ -1,0 +1,99 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "IpAddress",
+      "mib-2",
+      "TimeTicks",
+      "MibIdentifier",
+      "Integer32",
+      "Unsigned32",
+      "Bits",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "Counter32",
+      "Counter64",
+      "NOTIFICATION-TYPE",
+      "iso"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "bgp4V2TC": {
+    "name": "bgp4V2TC",
+    "oid": "1.3.6.1.2.1.100",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2010-02-01 00:00",
+        "description": "Initial version."
+      }
+    ]
+  },
+  "Bgp4V2IdentifierTC": {
+    "name": "Bgp4V2IdentifierTC",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 4,
+            "max": 4
+          }
+        ]
+      }
+    },
+    "displayhint": "1d.",
+    "status": "current"
+  },
+  "Bgp4V2AddressFamilyIdentifierTC": {
+    "name": "Bgp4V2AddressFamilyIdentifierTC",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "ipv4": 1,
+          "ipv6": 2
+        }
+      }
+    },
+    "status": "current"
+  },
+  "Bgp4V2SubsequentAddressFamilyIdentifierTC": {
+    "name": "Bgp4V2SubsequentAddressFamilyIdentifierTC",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "unicast": 1,
+          "multicast": 2,
+          "mpls": 4
+        }
+      }
+    },
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/standard/ietf/BGP4V2-TC-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:29:56 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "BGP4V2-TC-MIB"
+  }
+}

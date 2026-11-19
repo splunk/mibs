@@ -1,0 +1,56 @@
+#
+# PySNMP MIB module SL-RADIUS-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/packetlight/SL-RADIUS-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:38:29 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+slMain, = mibBuilder.importSymbols("SL-MAIN-MIB", "slMain")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, Counter64, Unsigned32, iso, TimeTicks, Integer32, ObjectIdentity, mib_2, NotificationType, IpAddress, Bits, Counter32, ModuleIdentity, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "Counter64", "Unsigned32", "iso", "TimeTicks", "Integer32", "ObjectIdentity", "mib-2", "NotificationType", "IpAddress", "Bits", "Counter32", "ModuleIdentity", "MibIdentifier")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
+slRadiusMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23))
+if mibBuilder.loadTexts: slRadiusMIB.setLastUpdated('200712060000Z')
+if mibBuilder.loadTexts: slRadiusMIB.setOrganization('PacketLight Networks Ltd.')
+if mibBuilder.loadTexts: slRadiusMIB.setContactInfo('Omri_Viner@PacketLight.com')
+if mibBuilder.loadTexts: slRadiusMIB.setDescription('The MIB module for entities implementing the client side of\n         the Remote Access Dialin User Service (RADIUS) accounting\n         protocol.')
+slRadiusClientMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1))
+slRadiusClient = MibIdentifier((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 1))
+slRadiusTraps = MibIdentifier((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 2))
+class SharedSecret(TextualConvention, OctetString):
+    description = 'Authentication Shared-Secret.'
+    status = 'current'
+    subtypeSpec = OctetString.subtypeSpec + ValueSizeConstraint(0, 256)
+
+slRadiusEnabled = MibScalar((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 1, 1), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: slRadiusEnabled.setStatus('current')
+if mibBuilder.loadTexts: slRadiusEnabled.setDescription('true(1) - radius is enabled\n             false(2) - radius is disabled.')
+slRadiusServerTable = MibTable((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 1, 2), )
+if mibBuilder.loadTexts: slRadiusServerTable.setStatus('current')
+if mibBuilder.loadTexts: slRadiusServerTable.setDescription('The (conceptual) table listing the RADIUS accounting\n             servers with which the client shares a secret.')
+slRadiusServerEntry = MibTableRow((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 1, 2, 1), ).setIndexNames((0, "SL-RADIUS-MIB", "slRadiusServerIndex"))
+if mibBuilder.loadTexts: slRadiusServerEntry.setStatus('current')
+if mibBuilder.loadTexts: slRadiusServerEntry.setDescription('An entry (conceptual row) representing a RADIUS\n             accounting server with which the client shares a secret.')
+slRadiusServerIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 1, 2, 1, 1), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: slRadiusServerIndex.setStatus('current')
+if mibBuilder.loadTexts: slRadiusServerIndex.setDescription('1 - Primary\n             2 - Secondary.')
+slRadiusServerAddress = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 1, 2, 1, 2), IpAddress()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: slRadiusServerAddress.setStatus('current')
+if mibBuilder.loadTexts: slRadiusServerAddress.setDescription('The IP address of the RADIUS accounting server\n             referred to in this table entry.')
+slRadiusServerPort = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 1, 2, 1, 3), Integer32()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: slRadiusServerPort.setStatus('current')
+if mibBuilder.loadTexts: slRadiusServerPort.setDescription('The port number of the server.')
+slRadiusServerAdminStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 1, 2, 1, 4), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("up", 1), ("down", 2)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: slRadiusServerAdminStatus.setStatus('current')
+if mibBuilder.loadTexts: slRadiusServerAdminStatus.setDescription('The admin status of the server.')
+slRadiusTimeout = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 1, 2, 1, 5), Integer32()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: slRadiusTimeout.setStatus('current')
+if mibBuilder.loadTexts: slRadiusTimeout.setDescription('The server timeout specified in seconds. \n             The range is 1..30 seconds. The default is 15 seconds')
+slRadiusSharedSecret = MibTableColumn((1, 3, 6, 1, 4, 1, 4515, 1, 3, 23, 1, 1, 2, 1, 6), SharedSecret()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: slRadiusSharedSecret.setStatus('current')
+if mibBuilder.loadTexts: slRadiusSharedSecret.setDescription('The shared secret of the server.')
+mibBuilder.exportSymbols("SL-RADIUS-MIB", slRadiusServerAdminStatus=slRadiusServerAdminStatus, slRadiusServerAddress=slRadiusServerAddress, slRadiusEnabled=slRadiusEnabled, slRadiusTraps=slRadiusTraps, slRadiusTimeout=slRadiusTimeout, slRadiusClientMIBObjects=slRadiusClientMIBObjects, slRadiusServerTable=slRadiusServerTable, slRadiusServerEntry=slRadiusServerEntry, slRadiusServerIndex=slRadiusServerIndex, slRadiusSharedSecret=slRadiusSharedSecret, slRadiusServerPort=slRadiusServerPort, slRadiusClient=slRadiusClient, PYSNMP_MODULE_ID=slRadiusMIB, SharedSecret=SharedSecret, slRadiusMIB=slRadiusMIB)

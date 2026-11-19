@@ -1,0 +1,83 @@
+#
+# PySNMP MIB module CISCO-ENTITY-ASSET-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ENTITY-ASSET-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+entPhysicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
+ciscoEntityAssetMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 92))
+ciscoEntityAssetMIB.setRevisions(('2003-09-18 00:00', '2002-07-23 16:00', '1999-06-02 16:00',))
+if mibBuilder.loadTexts: ciscoEntityAssetMIB.setLastUpdated('200309180000Z')
+if mibBuilder.loadTexts: ciscoEntityAssetMIB.setOrganization('Cisco Systems, Inc.')
+ciscoEntityAssetMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 92, 1))
+ceAssetTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1), )
+if mibBuilder.loadTexts: ceAssetTable.setStatus('current')
+ceAssetEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1), ).setIndexNames((0, "ENTITY-MIB", "entPhysicalIndex"))
+if mibBuilder.loadTexts: ceAssetEntry.setStatus('current')
+ceAssetOEMString = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 1), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetOEMString.setStatus('deprecated')
+ceAssetSerialNumber = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 2), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetSerialNumber.setStatus('deprecated')
+ceAssetOrderablePartNumber = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 3), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetOrderablePartNumber.setStatus('deprecated')
+ceAssetHardwareRevision = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 4), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetHardwareRevision.setStatus('deprecated')
+ceAssetMfgAssyNumber = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 5), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetMfgAssyNumber.setStatus('current')
+ceAssetMfgAssyRevision = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 6), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetMfgAssyRevision.setStatus('current')
+ceAssetFirmwareID = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 7), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetFirmwareID.setStatus('deprecated')
+ceAssetFirmwareRevision = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 8), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetFirmwareRevision.setStatus('deprecated')
+ceAssetSoftwareID = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 9), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetSoftwareID.setStatus('deprecated')
+ceAssetSoftwareRevision = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 10), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetSoftwareRevision.setStatus('deprecated')
+ceAssetCLEI = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 11), SnmpAdminString().subtype(subtypeSpec=ConstraintsUnion(ValueSizeConstraint(0, 0), ValueSizeConstraint(10, 10), ))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetCLEI.setStatus('current')
+ceAssetAlias = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 12), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(0, 32))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ceAssetAlias.setStatus('deprecated')
+ceAssetTag = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 13), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(0, 32))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ceAssetTag.setStatus('deprecated')
+ceAssetIsFRU = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 92, 1, 1, 1, 14), TruthValue()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceAssetIsFRU.setStatus('deprecated')
+ciscoEntityAssetMIBNotificationsPrefix = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 92, 2))
+ciscoEntityAssetMIBNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 92, 2, 0))
+ciscoEntityAssetMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 92, 3))
+ciscoEntityAssetMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 92, 3, 1))
+ciscoEntityAssetMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 92, 3, 2))
+ciscoEntityAssetMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 92, 3, 1, 1)).setObjects(("CISCO-ENTITY-ASSET-MIB", "ceAssetGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoEntityAssetMIBCompliance = ciscoEntityAssetMIBCompliance.setStatus('deprecated')
+ciscoEntityAssetMIBComplianceRev1 = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 92, 3, 1, 2)).setObjects(("CISCO-ENTITY-ASSET-MIB", "ceAssetGroupRev1"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetEntityGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoEntityAssetMIBComplianceRev1 = ciscoEntityAssetMIBComplianceRev1.setStatus('deprecated')
+ciscoEntityAssetMIBComplianceRev2 = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 92, 3, 1, 3)).setObjects(("CISCO-ENTITY-ASSET-MIB", "ceAssetGroupRev2"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoEntityAssetMIBComplianceRev2 = ciscoEntityAssetMIBComplianceRev2.setStatus('current')
+ceAssetGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 92, 3, 2, 1)).setObjects(("CISCO-ENTITY-ASSET-MIB", "ceAssetOEMString"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetSerialNumber"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetOrderablePartNumber"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetHardwareRevision"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetMfgAssyNumber"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetMfgAssyRevision"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetFirmwareID"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetFirmwareRevision"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetSoftwareID"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetSoftwareRevision"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetCLEI"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetAlias"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetTag"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetIsFRU"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceAssetGroup = ceAssetGroup.setStatus('deprecated')
+ceAssetGroupRev1 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 92, 3, 2, 2)).setObjects(("CISCO-ENTITY-ASSET-MIB", "ceAssetOEMString"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetMfgAssyNumber"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetMfgAssyRevision"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetFirmwareID"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetSoftwareID"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetCLEI"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceAssetGroupRev1 = ceAssetGroupRev1.setStatus('deprecated')
+ceAssetEntityGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 92, 3, 2, 3)).setObjects(("CISCO-ENTITY-ASSET-MIB", "ceAssetOrderablePartNumber"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetSerialNumber"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetHardwareRevision"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetFirmwareRevision"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetSoftwareRevision"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetAlias"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetTag"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetIsFRU"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceAssetEntityGroup = ceAssetEntityGroup.setStatus('deprecated')
+ceAssetGroupRev2 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 92, 3, 2, 4)).setObjects(("CISCO-ENTITY-ASSET-MIB", "ceAssetMfgAssyNumber"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetMfgAssyRevision"), ("CISCO-ENTITY-ASSET-MIB", "ceAssetCLEI"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceAssetGroupRev2 = ceAssetGroupRev2.setStatus('current')
+mibBuilder.exportSymbols("CISCO-ENTITY-ASSET-MIB", ciscoEntityAssetMIBCompliance=ciscoEntityAssetMIBCompliance, ceAssetGroupRev1=ceAssetGroupRev1, ceAssetGroup=ceAssetGroup, ceAssetHardwareRevision=ceAssetHardwareRevision, ceAssetEntry=ceAssetEntry, ceAssetSoftwareRevision=ceAssetSoftwareRevision, ceAssetFirmwareRevision=ceAssetFirmwareRevision, ceAssetGroupRev2=ceAssetGroupRev2, ceAssetEntityGroup=ceAssetEntityGroup, ceAssetTable=ceAssetTable, ceAssetMfgAssyRevision=ceAssetMfgAssyRevision, PYSNMP_MODULE_ID=ciscoEntityAssetMIB, ceAssetOrderablePartNumber=ceAssetOrderablePartNumber, ceAssetCLEI=ceAssetCLEI, ceAssetMfgAssyNumber=ceAssetMfgAssyNumber, ceAssetAlias=ceAssetAlias, ceAssetTag=ceAssetTag, ciscoEntityAssetMIBNotifications=ciscoEntityAssetMIBNotifications, ciscoEntityAssetMIBConformance=ciscoEntityAssetMIBConformance, ciscoEntityAssetMIBObjects=ciscoEntityAssetMIBObjects, ciscoEntityAssetMIB=ciscoEntityAssetMIB, ciscoEntityAssetMIBComplianceRev2=ciscoEntityAssetMIBComplianceRev2, ciscoEntityAssetMIBNotificationsPrefix=ciscoEntityAssetMIBNotificationsPrefix, ciscoEntityAssetMIBCompliances=ciscoEntityAssetMIBCompliances, ceAssetIsFRU=ceAssetIsFRU, ceAssetFirmwareID=ceAssetFirmwareID, ciscoEntityAssetMIBGroups=ciscoEntityAssetMIBGroups, ceAssetOEMString=ceAssetOEMString, ceAssetSerialNumber=ceAssetSerialNumber, ceAssetSoftwareID=ceAssetSoftwareID, ciscoEntityAssetMIBComplianceRev1=ciscoEntityAssetMIBComplianceRev1)

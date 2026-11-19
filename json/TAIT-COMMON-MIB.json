@@ -1,0 +1,80 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "Gauge32",
+      "IpAddress",
+      "MibIdentifier",
+      "Bits",
+      "enterprises",
+      "Counter64",
+      "NOTIFICATION-TYPE",
+      "Unsigned32",
+      "TimeTicks",
+      "Integer32",
+      "OBJECT-TYPE",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "Counter32"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "taitCommonRegModule": {
+    "name": "taitCommonRegModule",
+    "oid": "1.3.6.1.4.1.3570.1.1.1",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2012-02-20 12:00",
+        "description": "Update with new identity."
+      }
+    ]
+  },
+  "tait": {
+    "name": "tait",
+    "oid": "1.3.6.1.4.1.3570",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "taitRegistrations": {
+    "name": "taitRegistrations",
+    "oid": "1.3.6.1.4.1.3570.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "taitModules": {
+    "name": "taitModules",
+    "oid": "1.3.6.1.4.1.3570.1.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "taitGeneric": {
+    "name": "taitGeneric",
+    "oid": "1.3.6.1.4.1.3570.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "taitProducts": {
+    "name": "taitProducts",
+    "oid": "1.3.6.1.4.1.3570.3",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/tait/TAIT-COMMON-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:40:23 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "TAIT-COMMON-MIB"
+  }
+}

@@ -1,0 +1,63 @@
+#
+# PySNMP MIB module PT-PM-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ericsson/PT-PM-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:34:33 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint", "ConstraintsIntersection")
+pt, = mibBuilder.importSymbols("PT-MIB", "pt")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+Unsigned32, Counter32, TimeTicks, Gauge32, Bits, iso, IpAddress, ModuleIdentity, Integer32, NotificationType, ObjectIdentity, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "Counter32", "TimeTicks", "Gauge32", "Bits", "iso", "IpAddress", "ModuleIdentity", "Integer32", "NotificationType", "ObjectIdentity", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+ptPM = ModuleIdentity((1, 3, 6, 1, 4, 1, 193, 223, 2, 5))
+ptPM.setRevisions(('2018-08-29 12:30', '2016-03-09 12:30', '2016-02-10 12:30',))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    if mibBuilder.loadTexts: ptPM.setRevisionsDescriptions(('Support for PT PM OIDs', 'Version 1.0:   Validated.', 'Version 0.1:   The initial version of this MIB module.',))
+if mibBuilder.loadTexts: ptPM.setLastUpdated('201808291230Z')
+if mibBuilder.loadTexts: ptPM.setOrganization('Ericsson')
+if mibBuilder.loadTexts: ptPM.setContactInfo(' ')
+if mibBuilder.loadTexts: ptPM.setDescription('This is the MIB of PT PM specifics')
+ptPMConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 2))
+ptPMTable = MibTable((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 1), )
+if mibBuilder.loadTexts: ptPMTable.setStatus('current')
+if mibBuilder.loadTexts: ptPMTable.setDescription('A table of ptPM Table entries.')
+ptPMEntry = MibTableRow((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 1, 1), ).setIndexNames((0, "PT-PM-MIB", "queueIndex"))
+if mibBuilder.loadTexts: ptPMEntry.setStatus('current')
+if mibBuilder.loadTexts: ptPMEntry.setDescription('An entry of ptPM application.')
+queueIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 1, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: queueIndex.setStatus('current')
+if mibBuilder.loadTexts: queueIndex.setDescription('A unique index for the queue.')
+forwardingPacket = MibTableColumn((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 1, 1, 2), Counter64()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: forwardingPacket.setStatus('current')
+if mibBuilder.loadTexts: forwardingPacket.setDescription('The number of packets that have been sent from the queue.')
+forwardingOctets = MibTableColumn((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 1, 1, 3), Counter64()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: forwardingOctets.setStatus('current')
+if mibBuilder.loadTexts: forwardingOctets.setDescription('The number of octets that have been sent from the queue.')
+discardPackets = MibTableColumn((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 1, 1, 4), Counter64()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: discardPackets.setStatus('current')
+if mibBuilder.loadTexts: discardPackets.setDescription('The number of packets that have been discarded by the queue management mechanism.')
+discardOctets = MibTableColumn((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 1, 1, 5), Counter64()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: discardOctets.setStatus('current')
+if mibBuilder.loadTexts: discardOctets.setDescription('The number of octets that have been discarded by the queue management mechanism.')
+inputPackets = MibTableColumn((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 1, 1, 6), Counter64()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: inputPackets.setStatus('current')
+if mibBuilder.loadTexts: inputPackets.setDescription('The number of packets that have reached the queue.')
+inputOctets = MibTableColumn((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 1, 1, 7), Counter64()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: inputOctets.setStatus('current')
+if mibBuilder.loadTexts: inputOctets.setDescription('The number of octets that have reached the queue.')
+ptPMCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 2, 1))
+ptPMGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 2, 2))
+ptPMFullCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 2, 1, 1)).setObjects(("PT-PM-MIB", "ptPMCompleteGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ptPMFullCompliance = ptPMFullCompliance.setStatus('current')
+if mibBuilder.loadTexts: ptPMFullCompliance.setDescription('The compliance statement for SNMP entities which implement everything.')
+ptPMCompleteGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 193, 223, 2, 5, 2, 2, 1)).setObjects(("PT-PM-MIB", "forwardingPacket"), ("PT-PM-MIB", "forwardingOctets"), ("PT-PM-MIB", "discardPackets"), ("PT-PM-MIB", "discardOctets"), ("PT-PM-MIB", "inputPackets"), ("PT-PM-MIB", "inputOctets"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ptPMCompleteGroup = ptPMCompleteGroup.setStatus('current')
+if mibBuilder.loadTexts: ptPMCompleteGroup.setDescription('A collection of all current objects in this MIB module.')
+mibBuilder.exportSymbols("PT-PM-MIB", ptPMConformance=ptPMConformance, forwardingPacket=forwardingPacket, forwardingOctets=forwardingOctets, inputPackets=inputPackets, discardPackets=discardPackets, ptPMCompliances=ptPMCompliances, ptPMFullCompliance=ptPMFullCompliance, ptPMCompleteGroup=ptPMCompleteGroup, ptPM=ptPM, discardOctets=discardOctets, PYSNMP_MODULE_ID=ptPM, ptPMGroups=ptPMGroups, queueIndex=queueIndex, ptPMTable=ptPMTable, inputOctets=inputOctets, ptPMEntry=ptPMEntry)

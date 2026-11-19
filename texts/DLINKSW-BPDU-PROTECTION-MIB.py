@@ -1,0 +1,71 @@
+#
+# PySNMP MIB module DLINKSW-BPDU-PROTECTION-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-BPDU-PROTECTION-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:48 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion")
+dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
+ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+Integer32, Counter32, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, Gauge32, ObjectIdentity, ModuleIdentity, Bits, IpAddress, iso, NotificationType, MibIdentifier, Unsigned32 = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Counter32", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "Gauge32", "ObjectIdentity", "ModuleIdentity", "Bits", "IpAddress", "iso", "NotificationType", "MibIdentifier", "Unsigned32")
+TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
+dlinkSwBpduProtectionMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 47))
+dlinkSwBpduProtectionMIB.setRevisions(('2013-02-19 00:00',))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    if mibBuilder.loadTexts: dlinkSwBpduProtectionMIB.setRevisionsDescriptions(('This is the first version of the MIB file.',))
+if mibBuilder.loadTexts: dlinkSwBpduProtectionMIB.setLastUpdated('201302190000Z')
+if mibBuilder.loadTexts: dlinkSwBpduProtectionMIB.setOrganization('D-Link Corp.')
+if mibBuilder.loadTexts: dlinkSwBpduProtectionMIB.setContactInfo('        D-Link Corporation\n\n             Postal: No. 289, Sinhu 3rd Rd., Neihu District,\n                     Taipei City 114, Taiwan, R.O.C\n             Tel:     +886-2-66000123\n             E-mail: tsd@dlink.com.tw\n            ')
+if mibBuilder.loadTexts: dlinkSwBpduProtectionMIB.setDescription('This MIB module defines objects for BPDU Protection.')
+dBpduProtectionNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 47, 0))
+dBpduProtectionObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 47, 1))
+dBpduProtectionConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 47, 2))
+dBpduProtectionGlobalEnabled = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 47, 1, 1), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dBpduProtectionGlobalEnabled.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionGlobalEnabled.setDescription("This object indicates the global BPDU Protection state.    \n            'true' - The BPDU Protection is enabled globally.                   \n            'false' - The lBPDU Protection is disabled globally.")
+dBpduProtectionNotifyEnabled = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 47, 1, 2), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dBpduProtectionNotifyEnabled.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionNotifyEnabled.setDescription('This object indicates whether sending SNMP notifications for BPDU Protection.                                              \n            ')
+dBpduProtectionIfTable = MibTable((1, 3, 6, 1, 4, 1, 171, 14, 47, 1, 3), )
+if mibBuilder.loadTexts: dBpduProtectionIfTable.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionIfTable.setDescription('This table consists of a list of interface-specific BPDU Protection\n            information entries.')
+dBpduProtectionIfEntry = MibTableRow((1, 3, 6, 1, 4, 1, 171, 14, 47, 1, 3, 1), ).setIndexNames((0, "IF-MIB", "ifIndex"))
+if mibBuilder.loadTexts: dBpduProtectionIfEntry.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionIfEntry.setDescription('An entry indicates the state and attack status of BPDU Protection \n            on an interface.')
+dBpduProtectionIfCfgMode = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 47, 1, 3, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4))).clone(namedValues=NamedValues(("disabled", 1), ("drop", 2), ("block", 3), ("shutdown", 4)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dBpduProtectionIfCfgMode.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionIfCfgMode.setDescription('This object indicates the operational mode of BPDU Protection on the interface.\n\n            disabled(1) - The BPDU Protection is disabled.\n\n            drop(2) - Drop all received BPDU packets when the interface enters the attacked state.\n\n            block(3) - Drop all packets (include BPDU and normal packets) when the interface\n                       enters the attacked state.\n\n            shutdown(4) - Shut down the interface when the interface enters he attacked state.\n            ')
+dBpduProtectionIfAttackStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 47, 1, 3, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("normal", 1), ("underAttack", 2)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: dBpduProtectionIfAttackStatus.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionIfAttackStatus.setDescription('This object indicates the status of BPDU Protection on an interface.\n            normal(1) - The interface is under normal status.\n            underAttack(2) - The inter is under attack status.')
+dBpduProtectionAttackOccur = NotificationType((1, 3, 6, 1, 4, 1, 171, 14, 47, 0, 1)).setObjects(("IF-MIB", "ifIndex"), ("DLINKSW-BPDU-PROTECTION-MIB", "dBpduProtectionIfCfgMode"))
+if mibBuilder.loadTexts: dBpduProtectionAttackOccur.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionAttackOccur.setDescription('This trap is sent when the BPDU attack happened on an interface.')
+dBpduProtectionAttackRecover = NotificationType((1, 3, 6, 1, 4, 1, 171, 14, 47, 0, 2)).setObjects(("IF-MIB", "ifIndex"))
+if mibBuilder.loadTexts: dBpduProtectionAttackRecover.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionAttackRecover.setDescription('This trap is sent when the BPDU attack recovered on an interface.')
+dBpduProtectionMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 47, 2, 1))
+dBpduProtectionMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 47, 2, 2))
+dBpduProtectionMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 171, 14, 47, 2, 1, 1)).setObjects(("DLINKSW-BPDU-PROTECTION-MIB", "dBpduProtectionCfgGroup"), ("DLINKSW-BPDU-PROTECTION-MIB", "dBpduProtectionIfGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dBpduProtectionMIBCompliance = dBpduProtectionMIBCompliance.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionMIBCompliance.setDescription('The compliance statement for entities which implement the \n            DLINKSW-BPDU-PROTECTION-MIB.')
+dBpduProtectionCfgGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 47, 2, 2, 1)).setObjects(("DLINKSW-BPDU-PROTECTION-MIB", "dBpduProtectionGlobalEnabled"), ("DLINKSW-BPDU-PROTECTION-MIB", "dBpduProtectionNotifyEnabled"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dBpduProtectionCfgGroup = dBpduProtectionCfgGroup.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionCfgGroup.setDescription('A collection of objects providing management of the BPDU \n            Protection feature.')
+dBpduProtectionIfGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 47, 2, 2, 2)).setObjects(("DLINKSW-BPDU-PROTECTION-MIB", "dBpduProtectionIfCfgMode"), ("DLINKSW-BPDU-PROTECTION-MIB", "dBpduProtectionIfAttackStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dBpduProtectionIfGroup = dBpduProtectionIfGroup.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionIfGroup.setDescription('A collection of objects providing management and information for \n            BPDU Protection a per-interface basis.')
+dBpduProtectionNotifyGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 171, 14, 47, 2, 2, 3)).setObjects(("DLINKSW-BPDU-PROTECTION-MIB", "dBpduProtectionAttackOccur"), ("DLINKSW-BPDU-PROTECTION-MIB", "dBpduProtectionAttackRecover"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dBpduProtectionNotifyGroup = dBpduProtectionNotifyGroup.setStatus('current')
+if mibBuilder.loadTexts: dBpduProtectionNotifyGroup.setDescription('A collection of notifications for BPDU Protection.')
+mibBuilder.exportSymbols("DLINKSW-BPDU-PROTECTION-MIB", dBpduProtectionMIBCompliance=dBpduProtectionMIBCompliance, dBpduProtectionNotifyEnabled=dBpduProtectionNotifyEnabled, dBpduProtectionMIBGroups=dBpduProtectionMIBGroups, PYSNMP_MODULE_ID=dlinkSwBpduProtectionMIB, dBpduProtectionNotifications=dBpduProtectionNotifications, dBpduProtectionAttackOccur=dBpduProtectionAttackOccur, dlinkSwBpduProtectionMIB=dlinkSwBpduProtectionMIB, dBpduProtectionGlobalEnabled=dBpduProtectionGlobalEnabled, dBpduProtectionConformance=dBpduProtectionConformance, dBpduProtectionObjects=dBpduProtectionObjects, dBpduProtectionIfEntry=dBpduProtectionIfEntry, dBpduProtectionMIBCompliances=dBpduProtectionMIBCompliances, dBpduProtectionIfAttackStatus=dBpduProtectionIfAttackStatus, dBpduProtectionIfTable=dBpduProtectionIfTable, dBpduProtectionCfgGroup=dBpduProtectionCfgGroup, dBpduProtectionIfCfgMode=dBpduProtectionIfCfgMode, dBpduProtectionAttackRecover=dBpduProtectionAttackRecover, dBpduProtectionNotifyGroup=dBpduProtectionNotifyGroup, dBpduProtectionIfGroup=dBpduProtectionIfGroup)

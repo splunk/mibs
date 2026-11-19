@@ -1,0 +1,62 @@
+#
+# PySNMP MIB module CISCO-BBSM-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-BBSM-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
+DisplayString, TextualConvention, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "DateAndTime")
+ciscoBbsmMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 358))
+ciscoBbsmMIB.setRevisions(('2004-04-03 00:00',))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    if mibBuilder.loadTexts: ciscoBbsmMIB.setRevisionsDescriptions(('Initial revision of this MIB module.',))
+if mibBuilder.loadTexts: ciscoBbsmMIB.setLastUpdated('200404030000Z')
+if mibBuilder.loadTexts: ciscoBbsmMIB.setOrganization('Cisco Systems, Inc.')
+if mibBuilder.loadTexts: ciscoBbsmMIB.setContactInfo('       Cisco Systems\n                        Customer Service\n\n                Postal: 170 W Tasman Drive\n                        San Jose, CA  95134\n                        USA\n\n                   Tel: +1 800 553-NETS\n\n                E-mail: cs-bbsm@cisco.com')
+if mibBuilder.loadTexts: ciscoBbsmMIB.setDescription('This mib is designed to send BBSM specific\n       notifications.  There are variables that contain detail data\n       that are bind to a notification. The SNMP Manager that \n       receives the notifications should look at the binding \n       variables for further details of the notification data.\n\n       BBSM stands for Building Broadband Service Manager.  It is a \n       software-based service platform that enables customers to \n       create, market, and operate broadband access services, \n       such as high-speed Internet access with plug-and-play, \n       multiple authentication and billing options and Web-based \n       management, reporting, and configuration.')
+ciscoBbsmNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 358, 0))
+ciscoBbsmMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 358, 1))
+ciscoBbsmEventInfo = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 358, 1, 1))
+cbbsmEventDescription = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 358, 1, 1, 1), OctetString()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: cbbsmEventDescription.setStatus('current')
+if mibBuilder.loadTexts: cbbsmEventDescription.setDescription("The cbbsmEventDescription binds with notification. \n           It displays the description of an event that caused \n           a notification to be sent.\n           \n           Examples of cbbsmEventDescription value would be \n           'Failed to connect to RADIUS server xx.yy.zz.aa' or \n           'Failed to connect to ICS server xx.yy.zz.aa'")
+cbbsmEventSource = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 358, 1, 1, 2), SnmpAdminString()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: cbbsmEventSource.setStatus('current')
+if mibBuilder.loadTexts: cbbsmEventSource.setDescription("The cbbsmEventSource binds with a notification. It displays\n           the source of an event that caused the notification to be \n           sent.  The cbbsmEventSource also binds with \n           cbbsmEventDescription.\n\n           Examples of cbbsmEventSource value would be \n           'BBSM_RADIUS' or \n           'BBSM_ICS' ")
+cbbsmEventID = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 358, 1, 1, 3), Unsigned32()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: cbbsmEventID.setStatus('current')
+if mibBuilder.loadTexts: cbbsmEventID.setDescription('The cbbsmEventID binds with a notification. It displays  \n           event ID of an event that caused the notification to be \n           sent. The cbbsmEventID also binds with \n           cbbsmEventDescription.\n \n           Examples of a cbbsmEventID would be 1, 2, ...')
+cbbsmEventType = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 358, 1, 1, 4), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("error", 1), ("warning", 2), ("information", 3)))).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: cbbsmEventType.setStatus('current')
+if mibBuilder.loadTexts: cbbsmEventType.setDescription('The cbbsmEventType binds with the notification. It displays\n           the event type of an event that caused notification to be \n           sent.  The cbbsmEventType also binds with \n           cbbsmEventDescription.\n \n           error(1) : An Error event indicates a significant problem, \n           such as loss of data or loss of functionality.\n           \n           warning(2): A Warning event is not necessarily significant,\n           but may indicate a possible future problem.\n\n           information(3): An Information event describes the \n           successful operation of an application, driver, or service.')
+cbbsmEventTime = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 358, 1, 1, 5), DateAndTime()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: cbbsmEventTime.setStatus('current')
+if mibBuilder.loadTexts: cbbsmEventTime.setDescription('The cbbsmEventTime binds with the notification. It is a\n           date and time string that displays the time of the event\n           that caused notification to be sent.')
+ciscoBbsmEvent = NotificationType((1, 3, 6, 1, 4, 1, 9, 9, 358, 0, 1)).setObjects(("CISCO-BBSM-MIB", "cbbsmEventDescription"), ("CISCO-BBSM-MIB", "cbbsmEventSource"), ("CISCO-BBSM-MIB", "cbbsmEventID"), ("CISCO-BBSM-MIB", "cbbsmEventType"), ("CISCO-BBSM-MIB", "cbbsmEventTime"))
+if mibBuilder.loadTexts: ciscoBbsmEvent.setStatus('current')
+if mibBuilder.loadTexts: ciscoBbsmEvent.setDescription("Notification of a BBSM event.  The details of the\n           event is binded in variables listed.  These variables\n           are identical to the same event logged on the Microsoft\n           Event Viewer.  \n\t\t\t\t\n           For example, if BBSM had problem connecting to RADIUS\n           server and SNMP Service on BBSM is configured to send\n           notifications, a notification of ciscoBbsmEvent will \n           be sent and binded variables will have following values\n           cbbsmEventDescription = 'Failed to connect to RADIUS server\n           xx.yy.zz.aa'\n           cbbsmEventSource = 'BBSM_RADIUS'\n           cbbsmEventID = '1'\n           cbbsmEventType = 2\n           ")
+ciscoBbsmMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 358, 2))
+ciscoBbsmMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 358, 2, 1))
+ciscoBbsmMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 358, 2, 2))
+ciscoBbsmMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 358, 2, 1, 1)).setObjects(("CISCO-BBSM-MIB", "ciscoBbsmMIBGroup"), ("CISCO-BBSM-MIB", "ciscoBbsmMIBNotificationGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoBbsmMIBCompliance = ciscoBbsmMIBCompliance.setStatus('current')
+if mibBuilder.loadTexts: ciscoBbsmMIBCompliance.setDescription('The compliance statement for entities which implement\n                the Cisco BBSM MIB')
+ciscoBbsmMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 358, 2, 2, 1)).setObjects(("CISCO-BBSM-MIB", "cbbsmEventDescription"), ("CISCO-BBSM-MIB", "cbbsmEventSource"), ("CISCO-BBSM-MIB", "cbbsmEventID"), ("CISCO-BBSM-MIB", "cbbsmEventType"), ("CISCO-BBSM-MIB", "cbbsmEventTime"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoBbsmMIBGroup = ciscoBbsmMIBGroup.setStatus('current')
+if mibBuilder.loadTexts: ciscoBbsmMIBGroup.setDescription('A set of objects providing details of a event\n                to a Cisco agent.')
+ciscoBbsmMIBNotificationGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 358, 2, 2, 2)).setObjects(("CISCO-BBSM-MIB", "ciscoBbsmEvent"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoBbsmMIBNotificationGroup = ciscoBbsmMIBNotificationGroup.setStatus('current')
+if mibBuilder.loadTexts: ciscoBbsmMIBNotificationGroup.setDescription('Set of notifications implemented in this module.')
+mibBuilder.exportSymbols("CISCO-BBSM-MIB", cbbsmEventDescription=cbbsmEventDescription, ciscoBbsmEvent=ciscoBbsmEvent, cbbsmEventID=cbbsmEventID, cbbsmEventType=cbbsmEventType, ciscoBbsmMIBCompliance=ciscoBbsmMIBCompliance, ciscoBbsmMIBGroup=ciscoBbsmMIBGroup, ciscoBbsmMIBNotificationGroup=ciscoBbsmMIBNotificationGroup, ciscoBbsmMIBConformance=ciscoBbsmMIBConformance, ciscoBbsmMIB=ciscoBbsmMIB, ciscoBbsmMIBCompliances=ciscoBbsmMIBCompliances, ciscoBbsmNotifications=ciscoBbsmNotifications, cbbsmEventSource=cbbsmEventSource, PYSNMP_MODULE_ID=ciscoBbsmMIB, ciscoBbsmEventInfo=ciscoBbsmEventInfo, cbbsmEventTime=cbbsmEventTime, ciscoBbsmMIBGroups=ciscoBbsmMIBGroups, ciscoBbsmMIBObjects=ciscoBbsmMIBObjects)

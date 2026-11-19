@@ -1,0 +1,85 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "NOTIFICATION-TYPE",
+      "Counter64",
+      "OBJECT-TYPE",
+      "Gauge32",
+      "Unsigned32",
+      "IpAddress",
+      "MibIdentifier",
+      "Counter32",
+      "enterprises",
+      "Bits",
+      "iso",
+      "TimeTicks",
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY",
+      "Integer32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "hiPathWireless": {
+    "name": "hiPathWireless",
+    "oid": "1.3.6.1.4.1.4329.15",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2005-07-21 02:37",
+        "description": "Initial version."
+      }
+    ]
+  },
+  "siemens": {
+    "name": "siemens",
+    "oid": "1.3.6.1.4.1.4329",
+    "class": "objectidentity"
+  },
+  "hiPathWirelessProducts": {
+    "name": "hiPathWirelessProducts",
+    "oid": "1.3.6.1.4.1.4329.15.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "hiPathWirelessMgmt": {
+    "name": "hiPathWirelessMgmt",
+    "oid": "1.3.6.1.4.1.4329.15.3",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "hiPathWirelessDevelopment": {
+    "name": "hiPathWirelessDevelopment",
+    "oid": "1.3.6.1.4.1.4329.15.4",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "hiPathWirelessModules": {
+    "name": "hiPathWirelessModules",
+    "oid": "1.3.6.1.4.1.4329.15.5",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "hiPathWirelessHWM": {
+    "name": "hiPathWirelessHWM",
+    "oid": "1.3.6.1.4.1.4329.15.6",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ewc/HIPATH-WIRELESS-SMI",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:34:37 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "HIPATH-WIRELESS-SMI"
+  }
+}

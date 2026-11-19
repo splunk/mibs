@@ -1,0 +1,88 @@
+#
+# PySNMP MIB module CISCO-OPTICAL-IF-CROSS-CONNECT-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-OPTICAL-IF-CROSS-CONNECT-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
+InterfaceIndex, ifIndex = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex", "ifIndex")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+TextualConvention, DisplayString, RowStatus, TimeStamp = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "RowStatus", "TimeStamp")
+ciscoOpticalIfCrossConnectMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 68))
+ciscoOpticalIfCrossConnectMIB.setRevisions(('2002-03-13 00:00', '2001-04-20 00:00',))
+if mibBuilder.loadTexts: ciscoOpticalIfCrossConnectMIB.setLastUpdated('200203130000Z')
+if mibBuilder.loadTexts: ciscoOpticalIfCrossConnectMIB.setOrganization('Cisco Systems, Inc.')
+coifccMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 68, 1))
+coifccMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 68, 2))
+class CoifccCrossConnectOperStatus(TextualConvention, Integer32):
+    status = 'current'
+    subtypeSpec = Integer32.subtypeSpec + ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4))
+    namedValues = NamedValues(("up", 1), ("down", 2), ("dormant", 3), ("unknown", 4))
+
+coifccInterface = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 1))
+coifccCrossConnect = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2))
+coifccInterfaceTable = MibTable((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 1, 1), )
+if mibBuilder.loadTexts: coifccInterfaceTable.setStatus('current')
+coifccInterfaceEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 1, 1, 1), ).setIndexNames((0, "IF-MIB", "ifIndex"))
+if mibBuilder.loadTexts: coifccInterfaceEntry.setStatus('current')
+coifccIfCrossConnectIdentifier = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 1, 1, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483547))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: coifccIfCrossConnectIdentifier.setStatus('current')
+coifccCcIndexNext = MibScalar((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 2147483647))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: coifccCcIndexNext.setStatus('current')
+coifccCcLastChange = MibScalar((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 2), TimeStamp()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: coifccCcLastChange.setStatus('current')
+coifccCrossConnectTable = MibTable((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3), )
+if mibBuilder.loadTexts: coifccCrossConnectTable.setStatus('current')
+coifccCrossConnectEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1), ).setIndexNames((0, "CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcIndex"), (0, "CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcLowIfIndex"), (0, "CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcHighIfIndex"))
+if mibBuilder.loadTexts: coifccCrossConnectEntry.setStatus('current')
+coifccCcIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: coifccCcIndex.setStatus('current')
+coifccCcLowIfIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 2), InterfaceIndex())
+if mibBuilder.loadTexts: coifccCcLowIfIndex.setStatus('current')
+coifccCcHighIfIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 3), InterfaceIndex())
+if mibBuilder.loadTexts: coifccCcHighIfIndex.setStatus('current')
+coifccCcSwitchType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 4), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4))).clone(namedValues=NamedValues(("unknown", 1), ("electricalCrossConnect", 2), ("opticalCrossConnect", 3), ("autoSelect", 4))).clone('autoSelect')).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: coifccCcSwitchType.setStatus('current')
+coifccCcKind = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 5), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5))).clone(namedValues=NamedValues(("provisioned", 1), ("automatic", 2), ("dynamic", 3), ("protection", 4), ("other", 5)))).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: coifccCcKind.setStatus('current')
+coifccCcCreationTime = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 6), TimeStamp()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: coifccCcCreationTime.setStatus('current')
+coifccCcL2HOperStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 7), CoifccCrossConnectOperStatus()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: coifccCcL2HOperStatus.setStatus('current')
+coifccCcH2LOperStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 8), CoifccCrossConnectOperStatus()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: coifccCcH2LOperStatus.setStatus('current')
+coifccCcL2HLastChange = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 9), TimeStamp()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: coifccCcL2HLastChange.setStatus('current')
+coifccCcH2LLastChange = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 10), TimeStamp()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: coifccCcH2LLastChange.setStatus('current')
+coifccCcRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 11), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: coifccCcRowStatus.setStatus('current')
+coifccCcL2HAttenuation = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 12), Integer32().subtype(subtypeSpec=ValueRangeConstraint(-400, 0))).setUnits('1/10ths of dB').setMaxAccess("readcreate")
+if mibBuilder.loadTexts: coifccCcL2HAttenuation.setStatus('current')
+coifccCcH2LAttenuation = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 10, 68, 1, 2, 3, 1, 13), Integer32().subtype(subtypeSpec=ValueRangeConstraint(-400, 0))).setUnits('1/10ths of dB').setMaxAccess("readcreate")
+if mibBuilder.loadTexts: coifccCcH2LAttenuation.setStatus('current')
+coifccMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 68, 2, 1))
+coifccMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 68, 2, 2))
+coifccMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 10, 68, 2, 1, 1)).setObjects(("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccInterfaceGroup"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCrossConnectGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    coifccMIBCompliance = coifccMIBCompliance.setStatus('deprecated')
+coifccMIBComplianceRev1 = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 10, 68, 2, 1, 2)).setObjects(("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccInterfaceGroup"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCrossConnectGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    coifccMIBComplianceRev1 = coifccMIBComplianceRev1.setStatus('current')
+coifccInterfaceGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 68, 2, 2, 1)).setObjects(("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccIfCrossConnectIdentifier"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    coifccInterfaceGroup = coifccInterfaceGroup.setStatus('current')
+coifccCrossConnectGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 68, 2, 2, 2)).setObjects(("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcIndexNext"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcLastChange"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcSwitchType"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcKind"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcCreationTime"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcL2HOperStatus"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcH2LOperStatus"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcL2HLastChange"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcH2LLastChange"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcRowStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    coifccCrossConnectGroup = coifccCrossConnectGroup.setStatus('current')
+coifccAttenuationGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 68, 2, 2, 3)).setObjects(("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcL2HAttenuation"), ("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", "coifccCcH2LAttenuation"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    coifccAttenuationGroup = coifccAttenuationGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-OPTICAL-IF-CROSS-CONNECT-MIB", coifccInterfaceGroup=coifccInterfaceGroup, coifccCcKind=coifccCcKind, coifccCcLowIfIndex=coifccCcLowIfIndex, coifccCcH2LOperStatus=coifccCcH2LOperStatus, coifccCcRowStatus=coifccCcRowStatus, coifccCcH2LAttenuation=coifccCcH2LAttenuation, coifccMIBComplianceRev1=coifccMIBComplianceRev1, coifccInterface=coifccInterface, coifccCcIndex=coifccCcIndex, coifccCcL2HAttenuation=coifccCcL2HAttenuation, coifccCcCreationTime=coifccCcCreationTime, coifccMIBCompliances=coifccMIBCompliances, ciscoOpticalIfCrossConnectMIB=ciscoOpticalIfCrossConnectMIB, coifccMIBObjects=coifccMIBObjects, coifccMIBGroups=coifccMIBGroups, PYSNMP_MODULE_ID=ciscoOpticalIfCrossConnectMIB, coifccMIBConformance=coifccMIBConformance, coifccInterfaceTable=coifccInterfaceTable, coifccInterfaceEntry=coifccInterfaceEntry, coifccCrossConnectTable=coifccCrossConnectTable, coifccCcL2HOperStatus=coifccCcL2HOperStatus, coifccCcSwitchType=coifccCcSwitchType, coifccCcH2LLastChange=coifccCcH2LLastChange, coifccCrossConnect=coifccCrossConnect, coifccCcLastChange=coifccCcLastChange, CoifccCrossConnectOperStatus=CoifccCrossConnectOperStatus, coifccCrossConnectEntry=coifccCrossConnectEntry, coifccMIBCompliance=coifccMIBCompliance, coifccCcIndexNext=coifccCcIndexNext, coifccCrossConnectGroup=coifccCrossConnectGroup, coifccIfCrossConnectIdentifier=coifccIfCrossConnectIdentifier, coifccCcL2HLastChange=coifccCcL2HLastChange, coifccCcHighIfIndex=coifccCcHighIfIndex, coifccAttenuationGroup=coifccAttenuationGroup)

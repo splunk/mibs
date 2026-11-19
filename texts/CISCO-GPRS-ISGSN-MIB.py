@@ -1,0 +1,52 @@
+#
+# PySNMP MIB module CISCO-GPRS-ISGSN-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-GPRS-ISGSN-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoGprsIsgsnMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 9992))
+if mibBuilder.loadTexts: ciscoGprsIsgsnMIB.setLastUpdated('9810150000Z')
+if mibBuilder.loadTexts: ciscoGprsIsgsnMIB.setOrganization('Cisco Systems, Inc.')
+if mibBuilder.loadTexts: ciscoGprsIsgsnMIB.setContactInfo('       Cisco Systems\n                        Customer Service\n \n                Postal: 170 W Tasman Drive\n                        San Jose, CA  95134\n                        USA\n \n                   Tel: +1 800 553-NETS\n \n                E-mail: cs-gprs@cisco.com')
+if mibBuilder.loadTexts: ciscoGprsIsgsnMIB.setDescription('The MIB Module for managing the General Packet Radio \n                 Service(GPRS) iSGSN protocol on Servicing GPRS Support\n                 Node (SGSN). \n                 In the Alcatel/Cisco SGSN architecture, a Telecom part \n                 (T-unit) and Datacom part (D-unit) have been defined.  \n                 The Datacom part is in charge of managing the Gn interface \n                 with the GPRS backbone. The Telecom part is in charge of \n                 managing the Gb interface with the BSS. \n                 The iSGSN protocol is the high layer protocol of the \n                 interface between the Datacom part and Telecom part. \n                 It supports the relay function between the Gb and Gn \n                 protocol stacks, and intra SGSN nodes management.\n                ')
+ciscoGprsIsgsnMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9992, 1))
+ciscoGprsIsgsnStats = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9992, 1, 1))
+cgprsIsgsnRxPacketCountFromTnode = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 9992, 1, 1, 1), Counter32()).setUnits('packets').setMaxAccess("readonly")
+if mibBuilder.loadTexts: cgprsIsgsnRxPacketCountFromTnode.setStatus('current')
+if mibBuilder.loadTexts: cgprsIsgsnRxPacketCountFromTnode.setDescription('Number of packets received from the T-node, by\n         iSGSN protocol component on the D-node.\n        ')
+cgprsIsgsnTxPacketCountToTnode = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 9992, 1, 1, 2), Counter32()).setUnits('packets').setMaxAccess("readonly")
+if mibBuilder.loadTexts: cgprsIsgsnTxPacketCountToTnode.setStatus('current')
+if mibBuilder.loadTexts: cgprsIsgsnTxPacketCountToTnode.setDescription('Number of packets transmitted by the D-node iSGSN\n         protocol component, to its peer on the T-node.\n        ')
+cgprsIsgsnRxOctetCountFromTnode = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 9992, 1, 1, 3), Counter32()).setUnits('bytes').setMaxAccess("readonly")
+if mibBuilder.loadTexts: cgprsIsgsnRxOctetCountFromTnode.setStatus('current')
+if mibBuilder.loadTexts: cgprsIsgsnRxOctetCountFromTnode.setDescription('Number of octets received from the T-node, by\n         iGSN protocol component on the D-node.\n        ')
+cgprsIsgsnTxOctetCountToTnode = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 9992, 1, 1, 4), Counter32()).setUnits('bytes').setMaxAccess("readonly")
+if mibBuilder.loadTexts: cgprsIsgsnTxOctetCountToTnode.setStatus('current')
+if mibBuilder.loadTexts: cgprsIsgsnTxOctetCountToTnode.setDescription('Number of octets transmitted by the D-node iSGSN\n         protocol component, to its peer on the T-node.\n        ')
+cgprsIsgsnErrorCountRxFromTnode = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 9992, 1, 1, 5), Counter32()).setUnits('packets').setMaxAccess("readonly")
+if mibBuilder.loadTexts: cgprsIsgsnErrorCountRxFromTnode.setStatus('current')
+if mibBuilder.loadTexts: cgprsIsgsnErrorCountRxFromTnode.setDescription('Number of errors due to illegal or bad packets received\n         from the T-node, by iSGSN protocol component on the D-node.\n        ')
+cgprsIsgsnErrorCountRxToTnode = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 9992, 1, 1, 6), Counter32()).setUnits('packets').setMaxAccess("readonly")
+if mibBuilder.loadTexts: cgprsIsgsnErrorCountRxToTnode.setStatus('current')
+if mibBuilder.loadTexts: cgprsIsgsnErrorCountRxToTnode.setDescription('Number of errors attributable to the transmision of bad or\n        illegal packets transmitted by the D-node iSGSN protocol\n        component, to its peer on the T-node.\n        ')
+ciscoGprsIsgsnConformances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9992, 3))
+cgprsIsgsnGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9992, 3, 1))
+cgprsIsgsnCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9992, 3, 2))
+cgprsIsgsnCompliance1 = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 9992, 3, 2, 1)).setObjects(("CISCO-GPRS-ISGSN-MIB", "cgprsIsgsnStatsGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cgprsIsgsnCompliance1 = cgprsIsgsnCompliance1.setStatus('current')
+if mibBuilder.loadTexts: cgprsIsgsnCompliance1.setDescription(' The compliance statement for the system that supports ISGSN \n          protocol.\n        ')
+cgprsIsgsnStatsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 9992, 3, 1, 1)).setObjects(("CISCO-GPRS-ISGSN-MIB", "cgprsIsgsnRxPacketCountFromTnode"), ("CISCO-GPRS-ISGSN-MIB", "cgprsIsgsnTxPacketCountToTnode"), ("CISCO-GPRS-ISGSN-MIB", "cgprsIsgsnRxOctetCountFromTnode"), ("CISCO-GPRS-ISGSN-MIB", "cgprsIsgsnTxOctetCountToTnode"), ("CISCO-GPRS-ISGSN-MIB", "cgprsIsgsnErrorCountRxFromTnode"), ("CISCO-GPRS-ISGSN-MIB", "cgprsIsgsnErrorCountRxToTnode"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cgprsIsgsnStatsGroup = cgprsIsgsnStatsGroup.setStatus('current')
+if mibBuilder.loadTexts: cgprsIsgsnStatsGroup.setDescription(' A collection of statistics for ISGSN.\n        ')
+mibBuilder.exportSymbols("CISCO-GPRS-ISGSN-MIB", cgprsIsgsnErrorCountRxFromTnode=cgprsIsgsnErrorCountRxFromTnode, ciscoGprsIsgsnStats=ciscoGprsIsgsnStats, ciscoGprsIsgsnConformances=ciscoGprsIsgsnConformances, cgprsIsgsnTxPacketCountToTnode=cgprsIsgsnTxPacketCountToTnode, cgprsIsgsnRxOctetCountFromTnode=cgprsIsgsnRxOctetCountFromTnode, cgprsIsgsnTxOctetCountToTnode=cgprsIsgsnTxOctetCountToTnode, cgprsIsgsnGroups=cgprsIsgsnGroups, cgprsIsgsnStatsGroup=cgprsIsgsnStatsGroup, ciscoGprsIsgsnMIB=ciscoGprsIsgsnMIB, cgprsIsgsnCompliances=cgprsIsgsnCompliances, PYSNMP_MODULE_ID=ciscoGprsIsgsnMIB, cgprsIsgsnCompliance1=cgprsIsgsnCompliance1, cgprsIsgsnRxPacketCountFromTnode=cgprsIsgsnRxPacketCountFromTnode, ciscoGprsIsgsnMIBObjects=ciscoGprsIsgsnMIBObjects, cgprsIsgsnErrorCountRxToTnode=cgprsIsgsnErrorCountRxToTnode)

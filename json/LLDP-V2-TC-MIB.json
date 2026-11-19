@@ -1,0 +1,233 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "NOTIFICATION-TYPE",
+      "MODULE-IDENTITY",
+      "TimeTicks",
+      "Integer32",
+      "Gauge32",
+      "org",
+      "OBJECT-TYPE",
+      "MibIdentifier",
+      "Counter32",
+      "Unsigned32",
+      "OBJECT-IDENTITY",
+      "Counter64",
+      "Bits",
+      "iso",
+      "IpAddress"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "lldpV2TcMIB": {
+    "name": "lldpV2TcMIB",
+    "oid": "1.3.111.2.802.1.1.12",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2009-06-08 00:00",
+        "description": "Published as part of IEEE Std 802.1AB-2009 revision."
+      }
+    ]
+  },
+  "ieee802dot1mibs": {
+    "name": "ieee802dot1mibs",
+    "oid": "1.3.111.2.802.1.1",
+    "class": "objectidentity"
+  },
+  "LldpV2ChassisIdSubtype": {
+    "name": "LldpV2ChassisIdSubtype",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "chassisComponent": 1,
+          "interfaceAlias": 2,
+          "portComponent": 3,
+          "macAddress": 4,
+          "networkAddress": 5,
+          "interfaceName": 6,
+          "local": 7
+        }
+      }
+    },
+    "status": "current"
+  },
+  "LldpV2ChassisId": {
+    "name": "LldpV2ChassisId",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "displayhint": "1x:",
+    "status": "current"
+  },
+  "LldpV2PortIdSubtype": {
+    "name": "LldpV2PortIdSubtype",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "interfaceAlias": 1,
+          "portComponent": 2,
+          "macAddress": 3,
+          "networkAddress": 4,
+          "interfaceName": 5,
+          "agentCircuitId": 6,
+          "local": 7
+        }
+      }
+    },
+    "status": "current"
+  },
+  "LldpV2PortId": {
+    "name": "LldpV2PortId",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "displayhint": "1x:",
+    "status": "current"
+  },
+  "LldpV2ManAddrIfSubtype": {
+    "name": "LldpV2ManAddrIfSubtype",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "unknown": 1,
+          "ifIndex": 2,
+          "systemPortNumber": 3
+        }
+      }
+    },
+    "status": "current"
+  },
+  "LldpV2ManAddress": {
+    "name": "LldpV2ManAddress",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 31
+          }
+        ]
+      }
+    },
+    "displayhint": "1x:",
+    "status": "current"
+  },
+  "LldpV2SystemCapabilitiesMap": {
+    "name": "LldpV2SystemCapabilitiesMap",
+    "class": "textualconvention",
+    "type": {
+      "type": "Bits",
+      "class": "type",
+      "bits": {
+        "other": 0,
+        "repeater": 1,
+        "bridge": 2,
+        "wlanAccessPoint": 3,
+        "router": 4,
+        "telephone": 5,
+        "docsisCableDevice": 6,
+        "stationOnly": 7,
+        "cVLANComponent": 8,
+        "sVLANComponent": 9,
+        "twoPortMACRelay": 10
+      }
+    },
+    "status": "current"
+  },
+  "LldpV2DestAddressTableIndex": {
+    "name": "LldpV2DestAddressTableIndex",
+    "class": "textualconvention",
+    "type": {
+      "type": "Unsigned32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 4096
+          }
+        ]
+      }
+    },
+    "displayhint": "d",
+    "status": "current"
+  },
+  "LldpV2LinkAggStatusMap": {
+    "name": "LldpV2LinkAggStatusMap",
+    "class": "textualconvention",
+    "type": {
+      "type": "Bits",
+      "class": "type",
+      "bits": {
+        "aggCapable": 0,
+        "aggEnabled": 1
+      }
+    },
+    "status": "current"
+  },
+  "LldpV2PowerPortClass": {
+    "name": "LldpV2PowerPortClass",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "pClassPSE": 1,
+          "pClassPD": 2
+        }
+      }
+    },
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/standard/iee/LLDP-V2-TC-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:29:48 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "LLDP-V2-TC-MIB"
+  }
+}

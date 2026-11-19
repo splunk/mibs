@@ -1,0 +1,82 @@
+{
+  "imports": {
+    "class": "imports",
+    "CISCO-SMI": [
+      "ciscoAgentCapability"
+    ],
+    "SNMPv2-CONF": [
+      "AGENT-CAPABILITIES",
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "MODULE-IDENTITY",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "Counter64",
+      "IpAddress",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Counter32",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "TimeTicks"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ciscoRFC1406Capability": {
+    "name": "ciscoRFC1406Capability",
+    "oid": "1.3.6.1.4.1.9.7.102",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2002-10-22 00:00",
+        "description": "Support SET operation for dsx1LineCoding and dsx1LineType"
+      },
+      {
+        "revision": "2001-08-17 00:00",
+        "description": "Support SET operation for dsx1LoopbackConfig object."
+      },
+      {
+        "revision": "1994-08-18 00:00",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "ciscoRFC1406CapabilityV10R02": {
+    "name": "ciscoRFC1406CapabilityV10R02",
+    "oid": "1.3.6.1.4.1.9.7.102.1",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS 10.2",
+    "status": "current"
+  },
+  "ciscoRFC1406CapabilityV122R12T": {
+    "name": "ciscoRFC1406CapabilityV122R12T",
+    "oid": "1.3.6.1.4.1.9.7.102.2",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS 12.2(12)T",
+    "status": "obsolete"
+  },
+  "ciscoRFC1406CapabilityV122R12TRev2": {
+    "name": "ciscoRFC1406CapabilityV122R12TRev2",
+    "oid": "1.3.6.1.4.1.9.7.102.3",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS 12.2(12)T",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-RFC1406-CAPABILITY",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:52 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CISCO-RFC1406-CAPABILITY"
+  }
+}

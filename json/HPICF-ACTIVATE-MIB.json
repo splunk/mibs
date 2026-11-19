@@ -1,0 +1,138 @@
+{
+  "imports": {
+    "class": "imports",
+    "HP-ICF-OID": [
+      "hpSwitch"
+    ],
+    "SNMPv2-CONF": [
+      "OBJECT-GROUP",
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "Integer32",
+      "Unsigned32",
+      "Bits",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "Counter64",
+      "MibIdentifier",
+      "IpAddress",
+      "OBJECT-IDENTITY",
+      "Counter32",
+      "MODULE-IDENTITY",
+      "TimeTicks",
+      "OBJECT-TYPE"
+    ],
+    "SNMPv2-TC": [
+      "TruthValue",
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "hpicfActivateMIB": {
+    "name": "hpicfActivateMIB",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.129",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2016-05-03 00:00",
+        "description": "Initial version"
+      }
+    ]
+  },
+  "hpicfActivateObjects": {
+    "name": "hpicfActivateObjects",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.129.1",
+    "class": "objectidentity"
+  },
+  "hpicfActivateConformance": {
+    "name": "hpicfActivateConformance",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.129.2",
+    "class": "objectidentity"
+  },
+  "hpicfActivateSoftwareUpdateMode": {
+    "name": "hpicfActivateSoftwareUpdateMode",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.129.1.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TruthValue",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "true",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "hpicfActivateProvisionMode": {
+    "name": "hpicfActivateProvisionMode",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.129.1.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TruthValue",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "true",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "hpicfActivateMIBCompliances": {
+    "name": "hpicfActivateMIBCompliances",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.129.2.1",
+    "class": "objectidentity"
+  },
+  "hpicfActivateMIBGroups": {
+    "name": "hpicfActivateMIBGroups",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.129.2.2",
+    "class": "objectidentity"
+  },
+  "hpicfActivateMIBCompliance": {
+    "name": "hpicfActivateMIBCompliance",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.129.2.1.1",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "hpicfActivateConfigGroup",
+        "module": "HPICF-ACTIVATE-MIB"
+      }
+    ],
+    "status": "current"
+  },
+  "hpicfActivateConfigGroup": {
+    "name": "hpicfActivateConfigGroup",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.129.2.2.1",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "HPICF-ACTIVATE-MIB",
+        "object": "hpicfActivateSoftwareUpdateMode"
+      },
+      {
+        "module": "HPICF-ACTIVATE-MIB",
+        "object": "hpicfActivateProvisionMode"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hp/HPICF-ACTIVATE-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:07 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "HPICF-ACTIVATE-MIB"
+  }
+}

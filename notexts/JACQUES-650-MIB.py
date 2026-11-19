@@ -1,0 +1,66 @@
+#
+# PySNMP MIB module JACQUES-650-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/jacques/JACQUES-650-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:36:47 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsIntersection, SingleValueConstraint, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+Integer32, NotificationType, enterprises, Counter32, Counter64, MibIdentifier, Gauge32, ObjectIdentity, ModuleIdentity, iso, TimeTicks, Unsigned32, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "NotificationType", "enterprises", "Counter32", "Counter64", "MibIdentifier", "Gauge32", "ObjectIdentity", "ModuleIdentity", "iso", "TimeTicks", "Unsigned32", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits")
+TruthValue, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "TextualConvention", "DisplayString")
+jacquesMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 49759))
+jacquesMIB.setRevisions(('2017-03-26 00:00',))
+if mibBuilder.loadTexts: jacquesMIB.setLastUpdated('201703260000Z')
+if mibBuilder.loadTexts: jacquesMIB.setOrganization('Jacques Technologies')
+jacquesMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 49759, 1))
+jacquesScalars = MibIdentifier((1, 3, 6, 1, 4, 1, 49759, 2))
+jacquesNotify = MibIdentifier((1, 3, 6, 1, 4, 1, 49759, 3))
+jacquesAppNotifyPrePrefix = MibIdentifier((1, 3, 6, 1, 4, 1, 49759, 3, 0))
+jacquesAppNotifyPrefix = MibIdentifier((1, 3, 6, 1, 4, 1, 49759, 3, 0, 0))
+jacquesEndpointNotifyPrePrefix = MibIdentifier((1, 3, 6, 1, 4, 1, 49759, 3, 1))
+jacquesEndpointNotifyPrefix = MibIdentifier((1, 3, 6, 1, 4, 1, 49759, 3, 1, 0))
+jacquesMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 49759, 1, 1))
+jacquesMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 49759, 1, 2))
+jacquesServerName = MibScalar((1, 3, 6, 1, 4, 1, 49759, 2, 1), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(0, 32))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: jacquesServerName.setStatus('current')
+jacquesAppUp = MibScalar((1, 3, 6, 1, 4, 1, 49759, 2, 2), TruthValue()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: jacquesAppUp.setStatus('current')
+jacquesTag = MibScalar((1, 3, 6, 1, 4, 1, 49759, 2, 3), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(0, 15))).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: jacquesTag.setStatus('current')
+jacquesEndpointOnline = MibScalar((1, 3, 6, 1, 4, 1, 49759, 2, 4), TruthValue()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: jacquesEndpointOnline.setStatus('current')
+jacquesEndpointMode = MibScalar((1, 3, 6, 1, 4, 1, 49759, 2, 5), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("normal", 1), ("remote", 2), ("isolate", 3)))).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: jacquesEndpointMode.setStatus('current')
+jacquesEndpointAlarmType = MibScalar((1, 3, 6, 1, 4, 1, 49759, 2, 6), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(0, 32))).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: jacquesEndpointAlarmType.setStatus('current')
+jacquesEndpointAlarmState = MibScalar((1, 3, 6, 1, 4, 1, 49759, 2, 7), TruthValue()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: jacquesEndpointAlarmState.setStatus('current')
+jacquesJccpserverUpNotify = NotificationType((1, 3, 6, 1, 4, 1, 49759, 3, 0, 0, 1)).setObjects(("JACQUES-650-MIB", "jacquesAppUp"), ("JACQUES-650-MIB", "jacquesServerName"))
+if mibBuilder.loadTexts: jacquesJccpserverUpNotify.setStatus('current')
+jacquesEndpointOnlineNotify = NotificationType((1, 3, 6, 1, 4, 1, 49759, 3, 1, 0, 1)).setObjects(("JACQUES-650-MIB", "jacquesTag"), ("JACQUES-650-MIB", "jacquesEndpointOnline"))
+if mibBuilder.loadTexts: jacquesEndpointOnlineNotify.setStatus('current')
+jacquesEndpointModeNotify = NotificationType((1, 3, 6, 1, 4, 1, 49759, 3, 1, 0, 2)).setObjects(("JACQUES-650-MIB", "jacquesTag"), ("JACQUES-650-MIB", "jacquesEndpointMode"))
+if mibBuilder.loadTexts: jacquesEndpointModeNotify.setStatus('current')
+jacquesEndpointAlarmNotify = NotificationType((1, 3, 6, 1, 4, 1, 49759, 3, 1, 0, 3)).setObjects(("JACQUES-650-MIB", "jacquesTag"), ("JACQUES-650-MIB", "jacquesEndpointAlarmType"))
+if mibBuilder.loadTexts: jacquesEndpointAlarmNotify.setStatus('current')
+jacquesMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 49759, 1, 1, 1)).setObjects(("JACQUES-650-MIB", "jacquesServerGroup"), ("JACQUES-650-MIB", "jacquesEndpointGroup"), ("JACQUES-650-MIB", "jacquesServerNotifyGroup"), ("JACQUES-650-MIB", "jacquesEndpointNotifyGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    jacquesMIBCompliance = jacquesMIBCompliance.setStatus('current')
+jacquesServerGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 49759, 1, 2, 1)).setObjects(("JACQUES-650-MIB", "jacquesAppUp"), ("JACQUES-650-MIB", "jacquesServerName"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    jacquesServerGroup = jacquesServerGroup.setStatus('current')
+jacquesEndpointGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 49759, 1, 2, 2)).setObjects(("JACQUES-650-MIB", "jacquesTag"), ("JACQUES-650-MIB", "jacquesEndpointOnline"), ("JACQUES-650-MIB", "jacquesEndpointMode"), ("JACQUES-650-MIB", "jacquesEndpointAlarmType"), ("JACQUES-650-MIB", "jacquesEndpointAlarmState"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    jacquesEndpointGroup = jacquesEndpointGroup.setStatus('current')
+jacquesServerNotifyGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 49759, 1, 2, 3)).setObjects(("JACQUES-650-MIB", "jacquesJccpserverUpNotify"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    jacquesServerNotifyGroup = jacquesServerNotifyGroup.setStatus('current')
+jacquesEndpointNotifyGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 49759, 1, 2, 4)).setObjects(("JACQUES-650-MIB", "jacquesEndpointOnlineNotify"), ("JACQUES-650-MIB", "jacquesEndpointModeNotify"), ("JACQUES-650-MIB", "jacquesEndpointAlarmNotify"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    jacquesEndpointNotifyGroup = jacquesEndpointNotifyGroup.setStatus('current')
+mibBuilder.exportSymbols("JACQUES-650-MIB", jacquesEndpointOnline=jacquesEndpointOnline, PYSNMP_MODULE_ID=jacquesMIB, jacquesServerNotifyGroup=jacquesServerNotifyGroup, jacquesAppNotifyPrePrefix=jacquesAppNotifyPrePrefix, jacquesEndpointAlarmState=jacquesEndpointAlarmState, jacquesEndpointOnlineNotify=jacquesEndpointOnlineNotify, jacquesEndpointAlarmType=jacquesEndpointAlarmType, jacquesServerGroup=jacquesServerGroup, jacquesEndpointGroup=jacquesEndpointGroup, jacquesEndpointMode=jacquesEndpointMode, jacquesEndpointNotifyPrefix=jacquesEndpointNotifyPrefix, jacquesMIBCompliances=jacquesMIBCompliances, jacquesAppNotifyPrefix=jacquesAppNotifyPrefix, jacquesServerName=jacquesServerName, jacquesMIBConformance=jacquesMIBConformance, jacquesEndpointAlarmNotify=jacquesEndpointAlarmNotify, jacquesMIBGroups=jacquesMIBGroups, jacquesMIBCompliance=jacquesMIBCompliance, jacquesEndpointNotifyPrePrefix=jacquesEndpointNotifyPrePrefix, jacquesNotify=jacquesNotify, jacquesEndpointModeNotify=jacquesEndpointModeNotify, jacquesAppUp=jacquesAppUp, jacquesTag=jacquesTag, jacquesEndpointNotifyGroup=jacquesEndpointNotifyGroup, jacquesMIB=jacquesMIB, jacquesJccpserverUpNotify=jacquesJccpserverUpNotify, jacquesScalars=jacquesScalars)

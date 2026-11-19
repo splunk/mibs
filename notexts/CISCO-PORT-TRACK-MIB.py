@@ -1,0 +1,56 @@
+#
+# PySNMP MIB module CISCO-PORT-TRACK-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-PORT-TRACK-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+VsanIndex, = mibBuilder.importSymbols("CISCO-ST-TC", "VsanIndex")
+InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+TextualConvention, DisplayString, TruthValue, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue", "RowStatus")
+ciscoPortTrackMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 437))
+ciscoPortTrackMIB.setRevisions(('2005-04-27 00:00',))
+if mibBuilder.loadTexts: ciscoPortTrackMIB.setLastUpdated('200504270000Z')
+if mibBuilder.loadTexts: ciscoPortTrackMIB.setOrganization('Cisco Systems Inc. ')
+ciscoPortTrackObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 437, 1))
+cptMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 437, 2))
+cptConfig = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1))
+cptPortTrackTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1, 1), )
+if mibBuilder.loadTexts: cptPortTrackTable.setStatus('current')
+cptPortTrackEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1, 1, 1), ).setIndexNames((0, "CISCO-PORT-TRACK-MIB", "cptPortTrackLinkedPort"), (0, "CISCO-PORT-TRACK-MIB", "cptPortTrackTrackedPort"))
+if mibBuilder.loadTexts: cptPortTrackEntry.setStatus('current')
+cptPortTrackLinkedPort = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1, 1, 1, 1), InterfaceIndex())
+if mibBuilder.loadTexts: cptPortTrackLinkedPort.setStatus('current')
+cptPortTrackTrackedPort = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1, 1, 1, 2), InterfaceIndex())
+if mibBuilder.loadTexts: cptPortTrackTrackedPort.setStatus('current')
+cptPortTrackVsanType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1, 1, 1, 3), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("singleVsan", 1), ("allVsans", 2)))).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cptPortTrackVsanType.setStatus('current')
+cptPortTrackVsanIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1, 1, 1, 4), VsanIndex()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cptPortTrackVsanIndex.setStatus('current')
+cptPortTrackRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1, 1, 1, 5), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cptPortTrackRowStatus.setStatus('current')
+cptPortForceShutTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1, 2), )
+if mibBuilder.loadTexts: cptPortForceShutTable.setStatus('current')
+cptPortForceShutEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1, 2, 1), ).setIndexNames((0, "CISCO-PORT-TRACK-MIB", "cptPortTrackLinkedPort"))
+if mibBuilder.loadTexts: cptPortForceShutEntry.setStatus('current')
+cptPortForceState = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 437, 1, 1, 2, 1, 1), TruthValue().clone('false')).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cptPortForceState.setStatus('current')
+cptMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 437, 2, 1))
+cptMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 437, 2, 2))
+cptMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 437, 2, 1, 1)).setObjects(("CISCO-PORT-TRACK-MIB", "cptTrackGroup"), ("CISCO-PORT-TRACK-MIB", "cptShutGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cptMIBCompliance = cptMIBCompliance.setStatus('current')
+cptTrackGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 437, 2, 2, 1)).setObjects(("CISCO-PORT-TRACK-MIB", "cptPortTrackVsanType"), ("CISCO-PORT-TRACK-MIB", "cptPortTrackVsanIndex"), ("CISCO-PORT-TRACK-MIB", "cptPortTrackRowStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cptTrackGroup = cptTrackGroup.setStatus('current')
+cptShutGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 437, 2, 2, 2)).setObjects(("CISCO-PORT-TRACK-MIB", "cptPortForceState"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cptShutGroup = cptShutGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-PORT-TRACK-MIB", ciscoPortTrackMIB=ciscoPortTrackMIB, cptMIBCompliances=cptMIBCompliances, cptConfig=cptConfig, cptPortForceShutEntry=cptPortForceShutEntry, cptMIBConformance=cptMIBConformance, cptMIBGroups=cptMIBGroups, cptPortForceShutTable=cptPortForceShutTable, cptShutGroup=cptShutGroup, PYSNMP_MODULE_ID=ciscoPortTrackMIB, cptPortTrackEntry=cptPortTrackEntry, cptPortTrackTrackedPort=cptPortTrackTrackedPort, cptPortTrackVsanIndex=cptPortTrackVsanIndex, cptPortTrackVsanType=cptPortTrackVsanType, cptMIBCompliance=cptMIBCompliance, cptPortTrackTable=cptPortTrackTable, cptPortForceState=cptPortForceState, ciscoPortTrackObjects=ciscoPortTrackObjects, cptTrackGroup=cptTrackGroup, cptPortTrackLinkedPort=cptPortTrackLinkedPort, cptPortTrackRowStatus=cptPortTrackRowStatus)

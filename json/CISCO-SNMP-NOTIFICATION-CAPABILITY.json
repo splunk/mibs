@@ -1,0 +1,93 @@
+{
+  "imports": {
+    "class": "imports",
+    "CISCO-SMI": [
+      "ciscoAgentCapability"
+    ],
+    "SNMPv2-CONF": [
+      "AGENT-CAPABILITIES",
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "MODULE-IDENTITY",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "Counter64",
+      "IpAddress",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Counter32",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "TimeTicks"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ciscoSnmpNotificationCapability": {
+    "name": "ciscoSnmpNotificationCapability",
+    "oid": "1.3.6.1.4.1.9.7.330",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2008-06-25 00:00",
+        "description": "Added capability statement cSnmpNotifCapc4710aceVA1R700 for ACE 4710 Application Control Engine Appliance."
+      },
+      {
+        "revision": "2006-03-29 00:00",
+        "description": "Added capability statement cSnmpNotifCapACSWV03R000 for Application Control Engine (ACE)."
+      },
+      {
+        "revision": "2004-07-28 00:00",
+        "description": "Added capability for VISM Release 3.3."
+      },
+      {
+        "revision": "2003-08-28 00:00",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "cSnmpNotifCapCatOSV05R0501": {
+    "name": "cSnmpNotifCapCatOSV05R0501",
+    "oid": "1.3.6.1.4.1.9.7.330.1",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco CatOS 5.5(1).",
+    "status": "current"
+  },
+  "cSnmpNotifCapVISM33": {
+    "name": "cSnmpNotifCapVISM33",
+    "oid": "1.3.6.1.4.1.9.7.330.2",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco VISM Release 3.3.",
+    "status": "current"
+  },
+  "cSnmpNotifCapACSWV03R000": {
+    "name": "cSnmpNotifCapACSWV03R000",
+    "oid": "1.3.6.1.4.1.9.7.330.3",
+    "class": "agentcapabilities",
+    "productrelease": "ACSW (Application Control Software) 3.0",
+    "status": "current"
+  },
+  "cSnmpNotifCapc4710aceVA1R700": {
+    "name": "cSnmpNotifCapc4710aceVA1R700",
+    "oid": "1.3.6.1.4.1.9.7.330.4",
+    "class": "agentcapabilities",
+    "productrelease": "ACSW (Application Control Software) A1(7)\n                         for ACE 4710 Application Control Engine \n                         Appliance.",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SNMP-NOTIFICATION-CAPABILITY",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:53 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CISCO-SNMP-NOTIFICATION-CAPABILITY"
+  }
+}

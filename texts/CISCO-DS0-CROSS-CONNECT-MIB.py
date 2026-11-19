@@ -1,0 +1,61 @@
+#
+# PySNMP MIB module CISCO-DS0-CROSS-CONNECT-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DS0-CROSS-CONNECT-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
+RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+ciscoDs0CrossConnectMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 9999))
+ciscoDs0CrossConnectMIB.setRevisions(('2003-03-05 00:00',))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    if mibBuilder.loadTexts: ciscoDs0CrossConnectMIB.setRevisionsDescriptions(('Initial version of the MIB module.',))
+if mibBuilder.loadTexts: ciscoDs0CrossConnectMIB.setLastUpdated('200303050000Z')
+if mibBuilder.loadTexts: ciscoDs0CrossConnectMIB.setOrganization('Cisco Systems, Inc.')
+if mibBuilder.loadTexts: ciscoDs0CrossConnectMIB.setContactInfo('Cisco Systems\n                   Customer Service\n\n                   Postal: 170 W. Tasman Drive\n                           San Jose, CA  95134\n                           USA\n\n\t\t   Tel: +1 800 553-NETS\n\n\t\t   E-mail: cs-voice@cisco.com')
+if mibBuilder.loadTexts: ciscoDs0CrossConnectMIB.setDescription('The MIB for Ds0 cross connection.\n\t')
+ciscoDs0CrossConnectMIBNotifs = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9999, 0))
+ciscoDs0CrossConnectMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9999, 1))
+ciscoDs0CrossConnectMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9999, 2))
+cDs0CrossConnectConfig = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9999, 1, 1))
+cds0CrossConnectConfigTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 9999, 1, 1, 1), )
+if mibBuilder.loadTexts: cds0CrossConnectConfigTable.setStatus('current')
+if mibBuilder.loadTexts: cds0CrossConnectConfigTable.setDescription('This table is used to establish a DS0 cross connection.\n         A DS0 cross connect is established by binding a unique\n         DS0 group containing one or more DS0s of a single Ds1 \n         interface to another unique DS0 group containing one or \n         more DS0s of a single DS1 interface.  \n        ')
+cds0CrossConnectConfigEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 9999, 1, 1, 1, 1), ).setIndexNames((0, "CISCO-DS0-CROSS-CONNECT-MIB", "cds0Endpt1Ds1"), (0, "CISCO-DS0-CROSS-CONNECT-MIB", "cds0Endpt1Ds0Group"))
+if mibBuilder.loadTexts: cds0CrossConnectConfigEntry.setStatus('current')
+if mibBuilder.loadTexts: cds0CrossConnectConfigEntry.setDescription("An entry in cds0CrossConnectConfigTable table represents a DS0 \n         cross connection. The two end point of the connection are:\n            end point 1: cds0Endpt1Ds1 cds0Endpt1Ds0Group\n            end point 2: cds0Endpt2Ds1 cds0Endpt2Ds0Group\n\n         The end points of this connection should be entries\n         of ccasGrpCfgTable and 'ccasGrpCfgServiceType' of \n         of the entries should be 'tdmxconn'. The ccasGrpCfgTable is \n         defined in CISCO-CAS-IF-MIB.\n        ")
+cds0Endpt1Ds1 = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 9999, 1, 1, 1, 1, 1), InterfaceIndex())
+if mibBuilder.loadTexts: cds0Endpt1Ds1.setStatus('current')
+if mibBuilder.loadTexts: cds0Endpt1Ds1.setDescription("The value of this object equals to the 'ifIndex' of a\n         Ds1 interface.\n         This Ds1 interface is used as the first end point of the \n         Ds0 connection.\n        ")
+cds0Endpt1Ds0Group = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 9999, 1, 1, 1, 1, 2), Unsigned32().subtype(subtypeSpec=ValueRangeConstraint(0, 31)))
+if mibBuilder.loadTexts: cds0Endpt1Ds0Group.setStatus('current')
+if mibBuilder.loadTexts: cds0Endpt1Ds0Group.setDescription("The value of this object identifies a Ds0 group which contains \n         one of more Ds0(s) within the Ds1 interface represented by\n         'cDs0Endpt1Ds1'.\n         This Ds0 group is used as the first end point of the \n         Ds0 connection.\n        ")
+cds0Endpt2Ds1 = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 9999, 1, 1, 1, 1, 3), InterfaceIndex()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cds0Endpt2Ds1.setStatus('current')
+if mibBuilder.loadTexts: cds0Endpt2Ds1.setDescription("The value of this object equals to the 'ifIndex' of a\n         Ds1 interface.\n         This Ds1 interface is used as the second end point of the \n         Ds0 connection.\n        ")
+cds0Endpt2Ds0Group = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 9999, 1, 1, 1, 1, 4), Unsigned32().subtype(subtypeSpec=ValueRangeConstraint(0, 31))).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cds0Endpt2Ds0Group.setStatus('current')
+if mibBuilder.loadTexts: cds0Endpt2Ds0Group.setDescription("The value of this object identifies a Ds0 group which contains \n         one of more Ds0(s) within the Ds1 interface represented by\n         'cDs0Endpt2Ds1'.\n         This Ds0 group is used as the second end point of the \n         Ds0 connection. \n        ")
+cds0ConnRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 9999, 1, 1, 1, 1, 5), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cds0ConnRowStatus.setStatus('current')
+if mibBuilder.loadTexts: cds0ConnRowStatus.setDescription("This object is used to create or delete an entry.\n\n         The mandatory objects for creating an entry in this table:\n           'cds0Endpt2Ds1'\n           'cds0Endpt2Ds0Group'\n\n         The following objects are not allowed to be modified after \n         the entry to be added:\n           'cds0Endpt2Ds1'\n           'cds0Endpt2Ds0Group'\n        ")
+ciscoDs0CrossConnectMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9999, 2, 1))
+ciscoDs0CrossConnectMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 9999, 2, 2))
+ciscoDs0CrossConnectMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 9999, 2, 1, 1)).setObjects(("CISCO-DS0-CROSS-CONNECT-MIB", "cDs0CrossConnectConfigGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoDs0CrossConnectMIBCompliance = ciscoDs0CrossConnectMIBCompliance.setStatus('current')
+if mibBuilder.loadTexts: ciscoDs0CrossConnectMIBCompliance.setDescription('The compliance statement for Cisco agents which implement\n         the CISCO-DSO-CROSS-CONNECT-MIB.')
+cDs0CrossConnectConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 9999, 2, 2, 1)).setObjects(("CISCO-DS0-CROSS-CONNECT-MIB", "cds0Endpt2Ds1"), ("CISCO-DS0-CROSS-CONNECT-MIB", "cds0Endpt2Ds0Group"), ("CISCO-DS0-CROSS-CONNECT-MIB", "cds0ConnRowStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cDs0CrossConnectConfigGroup = cDs0CrossConnectConfigGroup.setStatus('current')
+if mibBuilder.loadTexts: cDs0CrossConnectConfigGroup.setDescription('A collection of objects for general configuration of  \n         Ds0 cross connection.')
+mibBuilder.exportSymbols("CISCO-DS0-CROSS-CONNECT-MIB", ciscoDs0CrossConnectMIBObjects=ciscoDs0CrossConnectMIBObjects, PYSNMP_MODULE_ID=ciscoDs0CrossConnectMIB, cds0CrossConnectConfigTable=cds0CrossConnectConfigTable, ciscoDs0CrossConnectMIBNotifs=ciscoDs0CrossConnectMIBNotifs, cds0Endpt1Ds1=cds0Endpt1Ds1, ciscoDs0CrossConnectMIBGroups=ciscoDs0CrossConnectMIBGroups, cds0ConnRowStatus=cds0ConnRowStatus, cds0CrossConnectConfigEntry=cds0CrossConnectConfigEntry, cds0Endpt1Ds0Group=cds0Endpt1Ds0Group, ciscoDs0CrossConnectMIB=ciscoDs0CrossConnectMIB, cds0Endpt2Ds1=cds0Endpt2Ds1, cDs0CrossConnectConfig=cDs0CrossConnectConfig, cds0Endpt2Ds0Group=cds0Endpt2Ds0Group, ciscoDs0CrossConnectMIBCompliances=ciscoDs0CrossConnectMIBCompliances, ciscoDs0CrossConnectMIBCompliance=ciscoDs0CrossConnectMIBCompliance, ciscoDs0CrossConnectMIBConformance=ciscoDs0CrossConnectMIBConformance, cDs0CrossConnectConfigGroup=cDs0CrossConnectConfigGroup)

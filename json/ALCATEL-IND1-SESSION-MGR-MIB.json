@@ -1,0 +1,672 @@
+{
+  "imports": {
+    "class": "imports",
+    "ALCATEL-IND1-BASE": [
+      "softentIND1Sesmgr"
+    ],
+    "SNMP-FRAMEWORK-MIB": [
+      "SnmpAdminString"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "TimeTicks",
+      "Counter64",
+      "OBJECT-IDENTITY",
+      "Bits",
+      "MibIdentifier",
+      "OBJECT-TYPE",
+      "Gauge32",
+      "MODULE-IDENTITY",
+      "Counter32",
+      "IpAddress",
+      "Unsigned32",
+      "NOTIFICATION-TYPE",
+      "Integer32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION",
+      "RowStatus"
+    ]
+  },
+  "alcatelIND1SessionMgrMIB": {
+    "name": "alcatelIND1SessionMgrMIB",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2010-05-13 00:00",
+        "description": "Fixed the Notifications to use MIB Module OID.0 as Notifications root."
+      }
+    ]
+  },
+  "alcatelIND1SessionMgrMIBNotifications": {
+    "name": "alcatelIND1SessionMgrMIBNotifications",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.0",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alcatelIND1SessionMgrMIBObjects": {
+    "name": "alcatelIND1SessionMgrMIBObjects",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alcatelIND1SessionMgrMIBConformance": {
+    "name": "alcatelIND1SessionMgrMIBConformance",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alcatelIND1SessionMgrMIBGroups": {
+    "name": "alcatelIND1SessionMgrMIBGroups",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.2.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alcatelIND1SessionMgrMIBCompliances": {
+    "name": "alcatelIND1SessionMgrMIBCompliances",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.2.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "sessionMgr": {
+    "name": "sessionMgr",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1",
+    "class": "objectidentity"
+  },
+  "sessionConfigTable": {
+    "name": "sessionConfigTable",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.1",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "sessionConfigEntry": {
+    "name": "sessionConfigEntry",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.1.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionType",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "sessionType": {
+    "name": "sessionType",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.1.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "cli": 1,
+          "http": 2,
+          "ftp": 3
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "sessionBannerFileName": {
+    "name": "sessionBannerFileName",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.1.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "SnmpAdminString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "sessionInactivityTimerValue": {
+    "name": "sessionInactivityTimerValue",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.1.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 596523
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 4,
+        "format": "decimal"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "sessionDefaultPromptString": {
+    "name": "sessionDefaultPromptString",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.1.1.4",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "SnmpAdminString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 31
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": "-> ",
+        "format": "string"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "sessionActiveTable": {
+    "name": "sessionActiveTable",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "sessionActiveEntry": {
+    "name": "sessionActiveEntry",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionIndex",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "sessionIndex": {
+    "name": "sessionIndex",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 63
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "sessionAccessType": {
+    "name": "sessionAccessType",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "console": 1,
+          "telnet": 2,
+          "ftp": 3,
+          "http": 4,
+          "ssh": 5,
+          "https": 6
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "sessionPhysicalPort": {
+    "name": "sessionPhysicalPort",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "notSignificant": 0,
+          "local": 1,
+          "ether": 2
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "sessionUserName": {
+    "name": "sessionUserName",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2.1.4",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "SnmpAdminString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 31
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "sessionUserReadPrivileges": {
+    "name": "sessionUserReadPrivileges",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2.1.5",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 8,
+            "max": 8
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "sessionUserWritePrivileges": {
+    "name": "sessionUserWritePrivileges",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2.1.6",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 8,
+            "max": 8
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "sessionUserProfileName": {
+    "name": "sessionUserProfileName",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2.1.7",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "SnmpAdminString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 31
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "obsolete"
+  },
+  "sessionUserIpAddress": {
+    "name": "sessionUserIpAddress",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2.1.8",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "IpAddress",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "sessionRowStatus": {
+    "name": "sessionRowStatus",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.2.1.9",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "RowStatus",
+      "class": "type"
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "sessionLoginTimeout": {
+    "name": "sessionLoginTimeout",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.3",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 5,
+            "max": 600
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 55,
+        "format": "decimal"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "sessionLoginAttempt": {
+    "name": "sessionLoginAttempt",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.4",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 10
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 3,
+        "format": "decimal"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "sessionCliCommandLogEnable": {
+    "name": "sessionCliCommandLogEnable",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.5",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "disable",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "sessionXonXoffEnable": {
+    "name": "sessionXonXoffEnable",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.6",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "disable",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "switchMgtTrapsObj": {
+    "name": "switchMgtTrapsObj",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.7",
+    "class": "objectidentity"
+  },
+  "sessionAuthenticationTrap": {
+    "name": "sessionAuthenticationTrap",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.0.1",
+    "class": "notificationtype",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionAccessType"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionUserName"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionUserIpAddress"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionAuthFailure"
+      }
+    ],
+    "status": "current"
+  },
+  "sessionAuthFailure": {
+    "name": "sessionAuthFailure",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.1.1.7.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "unknownUser": 1
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "alcatelIND1SessionMgrMIBCompliance": {
+    "name": "alcatelIND1SessionMgrMIBCompliance",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.2.2.1",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "sessionConfigGroup",
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB"
+      },
+      {
+        "object": "sessionActiveGroup",
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB"
+      },
+      {
+        "object": "sessionObjectGroup",
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB"
+      },
+      {
+        "object": "sessionTrapsGroup",
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB"
+      }
+    ],
+    "status": "current"
+  },
+  "sessionConfigGroup": {
+    "name": "sessionConfigGroup",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.2.1.1",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionType"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionBannerFileName"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionInactivityTimerValue"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionDefaultPromptString"
+      }
+    ],
+    "status": "current"
+  },
+  "sessionActiveGroup": {
+    "name": "sessionActiveGroup",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.2.1.2",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionIndex"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionAccessType"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionPhysicalPort"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionUserName"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionUserReadPrivileges"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionUserWritePrivileges"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionUserProfileName"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionUserIpAddress"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionRowStatus"
+      }
+    ],
+    "status": "current"
+  },
+  "sessionTrapsGroup": {
+    "name": "sessionTrapsGroup",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.2.1.3",
+    "class": "notificationgroup",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionAuthenticationTrap"
+      }
+    ],
+    "status": "current"
+  },
+  "sessionObjectGroup": {
+    "name": "sessionObjectGroup",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.7.1.2.1.4",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionLoginTimeout"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionLoginAttempt"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionCliCommandLogEnable"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionXonXoffEnable"
+      },
+      {
+        "module": "ALCATEL-IND1-SESSION-MGR-MIB",
+        "object": "sessionAuthFailure"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/nokia/ALCATEL-IND1-SESSION-MGR-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:38:18 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "ALCATEL-IND1-SESSION-MGR-MIB"
+  }
+}

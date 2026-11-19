@@ -1,0 +1,51 @@
+#
+# PySNMP MIB module CISCO-ENTITY-PROVISIONING-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ENTITY-PROVISIONING-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+entPhysicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+AutonomousType, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "AutonomousType", "DisplayString", "TextualConvention")
+ciscoEntityProvMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 139))
+if mibBuilder.loadTexts: ciscoEntityProvMIB.setLastUpdated('9907082052Z')
+if mibBuilder.loadTexts: ciscoEntityProvMIB.setOrganization('Cisco Systems, Inc.')
+if mibBuilder.loadTexts: ciscoEntityProvMIB.setContactInfo('Cisco Systems\n                    Customer Service\n\n                    Postal: 170 W Tasman Drive\n                    San Jose, CA 95134\n\n                    Tel: +1 800 553-NETS\n\n                    E-mail: cs-dslam@cisco.com')
+if mibBuilder.loadTexts: ciscoEntityProvMIB.setDescription("This MIB module defines the objects that support provisioning\n        of 'container' class physical entities.  Provisioning sets up\n        a 'container' to hold a specified physical entity.  This allows\n        a management client to configure the specified physical entity,\n        including all of its subordinates physical entities, before\n        installation.\n\n        Consider a network manager of a CLEC (Competitive Local Exchange\n        Carrier) planning for the installation of the hardware necessary\n        to support several new subscribers.  This network manager wants\n        to pre-configure the ADSL (Asymmetric Digital Subscriber Loop)\n        modems that will support these subscribers, thereby reducing the\n        bring-up time once they arrive.  Under normal circumstances this\n        would not be possible.  However, provisioning allows the network\n        manager to 'create' the physical entities that represent the new\n        modems.  In essence, the device simulates the installation of\n        the new modules into the system.  This has the effect of creating\n        all conceptual rows in all the necessary tables that support the\n        physical entity and all its subordinate physical entities (e.g.,\n        entPhysicalTable, entAliasMappingTable, and ifTable).")
+ciscoEntityProvMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 139, 1))
+ceProvContainerTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 139, 1, 1), )
+if mibBuilder.loadTexts: ceProvContainerTable.setStatus('current')
+if mibBuilder.loadTexts: ceProvContainerTable.setDescription("This table extends some entries in the entPhysicalTable\n        (see ENTITY-MIB for further details).  A entry appears in\n        this table for a physical entity matching the following\n        criteria:\n\n        1)  Its entPhysicalClass object has a value of 'container';\n\n        2)  It can contain one (but not multiple) physical entity;\n            and,\n\n        3)  It supports provisioning.")
+ceProvContainerEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 139, 1, 1, 1), ).setIndexNames((0, "ENTITY-MIB", "entPhysicalIndex"))
+if mibBuilder.loadTexts: ceProvContainerEntry.setStatus('current')
+if mibBuilder.loadTexts: ceProvContainerEntry.setDescription("The attributes that support the provisioning of a physical\n        entity of the 'container' class (i.e., a physical entity\n        having an entPhysicalClass of 'container').")
+ceProvContainerStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 139, 1, 1, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5, 6))).clone(namedValues=NamedValues(("unequipped", 1), ("provisioned", 2), ("mismatched", 3), ("invalid", 4), ("equipped", 5), ("failed", 6)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceProvContainerStatus.setStatus('current')
+if mibBuilder.loadTexts: ceProvContainerStatus.setDescription("This object represents the equipment status of the container:\n\n        'unequipped'    The container neither holds a physical entity,\n                        nor has it been provisioned to hold a physical\n                        entity.\n\n        'provisioned'   The container does not hold a physical entity\n                        However, it has been provisioned to hold a\n                        physical entity of a particular type.  This\n                        physical entity appears in the entPhysicalTable\n                        as a child of the container.\n\n        'mismatched'    The container holds a valid physical entity that\n                        does not match the type of physical entity for\n                        which the container has been previously\n                        provisioned.\n\n        'invalid'       The container holds a recognized physical entity\n                        that the container is not capable of supporting,\n                        or the container holds an unrecognized physical\n                        entity.\n\n        'equipped'      The container holds a valid physical entity for\n                        which the container has been previously\n                        provisioned to hold.\n\n        'failed'        The container holds a valid physical entity that\n                        has become totally inoperable and incapable of\n                        providing service.")
+ceProvContainerEquipped = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 139, 1, 1, 1, 2), AutonomousType()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ceProvContainerEquipped.setStatus('current')
+if mibBuilder.loadTexts: ceProvContainerEquipped.setDescription("This object specifies the vendor type of the physical entity\n        for which this container has been provisioned to hold.  If the\n        container has no provisioning, then the value of this object\n        is { 0 0 }.\n\n        For more information concerning 'vendor type', see the\n        definition of the entPhysicalVendorType object in the\n        ENTITY-MIB.")
+ceProvContainerDetected = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 139, 1, 1, 1, 3), AutonomousType()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ceProvContainerDetected.setStatus('current')
+if mibBuilder.loadTexts: ceProvContainerDetected.setDescription("This object specifies the vendor type of the physical entity\n        held by the container.  If the container does not hold a\n        physical entity, then the value of this object is { 0 0 }.\n\n        For more information concerning 'vendor type', see the\n        definition of the entPhysicalVendorType object in the\n        ENTITY-MIB.")
+ceProvMIBNotificationsPrefix = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 139, 2))
+ceProvMIBNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 139, 2, 0))
+ceProvMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 139, 3))
+ceProvMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 139, 3, 1))
+ceProvMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 139, 3, 2))
+ceProvMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 139, 3, 1, 1)).setObjects(("CISCO-ENTITY-PROVISIONING-MIB", "ceProvContainerGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceProvMIBCompliance = ceProvMIBCompliance.setStatus('current')
+if mibBuilder.loadTexts: ceProvMIBCompliance.setDescription('The compliance statement for entities that implement the\n        CISCO-ENTITY-PROVISIONING-MIB.  Implementation of this MIB\n        is strongly recommended for any platform targeted for a\n        carrier-class environment.')
+ceProvContainerGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 139, 3, 2, 1)).setObjects(("CISCO-ENTITY-PROVISIONING-MIB", "ceProvContainerStatus"), ("CISCO-ENTITY-PROVISIONING-MIB", "ceProvContainerEquipped"), ("CISCO-ENTITY-PROVISIONING-MIB", "ceProvContainerDetected"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ceProvContainerGroup = ceProvContainerGroup.setStatus('current')
+if mibBuilder.loadTexts: ceProvContainerGroup.setDescription("A collection of attributes that support provisioning of a\n        physical entity of the 'container' class.")
+mibBuilder.exportSymbols("CISCO-ENTITY-PROVISIONING-MIB", ceProvMIBCompliance=ceProvMIBCompliance, ceProvContainerEquipped=ceProvContainerEquipped, ceProvMIBConformance=ceProvMIBConformance, ceProvContainerTable=ceProvContainerTable, ceProvMIBCompliances=ceProvMIBCompliances, PYSNMP_MODULE_ID=ciscoEntityProvMIB, ciscoEntityProvMIB=ciscoEntityProvMIB, ceProvContainerStatus=ceProvContainerStatus, ceProvContainerGroup=ceProvContainerGroup, ceProvMIBGroups=ceProvMIBGroups, ceProvMIBNotificationsPrefix=ceProvMIBNotificationsPrefix, ceProvContainerEntry=ceProvContainerEntry, ceProvMIBNotifications=ceProvMIBNotifications, ceProvContainerDetected=ceProvContainerDetected, ciscoEntityProvMIBObjects=ciscoEntityProvMIBObjects)

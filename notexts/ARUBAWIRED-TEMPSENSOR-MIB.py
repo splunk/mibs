@@ -1,0 +1,57 @@
+#
+# PySNMP MIB module ARUBAWIRED-TEMPSENSOR-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/arubaos/ARUBAWIRED-TEMPSENSOR-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:53 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+arubaWiredChassisMIB, = mibBuilder.importSymbols("ARUBAWIRED-CHASSIS-MIB", "arubaWiredChassisMIB")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection", "SingleValueConstraint")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+iso, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Counter64, Unsigned32, Bits, Gauge32, TimeTicks, ModuleIdentity, MibIdentifier, Integer32, ObjectIdentity, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "iso", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Counter64", "Unsigned32", "Bits", "Gauge32", "TimeTicks", "ModuleIdentity", "MibIdentifier", "Integer32", "ObjectIdentity", "NotificationType")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+arubaWiredTempSensor = ModuleIdentity((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3))
+arubaWiredTempSensor.setRevisions(('2020-02-13 00:00',))
+if mibBuilder.loadTexts: arubaWiredTempSensor.setLastUpdated('202002130000Z')
+if mibBuilder.loadTexts: arubaWiredTempSensor.setOrganization('HPE/Aruba Networking Division')
+arubaWiredTempSensorNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 0))
+arubaWiredTempSensorStateNotification = NotificationType((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 0, 1)).setObjects(("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorName"), ("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorState"))
+if mibBuilder.loadTexts: arubaWiredTempSensorStateNotification.setStatus('current')
+arubaWiredTempSensorTable = MibTable((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1), )
+if mibBuilder.loadTexts: arubaWiredTempSensorTable.setStatus('current')
+arubaWiredTempSensorEntry = MibTableRow((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1, 1), ).setIndexNames((0, "ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorGroupIndex"), (0, "ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorSlotTypeIndex"), (0, "ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorSlotIndex"), (0, "ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorIndex"))
+if mibBuilder.loadTexts: arubaWiredTempSensorEntry.setStatus('current')
+arubaWiredTempSensorGroupIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: arubaWiredTempSensorGroupIndex.setStatus('current')
+arubaWiredTempSensorSlotTypeIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1, 1, 2), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: arubaWiredTempSensorSlotTypeIndex.setStatus('current')
+arubaWiredTempSensorSlotIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1, 1, 3), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: arubaWiredTempSensorSlotIndex.setStatus('current')
+arubaWiredTempSensorIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1, 1, 4), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: arubaWiredTempSensorIndex.setStatus('current')
+arubaWiredTempSensorName = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1, 1, 5), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 40))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredTempSensorName.setStatus('current')
+arubaWiredTempSensorState = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1, 1, 6), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 20))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredTempSensorState.setStatus('current')
+arubaWiredTempSensorTemperature = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1, 1, 7), Integer32()).setUnits('millidegrees Celsius').setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredTempSensorTemperature.setStatus('current')
+arubaWiredTempSensorMinTemp = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1, 1, 8), Integer32()).setUnits('millidegrees Celsius').setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredTempSensorMinTemp.setStatus('current')
+arubaWiredTempSensorMaxTemp = MibTableColumn((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 1, 1, 9), Integer32()).setUnits('millidegrees Celsius').setMaxAccess("readonly")
+if mibBuilder.loadTexts: arubaWiredTempSensorMaxTemp.setStatus('current')
+arubaWiredTempSensorConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 99))
+arubaWiredTempSensorCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 99, 1))
+arubaWiredTempSensorGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 99, 2))
+arubaWiredTempSensorCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 99, 1, 1)).setObjects(("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorTable"), ("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorNotificationsGroup"), ("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorTableGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    arubaWiredTempSensorCompliance = arubaWiredTempSensorCompliance.setStatus('current')
+arubaWiredTempSensorTableGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 99, 2, 1)).setObjects(("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorName"), ("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorState"), ("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorTemperature"), ("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorMinTemp"), ("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorMaxTemp"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    arubaWiredTempSensorTableGroup = arubaWiredTempSensorTableGroup.setStatus('current')
+arubaWiredTempSensorNotificationsGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 47196, 4, 1, 1, 3, 11, 3, 99, 2, 2)).setObjects(("ARUBAWIRED-TEMPSENSOR-MIB", "arubaWiredTempSensorStateNotification"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    arubaWiredTempSensorNotificationsGroup = arubaWiredTempSensorNotificationsGroup.setStatus('current')
+mibBuilder.exportSymbols("ARUBAWIRED-TEMPSENSOR-MIB", PYSNMP_MODULE_ID=arubaWiredTempSensor, arubaWiredTempSensorMaxTemp=arubaWiredTempSensorMaxTemp, arubaWiredTempSensorMinTemp=arubaWiredTempSensorMinTemp, arubaWiredTempSensorSlotTypeIndex=arubaWiredTempSensorSlotTypeIndex, arubaWiredTempSensorStateNotification=arubaWiredTempSensorStateNotification, arubaWiredTempSensorState=arubaWiredTempSensorState, arubaWiredTempSensor=arubaWiredTempSensor, arubaWiredTempSensorGroupIndex=arubaWiredTempSensorGroupIndex, arubaWiredTempSensorConformance=arubaWiredTempSensorConformance, arubaWiredTempSensorGroups=arubaWiredTempSensorGroups, arubaWiredTempSensorCompliances=arubaWiredTempSensorCompliances, arubaWiredTempSensorIndex=arubaWiredTempSensorIndex, arubaWiredTempSensorNotificationsGroup=arubaWiredTempSensorNotificationsGroup, arubaWiredTempSensorTable=arubaWiredTempSensorTable, arubaWiredTempSensorTableGroup=arubaWiredTempSensorTableGroup, arubaWiredTempSensorTemperature=arubaWiredTempSensorTemperature, arubaWiredTempSensorEntry=arubaWiredTempSensorEntry, arubaWiredTempSensorSlotIndex=arubaWiredTempSensorSlotIndex, arubaWiredTempSensorCompliance=arubaWiredTempSensorCompliance, arubaWiredTempSensorNotifications=arubaWiredTempSensorNotifications, arubaWiredTempSensorName=arubaWiredTempSensorName)

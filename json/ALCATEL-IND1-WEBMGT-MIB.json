@@ -1,0 +1,417 @@
+{
+  "imports": {
+    "class": "imports",
+    "ALCATEL-IND1-BASE": [
+      "softentIND1WebMgt"
+    ],
+    "INET-ADDRESS-MIB": [
+      "InetAddress",
+      "InetAddressType"
+    ],
+    "SNMP-FRAMEWORK-MIB": [
+      "SnmpAdminString"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "TimeTicks",
+      "Counter64",
+      "OBJECT-IDENTITY",
+      "Bits",
+      "MibIdentifier",
+      "OBJECT-TYPE",
+      "Gauge32",
+      "MODULE-IDENTITY",
+      "Counter32",
+      "IpAddress",
+      "Unsigned32",
+      "NOTIFICATION-TYPE",
+      "Integer32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION",
+      "RowStatus"
+    ]
+  },
+  "alcatelIND1WebMgtMIB": {
+    "name": "alcatelIND1WebMgtMIB",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2010-05-13 00:00",
+        "description": "Fixed the Notifications to use MIB Module OID.0 as Notifications root."
+      }
+    ]
+  },
+  "alcatelIND1WebMgtMIBNotifications": {
+    "name": "alcatelIND1WebMgtMIBNotifications",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.0",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alcatelIND1WebMgtMIBObjects": {
+    "name": "alcatelIND1WebMgtMIBObjects",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alcatelIND1WebMgtMIBConformance": {
+    "name": "alcatelIND1WebMgtMIBConformance",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alcatelIND1WebMgtMIBGroups": {
+    "name": "alcatelIND1WebMgtMIBGroups",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.2.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alcatelIND1WebMgtMIBCompliances": {
+    "name": "alcatelIND1WebMgtMIBCompliances",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.2.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alaIND1WebMgtAdminStatus": {
+    "name": "alaIND1WebMgtAdminStatus",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "enable",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaIND1WebMgtSSL": {
+    "name": "alaIND1WebMgtSSL",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "enable",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaIND1WebMgtHttpPort": {
+    "name": "alaIND1WebMgtHttpPort",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.3",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 80,
+            "max": 80
+          },
+          {
+            "min": 1024,
+            "max": 65535
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 80,
+        "format": "decimal"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaIND1WebMgtHttpsPort": {
+    "name": "alaIND1WebMgtHttpsPort",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.4",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 443,
+            "max": 443
+          },
+          {
+            "min": 1024,
+            "max": 65535
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 443,
+        "format": "decimal"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaIND1WebMgtServerStatus": {
+    "name": "alaIND1WebMgtServerStatus",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.5",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2,
+          "restarting": 3,
+          "error": 4
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "enable",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaIND1WebMgtServerError": {
+    "name": "alaIND1WebMgtServerError",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.6",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "SnmpAdminString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 127
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "alcatelIND1WebMgtCertObjects": {
+    "name": "alcatelIND1WebMgtCertObjects",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.8",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alcatelIND1WebMgtCertFile": {
+    "name": "alcatelIND1WebMgtCertFile",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.8.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "none": 1,
+          "default": 2,
+          "user": 3
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "none",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alcatelIND1WebMgtCertMD5": {
+    "name": "alcatelIND1WebMgtCertMD5",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.8.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "SnmpAdminString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 32
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "webMgtTrapsObj": {
+    "name": "webMgtTrapsObj",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.7",
+    "class": "objectidentity"
+  },
+  "webMgtServerErrorTrap": {
+    "name": "webMgtServerErrorTrap",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.0.1",
+    "class": "notificationtype",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "webMgtServerError"
+      }
+    ],
+    "status": "current"
+  },
+  "webMgtServerError": {
+    "name": "webMgtServerError",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.1.7.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "SnmpAdminString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 127
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "alaIND1WebMgtConfigMIBCompliance": {
+    "name": "alaIND1WebMgtConfigMIBCompliance",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.2.2.1",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "alaIND1WebMgtConfigMIBGroup",
+        "module": "ALCATEL-IND1-WEBMGT-MIB"
+      },
+      {
+        "object": "alaIND1WebMgtNotificationGroup",
+        "module": "ALCATEL-IND1-WEBMGT-MIB"
+      },
+      {
+        "object": "alaIND1WebMgtConfigMIBCertGroup",
+        "module": "ALCATEL-IND1-WEBMGT-MIB"
+      }
+    ],
+    "status": "current"
+  },
+  "alaIND1WebMgtConfigMIBGroup": {
+    "name": "alaIND1WebMgtConfigMIBGroup",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.2.1.1",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "alaIND1WebMgtAdminStatus"
+      },
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "alaIND1WebMgtSSL"
+      },
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "alaIND1WebMgtHttpPort"
+      },
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "alaIND1WebMgtHttpsPort"
+      },
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "alaIND1WebMgtServerStatus"
+      },
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "alaIND1WebMgtServerError"
+      },
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "webMgtServerError"
+      }
+    ],
+    "status": "current"
+  },
+  "alaIND1WebMgtNotificationGroup": {
+    "name": "alaIND1WebMgtNotificationGroup",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.2.1.2",
+    "class": "notificationgroup",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "webMgtServerErrorTrap"
+      }
+    ],
+    "status": "current"
+  },
+  "alaIND1WebMgtConfigMIBCertGroup": {
+    "name": "alaIND1WebMgtConfigMIBCertGroup",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.17.1.2.1.3",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "alcatelIND1WebMgtCertFile"
+      },
+      {
+        "module": "ALCATEL-IND1-WEBMGT-MIB",
+        "object": "alcatelIND1WebMgtCertMD5"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/nokia/ALCATEL-IND1-WEBMGT-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:38:20 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "ALCATEL-IND1-WEBMGT-MIB"
+  }
+}

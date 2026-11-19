@@ -1,0 +1,111 @@
+{
+  "imports": {
+    "class": "imports",
+    "CISCO-SMI": [
+      "ciscoAgentCapability"
+    ],
+    "SNMPv2-CONF": [
+      "AGENT-CAPABILITIES",
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "MODULE-IDENTITY",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "Counter64",
+      "IpAddress",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Counter32",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "TimeTicks"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ciscoMauCapability": {
+    "name": "ciscoMauCapability",
+    "oid": "1.3.6.1.4.1.9.7.411",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2014-07-30 00:00",
+        "description": "Added capability statement ciscoMauCapV05R0003U0401PN3K."
+      },
+      {
+        "revision": "2011-09-28 00:00",
+        "description": "Added capability statement ciscoMauCapV12R0233SXJPCat6K and ciscoMauCapV15R0001SYPCat6K."
+      },
+      {
+        "revision": "2008-10-28 00:00",
+        "description": "Added capability statement ciscoMauCapV12R0233SXIPCat6K."
+      },
+      {
+        "revision": "2007-07-13 00:00",
+        "description": "Added capability statement ciscoMauCapV12R0233SXHPCat6K."
+      },
+      {
+        "revision": "2004-10-22 00:00",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "ciscoMauCapCatOSV08R0401": {
+    "name": "ciscoMauCapCatOSV08R0401",
+    "oid": "1.3.6.1.4.1.9.7.411.1",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco CatOS 8.4(1).",
+    "status": "current"
+  },
+  "ciscoMauCapV12R0233SXHPCat6K": {
+    "name": "ciscoMauCapV12R0233SXHPCat6K",
+    "oid": "1.3.6.1.4.1.9.7.411.2",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS 12.2(33)SXH on Catalyst 6000/6500\n                     series devices.",
+    "status": "current"
+  },
+  "ciscoMauCapV12R0233SXIPCat6K": {
+    "name": "ciscoMauCapV12R0233SXIPCat6K",
+    "oid": "1.3.6.1.4.1.9.7.411.3",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS 12.2(33)SXI on Catalyst 6000/6500\n                     series devices.",
+    "status": "current"
+  },
+  "ciscoMauCapV12R0233SXJPCat6K": {
+    "name": "ciscoMauCapV12R0233SXJPCat6K",
+    "oid": "1.3.6.1.4.1.9.7.411.4",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS 12.2(33)SXJ on Catalyst 6000/6500\n                     series devices.",
+    "status": "current"
+  },
+  "ciscoMauCapV15R0001SYPCat6K": {
+    "name": "ciscoMauCapV15R0001SYPCat6K",
+    "oid": "1.3.6.1.4.1.9.7.411.5",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS 15.0(1)SY on Catalyst 6000/6500\n                     series devices.",
+    "status": "current"
+  },
+  "ciscoMauCapV05R0003U0401PN3K": {
+    "name": "ciscoMauCapV05R0003U0401PN3K",
+    "oid": "1.3.6.1.4.1.9.7.411.6",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco NX-OS 5.0(3)U4(1) on Nexus 3000 series\n                     devices.",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MAU-CAPABILITY",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:50 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CISCO-MAU-CAPABILITY"
+  }
+}

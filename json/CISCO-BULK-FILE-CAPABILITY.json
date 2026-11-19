@@ -1,0 +1,93 @@
+{
+  "imports": {
+    "class": "imports",
+    "CISCO-SMI": [
+      "ciscoAgentCapability"
+    ],
+    "SNMPv2-CONF": [
+      "AGENT-CAPABILITIES",
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "MODULE-IDENTITY",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "Counter64",
+      "IpAddress",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Counter32",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "TimeTicks"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ciscoBulkFileCapability": {
+    "name": "ciscoBulkFileCapability",
+    "oid": "1.3.6.1.4.1.9.7.188",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2006-02-06 00:00",
+        "description": "Added ciscoBulkFileCapCRS1V2R0 Agent Capabilities for IOS XR 2.0"
+      },
+      {
+        "revision": "2003-11-13 00:00",
+        "description": "Added VXSM 5.0.0 PRODUCT-RELEASE of ciscoBulkFileCapabilityV3R00"
+      },
+      {
+        "revision": "2002-02-17 00:00",
+        "description": "Added following capabilities for MGX8850/SES Products: - ciscoBulkFileCapabilityV2R00 - ciscoBulkFileCapabilityV3R00."
+      },
+      {
+        "revision": "2000-12-04 00:00",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "ciscoBulkFileCapabilityV1R0": {
+    "name": "ciscoBulkFileCapabilityV1R0",
+    "oid": "1.3.6.1.4.1.9.7.188.1",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS mc 1.0",
+    "status": "current"
+  },
+  "ciscoBulkFileCapabilityV2R00": {
+    "name": "ciscoBulkFileCapabilityV2R00",
+    "oid": "1.3.6.1.4.1.9.7.188.2",
+    "class": "agentcapabilities",
+    "productrelease": "MGX8850 Release 2.00,\n                          BPX SES Release 1.00.",
+    "status": "current"
+  },
+  "ciscoBulkFileCapabilityV3R00": {
+    "name": "ciscoBulkFileCapabilityV3R00",
+    "oid": "1.3.6.1.4.1.9.7.188.3",
+    "class": "agentcapabilities",
+    "productrelease": "MGX8850 Release 3.00,\n                          BPX SES Release 3.00,\n                          VXSM  Release 5.0.0.",
+    "status": "current"
+  },
+  "ciscoBulkFileCapCRS1V2R0": {
+    "name": "ciscoBulkFileCapCRS1V2R0",
+    "oid": "1.3.6.1.4.1.9.7.188.4",
+    "class": "agentcapabilities",
+    "productrelease": "Cisco IOS XR 2.0 for CRS-1",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-BULK-FILE-CAPABILITY",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:53 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CISCO-BULK-FILE-CAPABILITY"
+  }
+}

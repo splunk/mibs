@@ -1,0 +1,229 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "Counter64",
+      "Unsigned32",
+      "IpAddress",
+      "iso",
+      "MibIdentifier",
+      "Bits",
+      "Counter32",
+      "OBJECT-TYPE",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "MODULE-IDENTITY",
+      "Gauge32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ],
+    "VMWARE-ROOT-MIB": [
+      "vmwSystem"
+    ]
+  },
+  "vmwTcMIB": {
+    "name": "vmwTcMIB",
+    "oid": "1.3.6.1.4.1.6876.1.11",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2009-09-05 00:00",
+        "description": "Added VmwLongDisplayString"
+      },
+      {
+        "revision": "2007-12-27 00:00",
+        "description": "This is the first revision."
+      }
+    ]
+  },
+  "VmwSubsystemTypes": {
+    "name": "VmwSubsystemTypes",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "unknown": 1,
+          "chassis": 2,
+          "powerSupply": 3,
+          "fan": 4,
+          "cpu": 5,
+          "memory": 6,
+          "battery": 7,
+          "temperatureSensor": 8,
+          "raidController": 9,
+          "voltage": 10
+        }
+      }
+    },
+    "status": "current"
+  },
+  "VmwCIMAlertTypes": {
+    "name": "VmwCIMAlertTypes",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "other": 1,
+          "communications": 2,
+          "qos": 3,
+          "processingError": 4,
+          "deviceAlert": 5,
+          "environmentalAlert": 6,
+          "modelChange": 7,
+          "securityAlert": 8
+        }
+      }
+    },
+    "status": "current"
+  },
+  "VmwCIMAlertFormat": {
+    "name": "VmwCIMAlertFormat",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "unknown": 0,
+          "other": 1,
+          "cimObjectPath": 2
+        }
+      }
+    },
+    "status": "current"
+  },
+  "VmwSubsystemStatus": {
+    "name": "VmwSubsystemStatus",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "unknown": 1,
+          "normal": 2,
+          "marginal": 3,
+          "critical": 4,
+          "failed": 5
+        }
+      }
+    },
+    "status": "current"
+  },
+  "VmwCIMSeverity": {
+    "name": "VmwCIMSeverity",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "unknown": 0,
+          "other": 1,
+          "information": 2,
+          "warning": 3,
+          "minor": 4,
+          "major": 5,
+          "critical": 6,
+          "fatal": 7
+        }
+      }
+    },
+    "status": "current"
+  },
+  "VmwCimName": {
+    "name": "VmwCimName",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 256
+          }
+        ]
+      }
+    },
+    "displayhint": "256a",
+    "status": "current"
+  },
+  "VmwConnectedState": {
+    "name": "VmwConnectedState",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 4,
+            "max": 7
+          }
+        ]
+      }
+    },
+    "displayhint": "7a",
+    "status": "current"
+  },
+  "VmwLongDisplayString": {
+    "name": "VmwLongDisplayString",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type"
+    },
+    "displayhint": "1a",
+    "status": "current"
+  },
+  "VmwLongSnmpAdminString": {
+    "name": "VmwLongSnmpAdminString",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type"
+    },
+    "displayhint": "4096t",
+    "status": "current"
+  },
+  "VmwUnixAbsFilePath": {
+    "name": "VmwUnixAbsFilePath",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 1024
+          }
+        ]
+      }
+    },
+    "displayhint": "1024a",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/vmware/VMWARE-TC-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:40:59 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "VMWARE-TC-MIB"
+  }
+}

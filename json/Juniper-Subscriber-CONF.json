@@ -1,0 +1,75 @@
+{
+  "imports": {
+    "class": "imports",
+    "Juniper-Agents": [
+      "juniAgents"
+    ],
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE",
+      "AGENT-CAPABILITIES"
+    ],
+    "SNMPv2-SMI": [
+      "TimeTicks",
+      "iso",
+      "OBJECT-TYPE",
+      "Counter32",
+      "NOTIFICATION-TYPE",
+      "Integer32",
+      "Counter64",
+      "Unsigned32",
+      "Gauge32",
+      "IpAddress",
+      "MibIdentifier",
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY",
+      "Bits"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "juniSubscriberAgent": {
+    "name": "juniSubscriberAgent",
+    "oid": "1.3.6.1.4.1.4874.5.2.45",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2002-09-06 16:54",
+        "description": "Replaced Unisphere names with Juniper names."
+      },
+      {
+        "revision": "2002-05-10 20:17",
+        "description": "Added local authentication support."
+      },
+      {
+        "revision": "2001-03-30 15:25",
+        "description": "The initial release of this management information module."
+      }
+    ]
+  },
+  "juniSubscriberAgentV1": {
+    "name": "juniSubscriberAgentV1",
+    "oid": "1.3.6.1.4.1.4874.5.2.45.1",
+    "class": "agentcapabilities",
+    "productrelease": "Version 1 of the Subscriber component of the JUNOSe SNMP agent.  This\n        version of the Subscriber component was supported in JUNOSe 3.x system\n        releases.",
+    "status": "obsolete"
+  },
+  "juniSubscriberAgentV2": {
+    "name": "juniSubscriberAgentV2",
+    "oid": "1.3.6.1.4.1.4874.5.2.45.2",
+    "class": "agentcapabilities",
+    "productrelease": "Version 2 of the Subscriber component of the JUNOSe SNMP agent.  This\n        version of the Subscriber component is supported in JUNOSe 4.0 and\n        subsequent system releases.",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/juniper/Juniper-Subscriber-CONF",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:37:10 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "Juniper-Subscriber-CONF"
+  }
+}

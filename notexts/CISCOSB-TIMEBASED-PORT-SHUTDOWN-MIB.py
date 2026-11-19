@@ -1,0 +1,35 @@
+#
+# PySNMP MIB module CISCOSB-TIMEBASED-PORT-SHUTDOWN-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-TIMEBASED-PORT-SHUTDOWN-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
+ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
+PortList, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "PortList")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, TruthValue, TextualConvention, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention", "RowStatus")
+rlTimeBasedPort = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 208))
+rlTimeBasedPort.setRevisions(('2011-08-06 00:00',))
+if mibBuilder.loadTexts: rlTimeBasedPort.setLastUpdated('201108060000Z')
+if mibBuilder.loadTexts: rlTimeBasedPort.setOrganization('Cisco Systems, Inc.')
+rlTimeBasedPortVersion = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 208, 1), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: rlTimeBasedPortVersion.setStatus('current')
+rlTimeBasedPortTable = MibTable((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 208, 2), )
+if mibBuilder.loadTexts: rlTimeBasedPortTable.setStatus('current')
+rlTimeBasedPortEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 208, 2, 1), ).setIndexNames((0, "IF-MIB", "ifIndex"), (0, "CISCOSB-TIMEBASED-PORT-SHUTDOWN-MIB", "rlTimeBasedPortTimeRangeName"))
+if mibBuilder.loadTexts: rlTimeBasedPortEntry.setStatus('current')
+rlTimeBasedPortTimeRangeName = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 208, 2, 1, 1), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(1, 32)))
+if mibBuilder.loadTexts: rlTimeBasedPortTimeRangeName.setStatus('current')
+rlTimeBasedPortAction = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 208, 2, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("up", 1), ("down", 2)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlTimeBasedPortAction.setStatus('current')
+rlTimeBasedPortActive = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 208, 2, 1, 3), TruthValue()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: rlTimeBasedPortActive.setStatus('current')
+rlTimeBasedPortRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 208, 2, 1, 4), RowStatus()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlTimeBasedPortRowStatus.setStatus('current')
+mibBuilder.exportSymbols("CISCOSB-TIMEBASED-PORT-SHUTDOWN-MIB", rlTimeBasedPortVersion=rlTimeBasedPortVersion, rlTimeBasedPortAction=rlTimeBasedPortAction, rlTimeBasedPortActive=rlTimeBasedPortActive, rlTimeBasedPortTimeRangeName=rlTimeBasedPortTimeRangeName, rlTimeBasedPort=rlTimeBasedPort, rlTimeBasedPortRowStatus=rlTimeBasedPortRowStatus, rlTimeBasedPortEntry=rlTimeBasedPortEntry, PYSNMP_MODULE_ID=rlTimeBasedPort, rlTimeBasedPortTable=rlTimeBasedPortTable)

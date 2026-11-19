@@ -1,0 +1,82 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "enterprises",
+      "iso",
+      "TimeTicks",
+      "MibIdentifier",
+      "Bits",
+      "MODULE-IDENTITY",
+      "Counter64",
+      "OBJECT-TYPE",
+      "Gauge32",
+      "IpAddress",
+      "Integer32",
+      "NOTIFICATION-TYPE",
+      "Counter32",
+      "Unsigned32",
+      "OBJECT-IDENTITY"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "arbornetworks": {
+    "name": "arbornetworks",
+    "oid": "1.3.6.1.4.1.9694",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2013-11-14 00:00",
+        "description": "Add peakflowMobile product."
+      },
+      {
+        "revision": "2013-08-19 00:00",
+        "description": "Updated contact information"
+      },
+      {
+        "revision": "2011-07-20 00:00",
+        "description": "Added pravail productid."
+      },
+      {
+        "revision": "2009-03-30 00:00",
+        "description": "Update contact group name."
+      },
+      {
+        "revision": "2008-11-13 00:00",
+        "description": "Update company address. Add arborExperimental."
+      },
+      {
+        "revision": "2005-09-12 00:00",
+        "description": "Apply fixes from validation."
+      }
+    ]
+  },
+  "arbornetworksProducts": {
+    "name": "arbornetworksProducts",
+    "oid": "1.3.6.1.4.1.9694.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "arborExperimental": {
+    "name": "arborExperimental",
+    "oid": "1.3.6.1.4.1.9694.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/arbornet/ARBOR-SMI",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:30:47 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "ARBOR-SMI"
+  }
+}

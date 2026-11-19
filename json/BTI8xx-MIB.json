@@ -1,0 +1,60 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "Integer32",
+      "iso",
+      "NOTIFICATION-TYPE",
+      "Counter64",
+      "Gauge32",
+      "Counter32",
+      "TimeTicks",
+      "IpAddress",
+      "OBJECT-IDENTITY",
+      "MibIdentifier",
+      "MODULE-IDENTITY",
+      "enterprises",
+      "Unsigned32",
+      "OBJECT-TYPE",
+      "Bits"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "bti8xx": {
+    "name": "bti8xx",
+    "oid": "1.3.6.1.4.1.30005.1.7",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2013-12-26 12:00",
+        "description": "Initial version of MIB."
+      }
+    ]
+  },
+  "btiSystems": {
+    "name": "btiSystems",
+    "oid": "1.3.6.1.4.1.30005",
+    "class": "objectidentity"
+  },
+  "btiProducts": {
+    "name": "btiProducts",
+    "oid": "1.3.6.1.4.1.30005.1",
+    "class": "objectidentity"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/bti/BTI8xx-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:31:31 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "BTI8xx-MIB"
+  }
+}

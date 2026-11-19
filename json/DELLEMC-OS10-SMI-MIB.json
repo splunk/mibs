@@ -1,0 +1,72 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "OBJECT-IDENTITY",
+      "Unsigned32",
+      "MibIdentifier",
+      "Bits",
+      "Integer32",
+      "enterprises",
+      "OBJECT-TYPE",
+      "IpAddress",
+      "Counter64",
+      "Counter32",
+      "Gauge32",
+      "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "iso",
+      "MODULE-IDENTITY"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "dell": {
+    "name": "dell",
+    "oid": "1.3.6.1.4.1.674",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2017-06-02 18:01",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "enterpriseSW": {
+    "name": "enterpriseSW",
+    "oid": "1.3.6.1.4.1.674.11000",
+    "class": "objectidentity"
+  },
+  "networking": {
+    "name": "networking",
+    "oid": "1.3.6.1.4.1.674.11000.5000",
+    "class": "objectidentity"
+  },
+  "os10": {
+    "name": "os10",
+    "oid": "1.3.6.1.4.1.674.11000.5000.100",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "os10Experiment": {
+    "name": "os10Experiment",
+    "oid": "1.3.6.1.4.1.674.11000.5000.200",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dell/DELLEMC-OS10-SMI-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:39 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "DELLEMC-OS10-SMI-MIB"
+  }
+}

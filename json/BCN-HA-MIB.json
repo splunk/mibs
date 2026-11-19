@@ -1,0 +1,388 @@
+{
+  "imports": {
+    "class": "imports",
+    "BCN-SMI-MIB": [
+      "bcnServices"
+    ],
+    "BCN-TC-MIB": [
+      "BcnAlarmSeverity"
+    ],
+    "INET-ADDRESS-MIB": [
+      "InetAddress",
+      "InetAddressType"
+    ],
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "Bits",
+      "MibIdentifier",
+      "iso",
+      "Integer32",
+      "Counter32",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "Gauge32",
+      "Counter64",
+      "IpAddress",
+      "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "OBJECT-TYPE"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "bcnHaMIB": {
+    "name": "bcnHaMIB",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.1",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2010-12-15 00:00",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "bcnHa": {
+    "name": "bcnHa",
+    "oid": "1.3.6.1.4.1.13315.3.1.5",
+    "class": "objectidentity"
+  },
+  "bcnHaObjects": {
+    "name": "bcnHaObjects",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2",
+    "class": "objectidentity"
+  },
+  "bcnHaNotification": {
+    "name": "bcnHaNotification",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.3",
+    "class": "objectidentity"
+  },
+  "bcnHaConformance": {
+    "name": "bcnHaConformance",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.4",
+    "class": "objectidentity"
+  },
+  "bcnHaServiceStatus": {
+    "name": "bcnHaServiceStatus",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "bcnHaSerOperState": {
+    "name": "bcnHaSerOperState",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "standalone": 1,
+          "active": 2,
+          "passive": 3,
+          "stopped": 4,
+          "stopping": 5,
+          "becomingActive": 6,
+          "becomingPassive": 7,
+          "fault": 8
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "bcnHaSerReplicationState": {
+    "name": "bcnHaSerReplicationState",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "notConfigured": 1,
+          "replicating": 2,
+          "synchronized": 3
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "bcnHaSerAddressTable": {
+    "name": "bcnHaSerAddressTable",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.3",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "bcnHaSerAddressEntry": {
+    "name": "bcnHaSerAddressEntry",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.3.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaSerAddrTableIndex",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "bcnHaSerAddrTableIndex": {
+    "name": "bcnHaSerAddrTableIndex",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.3.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "bcnHaSerVirtualAddressType": {
+    "name": "bcnHaSerVirtualAddressType",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.3.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "InetAddressType",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "bcnHaSerVirtualAddress": {
+    "name": "bcnHaSerVirtualAddress",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.3.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "InetAddress",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "bcnHaSerPhysicalAddressType": {
+    "name": "bcnHaSerPhysicalAddressType",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.3.1.4",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "InetAddressType",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "bcnHaSerPhysicalAddress": {
+    "name": "bcnHaSerPhysicalAddress",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.3.1.5",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "InetAddress",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "bcnHaSerPeerAddressType": {
+    "name": "bcnHaSerPeerAddressType",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.3.1.6",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "InetAddressType",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "bcnHaSerPeerAddress": {
+    "name": "bcnHaSerPeerAddress",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.2.1.3.1.7",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "InetAddress",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "bcnHaNotificationEvents": {
+    "name": "bcnHaNotificationEvents",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.3.0",
+    "class": "objectidentity"
+  },
+  "bcnHaNotificationData": {
+    "name": "bcnHaNotificationData",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.3.1",
+    "class": "objectidentity"
+  },
+  "bcnHaAlarmSeverity": {
+    "name": "bcnHaAlarmSeverity",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.3.1.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "BcnAlarmSeverity",
+      "class": "type"
+    },
+    "maxaccess": "accessible-for-notify",
+    "status": "current"
+  },
+  "bcnHaAlarmInfo": {
+    "name": "bcnHaAlarmInfo",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.3.1.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type"
+    },
+    "maxaccess": "accessible-for-notify",
+    "status": "current"
+  },
+  "bcnHaAlarmNotif": {
+    "name": "bcnHaAlarmNotif",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.3.0.1",
+    "class": "notificationtype",
+    "objects": [
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaSerOperState"
+      },
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaAlarmSeverity"
+      },
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaAlarmInfo"
+      }
+    ],
+    "status": "current"
+  },
+  "bcnHaServiceCompliances": {
+    "name": "bcnHaServiceCompliances",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.4.1",
+    "class": "objectidentity"
+  },
+  "bcnHaServiceGroups": {
+    "name": "bcnHaServiceGroups",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.4.2",
+    "class": "objectidentity"
+  },
+  "bcnHaServiceStatusGroup": {
+    "name": "bcnHaServiceStatusGroup",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.4.2.1",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaSerOperState"
+      },
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaSerReplicationState"
+      },
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaSerVirtualAddressType"
+      },
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaSerVirtualAddress"
+      },
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaSerPhysicalAddressType"
+      },
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaSerPhysicalAddress"
+      },
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaSerPeerAddressType"
+      },
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaSerPeerAddress"
+      }
+    ],
+    "status": "current"
+  },
+  "bcnHaNotificationEventGroup": {
+    "name": "bcnHaNotificationEventGroup",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.4.2.2",
+    "class": "notificationgroup",
+    "objects": [
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaAlarmNotif"
+      }
+    ],
+    "status": "current"
+  },
+  "bcnHaNotificationDataGroup": {
+    "name": "bcnHaNotificationDataGroup",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.4.2.3",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaAlarmSeverity"
+      },
+      {
+        "module": "BCN-HA-MIB",
+        "object": "bcnHaAlarmInfo"
+      }
+    ],
+    "status": "current"
+  },
+  "bcnHaStatusCompliance": {
+    "name": "bcnHaStatusCompliance",
+    "oid": "1.3.6.1.4.1.13315.3.1.5.4.1.1",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "bcnHaServiceStatusGroup",
+        "module": "BCN-HA-MIB"
+      },
+      {
+        "object": "bcnHaNotificationEventGroup",
+        "module": "BCN-HA-MIB"
+      },
+      {
+        "object": "bcnHaNotificationDataGroup",
+        "module": "BCN-HA-MIB"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/bluecatnetworks/BCN-HA-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:31:24 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "BCN-HA-MIB"
+  }
+}

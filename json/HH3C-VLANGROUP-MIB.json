@@ -1,0 +1,95 @@
+{
+  "imports": {
+    "class": "imports",
+    "HH3C-OID-MIB": [
+      "hh3cCommon"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Counter32",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "Bits",
+      "MODULE-IDENTITY",
+      "Counter64",
+      "MibIdentifier",
+      "Unsigned32",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "IpAddress",
+      "TimeTicks",
+      "Integer32",
+      "iso"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "hh3cVlanGroup": {
+    "name": "hh3cVlanGroup",
+    "oid": "1.3.6.1.4.1.25506.2.178",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2018-10-24 14:36",
+        "description": "Initial version of this MIB module. Added hh3cVlanGroupTable"
+      }
+    ]
+  },
+  "hh3cVlanGroupTable": {
+    "name": "hh3cVlanGroupTable",
+    "oid": "1.3.6.1.4.1.25506.2.178.1",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "hh3cVlanGroupEntry": {
+    "name": "hh3cVlanGroupEntry",
+    "oid": "1.3.6.1.4.1.25506.2.178.1.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "HH3C-VLANGROUP-MIB",
+        "object": "hh3cVlanGroupName",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "hh3cVlanGroupName": {
+    "name": "hh3cVlanGroupName",
+    "oid": "1.3.6.1.4.1.25506.2.178.1.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 31
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/comware/HH3C-VLANGROUP-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "HH3C-VLANGROUP-MIB"
+  }
+}

@@ -1,0 +1,50 @@
+#
+# PySNMP MIB module CISCO-WDS-IDS-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WDS-IDS-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+TextualConvention, DisplayString, MacAddress, TimeStamp = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "MacAddress", "TimeStamp")
+ciscoWdsIdsMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 457))
+ciscoWdsIdsMIB.setRevisions(('2004-10-17 00:00',))
+if mibBuilder.loadTexts: ciscoWdsIdsMIB.setLastUpdated('200410170000Z')
+if mibBuilder.loadTexts: ciscoWdsIdsMIB.setOrganization('Cisco Systems Inc.')
+ciscoWdsIdsMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 457, 1))
+ciscoWdsIdsMacSpoofing = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 457, 1, 1))
+ciscoWdsIdsMaxMacAddresses = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 457, 1, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ciscoWdsIdsMaxMacAddresses.setStatus('current')
+ciscoWdsIdsMaxEntriesPerMac = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 457, 1, 1, 2), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: ciscoWdsIdsMaxEntriesPerMac.setStatus('current')
+ciscoWdsIdsMacSpoofTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 457, 1, 1, 3), )
+if mibBuilder.loadTexts: ciscoWdsIdsMacSpoofTable.setStatus('current')
+ciscoWdsIdsMacSpoofEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 457, 1, 1, 3, 1), ).setIndexNames((0, "CISCO-WDS-IDS-MIB", "ciscoWdsIdsMacSpoofStaMacAddress"), (0, "CISCO-WDS-IDS-MIB", "ciscoWdsIdsMacSpoofIndex"))
+if mibBuilder.loadTexts: ciscoWdsIdsMacSpoofEntry.setStatus('current')
+ciscoWdsIdsMacSpoofStaMacAddress = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 457, 1, 1, 3, 1, 1), MacAddress())
+if mibBuilder.loadTexts: ciscoWdsIdsMacSpoofStaMacAddress.setStatus('current')
+ciscoWdsIdsMacSpoofIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 457, 1, 1, 3, 1, 2), Unsigned32())
+if mibBuilder.loadTexts: ciscoWdsIdsMacSpoofIndex.setStatus('current')
+ciscoWdsIdsMacSpoofClient = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 457, 1, 1, 3, 1, 3), MacAddress()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ciscoWdsIdsMacSpoofClient.setStatus('current')
+ciscoWdsIdsMacSpoofUserId = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 457, 1, 1, 3, 1, 4), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(1, 253))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ciscoWdsIdsMacSpoofUserId.setStatus('current')
+ciscoWdsIdsMacSpoofDetectTime = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 457, 1, 1, 3, 1, 5), TimeStamp()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ciscoWdsIdsMacSpoofDetectTime.setStatus('current')
+ciscoWdsIdsMIBConform = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 457, 2))
+ciscoWdsIdsMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 457, 2, 1))
+ciscoWdsIdsMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 457, 2, 2))
+ciscoWdsIdsMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 457, 2, 1, 1)).setObjects(("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMacSpoofingGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoWdsIdsMIBCompliance = ciscoWdsIdsMIBCompliance.setStatus('current')
+ciscoWdsIdsMacSpoofingGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 457, 2, 2, 1)).setObjects(("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMaxMacAddresses"), ("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMaxEntriesPerMac"), ("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMacSpoofClient"), ("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMacSpoofUserId"), ("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMacSpoofDetectTime"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoWdsIdsMacSpoofingGroup = ciscoWdsIdsMacSpoofingGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-WDS-IDS-MIB", ciscoWdsIdsMacSpoofing=ciscoWdsIdsMacSpoofing, ciscoWdsIdsMacSpoofDetectTime=ciscoWdsIdsMacSpoofDetectTime, ciscoWdsIdsMIBConform=ciscoWdsIdsMIBConform, ciscoWdsIdsMIBCompliances=ciscoWdsIdsMIBCompliances, ciscoWdsIdsMIBCompliance=ciscoWdsIdsMIBCompliance, ciscoWdsIdsMacSpoofIndex=ciscoWdsIdsMacSpoofIndex, PYSNMP_MODULE_ID=ciscoWdsIdsMIB, ciscoWdsIdsMIBObjects=ciscoWdsIdsMIBObjects, ciscoWdsIdsMacSpoofClient=ciscoWdsIdsMacSpoofClient, ciscoWdsIdsMaxEntriesPerMac=ciscoWdsIdsMaxEntriesPerMac, ciscoWdsIdsMIB=ciscoWdsIdsMIB, ciscoWdsIdsMacSpoofingGroup=ciscoWdsIdsMacSpoofingGroup, ciscoWdsIdsMacSpoofStaMacAddress=ciscoWdsIdsMacSpoofStaMacAddress, ciscoWdsIdsMacSpoofTable=ciscoWdsIdsMacSpoofTable, ciscoWdsIdsMacSpoofEntry=ciscoWdsIdsMacSpoofEntry, ciscoWdsIdsMIBGroups=ciscoWdsIdsMIBGroups, ciscoWdsIdsMaxMacAddresses=ciscoWdsIdsMaxMacAddresses, ciscoWdsIdsMacSpoofUserId=ciscoWdsIdsMacSpoofUserId)

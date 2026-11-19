@@ -1,0 +1,57 @@
+#
+# PySNMP MIB module CISCO-IPSEC-POLICY-MAP-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-IPSEC-POLICY-MAP-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoIpSecPolMapMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 172))
+if mibBuilder.loadTexts: ciscoIpSecPolMapMIB.setLastUpdated('200008171257Z')
+if mibBuilder.loadTexts: ciscoIpSecPolMapMIB.setOrganization('Tivoli Systems and Cisco Systems')
+ciscoIpSecPolMapMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 172, 1))
+ciscoIpSecPolMapMIBNotifPrefix = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 172, 2))
+ciscoIpSecPolMapMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 172, 3))
+ipSecPhaseOnePolMap = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 1))
+ipSecPhaseTwoPolMap = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 2))
+ikePolMapTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 1, 1), )
+if mibBuilder.loadTexts: ikePolMapTable.setStatus('current')
+ikePolMapEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 1, 1, 1), ).setIndexNames((0, "CISCO-IPSEC-POLICY-MAP-MIB", "ikePolMapTunIndex"))
+if mibBuilder.loadTexts: ikePolMapEntry.setStatus('current')
+ikePolMapTunIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 1, 1, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: ikePolMapTunIndex.setStatus('current')
+ikePolMapPolicyNum = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 1, 1, 1, 2), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ikePolMapPolicyNum.setStatus('current')
+ipSecPolMapTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 2, 1), )
+if mibBuilder.loadTexts: ipSecPolMapTable.setStatus('current')
+ipSecPolMapEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 2, 1, 1), ).setIndexNames((0, "CISCO-IPSEC-POLICY-MAP-MIB", "ipSecPolMapTunIndex"))
+if mibBuilder.loadTexts: ipSecPolMapEntry.setStatus('current')
+ipSecPolMapTunIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 2, 1, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647)))
+if mibBuilder.loadTexts: ipSecPolMapTunIndex.setStatus('current')
+ipSecPolMapCryptoMapName = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 2, 1, 1, 2), DisplayString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ipSecPolMapCryptoMapName.setStatus('current')
+ipSecPolMapCryptoMapNum = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 2, 1, 1, 3), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ipSecPolMapCryptoMapNum.setStatus('current')
+ipSecPolMapAclString = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 2, 1, 1, 4), DisplayString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ipSecPolMapAclString.setStatus('current')
+ipSecPolMapAceString = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 172, 1, 2, 1, 1, 5), DisplayString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ipSecPolMapAceString.setStatus('current')
+ipSecPolMapMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 172, 3, 1))
+ipSecPolMapMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 172, 3, 2))
+ipSecPolMapMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 172, 3, 2, 1)).setObjects(("CISCO-IPSEC-POLICY-MAP-MIB", "ipSecPhaseOnePolMapGroup"), ("CISCO-IPSEC-POLICY-MAP-MIB", "ipSecPhaseTwoPolMapGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ipSecPolMapMIBCompliance = ipSecPolMapMIBCompliance.setStatus('current')
+ipSecPhaseOnePolMapGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 172, 3, 1, 1)).setObjects(("CISCO-IPSEC-POLICY-MAP-MIB", "ikePolMapPolicyNum"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ipSecPhaseOnePolMapGroup = ipSecPhaseOnePolMapGroup.setStatus('current')
+ipSecPhaseTwoPolMapGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 172, 3, 1, 2)).setObjects(("CISCO-IPSEC-POLICY-MAP-MIB", "ipSecPolMapCryptoMapName"), ("CISCO-IPSEC-POLICY-MAP-MIB", "ipSecPolMapCryptoMapNum"), ("CISCO-IPSEC-POLICY-MAP-MIB", "ipSecPolMapAclString"), ("CISCO-IPSEC-POLICY-MAP-MIB", "ipSecPolMapAceString"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ipSecPhaseTwoPolMapGroup = ipSecPhaseTwoPolMapGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-IPSEC-POLICY-MAP-MIB", ipSecPolMapMIBCompliance=ipSecPolMapMIBCompliance, ikePolMapEntry=ikePolMapEntry, ipSecPolMapTable=ipSecPolMapTable, ipSecPhaseTwoPolMap=ipSecPhaseTwoPolMap, ipSecPolMapCryptoMapName=ipSecPolMapCryptoMapName, ipSecPolMapCryptoMapNum=ipSecPolMapCryptoMapNum, ipSecPolMapMIBGroups=ipSecPolMapMIBGroups, ciscoIpSecPolMapMIBObjects=ciscoIpSecPolMapMIBObjects, ipSecPhaseOnePolMapGroup=ipSecPhaseOnePolMapGroup, ipSecPolMapAceString=ipSecPolMapAceString, ciscoIpSecPolMapMIBConformance=ciscoIpSecPolMapMIBConformance, ciscoIpSecPolMapMIBNotifPrefix=ciscoIpSecPolMapMIBNotifPrefix, ipSecPolMapEntry=ipSecPolMapEntry, ipSecPhaseTwoPolMapGroup=ipSecPhaseTwoPolMapGroup, ipSecPolMapMIBCompliances=ipSecPolMapMIBCompliances, ikePolMapPolicyNum=ikePolMapPolicyNum, ikePolMapTunIndex=ikePolMapTunIndex, ciscoIpSecPolMapMIB=ciscoIpSecPolMapMIB, ipSecPhaseOnePolMap=ipSecPhaseOnePolMap, PYSNMP_MODULE_ID=ciscoIpSecPolMapMIB, ipSecPolMapAclString=ipSecPolMapAclString, ikePolMapTable=ikePolMapTable, ipSecPolMapTunIndex=ipSecPolMapTunIndex)

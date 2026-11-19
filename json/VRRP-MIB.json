@@ -1,0 +1,1777 @@
+{
+  "imports": {
+    "class": "imports",
+    "IF-MIB": [
+      "ifIndex"
+    ],
+    "INET-ADDRESS-MIB": [
+      "InetAddress",
+      "InetAddressType"
+    ],
+    "SNMPv2-CONF": [
+      "OBJECT-GROUP",
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Bits",
+      "Unsigned32",
+      "OBJECT-TYPE",
+      "Integer32",
+      "NOTIFICATION-TYPE",
+      "Counter64",
+      "mib-2",
+      "IpAddress",
+      "Counter32",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "TimeTicks",
+      "Gauge32",
+      "iso",
+      "MibIdentifier"
+    ],
+    "SNMPv2-TC": [
+      "TimeStamp",
+      "RowStatus",
+      "MacAddress",
+      "TruthValue",
+      "TimeInterval",
+      "TEXTUAL-CONVENTION",
+      "StorageType",
+      "DisplayString"
+    ]
+  },
+  "vrrpMIB": {
+    "name": "vrrpMIB",
+    "oid": "1.3.6.1.2.1.68",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2006-12-13 00:00",
+        "description": "Revised version, published as RFC XXXX. This revision provides MIB support for the Virtual Router Redundancy Protocol (VRRP) in both IPv4 and IPv6 environments. Key revisions include : o Deprecating vrrpOperTable, vrrpRouterStatsTable and vrrpAssoIpAddrTable in favor of IP version neutral vrrpOperationsTable, vrrpRouterStatisticsTable and vrrpAssociatedIpAddrTable. o vrrpNodeVersion scalar objects has been deprecated and is replaced by the vrrpOperationsInetAddrType object in the vrrpOperationsTable. o vrrpAuthFailureTrap has been deprecated. o vrrpNewMasterReason object has been added to vrrpTrapNewMaster notification. o A new notification vrrpTrapProtoError has been added. o DEFVAL clause has been added."
+      },
+      {
+        "revision": "2000-03-03 00:00",
+        "description": "This MIB describes objects used for managing Virtual Router Redundancy Protocol (VRRP) routers. Initial version as published in RFC 2787."
+      }
+    ]
+  },
+  "VrId": {
+    "name": "VrId",
+    "class": "textualconvention",
+    "type": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "displayhint": "d",
+    "status": "current"
+  },
+  "vrrpOperations": {
+    "name": "vrrpOperations",
+    "oid": "1.3.6.1.2.1.68.1",
+    "class": "objectidentity"
+  },
+  "vrrpStatistics": {
+    "name": "vrrpStatistics",
+    "oid": "1.3.6.1.2.1.68.2",
+    "class": "objectidentity"
+  },
+  "vrrpConformance": {
+    "name": "vrrpConformance",
+    "oid": "1.3.6.1.2.1.68.3",
+    "class": "objectidentity"
+  },
+  "vrrpNodeVersion": {
+    "name": "vrrpNodeVersion",
+    "oid": "1.3.6.1.2.1.68.1.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpNotificationCntl": {
+    "name": "vrrpNotificationCntl",
+    "oid": "1.3.6.1.2.1.68.1.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enabled": 1,
+          "disabled": 2
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "enabled",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "vrrpOperationsTable": {
+    "name": "vrrpOperationsTable",
+    "oid": "1.3.6.1.2.1.68.1.7",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "vrrpOperationsEntry": {
+    "name": "vrrpOperationsEntry",
+    "oid": "1.3.6.1.2.1.68.1.7.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsInetAddrType",
+        "implied": 0
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsVrId",
+        "implied": 0
+      },
+      {
+        "module": "IF-MIB",
+        "object": "ifIndex",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "vrrpOperationsInetAddrType": {
+    "name": "vrrpOperationsInetAddrType",
+    "oid": "1.3.6.1.2.1.68.1.7.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "InetAddressType",
+      "class": "type"
+    },
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "vrrpOperationsVrId": {
+    "name": "vrrpOperationsVrId",
+    "oid": "1.3.6.1.2.1.68.1.7.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "VrId",
+      "class": "type"
+    },
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "vrrpOperationsVirtualMacAddr": {
+    "name": "vrrpOperationsVirtualMacAddr",
+    "oid": "1.3.6.1.2.1.68.1.7.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "MacAddress",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpOperationsState": {
+    "name": "vrrpOperationsState",
+    "oid": "1.3.6.1.2.1.68.1.7.1.4",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "initialize": 1,
+          "backup": 2,
+          "master": 3
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpOperationsPriority": {
+    "name": "vrrpOperationsPriority",
+    "oid": "1.3.6.1.2.1.68.1.7.1.5",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 100,
+        "format": "decimal"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "vrrpOperationsAddrCount": {
+    "name": "vrrpOperationsAddrCount",
+    "oid": "1.3.6.1.2.1.68.1.7.1.6",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpOperationsMasterIpAddr": {
+    "name": "vrrpOperationsMasterIpAddr",
+    "oid": "1.3.6.1.2.1.68.1.7.1.7",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "InetAddress",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpOperationsPrimaryIpAddr": {
+    "name": "vrrpOperationsPrimaryIpAddr",
+    "oid": "1.3.6.1.2.1.68.1.7.1.8",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "InetAddress",
+      "class": "type"
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "vrrpOperationsAdvInterval": {
+    "name": "vrrpOperationsAdvInterval",
+    "oid": "1.3.6.1.2.1.68.1.7.1.9",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TimeInterval",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 4096
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 100,
+        "format": "decimal"
+      }
+    },
+    "units": "centiseconds",
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "vrrpOperationsPreemptMode": {
+    "name": "vrrpOperationsPreemptMode",
+    "oid": "1.3.6.1.2.1.68.1.7.1.10",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TruthValue",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "true",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "vrrpOperationsAcceptMode": {
+    "name": "vrrpOperationsAcceptMode",
+    "oid": "1.3.6.1.2.1.68.1.7.1.11",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TruthValue",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "false",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "vrrpOperationsUpTime": {
+    "name": "vrrpOperationsUpTime",
+    "oid": "1.3.6.1.2.1.68.1.7.1.12",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TimeStamp",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpOperationsStorageType": {
+    "name": "vrrpOperationsStorageType",
+    "oid": "1.3.6.1.2.1.68.1.7.1.13",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "StorageType",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "nonVolatile",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "vrrpOperationsRowStatus": {
+    "name": "vrrpOperationsRowStatus",
+    "oid": "1.3.6.1.2.1.68.1.7.1.14",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "RowStatus",
+      "class": "type"
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "vrrpAssociatedIpAddrTable": {
+    "name": "vrrpAssociatedIpAddrTable",
+    "oid": "1.3.6.1.2.1.68.1.8",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "vrrpAssociatedIpAddrEntry": {
+    "name": "vrrpAssociatedIpAddrEntry",
+    "oid": "1.3.6.1.2.1.68.1.8.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsInetAddrType",
+        "implied": 0
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsVrId",
+        "implied": 0
+      },
+      {
+        "module": "IF-MIB",
+        "object": "ifIndex",
+        "implied": 0
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpAssociatedIpAddr",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "vrrpAssociatedIpAddr": {
+    "name": "vrrpAssociatedIpAddr",
+    "oid": "1.3.6.1.2.1.68.1.8.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "InetAddress",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 0
+          },
+          {
+            "min": 4,
+            "max": 4
+          },
+          {
+            "min": 16,
+            "max": 16
+          }
+        ]
+      }
+    },
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "vrrpAssociatedStorageType": {
+    "name": "vrrpAssociatedStorageType",
+    "oid": "1.3.6.1.2.1.68.1.8.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "StorageType",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "nonVolatile",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "vrrpAssociatedIpAddrRowStatus": {
+    "name": "vrrpAssociatedIpAddrRowStatus",
+    "oid": "1.3.6.1.2.1.68.1.8.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "RowStatus",
+      "class": "type"
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "vrrpRouterChecksumErrors": {
+    "name": "vrrpRouterChecksumErrors",
+    "oid": "1.3.6.1.2.1.68.2.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpRouterVersionErrors": {
+    "name": "vrrpRouterVersionErrors",
+    "oid": "1.3.6.1.2.1.68.2.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpRouterVrIdErrors": {
+    "name": "vrrpRouterVrIdErrors",
+    "oid": "1.3.6.1.2.1.68.2.3",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpRouterStatisticsTable": {
+    "name": "vrrpRouterStatisticsTable",
+    "oid": "1.3.6.1.2.1.68.2.5",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "vrrpRouterStatisticsEntry": {
+    "name": "vrrpRouterStatisticsEntry",
+    "oid": "1.3.6.1.2.1.68.2.5.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "augmention": {
+      "name": "vrrpRouterStatisticsEntry",
+      "module": "VRRP-MIB",
+      "object": "vrrpOperationsEntry"
+    },
+    "status": "current"
+  },
+  "vrrpStatisticsMasterTransitions": {
+    "name": "vrrpStatisticsMasterTransitions",
+    "oid": "1.3.6.1.2.1.68.2.5.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsRcvdAdvertisements": {
+    "name": "vrrpStatisticsRcvdAdvertisements",
+    "oid": "1.3.6.1.2.1.68.2.5.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsAdvIntervalErrors": {
+    "name": "vrrpStatisticsAdvIntervalErrors",
+    "oid": "1.3.6.1.2.1.68.2.5.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsIpTtlErrors": {
+    "name": "vrrpStatisticsIpTtlErrors",
+    "oid": "1.3.6.1.2.1.68.2.5.1.4",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsRcvdPriZeroPackets": {
+    "name": "vrrpStatisticsRcvdPriZeroPackets",
+    "oid": "1.3.6.1.2.1.68.2.5.1.5",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsSentPriZeroPackets": {
+    "name": "vrrpStatisticsSentPriZeroPackets",
+    "oid": "1.3.6.1.2.1.68.2.5.1.6",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsRcvdInvalidTypePkts": {
+    "name": "vrrpStatisticsRcvdInvalidTypePkts",
+    "oid": "1.3.6.1.2.1.68.2.5.1.7",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsAddressListErrors": {
+    "name": "vrrpStatisticsAddressListErrors",
+    "oid": "1.3.6.1.2.1.68.2.5.1.8",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsPacketLengthErrors": {
+    "name": "vrrpStatisticsPacketLengthErrors",
+    "oid": "1.3.6.1.2.1.68.2.5.1.9",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsRcvdInvalidAuthentications": {
+    "name": "vrrpStatisticsRcvdInvalidAuthentications",
+    "oid": "1.3.6.1.2.1.68.2.5.1.10",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsDiscontinuityTime": {
+    "name": "vrrpStatisticsDiscontinuityTime",
+    "oid": "1.3.6.1.2.1.68.2.5.1.11",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TimeStamp",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpStatisticsRefreshRate": {
+    "name": "vrrpStatisticsRefreshRate",
+    "oid": "1.3.6.1.2.1.68.2.5.1.12",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "units": "milli-seconds",
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpNotifications": {
+    "name": "vrrpNotifications",
+    "oid": "1.3.6.1.2.1.68.0",
+    "class": "objectidentity"
+  },
+  "vrrpNewMasterReason": {
+    "name": "vrrpNewMasterReason",
+    "oid": "1.3.6.1.2.1.68.1.9",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "notmaster": 0,
+          "priority": 1,
+          "preempted": 2,
+          "masterNoResponse": 3
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "vrrpTrapProtoErrReason": {
+    "name": "vrrpTrapProtoErrReason",
+    "oid": "1.3.6.1.2.1.68.1.10",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "hopLimitError": 0,
+          "versionError": 1,
+          "checksumError": 2,
+          "vridError": 3
+        }
+      }
+    },
+    "maxaccess": "accessible-for-notify",
+    "status": "current"
+  },
+  "vrrpTrapNewMaster": {
+    "name": "vrrpTrapNewMaster",
+    "oid": "1.3.6.1.2.1.68.0.1",
+    "class": "notificationtype",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsMasterIpAddr"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpNewMasterReason"
+      }
+    ],
+    "status": "current"
+  },
+  "vrrpTrapProtoError": {
+    "name": "vrrpTrapProtoError",
+    "oid": "1.3.6.1.2.1.68.0.3",
+    "class": "notificationtype",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpTrapProtoErrReason"
+      }
+    ],
+    "status": "current"
+  },
+  "vrrpOperTable": {
+    "name": "vrrpOperTable",
+    "oid": "1.3.6.1.2.1.68.1.3",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "deprecated"
+  },
+  "vrrpOperEntry": {
+    "name": "vrrpOperEntry",
+    "oid": "1.3.6.1.2.1.68.1.3.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "IF-MIB",
+        "object": "ifIndex",
+        "implied": 0
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperVrId",
+        "implied": 0
+      }
+    ],
+    "status": "deprecated"
+  },
+  "vrrpOperVrId": {
+    "name": "vrrpOperVrId",
+    "oid": "1.3.6.1.2.1.68.1.3.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "VrId",
+      "class": "type"
+    },
+    "maxaccess": "not-accessible",
+    "status": "deprecated"
+  },
+  "vrrpOperVirtualMacAddr": {
+    "name": "vrrpOperVirtualMacAddr",
+    "oid": "1.3.6.1.2.1.68.1.3.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "MacAddress",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpOperState": {
+    "name": "vrrpOperState",
+    "oid": "1.3.6.1.2.1.68.1.3.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "initialize": 1,
+          "backup": 2,
+          "master": 3
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpOperAdminState": {
+    "name": "vrrpOperAdminState",
+    "oid": "1.3.6.1.2.1.68.1.3.1.4",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "up": 1,
+          "down": 2
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "down",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "deprecated"
+  },
+  "vrrpOperPriority": {
+    "name": "vrrpOperPriority",
+    "oid": "1.3.6.1.2.1.68.1.3.1.5",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 100,
+        "format": "decimal"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "deprecated"
+  },
+  "vrrpOperIpAddrCount": {
+    "name": "vrrpOperIpAddrCount",
+    "oid": "1.3.6.1.2.1.68.1.3.1.6",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpOperMasterIpAddr": {
+    "name": "vrrpOperMasterIpAddr",
+    "oid": "1.3.6.1.2.1.68.1.3.1.7",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "IpAddress",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpOperPrimaryIpAddr": {
+    "name": "vrrpOperPrimaryIpAddr",
+    "oid": "1.3.6.1.2.1.68.1.3.1.8",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "IpAddress",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "00000000",
+        "format": "hex"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "deprecated"
+  },
+  "vrrpOperAuthType": {
+    "name": "vrrpOperAuthType",
+    "oid": "1.3.6.1.2.1.68.1.3.1.9",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "noAuthentication": 1,
+          "simpleTextPassword": 2,
+          "ipAuthenticationHeader": 3
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "noAuthentication",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "deprecated"
+  },
+  "vrrpOperAuthKey": {
+    "name": "vrrpOperAuthKey",
+    "oid": "1.3.6.1.2.1.68.1.3.1.10",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 16
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "deprecated"
+  },
+  "vrrpOperAdvertisementInterval": {
+    "name": "vrrpOperAdvertisementInterval",
+    "oid": "1.3.6.1.2.1.68.1.3.1.11",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 1,
+        "format": "decimal"
+      }
+    },
+    "units": "seconds",
+    "maxaccess": "read-create",
+    "status": "deprecated"
+  },
+  "vrrpOperPreemptMode": {
+    "name": "vrrpOperPreemptMode",
+    "oid": "1.3.6.1.2.1.68.1.3.1.12",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TruthValue",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "true",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "deprecated"
+  },
+  "vrrpOperVirtualRouterUpTime": {
+    "name": "vrrpOperVirtualRouterUpTime",
+    "oid": "1.3.6.1.2.1.68.1.3.1.13",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TimeStamp",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpOperProtocol": {
+    "name": "vrrpOperProtocol",
+    "oid": "1.3.6.1.2.1.68.1.3.1.14",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "ip": 1,
+          "bridge": 2,
+          "decnet": 3,
+          "other": 4
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "ip",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "deprecated"
+  },
+  "vrrpOperRowStatus": {
+    "name": "vrrpOperRowStatus",
+    "oid": "1.3.6.1.2.1.68.1.3.1.15",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "RowStatus",
+      "class": "type"
+    },
+    "maxaccess": "read-create",
+    "status": "deprecated"
+  },
+  "vrrpAssoIpAddrTable": {
+    "name": "vrrpAssoIpAddrTable",
+    "oid": "1.3.6.1.2.1.68.1.4",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "deprecated"
+  },
+  "vrrpAssoIpAddrEntry": {
+    "name": "vrrpAssoIpAddrEntry",
+    "oid": "1.3.6.1.2.1.68.1.4.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "IF-MIB",
+        "object": "ifIndex",
+        "implied": 0
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperVrId",
+        "implied": 0
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpAssoIpAddr",
+        "implied": 0
+      }
+    ],
+    "status": "deprecated"
+  },
+  "vrrpAssoIpAddr": {
+    "name": "vrrpAssoIpAddr",
+    "oid": "1.3.6.1.2.1.68.1.4.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "IpAddress",
+      "class": "type"
+    },
+    "maxaccess": "not-accessible",
+    "status": "deprecated"
+  },
+  "vrrpAssoIpAddrRowStatus": {
+    "name": "vrrpAssoIpAddrRowStatus",
+    "oid": "1.3.6.1.2.1.68.1.4.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "RowStatus",
+      "class": "type"
+    },
+    "maxaccess": "read-create",
+    "status": "deprecated"
+  },
+  "vrrpRouterStatsTable": {
+    "name": "vrrpRouterStatsTable",
+    "oid": "1.3.6.1.2.1.68.2.4",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "deprecated"
+  },
+  "vrrpRouterStatsEntry": {
+    "name": "vrrpRouterStatsEntry",
+    "oid": "1.3.6.1.2.1.68.2.4.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "augmention": {
+      "name": "vrrpRouterStatsEntry",
+      "module": "VRRP-MIB",
+      "object": "vrrpOperEntry"
+    },
+    "status": "deprecated"
+  },
+  "vrrpStatsBecomeMaster": {
+    "name": "vrrpStatsBecomeMaster",
+    "oid": "1.3.6.1.2.1.68.2.4.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsAdvertiseRcvd": {
+    "name": "vrrpStatsAdvertiseRcvd",
+    "oid": "1.3.6.1.2.1.68.2.4.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsAdvertiseIntervalErrors": {
+    "name": "vrrpStatsAdvertiseIntervalErrors",
+    "oid": "1.3.6.1.2.1.68.2.4.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsAuthFailures": {
+    "name": "vrrpStatsAuthFailures",
+    "oid": "1.3.6.1.2.1.68.2.4.1.4",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsIpTtlErrors": {
+    "name": "vrrpStatsIpTtlErrors",
+    "oid": "1.3.6.1.2.1.68.2.4.1.5",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsPriorityZeroPktsRcvd": {
+    "name": "vrrpStatsPriorityZeroPktsRcvd",
+    "oid": "1.3.6.1.2.1.68.2.4.1.6",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsPriorityZeroPktsSent": {
+    "name": "vrrpStatsPriorityZeroPktsSent",
+    "oid": "1.3.6.1.2.1.68.2.4.1.7",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsInvalidTypePktsRcvd": {
+    "name": "vrrpStatsInvalidTypePktsRcvd",
+    "oid": "1.3.6.1.2.1.68.2.4.1.8",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsAddressListErrors": {
+    "name": "vrrpStatsAddressListErrors",
+    "oid": "1.3.6.1.2.1.68.2.4.1.9",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsInvalidAuthType": {
+    "name": "vrrpStatsInvalidAuthType",
+    "oid": "1.3.6.1.2.1.68.2.4.1.10",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsAuthTypeMismatch": {
+    "name": "vrrpStatsAuthTypeMismatch",
+    "oid": "1.3.6.1.2.1.68.2.4.1.11",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpStatsPacketLengthErrors": {
+    "name": "vrrpStatsPacketLengthErrors",
+    "oid": "1.3.6.1.2.1.68.2.4.1.12",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Counter32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "vrrpTrapPacketSrc": {
+    "name": "vrrpTrapPacketSrc",
+    "oid": "1.3.6.1.2.1.68.1.5",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "IpAddress",
+      "class": "type"
+    },
+    "maxaccess": "accessible-for-notify",
+    "status": "deprecated"
+  },
+  "vrrpTrapAuthErrorType": {
+    "name": "vrrpTrapAuthErrorType",
+    "oid": "1.3.6.1.2.1.68.1.6",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "invalidAuthType": 1,
+          "authTypeMismatch": 2,
+          "authFailure": 3
+        }
+      }
+    },
+    "maxaccess": "accessible-for-notify",
+    "status": "deprecated"
+  },
+  "vrrpTrapAuthFailure": {
+    "name": "vrrpTrapAuthFailure",
+    "oid": "1.3.6.1.2.1.68.0.2",
+    "class": "notificationtype",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpTrapPacketSrc"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpTrapAuthErrorType"
+      }
+    ],
+    "status": "deprecated"
+  },
+  "vrrpMIBCompliances": {
+    "name": "vrrpMIBCompliances",
+    "oid": "1.3.6.1.2.1.68.3.1",
+    "class": "objectidentity"
+  },
+  "vrrpMIBGroups": {
+    "name": "vrrpMIBGroups",
+    "oid": "1.3.6.1.2.1.68.3.2",
+    "class": "objectidentity"
+  },
+  "vrrpMIBCompliance": {
+    "name": "vrrpMIBCompliance",
+    "oid": "1.3.6.1.2.1.68.3.1.1",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "vrrpOperGroup",
+        "module": "VRRP-MIB"
+      },
+      {
+        "object": "vrrpStatsGroup",
+        "module": "VRRP-MIB"
+      },
+      {
+        "object": "vrrpTrapGroup",
+        "module": "VRRP-MIB"
+      },
+      {
+        "object": "vrrpNotificationGroup",
+        "module": "VRRP-MIB"
+      }
+    ],
+    "status": "deprecated"
+  },
+  "vrrpModuleFullCompliance": {
+    "name": "vrrpModuleFullCompliance",
+    "oid": "1.3.6.1.2.1.68.3.1.2",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "vrrpOperationsGroup",
+        "module": "VRRP-MIB"
+      },
+      {
+        "object": "vrrpStatisticsGroup",
+        "module": "VRRP-MIB"
+      },
+      {
+        "object": "vrrpTrapInfoGroup",
+        "module": "VRRP-MIB"
+      },
+      {
+        "object": "vrrpNotificationsGroup",
+        "module": "VRRP-MIB"
+      }
+    ],
+    "status": "current"
+  },
+  "vrrpModuleReadOnlyCompliance": {
+    "name": "vrrpModuleReadOnlyCompliance",
+    "oid": "1.3.6.1.2.1.68.3.1.3",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "vrrpOperationsGroup",
+        "module": "VRRP-MIB"
+      },
+      {
+        "object": "vrrpStatisticsGroup",
+        "module": "VRRP-MIB"
+      },
+      {
+        "object": "vrrpTrapInfoGroup",
+        "module": "VRRP-MIB"
+      },
+      {
+        "object": "vrrpNotificationsGroup",
+        "module": "VRRP-MIB"
+      }
+    ],
+    "status": "current"
+  },
+  "vrrpOperGroup": {
+    "name": "vrrpOperGroup",
+    "oid": "1.3.6.1.2.1.68.3.2.1",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpNodeVersion"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpNotificationCntl"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperVirtualMacAddr"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperState"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperAdminState"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperPriority"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperIpAddrCount"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperMasterIpAddr"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperPrimaryIpAddr"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperAuthType"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperAuthKey"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperAdvertisementInterval"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperPreemptMode"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperVirtualRouterUpTime"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperProtocol"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperRowStatus"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpAssoIpAddrRowStatus"
+      }
+    ],
+    "status": "deprecated"
+  },
+  "vrrpStatsGroup": {
+    "name": "vrrpStatsGroup",
+    "oid": "1.3.6.1.2.1.68.3.2.2",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpRouterChecksumErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpRouterVersionErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpRouterVrIdErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsBecomeMaster"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsAdvertiseRcvd"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsAdvertiseIntervalErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsAuthFailures"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsIpTtlErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsPriorityZeroPktsRcvd"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsPriorityZeroPktsSent"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsInvalidTypePktsRcvd"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsAddressListErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsInvalidAuthType"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsAuthTypeMismatch"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatsPacketLengthErrors"
+      }
+    ],
+    "status": "deprecated"
+  },
+  "vrrpTrapGroup": {
+    "name": "vrrpTrapGroup",
+    "oid": "1.3.6.1.2.1.68.3.2.3",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpTrapPacketSrc"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpTrapAuthErrorType"
+      }
+    ],
+    "status": "deprecated"
+  },
+  "vrrpNotificationGroup": {
+    "name": "vrrpNotificationGroup",
+    "oid": "1.3.6.1.2.1.68.3.2.4",
+    "class": "notificationgroup",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpTrapNewMaster"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpTrapAuthFailure"
+      }
+    ],
+    "status": "deprecated"
+  },
+  "vrrpOperationsGroup": {
+    "name": "vrrpOperationsGroup",
+    "oid": "1.3.6.1.2.1.68.3.2.5",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpNotificationCntl"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsVirtualMacAddr"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsState"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsPriority"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsMasterIpAddr"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsAdvInterval"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsPreemptMode"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsAcceptMode"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsUpTime"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsStorageType"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsRowStatus"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsAddrCount"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperationsPrimaryIpAddr"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpAssociatedStorageType"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpAssociatedIpAddrRowStatus"
+      }
+    ],
+    "status": "current"
+  },
+  "vrrpStatisticsGroup": {
+    "name": "vrrpStatisticsGroup",
+    "oid": "1.3.6.1.2.1.68.3.2.6",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpRouterChecksumErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpRouterVersionErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpRouterVrIdErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsMasterTransitions"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsRcvdAdvertisements"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsAdvIntervalErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsRcvdPriZeroPackets"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsSentPriZeroPackets"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsRcvdInvalidTypePkts"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsIpTtlErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsAddressListErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsPacketLengthErrors"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsRcvdInvalidAuthentications"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsDiscontinuityTime"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpStatisticsRefreshRate"
+      }
+    ],
+    "status": "current"
+  },
+  "vrrpTrapInfoGroup": {
+    "name": "vrrpTrapInfoGroup",
+    "oid": "1.3.6.1.2.1.68.3.2.7",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpNewMasterReason"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpTrapProtoErrReason"
+      }
+    ],
+    "status": "current"
+  },
+  "vrrpNotificationsGroup": {
+    "name": "vrrpNotificationsGroup",
+    "oid": "1.3.6.1.2.1.68.3.2.8",
+    "class": "notificationgroup",
+    "objects": [
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpTrapNewMaster"
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpTrapProtoError"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/standard/internet-drafts/VRRP-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:29:52 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "VRRP-MIB"
+  }
+}

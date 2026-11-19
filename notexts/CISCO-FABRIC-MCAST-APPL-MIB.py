@@ -1,0 +1,50 @@
+#
+# PySNMP MIB module CISCO-FABRIC-MCAST-APPL-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-FABRIC-MCAST-APPL-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+CfmPoolIndex, = mibBuilder.importSymbols("CISCO-FABRIC-MCAST-MIB", "CfmPoolIndex")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+entLogicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "entLogicalIndex")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoFabricMcastApplMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 256))
+ciscoFabricMcastApplMIB.setRevisions(('2002-12-18 00:00',))
+if mibBuilder.loadTexts: ciscoFabricMcastApplMIB.setLastUpdated('200212180000Z')
+if mibBuilder.loadTexts: ciscoFabricMcastApplMIB.setOrganization('Cisco Systems, Inc.')
+ciscoFabricMcastApplMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 256, 1))
+cfmaAppl = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 256, 1, 1))
+cfmaApplTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 256, 1, 1, 1), )
+if mibBuilder.loadTexts: cfmaApplTable.setStatus('current')
+cfmaApplEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 256, 1, 1, 1, 1), ).setIndexNames((0, "ENTITY-MIB", "entLogicalIndex"), (0, "CISCO-FABRIC-MCAST-APPL-MIB", "cfmaApplId"))
+if mibBuilder.loadTexts: cfmaApplEntry.setStatus('current')
+cfmaApplId = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 256, 1, 1, 1, 1, 1), Unsigned32())
+if mibBuilder.loadTexts: cfmaApplId.setStatus('current')
+cfmaApplName = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 256, 1, 1, 1, 1, 2), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(1, 128))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cfmaApplName.setStatus('current')
+cfmaApplInuseFgids = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 256, 1, 1, 1, 1, 3), Gauge32()).setUnits('fgid').setMaxAccess("readonly")
+if mibBuilder.loadTexts: cfmaApplInuseFgids.setStatus('current')
+cfmaApplHighWaterInuseFGIDs = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 256, 1, 1, 1, 1, 4), Gauge32()).setUnits('fgid').setMaxAccess("readonly")
+if mibBuilder.loadTexts: cfmaApplHighWaterInuseFGIDs.setStatus('current')
+cfmaApplPoolId = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 256, 1, 1, 1, 1, 5), CfmPoolIndex()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cfmaApplPoolId.setStatus('current')
+cfmaMIBNotificationPrefix = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 256, 2))
+cfmaMIBNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 256, 2, 0))
+cfmaMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 256, 3))
+cfmaMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 256, 3, 1))
+cfmaMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 256, 3, 2))
+cfmaMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 256, 3, 1, 1)).setObjects(("CISCO-FABRIC-MCAST-APPL-MIB", "cfmaApplGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cfmaMIBCompliance = cfmaMIBCompliance.setStatus('current')
+cfmaApplGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 256, 3, 2, 1)).setObjects(("CISCO-FABRIC-MCAST-APPL-MIB", "cfmaApplName"), ("CISCO-FABRIC-MCAST-APPL-MIB", "cfmaApplInuseFgids"), ("CISCO-FABRIC-MCAST-APPL-MIB", "cfmaApplHighWaterInuseFGIDs"), ("CISCO-FABRIC-MCAST-APPL-MIB", "cfmaApplPoolId"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cfmaApplGroup = cfmaApplGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-FABRIC-MCAST-APPL-MIB", cfmaMIBCompliances=cfmaMIBCompliances, cfmaMIBGroups=cfmaMIBGroups, cfmaApplEntry=cfmaApplEntry, cfmaMIBCompliance=cfmaMIBCompliance, cfmaMIBNotificationPrefix=cfmaMIBNotificationPrefix, cfmaMIBNotifications=cfmaMIBNotifications, ciscoFabricMcastApplMIBObjects=ciscoFabricMcastApplMIBObjects, cfmaApplId=cfmaApplId, ciscoFabricMcastApplMIB=ciscoFabricMcastApplMIB, cfmaApplInuseFgids=cfmaApplInuseFgids, cfmaApplName=cfmaApplName, cfmaApplHighWaterInuseFGIDs=cfmaApplHighWaterInuseFGIDs, cfmaAppl=cfmaAppl, PYSNMP_MODULE_ID=ciscoFabricMcastApplMIB, cfmaApplTable=cfmaApplTable, cfmaApplPoolId=cfmaApplPoolId, cfmaApplGroup=cfmaApplGroup, cfmaMIBConformance=cfmaMIBConformance)

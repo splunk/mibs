@@ -1,0 +1,51 @@
+#
+# PySNMP MIB module CISCOSB-TBI-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-TBI-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+TextualConvention, DisplayString, TruthValue, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue", "RowStatus")
+rlTBIMib = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145))
+rlTBIMib.setRevisions(('2006-02-12 00:00',))
+if mibBuilder.loadTexts: rlTBIMib.setLastUpdated('200604040000Z')
+if mibBuilder.loadTexts: rlTBIMib.setOrganization('Cisco Systems, Inc.')
+rlTBITimeRangeTable = MibTable((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 1), )
+if mibBuilder.loadTexts: rlTBITimeRangeTable.setStatus('current')
+rlTBITimeRangeEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 1, 1), ).setIndexNames((1, "CISCOSB-TBI-MIB", "rlTBITimeRangeName"))
+if mibBuilder.loadTexts: rlTBITimeRangeEntry.setStatus('current')
+rlTBITimeRangeName = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 1, 1, 1), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(1, 32)))
+if mibBuilder.loadTexts: rlTBITimeRangeName.setStatus('current')
+rlTBITimeRangeAbsoluteStart = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 1, 1, 2), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 14))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlTBITimeRangeAbsoluteStart.setStatus('current')
+rlTBITimeRangeAbsoluteEnd = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 1, 1, 3), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 14))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlTBITimeRangeAbsoluteEnd.setStatus('current')
+rlTBITimeRangeActiveStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 1, 1, 4), TruthValue()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: rlTBITimeRangeActiveStatus.setStatus('current')
+rlTBITimeRangeRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 1, 1, 5), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: rlTBITimeRangeRowStatus.setStatus('current')
+class RlTBIWeekDayList(TextualConvention, Bits):
+    status = 'current'
+    namedValues = NamedValues(("monday", 0), ("tuesday", 1), ("wednesday", 2), ("thursday", 3), ("friday", 4), ("saturday", 5), ("sunday", 6))
+
+rlTBIPeriodicTable = MibTable((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 2), )
+if mibBuilder.loadTexts: rlTBIPeriodicTable.setStatus('current')
+rlTBIPeriodicEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 2, 1), ).setIndexNames((0, "CISCOSB-TBI-MIB", "rlTBIPeriodicTimeRangeName"), (0, "CISCOSB-TBI-MIB", "rlTBIPeriodicWeekDayList"), (0, "CISCOSB-TBI-MIB", "rlTBIPeriodicStart"), (0, "CISCOSB-TBI-MIB", "rlTBIPeriodicEnd"))
+if mibBuilder.loadTexts: rlTBIPeriodicEntry.setStatus('current')
+rlTBIPeriodicTimeRangeName = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 2, 1, 1), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(1, 32)))
+if mibBuilder.loadTexts: rlTBIPeriodicTimeRangeName.setStatus('current')
+rlTBIPeriodicWeekDayList = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 2, 1, 2), RlTBIWeekDayList()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlTBIPeriodicWeekDayList.setStatus('current')
+rlTBIPeriodicStart = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 2, 1, 3), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 7))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlTBIPeriodicStart.setStatus('current')
+rlTBIPeriodicEnd = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 2, 1, 4), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 7))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlTBIPeriodicEnd.setStatus('current')
+rlTBIPeriodicRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 2, 1, 5), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: rlTBIPeriodicRowStatus.setStatus('current')
+mibBuilder.exportSymbols("CISCOSB-TBI-MIB", rlTBIPeriodicStart=rlTBIPeriodicStart, rlTBIMib=rlTBIMib, rlTBITimeRangeAbsoluteEnd=rlTBITimeRangeAbsoluteEnd, rlTBITimeRangeAbsoluteStart=rlTBITimeRangeAbsoluteStart, rlTBIPeriodicEnd=rlTBIPeriodicEnd, rlTBITimeRangeActiveStatus=rlTBITimeRangeActiveStatus, rlTBIPeriodicTable=rlTBIPeriodicTable, rlTBIPeriodicEntry=rlTBIPeriodicEntry, rlTBITimeRangeRowStatus=rlTBITimeRangeRowStatus, rlTBIPeriodicTimeRangeName=rlTBIPeriodicTimeRangeName, PYSNMP_MODULE_ID=rlTBIMib, rlTBITimeRangeTable=rlTBITimeRangeTable, RlTBIWeekDayList=RlTBIWeekDayList, rlTBITimeRangeName=rlTBITimeRangeName, rlTBIPeriodicWeekDayList=rlTBIPeriodicWeekDayList, rlTBITimeRangeEntry=rlTBITimeRangeEntry, rlTBIPeriodicRowStatus=rlTBIPeriodicRowStatus)

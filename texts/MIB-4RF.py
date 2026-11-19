@@ -1,0 +1,47 @@
+#
+# PySNMP MIB module MIB-4RF (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/4rf/MIB-4RF
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:01 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion", "ConstraintsIntersection")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+iso, TimeTicks, Counter32, NotificationType, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, Bits, IpAddress, Unsigned32, ModuleIdentity, enterprises, Integer32, Counter64, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "iso", "TimeTicks", "Counter32", "NotificationType", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "Bits", "IpAddress", "Unsigned32", "ModuleIdentity", "enterprises", "Integer32", "Counter64", "ObjectIdentity")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+fourRFRootModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 14817, 2, 1))
+fourRFRootModule.setRevisions(('2007-04-30 00:00', '2004-02-13 00:00',))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    if mibBuilder.loadTexts: fourRFRootModule.setRevisionsDescriptions(('Second draft', 'First draft',))
+if mibBuilder.loadTexts: fourRFRootModule.setLastUpdated('200704300000Z')
+if mibBuilder.loadTexts: fourRFRootModule.setOrganization('www.4rf.com')
+if mibBuilder.loadTexts: fourRFRootModule.setContactInfo('postal:   4RF Communications Ltd\n                    26 Glover Street\n                    Ngauranga\n                    PO Box 13-506\n                    Wellington 6032\n                    New Zealand\n                    \n          phone:    +64 4 499 6000\n          email:    support@4rf.com')
+if mibBuilder.loadTexts: fourRFRootModule.setDescription('The root MIB module for 4RF Communications Ltd.')
+fourRFRoot = ObjectIdentity((1, 3, 6, 1, 4, 1, 14817))
+if mibBuilder.loadTexts: fourRFRoot.setStatus('current')
+if mibBuilder.loadTexts: fourRFRoot.setDescription('The root of the OID sub-tree for 4RF Communications Ltd.')
+fourRFRegistrations = ObjectIdentity((1, 3, 6, 1, 4, 1, 14817, 1))
+if mibBuilder.loadTexts: fourRFRegistrations.setStatus('current')
+if mibBuilder.loadTexts: fourRFRegistrations.setDescription('Sub-tree for registrations.')
+fourRFModules = ObjectIdentity((1, 3, 6, 1, 4, 1, 14817, 2))
+if mibBuilder.loadTexts: fourRFModules.setStatus('current')
+if mibBuilder.loadTexts: fourRFModules.setDescription('Sub-tree for module registrations.')
+fourRFGeneric = ObjectIdentity((1, 3, 6, 1, 4, 1, 14817, 3))
+if mibBuilder.loadTexts: fourRFGeneric.setStatus('current')
+if mibBuilder.loadTexts: fourRFGeneric.setDescription('Sub-tree for common object and event definitions.')
+fourRFProducts = ObjectIdentity((1, 3, 6, 1, 4, 1, 14817, 4))
+if mibBuilder.loadTexts: fourRFProducts.setStatus('current')
+if mibBuilder.loadTexts: fourRFProducts.setDescription('Sub-tree for specific object and event definitions.')
+fourRFCapabilities = ObjectIdentity((1, 3, 6, 1, 4, 1, 14817, 5))
+if mibBuilder.loadTexts: fourRFCapabilities.setStatus('current')
+if mibBuilder.loadTexts: fourRFCapabilities.setDescription('Sub-tree for agent profiles/capabilities.')
+fourRFRequirements = ObjectIdentity((1, 3, 6, 1, 4, 1, 14817, 6))
+if mibBuilder.loadTexts: fourRFRequirements.setStatus('current')
+if mibBuilder.loadTexts: fourRFRequirements.setDescription('Sub-tree for management application requirements.')
+fourRFExperimental = ObjectIdentity((1, 3, 6, 1, 4, 1, 14817, 7))
+if mibBuilder.loadTexts: fourRFExperimental.setStatus('current')
+if mibBuilder.loadTexts: fourRFExperimental.setDescription('Sub-tree for experimental definitions.')
+mibBuilder.exportSymbols("MIB-4RF", fourRFGeneric=fourRFGeneric, fourRFCapabilities=fourRFCapabilities, fourRFRequirements=fourRFRequirements, fourRFRegistrations=fourRFRegistrations, fourRFRootModule=fourRFRootModule, fourRFModules=fourRFModules, fourRFExperimental=fourRFExperimental, fourRFProducts=fourRFProducts, fourRFRoot=fourRFRoot, PYSNMP_MODULE_ID=fourRFRootModule)

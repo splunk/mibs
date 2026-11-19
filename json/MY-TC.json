@@ -1,0 +1,134 @@
+{
+  "imports": {
+    "class": "imports",
+    "MY-SMI": [
+      "myModules"
+    ],
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "MODULE-IDENTITY",
+      "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "Counter64",
+      "Counter32",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "Unsigned32",
+      "Gauge32",
+      "iso",
+      "IpAddress",
+      "Integer32",
+      "MibIdentifier",
+      "Bits"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "myTextualConventions": {
+    "name": "myTextualConventions",
+    "oid": "1.3.6.1.4.1.4881.1.1.10.4.1",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2002-03-20 00:00",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "IfIndex": {
+    "name": "IfIndex",
+    "class": "textualconvention",
+    "type": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 2147483647
+          }
+        ]
+      }
+    },
+    "displayhint": "d",
+    "status": "current"
+  },
+  "MyTrapType": {
+    "name": "MyTrapType",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "coldMy": 1,
+          "warmMy": 2,
+          "linkDown": 3,
+          "linkUp": 4,
+          "authenFailure": 5,
+          "newRoot": 6,
+          "topoChange": 7,
+          "hardChangeDetected": 8,
+          "portSecurityViolate": 9,
+          "stormAlarm": 10,
+          "macNotification": 11,
+          "vrrpNewMaster": 12,
+          "vrrpAuthFailure": 13,
+          "powerStateChange": 14,
+          "fanStateChange": 15,
+          "ospf": 16,
+          "pim": 17,
+          "igmp": 18,
+          "dvmrp": 19,
+          "entity": 20,
+          "cluster": 21,
+          "temperatureWarning": 22,
+          "sysGuard": 23,
+          "bgp": 24,
+          "lineDetect": 25,
+          "bgpReachMaxPrefix": 26,
+          "hardwareNotSupport": 27
+        }
+      }
+    },
+    "status": "current"
+  },
+  "ConfigStatus": {
+    "name": "ConfigStatus",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "valid": 1,
+          "invalid": 2
+        }
+      }
+    },
+    "status": "current"
+  },
+  "MemberMap": {
+    "name": "MemberMap",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type"
+    },
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ruijie/MY-TC",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:39:46 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "MY-TC"
+  }
+}

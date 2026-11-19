@@ -1,0 +1,182 @@
+{
+  "imports": {
+    "class": "imports",
+    "CISCO-SMI": [
+      "ciscoMgmt"
+    ],
+    "CISCO-UNIFIED-COMPUTING-FAULT-MIB": [
+      "cucsFaultAffectedObjectDn",
+      "cucsFaultAffectedObjectId",
+      "cucsFaultProbableCause",
+      "cucsFaultSeverity",
+      "cucsFaultId",
+      "cucsFaultDescription",
+      "cucsFaultLastModificationTime",
+      "cucsFaultIndex",
+      "cucsFaultOccur",
+      "cucsFaultCreationTime",
+      "cucsFaultCode",
+      "cucsFaultType"
+    ],
+    "CISCO-UNIFIED-COMPUTING-MIB": [
+      "ciscoUnifiedComputingMIBObjects",
+      "ciscoUnifiedComputingMIB"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "MODULE-IDENTITY",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "Counter64",
+      "IpAddress",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Counter32",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "TimeTicks"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ciscoUnifiedComputingMIBNotifs": {
+    "name": "ciscoUnifiedComputingMIBNotifs",
+    "oid": "1.3.6.1.4.1.9.9.719.0",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2010-01-29 00:00",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "cucsFaultActiveNotif": {
+    "name": "cucsFaultActiveNotif",
+    "oid": "1.3.6.1.4.1.9.9.719.0.1",
+    "class": "notificationtype",
+    "objects": [
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultIndex"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultDescription"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultAffectedObjectId"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultAffectedObjectDn"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultCreationTime"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultLastModificationTime"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultCode"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultType"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultProbableCause"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultSeverity"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultOccur"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultId"
+      }
+    ],
+    "status": "current"
+  },
+  "cucsFaultClearNotif": {
+    "name": "cucsFaultClearNotif",
+    "oid": "1.3.6.1.4.1.9.9.719.0.2",
+    "class": "notificationtype",
+    "objects": [
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultIndex"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultDescription"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultAffectedObjectId"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultAffectedObjectDn"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultCreationTime"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultLastModificationTime"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultCode"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultType"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultProbableCause"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultSeverity"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultOccur"
+      },
+      {
+        "module": "CISCO-UNIFIED-COMPUTING-FAULT-MIB",
+        "object": "cucsFaultId"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-UNIFIED-COMPUTING-NOTIFS-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:49 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CISCO-UNIFIED-COMPUTING-NOTIFS-MIB"
+  }
+}

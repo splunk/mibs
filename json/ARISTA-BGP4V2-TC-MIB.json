@@ -1,0 +1,109 @@
+{
+  "imports": {
+    "class": "imports",
+    "ARISTA-SMI-MIB": [
+      "aristaExperiment"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "NOTIFICATION-TYPE",
+      "iso",
+      "IpAddress",
+      "TimeTicks",
+      "OBJECT-TYPE",
+      "Bits",
+      "Counter64",
+      "Unsigned32",
+      "MibIdentifier",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Gauge32",
+      "Counter32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "aristaBgp4V2TC": {
+    "name": "aristaBgp4V2TC",
+    "oid": "1.3.6.1.4.1.30065.4.2",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2014-08-15 00:00",
+        "description": "Updated postal and e-mail addresses."
+      },
+      {
+        "revision": "2012-10-19 00:00",
+        "description": "Renumbered inside the Arista enterprise space."
+      },
+      {
+        "revision": "2011-01-17 00:00",
+        "description": "Initial version."
+      }
+    ]
+  },
+  "AristaBgp4V2IdentifierTC": {
+    "name": "AristaBgp4V2IdentifierTC",
+    "class": "textualconvention",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 4,
+            "max": 4
+          }
+        ]
+      }
+    },
+    "displayhint": "1d.",
+    "status": "current"
+  },
+  "AristaBgp4V2AddressFamilyIdentifierTC": {
+    "name": "AristaBgp4V2AddressFamilyIdentifierTC",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "ipv4": 1,
+          "ipv6": 2
+        }
+      }
+    },
+    "status": "current"
+  },
+  "AristaBgp4V2SubsequentAddressFamilyIdentifierTC": {
+    "name": "AristaBgp4V2SubsequentAddressFamilyIdentifierTC",
+    "class": "textualconvention",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "unicast": 1,
+          "multicast": 2,
+          "mpls": 4
+        }
+      }
+    },
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/arista/ARISTA-BGP4V2-TC-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:30:49 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "ARISTA-BGP4V2-TC-MIB"
+  }
+}

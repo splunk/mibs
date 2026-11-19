@@ -1,0 +1,36 @@
+#
+# PySNMP MIB module FIREBRICK-CPU-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/firebrick/FIREBRICK-CPU-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:34:53 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint, SingleValueConstraint, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint", "SingleValueConstraint", "ValueRangeConstraint")
+firebrickNewStyle, = mibBuilder.importSymbols("FIREBRICK-MIB", "firebrickNewStyle")
+InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ObjectIdentity, NotificationType, Unsigned32, Integer32, iso, enterprises, TimeTicks, Counter32, IpAddress, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Gauge32, Counter64, ModuleIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "ObjectIdentity", "NotificationType", "Unsigned32", "Integer32", "iso", "enterprises", "TimeTicks", "Counter32", "IpAddress", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Gauge32", "Counter64", "ModuleIdentity")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+fbCpuMib = ModuleIdentity((1, 3, 6, 1, 4, 1, 24693, 100, 2))
+fbCpuMib.setRevisions(('2020-06-17 00:00',))
+if mibBuilder.loadTexts: fbCpuMib.setLastUpdated('202006170000Z')
+if mibBuilder.loadTexts: fbCpuMib.setOrganization('Andrews & Arnold Limited')
+fbCpuUsageTable = MibTable((1, 3, 6, 1, 4, 1, 24693, 100, 2, 1), )
+if mibBuilder.loadTexts: fbCpuUsageTable.setStatus('current')
+fbCpuUsageEntry = MibTableRow((1, 3, 6, 1, 4, 1, 24693, 100, 2, 1, 1), ).setIndexNames((0, "FIREBRICK-CPU-MIB", "fbCpuPeriod"), (0, "FIREBRICK-CPU-MIB", "fbCpuCore"))
+if mibBuilder.loadTexts: fbCpuUsageEntry.setStatus('current')
+fbCpuPeriod = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 2, 1, 1, 5), Integer32())
+if mibBuilder.loadTexts: fbCpuPeriod.setStatus('current')
+fbCpuCore = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 2, 1, 1, 6), Integer32())
+if mibBuilder.loadTexts: fbCpuCore.setStatus('current')
+fbCpuIRQ = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 2, 1, 1, 1), Gauge32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: fbCpuIRQ.setStatus('current')
+fbCpuAll = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 2, 1, 1, 2), Gauge32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: fbCpuAll.setStatus('current')
+fbCpuIRQPeak = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 2, 1, 1, 3), Gauge32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: fbCpuIRQPeak.setStatus('current')
+fbCpuAllPeak = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 2, 1, 1, 4), Gauge32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: fbCpuAllPeak.setStatus('current')
+mibBuilder.exportSymbols("FIREBRICK-CPU-MIB", fbCpuIRQPeak=fbCpuIRQPeak, PYSNMP_MODULE_ID=fbCpuMib, fbCpuPeriod=fbCpuPeriod, fbCpuAllPeak=fbCpuAllPeak, fbCpuAll=fbCpuAll, fbCpuCore=fbCpuCore, fbCpuUsageEntry=fbCpuUsageEntry, fbCpuIRQ=fbCpuIRQ, fbCpuMib=fbCpuMib, fbCpuUsageTable=fbCpuUsageTable)

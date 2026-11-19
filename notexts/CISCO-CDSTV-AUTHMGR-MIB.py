@@ -1,0 +1,51 @@
+#
+# PySNMP MIB module CISCO-CDSTV-AUTHMGR-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-CDSTV-AUTHMGR-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+CiscoURLStringOrEmpty, = mibBuilder.importSymbols("CISCO-TC", "CiscoURLStringOrEmpty")
+InetAddressType, InetAddress, InetPortNumber = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress", "InetPortNumber")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoCdstvAuthmgrMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 751))
+ciscoCdstvAuthmgrMIB.setRevisions(('2010-07-20 00:00',))
+if mibBuilder.loadTexts: ciscoCdstvAuthmgrMIB.setLastUpdated('201007200000Z')
+if mibBuilder.loadTexts: ciscoCdstvAuthmgrMIB.setOrganization('Cisco Systems, Inc.')
+ciscoCdstvAuthMgrMIBNotifs = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 751, 0))
+ciscoCdstvAuthMgrMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 751, 1))
+ciscoCdstvAuthMgrMIBConform = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 751, 2))
+ciscoCdstvAuthMgrMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 751, 2, 1))
+cdstvAuthMgrAddressType = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 751, 1, 1), InetAddressType()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvAuthMgrAddressType.setStatus('current')
+cdstvAuthMgrAddress = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 751, 1, 2), InetAddress()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvAuthMgrAddress.setStatus('current')
+cdstvAuthMgrPort = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 751, 1, 3), InetPortNumber().clone(7792)).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvAuthMgrPort.setStatus('current')
+cdstvAuthMgrEventIsAddressType = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 751, 1, 4), InetAddressType()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvAuthMgrEventIsAddressType.setStatus('current')
+cdstvAuthMgrEventIsAddress = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 751, 1, 5), InetAddress()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvAuthMgrEventIsAddress.setStatus('current')
+cdstvAuthMgrEventIsPort = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 751, 1, 6), InetPortNumber()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvAuthMgrEventIsPort.setStatus('current')
+cdstvAuthMgrTraxisSoapInterface = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 751, 1, 7), CiscoURLStringOrEmpty()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvAuthMgrTraxisSoapInterface.setStatus('current')
+cdstvAuthMgrServerThreadPool = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 751, 1, 8), Unsigned32().clone(5)).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvAuthMgrServerThreadPool.setStatus('current')
+cdstvAuthMgrDebugLevel = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 751, 1, 9), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("off", 1), ("low", 2), ("high", 3)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvAuthMgrDebugLevel.setStatus('current')
+ciscoCdstvAuthMgrMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 751, 2, 2))
+ciscoCdstvAuthMgrMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 751, 2, 1, 1)).setObjects(("CISCO-CDSTV-AUTHMGR-MIB", "ciscoCdstvAuthMgrMIBMainObjectGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoCdstvAuthMgrMIBCompliance = ciscoCdstvAuthMgrMIBCompliance.setStatus('current')
+ciscoCdstvAuthMgrMIBMainObjectGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 751, 2, 2, 1)).setObjects(("CISCO-CDSTV-AUTHMGR-MIB", "cdstvAuthMgrAddress"), ("CISCO-CDSTV-AUTHMGR-MIB", "cdstvAuthMgrPort"), ("CISCO-CDSTV-AUTHMGR-MIB", "cdstvAuthMgrEventIsPort"), ("CISCO-CDSTV-AUTHMGR-MIB", "cdstvAuthMgrTraxisSoapInterface"), ("CISCO-CDSTV-AUTHMGR-MIB", "cdstvAuthMgrServerThreadPool"), ("CISCO-CDSTV-AUTHMGR-MIB", "cdstvAuthMgrDebugLevel"), ("CISCO-CDSTV-AUTHMGR-MIB", "cdstvAuthMgrAddressType"), ("CISCO-CDSTV-AUTHMGR-MIB", "cdstvAuthMgrEventIsAddressType"), ("CISCO-CDSTV-AUTHMGR-MIB", "cdstvAuthMgrEventIsAddress"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoCdstvAuthMgrMIBMainObjectGroup = ciscoCdstvAuthMgrMIBMainObjectGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-CDSTV-AUTHMGR-MIB", ciscoCdstvAuthMgrMIBNotifs=ciscoCdstvAuthMgrMIBNotifs, cdstvAuthMgrAddress=cdstvAuthMgrAddress, cdstvAuthMgrDebugLevel=cdstvAuthMgrDebugLevel, PYSNMP_MODULE_ID=ciscoCdstvAuthmgrMIB, ciscoCdstvAuthMgrMIBCompliance=ciscoCdstvAuthMgrMIBCompliance, ciscoCdstvAuthMgrMIBGroups=ciscoCdstvAuthMgrMIBGroups, cdstvAuthMgrServerThreadPool=cdstvAuthMgrServerThreadPool, cdstvAuthMgrAddressType=cdstvAuthMgrAddressType, cdstvAuthMgrEventIsAddress=cdstvAuthMgrEventIsAddress, ciscoCdstvAuthMgrMIBObjects=ciscoCdstvAuthMgrMIBObjects, ciscoCdstvAuthMgrMIBMainObjectGroup=ciscoCdstvAuthMgrMIBMainObjectGroup, ciscoCdstvAuthmgrMIB=ciscoCdstvAuthmgrMIB, cdstvAuthMgrPort=cdstvAuthMgrPort, ciscoCdstvAuthMgrMIBConform=ciscoCdstvAuthMgrMIBConform, cdstvAuthMgrEventIsPort=cdstvAuthMgrEventIsPort, cdstvAuthMgrEventIsAddressType=cdstvAuthMgrEventIsAddressType, ciscoCdstvAuthMgrMIBCompliances=ciscoCdstvAuthMgrMIBCompliances, cdstvAuthMgrTraxisSoapInterface=cdstvAuthMgrTraxisSoapInterface)

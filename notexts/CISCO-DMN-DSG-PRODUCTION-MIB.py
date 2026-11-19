@@ -1,0 +1,36 @@
+#
+# PySNMP MIB module CISCO-DMN-DSG-PRODUCTION-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-PRODUCTION-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoDSGProd = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 21))
+ciscoDSGProd.setRevisions(('2010-08-24 07:00', '2009-12-20 12:00',))
+if mibBuilder.loadTexts: ciscoDSGProd.setLastUpdated('201008240700Z')
+if mibBuilder.loadTexts: ciscoDSGProd.setOrganization('Cisco Systems, Inc.')
+prodInfo = MibIdentifier((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 21, 1))
+prodHostName = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 21, 1, 1), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 14))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: prodHostName.setStatus('current')
+prodTrackingId = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 21, 1, 2), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 12))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: prodTrackingId.setStatus('current')
+prodModelNo = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 21, 1, 3), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 49))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: prodModelNo.setStatus('current')
+prodModelName = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 21, 1, 4), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 49))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: prodModelName.setStatus('current')
+prodCatalogNo = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 21, 1, 5), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 49))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: prodCatalogNo.setStatus('current')
+prodCustomerCode = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 21, 1, 6), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 49))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: prodCustomerCode.setStatus('current')
+prodLimitVer = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 21, 1, 7), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 49))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: prodLimitVer.setStatus('current')
+prodFPGADesignation = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 21, 1, 8), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 0))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: prodFPGADesignation.setStatus('current')
+mibBuilder.exportSymbols("CISCO-DMN-DSG-PRODUCTION-MIB", prodTrackingId=prodTrackingId, prodHostName=prodHostName, ciscoDSGProd=ciscoDSGProd, PYSNMP_MODULE_ID=ciscoDSGProd, prodInfo=prodInfo, prodModelName=prodModelName, prodCatalogNo=prodCatalogNo, prodLimitVer=prodLimitVer, prodModelNo=prodModelNo, prodFPGADesignation=prodFPGADesignation, prodCustomerCode=prodCustomerCode)

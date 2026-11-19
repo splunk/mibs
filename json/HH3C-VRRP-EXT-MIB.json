@@ -1,0 +1,149 @@
+{
+  "imports": {
+    "class": "imports",
+    "HH3C-OID-MIB": [
+      "hh3cCommon"
+    ],
+    "IF-MIB": [
+      "ifIndex"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Counter32",
+      "OBJECT-IDENTITY",
+      "OBJECT-TYPE",
+      "Bits",
+      "MODULE-IDENTITY",
+      "Counter64",
+      "MibIdentifier",
+      "Unsigned32",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "IpAddress",
+      "TimeTicks",
+      "Integer32",
+      "iso"
+    ],
+    "SNMPv2-TC": [
+      "RowStatus",
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ],
+    "VRRP-MIB": [
+      "vrrpOperVrId"
+    ]
+  },
+  "hh3cVrrpExt": {
+    "name": "hh3cVrrpExt",
+    "oid": "1.3.6.1.4.1.25506.2.24",
+    "class": "moduleidentity"
+  },
+  "hh3cVrrpExtMibObject": {
+    "name": "hh3cVrrpExtMibObject",
+    "oid": "1.3.6.1.4.1.25506.2.24.1",
+    "class": "objectidentity"
+  },
+  "hh3cVrrpExtTable": {
+    "name": "hh3cVrrpExtTable",
+    "oid": "1.3.6.1.4.1.25506.2.24.1.1",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "hh3cVrrpExtEntry": {
+    "name": "hh3cVrrpExtEntry",
+    "oid": "1.3.6.1.4.1.25506.2.24.1.1.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "IF-MIB",
+        "object": "ifIndex",
+        "implied": 0
+      },
+      {
+        "module": "VRRP-MIB",
+        "object": "vrrpOperVrId",
+        "implied": 0
+      },
+      {
+        "module": "HH3C-VRRP-EXT-MIB",
+        "object": "hh3cVrrpExtTrackInterface",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "hh3cVrrpExtTrackInterface": {
+    "name": "hh3cVrrpExtTrackInterface",
+    "oid": "1.3.6.1.4.1.25506.2.24.1.1.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 2147483647
+          }
+        ]
+      }
+    },
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "hh3cVrrpExtPriorityReduce": {
+    "name": "hh3cVrrpExtPriorityReduce",
+    "oid": "1.3.6.1.4.1.25506.2.24.1.1.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 10,
+        "format": "decimal"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "hh3cVrrpExtRowStatus": {
+    "name": "hh3cVrrpExtRowStatus",
+    "oid": "1.3.6.1.4.1.25506.2.24.1.1.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "RowStatus",
+      "class": "type"
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/comware/HH3C-VRRP-EXT-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "HH3C-VRRP-EXT-MIB"
+  }
+}

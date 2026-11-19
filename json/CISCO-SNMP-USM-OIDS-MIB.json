@@ -1,0 +1,72 @@
+{
+  "imports": {
+    "class": "imports",
+    "CISCO-SMI": [
+      "ciscoModules"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "MODULE-IDENTITY",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "Counter64",
+      "IpAddress",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Counter32",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "TimeTicks"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ciscoSnmpUsmOidsMIB": {
+    "name": "ciscoSnmpUsmOidsMIB",
+    "oid": "1.3.6.1.4.1.9.12.6",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2006-02-28 00:00",
+        "description": "Initial version of this MIB module."
+      }
+    ]
+  },
+  "ciscoSnmpPrivProtocols": {
+    "name": "ciscoSnmpPrivProtocols",
+    "oid": "1.3.6.1.4.1.9.12.6.1",
+    "class": "objectidentity"
+  },
+  "cusmAESCfb192PrivProtocol": {
+    "name": "cusmAESCfb192PrivProtocol",
+    "oid": "1.3.6.1.4.1.9.12.6.1.1",
+    "class": "objectidentity"
+  },
+  "cusmAESCfb256PrivProtocol": {
+    "name": "cusmAESCfb256PrivProtocol",
+    "oid": "1.3.6.1.4.1.9.12.6.1.2",
+    "class": "objectidentity"
+  },
+  "cusm3DES168PrivProtocol": {
+    "name": "cusm3DES168PrivProtocol",
+    "oid": "1.3.6.1.4.1.9.12.6.1.3",
+    "class": "objectidentity"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SNMP-USM-OIDS-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:52 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CISCO-SNMP-USM-OIDS-MIB"
+  }
+}

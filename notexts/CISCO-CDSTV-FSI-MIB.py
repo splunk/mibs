@@ -1,0 +1,52 @@
+#
+# PySNMP MIB module CISCO-CDSTV-FSI-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-CDSTV-FSI-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:21 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+CiscoURLString, = mibBuilder.importSymbols("CISCO-TC", "CiscoURLString")
+InetAddressType, InetAddress, InetPortNumber = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress", "InetPortNumber")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoCdstvFsiMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 735))
+ciscoCdstvFsiMIB.setRevisions(('2010-05-10 00:00',))
+if mibBuilder.loadTexts: ciscoCdstvFsiMIB.setLastUpdated('201005100000Z')
+if mibBuilder.loadTexts: ciscoCdstvFsiMIB.setOrganization('Cisco Systems, Inc.')
+ciscoCdstvFsiMIBNotifs = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 735, 0))
+ciscoCdstvFsiMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 735, 1))
+ciscoCdstvFsiMIBConform = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 735, 2))
+ciscoCdstvFsiMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 735, 2, 1))
+cdstvFsiIpAddressType = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 735, 1, 1), InetAddressType()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvFsiIpAddressType.setStatus('current')
+cdstvFsiIpAddress = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 735, 1, 2), InetAddress()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvFsiIpAddress.setStatus('current')
+cdstvFsiServerPort = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 735, 1, 3), InetPortNumber()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvFsiServerPort.setStatus('current')
+cdstvFsiFtpClientPort = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 735, 1, 4), InetPortNumber()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvFsiFtpClientPort.setStatus('current')
+cdstvFsiFtpOutServerPort = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 735, 1, 5), InetPortNumber()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvFsiFtpOutServerPort.setStatus('current')
+cdstvFsiFtpOutLoginTTL = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 735, 1, 6), Unsigned32()).setUnits('hops').setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvFsiFtpOutLoginTTL.setStatus('current')
+cdstvFsiLogLevel = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 735, 1, 7), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("off", 1), ("low", 2), ("high", 3)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvFsiLogLevel.setStatus('current')
+cdstvFsiContentRootPath = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 735, 1, 8), SnmpAdminString()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvFsiContentRootPath.setStatus('current')
+cdstvFsiAsyncCallbackURL = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 735, 1, 9), CiscoURLString()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cdstvFsiAsyncCallbackURL.setStatus('current')
+ciscoCdstvFsiMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 735, 2, 2))
+ciscoCdstvFsiMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 735, 2, 1, 1)).setObjects(("CISCO-CDSTV-FSI-MIB", "ciscoCdstvFsiMIBMainObjectGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoCdstvFsiMIBCompliance = ciscoCdstvFsiMIBCompliance.setStatus('current')
+ciscoCdstvFsiMIBMainObjectGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 735, 2, 2, 1)).setObjects(("CISCO-CDSTV-FSI-MIB", "cdstvFsiIpAddress"), ("CISCO-CDSTV-FSI-MIB", "cdstvFsiServerPort"), ("CISCO-CDSTV-FSI-MIB", "cdstvFsiFtpClientPort"), ("CISCO-CDSTV-FSI-MIB", "cdstvFsiFtpOutServerPort"), ("CISCO-CDSTV-FSI-MIB", "cdstvFsiFtpOutLoginTTL"), ("CISCO-CDSTV-FSI-MIB", "cdstvFsiLogLevel"), ("CISCO-CDSTV-FSI-MIB", "cdstvFsiContentRootPath"), ("CISCO-CDSTV-FSI-MIB", "cdstvFsiAsyncCallbackURL"), ("CISCO-CDSTV-FSI-MIB", "cdstvFsiIpAddressType"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoCdstvFsiMIBMainObjectGroup = ciscoCdstvFsiMIBMainObjectGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-CDSTV-FSI-MIB", ciscoCdstvFsiMIBMainObjectGroup=ciscoCdstvFsiMIBMainObjectGroup, cdstvFsiIpAddress=cdstvFsiIpAddress, ciscoCdstvFsiMIB=ciscoCdstvFsiMIB, ciscoCdstvFsiMIBGroups=ciscoCdstvFsiMIBGroups, cdstvFsiAsyncCallbackURL=cdstvFsiAsyncCallbackURL, ciscoCdstvFsiMIBNotifs=ciscoCdstvFsiMIBNotifs, cdstvFsiFtpClientPort=cdstvFsiFtpClientPort, cdstvFsiFtpOutServerPort=cdstvFsiFtpOutServerPort, cdstvFsiLogLevel=cdstvFsiLogLevel, cdstvFsiContentRootPath=cdstvFsiContentRootPath, ciscoCdstvFsiMIBObjects=ciscoCdstvFsiMIBObjects, cdstvFsiIpAddressType=cdstvFsiIpAddressType, ciscoCdstvFsiMIBConform=ciscoCdstvFsiMIBConform, ciscoCdstvFsiMIBCompliances=ciscoCdstvFsiMIBCompliances, cdstvFsiServerPort=cdstvFsiServerPort, cdstvFsiFtpOutLoginTTL=cdstvFsiFtpOutLoginTTL, ciscoCdstvFsiMIBCompliance=ciscoCdstvFsiMIBCompliance, PYSNMP_MODULE_ID=ciscoCdstvFsiMIB)

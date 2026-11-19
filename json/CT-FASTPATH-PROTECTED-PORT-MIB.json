@@ -1,0 +1,132 @@
+{
+  "imports": {
+    "class": "imports",
+    "CTRON-MIB-NAMES": [
+      "ctFastPathProtectedPortMib"
+    ],
+    "Q-BRIDGE-MIB": [
+      "PortList"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "MibIdentifier",
+      "Integer32",
+      "Bits",
+      "TimeTicks",
+      "Counter32",
+      "Counter64",
+      "Unsigned32",
+      "iso",
+      "Gauge32",
+      "MODULE-IDENTITY",
+      "OBJECT-TYPE",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "IpAddress"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "ctFastPathProtectedPortMIB": {
+    "name": "ctFastPathProtectedPortMIB",
+    "oid": "1.3.6.1.4.1.52.4.2.33.1",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2006-03-06 15:01",
+        "description": "The initial version of this MIB module."
+      }
+    ]
+  },
+  "ctAgentSwitchConfigGroup": {
+    "name": "ctAgentSwitchConfigGroup",
+    "oid": "1.3.6.1.4.1.52.4.2.33.1.1",
+    "class": "objectidentity"
+  },
+  "ctAgentSwitchProtectedPortConfigGroup": {
+    "name": "ctAgentSwitchProtectedPortConfigGroup",
+    "oid": "1.3.6.1.4.1.52.4.2.33.1.1.18",
+    "class": "objectidentity"
+  },
+  "ctAgentSwitchProtectedPortTable": {
+    "name": "ctAgentSwitchProtectedPortTable",
+    "oid": "1.3.6.1.4.1.52.4.2.33.1.1.18.1",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "ctAgentSwitchProtectedPortEntry": {
+    "name": "ctAgentSwitchProtectedPortEntry",
+    "oid": "1.3.6.1.4.1.52.4.2.33.1.1.18.1.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "CT-FASTPATH-PROTECTED-PORT-MIB",
+        "object": "ctAgentSwitchProtectedPortGroupId",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "ctAgentSwitchProtectedPortGroupId": {
+    "name": "ctAgentSwitchProtectedPortGroupId",
+    "oid": "1.3.6.1.4.1.52.4.2.33.1.1.18.1.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type"
+    },
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "ctAgentSwitchProtectedPortGroupName": {
+    "name": "ctAgentSwitchProtectedPortGroupName",
+    "oid": "1.3.6.1.4.1.52.4.2.33.1.1.18.1.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 31
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "ctAgentSwitchProtectedPortPortList": {
+    "name": "ctAgentSwitchProtectedPortPortList",
+    "oid": "1.3.6.1.4.1.52.4.2.33.1.1.18.1.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "PortList",
+      "class": "type"
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/enterasys/CT-FASTPATH-PROTECTED-PORT-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:34:31 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CT-FASTPATH-PROTECTED-PORT-MIB"
+  }
+}

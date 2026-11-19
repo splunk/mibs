@@ -1,0 +1,82 @@
+{
+  "imports": {
+    "class": "imports",
+    "CISCO-SMI": [
+      "ciscoAgentCapability"
+    ],
+    "SNMPv2-CONF": [
+      "AGENT-CAPABILITIES",
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "Unsigned32",
+      "MODULE-IDENTITY",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "Counter64",
+      "IpAddress",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Counter32",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "TimeTicks"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ciscoNtpCapability": {
+    "name": "ciscoNtpCapability",
+    "oid": "1.3.6.1.4.1.9.7.99999",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2006-04-05 00:00",
+        "description": "Added ciscoNtpCapabilityIOS124"
+      },
+      {
+        "revision": "2005-06-22 00:00",
+        "description": "Capability for MDS platform."
+      },
+      {
+        "revision": "2003-04-08 00:00",
+        "description": "Initial version of the MIB Module."
+      }
+    ]
+  },
+  "ciscoNtpCapabilityV3R00": {
+    "name": "ciscoNtpCapabilityV3R00",
+    "oid": "1.3.6.1.4.1.9.7.99999.1",
+    "class": "agentcapabilities",
+    "productrelease": "MGX8850 Release 3.00,BPX SES Release ",
+    "status": "current"
+  },
+  "ciscoNtpCapabilitySANOSV3R0001": {
+    "name": "ciscoNtpCapabilitySANOSV3R0001",
+    "oid": "1.3.6.1.4.1.9.7.99999.2",
+    "class": "agentcapabilities",
+    "productrelease": "SAN-OS 3.0(1) ",
+    "status": "current"
+  },
+  "ciscoNtpCapabilityIOS124": {
+    "name": "ciscoNtpCapabilityIOS124",
+    "oid": "1.3.6.1.4.1.9.7.99999.3",
+    "class": "agentcapabilities",
+    "productrelease": "IOS 12.4",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-NTP-CAPABILITY",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:53 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CISCO-NTP-CAPABILITY"
+  }
+}

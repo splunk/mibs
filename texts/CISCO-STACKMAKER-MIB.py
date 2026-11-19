@@ -1,0 +1,52 @@
+#
+# PySNMP MIB module CISCO-STACKMAKER-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-STACKMAKER-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoStackMakerMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 59))
+if mibBuilder.loadTexts: ciscoStackMakerMIB.setLastUpdated('9610311200Z')
+if mibBuilder.loadTexts: ciscoStackMakerMIB.setOrganization('Cisco Systems, Inc.')
+if mibBuilder.loadTexts: ciscoStackMakerMIB.setContactInfo('Postal: Cisco Systems, Inc.\n \t     170 West Tasman Drive\n \t     San Jose, CA 95134-1706\n \t     USA\n \n \t     Tel: +1 408 526 4000\n \n \t     E-mail: cs-stacks@cisco.com')
+if mibBuilder.loadTexts: ciscoStackMakerMIB.setDescription("The MIB module for Cisco Systems' StackMaker.")
+ciscoStackMakerMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 59, 1))
+ciscoStackMakerConf = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 59, 1, 1))
+csmStackName = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 59, 1, 1, 1), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 32))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: csmStackName.setStatus('current')
+if mibBuilder.loadTexts: csmStackName.setDescription(' A descriptive string used by the network administrator\n \t\tone stack at any given time. If this entry is empty,\n \t\tthe device is not a member of a stack.\n \n \t\tChanging the value of this object will move the device\n \t\tto a different stack. If the value is cleared, the device\n \t\tis no longer a member of any stack.')
+csmClearStackTable = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 59, 1, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("clearTable", 1), ("noClearTable", 2)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: csmClearStackTable.setStatus('current')
+if mibBuilder.loadTexts: csmClearStackTable.setDescription('This object is used to clear the csmStackTable\n \t\twith a single SNMP operation. The application will clear\n \t\tthe table and re-write the table to accommodate new\n \t\tor modified table entries.\n \t\tSetting this object to noClearTable has no effect.\n \t\tThe agent will always return the value of noClearTable\n \t\twhen this object is read.')
+csmStackTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 59, 1, 1, 3), )
+if mibBuilder.loadTexts: csmStackTable.setStatus('current')
+if mibBuilder.loadTexts: csmStackTable.setDescription("The table of IP addresses for the devices which are\n \t\tmembers of the stack. Individual entries can be added\n \t\tto the table to add devices in the stack either through\n \t\tSNMP Set operations or through the device's command line\n \t\tinterface. However, the agent need not support deletion\n \t\tof individual entries, since the table is first cleared\n \t\tbefore any modifications are made, using the\n \t\tcsmClearStackTable object. The agent will return\n \t\tthe error badValue if an SNMP Set operation is\n \t\tattempted on an existing row.\n \t\t\n \t\tIt is the responsibility of the network administrator to\n \t\tensure that a device does not belong to more than one stack\n \t\tand to maintain referential integrity across devices. A\n \t\tdevice will take no action upon the information stored in\n \t\tthis table other than to guarantee its persistence over\n \t\tdevice reboots.")
+csmStackEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 59, 1, 1, 3, 1), ).setIndexNames((0, "CISCO-STACKMAKER-MIB", "csmStackIndex"))
+if mibBuilder.loadTexts: csmStackEntry.setStatus('current')
+if mibBuilder.loadTexts: csmStackEntry.setDescription('An entry for each device which is member of the stack.')
+csmStackIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 59, 1, 1, 3, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 32)))
+if mibBuilder.loadTexts: csmStackIndex.setStatus('current')
+if mibBuilder.loadTexts: csmStackIndex.setDescription('Index in the StackMaker table. Entries should be\n \t\tconsecutive since updating this table is made by\n \t\tfirst clearing the table and reconfiguring it.')
+csmStackIpAddress = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 59, 1, 1, 3, 1, 2), IpAddress()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: csmStackIpAddress.setStatus('current')
+if mibBuilder.loadTexts: csmStackIpAddress.setDescription('IP Address of a stack member.')
+ciscoStackMakerMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 59, 3))
+ciscoStackMakerMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 59, 3, 1))
+ciscoStackMakerMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 59, 3, 2))
+ciscoStackMakerMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 59, 3, 1, 1)).setObjects(("CISCO-STACKMAKER-MIB", "ciscoStackMakerBasicGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoStackMakerMIBCompliance = ciscoStackMakerMIBCompliance.setStatus('current')
+if mibBuilder.loadTexts: ciscoStackMakerMIBCompliance.setDescription('The compliance statement for Cisco Systems entities which\n \t    implement the StackMaker model. Every Cisco stackable\n \t    device must implement the StackMaker MIB.')
+ciscoStackMakerBasicGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 59, 3, 2, 1)).setObjects(("CISCO-STACKMAKER-MIB", "csmStackName"), ("CISCO-STACKMAKER-MIB", "csmClearStackTable"), ("CISCO-STACKMAKER-MIB", "csmStackIpAddress"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoStackMakerBasicGroup = ciscoStackMakerBasicGroup.setStatus('current')
+if mibBuilder.loadTexts: ciscoStackMakerBasicGroup.setDescription("A collection of objects providing identification for\n \t    a Cisco Systems' entity which implements the\n \t    StackMaker MIB.")
+mibBuilder.exportSymbols("CISCO-STACKMAKER-MIB", ciscoStackMakerMIBConformance=ciscoStackMakerMIBConformance, ciscoStackMakerMIBCompliances=ciscoStackMakerMIBCompliances, ciscoStackMakerMIBCompliance=ciscoStackMakerMIBCompliance, PYSNMP_MODULE_ID=ciscoStackMakerMIB, csmStackIpAddress=csmStackIpAddress, csmClearStackTable=csmClearStackTable, csmStackTable=csmStackTable, ciscoStackMakerBasicGroup=ciscoStackMakerBasicGroup, csmStackName=csmStackName, csmStackEntry=csmStackEntry, ciscoStackMakerMIB=ciscoStackMakerMIB, ciscoStackMakerConf=ciscoStackMakerConf, csmStackIndex=csmStackIndex, ciscoStackMakerMIBGroups=ciscoStackMakerMIBGroups, ciscoStackMakerMIBObjects=ciscoStackMakerMIBObjects)

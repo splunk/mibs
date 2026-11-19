@@ -1,0 +1,177 @@
+{
+  "imports": {
+    "class": "imports",
+    "HP-ICF-OID": [
+      "hpSwitch"
+    ],
+    "SNMPv2-CONF": [
+      "OBJECT-GROUP",
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "Integer32",
+      "Unsigned32",
+      "Bits",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "Counter64",
+      "MibIdentifier",
+      "IpAddress",
+      "OBJECT-IDENTITY",
+      "Counter32",
+      "MODULE-IDENTITY",
+      "TimeTicks",
+      "OBJECT-TYPE"
+    ],
+    "SNMPv2-TC": [
+      "RowStatus",
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "hpicfMinKeyMIB": {
+    "name": "hpicfMinKeyMIB",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2016-06-22 09:00",
+        "description": "Initial version of minimum key MIB module."
+      }
+    ]
+  },
+  "hpicfMinKeyObjects": {
+    "name": "hpicfMinKeyObjects",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.0",
+    "class": "objectidentity"
+  },
+  "hpicfMinKeyConformance": {
+    "name": "hpicfMinKeyConformance",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.1",
+    "class": "objectidentity"
+  },
+  "hpicfMinKeyConfigObjects": {
+    "name": "hpicfMinKeyConfigObjects",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.0.1",
+    "class": "objectidentity"
+  },
+  "hpicfMinKeyTable": {
+    "name": "hpicfMinKeyTable",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.0.1.1",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "hpicfMinKeyEntry": {
+    "name": "hpicfMinKeyEntry",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.0.1.1.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "HP-ICF-MIN-KEY-MIB",
+        "object": "hpicfMinKeyType",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "hpicfMinKeyType": {
+    "name": "hpicfMinKeyType",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.0.1.1.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "rsa": 1
+        }
+      }
+    },
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "hpicfMinKeySize": {
+    "name": "hpicfMinKeySize",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.0.1.1.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "minBit1024": 1,
+          "minBit2048": 2
+        }
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "hpicfMinKeyRowStatus": {
+    "name": "hpicfMinKeyRowStatus",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.0.1.1.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "RowStatus",
+      "class": "type"
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "hpicfMinKeyCompliances": {
+    "name": "hpicfMinKeyCompliances",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.1.1",
+    "class": "objectidentity"
+  },
+  "hpicfMinKeyGroups": {
+    "name": "hpicfMinKeyGroups",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.1.2",
+    "class": "objectidentity"
+  },
+  "hpicfMinKeyCompliance1": {
+    "name": "hpicfMinKeyCompliance1",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.1.1.1",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "hpicfMinKeyConfigGroup",
+        "module": "HP-ICF-MIN-KEY-MIB"
+      }
+    ],
+    "status": "current"
+  },
+  "hpicfMinKeyConfigGroup": {
+    "name": "hpicfMinKeyConfigGroup",
+    "oid": "1.3.6.1.4.1.11.2.14.11.5.1.132.1.2.1",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "HP-ICF-MIN-KEY-MIB",
+        "object": "hpicfMinKeySize"
+      },
+      {
+        "module": "HP-ICF-MIN-KEY-MIB",
+        "object": "hpicfMinKeyRowStatus"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hp/HP-ICF-MIN-KEY-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:07 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "HP-ICF-MIN-KEY-MIB"
+  }
+}

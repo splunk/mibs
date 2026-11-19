@@ -1,0 +1,104 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "TimeTicks",
+      "Counter64",
+      "OBJECT-IDENTITY",
+      "Bits",
+      "MibIdentifier",
+      "enterprises",
+      "OBJECT-TYPE",
+      "Gauge32",
+      "MODULE-IDENTITY",
+      "Counter32",
+      "IpAddress",
+      "Unsigned32",
+      "NOTIFICATION-TYPE",
+      "Integer32"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "alcatelNGOAWBaseMIB": {
+    "name": "alcatelNGOAWBaseMIB",
+    "oid": "1.3.6.1.4.1.6486.802",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2016-09-01 00:00",
+        "description": "Branch for NGOAW wireless Enterprise devices under AL-Enterprise Corporate Private Enterprise Number."
+      }
+    ]
+  },
+  "alcatel": {
+    "name": "alcatel",
+    "oid": "1.3.6.1.4.1.6486",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "alcatelNGOAWManagement": {
+    "name": "alcatelNGOAWManagement",
+    "oid": "1.3.6.1.4.1.6486.802.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "managementNGOAWHardware": {
+    "name": "managementNGOAWHardware",
+    "oid": "1.3.6.1.4.1.6486.802.1.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "managementNGOAWSoftware": {
+    "name": "managementNGOAWSoftware",
+    "oid": "1.3.6.1.4.1.6486.802.1.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "managementNGOAWAgentCapabilities": {
+    "name": "managementNGOAWAgentCapabilities",
+    "oid": "1.3.6.1.4.1.6486.802.1.4",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "hardwareNGOAWEntities": {
+    "name": "hardwareNGOAWEntities",
+    "oid": "1.3.6.1.4.1.6486.802.1.1.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "hardwareNGOAWDevices": {
+    "name": "hardwareNGOAWDevices",
+    "oid": "1.3.6.1.4.1.6486.802.1.1.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "softwareNGOAWEntities": {
+    "name": "softwareNGOAWEntities",
+    "oid": "1.3.6.1.4.1.6486.802.1.2.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "softwareNGOAWServices": {
+    "name": "softwareNGOAWServices",
+    "oid": "1.3.6.1.4.1.6486.802.1.2.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/nokia/stellar/ALCATEL-NGOAW-BASE-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:38:18 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "ALCATEL-NGOAW-BASE-MIB"
+  }
+}

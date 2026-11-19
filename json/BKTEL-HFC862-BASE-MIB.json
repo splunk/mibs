@@ -1,0 +1,154 @@
+{
+  "imports": {
+    "class": "imports",
+    "RFC1155-SMI": [
+      "iso"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "experimental",
+      "Integer32",
+      "iso",
+      "TimeTicks",
+      "Bits",
+      "Counter32",
+      "OBJECT-TYPE",
+      "Unsigned32",
+      "MibIdentifier",
+      "Gauge32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "Counter64"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "DisplayString": {
+    "name": "DisplayString",
+    "class": "type",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type"
+    }
+  },
+  "TruthValue": {
+    "name": "TruthValue",
+    "class": "type",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "true": 1,
+          "false": 2
+        }
+      }
+    }
+  },
+  "NESlotValue": {
+    "name": "NESlotValue",
+    "class": "type",
+    "type": {
+      "type": "INTEGER",
+      "class": "type"
+    }
+  },
+  "ModuleWidthValue": {
+    "name": "ModuleWidthValue",
+    "class": "type",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 8
+          }
+        ]
+      }
+    }
+  },
+  "PerceivedSeverityValue": {
+    "name": "PerceivedSeverityValue",
+    "class": "type",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "notification": 0,
+          "alarm": 2,
+          "warning": 3,
+          "clear": 5
+        }
+      }
+    }
+  },
+  "org": {
+    "name": "org",
+    "oid": "1.3",
+    "class": "objectidentity"
+  },
+  "dod": {
+    "name": "dod",
+    "oid": "1.3.6",
+    "class": "objectidentity"
+  },
+  "internet": {
+    "name": "internet",
+    "oid": "1.3.6.1",
+    "class": "objectidentity"
+  },
+  "mgmt": {
+    "name": "mgmt",
+    "oid": "1.3.6.1.2",
+    "class": "objectidentity"
+  },
+  "private": {
+    "name": "private",
+    "oid": "1.3.6.1.4",
+    "class": "objectidentity"
+  },
+  "enterprises": {
+    "name": "enterprises",
+    "oid": "1.3.6.1.4.1",
+    "class": "objectidentity"
+  },
+  "bktelSystems": {
+    "name": "bktelSystems",
+    "oid": "1.3.6.1.4.1.7501",
+    "class": "objectidentity"
+  },
+  "hfc": {
+    "name": "hfc",
+    "oid": "1.3.6.1.4.1.7501.1",
+    "class": "objectidentity"
+  },
+  "ne": {
+    "name": "ne",
+    "oid": "1.3.6.1.4.1.7501.1.1",
+    "class": "objectidentity"
+  },
+  "modules": {
+    "name": "modules",
+    "oid": "1.3.6.1.4.1.7501.1.2",
+    "class": "objectidentity"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/bktel/BKTEL-HFC862-BASE-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:31:22 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "BKTEL-HFC862-BASE-MIB"
+  }
+}

@@ -1,0 +1,113 @@
+#
+# PySNMP MIB module CISCO-MODULE-AUTO-SHUTDOWN-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MODULE-AUTO-SHUTDOWN-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+entPhysicalName, entPhysicalIndex, entPhysicalModelName = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalName", "entPhysicalIndex", "entPhysicalModelName")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
+DisplayString, TextualConvention, DateAndTime, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "DateAndTime", "TruthValue")
+ciscoModuleAutoShutdownMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 386))
+ciscoModuleAutoShutdownMIB.setRevisions(('2008-03-12 00:00', '2003-12-29 00:00',))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    if mibBuilder.loadTexts: ciscoModuleAutoShutdownMIB.setRevisionsDescriptions(('Added the TC CiscoModuleAutoShutSysAction and the groups\n        cmasModuleSysActionGroup and cmasNotificationsGroup2.', 'Initial revision of this MIB module.',))
+if mibBuilder.loadTexts: ciscoModuleAutoShutdownMIB.setLastUpdated('200803120000Z')
+if mibBuilder.loadTexts: ciscoModuleAutoShutdownMIB.setOrganization('Cisco Systems, Inc.')
+if mibBuilder.loadTexts: ciscoModuleAutoShutdownMIB.setContactInfo('Cisco Systems\n            Customer Service\n\n            Postal: 170 W Tasman Drive\n            San Jose, CA 95134\n            USA\n\n            Tel: +1 800 553-NETS\n\n            E-mail: cs-lan-switch-snmp@cisco.com')
+if mibBuilder.loadTexts: ciscoModuleAutoShutdownMIB.setDescription('The CISCO-MODULE-AUTO-SHUTDOWN-MIB is used to configure\n        the module automatic shutdown feature. Modules will be\n        reset by the system when they become faulty. The module\n        auto shutdown feature will shutdown such faulty modules\n        when the resets occur too often. Once the modules are\n        shutdown by this feature, they will stay shutdown until\n        the administrator manually brings them back up. This will\n        prevent the system from constantly resetting the faulty\n        modules.\n\n        This MIB module also covers the system initiated action \n        occuring on a module.')
+cmasMIBNotifs = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 386, 0))
+cmasMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 386, 1))
+cmasMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 386, 2))
+cmasGlobal = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 1))
+cmasNotifObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 2))
+cmasModule = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 3))
+cmasModuleSysActionObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 4))
+class CiscoModuleAutoShutSysAction(TextualConvention, Integer32):
+    description = 'The type of system initiated action.\n        Valid values are:\n\n        other(1):       none of the below.\n\n        reset(2):       reset the module.\n\n        powerCycle(3):  power cycle the module.\n\n        powerDown(4):   power down the module.'
+    status = 'current'
+    subtypeSpec = Integer32.subtypeSpec + ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4))
+    namedValues = NamedValues(("other", 1), ("reset", 2), ("powerCycle", 3), ("powerDown", 4))
+
+cmasFrequency = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 1, 1), Unsigned32()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cmasFrequency.setStatus('current')
+if mibBuilder.loadTexts: cmasFrequency.setDescription("This indicates the threshold of the number of times\n        the system can reset a faulty module, within the period\n        specified by 'cmasPeriod'. Once the number of these system\n        initiated resets exceeds this threshold, the module auto\n        shutdown feature will shut down the module.")
+cmasPeriod = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 1, 2), Unsigned32()).setUnits('minutes').setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cmasPeriod.setStatus('current')
+if mibBuilder.loadTexts: cmasPeriod.setDescription('This indicates the period of time over which the number of\n        system initiated module resets is monitored. In order for\n        the module to be automatically shutdown, the number of times\n        the system must reset the module has to exceed cmasFreqency\n        times, in a span of cmasPeriod.')
+cmasMIBEnableNotification = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 2, 1), TruthValue().clone('false')).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cmasMIBEnableNotification.setStatus('current')
+if mibBuilder.loadTexts: cmasMIBEnableNotification.setDescription('This object indicates whether the system produces the\n        cmasModuleAutoShutdown notification.')
+cmasModuleSysActionNotifEnable = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 2, 2), TruthValue().clone('false')).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cmasModuleSysActionNotifEnable.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleSysActionNotifEnable.setDescription('This object indicates whether the system produces the\n        cmasModuleSysActionNotif notification.')
+cmasModuleTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 3, 1), )
+if mibBuilder.loadTexts: cmasModuleTable.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleTable.setDescription('This table contains information regarding the module\n        auto shutdown feature.')
+cmasModuleEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 3, 1, 1), ).setIndexNames((0, "ENTITY-MIB", "entPhysicalIndex"))
+if mibBuilder.loadTexts: cmasModuleEntry.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleEntry.setDescription("This entry contains information about the module auto\n        shutdown feature. Each entry represents whether the\n        feature is enabled, the number of resets, the last\n        reset reason and the last reset time. Each entry is\n        applicable for the modules capable of this feature and\n        are identified by 'entPhysicalIndex' with entPhysicalClass\n        value 'module'.")
+cmasModuleEnable = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 3, 1, 1, 1), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cmasModuleEnable.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleEnable.setDescription('This object enables or disables the auto shutdown feature\n        on a module.\n\n        When the object is true(1), auto shutdown is enabled for\n        that module. The feature will start monitoring system\n        initiated module resets, and initiate a shutdown operation\n        on the module if the number of resets, cmasModuleNumResets,\n        exceeds the cmasFrequency within the previous cmasPeriod of\n        time.\n\n        When the object is false(2), auto shutdown is disabled for\n        that module.')
+cmasModuleNumResets = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 3, 1, 1, 2), Gauge32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cmasModuleNumResets.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleNumResets.setDescription('This indicates the number of system initiated module resets\n        that have occurred. This does not include user initiated\n        module resets.')
+cmasModuleLastResetReason = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 3, 1, 1, 3), SnmpAdminString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cmasModuleLastResetReason.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleLastResetReason.setDescription('This object identifies the reason for the last module\n        reset initiated by the system. This object will contain\n        a zero-length string if no such resets have occurred.')
+cmasModuleLastResetTime = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 3, 1, 1, 4), DateAndTime()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cmasModuleLastResetTime.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleLastResetTime.setDescription('This object corresponds to the date and time when the last\n        system initiated module reset occurred. This object will\n        contain 0-1-1,00:00:00:0 if no system initiated resets have\n        occurred.')
+cmasModuleSysAction = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 4, 1), CiscoModuleAutoShutSysAction()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: cmasModuleSysAction.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleSysAction.setDescription('This object identifies the system initiated action which\n        is applied to a module.')
+cmasModuleSysActionReason = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 386, 1, 4, 2), SnmpAdminString()).setMaxAccess("accessiblefornotify")
+if mibBuilder.loadTexts: cmasModuleSysActionReason.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleSysActionReason.setDescription('This object identifies the reason of system initiated\n        action which is applied to a module.')
+cmasModuleAutoShutdown = NotificationType((1, 3, 6, 1, 4, 1, 9, 9, 386, 0, 1)).setObjects(("ENTITY-MIB", "entPhysicalName"), ("ENTITY-MIB", "entPhysicalModelName"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleNumResets"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleLastResetReason"))
+if mibBuilder.loadTexts: cmasModuleAutoShutdown.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleAutoShutdown.setDescription('This notification is generated when the module auto\n        shutdown feature shuts down a module.')
+cmasModuleSysActionNotif = NotificationType((1, 3, 6, 1, 4, 1, 9, 9, 386, 0, 2)).setObjects(("ENTITY-MIB", "entPhysicalName"), ("ENTITY-MIB", "entPhysicalModelName"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleSysAction"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleSysActionReason"))
+if mibBuilder.loadTexts: cmasModuleSysActionNotif.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleSysActionNotif.setDescription('This notification is generated when a system initiated\n        action occurs on a module.')
+cmasMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 386, 2, 1))
+cmasMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 386, 2, 2))
+cmasMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 386, 2, 1, 1)).setObjects(("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleGroup"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasNotificationEnableGroup"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasNotificationsGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cmasMIBCompliance = cmasMIBCompliance.setStatus('deprecated')
+if mibBuilder.loadTexts: cmasMIBCompliance.setDescription('The compliance statement for the\n        CISCO-MODULE-AUTO-SHUTDOWN-MIB')
+cmasMIBCompliance2 = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 386, 2, 1, 2)).setObjects(("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleGroup"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasNotificationEnableGroup"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasNotificationsGroup"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleSysActionGroup"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasNotificationsGroup2"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cmasMIBCompliance2 = cmasMIBCompliance2.setStatus('current')
+if mibBuilder.loadTexts: cmasMIBCompliance2.setDescription('The compliance statement for the\n        CISCO-MODULE-AUTO-SHUTDOWN-MIB')
+cmasModuleGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 386, 2, 2, 1)).setObjects(("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasFrequency"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasPeriod"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleEnable"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleNumResets"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleLastResetReason"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleLastResetTime"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cmasModuleGroup = cmasModuleGroup.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleGroup.setDescription('A collection of objects which are used to configure as\n        well as show information regarding the module auto\n        shutdown feature.')
+cmasNotificationEnableGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 386, 2, 2, 2)).setObjects(("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasMIBEnableNotification"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cmasNotificationEnableGroup = cmasNotificationEnableGroup.setStatus('current')
+if mibBuilder.loadTexts: cmasNotificationEnableGroup.setDescription('A collection of objects which are used to enable\n        notifications.')
+cmasNotificationsGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 386, 2, 2, 3)).setObjects(("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleAutoShutdown"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cmasNotificationsGroup = cmasNotificationsGroup.setStatus('current')
+if mibBuilder.loadTexts: cmasNotificationsGroup.setDescription('A collection of notifications for the module auto\n        shutdown feature.')
+cmasModuleSysActionGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 386, 2, 2, 4)).setObjects(("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleSysActionNotifEnable"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleSysAction"), ("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleSysActionReason"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cmasModuleSysActionGroup = cmasModuleSysActionGroup.setStatus('current')
+if mibBuilder.loadTexts: cmasModuleSysActionGroup.setDescription('A collection of objects which are related with\n        the notification cmasModuleSysActionNotif. They are\n        either used to enable and disable this notification\n        or included in this notification PDU.')
+cmasNotificationsGroup2 = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 386, 2, 2, 5)).setObjects(("CISCO-MODULE-AUTO-SHUTDOWN-MIB", "cmasModuleSysActionNotif"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cmasNotificationsGroup2 = cmasNotificationsGroup2.setStatus('current')
+if mibBuilder.loadTexts: cmasNotificationsGroup2.setDescription('A collection of notifications for the system initiated\n        module action feature.')
+mibBuilder.exportSymbols("CISCO-MODULE-AUTO-SHUTDOWN-MIB", cmasModule=cmasModule, cmasModuleEntry=cmasModuleEntry, cmasMIBObjects=cmasMIBObjects, cmasMIBCompliance=cmasMIBCompliance, cmasModuleSysActionGroup=cmasModuleSysActionGroup, cmasNotificationsGroup2=cmasNotificationsGroup2, cmasMIBCompliances=cmasMIBCompliances, cmasModuleNumResets=cmasModuleNumResets, CiscoModuleAutoShutSysAction=CiscoModuleAutoShutSysAction, cmasModuleSysActionNotif=cmasModuleSysActionNotif, cmasNotificationsGroup=cmasNotificationsGroup, cmasModuleTable=cmasModuleTable, cmasModuleLastResetReason=cmasModuleLastResetReason, cmasMIBGroups=cmasMIBGroups, cmasPeriod=cmasPeriod, cmasModuleSysActionReason=cmasModuleSysActionReason, cmasMIBCompliance2=cmasMIBCompliance2, cmasModuleSysAction=cmasModuleSysAction, cmasModuleGroup=cmasModuleGroup, cmasMIBNotifs=cmasMIBNotifs, ciscoModuleAutoShutdownMIB=ciscoModuleAutoShutdownMIB, cmasMIBEnableNotification=cmasMIBEnableNotification, cmasModuleAutoShutdown=cmasModuleAutoShutdown, cmasNotificationEnableGroup=cmasNotificationEnableGroup, cmasModuleEnable=cmasModuleEnable, cmasMIBConformance=cmasMIBConformance, cmasGlobal=cmasGlobal, cmasModuleSysActionNotifEnable=cmasModuleSysActionNotifEnable, cmasFrequency=cmasFrequency, cmasModuleLastResetTime=cmasModuleLastResetTime, cmasNotifObjects=cmasNotifObjects, cmasModuleSysActionObjects=cmasModuleSysActionObjects, PYSNMP_MODULE_ID=ciscoModuleAutoShutdownMIB)

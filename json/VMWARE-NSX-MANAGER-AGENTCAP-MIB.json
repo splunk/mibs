@@ -1,0 +1,140 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "AGENT-CAPABILITIES",
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "Counter64",
+      "Unsigned32",
+      "IpAddress",
+      "iso",
+      "MibIdentifier",
+      "Bits",
+      "Counter32",
+      "OBJECT-TYPE",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "MODULE-IDENTITY",
+      "Gauge32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ],
+    "VMWARE-ROOT-MIB": [
+      "vmwareAgentCapabilities"
+    ]
+  },
+  "vmwNSXAgentCapabilityMIB": {
+    "name": "vmwNSXAgentCapabilityMIB",
+    "oid": "1.3.6.1.4.1.6876.70.25",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2020-06-03 00:00",
+        "description": "Capabilities for NSX Manager 6.4.x releases."
+      },
+      {
+        "revision": "2016-10-24 00:01",
+        "description": "Capabilities for NSX Manager 6.3.x releases."
+      },
+      {
+        "revision": "2016-10-24 00:00",
+        "description": "Update release version for 2016x to was 6.2.x from 6.5."
+      },
+      {
+        "revision": "2016-06-02 00:00",
+        "description": "Capabilities for NSX Manager releases."
+      }
+    ]
+  },
+  "vmwNSXMCapability": {
+    "name": "vmwNSXMCapability",
+    "oid": "1.3.6.1.4.1.6876.70.25.1",
+    "class": "objectidentity"
+  },
+  "vmwNSXManager2020x647": {
+    "name": "vmwNSXManager2020x647",
+    "oid": "1.3.6.1.4.1.6876.70.25.1.14",
+    "class": "agentcapabilities",
+    "productrelease": "6.4.7",
+    "status": "current"
+  },
+  "vmwNSXManager2019x646": {
+    "name": "vmwNSXManager2019x646",
+    "oid": "1.3.6.1.4.1.6876.70.25.1.13",
+    "class": "agentcapabilities",
+    "productrelease": "6.4.6",
+    "status": "current"
+  },
+  "vmwNSXManager2019x645": {
+    "name": "vmwNSXManager2019x645",
+    "oid": "1.3.6.1.4.1.6876.70.25.1.12",
+    "class": "agentcapabilities",
+    "productrelease": "6.4.5",
+    "status": "current"
+  },
+  "vmwNSXManager2018x642": {
+    "name": "vmwNSXManager2018x642",
+    "oid": "1.3.6.1.4.1.6876.70.25.1.11",
+    "class": "agentcapabilities",
+    "productrelease": "6.4.2",
+    "status": "current"
+  },
+  "vmwNSXManager2018x637": {
+    "name": "vmwNSXManager2018x637",
+    "oid": "1.3.6.1.4.1.6876.70.25.1.10",
+    "class": "agentcapabilities",
+    "productrelease": "6.3.7",
+    "status": "current"
+  },
+  "vmwNSXManager2018x641": {
+    "name": "vmwNSXManager2018x641",
+    "oid": "1.3.6.1.4.1.6876.70.25.1.9",
+    "class": "agentcapabilities",
+    "productrelease": "6.4.1",
+    "status": "current"
+  },
+  "vmwNSXManager2018x636": {
+    "name": "vmwNSXManager2018x636",
+    "oid": "1.3.6.1.4.1.6876.70.25.1.8",
+    "class": "agentcapabilities",
+    "productrelease": "6.3.6",
+    "status": "current"
+  },
+  "vmwNSXManager2017x640": {
+    "name": "vmwNSXManager2017x640",
+    "oid": "1.3.6.1.4.1.6876.70.25.1.7",
+    "class": "agentcapabilities",
+    "productrelease": "6.4.0",
+    "status": "current"
+  },
+  "vmwNSXManager2017x630": {
+    "name": "vmwNSXManager2017x630",
+    "oid": "1.3.6.1.4.1.6876.70.25.1.6",
+    "class": "agentcapabilities",
+    "productrelease": "6.3.0",
+    "status": "current"
+  },
+  "vmwNSXManager2016x": {
+    "name": "vmwNSXManager2016x",
+    "oid": "1.3.6.1.4.1.6876.70.25.1.5",
+    "class": "agentcapabilities",
+    "productrelease": "6.2.x",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/vmware/VMWARE-NSX-MANAGER-AGENTCAP-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:40:59 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "VMWARE-NSX-MANAGER-AGENTCAP-MIB"
+  }
+}

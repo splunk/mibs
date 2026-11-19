@@ -1,0 +1,255 @@
+{
+  "imports": {
+    "class": "imports",
+    "JUNIPER-LSYS-SECURITYPROFILE-MIB": [
+      "jnxLsysSpPolicywcnt"
+    ],
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "TimeTicks",
+      "iso",
+      "OBJECT-TYPE",
+      "NOTIFICATION-TYPE",
+      "Counter32",
+      "Integer32",
+      "Counter64",
+      "Unsigned32",
+      "Gauge32",
+      "OBJECT-IDENTITY",
+      "IpAddress",
+      "MibIdentifier",
+      "Bits",
+      "MODULE-IDENTITY"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "jnxLsysSpPolicywcntMIB": {
+    "name": "jnxLsysSpPolicywcntMIB",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1",
+    "class": "moduleidentity"
+  },
+  "jnxLsysSpPolicywcntObjects": {
+    "name": "jnxLsysSpPolicywcntObjects",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.1",
+    "class": "objectidentity"
+  },
+  "jnxLsysSpPolicywcntSummary": {
+    "name": "jnxLsysSpPolicywcntSummary",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.2",
+    "class": "objectidentity"
+  },
+  "jnxLsysSpPolicywcntTable": {
+    "name": "jnxLsysSpPolicywcntTable",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.1.1",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntEntry": {
+    "name": "jnxLsysSpPolicywcntEntry",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.1.1.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "JUNIPER-LSYSSP-POLICYWCNT-MIB",
+        "object": "jnxLsysSpPolicywcntLsysName",
+        "implied": 1
+      }
+    ],
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntLsysName": {
+    "name": "jnxLsysSpPolicywcntLsysName",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.1.1.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 64
+          }
+        ]
+      }
+    },
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntProfileName": {
+    "name": "jnxLsysSpPolicywcntProfileName",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.1.1.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 32
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntUsage": {
+    "name": "jnxLsysSpPolicywcntUsage",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.1.1.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntReserved": {
+    "name": "jnxLsysSpPolicywcntReserved",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.1.1.1.4",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntMaximum": {
+    "name": "jnxLsysSpPolicywcntMaximum",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.1.1.1.5",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntUsedAmount": {
+    "name": "jnxLsysSpPolicywcntUsedAmount",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.2.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntMaxQuota": {
+    "name": "jnxLsysSpPolicywcntMaxQuota",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.2.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntAvailableAmount": {
+    "name": "jnxLsysSpPolicywcntAvailableAmount",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.2.3",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntHeaviestUsage": {
+    "name": "jnxLsysSpPolicywcntHeaviestUsage",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.2.4",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntHeaviestUser": {
+    "name": "jnxLsysSpPolicywcntHeaviestUser",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.2.5",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 64
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntLightestUsage": {
+    "name": "jnxLsysSpPolicywcntLightestUsage",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.2.6",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "jnxLsysSpPolicywcntLightestUser": {
+    "name": "jnxLsysSpPolicywcntLightestUser",
+    "oid": "1.3.6.1.4.1.2636.3.39.1.17.4.1.2.7",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 64
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/juniper/JUNIPER-LSYSSP-POLICYWCNT-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:37:09 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "JUNIPER-LSYSSP-POLICYWCNT-MIB"
+  }
+}

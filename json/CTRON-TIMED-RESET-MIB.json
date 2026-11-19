@@ -1,0 +1,126 @@
+{
+  "imports": {
+    "class": "imports",
+    "CTRON-MIB-NAMES": [
+      "ctDevice"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "MibIdentifier",
+      "Integer32",
+      "Bits",
+      "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "Counter32",
+      "iso",
+      "Gauge32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "OBJECT-TYPE",
+      "Counter64",
+      "OBJECT-IDENTITY",
+      "Unsigned32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "ctTimedResetMIB": {
+    "name": "ctTimedResetMIB",
+    "oid": "1.3.6.1.4.1.52.4.1.1.5.2",
+    "class": "objectidentity"
+  },
+  "ctTimedResetStatus": {
+    "name": "ctTimedResetStatus",
+    "oid": "1.3.6.1.4.1.52.4.1.1.5.2.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "disabled": 0,
+          "softEnabled": 1,
+          "hardEnabled": 2
+        }
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "deprecated"
+  },
+  "ctTimedResetTimeEntered": {
+    "name": "ctTimedResetTimeEntered",
+    "oid": "1.3.6.1.4.1.52.4.1.1.5.2.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type"
+    },
+    "maxaccess": "read-write",
+    "status": "deprecated"
+  },
+  "ctTimedResetTimeRemaining": {
+    "name": "ctTimedResetTimeRemaining",
+    "oid": "1.3.6.1.4.1.52.4.1.1.5.2.3",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "deprecated"
+  },
+  "ctTimedResetOperationalMode": {
+    "name": "ctTimedResetOperationalMode",
+    "oid": "1.3.6.1.4.1.52.4.1.1.5.2.4",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "currentMode": 0,
+          "ieee8021Q": 1,
+          "secureFast": 2
+        }
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "deprecated"
+  },
+  "ctTimedResetNVRamReset": {
+    "name": "ctTimedResetNVRamReset",
+    "oid": "1.3.6.1.4.1.52.4.1.1.5.2.5",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "dontResetNVRam": 0,
+          "resetNVRam": 1
+        }
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "deprecated"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/enterasys/CTRON-TIMED-RESET-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:34:31 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "CTRON-TIMED-RESET-MIB"
+  }
+}

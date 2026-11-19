@@ -1,0 +1,248 @@
+{
+  "imports": {
+    "class": "imports",
+    "ELTEX-SMI-ACTUAL": [
+      "eltexLtd",
+      "elHardware"
+    ],
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "Counter64",
+      "MibIdentifier",
+      "Integer32",
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY",
+      "Unsigned32",
+      "TimeTicks",
+      "IpAddress",
+      "OBJECT-TYPE",
+      "NOTIFICATION-TYPE",
+      "Bits",
+      "iso",
+      "Counter32",
+      "Gauge32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "eltMes": {
+    "name": "eltMes",
+    "oid": "1.3.6.1.4.1.35265.1.23",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2015-11-17 00:00",
+        "description": "Initial revision."
+      }
+    ]
+  },
+  "Percents": {
+    "name": "Percents",
+    "class": "type",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 100
+          }
+        ]
+      }
+    }
+  },
+  "NetNumber": {
+    "name": "NetNumber",
+    "class": "type",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 4,
+            "max": 4
+          }
+        ]
+      }
+    }
+  },
+  "VlanPriority": {
+    "name": "VlanPriority",
+    "class": "type",
+    "type": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 7
+          }
+        ]
+      }
+    }
+  },
+  "eltMesNotifications": {
+    "name": "eltMesNotifications",
+    "oid": "1.3.6.1.4.1.35265.1.23.0",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "eltMesMng": {
+    "name": "eltMesMng",
+    "oid": "1.3.6.1.4.1.35265.1.23.1",
+    "class": "objectidentity"
+  },
+  "eltMesDevParams": {
+    "name": "eltMesDevParams",
+    "oid": "1.3.6.1.4.1.35265.1.23.2",
+    "class": "objectidentity"
+  },
+  "eltMesCopy": {
+    "name": "eltMesCopy",
+    "oid": "1.3.6.1.4.1.35265.1.23.3",
+    "class": "objectidentity"
+  },
+  "eltMesIpOspfMtu": {
+    "name": "eltMesIpOspfMtu",
+    "oid": "1.3.6.1.4.1.35265.1.23.4",
+    "class": "objectidentity"
+  },
+  "eltMesIpBfd": {
+    "name": "eltMesIpBfd",
+    "oid": "1.3.6.1.4.1.35265.1.23.6",
+    "class": "objectidentity"
+  },
+  "eltMesIpUnnumbered": {
+    "name": "eltMesIpUnnumbered",
+    "oid": "1.3.6.1.4.1.35265.1.23.7",
+    "class": "objectidentity"
+  },
+  "eltMesDhcp": {
+    "name": "eltMesDhcp",
+    "oid": "1.3.6.1.4.1.35265.1.23.8",
+    "class": "objectidentity"
+  },
+  "eltMesLinkAgg": {
+    "name": "eltMesLinkAgg",
+    "oid": "1.3.6.1.4.1.35265.1.23.9",
+    "class": "objectidentity"
+  },
+  "eltMesQosTailDropMib": {
+    "name": "eltMesQosTailDropMib",
+    "oid": "1.3.6.1.4.1.35265.1.23.12",
+    "class": "objectidentity"
+  },
+  "eltMesHardwareMib": {
+    "name": "eltMesHardwareMib",
+    "oid": "1.3.6.1.4.1.35265.1.23.14",
+    "class": "objectidentity"
+  },
+  "eltMesSsh": {
+    "name": "eltMesSsh",
+    "oid": "1.3.6.1.4.1.35265.1.23.15",
+    "class": "objectidentity"
+  },
+  "eltMesSecuritySuiteMIB": {
+    "name": "eltMesSecuritySuiteMIB",
+    "oid": "1.3.6.1.4.1.35265.1.23.19",
+    "class": "objectidentity"
+  },
+  "eltMesTuning": {
+    "name": "eltMesTuning",
+    "oid": "1.3.6.1.4.1.35265.1.23.29",
+    "class": "objectidentity"
+  },
+  "eltMesSwInterfaces": {
+    "name": "eltMesSwInterfaces",
+    "oid": "1.3.6.1.4.1.35265.1.23.43",
+    "class": "objectidentity"
+  },
+  "eltMesIpMulticast": {
+    "name": "eltMesIpMulticast",
+    "oid": "1.3.6.1.4.1.35265.1.23.46",
+    "class": "objectidentity"
+  },
+  "eltMesPhdTransceiver": {
+    "name": "eltMesPhdTransceiver",
+    "oid": "1.3.6.1.4.1.35265.1.23.53",
+    "class": "objectidentity"
+  },
+  "eltMesMacMulticast": {
+    "name": "eltMesMacMulticast",
+    "oid": "1.3.6.1.4.1.35265.1.23.55",
+    "class": "objectidentity"
+  },
+  "eltMesStormCtrl": {
+    "name": "eltMesStormCtrl",
+    "oid": "1.3.6.1.4.1.35265.1.23.77",
+    "class": "objectidentity"
+  },
+  "eltMesAAA": {
+    "name": "eltMesAAA",
+    "oid": "1.3.6.1.4.1.35265.1.23.79",
+    "class": "objectidentity"
+  },
+  "eltMesRadius": {
+    "name": "eltMesRadius",
+    "oid": "1.3.6.1.4.1.35265.1.23.80",
+    "class": "objectidentity"
+  },
+  "eltMesTacacs": {
+    "name": "eltMesTacacs",
+    "oid": "1.3.6.1.4.1.35265.1.23.81",
+    "class": "objectidentity"
+  },
+  "eltMesSmon": {
+    "name": "eltMesSmon",
+    "oid": "1.3.6.1.4.1.35265.1.23.84",
+    "class": "objectidentity"
+  },
+  "eltMesQosCliMib": {
+    "name": "eltMesQosCliMib",
+    "oid": "1.3.6.1.4.1.35265.1.23.88",
+    "class": "objectidentity"
+  },
+  "eltMesPhy": {
+    "name": "eltMesPhy",
+    "oid": "1.3.6.1.4.1.35265.1.23.90",
+    "class": "objectidentity"
+  },
+  "eltMesIpSpec": {
+    "name": "eltMesIpSpec",
+    "oid": "1.3.6.1.4.1.35265.1.23.91",
+    "class": "objectidentity"
+  },
+  "eltMesDot1x": {
+    "name": "eltMesDot1x",
+    "oid": "1.3.6.1.4.1.35265.1.23.95",
+    "class": "objectidentity"
+  },
+  "eltMesBridgeSecurity": {
+    "name": "eltMesBridgeSecurity",
+    "oid": "1.3.6.1.4.1.35265.1.23.112",
+    "class": "objectidentity"
+  },
+  "eltMesEndOfMibGroup": {
+    "name": "eltMesEndOfMibGroup",
+    "oid": "1.3.6.1.4.1.35265.1.23.1000",
+    "class": "objectidentity"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/eltex/ELTEX-MES",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:34:18 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "ELTEX-MES"
+  }
+}

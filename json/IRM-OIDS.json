@@ -1,0 +1,161 @@
+{
+  "imports": {
+    "class": "imports",
+    "CTRON-OIDS": [
+      "cabletron"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "MibIdentifier",
+      "Integer32",
+      "Bits",
+      "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "Counter32",
+      "iso",
+      "Gauge32",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "OBJECT-TYPE",
+      "Counter64",
+      "OBJECT-IDENTITY",
+      "Unsigned32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "commsDevice": {
+    "name": "commsDevice",
+    "oid": "1.3.6.1.4.1.52.1",
+    "class": "objectidentity"
+  },
+  "layerMgmt": {
+    "name": "layerMgmt",
+    "oid": "1.3.6.1.4.1.52.2",
+    "class": "objectidentity"
+  },
+  "common": {
+    "name": "common",
+    "oid": "1.3.6.1.4.1.52.1.1",
+    "class": "objectidentity"
+  },
+  "repeater": {
+    "name": "repeater",
+    "oid": "1.3.6.1.4.1.52.1.2",
+    "class": "objectidentity"
+  },
+  "bridge": {
+    "name": "bridge",
+    "oid": "1.3.6.1.4.1.52.1.3",
+    "class": "objectidentity"
+  },
+  "router": {
+    "name": "router",
+    "oid": "1.3.6.1.4.1.52.1.4",
+    "class": "objectidentity"
+  },
+  "product": {
+    "name": "product",
+    "oid": "1.3.6.1.4.1.52.1.5",
+    "class": "objectidentity"
+  },
+  "subsystem": {
+    "name": "subsystem",
+    "oid": "1.3.6.1.4.1.52.1.6",
+    "class": "objectidentity"
+  },
+  "commonRev1": {
+    "name": "commonRev1",
+    "oid": "1.3.6.1.4.1.52.1.1.1",
+    "class": "objectidentity"
+  },
+  "sysOIDs": {
+    "name": "sysOIDs",
+    "oid": "1.3.6.1.4.1.52.1.1.2",
+    "class": "objectidentity"
+  },
+  "repeaterRev1": {
+    "name": "repeaterRev1",
+    "oid": "1.3.6.1.4.1.52.1.2.1",
+    "class": "objectidentity"
+  },
+  "repeaterRev2": {
+    "name": "repeaterRev2",
+    "oid": "1.3.6.1.4.1.52.1.2.2",
+    "class": "objectidentity"
+  },
+  "subSysMMAC": {
+    "name": "subSysMMAC",
+    "oid": "1.3.6.1.4.1.52.1.6.1",
+    "class": "objectidentity"
+  },
+  "subSysDevice": {
+    "name": "subSysDevice",
+    "oid": "1.3.6.1.4.1.52.1.6.2",
+    "class": "objectidentity"
+  },
+  "ups": {
+    "name": "ups",
+    "oid": "1.3.6.1.4.1.52.1.6.3",
+    "class": "objectidentity"
+  },
+  "dl": {
+    "name": "dl",
+    "oid": "1.3.6.1.4.1.52.1.6.4",
+    "class": "objectidentity"
+  },
+  "backplaneProtocol": {
+    "name": "backplaneProtocol",
+    "oid": "1.3.6.1.4.1.52.1.6.5",
+    "class": "objectidentity"
+  },
+  "nb30Rev1": {
+    "name": "nb30Rev1",
+    "oid": "1.3.6.1.4.1.52.1.6.12",
+    "class": "objectidentity"
+  },
+  "sysOtherType": {
+    "name": "sysOtherType",
+    "oid": "1.3.6.1.4.1.52.1.1.2.1",
+    "class": "objectidentity"
+  },
+  "sysChassis": {
+    "name": "sysChassis",
+    "oid": "1.3.6.1.4.1.52.1.1.2.2",
+    "class": "objectidentity"
+  },
+  "sysRepeaters": {
+    "name": "sysRepeaters",
+    "oid": "1.3.6.1.4.1.52.1.1.2.3",
+    "class": "objectidentity"
+  },
+  "sysBridges": {
+    "name": "sysBridges",
+    "oid": "1.3.6.1.4.1.52.1.1.2.4",
+    "class": "objectidentity"
+  },
+  "sysRouters": {
+    "name": "sysRouters",
+    "oid": "1.3.6.1.4.1.52.1.1.2.5",
+    "class": "objectidentity"
+  },
+  "sysIntDev": {
+    "name": "sysIntDev",
+    "oid": "1.3.6.1.4.1.52.1.1.2.6",
+    "class": "objectidentity"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/enterasys/IRM-OIDS",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:34:31 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "IRM-OIDS"
+  }
+}

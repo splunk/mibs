@@ -1,0 +1,124 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMP-RESEARCH-MIB": [
+      "snmpResearchMIBs"
+    ],
+    "SNMP-TARGET-MIB": [
+      "SnmpTagValue"
+    ],
+    "SNMP-USER-BASED-SM-MIB": [
+      "usmUserEntry"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "OBJECT-GROUP",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "Counter64",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "IpAddress",
+      "MibIdentifier",
+      "iso",
+      "Integer32",
+      "Counter32",
+      "Unsigned32",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "Bits"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "usmTargetTagMIB": {
+    "name": "usmTargetTagMIB",
+    "oid": "1.3.6.1.4.1.99.12.35",
+    "class": "moduleidentity"
+  },
+  "usmTargetTagObjects": {
+    "name": "usmTargetTagObjects",
+    "oid": "1.3.6.1.4.1.99.12.35.1",
+    "class": "objectidentity"
+  },
+  "usmTargetTagConformance": {
+    "name": "usmTargetTagConformance",
+    "oid": "1.3.6.1.4.1.99.12.35.3",
+    "class": "objectidentity"
+  },
+  "usmTargetTagTable": {
+    "name": "usmTargetTagTable",
+    "oid": "1.3.6.1.4.1.99.12.35.1.1",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "usmTargetTagEntry": {
+    "name": "usmTargetTagEntry",
+    "oid": "1.3.6.1.4.1.99.12.35.1.1.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "augmention": {
+      "name": "usmTargetTagEntry",
+      "module": "USM-TARGET-TAG-MIB",
+      "object": "usmUserEntry"
+    },
+    "status": "current"
+  },
+  "usmTargetTag": {
+    "name": "usmTargetTag",
+    "oid": "1.3.6.1.4.1.99.12.35.1.1.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "SnmpTagValue",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "",
+        "format": "hex"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "usmTargetTagCompliances": {
+    "name": "usmTargetTagCompliances",
+    "oid": "1.3.6.1.4.1.99.12.35.3.1",
+    "class": "objectidentity"
+  },
+  "usmTargetTagGroups": {
+    "name": "usmTargetTagGroups",
+    "oid": "1.3.6.1.4.1.99.12.35.3.2",
+    "class": "objectidentity"
+  },
+  "usmTargetTagGroup": {
+    "name": "usmTargetTagGroup",
+    "oid": "1.3.6.1.4.1.99.12.35.3.2.1",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "USM-TARGET-TAG-MIB",
+        "object": "usmTargetTag"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/quanta/USM-TARGET-TAG-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:39:15 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "USM-TARGET-TAG-MIB"
+  }
+}

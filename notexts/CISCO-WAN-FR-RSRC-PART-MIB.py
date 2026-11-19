@@ -1,0 +1,52 @@
+#
+# PySNMP MIB module CISCO-WAN-FR-RSRC-PART-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-FR-RSRC-PART-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+frPortCnfResPartGrp, = mibBuilder.importSymbols("BASIS-MIB", "frPortCnfResPartGrp")
+ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoWanFrRsrcPartMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 45))
+ciscoWanFrRsrcPartMIB.setRevisions(('2002-09-04 00:00',))
+if mibBuilder.loadTexts: ciscoWanFrRsrcPartMIB.setLastUpdated('200209040000Z')
+if mibBuilder.loadTexts: ciscoWanFrRsrcPartMIB.setOrganization('Cisco Systems, Inc.')
+frPortCnfResPartGrpTable = MibTable((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1), )
+if mibBuilder.loadTexts: frPortCnfResPartGrpTable.setStatus('current')
+frPortCnfResPartGrpEntry = MibTableRow((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1, 1), ).setIndexNames((0, "CISCO-WAN-FR-RSRC-PART-MIB", "frResPartPortNum"), (0, "CISCO-WAN-FR-RSRC-PART-MIB", "frResPartCtrlrNum"))
+if mibBuilder.loadTexts: frPortCnfResPartGrpEntry.setStatus('current')
+frResPartPortNum = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: frResPartPortNum.setStatus('current')
+frResPartCtrlrNum = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("par", 1), ("pnni", 2), ("tag", 3)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: frResPartCtrlrNum.setStatus('current')
+frResPartRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1, 1, 3), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("add", 1), ("del", 2), ("mod", 3)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: frResPartRowStatus.setStatus('current')
+frResPartNumOfLcnAvail = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1, 1, 4), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 16000))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: frResPartNumOfLcnAvail.setStatus('current')
+frResPartDlciLow = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1, 1, 5), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 8388607))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: frResPartDlciLow.setStatus('current')
+frResPartDlciHigh = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1, 1, 6), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 8388607))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: frResPartDlciHigh.setStatus('current')
+frResPartIngrPctBW = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1, 1, 7), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 100))).setUnits('percentage').setMaxAccess("readwrite")
+if mibBuilder.loadTexts: frResPartIngrPctBW.setStatus('current')
+frResPartEgrPctBW = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1, 1, 8), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 100))).setUnits('percentage').setMaxAccess("readwrite")
+if mibBuilder.loadTexts: frResPartEgrPctBW.setStatus('current')
+frResPartCtrlrID = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 1, 1, 1, 5, 1, 1, 9), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 255)).clone(2)).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: frResPartCtrlrID.setStatus('current')
+cwfRsrcPartMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 351, 150, 45, 2))
+cwfRsrcPartMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 351, 150, 45, 2, 1))
+cwfRsrcPartMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 351, 150, 45, 2, 2))
+ciscoWanFrRsrcPartCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 351, 150, 45, 2, 1, 1)).setObjects(("CISCO-WAN-FR-RSRC-PART-MIB", "ciscoWanFrRsrcPartGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoWanFrRsrcPartCompliance = ciscoWanFrRsrcPartCompliance.setStatus('current')
+ciscoWanFrRsrcPartGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 45, 2, 2, 1)).setObjects(("CISCO-WAN-FR-RSRC-PART-MIB", "frResPartPortNum"), ("CISCO-WAN-FR-RSRC-PART-MIB", "frResPartCtrlrNum"), ("CISCO-WAN-FR-RSRC-PART-MIB", "frResPartRowStatus"), ("CISCO-WAN-FR-RSRC-PART-MIB", "frResPartNumOfLcnAvail"), ("CISCO-WAN-FR-RSRC-PART-MIB", "frResPartDlciLow"), ("CISCO-WAN-FR-RSRC-PART-MIB", "frResPartDlciHigh"), ("CISCO-WAN-FR-RSRC-PART-MIB", "frResPartIngrPctBW"), ("CISCO-WAN-FR-RSRC-PART-MIB", "frResPartEgrPctBW"), ("CISCO-WAN-FR-RSRC-PART-MIB", "frResPartCtrlrID"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoWanFrRsrcPartGroup = ciscoWanFrRsrcPartGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-WAN-FR-RSRC-PART-MIB", frResPartCtrlrID=frResPartCtrlrID, ciscoWanFrRsrcPartCompliance=ciscoWanFrRsrcPartCompliance, frResPartCtrlrNum=frResPartCtrlrNum, cwfRsrcPartMIBCompliances=cwfRsrcPartMIBCompliances, cwfRsrcPartMIBGroups=cwfRsrcPartMIBGroups, PYSNMP_MODULE_ID=ciscoWanFrRsrcPartMIB, frResPartDlciLow=frResPartDlciLow, frResPartRowStatus=frResPartRowStatus, frResPartPortNum=frResPartPortNum, frPortCnfResPartGrpTable=frPortCnfResPartGrpTable, cwfRsrcPartMIBConformance=cwfRsrcPartMIBConformance, ciscoWanFrRsrcPartMIB=ciscoWanFrRsrcPartMIB, frResPartEgrPctBW=frResPartEgrPctBW, frResPartNumOfLcnAvail=frResPartNumOfLcnAvail, ciscoWanFrRsrcPartGroup=ciscoWanFrRsrcPartGroup, frResPartIngrPctBW=frResPartIngrPctBW, frResPartDlciHigh=frResPartDlciHigh, frPortCnfResPartGrpEntry=frPortCnfResPartGrpEntry)

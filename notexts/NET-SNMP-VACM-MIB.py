@@ -1,0 +1,35 @@
+#
+# PySNMP MIB module NET-SNMP-VACM-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/netsnmp/NET-SNMP-VACM-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:37:41 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ValueSizeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueRangeConstraint")
+netSnmpGroups, netSnmpObjects = mibBuilder.importSymbols("NET-SNMP-MIB", "netSnmpGroups", "netSnmpObjects")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+vacmGroupName, vacmAccessSecurityModel, vacmAccessContextPrefix, vacmAccessSecurityLevel = mibBuilder.importSymbols("SNMP-VIEW-BASED-ACM-MIB", "vacmGroupName", "vacmAccessSecurityModel", "vacmAccessContextPrefix", "vacmAccessSecurityLevel")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+TimeTicks, MibIdentifier, Counter64, IpAddress, Bits, Counter32, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, iso, Gauge32, Unsigned32, ModuleIdentity, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "MibIdentifier", "Counter64", "IpAddress", "Bits", "Counter32", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "iso", "Gauge32", "Unsigned32", "ModuleIdentity", "Integer32")
+TextualConvention, StorageType, DisplayString, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "StorageType", "DisplayString", "RowStatus")
+netSnmpVacmMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 8072, 1, 9))
+netSnmpVacmMIB.setRevisions(('2006-08-27 00:00',))
+if mibBuilder.loadTexts: netSnmpVacmMIB.setLastUpdated('200608270000Z')
+if mibBuilder.loadTexts: netSnmpVacmMIB.setOrganization('www.net-snmp.org')
+nsVacmAccessTable = MibTable((1, 3, 6, 1, 4, 1, 8072, 1, 9, 1), )
+if mibBuilder.loadTexts: nsVacmAccessTable.setStatus('current')
+nsVacmAccessEntry = MibTableRow((1, 3, 6, 1, 4, 1, 8072, 1, 9, 1, 1), ).setIndexNames((0, "SNMP-VIEW-BASED-ACM-MIB", "vacmGroupName"), (0, "SNMP-VIEW-BASED-ACM-MIB", "vacmAccessContextPrefix"), (0, "SNMP-VIEW-BASED-ACM-MIB", "vacmAccessSecurityModel"), (0, "SNMP-VIEW-BASED-ACM-MIB", "vacmAccessSecurityLevel"), (0, "NET-SNMP-VACM-MIB", "nsVacmAuthType"))
+if mibBuilder.loadTexts: nsVacmAccessEntry.setStatus('current')
+nsVacmAuthType = MibTableColumn((1, 3, 6, 1, 4, 1, 8072, 1, 9, 1, 1, 1), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(0, 32)))
+if mibBuilder.loadTexts: nsVacmAuthType.setStatus('current')
+nsVacmContextMatch = MibTableColumn((1, 3, 6, 1, 4, 1, 8072, 1, 9, 1, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("exact", 1), ("prefix", 2))).clone('exact')).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: nsVacmContextMatch.setStatus('current')
+nsVacmViewName = MibTableColumn((1, 3, 6, 1, 4, 1, 8072, 1, 9, 1, 1, 3), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(0, 32)).clone(hexValue="")).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: nsVacmViewName.setStatus('current')
+nsVacmStorageType = MibTableColumn((1, 3, 6, 1, 4, 1, 8072, 1, 9, 1, 1, 4), StorageType().clone('nonVolatile')).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: nsVacmStorageType.setStatus('current')
+nsVacmStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 8072, 1, 9, 1, 1, 5), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: nsVacmStatus.setStatus('current')
+mibBuilder.exportSymbols("NET-SNMP-VACM-MIB", nsVacmStatus=nsVacmStatus, PYSNMP_MODULE_ID=netSnmpVacmMIB, nsVacmAccessEntry=nsVacmAccessEntry, nsVacmViewName=nsVacmViewName, nsVacmAuthType=nsVacmAuthType, nsVacmAccessTable=nsVacmAccessTable, netSnmpVacmMIB=netSnmpVacmMIB, nsVacmStorageType=nsVacmStorageType, nsVacmContextMatch=nsVacmContextMatch)

@@ -1,0 +1,76 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "OBJECT-TYPE",
+      "Integer32",
+      "Gauge32",
+      "MODULE-IDENTITY",
+      "IpAddress",
+      "OBJECT-IDENTITY",
+      "TimeTicks",
+      "MibIdentifier",
+      "enterprises",
+      "Counter32",
+      "Unsigned32",
+      "iso",
+      "Bits",
+      "NOTIFICATION-TYPE",
+      "Counter64"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "tplink": {
+    "name": "tplink",
+    "oid": "1.3.6.1.4.1.11863",
+    "class": "objectidentity"
+  },
+  "switch": {
+    "name": "switch",
+    "oid": "1.3.6.1.4.1.11863.1",
+    "class": "objectidentity"
+  },
+  "router": {
+    "name": "router",
+    "oid": "1.3.6.1.4.1.11863.2",
+    "class": "objectidentity"
+  },
+  "wireless": {
+    "name": "wireless",
+    "oid": "1.3.6.1.4.1.11863.3",
+    "class": "objectidentity"
+  },
+  "adsl": {
+    "name": "adsl",
+    "oid": "1.3.6.1.4.1.11863.4",
+    "class": "objectidentity"
+  },
+  "tplinkProducts": {
+    "name": "tplinkProducts",
+    "oid": "1.3.6.1.4.1.11863.5",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "tplinkMgmt": {
+    "name": "tplinkMgmt",
+    "oid": "1.3.6.1.4.1.11863.6",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/tplink/TPLINK-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:40:34 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "TPLINK-MIB"
+  }
+}

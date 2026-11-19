@@ -1,0 +1,107 @@
+{
+  "imports": {
+    "class": "imports",
+    "ARUBA-MIB": [
+      "arubaMIBModules"
+    ],
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY",
+      "OBJECT-TYPE",
+      "Unsigned32",
+      "TimeTicks",
+      "Counter32",
+      "iso",
+      "Counter64",
+      "Bits",
+      "NOTIFICATION-TYPE",
+      "IpAddress",
+      "Gauge32",
+      "MibIdentifier",
+      "Integer32"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "arubaVendorTypeMIB": {
+    "name": "arubaVendorTypeMIB",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2012-08-27 00:00",
+        "description": "The initial revision of vendortype-oid MIB."
+      }
+    ]
+  },
+  "arubaVendorTypeMIBObjects": {
+    "name": "arubaVendorTypeMIBObjects",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1",
+    "class": "objectidentity"
+  },
+  "arubaSystem": {
+    "name": "arubaSystem",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1.1",
+    "class": "objectidentity"
+  },
+  "aSystemUnknown": {
+    "name": "aSystemUnknown",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1.1.1",
+    "class": "objectidentity"
+  },
+  "aSystemChassis": {
+    "name": "aSystemChassis",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1.1.2",
+    "class": "objectidentity"
+  },
+  "aSystemBackplane": {
+    "name": "aSystemBackplane",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1.1.3",
+    "class": "objectidentity"
+  },
+  "aSystemModule": {
+    "name": "aSystemModule",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1.1.4",
+    "class": "objectidentity"
+  },
+  "aSystemPSU": {
+    "name": "aSystemPSU",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1.1.5",
+    "class": "objectidentity"
+  },
+  "aSystemFAN": {
+    "name": "aSystemFAN",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1.1.6",
+    "class": "objectidentity"
+  },
+  "aSystemContainer": {
+    "name": "aSystemContainer",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1.1.7",
+    "class": "objectidentity"
+  },
+  "aSystemPort": {
+    "name": "aSystemPort",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1.1.8",
+    "class": "objectidentity"
+  },
+  "aSystemSensor": {
+    "name": "aSystemSensor",
+    "oid": "1.3.6.1.4.1.14823.2.1.1.1.1.1.9",
+    "class": "objectidentity"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/arubaos/ARUBA-VENDORTYPE",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:30:56 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "ARUBA-VENDORTYPE"
+  }
+}

@@ -1,0 +1,149 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "IpAddress",
+      "Integer32",
+      "iso",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "MibIdentifier",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Counter64",
+      "enterprises",
+      "TimeTicks",
+      "Unsigned32",
+      "Counter32",
+      "OBJECT-TYPE",
+      "MODULE-IDENTITY"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ibm": {
+    "name": "ibm",
+    "oid": "1.3.6.1.4.1.2",
+    "class": "objectidentity"
+  },
+  "ibmProd": {
+    "name": "ibmProd",
+    "oid": "1.3.6.1.4.1.2.6",
+    "class": "objectidentity"
+  },
+  "ibm6611": {
+    "name": "ibm6611",
+    "oid": "1.3.6.1.4.1.2.6.2",
+    "class": "objectidentity"
+  },
+  "ibmappn": {
+    "name": "ibmappn",
+    "oid": "1.3.6.1.4.1.2.6.2.13",
+    "class": "objectidentity"
+  },
+  "ibmappnNode": {
+    "name": "ibmappnNode",
+    "oid": "1.3.6.1.4.1.2.6.2.13.1",
+    "class": "objectidentity"
+  },
+  "ibmappnMemoryUse": {
+    "name": "ibmappnMemoryUse",
+    "oid": "1.3.6.1.4.1.2.6.2.13.1.7",
+    "class": "objectidentity"
+  },
+  "ibmappnMemorySize": {
+    "name": "ibmappnMemorySize",
+    "oid": "1.3.6.1.4.1.2.6.2.13.1.7.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 2147483647
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "ibmappnMemoryUsed": {
+    "name": "ibmappnMemoryUsed",
+    "oid": "1.3.6.1.4.1.2.6.2.13.1.7.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 2147483647
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "ibmappnMemoryWarnThresh": {
+    "name": "ibmappnMemoryWarnThresh",
+    "oid": "1.3.6.1.4.1.2.6.2.13.1.7.3",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 2147483647
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "ibmappnMemoryCritThresh": {
+    "name": "ibmappnMemoryCritThresh",
+    "oid": "1.3.6.1.4.1.2.6.2.13.1.7.4",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 2147483647
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ibm/IBMAPPNMEMORY-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:38 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "IBMAPPNMEMORY-MIB"
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "MODULE-IDENTITY",
+      "Gauge32",
+      "iso",
+      "Bits",
+      "TimeTicks",
+      "IpAddress",
+      "OBJECT-IDENTITY",
+      "Unsigned32",
+      "Counter32",
+      "OBJECT-TYPE",
+      "enterprises",
+      "Counter64",
+      "MibIdentifier",
+      "NOTIFICATION-TYPE",
+      "Integer32"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "mdsGlobalRegModule": {
+    "name": "mdsGlobalRegModule",
+    "oid": "1.3.6.1.4.1.4130.4",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2006-02-08 00:00",
+        "description": "Initial Revision"
+      }
+    ]
+  },
+  "mdsRoot": {
+    "name": "mdsRoot",
+    "oid": "1.3.6.1.4.1.4130",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "mdsWideband": {
+    "name": "mdsWideband",
+    "oid": "1.3.6.1.4.1.4130.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "mdsPointToPoint": {
+    "name": "mdsPointToPoint",
+    "oid": "1.3.6.1.4.1.4130.1.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "mdsNarrowband": {
+    "name": "mdsNarrowband",
+    "oid": "1.3.6.1.4.1.4130.2",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "mdsPointToMultiPoint": {
+    "name": "mdsPointToMultiPoint",
+    "oid": "1.3.6.1.4.1.4130.2.1",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "mdsBroadband": {
+    "name": "mdsBroadband",
+    "oid": "1.3.6.1.4.1.4130.3",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "mdsSoftware": {
+    "name": "mdsSoftware",
+    "oid": "1.3.6.1.4.1.4130.9",
+    "class": "objectidentity",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/gemds/MDS-REG-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:35:15 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "MDS-REG-MIB"
+  }
+}

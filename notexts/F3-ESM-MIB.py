@@ -1,0 +1,57 @@
+#
+# PySNMP MIB module F3-ESM-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/adva/F3-ESM-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:13 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+fsp150cm, = mibBuilder.importSymbols("ADVA-MIB", "fsp150cm")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ValueRangeConstraint, ValueSizeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Unsigned32, Counter32, ModuleIdentity, TimeTicks, iso, Gauge32, Counter64, ObjectIdentity, IpAddress, Integer32, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "Counter32", "ModuleIdentity", "TimeTicks", "iso", "Gauge32", "Counter64", "ObjectIdentity", "IpAddress", "Integer32", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "NotificationType")
+RowStatus, DisplayString, VariablePointer, StorageType, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "VariablePointer", "StorageType", "TextualConvention")
+f3ESMMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23))
+f3ESMMIB.setRevisions(('2012-10-03 00:00',))
+if mibBuilder.loadTexts: f3ESMMIB.setLastUpdated('201209300000Z')
+if mibBuilder.loadTexts: f3ESMMIB.setOrganization('ADVA Optical Networking')
+f3EsmConfigObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1))
+f3EsmConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 2))
+esmConfigTable = MibTable((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 1), )
+if mibBuilder.loadTexts: esmConfigTable.setStatus('current')
+esmConfigEntry = MibTableRow((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 1, 1), ).setIndexNames((0, "F3-ESM-MIB", "esmConfigIndex"))
+if mibBuilder.loadTexts: esmConfigEntry.setStatus('current')
+esmConfigIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 1, 1, 1), Unsigned32())
+if mibBuilder.loadTexts: esmConfigIndex.setStatus('current')
+esmConfigAssociatedEntity = MibTableColumn((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 1, 1, 2), VariablePointer()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: esmConfigAssociatedEntity.setStatus('current')
+esmConfigStorageType = MibTableColumn((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 1, 1, 3), StorageType()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: esmConfigStorageType.setStatus('current')
+esmConfigRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 1, 1, 4), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: esmConfigRowStatus.setStatus('current')
+esmNameValuePairTable = MibTable((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 2), )
+if mibBuilder.loadTexts: esmNameValuePairTable.setStatus('current')
+esmNameValuePairEntry = MibTableRow((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 2, 1), ).setIndexNames((0, "F3-ESM-MIB", "esmConfigIndex"), (0, "F3-ESM-MIB", "esmNameValuePairName"))
+if mibBuilder.loadTexts: esmNameValuePairEntry.setStatus('current')
+esmNameValuePairName = MibTableColumn((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 2, 1, 1), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(1, 16)))
+if mibBuilder.loadTexts: esmNameValuePairName.setStatus('current')
+esmNameValuePairValue = MibTableColumn((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 2, 1, 2), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(1, 256))).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: esmNameValuePairValue.setStatus('current')
+esmNameValuePairStorageType = MibTableColumn((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 2, 1, 3), StorageType().clone('nonVolatile')).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: esmNameValuePairStorageType.setStatus('current')
+esmNameValuePairRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 1, 2, 1, 4), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: esmNameValuePairRowStatus.setStatus('current')
+f3EsmCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 2, 1))
+f3EsmGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 2, 2))
+f3EsmCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 2, 1, 1)).setObjects(("F3-ESM-MIB", "esmConfigGroup"), ("F3-ESM-MIB", "esmNameValuePairGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    f3EsmCompliance = f3EsmCompliance.setStatus('current')
+esmConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 2, 2, 1)).setObjects(("F3-ESM-MIB", "esmConfigAssociatedEntity"), ("F3-ESM-MIB", "esmConfigStorageType"), ("F3-ESM-MIB", "esmConfigRowStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    esmConfigGroup = esmConfigGroup.setStatus('current')
+esmNameValuePairGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 2544, 1, 12, 23, 2, 2, 2)).setObjects(("F3-ESM-MIB", "esmNameValuePairValue"), ("F3-ESM-MIB", "esmNameValuePairStorageType"), ("F3-ESM-MIB", "esmNameValuePairRowStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    esmNameValuePairGroup = esmNameValuePairGroup.setStatus('current')
+mibBuilder.exportSymbols("F3-ESM-MIB", f3EsmGroups=f3EsmGroups, esmConfigGroup=esmConfigGroup, esmNameValuePairStorageType=esmNameValuePairStorageType, f3ESMMIB=f3ESMMIB, esmNameValuePairName=esmNameValuePairName, esmNameValuePairValue=esmNameValuePairValue, PYSNMP_MODULE_ID=f3ESMMIB, esmConfigStorageType=esmConfigStorageType, esmConfigTable=esmConfigTable, esmConfigRowStatus=esmConfigRowStatus, f3EsmConfigObjects=f3EsmConfigObjects, esmConfigAssociatedEntity=esmConfigAssociatedEntity, esmConfigEntry=esmConfigEntry, esmNameValuePairGroup=esmNameValuePairGroup, f3EsmConformance=f3EsmConformance, esmNameValuePairEntry=esmNameValuePairEntry, esmConfigIndex=esmConfigIndex, f3EsmCompliance=f3EsmCompliance, esmNameValuePairTable=esmNameValuePairTable, esmNameValuePairRowStatus=esmNameValuePairRowStatus, f3EsmCompliances=f3EsmCompliances)

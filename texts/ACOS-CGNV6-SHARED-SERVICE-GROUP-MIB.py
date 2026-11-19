@@ -1,0 +1,37 @@
+#
+# PySNMP MIB module ACOS-CGNV6-SHARED-SERVICE-GROUP-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/a10/ACOS-CGNV6-SHARED-SERVICE-GROUP-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:05 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+acosSchema, = mibBuilder.importSymbols("A10-AX-MIB", "acosSchema")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ValueRangeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint")
+InetAddressType, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+Gauge32, MibIdentifier, IpAddress, ObjectIdentity, Counter32, Bits, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, iso, TimeTicks, Unsigned32, NotificationType, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "MibIdentifier", "IpAddress", "ObjectIdentity", "Counter32", "Bits", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "iso", "TimeTicks", "Unsigned32", "NotificationType", "Counter64")
+TextualConvention, DisplayString, PhysAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "PhysAddress")
+cgnv6SharedServiceGroupModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 412))
+if mibBuilder.loadTexts: cgnv6SharedServiceGroupModule.setLastUpdated('200705071327Z')
+if mibBuilder.loadTexts: cgnv6SharedServiceGroupModule.setOrganization('A10 Networks, Inc.')
+if mibBuilder.loadTexts: cgnv6SharedServiceGroupModule.setContactInfo('Address: A10 Networks, Inc.\n\t\t\t\t\t\t\t  2300 Orchard Parkway\n\t\t\t\t\t\t\t  San Jose, CA 95131\n\t\t\t\t\t\t Phone:   +1-888-822-7210 (USA/Canada)\n\t\t\t\t\t\t          +1-408-325-8676 (International)\n\t\t\t\t\t\t E-mail:  support@A10Networks.com')
+if mibBuilder.loadTexts: cgnv6SharedServiceGroupModule.setDescription('cgnv6SharedServiceGroupModule OID for ACOS')
+sharedServiceGroup = MibIdentifier((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 412, 1))
+sharedServiceGroupOperSharedServiceGroupListTable = MibTable((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 412, 1, 2), )
+if mibBuilder.loadTexts: sharedServiceGroupOperSharedServiceGroupListTable.setStatus('current')
+if mibBuilder.loadTexts: sharedServiceGroupOperSharedServiceGroupListTable.setDescription("CGNv6 Shared Service Group from object 'cgnv6.shared-service-group'")
+sharedServiceGroupOperSharedServiceGroupListEntry = MibTableRow((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 412, 1, 2, 1), ).setIndexNames((0, "ACOS-CGNV6-SHARED-SERVICE-GROUP-MIB", "sharedServiceGroupOperSharedServiceGroupListSlotId"), (0, "ACOS-CGNV6-SHARED-SERVICE-GROUP-MIB", "sharedServiceGroupOperSharedServiceGroupListSharedServiceGroupListListId"))
+if mibBuilder.loadTexts: sharedServiceGroupOperSharedServiceGroupListEntry.setStatus('current')
+if mibBuilder.loadTexts: sharedServiceGroupOperSharedServiceGroupListEntry.setDescription('The sharedServiceGroupOperSharedServiceGroupList entry:shared-service-group-list')
+sharedServiceGroupOperSharedServiceGroupListSlotId = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 412, 1, 2, 1, 1), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: sharedServiceGroupOperSharedServiceGroupListSlotId.setStatus('current')
+if mibBuilder.loadTexts: sharedServiceGroupOperSharedServiceGroupListSlotId.setDescription('')
+sharedServiceGroupOperSharedServiceGroupListSharedServiceGroupListListId = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 412, 1, 2, 1, 2), Integer32()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: sharedServiceGroupOperSharedServiceGroupListSharedServiceGroupListListId.setStatus('current')
+if mibBuilder.loadTexts: sharedServiceGroupOperSharedServiceGroupListSharedServiceGroupListListId.setDescription('')
+sharedServiceGroupOperSharedServiceGroupListServiceGroupName = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 412, 1, 2, 1, 3), DisplayString()).setMaxAccess("readonly")
+if mibBuilder.loadTexts: sharedServiceGroupOperSharedServiceGroupListServiceGroupName.setStatus('current')
+if mibBuilder.loadTexts: sharedServiceGroupOperSharedServiceGroupListServiceGroupName.setDescription('service-group-name')
+mibBuilder.exportSymbols("ACOS-CGNV6-SHARED-SERVICE-GROUP-MIB", sharedServiceGroup=sharedServiceGroup, cgnv6SharedServiceGroupModule=cgnv6SharedServiceGroupModule, sharedServiceGroupOperSharedServiceGroupListTable=sharedServiceGroupOperSharedServiceGroupListTable, sharedServiceGroupOperSharedServiceGroupListEntry=sharedServiceGroupOperSharedServiceGroupListEntry, sharedServiceGroupOperSharedServiceGroupListSlotId=sharedServiceGroupOperSharedServiceGroupListSlotId, PYSNMP_MODULE_ID=cgnv6SharedServiceGroupModule, sharedServiceGroupOperSharedServiceGroupListSharedServiceGroupListListId=sharedServiceGroupOperSharedServiceGroupListSharedServiceGroupListListId, sharedServiceGroupOperSharedServiceGroupListServiceGroupName=sharedServiceGroupOperSharedServiceGroupListServiceGroupName)

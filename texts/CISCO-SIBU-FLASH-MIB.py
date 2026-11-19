@@ -1,0 +1,61 @@
+#
+# PySNMP MIB module CISCO-SIBU-FLASH-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SIBU-FLASH-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoSibuFlashMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 45))
+ciscoSibuFlashMIB.setRevisions(('1998-10-23 00:00',))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    if mibBuilder.loadTexts: ciscoSibuFlashMIB.setRevisionsDescriptions(('Initial version of this MIB module.',))
+if mibBuilder.loadTexts: ciscoSibuFlashMIB.setLastUpdated('9810230000Z')
+if mibBuilder.loadTexts: ciscoSibuFlashMIB.setOrganization('Cisco Systems Inc.')
+if mibBuilder.loadTexts: ciscoSibuFlashMIB.setContactInfo('Cisco Systems\n                 Customer Service\n\n                 Postal: 170 W Tasman Drive\n                 San Jose, CA  95134\n                 USA\n\n                 Tel: +1 800 553-NETS\n                 E-mail: cs-sibu@cisco.com')
+if mibBuilder.loadTexts: ciscoSibuFlashMIB.setDescription('The MIB module that provides a simple mechanism\n                to support firmware upgrade on Cisco low end\n                devices.')
+ciscoSibuFlashMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 45, 1))
+csfUpgrade = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 45, 1, 1))
+csfUpgradeFirmwareVersion = MibScalar((1, 3, 6, 1, 4, 1, 9, 10, 45, 1, 1, 1), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 8))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: csfUpgradeFirmwareVersion.setStatus('current')
+if mibBuilder.loadTexts: csfUpgradeFirmwareVersion.setDescription("Returns the version number of the device system\n                 firmware residing in flash. The string has a\n                 'V1.2.3' format.")
+csfUpgradeFlashSize = MibScalar((1, 3, 6, 1, 4, 1, 9, 10, 45, 1, 1, 2), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 2147483647))).setUnits('kbytes').setMaxAccess("readonly")
+if mibBuilder.loadTexts: csfUpgradeFlashSize.setStatus('current')
+if mibBuilder.loadTexts: csfUpgradeFlashSize.setDescription('The size of available FLASH memory in the system,\n                in kilobytes.  For example: 128 equals 131072 bytes\n                (128 bytes times 1024).')
+csfUpgradeTFTPServerAddress = MibScalar((1, 3, 6, 1, 4, 1, 9, 10, 45, 1, 1, 3), IpAddress().clone(hexValue="00000000")).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: csfUpgradeTFTPServerAddress.setStatus('current')
+if mibBuilder.loadTexts: csfUpgradeTFTPServerAddress.setDescription('The IP address of a TFTP server from which a firmware\n                 image can be downloaded.  The download may be initiated\n                 by setting the upgradeTFTPInitiate to upgrade(1), or via\n                 an out-of-band management action.')
+csfUpgradeTFTPLoadFilename = MibScalar((1, 3, 6, 1, 4, 1, 9, 10, 45, 1, 1, 4), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 80))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: csfUpgradeTFTPLoadFilename.setStatus('current')
+if mibBuilder.loadTexts: csfUpgradeTFTPLoadFilename.setDescription('The name of the file containing a firmware upgrade\n                 image on the host whose address is given by\n                 upgradeTFTPServerAddress.  The default value is\n                 an empty string, or no filename.')
+csfUpgradeTFTPInitiate = MibScalar((1, 3, 6, 1, 4, 1, 9, 10, 45, 1, 1, 5), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("upgrade", 1), ("noUpgrade", 2))).clone('noUpgrade')).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: csfUpgradeTFTPInitiate.setStatus('current')
+if mibBuilder.loadTexts: csfUpgradeTFTPInitiate.setDescription('Setting this object to noUpgrade(2) results in no\n                 action. When set to upgrade(1), the switch will attempt\n                 to download a firmware upgrade image from the server\n                 whose address is given by upgradeTFTPServerAddress.\n                 The image is found in the file whose name is given by\n                 sibuFlashTFTPLoadFilename.  Both\n                 sibuFlashTFTPServerAddress and\n                 sibuFlashTFTPLoadFilename must be non-empty for the\n                 upgrade to proceed.\n\n                 This object always returns noUpgrade(2) when read.')
+csfUpgradeFlashMode = MibScalar((1, 3, 6, 1, 4, 1, 9, 10, 45, 1, 1, 6), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("permanent", 1), ("temporary", 2))).clone('permanent')).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: csfUpgradeFlashMode.setStatus('current')
+if mibBuilder.loadTexts: csfUpgradeFlashMode.setDescription('Indicates whether a newly upgraded firmware version\n                 should write to flash.  When this object is temporary(2),\n                 following a successful upgrade the system will switch to\n                 run the new firmware but will not upgrade the new\n                 firmware to flash.  That means after a power cycle,\n                 system will run the firmware residing the flash.\n\n                 When this object is permanent(1), following a successful\n                 firmware upgrade, the flash will be upgraded and the\n                 system will automatically switch to run the new firmware.')
+csfUpgradeFirmwareStatus = MibScalar((1, 3, 6, 1, 4, 1, 9, 10, 45, 1, 1, 7), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4))).clone(namedValues=NamedValues(("none", 1), ("inProgress", 2), ("succeeded", 3), ("failed", 4))).clone('none')).setMaxAccess("readonly")
+if mibBuilder.loadTexts: csfUpgradeFirmwareStatus.setStatus('current')
+if mibBuilder.loadTexts: csfUpgradeFirmwareStatus.setDescription('Status of last upgrade attempt via TFTP:\n                 none - no upgrade has ever been attempted since\n                        initialization.\n                 inProgress - an upgrade is in progress.\n                 succeeded - the previous attempt succeeded.\n                 failed - the previous attempt failed. ')
+ciscoSibuFlashMIBNotificationsPrefix = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 45, 2))
+ciscoSibuFlashMIBNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 45, 2, 0))
+ciscoSibuFlashMIBComformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 45, 3))
+ciscoSibuFlashMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 45, 3, 1))
+ciscoSibuFlashMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 10, 45, 3, 2))
+ciscoSibuFlashCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 10, 45, 3, 1, 1)).setObjects(("CISCO-SIBU-FLASH-MIB", "ciscoSibuFlashMIBGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoSibuFlashCompliance = ciscoSibuFlashCompliance.setStatus('current')
+if mibBuilder.loadTexts: ciscoSibuFlashCompliance.setDescription('The compliance statement for the Cisco SIBU Flash MIB.')
+ciscoSibuFlashMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 45, 3, 2, 1)).setObjects(("CISCO-SIBU-FLASH-MIB", "csfUpgradeFirmwareVersion"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeFlashSize"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeTFTPServerAddress"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeTFTPLoadFilename"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeTFTPInitiate"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeFlashMode"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeFirmwareStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoSibuFlashMIBGroup = ciscoSibuFlashMIBGroup.setStatus('current')
+if mibBuilder.loadTexts: ciscoSibuFlashMIBGroup.setDescription('A collection of image upgrade objects for use with\n                 the devices that supports simple upgrade mechanism.')
+mibBuilder.exportSymbols("CISCO-SIBU-FLASH-MIB", ciscoSibuFlashMIBGroup=ciscoSibuFlashMIBGroup, ciscoSibuFlashMIBCompliances=ciscoSibuFlashMIBCompliances, ciscoSibuFlashMIBNotificationsPrefix=ciscoSibuFlashMIBNotificationsPrefix, csfUpgradeFlashMode=csfUpgradeFlashMode, PYSNMP_MODULE_ID=ciscoSibuFlashMIB, ciscoSibuFlashMIBComformance=ciscoSibuFlashMIBComformance, ciscoSibuFlashMIBObjects=ciscoSibuFlashMIBObjects, ciscoSibuFlashMIBNotifications=ciscoSibuFlashMIBNotifications, csfUpgradeTFTPServerAddress=csfUpgradeTFTPServerAddress, ciscoSibuFlashMIBGroups=ciscoSibuFlashMIBGroups, csfUpgradeTFTPInitiate=csfUpgradeTFTPInitiate, ciscoSibuFlashCompliance=ciscoSibuFlashCompliance, csfUpgradeFlashSize=csfUpgradeFlashSize, csfUpgradeTFTPLoadFilename=csfUpgradeTFTPLoadFilename, csfUpgradeFirmwareStatus=csfUpgradeFirmwareStatus, ciscoSibuFlashMIB=ciscoSibuFlashMIB, csfUpgradeFirmwareVersion=csfUpgradeFirmwareVersion, csfUpgrade=csfUpgrade)

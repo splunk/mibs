@@ -1,0 +1,109 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "IpAddress",
+      "Integer32",
+      "iso",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "MibIdentifier",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "Counter64",
+      "enterprises",
+      "TimeTicks",
+      "Unsigned32",
+      "Counter32",
+      "OBJECT-TYPE",
+      "MODULE-IDENTITY"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ibm": {
+    "name": "ibm",
+    "oid": "1.3.6.1.4.1.2",
+    "class": "objectidentity"
+  },
+  "ibmResearch": {
+    "name": "ibmResearch",
+    "oid": "1.3.6.1.4.1.2.2",
+    "class": "objectidentity"
+  },
+  "ibmAgents": {
+    "name": "ibmAgents",
+    "oid": "1.3.6.1.4.1.2.3",
+    "class": "objectidentity"
+  },
+  "ibmArchitecture": {
+    "name": "ibmArchitecture",
+    "oid": "1.3.6.1.4.1.2.5",
+    "class": "objectidentity"
+  },
+  "alert": {
+    "name": "alert",
+    "oid": "1.3.6.1.4.1.2.5.1",
+    "class": "objectidentity"
+  },
+  "fddi": {
+    "name": "fddi",
+    "oid": "1.3.6.1.4.1.2.5.2",
+    "class": "objectidentity"
+  },
+  "topology": {
+    "name": "topology",
+    "oid": "1.3.6.1.4.1.2.5.3",
+    "class": "objectidentity"
+  },
+  "tokenRing": {
+    "name": "tokenRing",
+    "oid": "1.3.6.1.4.1.2.5.4",
+    "class": "objectidentity"
+  },
+  "ibmProd": {
+    "name": "ibmProd",
+    "oid": "1.3.6.1.4.1.2.6",
+    "class": "objectidentity"
+  },
+  "ibm3172": {
+    "name": "ibm3172",
+    "oid": "1.3.6.1.4.1.2.6.1",
+    "class": "objectidentity"
+  },
+  "ibm6611": {
+    "name": "ibm6611",
+    "oid": "1.3.6.1.4.1.2.6.2",
+    "class": "objectidentity"
+  },
+  "netView6000": {
+    "name": "netView6000",
+    "oid": "1.3.6.1.4.1.2.6.3",
+    "class": "objectidentity"
+  },
+  "netView6000SubAgent": {
+    "name": "netView6000SubAgent",
+    "oid": "1.3.6.1.4.1.2.6.4",
+    "class": "objectidentity"
+  },
+  "systemsMonitor6000": {
+    "name": "systemsMonitor6000",
+    "oid": "1.3.6.1.4.1.2.6.12",
+    "class": "objectidentity"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ibm/IBM-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:39 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "IBM-MIB"
+  }
+}

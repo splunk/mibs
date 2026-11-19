@@ -1,0 +1,108 @@
+#
+# PySNMP MIB module CISCO-IP-IF-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-IP-IF-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+InterfaceIndex, ifIndex = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex", "ifIndex")
+InetAddressType, InetAddress, InetAddressPrefixLength = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress", "InetAddressPrefixLength")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+TextualConvention, StorageType, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "StorageType", "RowStatus", "DisplayString")
+ciscoIPIfMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 309))
+ciscoIPIfMIB.setRevisions(('2008-08-08 00:00', '2008-07-28 00:00', '2002-10-12 00:00', '2002-10-10 00:00',))
+if mibBuilder.loadTexts: ciscoIPIfMIB.setLastUpdated('200808080000Z')
+if mibBuilder.loadTexts: ciscoIPIfMIB.setOrganization('Cisco Systems, Inc.')
+ciscoIPIfMIBNotifs = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 309, 0))
+ciscoIPIfMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 309, 1))
+ciscoIPIfMIBConform = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 309, 2))
+ciiIPAddressConfiguration = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1))
+ciiHelperAddressConfiguration = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 2))
+ciiIPIfNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 309, 0, 0))
+class IpAddressCatagory(TextualConvention, Integer32):
+    status = 'current'
+    subtypeSpec = Integer32.subtypeSpec + ConstraintsUnion(SingleValueConstraint(1, 2, 3))
+    namedValues = NamedValues(("single", 1), ("primary", 2), ("secondary", 3))
+
+ciiIPAddressCategoryCap = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 1), Bits().clone(namedValues=NamedValues(("single", 0), ("primary", 1), ("secondary", 2)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: ciiIPAddressCategoryCap.setStatus('current')
+ciiIPAddressTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 2), )
+if mibBuilder.loadTexts: ciiIPAddressTable.setStatus('current')
+ciiIPAddressEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 2, 1), ).setIndexNames((0, "CISCO-IP-IF-MIB", "ciiIPAddressType"), (0, "CISCO-IP-IF-MIB", "ciiIPAddress"))
+if mibBuilder.loadTexts: ciiIPAddressEntry.setStatus('current')
+ciiIPAddressType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 2, 1, 1), InetAddressType())
+if mibBuilder.loadTexts: ciiIPAddressType.setStatus('current')
+ciiIPAddress = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 2, 1, 2), InetAddress().subtype(subtypeSpec=ValueSizeConstraint(1, 36)))
+if mibBuilder.loadTexts: ciiIPAddress.setStatus('current')
+ciiIPAddressIfIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 2, 1, 3), InterfaceIndex()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiIPAddressIfIndex.setStatus('current')
+ciiIPAddressPrefixLength = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 2, 1, 4), InetAddressPrefixLength()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiIPAddressPrefixLength.setStatus('current')
+ciiIPAddressBroadcast = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 2, 1, 5), InetAddress()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiIPAddressBroadcast.setStatus('current')
+ciiIPAddressCategory = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 2, 1, 6), IpAddressCatagory()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiIPAddressCategory.setStatus('current')
+ciiIPAddressStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 2, 1, 7), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiIPAddressStatus.setStatus('current')
+ciiIPIfAddressTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 3), )
+if mibBuilder.loadTexts: ciiIPIfAddressTable.setStatus('current')
+ciiIPIfAddressEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 3, 1), ).setIndexNames((0, "CISCO-IP-IF-MIB", "ciiIPAddressIfIndex"), (0, "CISCO-IP-IF-MIB", "ciiIPAddressType"), (0, "CISCO-IP-IF-MIB", "ciiIPAddress"))
+if mibBuilder.loadTexts: ciiIPIfAddressEntry.setStatus('current')
+ciiIPIfAddressPrefixLength = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 3, 1, 1), InetAddressPrefixLength()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiIPIfAddressPrefixLength.setStatus('current')
+ciiIPIfAddressBroadcast = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 3, 1, 2), InetAddress()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiIPIfAddressBroadcast.setStatus('current')
+ciiIPIfAddressCategory = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 3, 1, 3), IpAddressCatagory()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiIPIfAddressCategory.setStatus('current')
+ciiIPIfAddressStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 1, 3, 1, 4), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiIPIfAddressStatus.setStatus('current')
+ciiHelperAddressTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 2, 1), )
+if mibBuilder.loadTexts: ciiHelperAddressTable.setStatus('current')
+ciiHelperAddressEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 2, 1, 1), ).setIndexNames((0, "IF-MIB", "ifIndex"), (0, "CISCO-IP-IF-MIB", "ciiHelperAddressVrf"), (0, "CISCO-IP-IF-MIB", "ciiHelperAddressType"), (0, "CISCO-IP-IF-MIB", "ciiHelperAddress"))
+if mibBuilder.loadTexts: ciiHelperAddressEntry.setStatus('current')
+ciiHelperAddressVrf = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 2, 1, 1, 1), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(0, 32)))
+if mibBuilder.loadTexts: ciiHelperAddressVrf.setStatus('current')
+ciiHelperAddressType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 2, 1, 1, 2), InetAddressType())
+if mibBuilder.loadTexts: ciiHelperAddressType.setStatus('current')
+ciiHelperAddress = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 2, 1, 1, 3), InetAddress())
+if mibBuilder.loadTexts: ciiHelperAddress.setStatus('current')
+ciiHelperAddressStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 2, 1, 1, 4), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiHelperAddressStatus.setStatus('current')
+ciiHelperAddressStorage = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 309, 1, 2, 1, 1, 5), StorageType().clone('volatile')).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: ciiHelperAddressStorage.setStatus('current')
+ciscoIPIfMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 309, 2, 1))
+ciscoIPIfMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 309, 2, 2))
+ciscoIPIfMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 309, 2, 1, 1)).setObjects(("CISCO-IP-IF-MIB", "ciscoIPIfAddressConfigurationGroup1"), ("CISCO-IP-IF-MIB", "ciscoIPIfAddressConfigurationGroup2"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoIPIfMIBCompliance = ciscoIPIfMIBCompliance.setStatus('deprecated')
+ciscoIPIfMIBCompliance1 = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 309, 2, 1, 2)).setObjects(("CISCO-IP-IF-MIB", "ciscoIPIfAddressConfigurationGroup1"), ("CISCO-IP-IF-MIB", "ciscoIPIfAddressConfigurationGroup2"), ("CISCO-IP-IF-MIB", "ciscoIPIfAddressConfigurationGroup3"), ("CISCO-IP-IF-MIB", "ciscoIPIfAddressConfigurationGroup4"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoIPIfMIBCompliance1 = ciscoIPIfMIBCompliance1.setStatus('deprecated')
+ciscoIPIfMIBCompliance2 = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 309, 2, 1, 3)).setObjects(("CISCO-IP-IF-MIB", "ciscoIPIfAddressConfigurationGroup1"), ("CISCO-IP-IF-MIB", "ciscoIPIfAddressConfigurationGroup2"), ("CISCO-IP-IF-MIB", "ciscoIPIfAddressConfigurationGroup3"), ("CISCO-IP-IF-MIB", "ciscoIPIfAddressConfigurationGroup4"), ("CISCO-IP-IF-MIB", "ciiHelperAddressGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoIPIfMIBCompliance2 = ciscoIPIfMIBCompliance2.setStatus('current')
+ciscoIPIfAddressConfigurationGroup1 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 309, 2, 2, 1)).setObjects(("CISCO-IP-IF-MIB", "ciiIPAddressCategoryCap"), ("CISCO-IP-IF-MIB", "ciiIPAddressIfIndex"), ("CISCO-IP-IF-MIB", "ciiIPAddressPrefixLength"), ("CISCO-IP-IF-MIB", "ciiIPAddressCategory"), ("CISCO-IP-IF-MIB", "ciiIPAddressStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoIPIfAddressConfigurationGroup1 = ciscoIPIfAddressConfigurationGroup1.setStatus('current')
+ciscoIPIfAddressConfigurationGroup2 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 309, 2, 2, 2)).setObjects(("CISCO-IP-IF-MIB", "ciiIPAddressBroadcast"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoIPIfAddressConfigurationGroup2 = ciscoIPIfAddressConfigurationGroup2.setStatus('current')
+ciscoIPIfAddressConfigurationGroup3 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 309, 2, 2, 3)).setObjects(("CISCO-IP-IF-MIB", "ciiIPAddressCategoryCap"), ("CISCO-IP-IF-MIB", "ciiIPIfAddressPrefixLength"), ("CISCO-IP-IF-MIB", "ciiIPIfAddressCategory"), ("CISCO-IP-IF-MIB", "ciiIPIfAddressStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoIPIfAddressConfigurationGroup3 = ciscoIPIfAddressConfigurationGroup3.setStatus('current')
+ciscoIPIfAddressConfigurationGroup4 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 309, 2, 2, 4)).setObjects(("CISCO-IP-IF-MIB", "ciiIPIfAddressBroadcast"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoIPIfAddressConfigurationGroup4 = ciscoIPIfAddressConfigurationGroup4.setStatus('current')
+ciiHelperAddressGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 309, 2, 2, 5)).setObjects(("CISCO-IP-IF-MIB", "ciiHelperAddressStatus"), ("CISCO-IP-IF-MIB", "ciiHelperAddressStorage"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciiHelperAddressGroup = ciiHelperAddressGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-IP-IF-MIB", ciiIPAddressEntry=ciiIPAddressEntry, ciiIPAddressType=ciiIPAddressType, ciiHelperAddressConfiguration=ciiHelperAddressConfiguration, ciiIPIfAddressBroadcast=ciiIPIfAddressBroadcast, ciscoIPIfMIBCompliance=ciscoIPIfMIBCompliance, ciiHelperAddressTable=ciiHelperAddressTable, ciscoIPIfAddressConfigurationGroup1=ciscoIPIfAddressConfigurationGroup1, ciscoIPIfMIBGroups=ciscoIPIfMIBGroups, ciiIPIfAddressTable=ciiIPIfAddressTable, ciscoIPIfMIBNotifs=ciscoIPIfMIBNotifs, IpAddressCatagory=IpAddressCatagory, ciiIPIfAddressPrefixLength=ciiIPIfAddressPrefixLength, ciiHelperAddressEntry=ciiHelperAddressEntry, ciiHelperAddressStatus=ciiHelperAddressStatus, ciscoIPIfAddressConfigurationGroup4=ciscoIPIfAddressConfigurationGroup4, ciiHelperAddressStorage=ciiHelperAddressStorage, ciiIPIfAddressStatus=ciiIPIfAddressStatus, ciiIPIfAddressEntry=ciiIPIfAddressEntry, ciiIPAddressPrefixLength=ciiIPAddressPrefixLength, PYSNMP_MODULE_ID=ciscoIPIfMIB, ciscoIPIfMIBConform=ciscoIPIfMIBConform, ciscoIPIfMIB=ciscoIPIfMIB, ciiIPAddressCategoryCap=ciiIPAddressCategoryCap, ciiHelperAddressVrf=ciiHelperAddressVrf, ciscoIPIfAddressConfigurationGroup2=ciscoIPIfAddressConfigurationGroup2, ciiIPAddressTable=ciiIPAddressTable, ciiIPAddressConfiguration=ciiIPAddressConfiguration, ciiHelperAddress=ciiHelperAddress, ciiIPAddressBroadcast=ciiIPAddressBroadcast, ciiIPAddress=ciiIPAddress, ciiHelperAddressGroup=ciiHelperAddressGroup, ciscoIPIfAddressConfigurationGroup3=ciscoIPIfAddressConfigurationGroup3, ciiIPAddressIfIndex=ciiIPAddressIfIndex, ciscoIPIfMIBObjects=ciscoIPIfMIBObjects, ciiIPIfAddressCategory=ciiIPIfAddressCategory, ciscoIPIfMIBCompliance2=ciscoIPIfMIBCompliance2, ciscoIPIfMIBCompliances=ciscoIPIfMIBCompliances, ciscoIPIfMIBCompliance1=ciscoIPIfMIBCompliance1, ciiIPIfNotifications=ciiIPIfNotifications, ciiHelperAddressType=ciiHelperAddressType, ciiIPAddressCategory=ciiIPAddressCategory, ciiIPAddressStatus=ciiIPAddressStatus)

@@ -1,0 +1,656 @@
+{
+  "imports": {
+    "class": "imports",
+    "ALCATEL-IND1-BASE": [
+      "routingIND1Dvmrp"
+    ],
+    "DVMRP-STD-MIB": [
+      "dvmrpInterfaceEntry"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "TimeTicks",
+      "Counter64",
+      "Bits",
+      "OBJECT-IDENTITY",
+      "MibIdentifier",
+      "OBJECT-TYPE",
+      "Gauge32",
+      "MODULE-IDENTITY",
+      "Counter32",
+      "IpAddress",
+      "Unsigned32",
+      "NOTIFICATION-TYPE",
+      "Integer32"
+    ],
+    "SNMPv2-TC": [
+      "TruthValue",
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "alcatelIND1DVMRPMIB": {
+    "name": "alcatelIND1DVMRPMIB",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2007-04-03 00:00",
+        "description": "The latest version of this MIB Module."
+      }
+    ]
+  },
+  "alcatelIND1DVMRPMIBObjects": {
+    "name": "alcatelIND1DVMRPMIBObjects",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1",
+    "class": "objectidentity"
+  },
+  "alaDvmrpGlobalConfig": {
+    "name": "alaDvmrpGlobalConfig",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1",
+    "class": "objectidentity"
+  },
+  "alaDvmrpTunnelXIfTable": {
+    "name": "alaDvmrpTunnelXIfTable",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.2",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "alaDvmrpAdminStatus": {
+    "name": "alaDvmrpAdminStatus",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2,
+          "unrestrictedEnable": 3
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "disable",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpRouteReportInterval": {
+    "name": "alaDvmrpRouteReportInterval",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 10,
+            "max": 2000
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 60,
+        "format": "decimal"
+      }
+    },
+    "units": "seconds",
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpFlashUpdateInterval": {
+    "name": "alaDvmrpFlashUpdateInterval",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.3",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 5,
+            "max": 86400
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 5,
+        "format": "decimal"
+      }
+    },
+    "units": "seconds",
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpNeighborTimeout": {
+    "name": "alaDvmrpNeighborTimeout",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.4",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 5,
+            "max": 86400
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 35,
+        "format": "decimal"
+      }
+    },
+    "units": "seconds",
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpRouteExpirationTimeout": {
+    "name": "alaDvmrpRouteExpirationTimeout",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.5",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 20,
+            "max": 4000
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 140,
+        "format": "decimal"
+      }
+    },
+    "units": "seconds",
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpRouteHoldDown": {
+    "name": "alaDvmrpRouteHoldDown",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.6",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 86400
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 120,
+        "format": "decimal"
+      }
+    },
+    "units": "seconds",
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpNeighborProbeInterval": {
+    "name": "alaDvmrpNeighborProbeInterval",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.7",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 5,
+            "max": 30
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 10,
+        "format": "decimal"
+      }
+    },
+    "units": "seconds",
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpPruneLifetime": {
+    "name": "alaDvmrpPruneLifetime",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.8",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 180,
+            "max": 86400
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 7200,
+        "format": "decimal"
+      }
+    },
+    "units": "seconds",
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpPruneRetransmission": {
+    "name": "alaDvmrpPruneRetransmission",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.9",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 30,
+            "max": 86400
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 30,
+        "format": "decimal"
+      }
+    },
+    "units": "seconds",
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpGraftRetransmission": {
+    "name": "alaDvmrpGraftRetransmission",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.10",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Integer32",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 5,
+            "max": 86400
+          }
+        ]
+      }
+    },
+    "default": {
+      "default": {
+        "value": 5,
+        "format": "decimal"
+      }
+    },
+    "units": "seconds",
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpInitNbrAsSubord": {
+    "name": "alaDvmrpInitNbrAsSubord",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.11",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TruthValue",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "true",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "alaDvmrpBfdStatus": {
+    "name": "alaDvmrpBfdStatus",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.12",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "disable",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "alaDvmrpBfdAllInterfaceStatus": {
+    "name": "alaDvmrpBfdAllInterfaceStatus",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.13",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "disable",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "alaDvmrpMbrOperStatus": {
+    "name": "alaDvmrpMbrOperStatus",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.1.14",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "alaDvmrpTunnelXIfEntry": {
+    "name": "alaDvmrpTunnelXIfEntry",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.2.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpTunnelIndex",
+        "implied": 0
+      }
+    ],
+    "status": "current"
+  },
+  "alaDvmrpTunnelIndex": {
+    "name": "alaDvmrpTunnelIndex",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.2.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "alaDvmrpLocalIfIndex": {
+    "name": "alaDvmrpLocalIfIndex",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.2.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "alaDvmrpIfAugTable": {
+    "name": "alaDvmrpIfAugTable",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.4",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "current"
+  },
+  "alaDvmrpIfAugEntry": {
+    "name": "alaDvmrpIfAugEntry",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.4.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "augmention": {
+      "name": "alaDvmrpIfAugEntry",
+      "module": "ALCATEL-IND1-DVMRP-MIB",
+      "object": "dvmrpInterfaceEntry"
+    },
+    "status": "current"
+  },
+  "alaDvmrpIfBfdStatus": {
+    "name": "alaDvmrpIfBfdStatus",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.4.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "alaDvmrpIfMbrDefaultInfoStatus": {
+    "name": "alaDvmrpIfMbrDefaultInfoStatus",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.1.4.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "enable": 1,
+          "disable": 2
+        }
+      }
+    },
+    "default": {
+      "default": {
+        "value": "disable",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-create",
+    "status": "current"
+  },
+  "alcatelIND1DVMRPMIBConformance": {
+    "name": "alcatelIND1DVMRPMIBConformance",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.2",
+    "class": "objectidentity"
+  },
+  "alcatelIND1DVMRPMIBCompliances": {
+    "name": "alcatelIND1DVMRPMIBCompliances",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.2.1",
+    "class": "objectidentity"
+  },
+  "alcatelIND1DVMRPMIBGroups": {
+    "name": "alcatelIND1DVMRPMIBGroups",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.2.2",
+    "class": "objectidentity"
+  },
+  "alaDvmrpCompliance": {
+    "name": "alaDvmrpCompliance",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.2.1.1",
+    "class": "modulecompliance",
+    "modulecompliance": [
+      {
+        "object": "alaDvmrpConfigMIBGroup",
+        "module": "ALCATEL-IND1-DVMRP-MIB"
+      },
+      {
+        "object": "alaDvmrpTunnelXIfMIBGroup",
+        "module": "ALCATEL-IND1-DVMRP-MIB"
+      },
+      {
+        "object": "alaDvmrpIfConfigGroup",
+        "module": "ALCATEL-IND1-DVMRP-MIB"
+      }
+    ],
+    "status": "current"
+  },
+  "alaDvmrpConfigMIBGroup": {
+    "name": "alaDvmrpConfigMIBGroup",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.2.2.1",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpAdminStatus"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpRouteReportInterval"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpFlashUpdateInterval"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpNeighborTimeout"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpRouteExpirationTimeout"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpRouteHoldDown"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpNeighborProbeInterval"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpPruneLifetime"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpPruneRetransmission"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpGraftRetransmission"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpInitNbrAsSubord"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpBfdStatus"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpBfdAllInterfaceStatus"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpMbrOperStatus"
+      }
+    ],
+    "status": "current"
+  },
+  "alaDvmrpTunnelXIfMIBGroup": {
+    "name": "alaDvmrpTunnelXIfMIBGroup",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.2.2.2",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpLocalIfIndex"
+      }
+    ],
+    "status": "current"
+  },
+  "alaDvmrpIfConfigGroup": {
+    "name": "alaDvmrpIfConfigGroup",
+    "oid": "1.3.6.1.4.1.6486.801.1.2.1.10.7.1.2.2.3",
+    "class": "objectgroup",
+    "objects": [
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpIfBfdStatus"
+      },
+      {
+        "module": "ALCATEL-IND1-DVMRP-MIB",
+        "object": "alaDvmrpIfMbrDefaultInfoStatus"
+      }
+    ],
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/nokia/ALCATEL-IND1-DVMRP-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:38:19 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "ALCATEL-IND1-DVMRP-MIB"
+  }
+}

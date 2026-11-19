@@ -1,0 +1,61 @@
+#
+# PySNMP MIB module CISCO-PTOPO-EXTN-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-PTOPO-EXTN-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+PhysicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "PhysicalIndex")
+InterfaceIndexOrZero, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndexOrZero")
+ptopoConnEntry, = mibBuilder.importSymbols("PTOPO-MIB", "ptopoConnEntry")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+TextualConvention, DisplayString, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "RowStatus")
+ciscoPtopoExtnMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 261))
+ciscoPtopoExtnMIB.setRevisions(('2002-05-12 00:00',))
+if mibBuilder.loadTexts: ciscoPtopoExtnMIB.setLastUpdated('200205120000Z')
+if mibBuilder.loadTexts: ciscoPtopoExtnMIB.setOrganization('Cisco Systems, Inc.')
+ciscoPtopoExtnMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 261, 1))
+cPtopoConnExtTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 261, 1, 1), )
+if mibBuilder.loadTexts: cPtopoConnExtTable.setStatus('current')
+cPtopoConnExtEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 261, 1, 1, 1), )
+ptopoConnEntry.registerAugmentions(("CISCO-PTOPO-EXTN-MIB", "cPtopoConnExtEntry"))
+cPtopoConnExtEntry.setIndexNames(*ptopoConnEntry.getIndexNames())
+if mibBuilder.loadTexts: cPtopoConnExtEntry.setStatus('current')
+cPtopoConnExtLinkDirection = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 261, 1, 1, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("transmit", 1), ("receive", 2), ("both", 3)))).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cPtopoConnExtLinkDirection.setStatus('current')
+cPtopoExtCdpTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 261, 1, 2), )
+if mibBuilder.loadTexts: cPtopoExtCdpTable.setStatus('current')
+cPtopoExtCdpEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 261, 1, 2, 1), ).setIndexNames((0, "CISCO-PTOPO-EXTN-MIB", "cPtopoExtCdpLocalChassis"), (0, "CISCO-PTOPO-EXTN-MIB", "cPtopoExtCdpLocalPort"))
+if mibBuilder.loadTexts: cPtopoExtCdpEntry.setStatus('current')
+cPtopoExtCdpLocalChassis = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 261, 1, 2, 1, 1), PhysicalIndex())
+if mibBuilder.loadTexts: cPtopoExtCdpLocalChassis.setStatus('current')
+cPtopoExtCdpLocalPort = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 261, 1, 2, 1, 2), PhysicalIndex())
+if mibBuilder.loadTexts: cPtopoExtCdpLocalPort.setStatus('current')
+cPtopoExtCdpDiscoveryState = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 261, 1, 2, 1, 3), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4))).clone(namedValues=NamedValues(("cdpDisabled", 1), ("interfaceDown", 2), ("waiting", 3), ("discovered", 4)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cPtopoExtCdpDiscoveryState.setStatus('current')
+cPtopoExtCdpProxyIf = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 261, 1, 2, 1, 4), InterfaceIndexOrZero()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cPtopoExtCdpProxyIf.setStatus('current')
+cPtopoExtCdpRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 261, 1, 2, 1, 5), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cPtopoExtCdpRowStatus.setStatus('current')
+cPtopoExtnConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 261, 3))
+cPtopoExtnCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 261, 3, 1))
+cPtopoExtnGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 261, 3, 2))
+cPtopoExtnCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 261, 3, 1, 1)).setObjects(("CISCO-PTOPO-EXTN-MIB", "cPtopoConnExtGroup"), ("CISCO-PTOPO-EXTN-MIB", "cPtopoExtCdpGroup"), ("CISCO-PTOPO-EXTN-MIB", "cPtopoExtCdpProxyGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cPtopoExtnCompliance = cPtopoExtnCompliance.setStatus('current')
+cPtopoConnExtGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 261, 3, 2, 1)).setObjects(("CISCO-PTOPO-EXTN-MIB", "cPtopoConnExtLinkDirection"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cPtopoConnExtGroup = cPtopoConnExtGroup.setStatus('current')
+cPtopoExtCdpGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 261, 3, 2, 2)).setObjects(("CISCO-PTOPO-EXTN-MIB", "cPtopoExtCdpDiscoveryState"), ("CISCO-PTOPO-EXTN-MIB", "cPtopoExtCdpRowStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cPtopoExtCdpGroup = cPtopoExtCdpGroup.setStatus('current')
+cPtopoExtCdpProxyGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 261, 3, 2, 3)).setObjects(("CISCO-PTOPO-EXTN-MIB", "cPtopoExtCdpProxyIf"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cPtopoExtCdpProxyGroup = cPtopoExtCdpProxyGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-PTOPO-EXTN-MIB", cPtopoExtCdpDiscoveryState=cPtopoExtCdpDiscoveryState, cPtopoExtCdpRowStatus=cPtopoExtCdpRowStatus, cPtopoConnExtLinkDirection=cPtopoConnExtLinkDirection, PYSNMP_MODULE_ID=ciscoPtopoExtnMIB, cPtopoConnExtGroup=cPtopoConnExtGroup, cPtopoExtCdpTable=cPtopoExtCdpTable, ciscoPtopoExtnMIB=ciscoPtopoExtnMIB, cPtopoExtnGroups=cPtopoExtnGroups, ciscoPtopoExtnMIBObjects=ciscoPtopoExtnMIBObjects, cPtopoConnExtTable=cPtopoConnExtTable, cPtopoExtCdpLocalChassis=cPtopoExtCdpLocalChassis, cPtopoExtCdpProxyIf=cPtopoExtCdpProxyIf, cPtopoExtCdpLocalPort=cPtopoExtCdpLocalPort, cPtopoExtCdpEntry=cPtopoExtCdpEntry, cPtopoExtCdpGroup=cPtopoExtCdpGroup, cPtopoConnExtEntry=cPtopoConnExtEntry, cPtopoExtnCompliances=cPtopoExtnCompliances, cPtopoExtnCompliance=cPtopoExtnCompliance, cPtopoExtCdpProxyGroup=cPtopoExtCdpProxyGroup, cPtopoExtnConformance=cPtopoExtnConformance)

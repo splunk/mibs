@@ -1,0 +1,117 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "NOTIFICATION-TYPE",
+      "Integer32",
+      "Counter64",
+      "OBJECT-IDENTITY",
+      "MibIdentifier",
+      "iso",
+      "Bits",
+      "MODULE-IDENTITY",
+      "IpAddress",
+      "TimeTicks",
+      "OBJECT-TYPE",
+      "Unsigned32",
+      "Gauge32",
+      "Counter32"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ],
+    "TELDAT-SW-STRUCTURE-MIB": [
+      "telProdNpMonitSistema"
+    ]
+  },
+  "teldatCPUMonMIB": {
+    "name": "teldatCPUMonMIB",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2",
+    "class": "objectidentity"
+  },
+  "teldatCPUMonMIBObjects": {
+    "name": "teldatCPUMonMIBObjects",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2.1",
+    "class": "objectidentity"
+  },
+  "teldatCPUMonMIBNotifPrefix": {
+    "name": "teldatCPUMonMIBNotifPrefix",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2.2",
+    "class": "objectidentity"
+  },
+  "teldatCPUMonMIBNotifs": {
+    "name": "teldatCPUMonMIBNotifs",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2.2.0",
+    "class": "objectidentity"
+  },
+  "teldatCPUMonMIBConformance": {
+    "name": "teldatCPUMonMIBConformance",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2.3",
+    "class": "objectidentity"
+  },
+  "teldatCPUCompliances": {
+    "name": "teldatCPUCompliances",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2.3.1",
+    "class": "objectidentity"
+  },
+  "teldatCPUGroups": {
+    "name": "teldatCPUGroups",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2.3.2",
+    "class": "objectidentity"
+  },
+  "teldatCPUBusyGroup": {
+    "name": "teldatCPUBusyGroup",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2.1.1",
+    "class": "objectidentity"
+  },
+  "teldatCPUBusy5sec": {
+    "name": "teldatCPUBusy5sec",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2.1.1.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Gauge",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "teldatCPUBusy1min": {
+    "name": "teldatCPUBusy1min",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2.1.1.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Gauge",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "teldatCPUBusy5min": {
+    "name": "teldatCPUBusy5min",
+    "oid": "1.3.6.1.4.1.2007.4.1.2.1.2.1.1.3",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Gauge",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/teldat/TELDAT-MON-CPU-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:40:26 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "TELDAT-MON-CPU-MIB"
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "imports": {
+    "class": "imports",
+    "RUCKUS-ROOT-MIB": [
+      "ruckusCommonHwInfoModule"
+    ],
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "MibIdentifier",
+      "Counter32",
+      "TimeTicks",
+      "Integer32",
+      "OBJECT-IDENTITY",
+      "iso",
+      "Counter64",
+      "NOTIFICATION-TYPE",
+      "IpAddress",
+      "OBJECT-TYPE",
+      "Gauge32",
+      "Unsigned32",
+      "Bits",
+      "MODULE-IDENTITY"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "ruckusHwInfoMIB": {
+    "name": "ruckusHwInfoMIB",
+    "oid": "1.3.6.1.4.1.25053.1.1.2.1",
+    "class": "moduleidentity"
+  },
+  "ruckusHwInfoObjects": {
+    "name": "ruckusHwInfoObjects",
+    "oid": "1.3.6.1.4.1.25053.1.1.2.1.1",
+    "class": "objectidentity"
+  },
+  "ruckusHwInfo": {
+    "name": "ruckusHwInfo",
+    "oid": "1.3.6.1.4.1.25053.1.1.2.1.1.1",
+    "class": "objectidentity"
+  },
+  "ruckusHwInfoEvents": {
+    "name": "ruckusHwInfoEvents",
+    "oid": "1.3.6.1.4.1.25053.1.1.2.1.2",
+    "class": "objectidentity"
+  },
+  "ruckusHwInfoModelNumber": {
+    "name": "ruckusHwInfoModelNumber",
+    "oid": "1.3.6.1.4.1.25053.1.1.2.1.1.1.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 16
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "ruckusHwInfoSerialNumber": {
+    "name": "ruckusHwInfoSerialNumber",
+    "oid": "1.3.6.1.4.1.25053.1.1.2.1.1.1.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 16
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "ruckusHwInfoCustomerID": {
+    "name": "ruckusHwInfoCustomerID",
+    "oid": "1.3.6.1.4.1.25053.1.1.2.1.1.1.3",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 1,
+            "max": 32
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "ruckusHwInfoHWMajorRevision": {
+    "name": "ruckusHwInfoHWMajorRevision",
+    "oid": "1.3.6.1.4.1.25053.1.1.2.1.1.1.4",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "ruckusHwInfoHWMinorRevision": {
+    "name": "ruckusHwInfoHWMinorRevision",
+    "oid": "1.3.6.1.4.1.25053.1.1.2.1.1.1.5",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "Unsigned32",
+      "class": "type"
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ruckus/RUCKUS-HWINFO-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:39:42 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "RUCKUS-HWINFO-MIB"
+  }
+}

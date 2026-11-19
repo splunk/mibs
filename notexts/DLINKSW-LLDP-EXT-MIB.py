@@ -1,0 +1,66 @@
+#
+# PySNMP MIB module DLINKSW-LLDP-EXT-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-LLDP-EXT-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:46 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint")
+dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
+lldpLocPortNum, = mibBuilder.importSymbols("LLDP-MIB", "lldpLocPortNum")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Bits, TimeTicks, ModuleIdentity, ObjectIdentity, NotificationType, Unsigned32, MibIdentifier, Gauge32, Counter32, Counter64, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Bits", "TimeTicks", "ModuleIdentity", "ObjectIdentity", "NotificationType", "Unsigned32", "MibIdentifier", "Gauge32", "Counter32", "Counter64", "IpAddress")
+TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
+dlinkSwLldpExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 20))
+dlinkSwLldpExtMIB.setRevisions(('2013-02-25 00:00',))
+if mibBuilder.loadTexts: dlinkSwLldpExtMIB.setLastUpdated('201305290000Z')
+if mibBuilder.loadTexts: dlinkSwLldpExtMIB.setOrganization('D-Link Corp.')
+dLldpExtMIBNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 20, 0))
+dLldpExtMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 20, 1))
+dLldpExtMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 20, 2))
+dLldpExtLldpEnabled = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 1), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dLldpExtLldpEnabled.setStatus('current')
+dLldpExtLldpForward = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 2), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dLldpExtLldpForward.setStatus('current')
+dLldpExtLldpTrapEnabled = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 3), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dLldpExtLldpTrapEnabled.setStatus('current')
+dLldpExtLldpMedTrapEnabled = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 4), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dLldpExtLldpMedTrapEnabled.setStatus('current')
+dLldpExtClearStats = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 5))
+dLldpExtClearGlobalStats = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 5, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("clear", 1), ("noOp", 2)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dLldpExtClearGlobalStats.setStatus('current')
+dLldpExtClearAllPortsStats = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 5, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("clear", 1), ("noOp", 2)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dLldpExtClearAllPortsStats.setStatus('current')
+dLldpExtClearCounterByPort = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 5, 3), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 4096))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dLldpExtClearCounterByPort.setStatus('current')
+dLldpExtClearAllNeighbors = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 5, 4), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("clear", 1), ("noOp", 2)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dLldpExtClearAllNeighbors.setStatus('current')
+dLldpExtClearNeighborsByPort = MibScalar((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 5, 5), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 4096))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dLldpExtClearNeighborsByPort.setStatus('current')
+dLldpExtPortSubTypeTable = MibTable((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 6), )
+if mibBuilder.loadTexts: dLldpExtPortSubTypeTable.setStatus('current')
+dLldpExtPortSubTypeEntry = MibTableRow((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 6, 1), ).setIndexNames((0, "LLDP-MIB", "lldpLocPortNum"))
+if mibBuilder.loadTexts: dLldpExtPortSubTypeEntry.setStatus('current')
+dLldpExtPortSubType = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 14, 20, 1, 6, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("localPortNumber", 1), ("macAddress", 2)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: dLldpExtPortSubType.setStatus('current')
+dLldpExtMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 20, 2, 1))
+dLldpExtMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 20, 2, 2))
+dLldpExtMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 171, 14, 20, 2, 1, 1)).setObjects(("DLINKSW-LLDP-EXT-MIB", "dLldpExtBasicCfgGroup"), ("DLINKSW-LLDP-EXT-MIB", "dLldpExtClearStatsCounterGroup"), ("DLINKSW-LLDP-EXT-MIB", "dLldpExtClearNeighborGroup"), ("DLINKSW-LLDP-EXT-MIB", "dLldpExtPortSubtypeGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dLldpExtMIBCompliance = dLldpExtMIBCompliance.setStatus('current')
+dLldpExtBasicCfgGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 20, 2, 2, 1)).setObjects(("DLINKSW-LLDP-EXT-MIB", "dLldpExtLldpEnabled"), ("DLINKSW-LLDP-EXT-MIB", "dLldpExtLldpForward"), ("DLINKSW-LLDP-EXT-MIB", "dLldpExtLldpTrapEnabled"), ("DLINKSW-LLDP-EXT-MIB", "dLldpExtLldpMedTrapEnabled"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dLldpExtBasicCfgGroup = dLldpExtBasicCfgGroup.setStatus('current')
+dLldpExtClearStatsCounterGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 20, 2, 2, 2)).setObjects(("DLINKSW-LLDP-EXT-MIB", "dLldpExtClearGlobalStats"), ("DLINKSW-LLDP-EXT-MIB", "dLldpExtClearAllPortsStats"), ("DLINKSW-LLDP-EXT-MIB", "dLldpExtClearCounterByPort"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dLldpExtClearStatsCounterGroup = dLldpExtClearStatsCounterGroup.setStatus('current')
+dLldpExtClearNeighborGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 20, 2, 2, 3)).setObjects(("DLINKSW-LLDP-EXT-MIB", "dLldpExtClearAllNeighbors"), ("DLINKSW-LLDP-EXT-MIB", "dLldpExtClearNeighborsByPort"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dLldpExtClearNeighborGroup = dLldpExtClearNeighborGroup.setStatus('current')
+dLldpExtPortSubtypeGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 20, 2, 2, 4)).setObjects(("DLINKSW-LLDP-EXT-MIB", "dLldpExtPortSubType"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    dLldpExtPortSubtypeGroup = dLldpExtPortSubtypeGroup.setStatus('current')
+mibBuilder.exportSymbols("DLINKSW-LLDP-EXT-MIB", dLldpExtClearNeighborGroup=dLldpExtClearNeighborGroup, dLldpExtMIBCompliance=dLldpExtMIBCompliance, dLldpExtClearStats=dLldpExtClearStats, dLldpExtClearNeighborsByPort=dLldpExtClearNeighborsByPort, dLldpExtLldpMedTrapEnabled=dLldpExtLldpMedTrapEnabled, dLldpExtMIBObjects=dLldpExtMIBObjects, dLldpExtPortSubTypeTable=dLldpExtPortSubTypeTable, dLldpExtClearGlobalStats=dLldpExtClearGlobalStats, dLldpExtMIBCompliances=dLldpExtMIBCompliances, dLldpExtMIBGroups=dLldpExtMIBGroups, dLldpExtClearAllPortsStats=dLldpExtClearAllPortsStats, PYSNMP_MODULE_ID=dlinkSwLldpExtMIB, dLldpExtClearAllNeighbors=dLldpExtClearAllNeighbors, dLldpExtPortSubType=dLldpExtPortSubType, dLldpExtMIBConformance=dLldpExtMIBConformance, dLldpExtBasicCfgGroup=dLldpExtBasicCfgGroup, dLldpExtLldpEnabled=dLldpExtLldpEnabled, dlinkSwLldpExtMIB=dlinkSwLldpExtMIB, dLldpExtMIBNotifications=dLldpExtMIBNotifications, dLldpExtClearCounterByPort=dLldpExtClearCounterByPort, dLldpExtPortSubtypeGroup=dLldpExtPortSubtypeGroup, dLldpExtClearStatsCounterGroup=dLldpExtClearStatsCounterGroup, dLldpExtPortSubTypeEntry=dLldpExtPortSubTypeEntry, dLldpExtLldpTrapEnabled=dLldpExtLldpTrapEnabled, dLldpExtLldpForward=dLldpExtLldpForward)

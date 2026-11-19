@@ -1,0 +1,71 @@
+{
+  "imports": {
+    "class": "imports",
+    "Dell-MIB": [
+      "rnd"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "OBJECT-IDENTITY",
+      "Unsigned32",
+      "MibIdentifier",
+      "Integer32",
+      "OBJECT-TYPE",
+      "Bits",
+      "IpAddress",
+      "Counter64",
+      "Counter32",
+      "Gauge32",
+      "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "iso",
+      "MODULE-IDENTITY"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString",
+      "TruthValue"
+    ]
+  },
+  "rlNicRedundancy": {
+    "name": "rlNicRedundancy",
+    "oid": "1.3.6.1.4.1.89.105",
+    "class": "moduleidentity",
+    "revisions": [
+      {
+        "revision": "2005-06-16 00:00",
+        "description": "Initial version of this MIB."
+      }
+    ]
+  },
+  "rlNicRedundancyEnable": {
+    "name": "rlNicRedundancyEnable",
+    "oid": "1.3.6.1.4.1.89.105.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "TruthValue",
+      "class": "type"
+    },
+    "default": {
+      "default": {
+        "value": "false",
+        "format": "enum"
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dell/Dell-rlNicRedundancy",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:39 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "Dell-rlNicRedundancy"
+  }
+}

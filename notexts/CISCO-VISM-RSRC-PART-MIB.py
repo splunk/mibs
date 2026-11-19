@@ -1,0 +1,53 @@
+#
+# PySNMP MIB module CISCO-VISM-RSRC-PART-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VISM-RSRC-PART-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+vismPort, = mibBuilder.importSymbols("BASIS-MIB", "vismPort")
+ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ciscoVismRsrcPartMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 93))
+ciscoVismRsrcPartMIB.setRevisions(('2003-12-09 00:00',))
+if mibBuilder.loadTexts: ciscoVismRsrcPartMIB.setLastUpdated('200312090000Z')
+if mibBuilder.loadTexts: ciscoVismRsrcPartMIB.setOrganization('Cisco Systems, Inc.')
+vismPortResPartCnfGrp = MibIdentifier((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2))
+vismPortResPartCnfGrpTable = MibTable((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1), )
+if mibBuilder.loadTexts: vismPortResPartCnfGrpTable.setStatus('current')
+vismPortResPartCnfGrpEntry = MibTableRow((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1, 1), ).setIndexNames((0, "CISCO-VISM-RSRC-PART-MIB", "vismResPartPortNum"), (0, "CISCO-VISM-RSRC-PART-MIB", "vismResPartCtrlrNum"))
+if mibBuilder.loadTexts: vismPortResPartCnfGrpEntry.setStatus('current')
+vismResPartPortNum = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1, 1, 1), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 2147483647))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: vismResPartPortNum.setStatus('current')
+vismResPartCtrlrNum = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("par", 1), ("pnni", 2), ("tag", 3)))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: vismResPartCtrlrNum.setStatus('current')
+vismResPartRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1, 1, 3), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("add", 1), ("del", 2), ("mod", 3)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: vismResPartRowStatus.setStatus('current')
+vismResPartNumOfLcnAvail = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1, 1, 4), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 380))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: vismResPartNumOfLcnAvail.setStatus('current')
+vismResPartLcnLow = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1, 1, 5), Integer32().subtype(subtypeSpec=ValueRangeConstraint(131, 510)).clone(131)).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: vismResPartLcnLow.setStatus('current')
+vismResPartLcnHigh = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1, 1, 6), Integer32().subtype(subtypeSpec=ValueRangeConstraint(131, 510)).clone(510)).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: vismResPartLcnHigh.setStatus('current')
+vismResPartIngrPctBW = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1, 1, 7), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 100)).clone(100)).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: vismResPartIngrPctBW.setStatus('current')
+vismResPartEgrPctBW = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1, 1, 8), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 100)).clone(100)).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: vismResPartEgrPctBW.setStatus('current')
+vismResPartCtrlrID = MibTableColumn((1, 3, 6, 1, 4, 1, 351, 110, 5, 5, 2, 2, 1, 1, 9), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 255)).clone(2)).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: vismResPartCtrlrID.setStatus('current')
+ciscoVismRsrcPartMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 351, 150, 93, 2))
+ciscoVismRsrcPartMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 351, 150, 93, 2, 1))
+ciscoVismRsrcPartMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 351, 150, 93, 2, 2))
+ciscoVismRsrcPartCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 351, 150, 93, 2, 2, 1)).setObjects(("CISCO-VISM-RSRC-PART-MIB", "ciscoVismRsrcPartGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoVismRsrcPartCompliance = ciscoVismRsrcPartCompliance.setStatus('current')
+ciscoVismRsrcPartGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 93, 2, 1, 1)).setObjects(("CISCO-VISM-RSRC-PART-MIB", "vismResPartPortNum"), ("CISCO-VISM-RSRC-PART-MIB", "vismResPartCtrlrNum"), ("CISCO-VISM-RSRC-PART-MIB", "vismResPartRowStatus"), ("CISCO-VISM-RSRC-PART-MIB", "vismResPartNumOfLcnAvail"), ("CISCO-VISM-RSRC-PART-MIB", "vismResPartLcnLow"), ("CISCO-VISM-RSRC-PART-MIB", "vismResPartLcnHigh"), ("CISCO-VISM-RSRC-PART-MIB", "vismResPartIngrPctBW"), ("CISCO-VISM-RSRC-PART-MIB", "vismResPartEgrPctBW"), ("CISCO-VISM-RSRC-PART-MIB", "vismResPartCtrlrID"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    ciscoVismRsrcPartGroup = ciscoVismRsrcPartGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-VISM-RSRC-PART-MIB", ciscoVismRsrcPartMIB=ciscoVismRsrcPartMIB, vismResPartIngrPctBW=vismResPartIngrPctBW, PYSNMP_MODULE_ID=ciscoVismRsrcPartMIB, ciscoVismRsrcPartGroup=ciscoVismRsrcPartGroup, vismResPartLcnLow=vismResPartLcnLow, ciscoVismRsrcPartMIBGroups=ciscoVismRsrcPartMIBGroups, vismPortResPartCnfGrp=vismPortResPartCnfGrp, vismResPartCtrlrNum=vismResPartCtrlrNum, vismResPartRowStatus=vismResPartRowStatus, ciscoVismRsrcPartMIBCompliances=ciscoVismRsrcPartMIBCompliances, vismResPartPortNum=vismResPartPortNum, vismResPartCtrlrID=vismResPartCtrlrID, ciscoVismRsrcPartCompliance=ciscoVismRsrcPartCompliance, vismResPartLcnHigh=vismResPartLcnHigh, ciscoVismRsrcPartMIBConformance=ciscoVismRsrcPartMIBConformance, vismPortResPartCnfGrpEntry=vismPortResPartCnfGrpEntry, vismResPartEgrPctBW=vismResPartEgrPctBW, vismResPartNumOfLcnAvail=vismResPartNumOfLcnAvail, vismPortResPartCnfGrpTable=vismPortResPartCnfGrpTable)

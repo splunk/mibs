@@ -1,0 +1,46 @@
+#
+# PySNMP MIB module CISCOSB-LBD-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-LBD-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
+ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+rlLbd = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 127))
+rlLbd.setRevisions(('2007-11-07 00:00',))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    if mibBuilder.loadTexts: rlLbd.setRevisionsDescriptions(('Initial version of this MIB.',))
+if mibBuilder.loadTexts: rlLbd.setLastUpdated('200711070000Z')
+if mibBuilder.loadTexts: rlLbd.setOrganization('Cisco Systems, Inc.')
+if mibBuilder.loadTexts: rlLbd.setContactInfo('Postal: 170 West Tasman Drive\n                       San Jose , CA 95134-1706\n                       USA\n\n                       \n                       Website:  Cisco Small Business Support Community <http://www.cisco.com/go/smallbizsupport>')
+if mibBuilder.loadTexts: rlLbd.setDescription('The private MIB module definition for Loopback Detection MIB.')
+rlLbdEnable = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 127, 1), TruthValue()).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlLbdEnable.setStatus('current')
+if mibBuilder.loadTexts: rlLbdEnable.setDescription('Enable/Disable Loopback Detection in the switch.')
+rlLbdDetectionInterval = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 127, 2), Integer32().subtype(subtypeSpec=ValueRangeConstraint(5, 60))).setUnits('seconds').setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlLbdDetectionInterval.setStatus('current')
+if mibBuilder.loadTexts: rlLbdDetectionInterval.setDescription('The time in seconds that should pass between unicast LBD packets.')
+rlLbdMode = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 127, 3), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5))).clone(namedValues=NamedValues(("source-mac-addr", 1), ("base-mac-addr", 2), ("broadcast-mac-addr", 3), ("predefined-multicast-mac-addr", 4), ("user-defined-mac-addr", 5)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlLbdMode.setStatus('current')
+if mibBuilder.loadTexts: rlLbdMode.setDescription('Loopback detection mode.')
+rlLbdPortTable = MibTable((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 127, 4), )
+if mibBuilder.loadTexts: rlLbdPortTable.setStatus('current')
+if mibBuilder.loadTexts: rlLbdPortTable.setDescription('The table contains Admin configuration and operational status per port.')
+rlLbdPortEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 127, 4, 1), ).setIndexNames((0, "IF-MIB", "ifIndex"))
+if mibBuilder.loadTexts: rlLbdPortEntry.setStatus('current')
+if mibBuilder.loadTexts: rlLbdPortEntry.setDescription('Each entry represent a port.\n             Per port contains LBD Admin configuration (SET) and status (GET),\n             LBD Operational status and LBD Vlan configuration (SET) and status (GET).')
+rlLbdPortAdminStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 127, 4, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("enabled", 1), ("disabled", 2)))).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: rlLbdPortAdminStatus.setStatus('current')
+if mibBuilder.loadTexts: rlLbdPortAdminStatus.setDescription('Enable/Disable Loopback Detection on port')
+rlLbdPortOperStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 127, 4, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("inactive", 1), ("active", 2), ("loopDetected", 3))).clone('inactive')).setMaxAccess("readonly")
+if mibBuilder.loadTexts: rlLbdPortOperStatus.setStatus('current')
+if mibBuilder.loadTexts: rlLbdPortOperStatus.setDescription("Indicates Loopback Detection operational status on port.\n         'inactive' means that the port is not working in loop-detected operational state;\n         'active' means that the port is Up and working in state of loop-detecting;\n         'loop-detected' means that the system has detected loop on the port.")
+mibBuilder.exportSymbols("CISCOSB-LBD-MIB", rlLbdDetectionInterval=rlLbdDetectionInterval, rlLbd=rlLbd, PYSNMP_MODULE_ID=rlLbd, rlLbdPortTable=rlLbdPortTable, rlLbdEnable=rlLbdEnable, rlLbdPortEntry=rlLbdPortEntry, rlLbdPortOperStatus=rlLbdPortOperStatus, rlLbdPortAdminStatus=rlLbdPortAdminStatus, rlLbdMode=rlLbdMode)

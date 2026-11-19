@@ -1,0 +1,73 @@
+{
+  "imports": {
+    "class": "imports",
+    "HILLSTONE-SMI": [
+      "hillstoneIp"
+    ],
+    "SNMPv2-CONF": [
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "OBJECT-TYPE",
+      "MibIdentifier",
+      "Counter32",
+      "TimeTicks",
+      "Integer32",
+      "NOTIFICATION-TYPE",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "Unsigned32",
+      "IpAddress",
+      "Bits",
+      "Gauge32",
+      "Counter64"
+    ],
+    "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
+    ]
+  },
+  "DisplayString": {
+    "name": "DisplayString",
+    "class": "type",
+    "type": {
+      "type": "OCTET STRING",
+      "class": "type"
+    }
+  },
+  "hillstoneIpObjects": {
+    "name": "hillstoneIpObjects",
+    "oid": "1.3.6.1.4.1.28557.2.7.1",
+    "class": "objectidentity"
+  },
+  "hillstoneIpAddressFamily": {
+    "name": "hillstoneIpAddressFamily",
+    "oid": "1.3.6.1.4.1.28557.2.7.1.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "ipv4": 1,
+          "ipv6": 2,
+          "other": 3
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "current"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hillstone/HILLSTONE-IP-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:35:29 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "HILLSTONE-IP-MIB"
+  }
+}

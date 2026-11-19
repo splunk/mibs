@@ -1,0 +1,275 @@
+{
+  "imports": {
+    "class": "imports",
+    "SNMPv2-CONF": [
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
+    ],
+    "SNMPv2-SMI": [
+      "iso",
+      "Integer32",
+      "Unsigned32",
+      "enterprises",
+      "Bits",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "Counter64",
+      "MibIdentifier",
+      "IpAddress",
+      "OBJECT-IDENTITY",
+      "Counter32",
+      "MODULE-IDENTITY",
+      "TimeTicks",
+      "OBJECT-TYPE"
+    ],
+    "SNMPv2-TC": [
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
+    ]
+  },
+  "hp": {
+    "name": "hp",
+    "oid": "1.3.6.1.4.1.11",
+    "class": "objectidentity"
+  },
+  "nm": {
+    "name": "nm",
+    "oid": "1.3.6.1.4.1.11.2",
+    "class": "objectidentity"
+  },
+  "hpnsa": {
+    "name": "hpnsa",
+    "oid": "1.3.6.1.4.1.11.2.23",
+    "class": "objectidentity"
+  },
+  "hpnsaTrapCfg": {
+    "name": "hpnsaTrapCfg",
+    "oid": "1.3.6.1.4.1.11.2.23.13",
+    "class": "objectidentity"
+  },
+  "hpnsaTrapCfgMibRev": {
+    "name": "hpnsaTrapCfgMibRev",
+    "oid": "1.3.6.1.4.1.11.2.23.13.1",
+    "class": "objectidentity"
+  },
+  "hpnsaTrapCfgAgent": {
+    "name": "hpnsaTrapCfgAgent",
+    "oid": "1.3.6.1.4.1.11.2.23.13.2",
+    "class": "objectidentity"
+  },
+  "hpnsaTrapTargetCfg": {
+    "name": "hpnsaTrapTargetCfg",
+    "oid": "1.3.6.1.4.1.11.2.23.13.3",
+    "class": "objectidentity"
+  },
+  "hpnsaTrapCfgMibRevMajor": {
+    "name": "hpnsaTrapCfgMibRevMajor",
+    "oid": "1.3.6.1.4.1.11.2.23.13.1.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 1,
+            "max": 65535
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "hpnsaTrapCfgMibRevMinor": {
+    "name": "hpnsaTrapCfgMibRevMinor",
+    "oid": "1.3.6.1.4.1.11.2.23.13.1.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 65535
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "hpnsaTrapCfgAgentTable": {
+    "name": "hpnsaTrapCfgAgentTable",
+    "oid": "1.3.6.1.4.1.11.2.23.13.2.1",
+    "nodetype": "table",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "status": "mandatory"
+  },
+  "hpnsaTrapCfgAgentEntry": {
+    "name": "hpnsaTrapCfgAgentEntry",
+    "oid": "1.3.6.1.4.1.11.2.23.13.2.1.1",
+    "nodetype": "row",
+    "class": "objecttype",
+    "maxaccess": "not-accessible",
+    "indices": [
+      {
+        "module": "HPNSATRAPCFG-MIB",
+        "object": "hpnsaTrapCfgAgentIndex",
+        "implied": 0
+      }
+    ],
+    "status": "mandatory"
+  },
+  "hpnsaTrapCfgAgentIndex": {
+    "name": "hpnsaTrapCfgAgentIndex",
+    "oid": "1.3.6.1.4.1.11.2.23.13.2.1.1.1",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "range": [
+          {
+            "min": 0,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "hpnsaTrapCfgAgentName": {
+    "name": "hpnsaTrapCfgAgentName",
+    "oid": "1.3.6.1.4.1.11.2.23.13.2.1.1.2",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 255
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "hpnsaTrapCfgAgentVersion": {
+    "name": "hpnsaTrapCfgAgentVersion",
+    "oid": "1.3.6.1.4.1.11.2.23.13.2.1.1.3",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 10
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "hpnsaTrapCfgAgentDate": {
+    "name": "hpnsaTrapCfgAgentDate",
+    "oid": "1.3.6.1.4.1.11.2.23.13.2.1.1.4",
+    "nodetype": "column",
+    "class": "objecttype",
+    "syntax": {
+      "type": "OCTET STRING",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 7,
+            "max": 7
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "hpnsaRemoveTrapTarget": {
+    "name": "hpnsaRemoveTrapTarget",
+    "oid": "1.3.6.1.4.1.11.2.23.13.3.1",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 50
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "mandatory"
+  },
+  "hpnsaAddTrapTarget": {
+    "name": "hpnsaAddTrapTarget",
+    "oid": "1.3.6.1.4.1.11.2.23.13.3.2",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "DisplayString",
+      "class": "type",
+      "constraints": {
+        "size": [
+          {
+            "min": 0,
+            "max": 50
+          }
+        ]
+      }
+    },
+    "maxaccess": "read-write",
+    "status": "mandatory"
+  },
+  "hpnsaRestartSNMP": {
+    "name": "hpnsaRestartSNMP",
+    "oid": "1.3.6.1.4.1.11.2.23.13.3.3",
+    "nodetype": "scalar",
+    "class": "objecttype",
+    "syntax": {
+      "type": "INTEGER",
+      "class": "type",
+      "constraints": {
+        "enumeration": {
+          "noActionNeeded": 1,
+          "restartSNMP": 2
+        }
+      }
+    },
+    "maxaccess": "read-only",
+    "status": "mandatory"
+  },
+  "meta": {
+    "comments": [
+      "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hp/HPNSATRAPCFG-MIB",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:07 2026",
+      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
+      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+    ],
+    "module": "HPNSATRAPCFG-MIB"
+  }
+}

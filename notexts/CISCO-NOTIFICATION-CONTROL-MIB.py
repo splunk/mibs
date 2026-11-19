@@ -1,0 +1,65 @@
+#
+# PySNMP MIB module CISCO-NOTIFICATION-CONTROL-MIB (http://snmplabs.com/pysmi)
+# ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-NOTIFICATION-CONTROL-MIB
+# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
+# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+#
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
+SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
+SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+AutonomousType, StorageType, RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "AutonomousType", "StorageType", "RowStatus", "DisplayString", "TextualConvention")
+ciscoNotificationControlMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 586))
+ciscoNotificationControlMIB.setRevisions(('2009-09-20 00:00', '2006-09-27 00:00',))
+if mibBuilder.loadTexts: ciscoNotificationControlMIB.setLastUpdated('200909200000Z')
+if mibBuilder.loadTexts: ciscoNotificationControlMIB.setOrganization('Cisco Systems, Inc.')
+cNotifCtrlMIBObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 586, 1))
+cNotifCtrlConfig = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1))
+cNotifCtrlMode = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("noControl", 1), ("forcedControl", 2), ("automaticControl", 3))).clone('noControl')).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cNotifCtrlMode.setStatus('current')
+cNotifCtrlCurrentState = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 2), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("controlOn", 1), ("controlOff", 2))).clone('controlOff')).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cNotifCtrlCurrentState.setStatus('current')
+cNotifCtrlThreshold = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 3), Unsigned32().subtype(subtypeSpec=ValueRangeConstraint(1, 4294967295)).clone(50)).setUnits('notifications').setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cNotifCtrlThreshold.setStatus('current')
+cNotifCtrlSamplingInterval = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 4), Unsigned32().subtype(subtypeSpec=ValueRangeConstraint(1, 4294967295)).clone(5)).setUnits('minutes').setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cNotifCtrlSamplingInterval.setStatus('current')
+cNotifCtrlTableSize = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 5), Unsigned32().subtype(subtypeSpec=ValueRangeConstraint(1, 4294967295)).clone(200)).setMaxAccess("readwrite")
+if mibBuilder.loadTexts: cNotifCtrlTableSize.setStatus('current')
+cNotifCtrlIndexNext = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 6), Unsigned32().subtype(subtypeSpec=ValueRangeConstraint(0, 4294967295))).setMaxAccess("readonly")
+if mibBuilder.loadTexts: cNotifCtrlIndexNext.setStatus('current')
+cNotifCtrlTable = MibTable((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 7), )
+if mibBuilder.loadTexts: cNotifCtrlTable.setStatus('current')
+cNotifCtrlEntry = MibTableRow((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 7, 1), ).setIndexNames((0, "CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlIndex"))
+if mibBuilder.loadTexts: cNotifCtrlEntry.setStatus('current')
+cNotifCtrlIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 7, 1, 1), Unsigned32().subtype(subtypeSpec=ValueRangeConstraint(1, 4294967295)))
+if mibBuilder.loadTexts: cNotifCtrlIndex.setStatus('current')
+cNotifCtrlOID = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 7, 1, 2), AutonomousType()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cNotifCtrlOID.setStatus('current')
+cNotifCtrlStorageType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 7, 1, 3), StorageType().clone('nonVolatile')).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cNotifCtrlStorageType.setStatus('current')
+cNotifCtrlRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 7, 1, 4), RowStatus()).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cNotifCtrlRowStatus.setStatus('current')
+cNotifCtrlDescr = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 586, 1, 1, 7, 1, 5), SnmpAdminString().subtype(subtypeSpec=ValueSizeConstraint(0, 255))).setMaxAccess("readcreate")
+if mibBuilder.loadTexts: cNotifCtrlDescr.setStatus('current')
+cNotifCtrlMIBConformance = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 586, 2))
+cNotifCtrlMIBCompliances = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 586, 2, 1))
+cNotifCtrlMIBGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 9, 586, 2, 2))
+cNotifCtrlMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 586, 2, 1, 1)).setObjects(("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlConfigGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cNotifCtrlMIBCompliance = cNotifCtrlMIBCompliance.setStatus('deprecated')
+cNotifCtrlMIBComplianceRev1 = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 586, 2, 1, 2)).setObjects(("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlConfigGroup"), ("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlConfigExtGroup"))
+
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cNotifCtrlMIBComplianceRev1 = cNotifCtrlMIBComplianceRev1.setStatus('current')
+cNotifCtrlConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 586, 2, 2, 1)).setObjects(("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlMode"), ("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlCurrentState"), ("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlThreshold"), ("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlSamplingInterval"), ("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlTableSize"), ("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlIndexNext"), ("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlOID"), ("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlStorageType"), ("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlRowStatus"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cNotifCtrlConfigGroup = cNotifCtrlConfigGroup.setStatus('current')
+cNotifCtrlConfigExtGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 586, 2, 2, 2)).setObjects(("CISCO-NOTIFICATION-CONTROL-MIB", "cNotifCtrlDescr"))
+if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
+    cNotifCtrlConfigExtGroup = cNotifCtrlConfigExtGroup.setStatus('current')
+mibBuilder.exportSymbols("CISCO-NOTIFICATION-CONTROL-MIB", cNotifCtrlTable=cNotifCtrlTable, cNotifCtrlDescr=cNotifCtrlDescr, cNotifCtrlMIBCompliance=cNotifCtrlMIBCompliance, cNotifCtrlMIBComplianceRev1=cNotifCtrlMIBComplianceRev1, cNotifCtrlRowStatus=cNotifCtrlRowStatus, ciscoNotificationControlMIB=ciscoNotificationControlMIB, cNotifCtrlIndex=cNotifCtrlIndex, cNotifCtrlSamplingInterval=cNotifCtrlSamplingInterval, cNotifCtrlEntry=cNotifCtrlEntry, PYSNMP_MODULE_ID=ciscoNotificationControlMIB, cNotifCtrlCurrentState=cNotifCtrlCurrentState, cNotifCtrlConfigExtGroup=cNotifCtrlConfigExtGroup, cNotifCtrlConfigGroup=cNotifCtrlConfigGroup, cNotifCtrlTableSize=cNotifCtrlTableSize, cNotifCtrlStorageType=cNotifCtrlStorageType, cNotifCtrlMode=cNotifCtrlMode, cNotifCtrlMIBGroups=cNotifCtrlMIBGroups, cNotifCtrlMIBObjects=cNotifCtrlMIBObjects, cNotifCtrlOID=cNotifCtrlOID, cNotifCtrlIndexNext=cNotifCtrlIndexNext, cNotifCtrlConfig=cNotifCtrlConfig, cNotifCtrlMIBCompliances=cNotifCtrlMIBCompliances, cNotifCtrlMIBConformance=cNotifCtrlMIBConformance, cNotifCtrlThreshold=cNotifCtrlThreshold)
