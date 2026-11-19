@@ -5,26 +5,26 @@
       "ifIndex"
     ],
     "SNMPv2-CONF": [
-      "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "IpAddress",
-      "Integer32",
-      "enterprises",
       "TimeTicks",
-      "iso",
+      "enterprises",
+      "Unsigned32",
       "Bits",
-      "Counter64",
+      "TRAP-TYPE",
+      "Integer32",
       "Counter32",
       "OBJECT-IDENTITY",
-      "TRAP-TYPE",
-      "Unsigned32",
-      "Gauge32",
+      "IpAddress",
       "OBJECT-TYPE",
+      "iso",
       "MODULE-IDENTITY",
-      "MibIdentifier",
-      "NOTIFICATION-TYPE"
+      "NOTIFICATION-TYPE",
+      "Counter64",
+      "Gauge32",
+      "MibIdentifier"
     ],
     "SNMPv2-TC": [
       "TEXTUAL-CONVENTION",
@@ -7313,7 +7313,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/radwin/RADWIN-MIB-WINLINK1000",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:39:20 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:39:37 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

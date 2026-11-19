@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-FLOW-MONITOR-TC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-FLOW-MONITOR-TC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoFlowMonitorTcMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 688))
 ciscoFlowMonitorTcMIB.setRevisions(('2008-12-09 00:00',))
@@ -134,4 +134,4 @@ class FlowSetIdentifier(TextualConvention, Unsigned32):
     displayHint = 'd'
     subtypeSpec = Unsigned32.subtypeSpec + ValueRangeConstraint(1, 4294967295)
 
-mibBuilder.exportSymbols("CISCO-FLOW-MONITOR-TC-MIB", FlowMetrics=FlowMetrics, FlowPointInterface=FlowPointInterface, FlowMonitorConditionsProfile=FlowMonitorConditionsProfile, FlowPointType=FlowPointType, FlowMonitorConditions=FlowMonitorConditions, FlowPointIdentifier=FlowPointIdentifier, FlowMonitorConditionsProfileOrZero=FlowMonitorConditionsProfileOrZero, FlowBitRateUnits=FlowBitRateUnits, FlowMonitorAlarmGroupIdentifier=FlowMonitorAlarmGroupIdentifier, FlowMetricValue=FlowMetricValue, FlowMetricScale=FlowMetricScale, FlowPointDot1qVlan=FlowPointDot1qVlan, ciscoFlowMonitorTcMIB=ciscoFlowMonitorTcMIB, FlowMetricPrecision=FlowMetricPrecision, FlowSetIdentifier=FlowSetIdentifier, FlowMonitorIdentifier=FlowMonitorIdentifier, PYSNMP_MODULE_ID=ciscoFlowMonitorTcMIB, FlowIdentifier=FlowIdentifier, FlowCfgRateType=FlowCfgRateType, FlowMonitorConditionIdentifier=FlowMonitorConditionIdentifier)
+mibBuilder.exportSymbols("CISCO-FLOW-MONITOR-TC-MIB", FlowSetIdentifier=FlowSetIdentifier, FlowPointDot1qVlan=FlowPointDot1qVlan, FlowMetricPrecision=FlowMetricPrecision, FlowMonitorIdentifier=FlowMonitorIdentifier, FlowIdentifier=FlowIdentifier, FlowPointType=FlowPointType, FlowMetrics=FlowMetrics, FlowMonitorConditionIdentifier=FlowMonitorConditionIdentifier, FlowBitRateUnits=FlowBitRateUnits, FlowMonitorConditionsProfileOrZero=FlowMonitorConditionsProfileOrZero, FlowCfgRateType=FlowCfgRateType, FlowMetricValue=FlowMetricValue, FlowMonitorAlarmGroupIdentifier=FlowMonitorAlarmGroupIdentifier, PYSNMP_MODULE_ID=ciscoFlowMonitorTcMIB, FlowPointIdentifier=FlowPointIdentifier, ciscoFlowMonitorTcMIB=ciscoFlowMonitorTcMIB, FlowMonitorConditions=FlowMonitorConditions, FlowMonitorConditionsProfile=FlowMonitorConditionsProfile, FlowPointInterface=FlowPointInterface, FlowMetricScale=FlowMetricScale)

@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module NBS-META-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/mrv/NBS-META-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:37:33 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:20 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion", "ValueSizeConstraint", "SingleValueConstraint")
+SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
 nbs, = mibBuilder.importSymbols("NBS-MIB", "nbs")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, iso, Gauge32, Counter64, Bits, ObjectIdentity, Integer32, MibIdentifier, NotificationType, Counter32, ModuleIdentity, TimeTicks, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "iso", "Gauge32", "Counter64", "Bits", "ObjectIdentity", "Integer32", "MibIdentifier", "NotificationType", "Counter32", "ModuleIdentity", "TimeTicks", "IpAddress")
-TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+iso, MibIdentifier, Integer32, ModuleIdentity, Counter64, Unsigned32, ObjectIdentity, Counter32, Bits, Gauge32, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "iso", "MibIdentifier", "Integer32", "ModuleIdentity", "Counter64", "Unsigned32", "ObjectIdentity", "Counter32", "Bits", "Gauge32", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "IpAddress", "TimeTicks")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 nbsMetaMib = ModuleIdentity((1, 3, 6, 1, 4, 1, 629, 205))
 if mibBuilder.loadTexts: nbsMetaMib.setLastUpdated('201209260000Z')
 if mibBuilder.loadTexts: nbsMetaMib.setOrganization('NBS')
@@ -81,4 +81,4 @@ if mibBuilder.loadTexts: nbsMetaMibVariableAdmin.setDescription('Administrative 
 nbsMetaMibVariableStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 629, 205, 1, 4, 1, 8), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 128))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: nbsMetaMibVariableStatus.setStatus('current')
 if mibBuilder.loadTexts: nbsMetaMibVariableStatus.setDescription('Messages relating to this variable')
-mibBuilder.exportSymbols("NBS-META-MIB", PYSNMP_MODULE_ID=nbsMetaMib, nbsMetaMibVariableDefault=nbsMetaMibVariableDefault, nbsMetaMibFeatureUnits=nbsMetaMibFeatureUnits, nbsMetaMibVariableStatus=nbsMetaMibVariableStatus, nbsMetaMibVariableCaps=nbsMetaMibVariableCaps, nbsMetaMibFeatureDesc=nbsMetaMibFeatureDesc, nbsMetaMibFeatureFamily=nbsMetaMibFeatureFamily, nbsMetaMib=nbsMetaMib, nbsMetaMibVariableAdmin=nbsMetaMibVariableAdmin, nbsMetaMibFeatureTable=nbsMetaMibFeatureTable, nbsMetaMibVariableEntry=nbsMetaMibVariableEntry, nbsMetaMibVariableOper=nbsMetaMibVariableOper, nbsMetaMibVariableIfIndex=nbsMetaMibVariableIfIndex, nbsMetaMibGrp=nbsMetaMibGrp, nbsMetaMibVariableTable=nbsMetaMibVariableTable, nbsMetaMibFeatureType=nbsMetaMibFeatureType, nbsMetaMibVariableJumper=nbsMetaMibVariableJumper, nbsMetaMibVariableTableSize=nbsMetaMibVariableTableSize, nbsMetaMibFeatureTableSize=nbsMetaMibFeatureTableSize, nbsMetaMibFeatureName=nbsMetaMibFeatureName, nbsMetaMibVariableID=nbsMetaMibVariableID, nbsMetaMibFeatureEntry=nbsMetaMibFeatureEntry, nbsMetaMibFeatureID=nbsMetaMibFeatureID)
+mibBuilder.exportSymbols("NBS-META-MIB", nbsMetaMibVariableDefault=nbsMetaMibVariableDefault, nbsMetaMibFeatureFamily=nbsMetaMibFeatureFamily, nbsMetaMibVariableAdmin=nbsMetaMibVariableAdmin, PYSNMP_MODULE_ID=nbsMetaMib, nbsMetaMibFeatureTable=nbsMetaMibFeatureTable, nbsMetaMibFeatureTableSize=nbsMetaMibFeatureTableSize, nbsMetaMibFeatureDesc=nbsMetaMibFeatureDesc, nbsMetaMibVariableOper=nbsMetaMibVariableOper, nbsMetaMibFeatureType=nbsMetaMibFeatureType, nbsMetaMibFeatureEntry=nbsMetaMibFeatureEntry, nbsMetaMibFeatureUnits=nbsMetaMibFeatureUnits, nbsMetaMibVariableJumper=nbsMetaMibVariableJumper, nbsMetaMib=nbsMetaMib, nbsMetaMibVariableTable=nbsMetaMibVariableTable, nbsMetaMibFeatureID=nbsMetaMibFeatureID, nbsMetaMibVariableTableSize=nbsMetaMibVariableTableSize, nbsMetaMibFeatureName=nbsMetaMibFeatureName, nbsMetaMibVariableStatus=nbsMetaMibVariableStatus, nbsMetaMibVariableID=nbsMetaMibVariableID, nbsMetaMibGrp=nbsMetaMibGrp, nbsMetaMibVariableIfIndex=nbsMetaMibVariableIfIndex, nbsMetaMibVariableEntry=nbsMetaMibVariableEntry, nbsMetaMibVariableCaps=nbsMetaMibVariableCaps)

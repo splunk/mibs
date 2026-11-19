@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-VOA-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VOA-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 OpticalIfDirection, = mibBuilder.importSymbols("CISCO-OPTICAL-MONITOR-MIB", "OpticalIfDirection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-DisplayString, TextualConvention, TimeStamp = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TimeStamp")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+TimeStamp, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "DisplayString", "TextualConvention")
 ciscoVoaMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 262))
 ciscoVoaMIB.setRevisions(('2002-05-07 00:00',))
 
@@ -67,4 +67,4 @@ cVoaMIBBaseGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 262, 3, 2, 1)).setObject
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cVoaMIBBaseGroup = cVoaMIBBaseGroup.setStatus('current')
 if mibBuilder.loadTexts: cVoaMIBBaseGroup.setDescription('A collection of mandatory managed objects that provide basic\n        configuration and control of the VOA modules.')
-mibBuilder.exportSymbols("CISCO-VOA-MIB", cVoaMIBGroups=cVoaMIBGroups, OpticalAttenInDb=OpticalAttenInDb, cVoaMIBConformance=cVoaMIBConformance, cVoaAttenuationControlMode=cVoaAttenuationControlMode, cVoaMIBBaseGroup=cVoaMIBBaseGroup, OpticalPowerInDbm=OpticalPowerInDbm, ciscoVoaMIB=ciscoVoaMIB, cVoaDirection=cVoaDirection, cVoaMIBCompliance=cVoaMIBCompliance, cVoaEntry=cVoaEntry, cVoaMIBCompliances=cVoaMIBCompliances, cVoaAttenuation=cVoaAttenuation, cVoaMIBObjects=cVoaMIBObjects, cVoaBaseGroup=cVoaBaseGroup, cVoaAttenuationLastChange=cVoaAttenuationLastChange, PYSNMP_MODULE_ID=ciscoVoaMIB, cVoaDesiredPower=cVoaDesiredPower, cVoaTable=cVoaTable)
+mibBuilder.exportSymbols("CISCO-VOA-MIB", OpticalAttenInDb=OpticalAttenInDb, OpticalPowerInDbm=OpticalPowerInDbm, cVoaMIBObjects=cVoaMIBObjects, cVoaTable=cVoaTable, cVoaAttenuation=cVoaAttenuation, cVoaMIBBaseGroup=cVoaMIBBaseGroup, PYSNMP_MODULE_ID=ciscoVoaMIB, cVoaEntry=cVoaEntry, cVoaDirection=cVoaDirection, cVoaDesiredPower=cVoaDesiredPower, cVoaMIBCompliances=cVoaMIBCompliances, cVoaMIBCompliance=cVoaMIBCompliance, cVoaBaseGroup=cVoaBaseGroup, cVoaAttenuationLastChange=cVoaAttenuationLastChange, cVoaMIBConformance=cVoaMIBConformance, cVoaMIBGroups=cVoaMIBGroups, cVoaAttenuationControlMode=cVoaAttenuationControlMode, ciscoVoaMIB=ciscoVoaMIB)

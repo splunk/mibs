@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-TBRIDGE-DEV-IF-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-TBRIDGE-DEV-IF-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-TextualConvention, DisplayString, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "MacAddress")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+MacAddress, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "MacAddress", "TextualConvention", "DisplayString")
 ciscoTBridgeDevIfMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 269))
 ciscoTBridgeDevIfMIB.setRevisions(('2002-04-03 00:01',))
 if mibBuilder.loadTexts: ciscoTBridgeDevIfMIB.setLastUpdated('200204030001Z')
@@ -56,4 +56,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ctbrDevIfConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 269, 2, 2, 1)).setObjects(("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrDefaultPhyAddress"), ("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrPhyAddress"), ("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrDefaultIpAddrType"), ("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrDefaultIpAddress"), ("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrDefaultIpMaskType"), ("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrDefaultIpMask"), ("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrIpAddressType"), ("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrIpAddress"), ("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrIpMaskType"), ("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrIpMask"), ("CISCO-TBRIDGE-DEV-IF-MIB", "ctbrMSDUMaxLength"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ctbrDevIfConfigGroup = ctbrDevIfConfigGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-TBRIDGE-DEV-IF-MIB", ctbrDefaultPhyAddress=ctbrDefaultPhyAddress, ctbrDevInterface=ctbrDevInterface, ciscoTBridgeDevIfMIBGroups=ciscoTBridgeDevIfMIBGroups, ctbrIpAddressType=ctbrIpAddressType, ctbrDevInterfaceEntry=ctbrDevInterfaceEntry, ctbrIpMask=ctbrIpMask, ctbrIpAddress=ctbrIpAddress, PYSNMP_MODULE_ID=ciscoTBridgeDevIfMIB, ctbrDefaultIpMask=ctbrDefaultIpMask, ctbrIpMaskType=ctbrIpMaskType, ciscoTBridgeDevIfMIBCompliances=ciscoTBridgeDevIfMIBCompliances, ciscoTBridgeDevIfMIBConformance=ciscoTBridgeDevIfMIBConformance, ctbrDefaultIpAddrType=ctbrDefaultIpAddrType, ctbrPhyAddress=ctbrPhyAddress, ctbrMSDUMaxLength=ctbrMSDUMaxLength, ctbrDevInterfaceTable=ctbrDevInterfaceTable, ciscoTBridgeDevIfMIB=ciscoTBridgeDevIfMIB, ciscoTBridgeDevIfMIBObjects=ciscoTBridgeDevIfMIBObjects, ctbrDefaultIpAddress=ctbrDefaultIpAddress, ctbrDefaultIpMaskType=ctbrDefaultIpMaskType, ciscoTBridgeDevIfCompliance=ciscoTBridgeDevIfCompliance, ctbrDevIfConfigGroup=ctbrDevIfConfigGroup)
+mibBuilder.exportSymbols("CISCO-TBRIDGE-DEV-IF-MIB", PYSNMP_MODULE_ID=ciscoTBridgeDevIfMIB, ctbrIpAddressType=ctbrIpAddressType, ctbrDefaultIpMask=ctbrDefaultIpMask, ciscoTBridgeDevIfMIBGroups=ciscoTBridgeDevIfMIBGroups, ctbrDevInterfaceTable=ctbrDevInterfaceTable, ciscoTBridgeDevIfCompliance=ciscoTBridgeDevIfCompliance, ctbrDevInterface=ctbrDevInterface, ctbrPhyAddress=ctbrPhyAddress, ctbrDefaultIpMaskType=ctbrDefaultIpMaskType, ctbrIpMaskType=ctbrIpMaskType, ctbrDevInterfaceEntry=ctbrDevInterfaceEntry, ctbrIpAddress=ctbrIpAddress, ctbrIpMask=ctbrIpMask, ciscoTBridgeDevIfMIBObjects=ciscoTBridgeDevIfMIBObjects, ctbrDefaultIpAddrType=ctbrDefaultIpAddrType, ctbrDevIfConfigGroup=ctbrDevIfConfigGroup, ctbrDefaultIpAddress=ctbrDefaultIpAddress, ciscoTBridgeDevIfMIBCompliances=ciscoTBridgeDevIfMIBCompliances, ciscoTBridgeDevIfMIBConformance=ciscoTBridgeDevIfMIBConformance, ctbrMSDUMaxLength=ctbrMSDUMaxLength, ctbrDefaultPhyAddress=ctbrDefaultPhyAddress, ciscoTBridgeDevIfMIB=ciscoTBridgeDevIfMIB)

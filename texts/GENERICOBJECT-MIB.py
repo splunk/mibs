@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module GENERICOBJECT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/output/asn1/GENERICOBJECT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:08 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 cardGeneric, = mibBuilder.importSymbols("BASIS-MIB", "cardGeneric")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, NotificationType, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "NotificationType", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 genericObjects = MibIdentifier((1, 3, 6, 1, 4, 1, 351, 110, 2, 8))
 genericLineNum = MibScalar((1, 3, 6, 1, 4, 1, 351, 110, 2, 8, 1), Integer32()).setMaxAccess("readonly")
@@ -22,4 +22,4 @@ if mibBuilder.loadTexts: genericLineType.setDescription('This is the generic lin
 genericTimeStamp = MibScalar((1, 3, 6, 1, 4, 1, 351, 110, 2, 8, 3), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(1, 30))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: genericTimeStamp.setStatus('mandatory')
 if mibBuilder.loadTexts: genericTimeStamp.setDescription('This is the generic time stamp used in traps. This object\n         cannot be set or read. This object will be used by all new\n         traps to tell the time that a given trap was originated.\n        ')
-mibBuilder.exportSymbols("GENERICOBJECT-MIB", genericObjects=genericObjects, genericLineNum=genericLineNum, genericLineType=genericLineType, genericTimeStamp=genericTimeStamp)
+mibBuilder.exportSymbols("GENERICOBJECT-MIB", genericObjects=genericObjects, genericLineType=genericLineType, genericTimeStamp=genericTimeStamp, genericLineNum=genericLineNum)

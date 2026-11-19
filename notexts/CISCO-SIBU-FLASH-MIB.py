@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-SIBU-FLASH-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SIBU-FLASH-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoSibuFlashMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 45))
 ciscoSibuFlashMIB.setRevisions(('1998-10-23 00:00',))
@@ -44,4 +44,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoSibuFlashMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 45, 3, 2, 1)).setObjects(("CISCO-SIBU-FLASH-MIB", "csfUpgradeFirmwareVersion"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeFlashSize"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeTFTPServerAddress"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeTFTPLoadFilename"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeTFTPInitiate"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeFlashMode"), ("CISCO-SIBU-FLASH-MIB", "csfUpgradeFirmwareStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoSibuFlashMIBGroup = ciscoSibuFlashMIBGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-SIBU-FLASH-MIB", ciscoSibuFlashMIBCompliances=ciscoSibuFlashMIBCompliances, ciscoSibuFlashMIBNotifications=ciscoSibuFlashMIBNotifications, csfUpgradeFirmwareVersion=csfUpgradeFirmwareVersion, csfUpgradeFlashSize=csfUpgradeFlashSize, csfUpgrade=csfUpgrade, csfUpgradeTFTPInitiate=csfUpgradeTFTPInitiate, ciscoSibuFlashMIBGroups=ciscoSibuFlashMIBGroups, csfUpgradeTFTPLoadFilename=csfUpgradeTFTPLoadFilename, csfUpgradeTFTPServerAddress=csfUpgradeTFTPServerAddress, csfUpgradeFlashMode=csfUpgradeFlashMode, ciscoSibuFlashMIBComformance=ciscoSibuFlashMIBComformance, ciscoSibuFlashMIBNotificationsPrefix=ciscoSibuFlashMIBNotificationsPrefix, csfUpgradeFirmwareStatus=csfUpgradeFirmwareStatus, ciscoSibuFlashMIBGroup=ciscoSibuFlashMIBGroup, ciscoSibuFlashMIBObjects=ciscoSibuFlashMIBObjects, ciscoSibuFlashCompliance=ciscoSibuFlashCompliance, PYSNMP_MODULE_ID=ciscoSibuFlashMIB, ciscoSibuFlashMIB=ciscoSibuFlashMIB)
+mibBuilder.exportSymbols("CISCO-SIBU-FLASH-MIB", ciscoSibuFlashMIB=ciscoSibuFlashMIB, ciscoSibuFlashMIBObjects=ciscoSibuFlashMIBObjects, PYSNMP_MODULE_ID=ciscoSibuFlashMIB, ciscoSibuFlashMIBGroup=ciscoSibuFlashMIBGroup, ciscoSibuFlashMIBComformance=ciscoSibuFlashMIBComformance, csfUpgrade=csfUpgrade, ciscoSibuFlashMIBCompliances=ciscoSibuFlashMIBCompliances, ciscoSibuFlashMIBNotificationsPrefix=ciscoSibuFlashMIBNotificationsPrefix, ciscoSibuFlashCompliance=ciscoSibuFlashCompliance, csfUpgradeTFTPInitiate=csfUpgradeTFTPInitiate, ciscoSibuFlashMIBNotifications=ciscoSibuFlashMIBNotifications, csfUpgradeFirmwareVersion=csfUpgradeFirmwareVersion, csfUpgradeFlashSize=csfUpgradeFlashSize, ciscoSibuFlashMIBGroups=ciscoSibuFlashMIBGroups, csfUpgradeTFTPLoadFilename=csfUpgradeTFTPLoadFilename, csfUpgradeTFTPServerAddress=csfUpgradeTFTPServerAddress, csfUpgradeFlashMode=csfUpgradeFlashMode, csfUpgradeFirmwareStatus=csfUpgradeFirmwareStatus)

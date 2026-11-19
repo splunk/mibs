@@ -6,22 +6,22 @@
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "IpAddress",
-      "Unsigned32",
-      "TimeTicks",
-      "OBJECT-IDENTITY",
-      "Integer32",
-      "MODULE-IDENTITY",
-      "Bits",
-      "Counter32",
-      "enterprises",
-      "Counter64",
+      "iso",
       "Gauge32",
       "MibIdentifier",
+      "MODULE-IDENTITY",
+      "Bits",
       "NOTIFICATION-TYPE",
-      "OBJECT-TYPE",
+      "Unsigned32",
+      "IpAddress",
+      "Integer32",
+      "Counter64",
+      "OBJECT-IDENTITY",
+      "TimeTicks",
       "TRAP-TYPE",
-      "iso"
+      "enterprises",
+      "OBJECT-TYPE",
+      "Counter32"
     ],
     "SNMPv2-TC": [
       "TEXTUAL-CONVENTION",
@@ -2566,7 +2566,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/akcp/HHMSAGENT-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:30:20 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:33:19 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

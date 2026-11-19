@@ -6,26 +6,26 @@
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "Counter64",
-      "enterprises",
-      "OBJECT-TYPE",
-      "Bits",
-      "IpAddress",
-      "TRAP-TYPE",
-      "TimeTicks",
-      "OBJECT-IDENTITY",
-      "Counter32",
-      "Unsigned32",
-      "iso",
-      "MibIdentifier",
-      "Gauge32",
       "Integer32",
+      "Counter32",
+      "OBJECT-IDENTITY",
+      "enterprises",
+      "Gauge32",
+      "Counter64",
+      "MibIdentifier",
+      "TimeTicks",
+      "Unsigned32",
       "MODULE-IDENTITY",
-      "NOTIFICATION-TYPE"
+      "Bits",
+      "TRAP-TYPE",
+      "OBJECT-TYPE",
+      "IpAddress",
+      "NOTIFICATION-TYPE",
+      "iso"
     ],
     "SNMPv2-TC": [
-      "DisplayString",
-      "TEXTUAL-CONVENTION"
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
     ]
   },
   "ictPower": {
@@ -163,7 +163,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ict/ICT-DIGITAL-SERIES-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:17 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:37:29 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

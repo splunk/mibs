@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ZONE-DEFENSE-MGMT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/ZONE-DEFENSE-MGMT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:48 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
 dlink_common_mgmt, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlink-common-mgmt")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Integer32, Counter32, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, Gauge32, IpAddress, ModuleIdentity, Bits, ObjectIdentity, iso, NotificationType, MibIdentifier, Unsigned32 = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Counter32", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "Gauge32", "IpAddress", "ModuleIdentity", "Bits", "ObjectIdentity", "iso", "NotificationType", "MibIdentifier", "Unsigned32")
-RowStatus, MacAddress, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "MacAddress", "DisplayString", "TextualConvention")
+Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, Bits, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "Bits", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
+TextualConvention, DisplayString, RowStatus, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "RowStatus", "MacAddress")
 swZoneDefenseMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 12, 92))
 if mibBuilder.loadTexts: swZoneDefenseMIB.setLastUpdated('201308220000Z')
 if mibBuilder.loadTexts: swZoneDefenseMIB.setOrganization('D-Link Corp.')
@@ -66,4 +66,4 @@ if mibBuilder.loadTexts: swZoneDefenseIpRemains.setDescription('The remaining en
 swZoneDefenseMacRemains = MibScalar((1, 3, 6, 1, 4, 1, 171, 12, 92, 1, 6), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: swZoneDefenseMacRemains.setStatus('current')
 if mibBuilder.loadTexts: swZoneDefenseMacRemains.setDescription('The remaining entries that can be used by swZoneDefenseMacTable.\n             It always returns -1 when swZoneDefenseStatus is disabled.')
-mibBuilder.exportSymbols("ZONE-DEFENSE-MGMT-MIB", swZoneDefenseMacTable=swZoneDefenseMacTable, swZoneDefenseDstPort=swZoneDefenseDstPort, swZoneDefenseProtocol=swZoneDefenseProtocol, swZoneDefenseMacRowStatus=swZoneDefenseMacRowStatus, swZoneDefenseRemains=swZoneDefenseRemains, swZoneDefenseMIB=swZoneDefenseMIB, PYSNMP_MODULE_ID=swZoneDefenseMIB, swZoneDefenseMacEntry=swZoneDefenseMacEntry, swZoneDefenseMacDstPort=swZoneDefenseMacDstPort, swZoneDefenseEntry=swZoneDefenseEntry, swZoneDefenseMacAddress=swZoneDefenseMacAddress, swZoneDefenseMIBObjects=swZoneDefenseMIBObjects, swZoneDefenseTable=swZoneDefenseTable, swZoneDefenseRowStatus=swZoneDefenseRowStatus, swZoneDefenseMacRemains=swZoneDefenseMacRemains, swZoneDefenseStatus=swZoneDefenseStatus, swZoneDefenseMacProtocol=swZoneDefenseMacProtocol, swZoneDefenseAddress=swZoneDefenseAddress, swZoneDefenseIpRemains=swZoneDefenseIpRemains)
+mibBuilder.exportSymbols("ZONE-DEFENSE-MGMT-MIB", swZoneDefenseMacTable=swZoneDefenseMacTable, swZoneDefenseAddress=swZoneDefenseAddress, swZoneDefenseRowStatus=swZoneDefenseRowStatus, swZoneDefenseEntry=swZoneDefenseEntry, swZoneDefenseMIB=swZoneDefenseMIB, swZoneDefenseRemains=swZoneDefenseRemains, swZoneDefenseStatus=swZoneDefenseStatus, swZoneDefenseMacRemains=swZoneDefenseMacRemains, swZoneDefenseMIBObjects=swZoneDefenseMIBObjects, swZoneDefenseMacProtocol=swZoneDefenseMacProtocol, swZoneDefenseMacAddress=swZoneDefenseMacAddress, swZoneDefenseIpRemains=swZoneDefenseIpRemains, swZoneDefenseProtocol=swZoneDefenseProtocol, swZoneDefenseTable=swZoneDefenseTable, swZoneDefenseMacDstPort=swZoneDefenseMacDstPort, PYSNMP_MODULE_ID=swZoneDefenseMIB, swZoneDefenseMacEntry=swZoneDefenseMacEntry, swZoneDefenseMacRowStatus=swZoneDefenseMacRowStatus, swZoneDefenseDstPort=swZoneDefenseDstPort)

@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-SLB-DFP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SLB-DFP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 EntPhysicalIndexOrZero, = mibBuilder.importSymbols("CISCO-TC", "EntPhysicalIndexOrZero")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoSlbDfpMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 689))
 ciscoSlbDfpMIB.setRevisions(('2009-01-29 00:00',))
@@ -81,4 +81,4 @@ cslbcSlbDfpCongestionGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 689, 2, 
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cslbcSlbDfpCongestionGroup = cslbcSlbDfpCongestionGroup.setStatus('current')
 if mibBuilder.loadTexts: cslbcSlbDfpCongestionGroup.setDescription('This groutp represents the group of notifications on Home\n        Agent.')
-mibBuilder.exportSymbols("CISCO-SLB-DFP-MIB", ciscoSlbDfpMIBNotifs=ciscoSlbDfpMIBNotifs, ciscoSlbDfpMIBCompliance=ciscoSlbDfpMIBCompliance, cslbcSlbDfpCongestionGroup=cslbcSlbDfpCongestionGroup, ciscoSlbDfpMIB=ciscoSlbDfpMIB, PYSNMP_MODULE_ID=ciscoSlbDfpMIB, ciscoSlbDfpInstanceGroup=ciscoSlbDfpInstanceGroup, cslbcProcessorDfpValEntry=cslbcProcessorDfpValEntry, cslbcDfpCongestionOnsetThreshold=cslbcDfpCongestionOnsetThreshold, cslbcDfpCongestionThresholdType=cslbcDfpCongestionThresholdType, CslbcDfpValue=CslbcDfpValue, cslbcProcessorDfpValPhysicalIndex=cslbcProcessorDfpValPhysicalIndex, cslbcSlbDfpCongestionOnset=cslbcSlbDfpCongestionOnset, ciscoSlbDfpMIBConform=ciscoSlbDfpMIBConform, cslbcProcessorDfpValDfpValue=cslbcProcessorDfpValDfpValue, cslbcProcessorDfpValDescription=cslbcProcessorDfpValDescription, cslbcSlbDfpScalarsGroup=cslbcSlbDfpScalarsGroup, ciscoSlbDfpMIBCompliances=ciscoSlbDfpMIBCompliances, cslbcSlbDfpCongestionAbate=cslbcSlbDfpCongestionAbate, ciscoSlbDfpMIBGroups=ciscoSlbDfpMIBGroups, ciscoSlbDfpMIBObjects=ciscoSlbDfpMIBObjects, cslbcProcessorDfpValTable=cslbcProcessorDfpValTable, cslbcDfpCongestionAbateThreshold=cslbcDfpCongestionAbateThreshold)
+mibBuilder.exportSymbols("CISCO-SLB-DFP-MIB", cslbcSlbDfpScalarsGroup=cslbcSlbDfpScalarsGroup, ciscoSlbDfpInstanceGroup=ciscoSlbDfpInstanceGroup, ciscoSlbDfpMIBObjects=ciscoSlbDfpMIBObjects, ciscoSlbDfpMIB=ciscoSlbDfpMIB, ciscoSlbDfpMIBNotifs=ciscoSlbDfpMIBNotifs, cslbcDfpCongestionThresholdType=cslbcDfpCongestionThresholdType, cslbcProcessorDfpValDfpValue=cslbcProcessorDfpValDfpValue, cslbcProcessorDfpValDescription=cslbcProcessorDfpValDescription, cslbcSlbDfpCongestionAbate=cslbcSlbDfpCongestionAbate, ciscoSlbDfpMIBConform=ciscoSlbDfpMIBConform, cslbcDfpCongestionOnsetThreshold=cslbcDfpCongestionOnsetThreshold, ciscoSlbDfpMIBCompliances=ciscoSlbDfpMIBCompliances, cslbcProcessorDfpValPhysicalIndex=cslbcProcessorDfpValPhysicalIndex, CslbcDfpValue=CslbcDfpValue, PYSNMP_MODULE_ID=ciscoSlbDfpMIB, cslbcProcessorDfpValTable=cslbcProcessorDfpValTable, cslbcProcessorDfpValEntry=cslbcProcessorDfpValEntry, cslbcSlbDfpCongestionOnset=cslbcSlbDfpCongestionOnset, ciscoSlbDfpMIBGroups=ciscoSlbDfpMIBGroups, ciscoSlbDfpMIBCompliance=ciscoSlbDfpMIBCompliance, cslbcSlbDfpCongestionGroup=cslbcSlbDfpCongestionGroup, cslbcDfpCongestionAbateThreshold=cslbcDfpCongestionAbateThreshold)

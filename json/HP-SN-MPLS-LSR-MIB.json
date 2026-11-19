@@ -2,12 +2,12 @@
   "imports": {
     "class": "imports",
     "HP-SN-MPLS-TC-MIB": [
-      "mplsMIB",
+      "MplsBurstSize",
+      "MplsInitialCreationSource",
       "MplsLSPID",
       "MplsLabel",
-      "MplsBitRate",
-      "MplsInitialCreationSource",
-      "MplsBurstSize"
+      "mplsMIB",
+      "MplsBitRate"
     ],
     "HP-SN-ROOT-MIB": [
       "snMpls"
@@ -25,34 +25,34 @@
       "InetAddressIPv6"
     ],
     "SNMPv2-CONF": [
-      "OBJECT-GROUP",
+      "MODULE-COMPLIANCE",
       "NOTIFICATION-GROUP",
-      "MODULE-COMPLIANCE"
+      "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
-      "iso",
-      "Integer32",
-      "Unsigned32",
+      "MibIdentifier",
       "Bits",
+      "iso",
+      "Unsigned32",
+      "Integer32",
+      "TimeTicks",
       "NOTIFICATION-TYPE",
       "Gauge32",
       "Counter64",
-      "MibIdentifier",
-      "IpAddress",
       "OBJECT-IDENTITY",
-      "Counter32",
+      "IpAddress",
       "MODULE-IDENTITY",
-      "TimeTicks",
+      "Counter32",
       "OBJECT-TYPE"
     ],
     "SNMPv2-TC": [
-      "StorageType",
-      "RowStatus",
-      "TEXTUAL-CONVENTION",
-      "RowPointer",
-      "TruthValue",
       "TimeStamp",
-      "DisplayString"
+      "TruthValue",
+      "RowPointer",
+      "DisplayString",
+      "TEXTUAL-CONVENTION",
+      "RowStatus",
+      "StorageType"
     ]
   },
   "mplsLsrMIB": {
@@ -1832,7 +1832,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hp/HP-SN-MPLS-LSR-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:08 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:37:22 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module LENOVO-PRODUCTS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/lenovo/LENOVO-PRODUCTS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:37:12 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:05 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueSizeConstraint, ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsUnion")
-lenovoProducts, lenovoModules = mibBuilder.importSymbols("LENOVO-SMI-MIB", "lenovoProducts", "lenovoModules")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Counter32, Integer32, NotificationType, ObjectIdentity, Gauge32, iso, TimeTicks, MibIdentifier, Bits, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Gauge32", "iso", "TimeTicks", "MibIdentifier", "Bits", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "IpAddress")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint")
+lenovoModules, lenovoProducts = mibBuilder.importSymbols("LENOVO-SMI-MIB", "lenovoModules", "lenovoProducts")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+Unsigned32, Counter32, Bits, TimeTicks, Gauge32, Counter64, MibIdentifier, NotificationType, Integer32, iso, ObjectIdentity, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "Counter32", "Bits", "TimeTicks", "Gauge32", "Counter64", "MibIdentifier", "NotificationType", "Integer32", "iso", "ObjectIdentity", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 lenovoProductsMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 19046, 4, 1))
 lenovoProductsMIB.setRevisions(('2016-04-20 00:00', '2017-05-01 00:00', '2017-05-02 00:00',))
 if mibBuilder.loadTexts: lenovoProductsMIB.setLastUpdated('201705010000Z')
@@ -39,4 +39,4 @@ ce0152t = MibIdentifier((1, 3, 6, 1, 4, 1, 19046, 1, 7, 39))
 ne1072tv2 = MibIdentifier((1, 3, 6, 1, 4, 1, 19046, 1, 7, 40))
 ne2572 = MibIdentifier((1, 3, 6, 1, 4, 1, 19046, 1, 7, 41))
 ne0152t = MibIdentifier((1, 3, 6, 1, 4, 1, 19046, 1, 7, 42))
-mibBuilder.exportSymbols("LENOVO-PRODUCTS-MIB", si4091=si4091, ne10032=ne10032, ne1072t=ne1072t, g8272=g8272, ce0152t=ce0152t, lenovoServerProducts=lenovoServerProducts, ce0128t=ce0128t, g8332_cnos=g8332_cnos, lenovoProductsMIB=lenovoProductsMIB, ne1072tv2=ne1072tv2, ne2572=ne2572, flex=flex, PYSNMP_MODULE_ID=lenovoProductsMIB, ne0152t=ne0152t, g8296=g8296, g8272_cnos=g8272_cnos, ce0128p=ce0128p, ne1032=ne1032, g8296_cnos=g8296_cnos, ne1072=ne1072, ne1032t=ne1032t, tor=tor)
+mibBuilder.exportSymbols("LENOVO-PRODUCTS-MIB", si4091=si4091, g8272_cnos=g8272_cnos, ne2572=ne2572, g8332_cnos=g8332_cnos, ce0152t=ce0152t, lenovoProductsMIB=lenovoProductsMIB, g8296_cnos=g8296_cnos, ce0128t=ce0128t, ne1072=ne1072, ne1072t=ne1072t, lenovoServerProducts=lenovoServerProducts, g8272=g8272, ce0128p=ce0128p, PYSNMP_MODULE_ID=lenovoProductsMIB, tor=tor, g8296=g8296, flex=flex, ne1072tv2=ne1072tv2, ne0152t=ne0152t, ne1032=ne1032, ne10032=ne10032, ne1032t=ne1032t)

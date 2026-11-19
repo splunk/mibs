@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-CIPLAN-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-CIPLAN-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, MacAddress, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "MacAddress", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+TextualConvention, DisplayString, RowStatus, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "RowStatus", "MacAddress")
 ciscoCipLanMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 34))
 ciscoCipLanMIB.setRevisions(('1998-01-06 00:00', '1995-04-28 00:00',))
 
@@ -88,4 +88,4 @@ ciscoLanAdaptGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 34, 2, 2, 2)).setObjec
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoLanAdaptGroup = ciscoLanAdaptGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoLanAdaptGroup.setDescription('A collection of objects providing CMCC\n     LAN Adapter Administration.')
-mibBuilder.exportSymbols("CISCO-CIPLAN-MIB", cipCardLanAdminSrbTargetRing=cipCardLanAdminSrbTargetRing, cipLan=cipLan, ciscoCipLanMibGroups=ciscoCipLanMibGroups, ciscoCipLanMibCompliance=ciscoCipLanMibCompliance, ciscoLanGroup=ciscoLanGroup, cipCardLanAdaptAdminAdaptNo=cipCardLanAdaptAdminAdaptNo, cipCardLanAdminSrbBridgeNum=cipCardLanAdminSrbBridgeNum, cipCardLanAdminSrbLocalRing=cipCardLanAdminSrbLocalRing, cipCardLanAdaptAdminEntry=cipCardLanAdaptAdminEntry, ciscoCipLanMibConformance=ciscoCipLanMibConformance, cipCardLanAdminLanType=cipCardLanAdminLanType, PYSNMP_MODULE_ID=ciscoCipLanMIB, cipCardLanAdaptAdminTable=cipCardLanAdaptAdminTable, ciscoCipLanMibCompliances=ciscoCipLanMibCompliances, cipCardLanAdminEntry=cipCardLanAdminEntry, cipCardLanAdminLanId=cipCardLanAdminLanId, ciscoCipLanMIB=ciscoCipLanMIB, cipCardLanAdminTbBridgeGrp=cipCardLanAdminTbBridgeGrp, cipCardLanAdaptAdminMacAddress=cipCardLanAdaptAdminMacAddress, cipLanObjects=cipLanObjects, cipCardLanAdminBridgeType=cipCardLanAdminBridgeType, ciscoLanAdaptGroup=ciscoLanAdaptGroup, cipCardLanAdminRowStatus=cipCardLanAdminRowStatus, cipCardLanAdminTable=cipCardLanAdminTable, cipCardLanAdaptAdminAdaptName=cipCardLanAdaptAdminAdaptName, cipCardLanAdaptAdminRowStatus=cipCardLanAdaptAdminRowStatus)
+mibBuilder.exportSymbols("CISCO-CIPLAN-MIB", cipCardLanAdminTable=cipCardLanAdminTable, cipCardLanAdminSrbTargetRing=cipCardLanAdminSrbTargetRing, cipLan=cipLan, ciscoLanAdaptGroup=ciscoLanAdaptGroup, ciscoCipLanMibCompliance=ciscoCipLanMibCompliance, cipCardLanAdminTbBridgeGrp=cipCardLanAdminTbBridgeGrp, cipCardLanAdminSrbBridgeNum=cipCardLanAdminSrbBridgeNum, cipCardLanAdminBridgeType=cipCardLanAdminBridgeType, cipCardLanAdminLanId=cipCardLanAdminLanId, PYSNMP_MODULE_ID=ciscoCipLanMIB, cipCardLanAdaptAdminTable=cipCardLanAdaptAdminTable, cipCardLanAdminLanType=cipCardLanAdminLanType, ciscoCipLanMibGroups=ciscoCipLanMibGroups, cipCardLanAdaptAdminAdaptNo=cipCardLanAdaptAdminAdaptNo, ciscoCipLanMibCompliances=ciscoCipLanMibCompliances, cipCardLanAdminRowStatus=cipCardLanAdminRowStatus, ciscoCipLanMibConformance=ciscoCipLanMibConformance, cipCardLanAdaptAdminRowStatus=cipCardLanAdaptAdminRowStatus, cipLanObjects=cipLanObjects, ciscoCipLanMIB=ciscoCipLanMIB, cipCardLanAdaptAdminAdaptName=cipCardLanAdaptAdminAdaptName, ciscoLanGroup=ciscoLanGroup, cipCardLanAdaptAdminEntry=cipCardLanAdaptAdminEntry, cipCardLanAdminSrbLocalRing=cipCardLanAdminSrbLocalRing, cipCardLanAdminEntry=cipCardLanAdminEntry, cipCardLanAdaptAdminMacAddress=cipCardLanAdaptAdminMacAddress)

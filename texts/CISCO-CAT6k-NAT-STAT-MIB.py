@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-CAT6k-NAT-STAT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-CAT6k-NAT-STAT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoCat6kNatStatMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 861))
 ciscoCat6kNatStatMIB.setRevisions(('2019-06-11 00:00',))
@@ -77,4 +77,4 @@ if mibBuilder.loadTexts: ciscoCat6kNatTotalEntryCount.setDescription('This objec
 ciscoCat6kNatResourceUtilization = MibScalar((1, 3, 6, 1, 4, 1, 9, 9, 861, 1, 2, 8), OctetString()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: ciscoCat6kNatResourceUtilization.setStatus('current')
 if mibBuilder.loadTexts: ciscoCat6kNatResourceUtilization.setDescription('Total system resource used by the system')
-mibBuilder.exportSymbols("CISCO-CAT6k-NAT-STAT-MIB", ciscoCat6kNatStatMIBGroups=ciscoCat6kNatStatMIBGroups, ciscoCat6kNatStatMIBConformance=ciscoCat6kNatStatMIBConformance, ciscoCat6kNatStatMIBComplianceVer1=ciscoCat6kNatStatMIBComplianceVer1, ciscoCat6kNatStatGroup=ciscoCat6kNatStatGroup, ciscoCat6kNatStatMIB=ciscoCat6kNatStatMIB, ciscoCat6kNatDynamicEntryUtilization=ciscoCat6kNatDynamicEntryUtilization, ciscoCat6kNatStatMIBCompliances=ciscoCat6kNatStatMIBCompliances, ciscoCat6kNatFlowRecord=ciscoCat6kNatFlowRecord, NatType=NatType, NetFlowType=NetFlowType, ciscoCat6kNatStatus=ciscoCat6kNatStatus, NatBool=NatBool, ciscoCat6kNatResourceUtilization=ciscoCat6kNatResourceUtilization, ciscoCat6kNatType=ciscoCat6kNatType, ciscoCat6kNatTotalEntryCount=ciscoCat6kNatTotalEntryCount, ciscoCat6kNatStaticEntryUtilization=ciscoCat6kNatStaticEntryUtilization, ciscoCat6kNatStatMIBObjects=ciscoCat6kNatStatMIBObjects, ciscoCat6kNatOtherEntryUtilization=ciscoCat6kNatOtherEntryUtilization, PYSNMP_MODULE_ID=ciscoCat6kNatStatMIB, ciscoCat6kNatNetFlowType=ciscoCat6kNatNetFlowType)
+mibBuilder.exportSymbols("CISCO-CAT6k-NAT-STAT-MIB", ciscoCat6kNatFlowRecord=ciscoCat6kNatFlowRecord, NatType=NatType, PYSNMP_MODULE_ID=ciscoCat6kNatStatMIB, ciscoCat6kNatStatMIBObjects=ciscoCat6kNatStatMIBObjects, ciscoCat6kNatStatMIB=ciscoCat6kNatStatMIB, ciscoCat6kNatStatMIBComplianceVer1=ciscoCat6kNatStatMIBComplianceVer1, ciscoCat6kNatTotalEntryCount=ciscoCat6kNatTotalEntryCount, ciscoCat6kNatStatMIBGroups=ciscoCat6kNatStatMIBGroups, ciscoCat6kNatNetFlowType=ciscoCat6kNatNetFlowType, ciscoCat6kNatStatMIBConformance=ciscoCat6kNatStatMIBConformance, ciscoCat6kNatOtherEntryUtilization=ciscoCat6kNatOtherEntryUtilization, ciscoCat6kNatResourceUtilization=ciscoCat6kNatResourceUtilization, ciscoCat6kNatStatGroup=ciscoCat6kNatStatGroup, NetFlowType=NetFlowType, ciscoCat6kNatStatus=ciscoCat6kNatStatus, NatBool=NatBool, ciscoCat6kNatStaticEntryUtilization=ciscoCat6kNatStaticEntryUtilization, ciscoCat6kNatDynamicEntryUtilization=ciscoCat6kNatDynamicEntryUtilization, ciscoCat6kNatStatMIBCompliances=ciscoCat6kNatStatMIBCompliances, ciscoCat6kNatType=ciscoCat6kNatType)

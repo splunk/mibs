@@ -2,8 +2,8 @@
   "imports": {
     "class": "imports",
     "ALCATEL-IND1-BASE": [
-      "hardentIND1Physical",
-      "hardentIND1Chassis"
+      "hardentIND1Chassis",
+      "hardentIND1Physical"
     ],
     "ENTITY-MIB": [
       "entPhysicalIndex",
@@ -13,31 +13,31 @@
       "SnmpAdminString"
     ],
     "SNMPv2-CONF": [
-      "MODULE-COMPLIANCE",
       "NOTIFICATION-GROUP",
-      "OBJECT-GROUP"
+      "OBJECT-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "iso",
-      "TimeTicks",
-      "Counter64",
-      "OBJECT-IDENTITY",
+      "Integer32",
       "Bits",
-      "MibIdentifier",
       "OBJECT-TYPE",
-      "Gauge32",
-      "MODULE-IDENTITY",
-      "Counter32",
       "IpAddress",
-      "Unsigned32",
+      "Gauge32",
+      "Counter64",
+      "iso",
+      "OBJECT-IDENTITY",
       "NOTIFICATION-TYPE",
-      "Integer32"
+      "MibIdentifier",
+      "Unsigned32",
+      "Counter32",
+      "TimeTicks",
+      "MODULE-IDENTITY"
     ],
     "SNMPv2-TC": [
-      "TruthValue",
-      "DisplayString",
       "TEXTUAL-CONVENTION",
-      "MacAddress"
+      "TruthValue",
+      "MacAddress",
+      "DisplayString"
     ]
   },
   "alcatelIND1ChassisMIB": {
@@ -5106,7 +5106,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/nokia/ALCATEL-IND1-CHASSIS-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:38:18 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:38:54 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

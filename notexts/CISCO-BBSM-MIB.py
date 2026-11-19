@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-BBSM-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-BBSM-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-DateAndTime, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Counter64, MibIdentifier, NotificationType, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Counter64", "MibIdentifier", "NotificationType", "iso", "Unsigned32", "Counter32")
+DisplayString, DateAndTime, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "DateAndTime", "TextualConvention")
 ciscoBbsmMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 358))
 ciscoBbsmMIB.setRevisions(('2004-04-03 00:00',))
 if mibBuilder.loadTexts: ciscoBbsmMIB.setLastUpdated('200404030000Z')
@@ -45,4 +45,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoBbsmMIBNotificationGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 358, 2, 2, 2)).setObjects(("CISCO-BBSM-MIB", "ciscoBbsmEvent"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoBbsmMIBNotificationGroup = ciscoBbsmMIBNotificationGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-BBSM-MIB", cbbsmEventDescription=cbbsmEventDescription, ciscoBbsmEventInfo=ciscoBbsmEventInfo, cbbsmEventSource=cbbsmEventSource, cbbsmEventTime=cbbsmEventTime, ciscoBbsmMIBConformance=ciscoBbsmMIBConformance, ciscoBbsmMIBCompliances=ciscoBbsmMIBCompliances, ciscoBbsmMIBNotificationGroup=ciscoBbsmMIBNotificationGroup, ciscoBbsmEvent=ciscoBbsmEvent, ciscoBbsmMIBGroup=ciscoBbsmMIBGroup, ciscoBbsmMIB=ciscoBbsmMIB, ciscoBbsmMIBObjects=ciscoBbsmMIBObjects, PYSNMP_MODULE_ID=ciscoBbsmMIB, ciscoBbsmNotifications=ciscoBbsmNotifications, cbbsmEventID=cbbsmEventID, ciscoBbsmMIBCompliance=ciscoBbsmMIBCompliance, cbbsmEventType=cbbsmEventType, ciscoBbsmMIBGroups=ciscoBbsmMIBGroups)
+mibBuilder.exportSymbols("CISCO-BBSM-MIB", PYSNMP_MODULE_ID=ciscoBbsmMIB, cbbsmEventSource=cbbsmEventSource, cbbsmEventType=cbbsmEventType, ciscoBbsmMIBGroups=ciscoBbsmMIBGroups, ciscoBbsmMIBNotificationGroup=ciscoBbsmMIBNotificationGroup, cbbsmEventID=cbbsmEventID, ciscoBbsmMIBObjects=ciscoBbsmMIBObjects, ciscoBbsmMIBCompliances=ciscoBbsmMIBCompliances, cbbsmEventTime=cbbsmEventTime, ciscoBbsmMIBGroup=ciscoBbsmMIBGroup, ciscoBbsmMIB=ciscoBbsmMIB, ciscoBbsmMIBCompliance=ciscoBbsmMIBCompliance, ciscoBbsmEventInfo=ciscoBbsmEventInfo, cbbsmEventDescription=cbbsmEventDescription, ciscoBbsmEvent=ciscoBbsmEvent, ciscoBbsmMIBConformance=ciscoBbsmMIBConformance, ciscoBbsmNotifications=ciscoBbsmNotifications)

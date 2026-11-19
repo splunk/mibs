@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module DLINKSW-STP-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-STP-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:46 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint")
+SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 IEEE8021MstIdentifier, IEEE8021BridgePortNumber = mibBuilder.importSymbols("IEEE8021-TC-MIB", "IEEE8021MstIdentifier", "IEEE8021BridgePortNumber")
-ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, iso, TimeTicks, ModuleIdentity, NotificationType, Unsigned32, ObjectIdentity, MibIdentifier, Gauge32, Counter32, Counter64, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "iso", "TimeTicks", "ModuleIdentity", "NotificationType", "Unsigned32", "ObjectIdentity", "MibIdentifier", "Gauge32", "Counter32", "Counter64", "IpAddress")
-TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
+NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
+Counter32, Counter64, IpAddress, ModuleIdentity, Unsigned32, Gauge32, Bits, iso, ObjectIdentity, Integer32, NotificationType, MibIdentifier, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Counter64", "IpAddress", "ModuleIdentity", "Unsigned32", "Gauge32", "Bits", "iso", "ObjectIdentity", "Integer32", "NotificationType", "MibIdentifier", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
+DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
 dlinkSwStpExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 15))
 dlinkSwStpExtMIB.setRevisions(('2013-03-27 00:00',))
 if mibBuilder.loadTexts: dlinkSwStpExtMIB.setLastUpdated('201303270000Z')
@@ -66,4 +66,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 dStpExtServiceProviderCfgGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 15, 2, 1, 2, 3)).setObjects(("DLINKSW-STP-EXT-MIB", "dStpExtStpNniBpduAddress"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dStpExtServiceProviderCfgGroup = dStpExtServiceProviderCfgGroup.setStatus('current')
-mibBuilder.exportSymbols("DLINKSW-STP-EXT-MIB", dStpExtPortForwardBpduEnabled=dStpExtPortForwardBpduEnabled, dStpExtNotificationEnable=dStpExtNotificationEnable, dStpExtMIBCompliances=dStpExtMIBCompliances, dStpExtPortEntry=dStpExtPortEntry, dStpExtMstpPortMstId=dStpExtMstpPortMstId, dStpExtServiceProviderCfgGroup=dStpExtServiceProviderCfgGroup, dStpExtMstpPortTable=dStpExtMstpPortTable, dStpExtMIBNotifications=dStpExtMIBNotifications, dStpExtCompliance=dStpExtCompliance, dStpExtPortTable=dStpExtPortTable, dStpExtMstpMgmt=dStpExtMstpMgmt, dStpExtMstpPortNum=dStpExtMstpPortNum, dStpExtStpNniBpduAddress=dStpExtStpNniBpduAddress, dStpExtMstpPortEntry=dStpExtMstpPortEntry, dStpExtGroups=dStpExtGroups, dStpExtGblMgmt=dStpExtGblMgmt, dStpExtPortMgmt=dStpExtPortMgmt, dStpExtMstpGroup=dStpExtMstpGroup, dStpExtBasicGroup=dStpExtBasicGroup, dStpExtPortAdminHelloTime=dStpExtPortAdminHelloTime, dStpExtMIBConformance=dStpExtMIBConformance, dStpExtPortNumber=dStpExtPortNumber, dStpExtMstpPortRole=dStpExtMstpPortRole, dStpExtMIBObjects=dStpExtMIBObjects, dStpExtStpGblStateEnabled=dStpExtStpGblStateEnabled, PYSNMP_MODULE_ID=dlinkSwStpExtMIB, dlinkSwStpExtMIB=dlinkSwStpExtMIB, dStpExtPortState=dStpExtPortState)
+mibBuilder.exportSymbols("DLINKSW-STP-EXT-MIB", dStpExtStpGblStateEnabled=dStpExtStpGblStateEnabled, dStpExtMIBCompliances=dStpExtMIBCompliances, dStpExtPortMgmt=dStpExtPortMgmt, dStpExtPortEntry=dStpExtPortEntry, dStpExtPortAdminHelloTime=dStpExtPortAdminHelloTime, dStpExtServiceProviderCfgGroup=dStpExtServiceProviderCfgGroup, dStpExtNotificationEnable=dStpExtNotificationEnable, dStpExtPortState=dStpExtPortState, PYSNMP_MODULE_ID=dlinkSwStpExtMIB, dlinkSwStpExtMIB=dlinkSwStpExtMIB, dStpExtMIBNotifications=dStpExtMIBNotifications, dStpExtMstpPortRole=dStpExtMstpPortRole, dStpExtGroups=dStpExtGroups, dStpExtMstpPortMstId=dStpExtMstpPortMstId, dStpExtMstpGroup=dStpExtMstpGroup, dStpExtMIBObjects=dStpExtMIBObjects, dStpExtMIBConformance=dStpExtMIBConformance, dStpExtMstpPortEntry=dStpExtMstpPortEntry, dStpExtPortNumber=dStpExtPortNumber, dStpExtCompliance=dStpExtCompliance, dStpExtMstpPortTable=dStpExtMstpPortTable, dStpExtGblMgmt=dStpExtGblMgmt, dStpExtMstpMgmt=dStpExtMstpMgmt, dStpExtMstpPortNum=dStpExtMstpPortNum, dStpExtPortTable=dStpExtPortTable, dStpExtStpNniBpduAddress=dStpExtStpNniBpduAddress, dStpExtPortForwardBpduEnabled=dStpExtPortForwardBpduEnabled, dStpExtBasicGroup=dStpExtBasicGroup)

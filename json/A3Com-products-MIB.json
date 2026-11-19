@@ -2,29 +2,29 @@
   "imports": {
     "class": "imports",
     "SNMPv2-CONF": [
-      "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "IpAddress",
-      "Bits",
-      "MibIdentifier",
-      "MODULE-IDENTITY",
-      "Counter64",
-      "OBJECT-TYPE",
-      "OBJECT-IDENTITY",
-      "Gauge32",
       "TimeTicks",
-      "iso",
       "Counter32",
-      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "IpAddress",
+      "Counter64",
+      "Unsigned32",
+      "MibIdentifier",
       "Integer32",
       "enterprises",
-      "Unsigned32"
+      "OBJECT-TYPE",
+      "Bits",
+      "iso",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY"
     ],
     "SNMPv2-TC": [
-      "TEXTUAL-CONVENTION",
-      "DisplayString"
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
     ]
   },
   "a3Com": {
@@ -6750,7 +6750,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/3com/A3Com-products-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:30:02 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:33:06 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

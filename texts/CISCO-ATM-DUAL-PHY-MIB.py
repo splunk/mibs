@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-ATM-DUAL-PHY-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ATM-DUAL-PHY-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 InterfaceIndexOrZero, = mibBuilder.importSymbols("CISCO-TC", "InterfaceIndexOrZero")
-InterfaceIndex, ifIndex = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex", "ifIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+ifIndex, InterfaceIndex = mibBuilder.importSymbols("IF-MIB", "ifIndex", "InterfaceIndex")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoAtmDualPhyMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 60))
 if mibBuilder.loadTexts: ciscoAtmDualPhyMIB.setLastUpdated('9608300000Z')
 if mibBuilder.loadTexts: ciscoAtmDualPhyMIB.setOrganization('Cisco Systems, Inc.')
@@ -80,4 +80,4 @@ ciscoAtmDualPhyMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 60, 3, 2, 1)).set
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoAtmDualPhyMIBGroup = ciscoAtmDualPhyMIBGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoAtmDualPhyMIBGroup.setDescription('A collection of objects providing ATM dual phy monitoring.')
-mibBuilder.exportSymbols("CISCO-ATM-DUAL-PHY-MIB", cadpStatOperActivePhy=cadpStatOperActivePhy, ciscoAtmDualPhyMIBCompliance=ciscoAtmDualPhyMIBCompliance, cadpStatPathFEBErrors=cadpStatPathFEBErrors, ciscoAtmDualPhyChange=ciscoAtmDualPhyChange, cadpStatSectionBIP8Errors=cadpStatSectionBIP8Errors, cadpStatFarEndReceiveFailure=cadpStatFarEndReceiveFailure, cadpStatLineBIP824Errors=cadpStatLineBIP824Errors, ciscoAtmDualPhyMIBTraps=ciscoAtmDualPhyMIBTraps, ciscoAtmDualPhyMIBGroups=ciscoAtmDualPhyMIBGroups, ciscoAtmDualPhyMIB=ciscoAtmDualPhyMIB, cadpStatEntry=cadpStatEntry, cadpStatCorrectableHCSErrors=cadpStatCorrectableHCSErrors, cadpStatUncorrectableHCSErrors=cadpStatUncorrectableHCSErrors, ciscoAtmDualPhyMIBConformance=ciscoAtmDualPhyMIBConformance, ciscoAtmDualPhyMIBGroup=ciscoAtmDualPhyMIBGroup, cadpStatTable=cadpStatTable, PYSNMP_MODULE_ID=ciscoAtmDualPhyMIB, cadpStatPathBIP8Errors=cadpStatPathBIP8Errors, ciscoAtmDualPhyMIBObjects=ciscoAtmDualPhyMIBObjects, cadpStatActive=cadpStatActive, cadpStatLossOfSignal=cadpStatLossOfSignal, cadpStatAdminActivePhy=cadpStatAdminActivePhy, ciscoAtmDualPhyMIBTrapPrefix=ciscoAtmDualPhyMIBTrapPrefix, ciscoAtmDualPhyMIBCompliances=ciscoAtmDualPhyMIBCompliances, cadpStatistics=cadpStatistics, cadpStatLineFEBErrors=cadpStatLineFEBErrors)
+mibBuilder.exportSymbols("CISCO-ATM-DUAL-PHY-MIB", ciscoAtmDualPhyMIBGroups=ciscoAtmDualPhyMIBGroups, ciscoAtmDualPhyMIBObjects=ciscoAtmDualPhyMIBObjects, cadpStatSectionBIP8Errors=cadpStatSectionBIP8Errors, cadpStatPathFEBErrors=cadpStatPathFEBErrors, cadpStatLineBIP824Errors=cadpStatLineBIP824Errors, cadpStatActive=cadpStatActive, PYSNMP_MODULE_ID=ciscoAtmDualPhyMIB, ciscoAtmDualPhyMIBTraps=ciscoAtmDualPhyMIBTraps, cadpStatEntry=cadpStatEntry, ciscoAtmDualPhyMIBCompliances=ciscoAtmDualPhyMIBCompliances, cadpStatOperActivePhy=cadpStatOperActivePhy, cadpStatistics=cadpStatistics, cadpStatUncorrectableHCSErrors=cadpStatUncorrectableHCSErrors, cadpStatLineFEBErrors=cadpStatLineFEBErrors, cadpStatLossOfSignal=cadpStatLossOfSignal, ciscoAtmDualPhyMIBTrapPrefix=ciscoAtmDualPhyMIBTrapPrefix, cadpStatTable=cadpStatTable, ciscoAtmDualPhyMIB=ciscoAtmDualPhyMIB, cadpStatFarEndReceiveFailure=cadpStatFarEndReceiveFailure, cadpStatAdminActivePhy=cadpStatAdminActivePhy, ciscoAtmDualPhyMIBConformance=ciscoAtmDualPhyMIBConformance, cadpStatCorrectableHCSErrors=cadpStatCorrectableHCSErrors, ciscoAtmDualPhyChange=ciscoAtmDualPhyChange, cadpStatPathBIP8Errors=cadpStatPathBIP8Errors, ciscoAtmDualPhyMIBCompliance=ciscoAtmDualPhyMIBCompliance, ciscoAtmDualPhyMIBGroup=ciscoAtmDualPhyMIBGroup)

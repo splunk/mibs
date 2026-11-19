@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module BASIS-RAS-DISK-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/BASIS-RAS-DISK-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 axisDiagnostics, = mibBuilder.importSymbols("BASIS-MIB", "axisDiagnostics")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, NotificationType, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "NotificationType", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 rasDsk = MibIdentifier((1, 3, 6, 1, 4, 1, 351, 110, 6, 2))
 rasDskStatus = MibScalar((1, 3, 6, 1, 4, 1, 351, 110, 6, 2, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("enable", 1), ("disable", 2))).clone('disable')).setMaxAccess("readwrite")
@@ -37,4 +37,4 @@ if mibBuilder.loadTexts: crptdPRIfiles.setDescription('Indicates the Number of S
 crptdFWfiles = MibScalar((1, 3, 6, 1, 4, 1, 351, 110, 6, 2, 8), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: crptdFWfiles.setStatus('mandatory')
 if mibBuilder.loadTexts: crptdFWfiles.setDescription('Indicates the Number of FirmWare files, corrupted.\n                ')
-mibBuilder.exportSymbols("BASIS-RAS-DISK-MIB", crptdPRIfiles=crptdPRIfiles, lastTime=lastTime, standbyDskHealth=standbyDskHealth, dskHealth=dskHealth, wakeupInterval=wakeupInterval, rasDskStatus=rasDskStatus, crptdFWfiles=crptdFWfiles, numBadSectors=numBadSectors, rasDsk=rasDsk)
+mibBuilder.exportSymbols("BASIS-RAS-DISK-MIB", rasDskStatus=rasDskStatus, crptdPRIfiles=crptdPRIfiles, wakeupInterval=wakeupInterval, dskHealth=dskHealth, lastTime=lastTime, numBadSectors=numBadSectors, crptdFWfiles=crptdFWfiles, standbyDskHealth=standbyDskHealth, rasDsk=rasDsk)

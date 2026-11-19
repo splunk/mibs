@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ALPHA-CONVERTER-SYS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/alpha/ALPHA-CONVERTER-SYS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:39 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:31 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 ScaledNumber, simple = mibBuilder.importSymbols("ALPHA-RESOURCE-MIB", "ScaledNumber", "simple")
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint")
-ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
-Unsigned32, MibIdentifier, Counter32, Bits, ObjectIdentity, Integer32, Counter64, IpAddress, ModuleIdentity, iso, Gauge32, NotificationType, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "MibIdentifier", "Counter32", "Bits", "ObjectIdentity", "Integer32", "Counter64", "IpAddress", "ModuleIdentity", "iso", "Gauge32", "NotificationType", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
-TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint", "SingleValueConstraint")
+NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
+ObjectIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, Unsigned32, IpAddress, MibIdentifier, ModuleIdentity, Bits, NotificationType, Gauge32, Counter64, TimeTicks, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ObjectIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "Unsigned32", "IpAddress", "MibIdentifier", "ModuleIdentity", "Bits", "NotificationType", "Gauge32", "Counter64", "TimeTicks", "iso")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 converterSystem = ModuleIdentity((1, 3, 6, 1, 4, 1, 7309, 5, 3, 2))
 converterSystem.setRevisions(('2015-07-28 00:00', '2015-07-23 00:00', '2015-06-23 00:00',))
 
@@ -60,4 +60,4 @@ converterGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 7309, 5, 3, 2, 100, 2, 1)).setOb
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     converterGroup = converterGroup.setStatus('current')
 if mibBuilder.loadTexts: converterGroup.setDescription('Alpha converter System data list group.')
-mibBuilder.exportSymbols("ALPHA-CONVERTER-SYS-MIB", converterGroup=converterGroup, compliances=compliances, convSysAverageConverterInputVoltage=convSysAverageConverterInputVoltage, compliance=compliance, converterGroups=converterGroups, convSysSystemVoltage=convSysSystemVoltage, convSysAverageConverterOutputVoltage=convSysAverageConverterOutputVoltage, convSysTotalCapacityInstalledAmps=convSysTotalCapacityInstalledAmps, convSysSystemNumber=convSysSystemNumber, converterSystem=converterSystem, convSysTotalLoadCurrent=convSysTotalLoadCurrent, conformance=conformance, convSysTotalCapacityInstalledPower=convSysTotalCapacityInstalledPower, PYSNMP_MODULE_ID=converterSystem, convSysTotalOutputCurrent=convSysTotalOutputCurrent, convSysTotalOutputPower=convSysTotalOutputPower)
+mibBuilder.exportSymbols("ALPHA-CONVERTER-SYS-MIB", convSysTotalCapacityInstalledPower=convSysTotalCapacityInstalledPower, PYSNMP_MODULE_ID=converterSystem, convSysTotalCapacityInstalledAmps=convSysTotalCapacityInstalledAmps, convSysTotalOutputCurrent=convSysTotalOutputCurrent, convSysAverageConverterInputVoltage=convSysAverageConverterInputVoltage, compliance=compliance, convSysTotalLoadCurrent=convSysTotalLoadCurrent, convSysTotalOutputPower=convSysTotalOutputPower, convSysSystemVoltage=convSysSystemVoltage, conformance=conformance, converterGroups=converterGroups, compliances=compliances, convSysAverageConverterOutputVoltage=convSysAverageConverterOutputVoltage, convSysSystemNumber=convSysSystemNumber, converterSystem=converterSystem, converterGroup=converterGroup)

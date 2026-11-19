@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ACOS-VCSVBLADES-STAT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/a10/ACOS-VCSVBLADES-STAT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:09 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 acosSchema, = mibBuilder.importSymbols("A10-AX-MIB", "acosSchema")
 OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 InetAddressType, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Gauge32, MibIdentifier, IpAddress, ObjectIdentity, Counter32, Bits, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, iso, TimeTicks, Unsigned32, NotificationType, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "MibIdentifier", "IpAddress", "ObjectIdentity", "Counter32", "Bits", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "iso", "TimeTicks", "Unsigned32", "NotificationType", "Counter64")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+ModuleIdentity, iso, Counter64, NotificationType, TimeTicks, Bits, Unsigned32, MibIdentifier, Integer32, Counter32, ObjectIdentity, IpAddress, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "iso", "Counter64", "NotificationType", "TimeTicks", "Bits", "Unsigned32", "MibIdentifier", "Integer32", "Counter32", "ObjectIdentity", "IpAddress", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
 TextualConvention, DisplayString, PhysAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "PhysAddress")
 vcsVbladesStatModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 497))
 if mibBuilder.loadTexts: vcsVbladesStatModule.setLastUpdated('200705071327Z')
@@ -73,4 +73,4 @@ if mibBuilder.loadTexts: statStatsSlaveCfgUpdNotifErr.setDescription('slave_cfg_
 statStatsSlaveCfgUpdResultErr = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 497, 1, 1, 1, 16), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: statStatsSlaveCfgUpdResultErr.setStatus('current')
 if mibBuilder.loadTexts: statStatsSlaveCfgUpdResultErr.setDescription('slave_cfg_upd_result_err')
-mibBuilder.exportSymbols("ACOS-VCSVBLADES-STAT-MIB", statStatsSlaveCfgUpd=statStatsSlaveCfgUpd, statStatsTable=statStatsTable, statStatsSlaveCfgUpdL1Fail=statStatsSlaveCfgUpdL1Fail, statStatsSlaveRecvErr=statStatsSlaveRecvErr, PYSNMP_MODULE_ID=vcsVbladesStatModule, statStatsSlaveKeepalive=statStatsSlaveKeepalive, statStatsEntry=statStatsEntry, statStatsSlaveSendErr=statStatsSlaveSendErr, statStatsSlaveRecvBytes=statStatsSlaveRecvBytes, statStatsSlaveNSent=statStatsSlaveNSent, statStatsSlaveCfgUpdRFail=statStatsSlaveCfgUpdRFail, stat=stat, statStatsSlotId=statStatsSlotId, statStatsSlaveMsgInval=statStatsSlaveMsgInval, statStatsVbladeId=statStatsVbladeId, statStatsSlaveNRecv=statStatsSlaveNRecv, vcsVbladesStatModule=vcsVbladesStatModule, statStatsSlaveSentBytes=statStatsSlaveSentBytes, statStatsSlaveCfgUpdResultErr=statStatsSlaveCfgUpdResultErr, statStatsSlaveCfgUpdL2Fail=statStatsSlaveCfgUpdL2Fail, statStatsSlaveCfgUpdNotifErr=statStatsSlaveCfgUpdNotifErr)
+mibBuilder.exportSymbols("ACOS-VCSVBLADES-STAT-MIB", statStatsSlaveCfgUpdL1Fail=statStatsSlaveCfgUpdL1Fail, vcsVbladesStatModule=vcsVbladesStatModule, statStatsVbladeId=statStatsVbladeId, statStatsSlaveCfgUpdRFail=statStatsSlaveCfgUpdRFail, statStatsSlaveCfgUpd=statStatsSlaveCfgUpd, statStatsSlaveCfgUpdResultErr=statStatsSlaveCfgUpdResultErr, PYSNMP_MODULE_ID=vcsVbladesStatModule, statStatsSlaveRecvBytes=statStatsSlaveRecvBytes, statStatsSlaveMsgInval=statStatsSlaveMsgInval, statStatsSlaveNRecv=statStatsSlaveNRecv, statStatsSlotId=statStatsSlotId, statStatsSlaveCfgUpdNotifErr=statStatsSlaveCfgUpdNotifErr, statStatsSlaveCfgUpdL2Fail=statStatsSlaveCfgUpdL2Fail, statStatsEntry=statStatsEntry, statStatsSlaveSentBytes=statStatsSlaveSentBytes, statStatsTable=statStatsTable, stat=stat, statStatsSlaveKeepalive=statStatsSlaveKeepalive, statStatsSlaveRecvErr=statStatsSlaveRecvErr, statStatsSlaveNSent=statStatsSlaveNSent, statStatsSlaveSendErr=statStatsSlaveSendErr)

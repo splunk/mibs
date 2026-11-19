@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-ST-TC (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ST-TC
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoModules, = mibBuilder.importSymbols("CISCO-SMI", "ciscoModules")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 storageTextualConventions = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 12, 4))
 storageTextualConventions.setRevisions(('2021-02-12 00:00', '2016-11-30 00:00', '2012-08-08 00:00', '2011-07-26 00:00', '2010-12-24 00:00', '2008-05-16 00:00', '2005-12-17 00:00', '2004-05-18 00:00', '2003-09-26 00:00', '2003-08-07 00:00', '2002-10-04 00:00', '2002-09-24 00:00',))
@@ -116,4 +116,4 @@ class FcIfSfpDiagLevelType(TextualConvention, Integer32):
     subtypeSpec = Integer32.subtypeSpec + ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5, 6))
     namedValues = NamedValues(("unknown", 1), ("normal", 2), ("lowWarning", 3), ("lowAlarm", 4), ("highWarning", 5), ("highAlarm", 6))
 
-mibBuilder.exportSymbols("CISCO-ST-TC", FcNameIdOrZero=FcNameIdOrZero, FcIfSfpDiagLevelType=FcIfSfpDiagLevelType, FcPortTypes=FcPortTypes, FcAddressType=FcAddressType, PortMemberList=PortMemberList, FcClassOfServices=FcClassOfServices, FcPortTxTypes=FcPortTxTypes, InterfaceOperMode=InterfaceOperMode, VsanIndex=VsanIndex, DomainId=DomainId, FcIfServiceStateType=FcIfServiceStateType, FcNameId=FcNameId, FcAddress=FcAddress, FcAddressId=FcAddressId, PYSNMP_MODULE_ID=storageTextualConventions, storageTextualConventions=storageTextualConventions, FcIfSpeed=FcIfSpeed, FcPortModuleTypes=FcPortModuleTypes, DomainIdOrZero=DomainIdOrZero)
+mibBuilder.exportSymbols("CISCO-ST-TC", VsanIndex=VsanIndex, FcIfServiceStateType=FcIfServiceStateType, FcPortTypes=FcPortTypes, storageTextualConventions=storageTextualConventions, FcAddressId=FcAddressId, FcClassOfServices=FcClassOfServices, PYSNMP_MODULE_ID=storageTextualConventions, FcNameIdOrZero=FcNameIdOrZero, PortMemberList=PortMemberList, FcAddress=FcAddress, FcIfSfpDiagLevelType=FcIfSfpDiagLevelType, FcAddressType=FcAddressType, FcPortTxTypes=FcPortTxTypes, DomainId=DomainId, FcNameId=FcNameId, FcIfSpeed=FcIfSpeed, InterfaceOperMode=InterfaceOperMode, DomainIdOrZero=DomainIdOrZero, FcPortModuleTypes=FcPortModuleTypes)

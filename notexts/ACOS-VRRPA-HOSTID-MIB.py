@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module ACOS-VRRPA-HOSTID-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/a10/ACOS-VRRPA-HOSTID-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:03 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:07 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 acosSchema, = mibBuilder.importSymbols("A10-AX-MIB", "acosSchema")
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint")
+ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint", "SingleValueConstraint")
 InetAddressType, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Counter32, IpAddress, ObjectIdentity, Unsigned32, ModuleIdentity, MibIdentifier, NotificationType, Integer32, Gauge32, iso, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, TimeTicks, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "IpAddress", "ObjectIdentity", "Unsigned32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Integer32", "Gauge32", "iso", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "TimeTicks", "Bits")
-PhysAddress, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "PhysAddress", "TextualConvention", "DisplayString")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+TimeTicks, Counter64, Counter32, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, ObjectIdentity, MibIdentifier, Bits, iso, IpAddress, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "Counter64", "Counter32", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "ObjectIdentity", "MibIdentifier", "Bits", "iso", "IpAddress", "NotificationType")
+TextualConvention, DisplayString, PhysAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "PhysAddress")
 vrrpAHostidModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 10))
 if mibBuilder.loadTexts: vrrpAHostidModule.setLastUpdated('200705071327Z')
 if mibBuilder.loadTexts: vrrpAHostidModule.setOrganization('A10 Networks, Inc.')
@@ -37,4 +37,4 @@ hostidOperHostidListDeviceID = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8,
 if mibBuilder.loadTexts: hostidOperHostidListDeviceID.setStatus('current')
 hostidOperHostidListSN = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 10, 1, 3, 1, 4), DisplayString()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: hostidOperHostidListSN.setStatus('current')
-mibBuilder.exportSymbols("ACOS-VRRPA-HOSTID-MIB", hostidOperHostidListSN=hostidOperHostidListSN, hostidOperSlotId=hostidOperSlotId, hostidOperHostidListHostidListListId=hostidOperHostidListHostidListListId, hostid=hostid, hostidOperHostidListSlotId=hostidOperHostidListSlotId, hostidOperTable=hostidOperTable, PYSNMP_MODULE_ID=vrrpAHostidModule, hostidOperHostidListDeviceID=hostidOperHostidListDeviceID, hostidOperSetID=hostidOperSetID, vrrpAHostidModule=vrrpAHostidModule, hostidOperHostidListTable=hostidOperHostidListTable, hostidOperHostidListEntry=hostidOperHostidListEntry, hostidOperEntry=hostidOperEntry)
+mibBuilder.exportSymbols("ACOS-VRRPA-HOSTID-MIB", vrrpAHostidModule=vrrpAHostidModule, hostid=hostid, hostidOperSetID=hostidOperSetID, hostidOperSlotId=hostidOperSlotId, hostidOperHostidListSN=hostidOperHostidListSN, hostidOperHostidListDeviceID=hostidOperHostidListDeviceID, hostidOperEntry=hostidOperEntry, hostidOperHostidListTable=hostidOperHostidListTable, PYSNMP_MODULE_ID=vrrpAHostidModule, hostidOperHostidListHostidListListId=hostidOperHostidListHostidListListId, hostidOperTable=hostidOperTable, hostidOperHostidListEntry=hostidOperHostidListEntry, hostidOperHostidListSlotId=hostidOperHostidListSlotId)

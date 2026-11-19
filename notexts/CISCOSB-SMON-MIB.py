@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-SMON-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-SMON-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 dot1dBasePort, = mibBuilder.importSymbols("BRIDGE-MIB", "dot1dBasePort")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 class CopyModeType(TextualConvention, Integer32):
     status = 'current'
@@ -36,4 +36,4 @@ rlPortCopyMode = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 84, 4), CopyModeType
 if mibBuilder.loadTexts: rlPortCopyMode.setStatus('current')
 rlPortCopySessionsEnabled = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 84, 5), TruthValue().clone('true')).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlPortCopySessionsEnabled.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-SMON-MIB", rlPortCopySessionsEnabled=rlPortCopySessionsEnabled, rlPortCopyMibVersion=rlPortCopyMibVersion, CopyModeType=CopyModeType, rlPortCopySupport=rlPortCopySupport, PYSNMP_MODULE_ID=rlSmon, rlPortCopyVlanTaggingEntry=rlPortCopyVlanTaggingEntry, rlPortCopyMode=rlPortCopyMode, rlSmon=rlSmon, rlPortCopyVlanTagging=rlPortCopyVlanTagging, rlPortCopyVlanTaggingTable=rlPortCopyVlanTaggingTable)
+mibBuilder.exportSymbols("CISCOSB-SMON-MIB", CopyModeType=CopyModeType, rlPortCopyMode=rlPortCopyMode, rlPortCopyVlanTaggingTable=rlPortCopyVlanTaggingTable, rlPortCopySessionsEnabled=rlPortCopySessionsEnabled, rlPortCopyMibVersion=rlPortCopyMibVersion, PYSNMP_MODULE_ID=rlSmon, rlPortCopySupport=rlPortCopySupport, rlSmon=rlSmon, rlPortCopyVlanTagging=rlPortCopyVlanTagging, rlPortCopyVlanTaggingEntry=rlPortCopyVlanTaggingEntry)

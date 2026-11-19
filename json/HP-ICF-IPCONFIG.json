@@ -8,44 +8,44 @@
       "ifIndex"
     ],
     "INET-ADDRESS-MIB": [
-      "InetAddressPrefixLength",
+      "InetAddress",
       "InetAddressType",
       "InetAddressIPv4",
       "InetPortNumber",
-      "InetAddress"
+      "InetAddressPrefixLength"
     ],
     "IP-MIB": [
       "IpAddressStatusTC",
-      "ipNetToPhysicalEntry",
-      "ipv6InterfaceEntry",
       "ipv4InterfaceEntry",
-      "IpAddressOriginTC"
+      "ipv6InterfaceEntry",
+      "IpAddressOriginTC",
+      "ipNetToPhysicalEntry"
     ],
     "SNMPv2-CONF": [
-      "OBJECT-GROUP",
+      "MODULE-COMPLIANCE",
       "NOTIFICATION-GROUP",
-      "MODULE-COMPLIANCE"
+      "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
-      "iso",
-      "Integer32",
-      "Unsigned32",
+      "MibIdentifier",
       "Bits",
+      "iso",
+      "Unsigned32",
+      "Integer32",
+      "TimeTicks",
       "NOTIFICATION-TYPE",
       "Gauge32",
       "Counter64",
-      "MibIdentifier",
-      "IpAddress",
       "OBJECT-IDENTITY",
-      "Counter32",
+      "IpAddress",
       "MODULE-IDENTITY",
-      "TimeTicks",
+      "Counter32",
       "OBJECT-TYPE"
     ],
     "SNMPv2-TC": [
       "RowStatus",
-      "TEXTUAL-CONVENTION",
-      "DisplayString"
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
     ],
     "TUNNEL-MIB": [
       "tunnelInetConfigEntry"
@@ -1050,7 +1050,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hp/HP-ICF-IPCONFIG",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:07 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:37:22 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

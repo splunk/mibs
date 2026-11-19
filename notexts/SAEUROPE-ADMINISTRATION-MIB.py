@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module SAEUROPE-ADMINISTRATION-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/saeurope/SAEUROPE-ADMINISTRATION-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:39:43 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:39:58 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint")
+ValueSizeConstraint, ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 common, = mibBuilder.importSymbols("SAEUROPE-ROOT-MIB", "common")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-IpAddress, ModuleIdentity, Bits, Counter64, TimeTicks, Counter32, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, Unsigned32, iso, ObjectIdentity, NotificationType, MibIdentifier, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "IpAddress", "ModuleIdentity", "Bits", "Counter64", "TimeTicks", "Counter32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "Unsigned32", "iso", "ObjectIdentity", "NotificationType", "MibIdentifier", "Integer32")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, iso, NotificationType, MibIdentifier, Integer32, Counter32, ModuleIdentity, ObjectIdentity, Bits, IpAddress, Counter64, TimeTicks, Gauge32, Unsigned32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "NotificationType", "MibIdentifier", "Integer32", "Counter32", "ModuleIdentity", "ObjectIdentity", "Bits", "IpAddress", "Counter64", "TimeTicks", "Gauge32", "Unsigned32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 saEuropeAdministration = MibIdentifier((1, 3, 6, 1, 4, 1, 1482, 20, 1, 6))
 adminVendor = MibScalar((1, 3, 6, 1, 4, 1, 1482, 20, 1, 6, 1), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 255))).setMaxAccess("readonly")
@@ -29,4 +29,4 @@ adminState = MibScalar((1, 3, 6, 1, 4, 1, 1482, 20, 1, 6, 7), Integer32().subtyp
 if mibBuilder.loadTexts: adminState.setStatus('mandatory')
 adminRestart = MibScalar((1, 3, 6, 1, 4, 1, 1482, 20, 1, 6, 8), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1))).clone(namedValues=NamedValues(("warmRestart", 1)))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: adminRestart.setStatus('mandatory')
-mibBuilder.exportSymbols("SAEUROPE-ADMINISTRATION-MIB", adminTime=adminTime, adminSerialNumber=adminSerialNumber, saEuropeAdministration=saEuropeAdministration, adminModelNumber=adminModelNumber, adminAlarmDetectionControl=adminAlarmDetectionControl, adminVendorInfo=adminVendorInfo, adminVendor=adminVendor, adminState=adminState, adminRestart=adminRestart)
+mibBuilder.exportSymbols("SAEUROPE-ADMINISTRATION-MIB", saEuropeAdministration=saEuropeAdministration, adminSerialNumber=adminSerialNumber, adminModelNumber=adminModelNumber, adminAlarmDetectionControl=adminAlarmDetectionControl, adminTime=adminTime, adminRestart=adminRestart, adminVendor=adminVendor, adminState=adminState, adminVendorInfo=adminVendorInfo)

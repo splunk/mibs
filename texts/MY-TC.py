@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module MY-TC (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ruijie/MY-TC
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:39:45 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:39:59 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion")
+ValueRangeConstraint, ConstraintsUnion, ValueSizeConstraint, ConstraintsIntersection, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsUnion", "ValueSizeConstraint", "ConstraintsIntersection", "SingleValueConstraint")
 myModules, = mibBuilder.importSymbols("MY-SMI", "myModules")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Unsigned32, TimeTicks, Counter32, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, NotificationType, Bits, MibIdentifier, IpAddress, iso, ModuleIdentity, Gauge32, Integer32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "TimeTicks", "Counter32", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "NotificationType", "Bits", "MibIdentifier", "IpAddress", "iso", "ModuleIdentity", "Gauge32", "Integer32", "ObjectIdentity")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+Unsigned32, NotificationType, TimeTicks, Gauge32, Counter32, ObjectIdentity, Bits, IpAddress, Counter64, iso, Integer32, MibIdentifier, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "NotificationType", "TimeTicks", "Gauge32", "Counter32", "ObjectIdentity", "Bits", "IpAddress", "Counter64", "iso", "Integer32", "MibIdentifier", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 myTextualConventions = ModuleIdentity((1, 3, 6, 1, 4, 1, 4881, 1, 1, 10, 4, 1))
 myTextualConventions.setRevisions(('2002-03-20 00:00',))
 
@@ -43,4 +43,4 @@ class MemberMap(TextualConvention, OctetString):
     description = 'Each octet indicate a Logic port, and each octect can have \n        their content means. The lenth of octet string will change along \n        with change of product.'
     status = 'current'
 
-mibBuilder.exportSymbols("MY-TC", PYSNMP_MODULE_ID=myTextualConventions, MyTrapType=MyTrapType, myTextualConventions=myTextualConventions, MemberMap=MemberMap, ConfigStatus=ConfigStatus, IfIndex=IfIndex)
+mibBuilder.exportSymbols("MY-TC", MemberMap=MemberMap, MyTrapType=MyTrapType, ConfigStatus=ConfigStatus, PYSNMP_MODULE_ID=myTextualConventions, IfIndex=IfIndex, myTextualConventions=myTextualConventions)

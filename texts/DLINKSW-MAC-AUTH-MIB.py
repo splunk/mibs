@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module DLINKSW-MAC-AUTH-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-MAC-AUTH-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:48 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 dnaSessionClientMacAddress, dnaSessionAuthVlan = mibBuilder.importSymbols("DLINKSW-NETWORK-ACCESS-MIB", "dnaSessionClientMacAddress", "dnaSessionAuthVlan")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-Integer32, Counter32, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, Gauge32, ObjectIdentity, ModuleIdentity, Bits, IpAddress, iso, NotificationType, MibIdentifier, Unsigned32 = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Counter32", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "Gauge32", "ObjectIdentity", "ModuleIdentity", "Bits", "IpAddress", "iso", "NotificationType", "MibIdentifier", "Unsigned32")
-TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
+ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
+Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Integer32, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Integer32", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
+TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
 dlinkSwMacAuthMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 153))
 dlinkSwMacAuthMIB.setRevisions(('2013-08-02 00:00',))
 
@@ -80,4 +80,4 @@ dMacAuthNotificationGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 171, 14, 153, 2
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dMacAuthNotificationGroup = dMacAuthNotificationGroup.setStatus('current')
 if mibBuilder.loadTexts: dMacAuthNotificationGroup.setDescription('The collection of notifications\tused for monitoring the hosts under the \n           control of MAC authentication.')
-mibBuilder.exportSymbols("DLINKSW-MAC-AUTH-MIB", dMacAuthIfTable=dMacAuthIfTable, dMacAuthLoggedFail=dMacAuthLoggedFail, dMacAuthNotifications=dMacAuthNotifications, dMacAuthPWD=dMacAuthPWD, dMacAuthUserName=dMacAuthUserName, dMacAuthMIBConformance=dMacAuthMIBConformance, PYSNMP_MODULE_ID=dlinkSwMacAuthMIB, dMacAuthIfEnabled=dMacAuthIfEnabled, dMacAuthNotifyCfgGroup=dMacAuthNotifyCfgGroup, dMacAuthIfCfgGroup=dMacAuthIfCfgGroup, dMacAuthGlobalCfgGroup=dMacAuthGlobalCfgGroup, dlinkSwMacAuthMIB=dlinkSwMacAuthMIB, dMacAuthLoggedSuccess=dMacAuthLoggedSuccess, dMacAuthGlobalCtrl=dMacAuthGlobalCtrl, dMacAuthNotifEnabled=dMacAuthNotifEnabled, dMacAuthMIBCompliances=dMacAuthMIBCompliances, dMacAuthNotificationGroup=dMacAuthNotificationGroup, dMacAuthIfEntry=dMacAuthIfEntry, dMacAuthMIBCompliance=dMacAuthMIBCompliance, dMacAuthLoggedAgesOut=dMacAuthLoggedAgesOut, dMacAuthEnabled=dMacAuthEnabled, dMacAuthMIBGroups=dMacAuthMIBGroups, dMacAuthMIBObjects=dMacAuthMIBObjects)
+mibBuilder.exportSymbols("DLINKSW-MAC-AUTH-MIB", dMacAuthIfEnabled=dMacAuthIfEnabled, dMacAuthLoggedFail=dMacAuthLoggedFail, dMacAuthNotificationGroup=dMacAuthNotificationGroup, dMacAuthNotifEnabled=dMacAuthNotifEnabled, dMacAuthNotifyCfgGroup=dMacAuthNotifyCfgGroup, dMacAuthMIBObjects=dMacAuthMIBObjects, dMacAuthGlobalCtrl=dMacAuthGlobalCtrl, dMacAuthIfCfgGroup=dMacAuthIfCfgGroup, PYSNMP_MODULE_ID=dlinkSwMacAuthMIB, dMacAuthIfEntry=dMacAuthIfEntry, dMacAuthLoggedSuccess=dMacAuthLoggedSuccess, dMacAuthMIBConformance=dMacAuthMIBConformance, dMacAuthIfTable=dMacAuthIfTable, dMacAuthLoggedAgesOut=dMacAuthLoggedAgesOut, dMacAuthMIBCompliance=dMacAuthMIBCompliance, dMacAuthNotifications=dMacAuthNotifications, dMacAuthPWD=dMacAuthPWD, dlinkSwMacAuthMIB=dlinkSwMacAuthMIB, dMacAuthEnabled=dMacAuthEnabled, dMacAuthMIBGroups=dMacAuthMIBGroups, dMacAuthMIBCompliances=dMacAuthMIBCompliances, dMacAuthGlobalCfgGroup=dMacAuthGlobalCfgGroup, dMacAuthUserName=dMacAuthUserName)

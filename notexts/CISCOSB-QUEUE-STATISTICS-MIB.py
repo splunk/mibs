@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCOSB-QUEUE-STATISTICS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-QUEUE-STATISTICS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:42 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 StatisticsDPType, = mibBuilder.importSymbols("CISCOSB-POLICY-MIB", "StatisticsDPType")
 InterfaceIndex, InterfaceIndexOrZero = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex", "InterfaceIndexOrZero")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
 DisplayString, TruthValue, TextualConvention, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention", "RowStatus")
 rlQueueStatistics = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 233))
 rlQueueStatistics.setRevisions(('2016-07-07 00:00',))
@@ -38,4 +38,4 @@ rlInterfaceQueueStatisticsDroppedPackets = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 
 if mibBuilder.loadTexts: rlInterfaceQueueStatisticsDroppedPackets.setStatus('current')
 rlInterfaceQueueStatisticsDroppedBytes = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 233, 2, 1, 7), Counter64()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlInterfaceQueueStatisticsDroppedBytes.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-QUEUE-STATISTICS-MIB", rlInterfaceQueueStatisticsDroppedPackets=rlInterfaceQueueStatisticsDroppedPackets, PYSNMP_MODULE_ID=rlQueueStatistics, rlInterfaceQueueStatisticsTxBytes=rlInterfaceQueueStatisticsTxBytes, rlInterfaceQueueStatisticsQueue=rlInterfaceQueueStatisticsQueue, rlInterfaceQueueStatisticsDroppedBytes=rlInterfaceQueueStatisticsDroppedBytes, rlInterfaceQueueStatisticsTable=rlInterfaceQueueStatisticsTable, rlInterfaceQueueStatisticsDP=rlInterfaceQueueStatisticsDP, rlInterfaceQueueStatisticsEntry=rlInterfaceQueueStatisticsEntry, rlQueueStatistics=rlQueueStatistics, rlInterfaceQueueStatisticsIfIndex=rlInterfaceQueueStatisticsIfIndex, rlInterfaceQueueStatisticsClear=rlInterfaceQueueStatisticsClear, rlInterfaceQueueStatisticsTxPackets=rlInterfaceQueueStatisticsTxPackets)
+mibBuilder.exportSymbols("CISCOSB-QUEUE-STATISTICS-MIB", rlInterfaceQueueStatisticsQueue=rlInterfaceQueueStatisticsQueue, rlInterfaceQueueStatisticsDP=rlInterfaceQueueStatisticsDP, rlInterfaceQueueStatisticsTxPackets=rlInterfaceQueueStatisticsTxPackets, rlQueueStatistics=rlQueueStatistics, rlInterfaceQueueStatisticsIfIndex=rlInterfaceQueueStatisticsIfIndex, rlInterfaceQueueStatisticsClear=rlInterfaceQueueStatisticsClear, rlInterfaceQueueStatisticsTxBytes=rlInterfaceQueueStatisticsTxBytes, rlInterfaceQueueStatisticsDroppedBytes=rlInterfaceQueueStatisticsDroppedBytes, rlInterfaceQueueStatisticsDroppedPackets=rlInterfaceQueueStatisticsDroppedPackets, rlInterfaceQueueStatisticsTable=rlInterfaceQueueStatisticsTable, PYSNMP_MODULE_ID=rlQueueStatistics, rlInterfaceQueueStatisticsEntry=rlInterfaceQueueStatisticsEntry)

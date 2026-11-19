@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-ASPP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ASPP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoAsppMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 55))
 ciscoAsppMIB.setRevisions(('2003-02-10 00:00', '1995-08-21 00:00',))
 
@@ -107,4 +107,4 @@ asppPortsAposGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 55, 3, 2, 3)).setObjec
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     asppPortsAposGroup = asppPortsAposGroup.setStatus('current')
 if mibBuilder.loadTexts: asppPortsAposGroup.setDescription('A collection of objects providing information about\n\t         interfaces that run asynchronous protocol to communicate\n                 to Point of Sale protocols.')
-mibBuilder.exportSymbols("CISCO-ASPP-MIB", asppObjects=asppObjects, asppPortEntry=asppPortEntry, asppPortsGroup=asppPortsGroup, asppPortsGenericGroup=asppPortsGenericGroup, asppPortDisableEnq=asppPortDisableEnq, asppPortRxTimer=asppPortRxTimer, asppPortReceiveInterFrameTimeout=asppPortReceiveInterFrameTimeout, asppPortRetryCount=asppPortRetryCount, asppPortTable=asppPortTable, asppMibGroups=asppMibGroups, asppMibConformance=asppMibConformance, asppPortDirect=asppPortDirect, asppPortProtocol=asppPortProtocol, PYSNMP_MODULE_ID=ciscoAsppMIB, ciscoAsppMIB=ciscoAsppMIB, asppPortSendAck=asppPortSendAck, asppPortConnectTimer=asppPortConnectTimer, asppPortDelayEnq=asppPortDelayEnq, asppMibCompliances=asppMibCompliances, asppPortHostTimer=asppPortHostTimer, asppPortDCDAlways=asppPortDCDAlways, asppPortRole=asppPortRole, asppPortsAposGroup=asppPortsAposGroup, asppPorts=asppPorts, asppPortSOFCharacter=asppPortSOFCharacter, asppMibComplianceRev1=asppMibComplianceRev1, asppPortRspTimer=asppPortRspTimer, asppMibCompliance=asppMibCompliance, asppPortEOFCharacter=asppPortEOFCharacter, asppPortDeviceAddressOffset=asppPortDeviceAddressOffset, asppPortIgnoreSequenceNumber=asppPortIgnoreSequenceNumber)
+mibBuilder.exportSymbols("CISCO-ASPP-MIB", asppPortHostTimer=asppPortHostTimer, asppPortDisableEnq=asppPortDisableEnq, asppPortProtocol=asppPortProtocol, asppPorts=asppPorts, asppPortRole=asppPortRole, asppPortsAposGroup=asppPortsAposGroup, asppPortSendAck=asppPortSendAck, asppPortConnectTimer=asppPortConnectTimer, asppMibGroups=asppMibGroups, asppPortDCDAlways=asppPortDCDAlways, ciscoAsppMIB=ciscoAsppMIB, PYSNMP_MODULE_ID=ciscoAsppMIB, asppPortsGenericGroup=asppPortsGenericGroup, asppPortEOFCharacter=asppPortEOFCharacter, asppPortsGroup=asppPortsGroup, asppPortReceiveInterFrameTimeout=asppPortReceiveInterFrameTimeout, asppPortRxTimer=asppPortRxTimer, asppObjects=asppObjects, asppPortTable=asppPortTable, asppMibCompliances=asppMibCompliances, asppPortIgnoreSequenceNumber=asppPortIgnoreSequenceNumber, asppPortRetryCount=asppPortRetryCount, asppPortRspTimer=asppPortRspTimer, asppPortSOFCharacter=asppPortSOFCharacter, asppMibConformance=asppMibConformance, asppPortDelayEnq=asppPortDelayEnq, asppPortDirect=asppPortDirect, asppMibComplianceRev1=asppMibComplianceRev1, asppMibCompliance=asppMibCompliance, asppPortEntry=asppPortEntry, asppPortDeviceAddressOffset=asppPortDeviceAddressOffset)

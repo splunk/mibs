@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module SENSORTRAP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/riello/SENSORTRAP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:39:35 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:39:52 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint", "ValueRangeConstraint")
+ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, ModuleIdentity, iso, ObjectIdentity, IpAddress, TimeTicks, Gauge32, enterprises, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Unsigned32, MibIdentifier, Integer32, NotificationType, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "ModuleIdentity", "iso", "ObjectIdentity", "IpAddress", "TimeTicks", "Gauge32", "enterprises", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Unsigned32", "MibIdentifier", "Integer32", "NotificationType", "Counter64", "Counter32")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+Integer32, TimeTicks, iso, enterprises, MibIdentifier, Counter64, Gauge32, NotificationType, ObjectIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, IpAddress, NotificationType, ModuleIdentity, Counter32, Unsigned32, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "TimeTicks", "iso", "enterprises", "MibIdentifier", "Counter64", "Gauge32", "NotificationType", "ObjectIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "IpAddress", "NotificationType", "ModuleIdentity", "Counter32", "Unsigned32", "Bits")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 rielloMIB = MibIdentifier((1, 3, 6, 1, 4, 1, 5491))
 sensorgroup = MibIdentifier((1, 3, 6, 1, 4, 1, 5491, 9))
 sensor = MibIdentifier((1, 3, 6, 1, 4, 1, 5491, 9, 1))
@@ -38,4 +38,4 @@ sensorHumidityLowAlarm = NotificationType((1, 3, 6, 1, 4, 1, 5491, 9, 1, 2) + (0
 if mibBuilder.loadTexts: sensorHumidityLowAlarm.setDescription('This trap is sent each minute when humidity reaches minimum level')
 sensorHumidityLowAlarmRemoved = NotificationType((1, 3, 6, 1, 4, 1, 5491, 9, 1, 2) + (0,10)).setObjects(("SENSORTRAP-MIB", "sensorId"))
 if mibBuilder.loadTexts: sensorHumidityLowAlarmRemoved.setDescription('This trap is sent when humidity returns to normal level')
-mibBuilder.exportSymbols("SENSORTRAP-MIB", sensorIOAlarm=sensorIOAlarm, sensorHumidityAlarmRemoved=sensorHumidityAlarmRemoved, sensorId=sensorId, sensor=sensor, sensorHumidityLowAlarmRemoved=sensorHumidityLowAlarmRemoved, sensorAlarmTMinRemoved=sensorAlarmTMinRemoved, sensorAlarmTMaxRemoved=sensorAlarmTMaxRemoved, rielloMIB=rielloMIB, sensorAlarmTMax=sensorAlarmTMax, sensorTrapGroup=sensorTrapGroup, sensorgroup=sensorgroup, sensorHumidityLowAlarm=sensorHumidityLowAlarm, sensorAlarmTMin=sensorAlarmTMin, sensorIOAlarmRemoved=sensorIOAlarmRemoved, sensorHumidityAlarm=sensorHumidityAlarm)
+mibBuilder.exportSymbols("SENSORTRAP-MIB", rielloMIB=rielloMIB, sensorgroup=sensorgroup, sensorIOAlarm=sensorIOAlarm, sensorHumidityAlarmRemoved=sensorHumidityAlarmRemoved, sensorHumidityAlarm=sensorHumidityAlarm, sensorAlarmTMin=sensorAlarmTMin, sensorTrapGroup=sensorTrapGroup, sensorAlarmTMax=sensorAlarmTMax, sensorAlarmTMinRemoved=sensorAlarmTMinRemoved, sensorHumidityLowAlarm=sensorHumidityLowAlarm, sensor=sensor, sensorHumidityLowAlarmRemoved=sensorHumidityLowAlarmRemoved, sensorAlarmTMaxRemoved=sensorAlarmTMaxRemoved, sensorId=sensorId, sensorIOAlarmRemoved=sensorIOAlarmRemoved)

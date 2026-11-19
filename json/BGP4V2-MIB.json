@@ -3,50 +3,50 @@
     "class": "imports",
     "BGP4V2-TC-MIB": [
       "Bgp4V2IdentifierTC",
-      "Bgp4V2AddressFamilyIdentifierTC",
-      "Bgp4V2SubsequentAddressFamilyIdentifierTC"
+      "Bgp4V2SubsequentAddressFamilyIdentifierTC",
+      "Bgp4V2AddressFamilyIdentifierTC"
     ],
     "FOUNDRY-SN-ROOT-MIB": [
       "bgp4V2Root"
     ],
     "INET-ADDRESS-MIB": [
-      "InetAddressPrefixLength",
-      "InetPortNumber",
       "InetAutonomousSystemNumber",
       "InetAddress",
-      "InetAddressType"
+      "InetAddressType",
+      "InetAddressPrefixLength",
+      "InetPortNumber"
     ],
     "SNMP-FRAMEWORK-MIB": [
       "SnmpAdminString"
     ],
     "SNMPv2-CONF": [
-      "OBJECT-GROUP",
       "NOTIFICATION-GROUP",
-      "MODULE-COMPLIANCE"
+      "MODULE-COMPLIANCE",
+      "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
-      "Bits",
-      "Gauge32",
-      "OBJECT-IDENTITY",
-      "MibIdentifier",
-      "Counter64",
       "MODULE-IDENTITY",
-      "OBJECT-TYPE",
-      "IpAddress",
+      "iso",
       "NOTIFICATION-TYPE",
-      "Integer32",
-      "mib-2",
-      "Unsigned32",
+      "OBJECT-TYPE",
       "Counter32",
+      "mib-2",
+      "Bits",
+      "Integer32",
+      "MibIdentifier",
+      "OBJECT-IDENTITY",
       "TimeTicks",
-      "iso"
+      "IpAddress",
+      "Gauge32",
+      "Unsigned32",
+      "Counter64"
     ],
     "SNMPv2-TC": [
-      "RowPointer",
-      "TimeStamp",
       "DisplayString",
+      "TimeStamp",
       "TEXTUAL-CONVENTION",
-      "TruthValue"
+      "TruthValue",
+      "RowPointer"
     ]
   },
   "bgp4V2": {
@@ -980,7 +980,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/extreme/BGP4V2-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:34:53 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:36:29 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module DLINKSW-LACP-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-LACP-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:48 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
 PortList, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "PortList")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-Integer32, Counter32, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, Gauge32, ObjectIdentity, ModuleIdentity, Bits, IpAddress, iso, NotificationType, MibIdentifier, Unsigned32 = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Counter32", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "Gauge32", "ObjectIdentity", "ModuleIdentity", "Bits", "IpAddress", "iso", "NotificationType", "MibIdentifier", "Unsigned32")
-RowStatus, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "TextualConvention", "DisplayString")
+ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
+Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Bits, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Bits", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
+TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString")
 dlinkSwLacpExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 4))
 dlinkSwLacpExtMIB.setRevisions(('2013-01-18 00:00',))
 
@@ -68,4 +68,4 @@ dLacpExtChannelGrpInfoGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 4, 2, 2, 2
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dLacpExtChannelGrpInfoGroup = dLacpExtChannelGrpInfoGroup.setStatus('current')
 if mibBuilder.loadTexts: dLacpExtChannelGrpInfoGroup.setDescription('A collection of objects providing configuration of channel groups.')
-mibBuilder.exportSymbols("DLINKSW-LACP-EXT-MIB", dLacpExtGroupTable=dLacpExtGroupTable, PYSNMP_MODULE_ID=dlinkSwLacpExtMIB, dLacpExtGroupActiveMemberPorts=dLacpExtGroupActiveMemberPorts, dLacpExtGroupChannelNo=dLacpExtGroupChannelNo, dLacpExtMIBNotifications=dLacpExtMIBNotifications, dLacpExtMIBObjects=dLacpExtMIBObjects, dlinkSwLacpExtMIB=dlinkSwLacpExtMIB, dLacpExtMIBConformance=dLacpExtMIBConformance, dLacpExtGroupMemberPorts=dLacpExtGroupMemberPorts, dLacpExtGroupType=dLacpExtGroupType, dLacpExtAlgGroup=dLacpExtAlgGroup, dLacpExtGroupIfIndex=dLacpExtGroupIfIndex, dLacpExtGroups=dLacpExtGroups, dLacpExtGroupEntry=dLacpExtGroupEntry, dLacpExtLoadBalanceAlgorithm=dLacpExtLoadBalanceAlgorithm, dLacpExtGroupRowStatus=dLacpExtGroupRowStatus, dLacpExtCompliances=dLacpExtCompliances, dLacpExtChannelGrpInfoGroup=dLacpExtChannelGrpInfoGroup, dLacpExtCompliance=dLacpExtCompliance)
+mibBuilder.exportSymbols("DLINKSW-LACP-EXT-MIB", dLacpExtGroupMemberPorts=dLacpExtGroupMemberPorts, dLacpExtMIBObjects=dLacpExtMIBObjects, dLacpExtGroupChannelNo=dLacpExtGroupChannelNo, dLacpExtCompliances=dLacpExtCompliances, dLacpExtMIBNotifications=dLacpExtMIBNotifications, dLacpExtGroupTable=dLacpExtGroupTable, dLacpExtLoadBalanceAlgorithm=dLacpExtLoadBalanceAlgorithm, dLacpExtGroups=dLacpExtGroups, dLacpExtAlgGroup=dLacpExtAlgGroup, dLacpExtGroupEntry=dLacpExtGroupEntry, dLacpExtCompliance=dLacpExtCompliance, dLacpExtGroupActiveMemberPorts=dLacpExtGroupActiveMemberPorts, dLacpExtGroupRowStatus=dLacpExtGroupRowStatus, dLacpExtChannelGrpInfoGroup=dLacpExtChannelGrpInfoGroup, dlinkSwLacpExtMIB=dlinkSwLacpExtMIB, PYSNMP_MODULE_ID=dlinkSwLacpExtMIB, dLacpExtMIBConformance=dLacpExtMIBConformance, dLacpExtGroupIfIndex=dLacpExtGroupIfIndex, dLacpExtGroupType=dLacpExtGroupType)

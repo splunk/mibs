@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-MAC-AUTH-BYPASS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MAC-AUTH-BYPASS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-TextualConvention, DisplayString, TruthValue, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue", "MacAddress")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+MacAddress, TruthValue, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "MacAddress", "TruthValue", "TextualConvention", "DisplayString")
 ciscoMabMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 654))
 ciscoMabMIB.setRevisions(('2008-04-18 00:00',))
 if mibBuilder.loadTexts: ciscoMabMIB.setLastUpdated('200804180000Z')
@@ -54,4 +54,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cmabClientInfoGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 654, 2, 2, 2)).setObjects(("CISCO-MAC-AUTH-BYPASS-MIB", "cmabClientMacAddress"), ("CISCO-MAC-AUTH-BYPASS-MIB", "cmabClientMabState"), ("CISCO-MAC-AUTH-BYPASS-MIB", "cmabClientAuthStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmabClientInfoGroup = cmabClientInfoGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-MAC-AUTH-BYPASS-MIB", cmabCompliance=cmabCompliance, PYSNMP_MODULE_ID=ciscoMabMIB, cmabIfAuthMethod=cmabIfAuthMethod, ciscoMabMIB=ciscoMabMIB, cmabIfConfigEntry=cmabIfConfigEntry, cmabClientInfoGroup=cmabClientInfoGroup, cmabSession=cmabSession, cmabClientInfoEntry=cmabClientInfoEntry, cmabIfConfigGroup=cmabIfConfigGroup, cmabNotification=cmabNotification, cmabClientMabState=cmabClientMabState, cmabMIBConformance=cmabMIBConformance, cmabIfConfigTable=cmabIfConfigTable, cmabMIBCompliances=cmabMIBCompliances, cmabMIBGroups=cmabMIBGroups, cmabIfAuthEnabled=cmabIfAuthEnabled, cmabInterfaceConfig=cmabInterfaceConfig, cmabClientInfoTable=cmabClientInfoTable, cmabClientMacAddress=cmabClientMacAddress, cmabMIBObjects=cmabMIBObjects, cmabClientAuthStatus=cmabClientAuthStatus, cmabClientSessionId=cmabClientSessionId)
+mibBuilder.exportSymbols("CISCO-MAC-AUTH-BYPASS-MIB", cmabIfAuthMethod=cmabIfAuthMethod, cmabClientSessionId=cmabClientSessionId, cmabCompliance=cmabCompliance, cmabMIBCompliances=cmabMIBCompliances, cmabClientInfoTable=cmabClientInfoTable, cmabMIBGroups=cmabMIBGroups, PYSNMP_MODULE_ID=ciscoMabMIB, cmabMIBObjects=cmabMIBObjects, cmabInterfaceConfig=cmabInterfaceConfig, cmabClientInfoEntry=cmabClientInfoEntry, cmabClientAuthStatus=cmabClientAuthStatus, cmabIfConfigTable=cmabIfConfigTable, cmabSession=cmabSession, ciscoMabMIB=ciscoMabMIB, cmabIfAuthEnabled=cmabIfAuthEnabled, cmabIfConfigEntry=cmabIfConfigEntry, cmabClientMacAddress=cmabClientMacAddress, cmabNotification=cmabNotification, cmabClientInfoGroup=cmabClientInfoGroup, cmabClientMabState=cmabClientMabState, cmabMIBConformance=cmabMIBConformance, cmabIfConfigGroup=cmabIfConfigGroup)

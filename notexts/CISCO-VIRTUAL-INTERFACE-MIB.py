@@ -1,21 +1,21 @@
 #
 # PySNMP MIB module CISCO-VIRTUAL-INTERFACE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VIRTUAL-INTERFACE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 PortMemberList, = mibBuilder.importSymbols("CISCO-ST-TC", "PortMemberList")
 IANAifType, = mibBuilder.importSymbols("IANAifType-MIB", "IANAifType")
 InterfaceIndex, InterfaceIndexOrZero = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex", "InterfaceIndexOrZero")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-TruthValue, TimeStamp, RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "TimeStamp", "RowStatus", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+DisplayString, RowStatus, TextualConvention, TimeStamp, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention", "TimeStamp", "TruthValue")
 ciscoVirtualInterfaceMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 648))
 ciscoVirtualInterfaceMIB.setRevisions(('2008-02-27 00:00',))
 if mibBuilder.loadTexts: ciscoVirtualInterfaceMIB.setLastUpdated('200802270000Z')
@@ -83,4 +83,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cvifPhysicalConformanceObjects = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 648, 2, 2, 3)).setObjects(("CISCO-VIRTUAL-INTERFACE-MIB", "cvifBindingIfIndex"), ("CISCO-VIRTUAL-INTERFACE-MIB", "cvifFailureCause"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvifPhysicalConformanceObjects = cvifPhysicalConformanceObjects.setStatus('current')
-mibBuilder.exportSymbols("CISCO-VIRTUAL-INTERFACE-MIB", cvifRowStatus=cvifRowStatus, cvifGroupConformanceObjects=cvifGroupConformanceObjects, cvifFailureCause=cvifFailureCause, ciscoVirtualInterfaceMIB=ciscoVirtualInterfaceMIB, cvifGroupMemberList=cvifGroupMemberList, cvifIndex=cvifIndex, cvifCreationTime=cvifCreationTime, ciscoVirtualInterfaceMIBObjects=ciscoVirtualInterfaceMIBObjects, cvifMIBCompliance=cvifMIBCompliance, cvifCommonConformanceObjects=cvifCommonConformanceObjects, cvifGroupEntry=cvifGroupEntry, cvifMIBCompliances=cvifMIBCompliances, cvifTable=cvifTable, ciscoVirtualInterfaceMIBConformance=ciscoVirtualInterfaceMIBConformance, cvifGroupTable=cvifGroupTable, cvifGroupsSupported=cvifGroupsSupported, cvifGroupIfIndex=cvifGroupIfIndex, cvifConfig=cvifConfig, cvifGroupRowStatus=cvifGroupRowStatus, PYSNMP_MODULE_ID=ciscoVirtualInterfaceMIB, cvifType=cvifType, cvifIfIndex=cvifIfIndex, cvifGroupIndex=cvifGroupIndex, cvifMIBGroups=cvifMIBGroups, cvifGroupCreationTime=cvifGroupCreationTime, cvifGroupFailureCause=cvifGroupFailureCause, cvifBindingIfIndex=cvifBindingIfIndex, cvifPhysicalConformanceObjects=cvifPhysicalConformanceObjects, cvifGroupMIBCompliance=cvifGroupMIBCompliance, cvifGlobals=cvifGlobals, cvifEntry=cvifEntry, cvifGroupBindingIfIndex=cvifGroupBindingIfIndex, cvifGroupOperState=cvifGroupOperState)
+mibBuilder.exportSymbols("CISCO-VIRTUAL-INTERFACE-MIB", cvifGroupEntry=cvifGroupEntry, cvifGroupMIBCompliance=cvifGroupMIBCompliance, cvifMIBGroups=cvifMIBGroups, cvifGroupIfIndex=cvifGroupIfIndex, cvifMIBCompliance=cvifMIBCompliance, PYSNMP_MODULE_ID=ciscoVirtualInterfaceMIB, cvifGroupConformanceObjects=cvifGroupConformanceObjects, cvifTable=cvifTable, cvifBindingIfIndex=cvifBindingIfIndex, cvifGroupMemberList=cvifGroupMemberList, cvifCommonConformanceObjects=cvifCommonConformanceObjects, cvifIndex=cvifIndex, cvifGroupsSupported=cvifGroupsSupported, cvifFailureCause=cvifFailureCause, cvifGroupRowStatus=cvifGroupRowStatus, cvifRowStatus=cvifRowStatus, ciscoVirtualInterfaceMIBConformance=ciscoVirtualInterfaceMIBConformance, cvifPhysicalConformanceObjects=cvifPhysicalConformanceObjects, cvifGroupOperState=cvifGroupOperState, cvifGroupIndex=cvifGroupIndex, cvifGroupBindingIfIndex=cvifGroupBindingIfIndex, cvifEntry=cvifEntry, cvifCreationTime=cvifCreationTime, cvifGroupCreationTime=cvifGroupCreationTime, ciscoVirtualInterfaceMIBObjects=ciscoVirtualInterfaceMIBObjects, cvifMIBCompliances=cvifMIBCompliances, cvifGlobals=cvifGlobals, ciscoVirtualInterfaceMIB=ciscoVirtualInterfaceMIB, cvifType=cvifType, cvifGroupTable=cvifGroupTable, cvifConfig=cvifConfig, cvifGroupFailureCause=cvifGroupFailureCause, cvifIfIndex=cvifIfIndex)

@@ -7,33 +7,33 @@
       "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
+      "Counter64",
+      "MODULE-IDENTITY",
       "IpAddress",
-      "NOTIFICATION-TYPE",
-      "Counter32",
+      "OBJECT-TYPE",
       "Bits",
       "MibIdentifier",
-      "MODULE-IDENTITY",
-      "Unsigned32",
-      "Counter64",
+      "NOTIFICATION-TYPE",
       "OBJECT-IDENTITY",
-      "Gauge32",
-      "TimeTicks",
-      "Integer32",
+      "Counter32",
       "iso",
-      "OBJECT-TYPE"
+      "Gauge32",
+      "Unsigned32",
+      "Integer32",
+      "TimeTicks"
     ],
     "SNMPv2-TC": [
-      "DateAndTime",
       "TEXTUAL-CONVENTION",
-      "DisplayString"
+      "DisplayString",
+      "DateAndTime"
     ],
     "SPC200": [
       "plcBasePortIndex"
     ],
     "SPIDCOM-ALARM-MIB": [
       "ItuAlarmType",
-      "neAlarmActivePhoto",
-      "ItuAlarmProbableCause"
+      "ItuAlarmProbableCause",
+      "neAlarmActivePhoto"
     ],
     "SPIDCOM-NOTIFICATION-MIB": [
       "specificSpidcomTrap"
@@ -111,7 +111,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cdata/SPIDCOM-TRAPS",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:31:42 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:34:16 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

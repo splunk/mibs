@@ -13,26 +13,26 @@
       "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
-      "MibIdentifier",
       "NOTIFICATION-TYPE",
-      "Counter32",
-      "Gauge32",
-      "Unsigned32",
-      "Bits",
-      "iso",
-      "TimeTicks",
-      "IpAddress",
       "OBJECT-IDENTITY",
-      "OBJECT-TYPE",
-      "Integer32",
       "Counter64",
-      "MODULE-IDENTITY"
+      "OBJECT-TYPE",
+      "Bits",
+      "Counter32",
+      "TimeTicks",
+      "MODULE-IDENTITY",
+      "Unsigned32",
+      "IpAddress",
+      "Gauge32",
+      "iso",
+      "Integer32",
+      "MibIdentifier"
     ],
     "SNMPv2-TC": [
-      "TruthValue",
       "DisplayString",
       "RowStatus",
-      "TEXTUAL-CONVENTION"
+      "TEXTUAL-CONVENTION",
+      "TruthValue"
     ],
     "UBQS-SMI": [
       "ubiMgmtv2"
@@ -399,7 +399,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ubiquoss/UBQS-PB-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:40:50 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:40:49 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

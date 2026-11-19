@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ACOS-VCS-IMAGES-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/a10/ACOS-VCS-IMAGES-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:09 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 acosSchema, = mibBuilder.importSymbols("A10-AX-MIB", "acosSchema")
 OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 InetAddressType, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Gauge32, MibIdentifier, IpAddress, ObjectIdentity, Counter32, Bits, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, iso, TimeTicks, Unsigned32, NotificationType, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "MibIdentifier", "IpAddress", "ObjectIdentity", "Counter32", "Bits", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "iso", "TimeTicks", "Unsigned32", "NotificationType", "Counter64")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+ModuleIdentity, iso, Counter64, NotificationType, TimeTicks, Bits, Unsigned32, MibIdentifier, Integer32, Counter32, ObjectIdentity, IpAddress, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "iso", "Counter64", "NotificationType", "TimeTicks", "Bits", "Unsigned32", "MibIdentifier", "Integer32", "Counter32", "ObjectIdentity", "IpAddress", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
 TextualConvention, DisplayString, PhysAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "PhysAddress")
 vcsImagesModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 16))
 if mibBuilder.loadTexts: vcsImagesModule.setLastUpdated('200705071327Z')
@@ -37,4 +37,4 @@ if mibBuilder.loadTexts: imagesOperImagesListType.setDescription('type')
 imagesOperImagesListImagesName = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 16, 1, 2, 1, 4), DisplayString()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: imagesOperImagesListImagesName.setStatus('current')
 if mibBuilder.loadTexts: imagesOperImagesListImagesName.setDescription('images-name')
-mibBuilder.exportSymbols("ACOS-VCS-IMAGES-MIB", imagesOperImagesListSlotId=imagesOperImagesListSlotId, imagesOperImagesListEntry=imagesOperImagesListEntry, imagesOperImagesListImagesName=imagesOperImagesListImagesName, images=images, imagesOperImagesListImagesListListId=imagesOperImagesListImagesListListId, imagesOperImagesListType=imagesOperImagesListType, PYSNMP_MODULE_ID=vcsImagesModule, vcsImagesModule=vcsImagesModule, imagesOperImagesListTable=imagesOperImagesListTable)
+mibBuilder.exportSymbols("ACOS-VCS-IMAGES-MIB", vcsImagesModule=vcsImagesModule, imagesOperImagesListTable=imagesOperImagesListTable, imagesOperImagesListImagesListListId=imagesOperImagesListImagesListListId, imagesOperImagesListSlotId=imagesOperImagesListSlotId, images=images, imagesOperImagesListType=imagesOperImagesListType, imagesOperImagesListImagesName=imagesOperImagesListImagesName, imagesOperImagesListEntry=imagesOperImagesListEntry, PYSNMP_MODULE_ID=vcsImagesModule)

@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module ACOS-WEBCATEGORY-LICENSE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/a10/ACOS-WEBCATEGORY-LICENSE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:03 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:07 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 acosSchema, = mibBuilder.importSymbols("A10-AX-MIB", "acosSchema")
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint")
+ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint", "SingleValueConstraint")
 InetAddressType, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Counter32, IpAddress, ObjectIdentity, Unsigned32, ModuleIdentity, MibIdentifier, NotificationType, Integer32, Gauge32, iso, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, TimeTicks, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "IpAddress", "ObjectIdentity", "Unsigned32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Integer32", "Gauge32", "iso", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "TimeTicks", "Bits")
-PhysAddress, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "PhysAddress", "TextualConvention", "DisplayString")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+TimeTicks, Counter64, Counter32, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, ObjectIdentity, MibIdentifier, Bits, iso, IpAddress, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "Counter64", "Counter32", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "ObjectIdentity", "MibIdentifier", "Bits", "iso", "IpAddress", "NotificationType")
+TextualConvention, DisplayString, PhysAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "PhysAddress")
 webCategoryLicenseModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 278))
 if mibBuilder.loadTexts: webCategoryLicenseModule.setLastUpdated('200705071327Z')
 if mibBuilder.loadTexts: webCategoryLicenseModule.setOrganization('A10 Networks, Inc.')
@@ -39,4 +39,4 @@ licenseOperGracePeriod = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 278, 
 if mibBuilder.loadTexts: licenseOperGracePeriod.setStatus('current')
 licenseOperSerialNumber = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 278, 1, 2, 1, 9), DisplayString()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: licenseOperSerialNumber.setStatus('current')
-mibBuilder.exportSymbols("ACOS-WEBCATEGORY-LICENSE-MIB", licenseOperSlotId=licenseOperSlotId, licenseOperLicenseExpiry=licenseOperLicenseExpiry, licenseOperLicenseStatus=licenseOperLicenseStatus, PYSNMP_MODULE_ID=webCategoryLicenseModule, licenseOperIsGrace=licenseOperIsGrace, licenseOperGracePeriod=licenseOperGracePeriod, licenseOperTable=licenseOperTable, licenseOperEntry=licenseOperEntry, license=license, licenseOperRemainingPeriod=licenseOperRemainingPeriod, licenseOperLicenseType=licenseOperLicenseType, licenseOperModuleStatus=licenseOperModuleStatus, licenseOperSerialNumber=licenseOperSerialNumber, webCategoryLicenseModule=webCategoryLicenseModule)
+mibBuilder.exportSymbols("ACOS-WEBCATEGORY-LICENSE-MIB", licenseOperLicenseExpiry=licenseOperLicenseExpiry, licenseOperTable=licenseOperTable, licenseOperEntry=licenseOperEntry, licenseOperLicenseStatus=licenseOperLicenseStatus, webCategoryLicenseModule=webCategoryLicenseModule, licenseOperRemainingPeriod=licenseOperRemainingPeriod, licenseOperLicenseType=licenseOperLicenseType, license=license, licenseOperGracePeriod=licenseOperGracePeriod, licenseOperModuleStatus=licenseOperModuleStatus, licenseOperSlotId=licenseOperSlotId, licenseOperIsGrace=licenseOperIsGrace, PYSNMP_MODULE_ID=webCategoryLicenseModule, licenseOperSerialNumber=licenseOperSerialNumber)

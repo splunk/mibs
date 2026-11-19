@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-Cueing-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-Cueing-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDSGCueing = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 33))
 ciscoDSGCueing.setRevisions(('2010-08-30 08:00',))
@@ -51,4 +51,4 @@ cueingToneSeqMode = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 33, 11, 1, 
 if mibBuilder.loadTexts: cueingToneSeqMode.setStatus('current')
 cueingToneSeqDelay = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 33, 11, 1, 1, 5), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 255))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: cueingToneSeqDelay.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-Cueing-MIB", cueingTestToneGo=cueingTestToneGo, cueingToneSeqState=cueingToneSeqState, cueingToneSeqMode=cueingToneSeqMode, cueingToneSeqTones=cueingToneSeqTones, cueingRelayMode=cueingRelayMode, cueingTable=cueingTable, cueingSilence=cueingSilence, cueingToneSeqTable=cueingToneSeqTable, cueingToneSeqNum=cueingToneSeqNum, cueingToneSeqEntry=cueingToneSeqEntry, cueingTone=cueingTone, cueingRepeatCnt=cueingRepeatCnt, cueingTestToneSequence=cueingTestToneSequence, cueingRelayTrigBit=cueingRelayTrigBit, cueingMode=cueingMode, PYSNMP_MODULE_ID=ciscoDSGCueing, cueingTrigPol=cueingTrigPol, cueingToneSeqDelay=cueingToneSeqDelay, cueingTestToneStartStop=cueingTestToneStartStop, ciscoDSGCueing=ciscoDSGCueing)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-Cueing-MIB", cueingToneSeqState=cueingToneSeqState, cueingToneSeqMode=cueingToneSeqMode, cueingToneSeqTones=cueingToneSeqTones, cueingRelayTrigBit=cueingRelayTrigBit, PYSNMP_MODULE_ID=ciscoDSGCueing, cueingToneSeqNum=cueingToneSeqNum, cueingTestToneStartStop=cueingTestToneStartStop, cueingToneSeqDelay=cueingToneSeqDelay, ciscoDSGCueing=ciscoDSGCueing, cueingRepeatCnt=cueingRepeatCnt, cueingTestToneGo=cueingTestToneGo, cueingRelayMode=cueingRelayMode, cueingTestToneSequence=cueingTestToneSequence, cueingToneSeqTable=cueingToneSeqTable, cueingTone=cueingTone, cueingTrigPol=cueingTrigPol, cueingMode=cueingMode, cueingSilence=cueingSilence, cueingTable=cueingTable, cueingToneSeqEntry=cueingToneSeqEntry)

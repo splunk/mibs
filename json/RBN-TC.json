@@ -9,20 +9,20 @@
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
+      "TimeTicks",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "OBJECT-IDENTITY",
+      "NOTIFICATION-TYPE",
+      "OBJECT-TYPE",
+      "Unsigned32",
+      "Counter32",
+      "Integer32",
       "iso",
       "Counter64",
-      "MODULE-IDENTITY",
-      "Counter32",
-      "TimeTicks",
-      "OBJECT-TYPE",
-      "MibIdentifier",
       "Gauge32",
-      "Integer32",
-      "OBJECT-IDENTITY",
-      "Unsigned32",
-      "IpAddress",
       "Bits",
-      "NOTIFICATION-TYPE"
+      "IpAddress"
     ],
     "SNMPv2-TC": [
       "TEXTUAL-CONVENTION",
@@ -211,7 +211,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ericsson/RBN-TC",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:34:34 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:36:16 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

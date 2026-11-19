@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCOSB-BANNER-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-BANNER-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 EnabledStatus, = mibBuilder.importSymbols("P-BRIDGE-MIB", "EnabledStatus")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, NotificationType, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "NotificationType", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 rlBanner = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 133))
 rlBanner.setRevisions(('2007-12-16 00:00',))
 
@@ -62,4 +62,4 @@ if mibBuilder.loadTexts: rlBannerManageConsole.setDescription('This variable spe
 rlBannerMessageClear = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 133, 3), BannerMessageType()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlBannerMessageClear.setStatus('current')
 if mibBuilder.loadTexts: rlBannerMessageClear.setDescription('This value, when set, clears the selected Banner type.\n        Clearing the Banner type means that\n                  the related entry from rlBannerMessageTable is removed.')
-mibBuilder.exportSymbols("CISCOSB-BANNER-MIB", rlBannerManageSSH=rlBannerManageSSH, rlBannerManageConsole=rlBannerManageConsole, rlBannerMessageEntry=rlBannerMessageEntry, rlBannerMessageIndex=rlBannerMessageIndex, rlBannerManageTelnet=rlBannerManageTelnet, rlBannerManageTable=rlBannerManageTable, rlBannerMessageText=rlBannerMessageText, rlBannerMessageType=rlBannerMessageType, BannerMessageType=BannerMessageType, rlBannerManageEntry=rlBannerManageEntry, PYSNMP_MODULE_ID=rlBanner, rlBanner=rlBanner, rlBannerMessageTable=rlBannerMessageTable, rlBannerMessageClear=rlBannerMessageClear)
+mibBuilder.exportSymbols("CISCOSB-BANNER-MIB", rlBanner=rlBanner, rlBannerMessageTable=rlBannerMessageTable, PYSNMP_MODULE_ID=rlBanner, rlBannerMessageClear=rlBannerMessageClear, rlBannerMessageEntry=rlBannerMessageEntry, rlBannerManageConsole=rlBannerManageConsole, rlBannerManageTable=rlBannerManageTable, rlBannerManageSSH=rlBannerManageSSH, rlBannerManageTelnet=rlBannerManageTelnet, rlBannerMessageType=rlBannerMessageType, rlBannerMessageIndex=rlBannerMessageIndex, rlBannerManageEntry=rlBannerManageEntry, BannerMessageType=BannerMessageType, rlBannerMessageText=rlBannerMessageText)

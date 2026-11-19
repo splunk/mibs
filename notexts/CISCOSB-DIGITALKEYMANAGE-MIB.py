@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-DIGITALKEYMANAGE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-DIGITALKEYMANAGE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-TruthValue, RowStatus, DisplayString, DateAndTime, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "RowStatus", "DisplayString", "DateAndTime", "TextualConvention")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+DisplayString, RowStatus, TextualConvention, TruthValue, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention", "TruthValue", "DateAndTime")
 rlDigitalKeyManage = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 86))
 rlDigitalKeyManage.setRevisions(('2007-01-02 00:00',))
 if mibBuilder.loadTexts: rlDigitalKeyManage.setLastUpdated('200701020000Z')
@@ -40,4 +40,4 @@ rlMD5KeyChainKeyValidForGenerate = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 10
 if mibBuilder.loadTexts: rlMD5KeyChainKeyValidForGenerate.setStatus('current')
 rlMD5KeyChainRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 86, 1, 1, 10), RowStatus()).setMaxAccess("readcreate")
 if mibBuilder.loadTexts: rlMD5KeyChainRowStatus.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-DIGITALKEYMANAGE-MIB", rlMD5KeyChainName=rlMD5KeyChainName, rlMD5KeyChainKeyId=rlMD5KeyChainKeyId, rlMD5KeyChainKeyStartAccept=rlMD5KeyChainKeyStartAccept, rlMD5KeyChainKeyValidForAccept=rlMD5KeyChainKeyValidForAccept, rlDigitalKeyManage=rlDigitalKeyManage, rlMD5KeyChainKeyStartGenerate=rlMD5KeyChainKeyStartGenerate, rlMD5KeyChainTable=rlMD5KeyChainTable, rlMD5KeyChainRowStatus=rlMD5KeyChainRowStatus, PYSNMP_MODULE_ID=rlDigitalKeyManage, rlMD5KeyChainKey=rlMD5KeyChainKey, rlMD5KeyChainKeyStopGenerate=rlMD5KeyChainKeyStopGenerate, rlMD5KeyChainKeyStopAccept=rlMD5KeyChainKeyStopAccept, rlMD5KeyChainKeyValidForGenerate=rlMD5KeyChainKeyValidForGenerate, rlMD5KeyChainEntry=rlMD5KeyChainEntry)
+mibBuilder.exportSymbols("CISCOSB-DIGITALKEYMANAGE-MIB", rlMD5KeyChainKey=rlMD5KeyChainKey, rlMD5KeyChainKeyValidForAccept=rlMD5KeyChainKeyValidForAccept, rlMD5KeyChainKeyStopAccept=rlMD5KeyChainKeyStopAccept, rlDigitalKeyManage=rlDigitalKeyManage, rlMD5KeyChainKeyId=rlMD5KeyChainKeyId, rlMD5KeyChainEntry=rlMD5KeyChainEntry, rlMD5KeyChainKeyStartGenerate=rlMD5KeyChainKeyStartGenerate, PYSNMP_MODULE_ID=rlDigitalKeyManage, rlMD5KeyChainKeyStartAccept=rlMD5KeyChainKeyStartAccept, rlMD5KeyChainName=rlMD5KeyChainName, rlMD5KeyChainRowStatus=rlMD5KeyChainRowStatus, rlMD5KeyChainKeyStopGenerate=rlMD5KeyChainKeyStopGenerate, rlMD5KeyChainTable=rlMD5KeyChainTable, rlMD5KeyChainKeyValidForGenerate=rlMD5KeyChainKeyValidForGenerate)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module MY-FILE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ruijie/MY-FILE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:39:43 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:39:58 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 myMgmt, = mibBuilder.importSymbols("MY-SMI", "myMgmt")
 ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-ObjectIdentity, Counter64, TimeTicks, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, IpAddress, Counter32, NotificationType, Gauge32, Bits, MibIdentifier, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "ObjectIdentity", "Counter64", "TimeTicks", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "IpAddress", "Counter32", "NotificationType", "Gauge32", "Bits", "MibIdentifier", "Integer32")
-TruthValue, TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "TextualConvention", "RowStatus", "DisplayString")
+IpAddress, Unsigned32, MibIdentifier, ModuleIdentity, ObjectIdentity, Bits, Counter64, NotificationType, Counter32, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Gauge32, iso, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "IpAddress", "Unsigned32", "MibIdentifier", "ModuleIdentity", "ObjectIdentity", "Bits", "Counter64", "NotificationType", "Counter32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Gauge32", "iso", "TimeTicks")
+RowStatus, TruthValue, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "TruthValue", "TextualConvention", "DisplayString")
 myFileMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 4881, 1, 1, 10, 2, 11))
 myFileMIB.setRevisions(('2002-03-20 00:00',))
 if mibBuilder.loadTexts: myFileMIB.setLastUpdated('200203200000Z')
@@ -58,4 +58,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 myFileTransMeansMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 4881, 1, 1, 10, 2, 11, 2, 2, 2)).setObjects(("MY-FILE-MIB", "myFileTransMeans"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     myFileTransMeansMIBGroup = myFileTransMeansMIBGroup.setStatus('current')
-mibBuilder.exportSymbols("MY-FILE-MIB", myFileTransDataLength=myFileTransDataLength, myFileTransTable=myFileTransTable, myFileTransDescFileName=myFileTransDescFileName, myFileMIBConformance=myFileMIBConformance, myFileTransComplete=myFileTransComplete, myFileMIB=myFileMIB, myFileMIBCompliance=myFileMIBCompliance, myFileTransEntry=myFileTransEntry, myFileMIBObjects=myFileMIBObjects, myFileTransOperType=myFileTransOperType, myFileTransMeansMIBGroup=myFileTransMeansMIBGroup, myFileTransMeans=myFileTransMeans, myFileMIBGroups=myFileMIBGroups, myFileTransResult=myFileTransResult, myFileMIBGroup=myFileMIBGroup, myFileTransEntryStatus=myFileTransEntryStatus, PYSNMP_MODULE_ID=myFileMIB, myFileTransServerAddr=myFileTransServerAddr, myFileTransIndex=myFileTransIndex, myFileTransSrcFileName=myFileTransSrcFileName, myFileMIBCompliances=myFileMIBCompliances, myFileSystemMaxRoom=myFileSystemMaxRoom, myFileSystemAvailableRoom=myFileSystemAvailableRoom)
+mibBuilder.exportSymbols("MY-FILE-MIB", myFileSystemAvailableRoom=myFileSystemAvailableRoom, myFileTransMeansMIBGroup=myFileTransMeansMIBGroup, myFileTransEntryStatus=myFileTransEntryStatus, myFileMIBObjects=myFileMIBObjects, myFileSystemMaxRoom=myFileSystemMaxRoom, myFileTransResult=myFileTransResult, myFileMIBCompliance=myFileMIBCompliance, myFileMIBCompliances=myFileMIBCompliances, myFileTransTable=myFileTransTable, myFileTransSrcFileName=myFileTransSrcFileName, myFileTransServerAddr=myFileTransServerAddr, myFileMIBConformance=myFileMIBConformance, PYSNMP_MODULE_ID=myFileMIB, myFileTransComplete=myFileTransComplete, myFileMIBGroup=myFileMIBGroup, myFileMIBGroups=myFileMIBGroups, myFileTransDescFileName=myFileTransDescFileName, myFileMIB=myFileMIB, myFileTransMeans=myFileTransMeans, myFileTransOperType=myFileTransOperType, myFileTransDataLength=myFileTransDataLength, myFileTransIndex=myFileTransIndex, myFileTransEntry=myFileTransEntry)

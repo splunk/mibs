@@ -2,31 +2,31 @@
   "imports": {
     "class": "imports",
     "SNMPv2-CONF": [
-      "NOTIFICATION-GROUP",
-      "MODULE-COMPLIANCE"
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "TimeTicks",
       "Counter32",
-      "OBJECT-TYPE",
-      "MODULE-IDENTITY",
-      "NOTIFICATION-TYPE",
-      "Counter64",
-      "enterprises",
-      "Bits",
-      "iso",
-      "MibIdentifier",
-      "OBJECT-IDENTITY",
       "IpAddress",
-      "Gauge32",
+      "iso",
+      "OBJECT-IDENTITY",
+      "NOTIFICATION-TYPE",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "TimeTicks",
+      "enterprises",
       "Integer32",
-      "Unsigned32"
+      "OBJECT-TYPE",
+      "Bits",
+      "Gauge32",
+      "Unsigned32",
+      "Counter64"
     ],
     "SNMPv2-TC": [
-      "MacAddress",
-      "DisplayString",
       "TEXTUAL-CONVENTION",
-      "DateAndTime"
+      "DisplayString",
+      "DateAndTime",
+      "MacAddress"
     ]
   },
   "moxa": {
@@ -7320,7 +7320,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/moxa/MOXA-EDSP510A8POE-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:37:32 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:38:21 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module TITAN-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ateme/TITAN-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:58 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:45 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-enterprises, iso, Counter32, NotificationType, IpAddress, TimeTicks, Gauge32, Unsigned32, Integer32, Counter64, Bits, ModuleIdentity, MibIdentifier, ObjectIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "enterprises", "iso", "Counter32", "NotificationType", "IpAddress", "TimeTicks", "Gauge32", "Unsigned32", "Integer32", "Counter64", "Bits", "ModuleIdentity", "MibIdentifier", "ObjectIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
-DateAndTime, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "DisplayString", "TextualConvention")
+ValueRangeConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "SingleValueConstraint")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+ModuleIdentity, Integer32, enterprises, TimeTicks, Counter64, ObjectIdentity, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Gauge32, Unsigned32, MibIdentifier, IpAddress, Bits, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "Integer32", "enterprises", "TimeTicks", "Counter64", "ObjectIdentity", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Gauge32", "Unsigned32", "MibIdentifier", "IpAddress", "Bits", "NotificationType")
+DateAndTime, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "TextualConvention", "DisplayString")
 ateme = ModuleIdentity((1, 3, 6, 1, 4, 1, 27338))
 ateme.setRevisions(('2019-05-15 16:45',))
 
@@ -72,4 +72,4 @@ if mibBuilder.loadTexts: alarmServiceName.setDescription('Name of the service.')
 alarmSystemTime = MibScalar((1, 3, 6, 1, 4, 1, 27338, 40, 5, 12), DateAndTime()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: alarmSystemTime.setStatus('current')
 if mibBuilder.loadTexts: alarmSystemTime.setDescription('System date and time.')
-mibBuilder.exportSymbols("TITAN-MIB", oids=oids, titanLiveInfoGroup=titanLiveInfoGroup, alarmUID=alarmUID, alarm=alarm, alarmName=alarmName, productName=productName, titan=titan, PYSNMP_MODULE_ID=ateme, alarmLevel=alarmLevel, alarmType=alarmType, traps=traps, alarmServiceName=alarmServiceName, alarmStatus=alarmStatus, titanlive=titanlive, alarmSystemTime=alarmSystemTime, alarmData=alarmData, trapsGroup=trapsGroup, ateme=ateme, mibVersion=mibVersion, alarmDescription=alarmDescription, alarmIpAddress=alarmIpAddress)
+mibBuilder.exportSymbols("TITAN-MIB", alarmSystemTime=alarmSystemTime, productName=productName, alarmLevel=alarmLevel, alarmType=alarmType, alarmIpAddress=alarmIpAddress, trapsGroup=trapsGroup, titanLiveInfoGroup=titanLiveInfoGroup, mibVersion=mibVersion, titanlive=titanlive, alarmData=alarmData, ateme=ateme, alarmStatus=alarmStatus, traps=traps, titan=titan, alarmUID=alarmUID, oids=oids, alarmServiceName=alarmServiceName, alarm=alarm, alarmName=alarmName, alarmDescription=alarmDescription, PYSNMP_MODULE_ID=ateme)

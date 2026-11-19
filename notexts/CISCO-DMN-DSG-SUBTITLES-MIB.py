@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-SUBTITLES-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-SUBTITLES-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDSGSubtitle = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 16))
 ciscoDSGSubtitle.setRevisions(('2013-07-10 12:20', '2010-08-30 11:00', '2009-12-07 12:00',))
@@ -32,4 +32,4 @@ subtitlesForeGround = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 16, 7), Intege
 if mibBuilder.loadTexts: subtitlesForeGround.setStatus('current')
 subtitlesBackGround = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 16, 8), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5))).clone(namedValues=NamedValues(("none", 1), ("auto", 2), ("shadow", 3), ("opaque", 4), ("semi", 5)))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: subtitlesBackGround.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-SUBTITLES-MIB", subtitlesManualEntry=subtitlesManualEntry, subtitlesIMITextPos=subtitlesIMITextPos, subtitlesOPMode=subtitlesOPMode, subtitlesBackGround=subtitlesBackGround, ciscoDSGSubtitle=ciscoDSGSubtitle, subtitlesForeGround=subtitlesForeGround, subtitlesPMTOrder=subtitlesPMTOrder, subtitlesLangList=subtitlesLangList, PYSNMP_MODULE_ID=ciscoDSGSubtitle, subtitlesLangMenu=subtitlesLangMenu)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-SUBTITLES-MIB", PYSNMP_MODULE_ID=ciscoDSGSubtitle, ciscoDSGSubtitle=ciscoDSGSubtitle, subtitlesManualEntry=subtitlesManualEntry, subtitlesIMITextPos=subtitlesIMITextPos, subtitlesPMTOrder=subtitlesPMTOrder, subtitlesForeGround=subtitlesForeGround, subtitlesOPMode=subtitlesOPMode, subtitlesLangMenu=subtitlesLangMenu, subtitlesBackGround=subtitlesBackGround, subtitlesLangList=subtitlesLangList)

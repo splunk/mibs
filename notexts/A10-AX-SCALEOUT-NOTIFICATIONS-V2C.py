@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module A10-AX-SCALEOUT-NOTIFICATIONS-V2C (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/a10/A10-AX-SCALEOUT-NOTIFICATIONS-V2C
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:03 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:07 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 axNotification, axLogging = mibBuilder.importSymbols("A10-AX-MIB", "axNotification", "axLogging")
-axNotificationScaleOutStatus, axNotifications, axNotificationMsg, axNotificationScaleOutDeviceId, axNotificationScaleOutNumberOfDevice, axNotificationScaleOutTrafficMapType = mibBuilder.importSymbols("A10-AX-NOTIF-OBJ", "axNotificationScaleOutStatus", "axNotifications", "axNotificationMsg", "axNotificationScaleOutDeviceId", "axNotificationScaleOutNumberOfDevice", "axNotificationScaleOutTrafficMapType")
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+axNotificationScaleOutStatus, axNotificationScaleOutNumberOfDevice, axNotificationMsg, axNotificationScaleOutTrafficMapType, axNotificationScaleOutDeviceId, axNotifications = mibBuilder.importSymbols("A10-AX-NOTIF-OBJ", "axNotificationScaleOutStatus", "axNotificationScaleOutNumberOfDevice", "axNotificationMsg", "axNotificationScaleOutTrafficMapType", "axNotificationScaleOutDeviceId", "axNotifications")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint")
+ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint", "SingleValueConstraint")
 InetAddressType, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Counter32, IpAddress, ObjectIdentity, Unsigned32, ModuleIdentity, MibIdentifier, NotificationType, Integer32, Gauge32, iso, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, TimeTicks, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "IpAddress", "ObjectIdentity", "Unsigned32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Integer32", "Gauge32", "iso", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "TimeTicks", "Bits")
-PhysAddress, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "PhysAddress", "TextualConvention", "DisplayString")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+TimeTicks, Counter64, Counter32, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, ModuleIdentity, MibIdentifier, Bits, iso, IpAddress, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "Counter64", "Counter32", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "ModuleIdentity", "MibIdentifier", "Bits", "iso", "IpAddress", "NotificationType")
+TextualConvention, DisplayString, PhysAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "PhysAddress")
 axScaleoutNotifications = MibIdentifier((1, 3, 6, 1, 4, 1, 22610, 2, 4, 3, 12, 2, 7))
 axScaleoutVserverTrafficMap = NotificationType((1, 3, 6, 1, 4, 1, 22610, 2, 4, 3, 12, 2, 7, 1)).setObjects(("A10-AX-NOTIF-OBJ", "axNotificationMsg"))
 if mibBuilder.loadTexts: axScaleoutVserverTrafficMap.setStatus('current')
@@ -33,4 +33,4 @@ axScaleoutTrafficMapUpdate = NotificationType((1, 3, 6, 1, 4, 1, 22610, 2, 4, 3,
 if mibBuilder.loadTexts: axScaleoutTrafficMapUpdate.setStatus('current')
 axScaleoutTrafficMapDistribution = NotificationType((1, 3, 6, 1, 4, 1, 22610, 2, 4, 3, 12, 2, 7, 9)).setObjects(("A10-AX-NOTIF-OBJ", "axNotificationMsg"))
 if mibBuilder.loadTexts: axScaleoutTrafficMapDistribution.setStatus('current')
-mibBuilder.exportSymbols("A10-AX-SCALEOUT-NOTIFICATIONS-V2C", axScaleoutLocalNodeDisabled=axScaleoutLocalNodeDisabled, axScaleoutNodeStatus=axScaleoutNodeStatus, axScaleoutElection=axScaleoutElection, axScaleoutServiceMaster=axScaleoutServiceMaster, axScaleoutTrafficMapUpdate=axScaleoutTrafficMapUpdate, axScaleoutMasterNodeCallingReelection=axScaleoutMasterNodeCallingReelection, axScaleoutNotifications=axScaleoutNotifications, axScaleoutSingleNodeStatus=axScaleoutSingleNodeStatus, axScaleoutTrafficMapDistribution=axScaleoutTrafficMapDistribution, axScaleoutVserverTrafficMap=axScaleoutVserverTrafficMap)
+mibBuilder.exportSymbols("A10-AX-SCALEOUT-NOTIFICATIONS-V2C", axScaleoutServiceMaster=axScaleoutServiceMaster, axScaleoutLocalNodeDisabled=axScaleoutLocalNodeDisabled, axScaleoutSingleNodeStatus=axScaleoutSingleNodeStatus, axScaleoutElection=axScaleoutElection, axScaleoutTrafficMapDistribution=axScaleoutTrafficMapDistribution, axScaleoutTrafficMapUpdate=axScaleoutTrafficMapUpdate, axScaleoutNotifications=axScaleoutNotifications, axScaleoutMasterNodeCallingReelection=axScaleoutMasterNodeCallingReelection, axScaleoutNodeStatus=axScaleoutNodeStatus, axScaleoutVserverTrafficMap=axScaleoutVserverTrafficMap)

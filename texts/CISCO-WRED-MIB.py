@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-WRED-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WRED-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoWredMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 83))
 ciscoWredMIB.setRevisions(('1997-07-18 00:00',))
@@ -95,4 +95,4 @@ ciscoWredMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 83, 3, 2, 1)).setObject
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoWredMIBGroup = ciscoWredMIBGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoWredMIBGroup.setDescription('A collection of objects providing WRED monitoring.')
-mibBuilder.exportSymbols("CISCO-WRED-MIB", cwredQueueAverage=cwredQueueAverage, ciscoWredMIBConformance=ciscoWredMIBConformance, cwredConfigPrecedEntry=cwredConfigPrecedEntry, cwredConfigPrecedMaxDepthThreshold=cwredConfigPrecedMaxDepthThreshold, ciscoWredMIBGroup=ciscoWredMIBGroup, cwredConfigPrecedPktsDropFraction=cwredConfigPrecedPktsDropFraction, cwredConfigPrecedPrecedence=cwredConfigPrecedPrecedence, cwredStatTable=cwredStatTable, cwredStatEntry=cwredStatEntry, ciscoWredMIBGroups=ciscoWredMIBGroups, cwredQueueTable=cwredQueueTable, PYSNMP_MODULE_ID=ciscoWredMIB, cwredStats=cwredStats, cwredConfigGlobEntry=cwredConfigGlobEntry, cwredStatSwitchedPkts=cwredStatSwitchedPkts, cwredConfig=cwredConfig, ciscoWredMIB=ciscoWredMIB, ciscoWredMIBCompliance=ciscoWredMIBCompliance, cwredStatRandomFilteredPkts=cwredStatRandomFilteredPkts, cwredConfigGlobQueueWeight=cwredConfigGlobQueueWeight, ciscoWredMIBObjects=ciscoWredMIBObjects, cwredQueueDepth=cwredQueueDepth, ciscoWredMIBCompliances=ciscoWredMIBCompliances, cwredStatMaxFilteredPkts=cwredStatMaxFilteredPkts, cwredConfigPrecedTable=cwredConfigPrecedTable, cwredConfigPrecedMinDepthThreshold=cwredConfigPrecedMinDepthThreshold, cwredQueueEntry=cwredQueueEntry, cwredConfigGlobTable=cwredConfigGlobTable)
+mibBuilder.exportSymbols("CISCO-WRED-MIB", PYSNMP_MODULE_ID=ciscoWredMIB, cwredConfig=cwredConfig, cwredStatEntry=cwredStatEntry, cwredConfigPrecedEntry=cwredConfigPrecedEntry, ciscoWredMIBObjects=ciscoWredMIBObjects, cwredQueueAverage=cwredQueueAverage, cwredStatSwitchedPkts=cwredStatSwitchedPkts, cwredConfigGlobQueueWeight=cwredConfigGlobQueueWeight, cwredConfigGlobEntry=cwredConfigGlobEntry, cwredQueueTable=cwredQueueTable, cwredStatRandomFilteredPkts=cwredStatRandomFilteredPkts, cwredStats=cwredStats, cwredConfigPrecedPrecedence=cwredConfigPrecedPrecedence, ciscoWredMIBCompliance=ciscoWredMIBCompliance, cwredConfigPrecedMinDepthThreshold=cwredConfigPrecedMinDepthThreshold, cwredQueueEntry=cwredQueueEntry, cwredConfigGlobTable=cwredConfigGlobTable, cwredQueueDepth=cwredQueueDepth, ciscoWredMIB=ciscoWredMIB, cwredStatMaxFilteredPkts=cwredStatMaxFilteredPkts, cwredConfigPrecedTable=cwredConfigPrecedTable, ciscoWredMIBConformance=ciscoWredMIBConformance, ciscoWredMIBGroup=ciscoWredMIBGroup, cwredStatTable=cwredStatTable, cwredConfigPrecedMaxDepthThreshold=cwredConfigPrecedMaxDepthThreshold, ciscoWredMIBGroups=ciscoWredMIBGroups, cwredConfigPrecedPktsDropFraction=cwredConfigPrecedPktsDropFraction, ciscoWredMIBCompliances=ciscoWredMIBCompliances)

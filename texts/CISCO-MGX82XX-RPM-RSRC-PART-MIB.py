@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-MGX82XX-RPM-RSRC-PART-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MGX82XX-RPM-RSRC-PART-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 rpmInterface, = mibBuilder.importSymbols("BASIS-MIB", "rpmInterface")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoMgx82xxRpmRsrcPartMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 61))
 ciscoMgx82xxRpmRsrcPartMIB.setRevisions(('2002-09-17 00:00',))
@@ -74,4 +74,4 @@ cmrRsrcPartMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 61, 3, 2, 1)).set
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmrRsrcPartMIBGroup = cmrRsrcPartMIBGroup.setStatus('current')
 if mibBuilder.loadTexts: cmrRsrcPartMIBGroup.setDescription('The collection of objects related to\n          configuration of Resource partition.')
-mibBuilder.exportSymbols("CISCO-MGX82XX-RPM-RSRC-PART-MIB", cmrRsrcPartMIBGroup=cmrRsrcPartMIBGroup, rpmIfRscPartCtrlrNum=rpmIfRscPartCtrlrNum, cmrRsrcPartMIBCompliances=cmrRsrcPartMIBCompliances, ciscoMgx82xxRpmRsrcPartMIB=ciscoMgx82xxRpmRsrcPartMIB, PYSNMP_MODULE_ID=ciscoMgx82xxRpmRsrcPartMIB, rpmIfCnfResPart=rpmIfCnfResPart, rpmIfRscPrtIngrPctBandwidth=rpmIfRscPrtIngrPctBandwidth, cmrRsrcPartMIBConformance=cmrRsrcPartMIBConformance, rpmIfRscPartIfNum=rpmIfRscPartIfNum, rpmIfCnfRscPartTable=rpmIfCnfRscPartTable, rpmIfRscSlotNum=rpmIfRscSlotNum, rpmIfRscPrtVpiLow=rpmIfRscPrtVpiLow, cmrRsrcPartMIBGroups=cmrRsrcPartMIBGroups, rpmIfRscPrtVciLow=rpmIfRscPrtVciLow, rpmIfRscPrtRowStatus=rpmIfRscPrtRowStatus, rpmIfRscPrtEgrPctBandwidth=rpmIfRscPrtEgrPctBandwidth, rpmIfRscPrtMaxChans=rpmIfRscPrtMaxChans, rpmIfRscPrtVpiHigh=rpmIfRscPrtVpiHigh, rpmIfCnfRscPartEntry=rpmIfCnfRscPartEntry, rpmIfRscPrtVciHigh=rpmIfRscPrtVciHigh, cmrRsrcPartMIBCompliance=cmrRsrcPartMIBCompliance)
+mibBuilder.exportSymbols("CISCO-MGX82XX-RPM-RSRC-PART-MIB", rpmIfRscPrtVpiHigh=rpmIfRscPrtVpiHigh, cmrRsrcPartMIBGroup=cmrRsrcPartMIBGroup, rpmIfRscPrtRowStatus=rpmIfRscPrtRowStatus, rpmIfRscPrtIngrPctBandwidth=rpmIfRscPrtIngrPctBandwidth, rpmIfRscPrtVciHigh=rpmIfRscPrtVciHigh, rpmIfCnfRscPartTable=rpmIfCnfRscPartTable, rpmIfRscPrtVpiLow=rpmIfRscPrtVpiLow, rpmIfRscPartCtrlrNum=rpmIfRscPartCtrlrNum, rpmIfRscPrtVciLow=rpmIfRscPrtVciLow, cmrRsrcPartMIBGroups=cmrRsrcPartMIBGroups, rpmIfRscPrtMaxChans=rpmIfRscPrtMaxChans, rpmIfCnfResPart=rpmIfCnfResPart, cmrRsrcPartMIBCompliances=cmrRsrcPartMIBCompliances, PYSNMP_MODULE_ID=ciscoMgx82xxRpmRsrcPartMIB, cmrRsrcPartMIBConformance=cmrRsrcPartMIBConformance, ciscoMgx82xxRpmRsrcPartMIB=ciscoMgx82xxRpmRsrcPartMIB, rpmIfCnfRscPartEntry=rpmIfCnfRscPartEntry, cmrRsrcPartMIBCompliance=cmrRsrcPartMIBCompliance, rpmIfRscSlotNum=rpmIfRscSlotNum, rpmIfRscPrtEgrPctBandwidth=rpmIfRscPrtEgrPctBandwidth, rpmIfRscPartIfNum=rpmIfRscPartIfNum)

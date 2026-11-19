@@ -11,35 +11,35 @@
       "SnmpAdminString"
     ],
     "SNMPv2-CONF": [
+      "OBJECT-GROUP",
       "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP",
-      "OBJECT-GROUP"
+      "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "Counter32",
-      "OBJECT-IDENTITY",
-      "OBJECT-TYPE",
-      "Bits",
-      "MODULE-IDENTITY",
-      "Counter64",
-      "MibIdentifier",
-      "Unsigned32",
-      "mib-2",
-      "zeroDotZero",
-      "NOTIFICATION-TYPE",
       "Gauge32",
+      "OBJECT-TYPE",
+      "MODULE-IDENTITY",
+      "iso",
       "IpAddress",
+      "Unsigned32",
       "TimeTicks",
+      "MibIdentifier",
+      "mib-2",
+      "Counter64",
+      "OBJECT-IDENTITY",
       "Integer32",
-      "iso"
+      "Bits",
+      "NOTIFICATION-TYPE",
+      "Counter32",
+      "zeroDotZero"
     ],
     "SNMPv2-TC": [
-      "TEXTUAL-CONVENTION",
-      "DateAndTime",
-      "TruthValue",
-      "RowStatus",
       "MacAddress",
-      "DisplayString"
+      "TEXTUAL-CONVENTION",
+      "DisplayString",
+      "RowStatus",
+      "TruthValue",
+      "DateAndTime"
     ]
   },
   "hh3cEponDeviceMIB": {
@@ -1711,7 +1711,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/comware/HH3C-EPON-DEVICE-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

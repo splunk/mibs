@@ -2,56 +2,56 @@
   "imports": {
     "class": "imports",
     "INET-ADDRESS-MIB": [
-      "InetAddressType",
-      "InetAddress"
+      "InetAddress",
+      "InetAddressType"
     ],
     "RS-XX9-COMMON-MIB": [
       "commonNotificationAlarmClass"
     ],
     "RS-XX9-SMI-MIB": [
-      "rsXx9MibModule",
-      "rsXx9Tx"
+      "rsXx9Tx",
+      "rsXx9MibModule"
     ],
     "RS-XX9-TC-MIB": [
       "IndexTransmitter",
-      "NotificationMask",
-      "NotificationPriority",
-      "NotificationState",
-      "SwitchOnOff",
-      "Trigger",
       "NotificationClass",
-      "IndexAB",
-      "Xx9ModulationMode"
+      "NotificationPriority",
+      "SwitchOnOff",
+      "NotificationState",
+      "NotificationMask",
+      "Xx9ModulationMode",
+      "Trigger",
+      "IndexAB"
     ],
     "SNMP-FRAMEWORK-MIB": [
       "SnmpAdminString"
     ],
     "SNMPv2-CONF": [
-      "NOTIFICATION-GROUP",
       "OBJECT-GROUP",
+      "NOTIFICATION-GROUP",
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "iso",
-      "MibIdentifier",
-      "Bits",
-      "Unsigned32",
-      "NOTIFICATION-TYPE",
+      "Counter64",
       "TimeTicks",
-      "OBJECT-IDENTITY",
-      "OBJECT-TYPE",
-      "Gauge32",
+      "MibIdentifier",
+      "iso",
       "Integer32",
       "Counter32",
+      "OBJECT-IDENTITY",
       "MODULE-IDENTITY",
-      "Counter64",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "Bits",
+      "OBJECT-TYPE",
+      "Unsigned32",
       "IpAddress"
     ],
     "SNMPv2-TC": [
-      "DisplayString",
       "DateAndTime",
-      "TruthValue",
-      "TEXTUAL-CONVENTION"
+      "TEXTUAL-CONVENTION",
+      "DisplayString",
+      "TruthValue"
     ]
   },
   "rsXx9TxMibModule": {
@@ -12546,7 +12546,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/rs/RS-XX9-TX-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:39:42 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:39:57 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

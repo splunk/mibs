@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-FAVORITE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-FAVORITE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoDSGFavorite = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 29))
 ciscoDSGFavorite.setRevisions(('2010-08-30 11:00', '2010-05-11 09:30', '2010-04-12 06:00',))
 
@@ -74,4 +74,4 @@ if mibBuilder.loadTexts: favoriteMapChNum.setDescription('Channel Number.')
 favoriteMapRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 29, 2, 2, 1, 4), RowStatus()).setMaxAccess("readcreate")
 if mibBuilder.loadTexts: favoriteMapRowStatus.setStatus('current')
 if mibBuilder.loadTexts: favoriteMapRowStatus.setDescription('Favorite Map table row status.Used to add or delete rows\n         in this table.')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-FAVORITE-MIB", favoriteListType=favoriteListType, favoriteListRowStatus=favoriteListRowStatus, ciscoDSGFavorite=ciscoDSGFavorite, favoriteMapEntry=favoriteMapEntry, favoriteListEntry=favoriteListEntry, favoriteListName=favoriteListName, favoriteTable=favoriteTable, PYSNMP_MODULE_ID=ciscoDSGFavorite, favoriteMapTable=favoriteMapTable, favoriteCtrl=favoriteCtrl, favoriteCtrlID=favoriteCtrlID, favoriteMapRowStatus=favoriteMapRowStatus, favoriteMapChNum=favoriteMapChNum, favoriteListPosition=favoriteListPosition, favoriteMapID=favoriteMapID, favoriteMapChPosition=favoriteMapChPosition, favoriteListID=favoriteListID, favoriteCtrlCmd=favoriteCtrlCmd, favoriteChScanMode=favoriteChScanMode, favoriteListTable=favoriteListTable, favoriteListChLastViewed=favoriteListChLastViewed)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-FAVORITE-MIB", favoriteTable=favoriteTable, favoriteListEntry=favoriteListEntry, favoriteMapChNum=favoriteMapChNum, favoriteListName=favoriteListName, PYSNMP_MODULE_ID=ciscoDSGFavorite, favoriteMapID=favoriteMapID, favoriteChScanMode=favoriteChScanMode, favoriteMapRowStatus=favoriteMapRowStatus, favoriteCtrlID=favoriteCtrlID, favoriteListPosition=favoriteListPosition, favoriteListRowStatus=favoriteListRowStatus, favoriteListType=favoriteListType, favoriteListChLastViewed=favoriteListChLastViewed, favoriteListTable=favoriteListTable, favoriteCtrlCmd=favoriteCtrlCmd, favoriteMapEntry=favoriteMapEntry, favoriteCtrl=favoriteCtrl, ciscoDSGFavorite=ciscoDSGFavorite, favoriteMapChPosition=favoriteMapChPosition, favoriteListID=favoriteListID, favoriteMapTable=favoriteMapTable)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-MGX82XX-ENVMON-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MGX82XX-ENVMON-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 basisAsm, = mibBuilder.importSymbols("BASIS-MIB", "basisAsm")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoMgx82xxEnvmonMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 70))
 ciscoMgx82xxEnvmonMIB.setRevisions(('2003-04-17 00:00',))
@@ -56,4 +56,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cmEnvmonGeneralGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 70, 2, 1, 2)).setObjects(("CISCO-MGX82XX-ENVMON-MIB", "asmNumOfValidEntries"), ("CISCO-MGX82XX-ENVMON-MIB", "asmShelfAlarmState"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmEnvmonGeneralGroup = cmEnvmonGeneralGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-MGX82XX-ENVMON-MIB", asmAlarmTable=asmAlarmTable, asmAlarmNum=asmAlarmNum, asmAlarmUnitNum=asmAlarmUnitNum, PYSNMP_MODULE_ID=ciscoMgx82xxEnvmonMIB, cmEnvmonMIBGroups=cmEnvmonMIBGroups, asmAlarmType=asmAlarmType, asmNumOfValidEntries=asmNumOfValidEntries, asmUnitMeasurable=asmUnitMeasurable, cmEnvmonCompliance=cmEnvmonCompliance, asmUnitMeasuredValue=asmUnitMeasuredValue, asmPhysicalAlarmState=asmPhysicalAlarmState, cmEnvmonMIBCompliances=cmEnvmonMIBCompliances, cmEnvmonInfoGroup=cmEnvmonInfoGroup, cmEnvmonGeneralGroup=cmEnvmonGeneralGroup, asmShelfAlarmState=asmShelfAlarmState, cmEnvmonMIBConformance=cmEnvmonMIBConformance, ciscoMgx82xxEnvmonMIB=ciscoMgx82xxEnvmonMIB, asmAlarmEntry=asmAlarmEntry, asmAlarmThreshold=asmAlarmThreshold, asmClrButton=asmClrButton, asmAlarmSeverity=asmAlarmSeverity)
+mibBuilder.exportSymbols("CISCO-MGX82XX-ENVMON-MIB", asmAlarmSeverity=asmAlarmSeverity, asmShelfAlarmState=asmShelfAlarmState, asmAlarmNum=asmAlarmNum, asmAlarmTable=asmAlarmTable, asmNumOfValidEntries=asmNumOfValidEntries, cmEnvmonCompliance=cmEnvmonCompliance, cmEnvmonInfoGroup=cmEnvmonInfoGroup, ciscoMgx82xxEnvmonMIB=ciscoMgx82xxEnvmonMIB, asmAlarmUnitNum=asmAlarmUnitNum, asmAlarmThreshold=asmAlarmThreshold, asmClrButton=asmClrButton, PYSNMP_MODULE_ID=ciscoMgx82xxEnvmonMIB, cmEnvmonGeneralGroup=cmEnvmonGeneralGroup, asmAlarmType=asmAlarmType, cmEnvmonMIBConformance=cmEnvmonMIBConformance, cmEnvmonMIBGroups=cmEnvmonMIBGroups, asmUnitMeasurable=asmUnitMeasurable, asmAlarmEntry=asmAlarmEntry, asmUnitMeasuredValue=asmUnitMeasuredValue, asmPhysicalAlarmState=asmPhysicalAlarmState, cmEnvmonMIBCompliances=cmEnvmonMIBCompliances)

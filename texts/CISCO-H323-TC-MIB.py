@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-H323-TC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-H323-TC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoH323TCMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 41))
 ciscoH323TCMIB.setRevisions(('1998-10-09 12:00', '2000-03-10 00:00',))
@@ -82,4 +82,4 @@ class CgkGatekeeperID(TextualConvention, OctetString):
     status = 'current'
     subtypeSpec = OctetString.subtypeSpec + ValueSizeConstraint(1, 128)
 
-mibBuilder.exportSymbols("CISCO-H323-TC-MIB", CgkAliasAddress=CgkAliasAddress, CgkE164String=CgkE164String, CgkGlobalIdentifier=CgkGlobalIdentifier, CgkNAddress=CgkNAddress, CgkGatekeeperID=CgkGatekeeperID, CgkAliasTag=CgkAliasTag, PYSNMP_MODULE_ID=ciscoH323TCMIB, ciscoH323TCMIB=ciscoH323TCMIB, CgkEndpointID=CgkEndpointID, CgkTAddressTag=CgkTAddressTag, CgkNAddressTag=CgkNAddressTag, CgkIA5String=CgkIA5String)
+mibBuilder.exportSymbols("CISCO-H323-TC-MIB", PYSNMP_MODULE_ID=ciscoH323TCMIB, CgkEndpointID=CgkEndpointID, CgkTAddressTag=CgkTAddressTag, CgkGatekeeperID=CgkGatekeeperID, CgkE164String=CgkE164String, CgkGlobalIdentifier=CgkGlobalIdentifier, CgkAliasAddress=CgkAliasAddress, CgkAliasTag=CgkAliasTag, CgkNAddressTag=CgkNAddressTag, CgkIA5String=CgkIA5String, CgkNAddress=CgkNAddress, ciscoH323TCMIB=ciscoH323TCMIB)

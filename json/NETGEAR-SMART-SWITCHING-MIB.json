@@ -15,38 +15,38 @@
       "ng700smartswitch"
     ],
     "Q-BRIDGE-MIB": [
-      "dot1qTpFdbAddress",
       "dot1qFdbId",
-      "dot1qVlanIndex",
-      "VlanIndex"
+      "VlanIndex",
+      "dot1qTpFdbAddress",
+      "dot1qVlanIndex"
     ],
     "SNMPv2-CONF": [
       "MODULE-COMPLIANCE",
       "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "IpAddress",
-      "Counter64",
-      "OBJECT-IDENTITY",
+      "Bits",
       "MibIdentifier",
+      "IpAddress",
+      "iso",
       "Integer32",
       "Unsigned32",
       "Counter32",
-      "iso",
-      "OBJECT-TYPE",
+      "Counter64",
       "TimeTicks",
-      "NOTIFICATION-TYPE",
-      "Bits",
+      "MODULE-IDENTITY",
+      "OBJECT-TYPE",
       "Gauge32",
-      "MODULE-IDENTITY"
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY"
     ],
     "SNMPv2-TC": [
-      "PhysAddress",
-      "RowStatus",
-      "MacAddress",
       "TEXTUAL-CONVENTION",
+      "RowStatus",
+      "DateAndTime",
       "DisplayString",
-      "DateAndTime"
+      "PhysAddress",
+      "MacAddress"
     ]
   },
   "agentSwitching": {
@@ -7315,7 +7315,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/quanta/NETGEAR-SMART-SWITCHING-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:39:15 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:39:37 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module UCD-DLMOD-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/netsnmp/UCD-DLMOD-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:37:41 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:26 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueSizeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueRangeConstraint")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-TimeTicks, MibIdentifier, Counter64, IpAddress, Bits, Counter32, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, iso, Gauge32, Unsigned32, ModuleIdentity, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "MibIdentifier", "Counter64", "IpAddress", "Bits", "Counter32", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "iso", "Gauge32", "Unsigned32", "ModuleIdentity", "Integer32")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ValueSizeConstraint, SingleValueConstraint, ValueRangeConstraint, ConstraintsUnion, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsUnion", "ConstraintsIntersection")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+ModuleIdentity, ObjectIdentity, TimeTicks, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, iso, Gauge32, Integer32, IpAddress, Counter64, MibIdentifier, NotificationType, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "ObjectIdentity", "TimeTicks", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "iso", "Gauge32", "Integer32", "IpAddress", "Counter64", "MibIdentifier", "NotificationType", "Counter32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ucdExperimental, = mibBuilder.importSymbols("UCD-SNMP-MIB", "ucdExperimental")
 ucdDlmodMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 2021, 13, 14))
 ucdDlmodMIB.setRevisions(('2000-01-26 00:00', '1999-12-10 00:00',))
@@ -32,4 +32,4 @@ dlmodError = MibTableColumn((1, 3, 6, 1, 4, 1, 2021, 13, 14, 2, 1, 4), DisplaySt
 if mibBuilder.loadTexts: dlmodError.setStatus('current')
 dlmodStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 2021, 13, 14, 2, 1, 5), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5, 6, 7))).clone(namedValues=NamedValues(("loaded", 1), ("unloaded", 2), ("error", 3), ("load", 4), ("unload", 5), ("create", 6), ("delete", 7)))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: dlmodStatus.setStatus('current')
-mibBuilder.exportSymbols("UCD-DLMOD-MIB", dlmodName=dlmodName, dlmodIndex=dlmodIndex, dlmodNextIndex=dlmodNextIndex, dlmodPath=dlmodPath, ucdDlmodMIB=ucdDlmodMIB, dlmodTable=dlmodTable, PYSNMP_MODULE_ID=ucdDlmodMIB, dlmodStatus=dlmodStatus, dlmodEntry=dlmodEntry, dlmodError=dlmodError)
+mibBuilder.exportSymbols("UCD-DLMOD-MIB", dlmodEntry=dlmodEntry, dlmodNextIndex=dlmodNextIndex, dlmodTable=dlmodTable, dlmodName=dlmodName, dlmodPath=dlmodPath, dlmodError=dlmodError, dlmodStatus=dlmodStatus, ucdDlmodMIB=ucdDlmodMIB, PYSNMP_MODULE_ID=ucdDlmodMIB, dlmodIndex=dlmodIndex)

@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-TSOUT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-TSOUT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDSGTSOUT = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 34))
 ciscoDSGTSOUT.setRevisions(('2012-03-20 11:00', '2010-08-24 07:30',))
@@ -48,4 +48,4 @@ tsoutStatusRate = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 34, 2, 1, 3),
 if mibBuilder.loadTexts: tsoutStatusRate.setStatus('current')
 tsoutStatusFree = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 34, 2, 1, 4), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 2147483647))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: tsoutStatusFree.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-TSOUT-MIB", tsoutID=tsoutID, tsoutInstanceName=tsoutInstanceName, tsoutInsertNullPkt=tsoutInsertNullPkt, tsoutStatusRate=tsoutStatusRate, ciscoDSGTSOUT=ciscoDSGTSOUT, tsoutOutputMode=tsoutOutputMode, tsoutTable=tsoutTable, PYSNMP_MODULE_ID=ciscoDSGTSOUT, tsoutRateControl=tsoutRateControl, tsoutStatusTable=tsoutStatusTable, tsoutStatusEntry=tsoutStatusEntry, tsoutStatusInstanceName=tsoutStatusInstanceName, tsoutStatusFree=tsoutStatusFree, tsoutOutputRate=tsoutOutputRate, tsoutDescrambleMode=tsoutDescrambleMode, tsoutStatusID=tsoutStatusID, tsoutEntry=tsoutEntry, tsoutMOIPOutputMode=tsoutMOIPOutputMode)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-TSOUT-MIB", tsoutTable=tsoutTable, tsoutEntry=tsoutEntry, tsoutInstanceName=tsoutInstanceName, tsoutRateControl=tsoutRateControl, tsoutStatusTable=tsoutStatusTable, tsoutStatusID=tsoutStatusID, tsoutInsertNullPkt=tsoutInsertNullPkt, tsoutStatusInstanceName=tsoutStatusInstanceName, tsoutStatusFree=tsoutStatusFree, tsoutID=tsoutID, tsoutDescrambleMode=tsoutDescrambleMode, tsoutStatusEntry=tsoutStatusEntry, tsoutStatusRate=tsoutStatusRate, tsoutMOIPOutputMode=tsoutMOIPOutputMode, tsoutOutputMode=tsoutOutputMode, PYSNMP_MODULE_ID=ciscoDSGTSOUT, ciscoDSGTSOUT=ciscoDSGTSOUT, tsoutOutputRate=tsoutOutputRate)

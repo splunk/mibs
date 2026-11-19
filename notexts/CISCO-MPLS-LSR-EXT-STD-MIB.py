@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-MPLS-LSR-EXT-STD-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MPLS-LSR-EXT-STD-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
-mplsPerfGroup, mplsXCOutSegmentIndex, mplsXCInSegmentIndex, mplsInSegmentGroup, mplsXCIndex, mplsOutSegmentGroup, mplsXCGroup, mplsLsrNotificationGroup = mibBuilder.importSymbols("MPLS-LSR-STD-MIB", "mplsPerfGroup", "mplsXCOutSegmentIndex", "mplsXCInSegmentIndex", "mplsInSegmentGroup", "mplsXCIndex", "mplsOutSegmentGroup", "mplsXCGroup", "mplsLsrNotificationGroup")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+mplsXCGroup, mplsXCInSegmentIndex, mplsInSegmentGroup, mplsXCIndex, mplsLsrNotificationGroup, mplsPerfGroup, mplsOutSegmentGroup, mplsXCOutSegmentIndex = mibBuilder.importSymbols("MPLS-LSR-STD-MIB", "mplsXCGroup", "mplsXCInSegmentIndex", "mplsInSegmentGroup", "mplsXCIndex", "mplsLsrNotificationGroup", "mplsPerfGroup", "mplsOutSegmentGroup", "mplsXCOutSegmentIndex")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention, RowPointer = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "RowPointer")
 cmplsLsrExtStdMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 145))
 cmplsLsrExtStdMIB.setRevisions(('2012-02-22 00:00',))
@@ -41,4 +41,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cmplsXCExtGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 145, 2, 1, 1)).setObjects(("CISCO-MPLS-LSR-EXT-STD-MIB", "cmplsXCExtTunnelPointer"), ("CISCO-MPLS-LSR-EXT-STD-MIB", "cmplsXCOppositeDirXCPtr"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmplsXCExtGroup = cmplsXCExtGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-MPLS-LSR-EXT-STD-MIB", cmplsLsrExtConformance=cmplsLsrExtConformance, cmplsLsrExtModuleFullCompliance=cmplsLsrExtModuleFullCompliance, cmplsLsrExtModuleReadOnlyCompliance=cmplsLsrExtModuleReadOnlyCompliance, PYSNMP_MODULE_ID=cmplsLsrExtStdMIB, cmplsLsrExtNotifications=cmplsLsrExtNotifications, cmplsLsrExtObjects=cmplsLsrExtObjects, cmplsLsrExtCompliances=cmplsLsrExtCompliances, cmplsLsrExtGroups=cmplsLsrExtGroups, cmplsXCExtGroup=cmplsXCExtGroup, cmplsLsrExtStdMIB=cmplsLsrExtStdMIB, cmplsXCExtTable=cmplsXCExtTable, cmplsXCExtTunnelPointer=cmplsXCExtTunnelPointer, cmplsXCExtEntry=cmplsXCExtEntry, cmplsXCOppositeDirXCPtr=cmplsXCOppositeDirXCPtr)
+mibBuilder.exportSymbols("CISCO-MPLS-LSR-EXT-STD-MIB", PYSNMP_MODULE_ID=cmplsLsrExtStdMIB, cmplsXCExtTable=cmplsXCExtTable, cmplsLsrExtCompliances=cmplsLsrExtCompliances, cmplsLsrExtModuleFullCompliance=cmplsLsrExtModuleFullCompliance, cmplsLsrExtModuleReadOnlyCompliance=cmplsLsrExtModuleReadOnlyCompliance, cmplsXCExtEntry=cmplsXCExtEntry, cmplsXCExtTunnelPointer=cmplsXCExtTunnelPointer, cmplsLsrExtConformance=cmplsLsrExtConformance, cmplsLsrExtGroups=cmplsLsrExtGroups, cmplsLsrExtObjects=cmplsLsrExtObjects, cmplsLsrExtNotifications=cmplsLsrExtNotifications, cmplsXCExtGroup=cmplsXCExtGroup, cmplsLsrExtStdMIB=cmplsLsrExtStdMIB, cmplsXCOppositeDirXCPtr=cmplsXCOppositeDirXCPtr)

@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCO-PTOPO-EXTN-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-PTOPO-EXTN-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 PhysicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "PhysicalIndex")
 InterfaceIndexOrZero, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndexOrZero")
 ptopoConnEntry, = mibBuilder.importSymbols("PTOPO-MIB", "ptopoConnEntry")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoPtopoExtnMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 261))
 ciscoPtopoExtnMIB.setRevisions(('2002-05-12 00:00',))
 
@@ -77,4 +77,4 @@ cPtopoExtCdpProxyGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 261, 3, 2, 3)).set
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cPtopoExtCdpProxyGroup = cPtopoExtCdpProxyGroup.setStatus('current')
 if mibBuilder.loadTexts: cPtopoExtCdpProxyGroup.setDescription('The collection of objects which are used to configure\n        physical topology learning via CDP with support for use\n        of CDP running on a proxy interface.')
-mibBuilder.exportSymbols("CISCO-PTOPO-EXTN-MIB", cPtopoConnExtEntry=cPtopoConnExtEntry, ciscoPtopoExtnMIBObjects=ciscoPtopoExtnMIBObjects, cPtopoExtCdpTable=cPtopoExtCdpTable, cPtopoExtCdpLocalPort=cPtopoExtCdpLocalPort, cPtopoExtCdpProxyIf=cPtopoExtCdpProxyIf, cPtopoExtnCompliance=cPtopoExtnCompliance, cPtopoExtCdpLocalChassis=cPtopoExtCdpLocalChassis, ciscoPtopoExtnMIB=ciscoPtopoExtnMIB, cPtopoConnExtLinkDirection=cPtopoConnExtLinkDirection, cPtopoExtCdpDiscoveryState=cPtopoExtCdpDiscoveryState, cPtopoExtCdpProxyGroup=cPtopoExtCdpProxyGroup, cPtopoExtCdpRowStatus=cPtopoExtCdpRowStatus, cPtopoExtCdpGroup=cPtopoExtCdpGroup, cPtopoConnExtGroup=cPtopoConnExtGroup, cPtopoConnExtTable=cPtopoConnExtTable, cPtopoExtnGroups=cPtopoExtnGroups, PYSNMP_MODULE_ID=ciscoPtopoExtnMIB, cPtopoExtnConformance=cPtopoExtnConformance, cPtopoExtnCompliances=cPtopoExtnCompliances, cPtopoExtCdpEntry=cPtopoExtCdpEntry)
+mibBuilder.exportSymbols("CISCO-PTOPO-EXTN-MIB", cPtopoExtCdpTable=cPtopoExtCdpTable, cPtopoExtnCompliances=cPtopoExtnCompliances, cPtopoExtCdpLocalPort=cPtopoExtCdpLocalPort, cPtopoExtnConformance=cPtopoExtnConformance, cPtopoExtCdpProxyGroup=cPtopoExtCdpProxyGroup, cPtopoExtCdpDiscoveryState=cPtopoExtCdpDiscoveryState, ciscoPtopoExtnMIB=ciscoPtopoExtnMIB, cPtopoExtCdpEntry=cPtopoExtCdpEntry, cPtopoExtCdpLocalChassis=cPtopoExtCdpLocalChassis, cPtopoExtCdpGroup=cPtopoExtCdpGroup, cPtopoConnExtGroup=cPtopoConnExtGroup, cPtopoConnExtTable=cPtopoConnExtTable, cPtopoExtCdpRowStatus=cPtopoExtCdpRowStatus, cPtopoConnExtLinkDirection=cPtopoConnExtLinkDirection, PYSNMP_MODULE_ID=ciscoPtopoExtnMIB, cPtopoExtnCompliance=cPtopoExtnCompliance, cPtopoConnExtEntry=cPtopoConnExtEntry, cPtopoExtCdpProxyIf=cPtopoExtCdpProxyIf, ciscoPtopoExtnMIBObjects=ciscoPtopoExtnMIBObjects, cPtopoExtnGroups=cPtopoExtnGroups)

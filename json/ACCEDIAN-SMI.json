@@ -6,25 +6,25 @@
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "OBJECT-IDENTITY",
-      "iso",
-      "TimeTicks",
-      "Integer32",
-      "Gauge32",
-      "Counter64",
-      "Counter32",
-      "IpAddress",
-      "MODULE-IDENTITY",
+      "enterprises",
       "MibIdentifier",
       "Unsigned32",
-      "NOTIFICATION-TYPE",
-      "enterprises",
+      "Integer32",
+      "Counter32",
+      "IpAddress",
+      "TimeTicks",
+      "Gauge32",
+      "iso",
+      "Counter64",
+      "OBJECT-TYPE",
       "Bits",
-      "OBJECT-TYPE"
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY"
     ],
     "SNMPv2-TC": [
-      "TEXTUAL-CONVENTION",
-      "DisplayString"
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
     ]
   },
   "accedianMIB": {
@@ -70,7 +70,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/accedian/ACCEDIAN-SMI",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:30:05 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:33:09 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

@@ -5,25 +5,25 @@
       "gbnL2"
     ],
     "SNMPv2-CONF": [
-      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP",
       "MODULE-COMPLIANCE",
-      "OBJECT-GROUP"
+      "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "Counter32",
-      "TimeTicks",
-      "IpAddress",
-      "iso",
-      "Gauge32",
       "Bits",
-      "MibIdentifier",
+      "iso",
       "MODULE-IDENTITY",
       "OBJECT-TYPE",
-      "OBJECT-IDENTITY",
-      "Integer32",
       "Unsigned32",
+      "Integer32",
+      "TimeTicks",
       "Counter64",
-      "NOTIFICATION-TYPE"
+      "Gauge32",
+      "OBJECT-IDENTITY",
+      "Counter32",
+      "NOTIFICATION-TYPE",
+      "MibIdentifier",
+      "IpAddress"
     ],
     "SNMPv2-TC": [
       "TEXTUAL-CONVENTION",
@@ -996,7 +996,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/fs/STP-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:35:12 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:36:42 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

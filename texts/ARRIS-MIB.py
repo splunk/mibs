@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module ARRIS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/arris/ARRIS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:53 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:40 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection", "ValueRangeConstraint")
+ValueSizeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueRangeConstraint")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, Counter32, NotificationType, ObjectIdentity, enterprises, iso, TimeTicks, Gauge32, Unsigned32, IpAddress, MibIdentifier, Integer32, Counter64, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "Counter32", "NotificationType", "ObjectIdentity", "enterprises", "iso", "TimeTicks", "Gauge32", "Unsigned32", "IpAddress", "MibIdentifier", "Integer32", "Counter64", "Bits")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ModuleIdentity, IpAddress, NotificationType, Gauge32, ObjectIdentity, Unsigned32, MibIdentifier, Bits, iso, Integer32, Counter64, TimeTicks, enterprises, Counter32, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "IpAddress", "NotificationType", "Gauge32", "ObjectIdentity", "Unsigned32", "MibIdentifier", "Bits", "iso", "Integer32", "Counter64", "TimeTicks", "enterprises", "Counter32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 arris = ModuleIdentity((1, 3, 6, 1, 4, 1, 4115))
 arris.setRevisions(('1910-09-25 00:00', '1905-03-14 00:00', '1904-09-10 00:00', '1904-02-02 00:00', '1902-06-24 00:00', '1901-10-04 00:00', '1901-01-24 00:00', '1900-10-17 00:00',))
 
@@ -41,4 +41,4 @@ arrisGlobalAccessMib = MibIdentifier((1, 3, 6, 1, 4, 1, 4115, 1, 6, 1))
 arrisGlobalAccessProductUas = MibIdentifier((1, 3, 6, 1, 4, 1, 4115, 1, 6, 2))
 arrisD5UEQam = MibIdentifier((1, 3, 6, 1, 4, 1, 4115, 1, 8, 1))
 arrisD5AM = MibIdentifier((1, 3, 6, 1, 4, 1, 4115, 1, 8, 2))
-mibBuilder.exportSymbols("ARRIS-MIB", cmtsMSAS=cmtsMSAS, arrisGlobalAccessProductUas=arrisGlobalAccessProductUas, cm110=cm110, arrisGlobalAccessMib=arrisGlobalAccessMib, cmts1500=cmts1500, arrisD5UEQam=arrisD5UEQam, arrisProdIdVideo=arrisProdIdVideo, cmtsC4=cmtsC4, ttm=ttm, arrisProdIdCM=arrisProdIdCM, arrisProdIdMRC=arrisProdIdMRC, arrisProdIdCMTS=arrisProdIdCMTS, arrisProdIdGlobalAccess=arrisProdIdGlobalAccess, tcm=tcm, ttp=ttp, PYSNMP_MODULE_ID=arris, arrisD5AM=arrisD5AM, mrcController=mrcController, arrisProducts=arrisProducts, arris=arris, cmtsCommon=cmtsCommon, packetport=packetport, cmtsC3=cmtsC3)
+mibBuilder.exportSymbols("ARRIS-MIB", arrisGlobalAccessProductUas=arrisGlobalAccessProductUas, cm110=cm110, arrisProdIdVideo=arrisProdIdVideo, arrisProdIdMRC=arrisProdIdMRC, cmts1500=cmts1500, arrisGlobalAccessMib=arrisGlobalAccessMib, ttm=ttm, arrisProdIdCMTS=arrisProdIdCMTS, ttp=ttp, PYSNMP_MODULE_ID=arris, arrisProdIdCM=arrisProdIdCM, arrisProducts=arrisProducts, mrcController=mrcController, arris=arris, cmtsMSAS=cmtsMSAS, arrisProdIdGlobalAccess=arrisProdIdGlobalAccess, packetport=packetport, cmtsCommon=cmtsCommon, tcm=tcm, arrisD5AM=arrisD5AM, cmtsC4=cmtsC4, cmtsC3=cmtsC3, arrisD5UEQam=arrisD5UEQam)

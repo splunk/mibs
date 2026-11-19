@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module DLINKSW-SAFEGUARD-ENGINE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-SAFEGUARD-ENGINE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:48 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
 dCpuProtectMIBObjects, = mibBuilder.importSymbols("DLINKSW-CPU-PROTECT-MIB", "dCpuProtectMIBObjects")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-Integer32, Counter32, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, Gauge32, ObjectIdentity, ModuleIdentity, Bits, IpAddress, iso, NotificationType, MibIdentifier, Unsigned32 = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Counter32", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "Gauge32", "ObjectIdentity", "ModuleIdentity", "Bits", "IpAddress", "iso", "NotificationType", "MibIdentifier", "Unsigned32")
-RowStatus, TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "TextualConvention", "DisplayString", "TruthValue")
+ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
+Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Unsigned32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Unsigned32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
+TextualConvention, TruthValue, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "RowStatus", "DisplayString")
 dlinkSwSafeguardEngineMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 19, 1, 1))
 dlinkSwSafeguardEngineMIB.setRevisions(('2012-06-27 00:00',))
 
@@ -64,4 +64,4 @@ dSafeguardEngineNotifGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 171, 14, 19, 1
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dSafeguardEngineNotifGroup = dSafeguardEngineNotifGroup.setStatus('current')
 if mibBuilder.loadTexts: dSafeguardEngineNotifGroup.setDescription('A collection of notifications providing information \n                about the System mode change of Safeguard Engine.')
-mibBuilder.exportSymbols("DLINKSW-SAFEGUARD-ENGINE-MIB", dSafeguardEngineGroups=dSafeguardEngineGroups, dSafeguardEngNotifEnableGroup=dSafeguardEngNotifEnableGroup, dSafeguardEngineCurrentMode=dSafeguardEngineCurrentMode, dSafeguardEngineMIBObjects=dSafeguardEngineMIBObjects, dlinkSwSafeguardEngineMIB=dlinkSwSafeguardEngineMIB, dSafeguardEngineCompliances=dSafeguardEngineCompliances, dSafeguardEngineState=dSafeguardEngineState, dSafeguardEngineFallThresh=dSafeguardEngineFallThresh, dSafeguardEngineGroup=dSafeguardEngineGroup, dSafeguardChgToNormal=dSafeguardChgToNormal, dSafeguardEngineCompliance=dSafeguardEngineCompliance, dSafeguardEngineNotifGroup=dSafeguardEngineNotifGroup, dSafeguardEngineNotifEnable=dSafeguardEngineNotifEnable, PYSNMP_MODULE_ID=dlinkSwSafeguardEngineMIB, dSafeguardEngineRiseThresh=dSafeguardEngineRiseThresh, dSafeguardEngineMIBNotif=dSafeguardEngineMIBNotif, dSafeguardChgToExhausted=dSafeguardChgToExhausted, dSafeguardEngineMIBConformance=dSafeguardEngineMIBConformance)
+mibBuilder.exportSymbols("DLINKSW-SAFEGUARD-ENGINE-MIB", dlinkSwSafeguardEngineMIB=dlinkSwSafeguardEngineMIB, dSafeguardEngineCompliances=dSafeguardEngineCompliances, PYSNMP_MODULE_ID=dlinkSwSafeguardEngineMIB, dSafeguardEngineFallThresh=dSafeguardEngineFallThresh, dSafeguardEngNotifEnableGroup=dSafeguardEngNotifEnableGroup, dSafeguardEngineMIBNotif=dSafeguardEngineMIBNotif, dSafeguardEngineNotifGroup=dSafeguardEngineNotifGroup, dSafeguardChgToExhausted=dSafeguardChgToExhausted, dSafeguardEngineRiseThresh=dSafeguardEngineRiseThresh, dSafeguardEngineGroup=dSafeguardEngineGroup, dSafeguardEngineMIBConformance=dSafeguardEngineMIBConformance, dSafeguardEngineGroups=dSafeguardEngineGroups, dSafeguardEngineMIBObjects=dSafeguardEngineMIBObjects, dSafeguardChgToNormal=dSafeguardChgToNormal, dSafeguardEngineState=dSafeguardEngineState, dSafeguardEngineNotifEnable=dSafeguardEngineNotifEnable, dSafeguardEngineCurrentMode=dSafeguardEngineCurrentMode, dSafeguardEngineCompliance=dSafeguardEngineCompliance)

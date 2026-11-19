@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-TRUSTSEC-TC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-TRUSTSEC-TC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoCtsTcMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 694))
 ciscoCtsTcMIB.setRevisions(('2013-06-06 00:00', '2012-01-30 00:00', '2009-05-14 00:00',))
@@ -97,4 +97,4 @@ class CtsSxpConnectionStatus(TextualConvention, Integer32):
     subtypeSpec = Integer32.subtypeSpec + ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5))
     namedValues = NamedValues(("other", 1), ("off", 2), ("on", 3), ("pendingOn", 4), ("deleteHoldDown", 5))
 
-mibBuilder.exportSymbols("CISCO-TRUSTSEC-TC-MIB", CtsCredentialRecordType=CtsCredentialRecordType, CtsSecurityGroupTag=CtsSecurityGroupTag, CtsAclList=CtsAclList, ciscoCtsTcMIB=ciscoCtsTcMIB, CtsAclNameOrEmpty=CtsAclNameOrEmpty, CtsPassword=CtsPassword, CtsAclName=CtsAclName, CtsPasswordEncryptionType=CtsPasswordEncryptionType, CtsGenerationId=CtsGenerationId, CtsSgaclMonitorMode=CtsSgaclMonitorMode, CtsAclListOrEmpty=CtsAclListOrEmpty, CtsAcsAuthorityIdentity=CtsAcsAuthorityIdentity, CtsSxpConnectionStatus=CtsSxpConnectionStatus, PYSNMP_MODULE_ID=ciscoCtsTcMIB, CtsPolicyName=CtsPolicyName)
+mibBuilder.exportSymbols("CISCO-TRUSTSEC-TC-MIB", CtsPolicyName=CtsPolicyName, CtsAclListOrEmpty=CtsAclListOrEmpty, CtsPassword=CtsPassword, CtsCredentialRecordType=CtsCredentialRecordType, CtsSecurityGroupTag=CtsSecurityGroupTag, PYSNMP_MODULE_ID=ciscoCtsTcMIB, CtsSgaclMonitorMode=CtsSgaclMonitorMode, CtsAclName=CtsAclName, CtsSxpConnectionStatus=CtsSxpConnectionStatus, CtsPasswordEncryptionType=CtsPasswordEncryptionType, CtsAclList=CtsAclList, CtsAcsAuthorityIdentity=CtsAcsAuthorityIdentity, CtsAclNameOrEmpty=CtsAclNameOrEmpty, ciscoCtsTcMIB=ciscoCtsTcMIB, CtsGenerationId=CtsGenerationId)

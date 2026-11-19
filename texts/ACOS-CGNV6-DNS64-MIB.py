@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ACOS-CGNV6-DNS64-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/a10/ACOS-CGNV6-DNS64-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:09 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 acosSchema, = mibBuilder.importSymbols("A10-AX-MIB", "acosSchema")
 OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 InetAddressType, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Gauge32, MibIdentifier, IpAddress, ObjectIdentity, Counter32, Bits, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, iso, TimeTicks, Unsigned32, NotificationType, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "MibIdentifier", "IpAddress", "ObjectIdentity", "Counter32", "Bits", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "iso", "TimeTicks", "Unsigned32", "NotificationType", "Counter64")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+ModuleIdentity, iso, Counter64, NotificationType, TimeTicks, Bits, Unsigned32, MibIdentifier, Integer32, Counter32, ObjectIdentity, IpAddress, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "iso", "Counter64", "NotificationType", "TimeTicks", "Bits", "Unsigned32", "MibIdentifier", "Integer32", "Counter32", "ObjectIdentity", "IpAddress", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
 TextualConvention, DisplayString, PhysAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "PhysAddress")
 cgnv6Dns64Module = ModuleIdentity((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 420))
 if mibBuilder.loadTexts: cgnv6Dns64Module.setLastUpdated('200705071327Z')
@@ -73,4 +73,4 @@ if mibBuilder.loadTexts: dns64StatsCache.setDescription('cache')
 dns64StatsDrop = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 420, 1, 1, 1, 16), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: dns64StatsDrop.setStatus('current')
 if mibBuilder.loadTexts: dns64StatsDrop.setDescription('drop')
-mibBuilder.exportSymbols("ACOS-CGNV6-DNS64-MIB", PYSNMP_MODULE_ID=cgnv6Dns64Module, dns64StatsTable=dns64StatsTable, dns64StatsEntry=dns64StatsEntry, dns64StatsQueryParallel=dns64StatsQueryParallel, cgnv6Dns64Module=cgnv6Dns64Module, dns64StatsRespEmpty=dns64StatsRespEmpty, dns64StatsDrop=dns64StatsDrop, dns64StatsAdjust=dns64StatsAdjust, dns64StatsQueryPassive=dns64StatsQueryPassive, dns64StatsRespBadQr=dns64StatsRespBadQr, dns64StatsQueryBadPkt=dns64StatsQueryBadPkt, dns64StatsRespLocal=dns64StatsRespLocal, dns64StatsRespBadPkt=dns64StatsRespBadPkt, dns64StatsCache=dns64StatsCache, dns64StatsQuery=dns64StatsQuery, dns64StatsSlotId=dns64StatsSlotId, dns64StatsRespChg=dns64StatsRespChg, dns64StatsRespErr=dns64StatsRespErr, dns64StatsResp=dns64StatsResp, dns64StatsQueryChg=dns64StatsQueryChg, dns64=dns64)
+mibBuilder.exportSymbols("ACOS-CGNV6-DNS64-MIB", PYSNMP_MODULE_ID=cgnv6Dns64Module, dns64=dns64, dns64StatsQueryParallel=dns64StatsQueryParallel, dns64StatsRespChg=dns64StatsRespChg, dns64StatsRespLocal=dns64StatsRespLocal, cgnv6Dns64Module=cgnv6Dns64Module, dns64StatsResp=dns64StatsResp, dns64StatsRespBadQr=dns64StatsRespBadQr, dns64StatsEntry=dns64StatsEntry, dns64StatsQuery=dns64StatsQuery, dns64StatsRespErr=dns64StatsRespErr, dns64StatsQueryPassive=dns64StatsQueryPassive, dns64StatsSlotId=dns64StatsSlotId, dns64StatsRespBadPkt=dns64StatsRespBadPkt, dns64StatsAdjust=dns64StatsAdjust, dns64StatsRespEmpty=dns64StatsRespEmpty, dns64StatsQueryChg=dns64StatsQueryChg, dns64StatsQueryBadPkt=dns64StatsQueryBadPkt, dns64StatsCache=dns64StatsCache, dns64StatsDrop=dns64StatsDrop, dns64StatsTable=dns64StatsTable)

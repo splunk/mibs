@@ -18,24 +18,24 @@
     ],
     "SNMPv2-SMI": [
       "MibIdentifier",
-      "TimeTicks",
-      "OBJECT-IDENTITY",
-      "Integer32",
-      "IpAddress",
-      "OBJECT-TYPE",
+      "MODULE-IDENTITY",
       "Bits",
-      "Gauge32",
       "iso",
-      "NOTIFICATION-TYPE",
-      "Unsigned32",
-      "Counter64",
+      "OBJECT-TYPE",
+      "TimeTicks",
       "Counter32",
-      "MODULE-IDENTITY"
+      "OBJECT-IDENTITY",
+      "Counter64",
+      "IpAddress",
+      "Integer32",
+      "Unsigned32",
+      "NOTIFICATION-TYPE",
+      "Gauge32"
     ],
     "SNMPv2-TC": [
+      "TEXTUAL-CONVENTION",
       "DisplayString",
-      "TruthValue",
-      "TEXTUAL-CONVENTION"
+      "TruthValue"
     ]
   },
   "cienaCes8021xMIB": {
@@ -677,7 +677,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ciena/CIENA-CES-8021X-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:31:54 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:34:24 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

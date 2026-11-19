@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-DS0-CROSS-CONNECT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DS0-CROSS-CONNECT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoDs0CrossConnectMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 9999))
 ciscoDs0CrossConnectMIB.setRevisions(('2003-03-05 00:00',))
 
@@ -58,4 +58,4 @@ cDs0CrossConnectConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 9999, 2, 2, 1
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cDs0CrossConnectConfigGroup = cDs0CrossConnectConfigGroup.setStatus('current')
 if mibBuilder.loadTexts: cDs0CrossConnectConfigGroup.setDescription('A collection of objects for general configuration of  \n         Ds0 cross connection.')
-mibBuilder.exportSymbols("CISCO-DS0-CROSS-CONNECT-MIB", ciscoDs0CrossConnectMIBObjects=ciscoDs0CrossConnectMIBObjects, PYSNMP_MODULE_ID=ciscoDs0CrossConnectMIB, cds0CrossConnectConfigTable=cds0CrossConnectConfigTable, ciscoDs0CrossConnectMIBNotifs=ciscoDs0CrossConnectMIBNotifs, cds0Endpt1Ds1=cds0Endpt1Ds1, ciscoDs0CrossConnectMIBGroups=ciscoDs0CrossConnectMIBGroups, cds0ConnRowStatus=cds0ConnRowStatus, cds0CrossConnectConfigEntry=cds0CrossConnectConfigEntry, cds0Endpt1Ds0Group=cds0Endpt1Ds0Group, ciscoDs0CrossConnectMIB=ciscoDs0CrossConnectMIB, cds0Endpt2Ds1=cds0Endpt2Ds1, cDs0CrossConnectConfig=cDs0CrossConnectConfig, cds0Endpt2Ds0Group=cds0Endpt2Ds0Group, ciscoDs0CrossConnectMIBCompliances=ciscoDs0CrossConnectMIBCompliances, ciscoDs0CrossConnectMIBCompliance=ciscoDs0CrossConnectMIBCompliance, ciscoDs0CrossConnectMIBConformance=ciscoDs0CrossConnectMIBConformance, cDs0CrossConnectConfigGroup=cDs0CrossConnectConfigGroup)
+mibBuilder.exportSymbols("CISCO-DS0-CROSS-CONNECT-MIB", cds0ConnRowStatus=cds0ConnRowStatus, cds0Endpt2Ds0Group=cds0Endpt2Ds0Group, cds0Endpt1Ds1=cds0Endpt1Ds1, ciscoDs0CrossConnectMIBCompliance=ciscoDs0CrossConnectMIBCompliance, cds0Endpt2Ds1=cds0Endpt2Ds1, cds0CrossConnectConfigTable=cds0CrossConnectConfigTable, cDs0CrossConnectConfigGroup=cDs0CrossConnectConfigGroup, PYSNMP_MODULE_ID=ciscoDs0CrossConnectMIB, cds0Endpt1Ds0Group=cds0Endpt1Ds0Group, cDs0CrossConnectConfig=cDs0CrossConnectConfig, ciscoDs0CrossConnectMIBCompliances=ciscoDs0CrossConnectMIBCompliances, ciscoDs0CrossConnectMIBConformance=ciscoDs0CrossConnectMIBConformance, cds0CrossConnectConfigEntry=cds0CrossConnectConfigEntry, ciscoDs0CrossConnectMIBObjects=ciscoDs0CrossConnectMIBObjects, ciscoDs0CrossConnectMIB=ciscoDs0CrossConnectMIB, ciscoDs0CrossConnectMIBNotifs=ciscoDs0CrossConnectMIBNotifs, ciscoDs0CrossConnectMIBGroups=ciscoDs0CrossConnectMIBGroups)

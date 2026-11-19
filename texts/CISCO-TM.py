@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-TM (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-TM
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoDomains, = mibBuilder.importSymbols("CISCO-SMI", "ciscoDomains")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, ObjectIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "ObjectIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, IpAddress, iso, TimeTicks, Counter32, ModuleIdentity, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "IpAddress", "iso", "TimeTicks", "Counter32", "ModuleIdentity", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoTransportMappings = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 19, 1))
 ciscoTransportMappings.setRevisions(('2001-08-23 16:00', '2000-06-21 16:00',))
@@ -50,4 +50,4 @@ class SnmpCNSIdentifier(TextualConvention, OctetString):
     displayHint = '19a.255a'
     subtypeSpec = OctetString.subtypeSpec + ValueSizeConstraint(19, 274)
 
-mibBuilder.exportSymbols("CISCO-TM", PYSNMP_MODULE_ID=ciscoTransportMappings, SnmpUDPVPNAddress=SnmpUDPVPNAddress, snmpUDPVPNDomain=snmpUDPVPNDomain, SnmpAAL5VCIdentifier=SnmpAAL5VCIdentifier, snmpCNSDomain=snmpCNSDomain, snmpAAL5Domain=snmpAAL5Domain, SnmpCNSIdentifier=SnmpCNSIdentifier, ciscoTransportMappings=ciscoTransportMappings)
+mibBuilder.exportSymbols("CISCO-TM", SnmpUDPVPNAddress=SnmpUDPVPNAddress, PYSNMP_MODULE_ID=ciscoTransportMappings, snmpUDPVPNDomain=snmpUDPVPNDomain, SnmpAAL5VCIdentifier=SnmpAAL5VCIdentifier, snmpAAL5Domain=snmpAAL5Domain, ciscoTransportMappings=ciscoTransportMappings, SnmpCNSIdentifier=SnmpCNSIdentifier, snmpCNSDomain=snmpCNSDomain)

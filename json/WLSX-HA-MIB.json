@@ -6,43 +6,43 @@
     ],
     "ARUBA-TC": [
       "ArubaHaRole",
-      "ArubaHaConnectivityStatus",
-      "ArubaEnableValue"
+      "ArubaEnableValue",
+      "ArubaHaConnectivityStatus"
     ],
     "SNMPv2-CONF": [
       "OBJECT-GROUP",
-      "NOTIFICATION-GROUP",
-      "MODULE-COMPLIANCE"
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "OBJECT-IDENTITY",
-      "MODULE-IDENTITY",
-      "OBJECT-TYPE",
-      "Unsigned32",
+      "Integer32",
       "TimeTicks",
-      "Counter32",
-      "iso",
       "Counter64",
-      "snmpModules",
-      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
       "Bits",
-      "IpAddress",
-      "Gauge32",
       "MibIdentifier",
-      "Integer32"
+      "OBJECT-TYPE",
+      "Gauge32",
+      "IpAddress",
+      "iso",
+      "snmpModules",
+      "Counter32",
+      "Unsigned32",
+      "MODULE-IDENTITY",
+      "NOTIFICATION-TYPE"
     ],
     "SNMPv2-TC": [
-      "TAddress",
       "TimeInterval",
-      "TDomain",
+      "DisplayString",
+      "RowStatus",
+      "TestAndIncr",
+      "TEXTUAL-CONVENTION",
       "StorageType",
       "MacAddress",
-      "TEXTUAL-CONVENTION",
-      "DisplayString",
-      "PhysAddress",
-      "TestAndIncr",
       "TruthValue",
-      "RowStatus"
+      "TDomain",
+      "PhysAddress",
+      "TAddress"
     ]
   },
   "wlsxHaMIB": {
@@ -274,7 +274,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -286,7 +286,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -298,7 +298,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -373,7 +373,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -409,7 +409,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -464,7 +464,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -476,7 +476,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -488,7 +488,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -500,7 +500,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -512,7 +512,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -524,7 +524,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -559,7 +559,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -571,7 +571,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -583,7 +583,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -595,7 +595,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "Gauge32",
+      "type": "Gauge",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -886,7 +886,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/arubaos/WLSX-HA-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:30:56 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:33:43 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

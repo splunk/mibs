@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-COMPRESSION-SERVICE-ADAPTER-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-COMPRESSION-SERVICE-ADAPTER-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 cardIndex, = mibBuilder.importSymbols("OLD-CISCO-CHASSIS-MIB", "cardIndex")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoCompressionServiceAdapterMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 57))
 if mibBuilder.loadTexts: ciscoCompressionServiceAdapterMIB.setLastUpdated('9608150000Z')
@@ -52,4 +52,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 csaMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 57, 3, 2, 1)).setObjects(("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", "csaInOctets"), ("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", "csaOutOctets"), ("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", "csaInPackets"), ("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", "csaOutPackets"), ("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", "csaInPacketsDrop"), ("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", "csaOutPacketsDrop"), ("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", "csaNumberOfRestarts"), ("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", "csaCompressionRatio"), ("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", "csaDecompressionRatio"), ("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", "csaEnable"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     csaMIBGroup = csaMIBGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", csaDecompressionRatio=csaDecompressionRatio, csaOutOctets=csaOutOctets, csaMIBCompliances=csaMIBCompliances, csaMIBGroup=csaMIBGroup, ciscoCompressionServiceAdapterMIB=ciscoCompressionServiceAdapterMIB, csaStats=csaStats, csaInPacketsDrop=csaInPacketsDrop, csaInPackets=csaInPackets, csaNumberOfRestarts=csaNumberOfRestarts, csaInOctets=csaInOctets, csaOutPackets=csaOutPackets, csaEnable=csaEnable, ciscoCSAMIBObjects=ciscoCSAMIBObjects, csaMIBCompliance=csaMIBCompliance, csaCompressionRatio=csaCompressionRatio, ciscoCSAMIBConformance=ciscoCSAMIBConformance, csaMIBGroups=csaMIBGroups, csaOutPacketsDrop=csaOutPacketsDrop, csaStatsTable=csaStatsTable, PYSNMP_MODULE_ID=ciscoCompressionServiceAdapterMIB, csaStatsEntry=csaStatsEntry)
+mibBuilder.exportSymbols("CISCO-COMPRESSION-SERVICE-ADAPTER-MIB", ciscoCompressionServiceAdapterMIB=ciscoCompressionServiceAdapterMIB, csaEnable=csaEnable, ciscoCSAMIBConformance=ciscoCSAMIBConformance, csaMIBGroups=csaMIBGroups, csaMIBGroup=csaMIBGroup, csaInPacketsDrop=csaInPacketsDrop, csaOutPackets=csaOutPackets, PYSNMP_MODULE_ID=ciscoCompressionServiceAdapterMIB, ciscoCSAMIBObjects=ciscoCSAMIBObjects, csaStats=csaStats, csaMIBCompliance=csaMIBCompliance, csaStatsEntry=csaStatsEntry, csaStatsTable=csaStatsTable, csaCompressionRatio=csaCompressionRatio, csaMIBCompliances=csaMIBCompliances, csaOutOctets=csaOutOctets, csaNumberOfRestarts=csaNumberOfRestarts, csaOutPacketsDrop=csaOutPacketsDrop, csaDecompressionRatio=csaDecompressionRatio, csaInOctets=csaInOctets, csaInPackets=csaInPackets)

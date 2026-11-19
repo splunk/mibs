@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-INTERFACETOPN-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-INTERFACETOPN-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 interfaceTopNControlEntry, = mibBuilder.importSymbols("INTERFACETOPN-MIB", "interfaceTopNControlEntry")
 VlanIndex, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "VlanIndex")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoInterfaceTopNExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 482))
 ciscoInterfaceTopNExtMIB.setRevisions(('2010-10-19 00:00', '2008-01-15 00:00', '2006-03-15 00:00',))
@@ -50,4 +50,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoIfTopNExtCtrlVlanGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 482, 2, 2, 3)).setObjects(("CISCO-INTERFACETOPN-EXT-MIB", "citneInterfaceTopNVlanNumber"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoIfTopNExtCtrlVlanGroup = ciscoIfTopNExtCtrlVlanGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-INTERFACETOPN-EXT-MIB", citneInterfaceTopNCounterType=citneInterfaceTopNCounterType, ciscoIfTopNExtMIBCompliances=ciscoIfTopNExtMIBCompliances, ciscoInterfaceTopNExtMIBNotifs=ciscoInterfaceTopNExtMIBNotifs, ciscoInterfaceTopNExtMIBObjects=ciscoInterfaceTopNExtMIBObjects, ciscoInterfaceTopNExtMIB=ciscoInterfaceTopNExtMIB, ciscoIfTopNExtMIBGroups=ciscoIfTopNExtMIBGroups, ciscoIfTopNExtMIBCompliance=ciscoIfTopNExtMIBCompliance, ciscoIfTopNExtCtrlVlanGroup=ciscoIfTopNExtCtrlVlanGroup, PYSNMP_MODULE_ID=ciscoInterfaceTopNExtMIB, citneInterfaceTopNVlanNumber=citneInterfaceTopNVlanNumber, citneInterfaceTopNCaps=citneInterfaceTopNCaps, ciscoIfTopNExtCapsGroup=ciscoIfTopNExtCapsGroup, ciscoIfTopNExtControlGroup=ciscoIfTopNExtControlGroup, citneInterfaceTopNControlEntry=citneInterfaceTopNControlEntry, ciscoInterfaceTopNExtMIBConform=ciscoInterfaceTopNExtMIBConform, citneInterfaceTopNInterfaceType=citneInterfaceTopNInterfaceType, citneInterfaceTopNControlTable=citneInterfaceTopNControlTable)
+mibBuilder.exportSymbols("CISCO-INTERFACETOPN-EXT-MIB", citneInterfaceTopNInterfaceType=citneInterfaceTopNInterfaceType, citneInterfaceTopNVlanNumber=citneInterfaceTopNVlanNumber, citneInterfaceTopNCounterType=citneInterfaceTopNCounterType, PYSNMP_MODULE_ID=ciscoInterfaceTopNExtMIB, ciscoInterfaceTopNExtMIBConform=ciscoInterfaceTopNExtMIBConform, citneInterfaceTopNCaps=citneInterfaceTopNCaps, ciscoInterfaceTopNExtMIBObjects=ciscoInterfaceTopNExtMIBObjects, citneInterfaceTopNControlTable=citneInterfaceTopNControlTable, ciscoIfTopNExtControlGroup=ciscoIfTopNExtControlGroup, ciscoIfTopNExtCtrlVlanGroup=ciscoIfTopNExtCtrlVlanGroup, citneInterfaceTopNControlEntry=citneInterfaceTopNControlEntry, ciscoInterfaceTopNExtMIB=ciscoInterfaceTopNExtMIB, ciscoInterfaceTopNExtMIBNotifs=ciscoInterfaceTopNExtMIBNotifs, ciscoIfTopNExtCapsGroup=ciscoIfTopNExtCapsGroup, ciscoIfTopNExtMIBCompliances=ciscoIfTopNExtMIBCompliances, ciscoIfTopNExtMIBGroups=ciscoIfTopNExtMIBGroups, ciscoIfTopNExtMIBCompliance=ciscoIfTopNExtMIBCompliance)

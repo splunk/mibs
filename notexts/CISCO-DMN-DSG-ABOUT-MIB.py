@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-ABOUT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-ABOUT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDSGAbout = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 7))
 ciscoDSGAbout.setRevisions(('2010-08-03 06:00', '2010-03-22 05:00', '2009-12-20 15:00',))
@@ -67,4 +67,4 @@ firmwareVersion = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 7, 2, 4, 1, 4
 if mibBuilder.loadTexts: firmwareVersion.setStatus('current')
 firmwareValidationCode = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 7, 2, 4, 1, 5), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 49))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: firmwareValidationCode.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-ABOUT-MIB", boardPosition=boardPosition, firmwareVersion=firmwareVersion, PYSNMP_MODULE_ID=ciscoDSGAbout, firmwareEntry=firmwareEntry, swFileIdx=swFileIdx, swValidationCode=swValidationCode, swIdx=swIdx, boardTable=boardTable, firmwareID=firmwareID, boardRev=boardRev, boardEntry=boardEntry, firmwareBoardID=firmwareBoardID, aboutTable=aboutTable, swBoardIdx=swBoardIdx, boardID=boardID, swTable=swTable, boardIdx=boardIdx, swVersion=swVersion, swStatus=swStatus, boardSerialNum=boardSerialNum, firmwareTable=firmwareTable, boardOptionBits=boardOptionBits, firmwareIdx=firmwareIdx, firmwareValidationCode=firmwareValidationCode, swEntry=swEntry, swID=swID, ciscoDSGAbout=ciscoDSGAbout, swCtrl=swCtrl)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-ABOUT-MIB", boardOptionBits=boardOptionBits, boardPosition=boardPosition, swID=swID, firmwareID=firmwareID, swIdx=swIdx, swValidationCode=swValidationCode, boardTable=boardTable, boardSerialNum=boardSerialNum, swEntry=swEntry, firmwareValidationCode=firmwareValidationCode, swStatus=swStatus, boardRev=boardRev, swVersion=swVersion, boardEntry=boardEntry, swBoardIdx=swBoardIdx, firmwareTable=firmwareTable, PYSNMP_MODULE_ID=ciscoDSGAbout, aboutTable=aboutTable, firmwareIdx=firmwareIdx, boardID=boardID, swTable=swTable, swCtrl=swCtrl, ciscoDSGAbout=ciscoDSGAbout, boardIdx=boardIdx, swFileIdx=swFileIdx, firmwareEntry=firmwareEntry, firmwareBoardID=firmwareBoardID, firmwareVersion=firmwareVersion)

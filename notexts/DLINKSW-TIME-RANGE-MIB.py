@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module DLINKSW-TIME-RANGE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-TIME-RANGE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:46 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint")
+SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
-ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, iso, TimeTicks, ModuleIdentity, NotificationType, Unsigned32, ObjectIdentity, MibIdentifier, Gauge32, Counter32, Counter64, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "iso", "TimeTicks", "ModuleIdentity", "NotificationType", "Unsigned32", "ObjectIdentity", "MibIdentifier", "Gauge32", "Counter32", "Counter64", "IpAddress")
-RowStatus, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "TextualConvention", "DisplayString")
+NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
+Counter32, Counter64, IpAddress, ModuleIdentity, Unsigned32, Gauge32, Bits, iso, ObjectIdentity, Integer32, NotificationType, MibIdentifier, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Counter64", "IpAddress", "ModuleIdentity", "Unsigned32", "Gauge32", "Bits", "iso", "ObjectIdentity", "Integer32", "NotificationType", "MibIdentifier", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
+DisplayString, TextualConvention, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "RowStatus")
 dlinkSwTimeRangeMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 50))
 dlinkSwTimeRangeMIB.setRevisions(('2013-03-22 00:00',))
 if mibBuilder.loadTexts: dlinkSwTimeRangeMIB.setLastUpdated('201303220000Z')
@@ -50,4 +50,4 @@ dTimeRangeGroups = MibIdentifier((1, 3, 6, 1, 4, 1, 171, 14, 50, 2, 2))
 dTimeRangeProfileCfgGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 50, 2, 2, 1)).setObjects(("DLINKSW-TIME-RANGE-MIB", "dTimeRangeProfileRowStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dTimeRangeProfileCfgGroup = dTimeRangeProfileCfgGroup.setStatus('current')
-mibBuilder.exportSymbols("DLINKSW-TIME-RANGE-MIB", dTimeRangeProfileEndHour=dTimeRangeProfileEndHour, dTimeRangeGroups=dTimeRangeGroups, dTimeRangeCompliance=dTimeRangeCompliance, dTimeRangeProfileStartDayOfWeek=dTimeRangeProfileStartDayOfWeek, dTimeRangeMIBObjects=dTimeRangeMIBObjects, dTimeRangeProfileStartMinute=dTimeRangeProfileStartMinute, dTimeRangeMIBNotifications=dTimeRangeMIBNotifications, dTimeRangeProfilePeriodType=dTimeRangeProfilePeriodType, dTimeRangeMIBConformance=dTimeRangeMIBConformance, dTimeRangeProfileEntry=dTimeRangeProfileEntry, dTimeRangeProfileEndDayOfWeek=dTimeRangeProfileEndDayOfWeek, PYSNMP_MODULE_ID=dlinkSwTimeRangeMIB, dTimeRangeProfileName=dTimeRangeProfileName, dlinkSwTimeRangeMIB=dlinkSwTimeRangeMIB, dTimeRangeCompliances=dTimeRangeCompliances, dTimeRangeProfileCfgGroup=dTimeRangeProfileCfgGroup, dTimeRangeProfileTable=dTimeRangeProfileTable, dTimeRangeProfileStartHour=dTimeRangeProfileStartHour, dTimeRangeProfileRowStatus=dTimeRangeProfileRowStatus, dTimeRangeProfileEndMinute=dTimeRangeProfileEndMinute)
+mibBuilder.exportSymbols("DLINKSW-TIME-RANGE-MIB", dTimeRangeProfilePeriodType=dTimeRangeProfilePeriodType, dTimeRangeProfileName=dTimeRangeProfileName, dTimeRangeProfileStartMinute=dTimeRangeProfileStartMinute, dTimeRangeProfileEndMinute=dTimeRangeProfileEndMinute, dTimeRangeCompliances=dTimeRangeCompliances, dTimeRangeGroups=dTimeRangeGroups, PYSNMP_MODULE_ID=dlinkSwTimeRangeMIB, dTimeRangeProfileEndDayOfWeek=dTimeRangeProfileEndDayOfWeek, dTimeRangeMIBNotifications=dTimeRangeMIBNotifications, dTimeRangeProfileEntry=dTimeRangeProfileEntry, dTimeRangeProfileEndHour=dTimeRangeProfileEndHour, dTimeRangeMIBConformance=dTimeRangeMIBConformance, dTimeRangeMIBObjects=dTimeRangeMIBObjects, dTimeRangeCompliance=dTimeRangeCompliance, dTimeRangeProfileStartHour=dTimeRangeProfileStartHour, dlinkSwTimeRangeMIB=dlinkSwTimeRangeMIB, dTimeRangeProfileTable=dTimeRangeProfileTable, dTimeRangeProfileRowStatus=dTimeRangeProfileRowStatus, dTimeRangeProfileStartDayOfWeek=dTimeRangeProfileStartDayOfWeek, dTimeRangeProfileCfgGroup=dTimeRangeProfileCfgGroup)

@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-LAG-CAPABILITY (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-LAG-CAPABILITY
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:42 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoAgentCapability, = mibBuilder.importSymbols("CISCO-SMI", "ciscoAgentCapability")
-ModuleCompliance, NotificationGroup, AgentCapabilities = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "AgentCapabilities")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ModuleCompliance, AgentCapabilities, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "AgentCapabilities", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, MibIdentifier, Bits, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "MibIdentifier", "Bits", "iso", "Unsigned32", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoLagCapability = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 7, 332))
 ciscoLagCapability.setRevisions(('2012-04-02 00:00', '2011-09-27 00:00', '2010-11-01 00:00', '2009-11-19 00:00', '2007-07-10 10:00', '2006-06-15 12:00', '2004-02-04 00:00',))
@@ -71,4 +71,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     clagCapV15R0101SGPCat4K = clagCapV15R0101SGPCat4K.setProductRelease('Cisco IOS 15.1(1)SG on Cat4K family devices.')
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     clagCapV15R0101SGPCat4K = clagCapV15R0101SGPCat4K.setStatus('current')
-mibBuilder.exportSymbols("CISCO-LAG-CAPABILITY", clagCapV12R0233SXHPCat6K=clagCapV12R0233SXHPCat6K, PYSNMP_MODULE_ID=ciscoLagCapability, clagCapV12R0252SGPCat4K=clagCapV12R0252SGPCat4K, clagCapV12R0250SYPCat6K=clagCapV12R0250SYPCat6K, clagCapV15R0101SGPCat4K=clagCapV15R0101SGPCat4K, clagCapV12R0218SXF5PCat6KPfc2=clagCapV12R0218SXF5PCat6KPfc2, clagCapV15R0001SYPCat6k=clagCapV15R0001SYPCat6k, clagCapV12R0217SXCat6KPfc3=clagCapV12R0217SXCat6KPfc3, ciscoLagCapability=ciscoLagCapability, clagCapV12R0218SXF5PCat6KPfc3=clagCapV12R0218SXF5PCat6KPfc3, clagCapV12R0111bEXCat6K=clagCapV12R0111bEXCat6K, clagCapCatOSV08R0101=clagCapCatOSV08R0101, clagCapV12R0217SXCat6KPfc2=clagCapV12R0217SXCat6KPfc2)
+mibBuilder.exportSymbols("CISCO-LAG-CAPABILITY", clagCapV12R0233SXHPCat6K=clagCapV12R0233SXHPCat6K, clagCapV12R0252SGPCat4K=clagCapV12R0252SGPCat4K, clagCapV12R0218SXF5PCat6KPfc2=clagCapV12R0218SXF5PCat6KPfc2, PYSNMP_MODULE_ID=ciscoLagCapability, clagCapV15R0101SGPCat4K=clagCapV15R0101SGPCat4K, clagCapV12R0111bEXCat6K=clagCapV12R0111bEXCat6K, clagCapV15R0001SYPCat6k=clagCapV15R0001SYPCat6k, clagCapCatOSV08R0101=clagCapCatOSV08R0101, ciscoLagCapability=ciscoLagCapability, clagCapV12R0250SYPCat6K=clagCapV12R0250SYPCat6K, clagCapV12R0218SXF5PCat6KPfc3=clagCapV12R0218SXF5PCat6KPfc3, clagCapV12R0217SXCat6KPfc3=clagCapV12R0217SXCat6KPfc3, clagCapV12R0217SXCat6KPfc2=clagCapV12R0217SXCat6KPfc2)

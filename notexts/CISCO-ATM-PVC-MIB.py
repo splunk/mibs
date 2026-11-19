@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-ATM-PVC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ATM-PVC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-TextualConvention, DisplayString, TruthValue, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue", "RowStatus")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
 ciscoAtmPvcMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 94))
 ciscoAtmPvcMIB.setRevisions(('2002-04-11 00:00', '1997-11-18 00:00',))
 if mibBuilder.loadTexts: ciscoAtmPvcMIB.setLastUpdated('200204110000Z')
@@ -52,4 +52,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoAtmPvcMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 94, 3, 2, 1)).setObjects(("CISCO-ATM-PVC-MIB", "capvcVCD"), ("CISCO-ATM-PVC-MIB", "capvcType"), ("CISCO-ATM-PVC-MIB", "capvcPCR"), ("CISCO-ATM-PVC-MIB", "capvcOAM"), ("CISCO-ATM-PVC-MIB", "capvcFrequency"), ("CISCO-ATM-PVC-MIB", "capvcVlanId"), ("CISCO-ATM-PVC-MIB", "capvcRowStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoAtmPvcMIBGroup = ciscoAtmPvcMIBGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-ATM-PVC-MIB", ciscoAtmPvcMIB=ciscoAtmPvcMIB, capvcTable=capvcTable, ciscoAtmPvcMIBObjects=ciscoAtmPvcMIBObjects, capvcPCR=capvcPCR, ciscoAtmPvcMIBGroups=ciscoAtmPvcMIBGroups, capvcOAM=capvcOAM, capvcFrequency=capvcFrequency, capvcVlanId=capvcVlanId, ciscoAtmPvcCreateBindGroup=ciscoAtmPvcCreateBindGroup, capvcRowStatus=capvcRowStatus, capvcType=capvcType, ciscoAtmPvcMIBGroup=ciscoAtmPvcMIBGroup, ciscoAtmPvcMIBCompliance=ciscoAtmPvcMIBCompliance, capvcVCD=capvcVCD, PYSNMP_MODULE_ID=ciscoAtmPvcMIB, capvcVPI=capvcVPI, capvcVCI=capvcVCI, capvcEntry=capvcEntry, ciscoAtmPvcMIBCompliances=ciscoAtmPvcMIBCompliances, capvcPort=capvcPort, ciscoAtmPvcMIBConformance=ciscoAtmPvcMIBConformance)
+mibBuilder.exportSymbols("CISCO-ATM-PVC-MIB", capvcType=capvcType, ciscoAtmPvcMIBGroups=ciscoAtmPvcMIBGroups, ciscoAtmPvcCreateBindGroup=ciscoAtmPvcCreateBindGroup, capvcVPI=capvcVPI, capvcTable=capvcTable, capvcPCR=capvcPCR, capvcFrequency=capvcFrequency, capvcVCI=capvcVCI, capvcRowStatus=capvcRowStatus, capvcVCD=capvcVCD, ciscoAtmPvcMIBConformance=ciscoAtmPvcMIBConformance, capvcEntry=capvcEntry, capvcVlanId=capvcVlanId, ciscoAtmPvcMIBGroup=ciscoAtmPvcMIBGroup, ciscoAtmPvcMIB=ciscoAtmPvcMIB, PYSNMP_MODULE_ID=ciscoAtmPvcMIB, ciscoAtmPvcMIBCompliance=ciscoAtmPvcMIBCompliance, capvcPort=capvcPort, ciscoAtmPvcMIBCompliances=ciscoAtmPvcMIBCompliances, ciscoAtmPvcMIBObjects=ciscoAtmPvcMIBObjects, capvcOAM=capvcOAM)

@@ -2,52 +2,52 @@
   "imports": {
     "class": "imports",
     "IEEE8021-TC-MIB": [
-      "IEEE8021PriorityValue",
-      "IEEE8021BridgePortNumber",
-      "IEEE8021PriorityCodePoint",
       "IEEE8021PbbComponentIdentifierOrZero",
-      "IEEE8021BridgePortNumberOrZero",
-      "IEEE8021PbbComponentIdentifier",
+      "IEEE8021BridgePortNumber",
       "ieee802dot1mibs",
-      "IEEE8021BridgePortType"
+      "IEEE8021PbbComponentIdentifier",
+      "IEEE8021PriorityCodePoint",
+      "IEEE8021BridgePortType",
+      "IEEE8021PriorityValue",
+      "IEEE8021BridgePortNumberOrZero"
     ],
     "IF-MIB": [
+      "ifGeneralInformationGroup",
       "ifIndex",
-      "InterfaceIndexOrZero",
-      "ifGeneralInformationGroup"
+      "InterfaceIndexOrZero"
     ],
     "SNMP-FRAMEWORK-MIB": [
       "SnmpAdminString"
     ],
     "SNMPv2-CONF": [
       "OBJECT-GROUP",
-      "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-MIB": [
       "systemGroup"
     ],
     "SNMPv2-SMI": [
-      "NOTIFICATION-TYPE",
-      "MODULE-IDENTITY",
-      "TimeTicks",
-      "Integer32",
-      "Gauge32",
-      "OBJECT-TYPE",
-      "MibIdentifier",
-      "Counter32",
-      "Unsigned32",
-      "OBJECT-IDENTITY",
-      "Counter64",
       "Bits",
+      "IpAddress",
+      "Counter32",
+      "Counter64",
+      "Unsigned32",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Gauge32",
+      "OBJECT-IDENTITY",
+      "MibIdentifier",
+      "Integer32",
       "iso",
-      "IpAddress"
+      "NOTIFICATION-TYPE",
+      "MODULE-IDENTITY"
     ],
     "SNMPv2-TC": [
-      "MacAddress",
-      "TruthValue",
       "RowStatus",
+      "MacAddress",
       "TimeInterval",
+      "TruthValue",
       "TEXTUAL-CONVENTION",
       "DisplayString"
     ]
@@ -2065,7 +2065,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/standard/iee/IEEE8021-BRIDGE-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:29:48 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:32:57 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

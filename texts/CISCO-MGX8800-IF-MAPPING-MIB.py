@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-MGX8800-IF-MAPPING-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MGX8800-IF-MAPPING-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoMGX8800IfMappingMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 7))
 ciscoMGX8800IfMappingMIB.setRevisions(('2004-05-25 00:00', '2004-04-30 00:00', '2003-12-04 00:00', '2003-03-20 00:00', '2002-10-21 00:00', '2002-10-16 00:00', '2002-05-21 00:00', '2002-02-17 00:00', '2001-10-16 00:00', '2001-07-08 00:00', '2000-02-12 00:00',))
@@ -60,4 +60,4 @@ cmimPhysToIfMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 7, 3, 2, 1)).set
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmimPhysToIfMIBGroup = cmimPhysToIfMIBGroup.setStatus('current')
 if mibBuilder.loadTexts: cmimPhysToIfMIBGroup.setDescription('This group has to be implemented on all MGX8800 \n         series products.\n        ')
-mibBuilder.exportSymbols("CISCO-MGX8800-IF-MAPPING-MIB", cmimPhysToIfMIBGroups=cmimPhysToIfMIBGroups, cmimPhysToIf=cmimPhysToIf, cmimIfNumber=cmimIfNumber, cmimPhysToIfMIBCompliance=cmimPhysToIfMIBCompliance, cmimIfIndex=cmimIfIndex, cmimModuleIndex=cmimModuleIndex, cmimMappingObjects=cmimMappingObjects, PYSNMP_MODULE_ID=ciscoMGX8800IfMappingMIB, cmimPhysToIfTable=cmimPhysToIfTable, cmimPhysToIfMIBCompliances=cmimPhysToIfMIBCompliances, ciscoMGX8800IfMappingMIB=ciscoMGX8800IfMappingMIB, CmimIfType=CmimIfType, cmimPhysToIfMIBConformance=cmimPhysToIfMIBConformance, cmimPhysToIfMIBGroup=cmimPhysToIfMIBGroup, cmimPhysToIfEntry=cmimPhysToIfEntry, cmimIfType=cmimIfType)
+mibBuilder.exportSymbols("CISCO-MGX8800-IF-MAPPING-MIB", cmimPhysToIfTable=cmimPhysToIfTable, cmimPhysToIfMIBGroups=cmimPhysToIfMIBGroups, cmimPhysToIfMIBCompliances=cmimPhysToIfMIBCompliances, CmimIfType=CmimIfType, PYSNMP_MODULE_ID=ciscoMGX8800IfMappingMIB, cmimModuleIndex=cmimModuleIndex, cmimPhysToIfMIBGroup=cmimPhysToIfMIBGroup, ciscoMGX8800IfMappingMIB=ciscoMGX8800IfMappingMIB, cmimIfIndex=cmimIfIndex, cmimPhysToIfEntry=cmimPhysToIfEntry, cmimIfNumber=cmimIfNumber, cmimPhysToIf=cmimPhysToIf, cmimIfType=cmimIfType, cmimPhysToIfMIBConformance=cmimPhysToIfMIBConformance, cmimPhysToIfMIBCompliance=cmimPhysToIfMIBCompliance, cmimMappingObjects=cmimMappingObjects)

@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCOSB-rldot1q-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-rldot1q-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 rlpBridgeMIBObjects, = mibBuilder.importSymbols("CISCOSB-BRIDGEMIBOBJECTS-MIB", "rlpBridgeMIBObjects")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-PortList, dot1qStaticUnicastEntry, dot1qTpFdbEntry = mibBuilder.importSymbols("Q-BRIDGE-MIB", "PortList", "dot1qStaticUnicastEntry", "dot1qTpFdbEntry")
+dot1qTpFdbEntry, dot1qStaticUnicastEntry, PortList = mibBuilder.importSymbols("Q-BRIDGE-MIB", "dot1qTpFdbEntry", "dot1qStaticUnicastEntry", "PortList")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-TextualConvention, DisplayString, TruthValue, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue", "RowStatus")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
 rlq_bridge_mib = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 57, 8)).setLabel("rlq-bridge-mib")
 if mibBuilder.loadTexts: rlq_bridge_mib.setLastUpdated('200811250000Z')
 if mibBuilder.loadTexts: rlq_bridge_mib.setOrganization('Cisco Systems, Inc.')
@@ -47,4 +47,4 @@ rldot1qTpFdbCountType = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 57, 8, 3
 if mibBuilder.loadTexts: rldot1qTpFdbCountType.setStatus('current')
 rldot1qTpFdbCountCount = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 57, 8, 3, 1, 4), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rldot1qTpFdbCountCount.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-rldot1q-MIB", PYSNMP_MODULE_ID=rlq_bridge_mib, rldot1qTpFdbEntry=rldot1qTpFdbEntry, rldot1qTpFdbCountVlanTag=rldot1qTpFdbCountVlanTag, rldot1qTpFdbCountType=rldot1qTpFdbCountType, rldot1qTpFdbSubStatus=rldot1qTpFdbSubStatus, rldot1qTpFdbCountTable=rldot1qTpFdbCountTable, rldot1qTpFdbCountCount=rldot1qTpFdbCountCount, rldot1qTpFdbTable=rldot1qTpFdbTable, rldot1qTpFdbCountPort=rldot1qTpFdbCountPort, rldot1qStaticUnicastTable=rldot1qStaticUnicastTable, rldot1qStaticUnicastEntry=rldot1qStaticUnicastEntry, rlq_bridge_mib=rlq_bridge_mib, rldot1qTpFdbCountEntry=rldot1qTpFdbCountEntry, rldot1qStaticUnicastAddressOwner=rldot1qStaticUnicastAddressOwner, rldot1q=rldot1q)
+mibBuilder.exportSymbols("CISCOSB-rldot1q-MIB", rldot1qTpFdbTable=rldot1qTpFdbTable, rldot1qStaticUnicastTable=rldot1qStaticUnicastTable, rldot1qTpFdbEntry=rldot1qTpFdbEntry, rlq_bridge_mib=rlq_bridge_mib, rldot1qTpFdbSubStatus=rldot1qTpFdbSubStatus, rldot1qTpFdbCountEntry=rldot1qTpFdbCountEntry, rldot1qTpFdbCountTable=rldot1qTpFdbCountTable, rldot1q=rldot1q, rldot1qStaticUnicastAddressOwner=rldot1qStaticUnicastAddressOwner, rldot1qTpFdbCountVlanTag=rldot1qTpFdbCountVlanTag, rldot1qTpFdbCountPort=rldot1qTpFdbCountPort, rldot1qTpFdbCountCount=rldot1qTpFdbCountCount, rldot1qStaticUnicastEntry=rldot1qStaticUnicastEntry, PYSNMP_MODULE_ID=rlq_bridge_mib, rldot1qTpFdbCountType=rldot1qTpFdbCountType)

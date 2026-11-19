@@ -6,8 +6,8 @@
     ],
     "IF-MIB": [
       "ifDescr",
-      "ifType",
-      "ifIndex"
+      "ifIndex",
+      "ifType"
     ],
     "OLD-CISCO-INTERFACES-MIB": [
       "locIfReason"
@@ -17,9 +17,9 @@
       "whyReload"
     ],
     "OLD-CISCO-TCP-MIB": [
+      "loctcpConnInBytes",
       "loctcpConnElapsed",
-      "loctcpConnOutBytes",
-      "loctcpConnInBytes"
+      "loctcpConnOutBytes"
     ],
     "OLD-CISCO-TS-MIB": [
       "tsLineUser",
@@ -37,20 +37,20 @@
       "sysUpTime"
     ],
     "SNMPv2-SMI": [
-      "Unsigned32",
-      "iso",
-      "MODULE-IDENTITY",
-      "Gauge32",
-      "NOTIFICATION-TYPE",
       "Counter64",
-      "OBJECT-TYPE",
-      "Bits",
-      "IpAddress",
-      "OBJECT-IDENTITY",
-      "Integer32",
-      "Counter32",
       "MibIdentifier",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "OBJECT-IDENTITY",
       "TRAP-TYPE",
+      "Integer32",
+      "MODULE-IDENTITY",
+      "IpAddress",
+      "Bits",
+      "Counter32",
+      "Unsigned32",
+      "NOTIFICATION-TYPE",
       "TimeTicks"
     ],
     "SNMPv2-TC": [
@@ -193,7 +193,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOTRAP-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:50 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

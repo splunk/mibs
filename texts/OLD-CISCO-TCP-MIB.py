@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module OLD-CISCO-TCP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/OLD-CISCO-TCP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 local, = mibBuilder.importSymbols("CISCO-SMI", "local")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, NotificationType, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "NotificationType", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
-tcpConnRemAddress, tcpConnRemPort, tcpConnLocalAddress, tcpConnLocalPort = mibBuilder.importSymbols("TCP-MIB", "tcpConnRemAddress", "tcpConnRemPort", "tcpConnLocalAddress", "tcpConnLocalPort")
+tcpConnLocalAddress, tcpConnLocalPort, tcpConnRemAddress, tcpConnRemPort = mibBuilder.importSymbols("TCP-MIB", "tcpConnLocalAddress", "tcpConnLocalPort", "tcpConnRemAddress", "tcpConnRemPort")
 ltcp = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 2, 6))
 ltcpConnTable = MibTable((1, 3, 6, 1, 4, 1, 9, 2, 6, 1), )
 if mibBuilder.loadTexts: ltcpConnTable.setStatus('deprecated')
@@ -35,4 +35,4 @@ if mibBuilder.loadTexts: loctcpConnOutPkts.setDescription('Packets output for th
 loctcpConnElapsed = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 2, 6, 1, 1, 5), TimeTicks()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: loctcpConnElapsed.setStatus('deprecated')
 if mibBuilder.loadTexts: loctcpConnElapsed.setDescription('How long this TCP connection has been\n                           established.')
-mibBuilder.exportSymbols("OLD-CISCO-TCP-MIB", ltcp=ltcp, loctcpConnInPkts=loctcpConnInPkts, ltcpConnTable=ltcpConnTable, loctcpConnInBytes=loctcpConnInBytes, ltcpConnEntry=ltcpConnEntry, loctcpConnOutBytes=loctcpConnOutBytes, loctcpConnOutPkts=loctcpConnOutPkts, loctcpConnElapsed=loctcpConnElapsed)
+mibBuilder.exportSymbols("OLD-CISCO-TCP-MIB", loctcpConnInBytes=loctcpConnInBytes, loctcpConnInPkts=loctcpConnInPkts, ltcpConnTable=ltcpConnTable, loctcpConnOutPkts=loctcpConnOutPkts, loctcpConnOutBytes=loctcpConnOutBytes, ltcpConnEntry=ltcpConnEntry, loctcpConnElapsed=loctcpConnElapsed, ltcp=ltcp)

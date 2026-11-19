@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ALTIGA-SDI-ACE-STATS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/ALTIGA-SDI-ACE-STATS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 alACEServerMibModule, = mibBuilder.importSymbols("ALTIGA-GLOBAL-REG", "alACEServerMibModule")
 alACEServerStats, alACEServerGroup = mibBuilder.importSymbols("ALTIGA-MIB", "alACEServerStats", "alACEServerGroup")
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, iso, Counter32, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "iso", "Counter32", "IpAddress", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 altigaACEStatsMibModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 3076, 1, 1, 50, 1))
 altigaACEStatsMibModule.setRevisions(('2002-09-05 13:00', '2002-07-10 00:00',))
@@ -76,4 +76,4 @@ altigaACEServerGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 3076, 2, 1, 1, 1, 45, 1)).
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     altigaACEServerGroup = altigaACEServerGroup.setStatus('current')
 if mibBuilder.loadTexts: altigaACEServerGroup.setDescription('The objects for ACE-STATS.')
-mibBuilder.exportSymbols("ALTIGA-SDI-ACE-STATS-MIB", alACEPrimaryIndex=alACEPrimaryIndex, altigaACEStatsMibModule=altigaACEStatsMibModule, alACEServerRetries=alACEServerRetries, alACEServerTimeout=alACEServerTimeout, alCfgACEGlobal=alCfgACEGlobal, alACEServerAuthFailures=alACEServerAuthFailures, alACEServerPort=alACEServerPort, altigaACEServerGroup=altigaACEServerGroup, alACEServerTable=alACEServerTable, alACEServerAuthSuccesses=alACEServerAuthSuccesses, alACEServerIndex=alACEServerIndex, alACEServerGroupId=alACEServerGroupId, altigaACEStatsMibCompliances=altigaACEStatsMibCompliances, PYSNMP_MODULE_ID=altigaACEStatsMibModule, altigaACEStatsMibCompliance=altigaACEStatsMibCompliance, alACEServerBadPinSent=alACEServerBadPinSent, altigaACEStatsMibConformance=altigaACEStatsMibConformance, alACEServerEntry=alACEServerEntry, alACEServerBadCodeSent=alACEServerBadCodeSent, alACEServerPriority=alACEServerPriority, alACEServerAddress=alACEServerAddress)
+mibBuilder.exportSymbols("ALTIGA-SDI-ACE-STATS-MIB", alACEServerIndex=alACEServerIndex, alACEServerRetries=alACEServerRetries, alACEServerAddress=alACEServerAddress, alACEServerAuthSuccesses=alACEServerAuthSuccesses, alACEServerAuthFailures=alACEServerAuthFailures, alCfgACEGlobal=alCfgACEGlobal, altigaACEStatsMibModule=altigaACEStatsMibModule, alACEServerBadCodeSent=alACEServerBadCodeSent, alACEServerGroupId=alACEServerGroupId, alACEServerTimeout=alACEServerTimeout, alACEServerTable=alACEServerTable, alACEServerBadPinSent=alACEServerBadPinSent, PYSNMP_MODULE_ID=altigaACEStatsMibModule, altigaACEServerGroup=altigaACEServerGroup, alACEServerEntry=alACEServerEntry, alACEPrimaryIndex=alACEPrimaryIndex, altigaACEStatsMibCompliance=altigaACEStatsMibCompliance, altigaACEStatsMibCompliances=altigaACEStatsMibCompliances, alACEServerPort=alACEServerPort, alACEServerPriority=alACEServerPriority, altigaACEStatsMibConformance=altigaACEStatsMibConformance)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ALTIGA-EVENT-STATS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/ALTIGA-EVENT-STATS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 alEventMibModule, = mibBuilder.importSymbols("ALTIGA-GLOBAL-REG", "alEventMibModule")
-alEventGroup, alStatsEvent = mibBuilder.importSymbols("ALTIGA-MIB", "alEventGroup", "alStatsEvent")
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+alStatsEvent, alEventGroup = mibBuilder.importSymbols("ALTIGA-MIB", "alStatsEvent", "alEventGroup")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 altigaEventStatsMibModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 3076, 1, 1, 8, 2))
 altigaEventStatsMibModule.setRevisions(('2003-01-13 00:00', '2002-07-10 00:00',))
@@ -46,4 +46,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 altigaEventStatsGroupRev1 = ObjectGroup((1, 3, 6, 1, 4, 1, 3076, 2, 1, 1, 1, 4, 3)).setObjects(("ALTIGA-EVENT-STATS-MIB", "alEventStatsClass"), ("ALTIGA-EVENT-STATS-MIB", "alEventStatsEventNumber"), ("ALTIGA-EVENT-STATS-MIB", "alEventStatsCount"), ("ALTIGA-EVENT-STATS-MIB", "alStatsEventNotificationId"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     altigaEventStatsGroupRev1 = altigaEventStatsGroupRev1.setStatus('current')
-mibBuilder.exportSymbols("ALTIGA-EVENT-STATS-MIB", alEventStatsEntry=alEventStatsEntry, altigaEventStatsMibCompliances=altigaEventStatsMibCompliances, altigaEventStatsMibComplianceRev1=altigaEventStatsMibComplianceRev1, PYSNMP_MODULE_ID=altigaEventStatsMibModule, alEventStatsCount=alEventStatsCount, alEventStatsEventNumber=alEventStatsEventNumber, altigaEventStatsMibModule=altigaEventStatsMibModule, altigaEventStatsMibConformance=altigaEventStatsMibConformance, alEventStatsTable=alEventStatsTable, alEventStatsClass=alEventStatsClass, altigaEventStatsMibCompliance=altigaEventStatsMibCompliance, altigaEventStatsGroupRev1=altigaEventStatsGroupRev1, alStatsEventNotificationId=alStatsEventNotificationId, altigaEventStatsGroup=altigaEventStatsGroup, alStatsEventGlobal=alStatsEventGlobal)
+mibBuilder.exportSymbols("ALTIGA-EVENT-STATS-MIB", alEventStatsCount=alEventStatsCount, alEventStatsClass=alEventStatsClass, altigaEventStatsMibConformance=altigaEventStatsMibConformance, alEventStatsEntry=alEventStatsEntry, alStatsEventGlobal=alStatsEventGlobal, alEventStatsTable=alEventStatsTable, altigaEventStatsGroup=altigaEventStatsGroup, PYSNMP_MODULE_ID=altigaEventStatsMibModule, altigaEventStatsMibCompliances=altigaEventStatsMibCompliances, altigaEventStatsMibComplianceRev1=altigaEventStatsMibComplianceRev1, altigaEventStatsMibCompliance=altigaEventStatsMibCompliance, alEventStatsEventNumber=alEventStatsEventNumber, alStatsEventNotificationId=alStatsEventNotificationId, altigaEventStatsMibModule=altigaEventStatsMibModule, altigaEventStatsGroupRev1=altigaEventStatsGroupRev1)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ACOS-SYSTEMCPU-DATA-CPU-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/a10/ACOS-SYSTEMCPU-DATA-CPU-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:09 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 acosSchema, = mibBuilder.importSymbols("A10-AX-MIB", "acosSchema")
 OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 InetAddressType, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Gauge32, MibIdentifier, IpAddress, ObjectIdentity, Counter32, Bits, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, iso, TimeTicks, Unsigned32, NotificationType, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "MibIdentifier", "IpAddress", "ObjectIdentity", "Counter32", "Bits", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "iso", "TimeTicks", "Unsigned32", "NotificationType", "Counter64")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+ModuleIdentity, iso, Counter64, NotificationType, TimeTicks, Bits, Unsigned32, MibIdentifier, Integer32, Counter32, ObjectIdentity, IpAddress, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "iso", "Counter64", "NotificationType", "TimeTicks", "Bits", "Unsigned32", "MibIdentifier", "Integer32", "Counter32", "ObjectIdentity", "IpAddress", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
 TextualConvention, DisplayString, PhysAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "PhysAddress")
 systemCpuDataCpuModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 111))
 if mibBuilder.loadTexts: systemCpuDataCpuModule.setLastUpdated('200705071327Z')
@@ -67,4 +67,4 @@ if mibBuilder.loadTexts: dataCpuOperCpuUsage60Sec.setDescription('60-sec')
 dataCpuOperCpuUsageDcpuStr = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 111, 1, 3, 1, 9), DisplayString()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: dataCpuOperCpuUsageDcpuStr.setStatus('current')
 if mibBuilder.loadTexts: dataCpuOperCpuUsageDcpuStr.setDescription('dcpu-str')
-mibBuilder.exportSymbols("ACOS-SYSTEMCPU-DATA-CPU-MIB", dataCpuOperCpuUsage60Sec=dataCpuOperCpuUsage60Sec, dataCpuOperSlotId=dataCpuOperSlotId, dataCpuOperCpuUsageSlotId=dataCpuOperCpuUsageSlotId, dataCpuOperCpuUsage1Sec=dataCpuOperCpuUsage1Sec, PYSNMP_MODULE_ID=systemCpuDataCpuModule, dataCpuOperEntry=dataCpuOperEntry, dataCpu=dataCpu, dataCpuOperTable=dataCpuOperTable, dataCpuOperCpuUsageEntry=dataCpuOperCpuUsageEntry, systemCpuDataCpuModule=systemCpuDataCpuModule, dataCpuOperCpuUsageCpuId=dataCpuOperCpuUsageCpuId, dataCpuOperCpuUsageTable=dataCpuOperCpuUsageTable, dataCpuOperNumberOfDataCpu=dataCpuOperNumberOfDataCpu, dataCpuOperCpuUsageDcpuStr=dataCpuOperCpuUsageDcpuStr, dataCpuOperCpuUsage30Sec=dataCpuOperCpuUsage30Sec, dataCpuOperNumberOfCpu=dataCpuOperNumberOfCpu, dataCpuOperCpuUsageCpuUsageListId=dataCpuOperCpuUsageCpuUsageListId, dataCpuOperCpuUsage10Sec=dataCpuOperCpuUsage10Sec, dataCpuOperCpuUsage5Sec=dataCpuOperCpuUsage5Sec)
+mibBuilder.exportSymbols("ACOS-SYSTEMCPU-DATA-CPU-MIB", dataCpuOperCpuUsage5Sec=dataCpuOperCpuUsage5Sec, dataCpuOperCpuUsageSlotId=dataCpuOperCpuUsageSlotId, dataCpuOperNumberOfCpu=dataCpuOperNumberOfCpu, dataCpuOperCpuUsage1Sec=dataCpuOperCpuUsage1Sec, dataCpuOperNumberOfDataCpu=dataCpuOperNumberOfDataCpu, PYSNMP_MODULE_ID=systemCpuDataCpuModule, dataCpuOperCpuUsageCpuUsageListId=dataCpuOperCpuUsageCpuUsageListId, dataCpuOperCpuUsageCpuId=dataCpuOperCpuUsageCpuId, dataCpuOperCpuUsage30Sec=dataCpuOperCpuUsage30Sec, dataCpuOperEntry=dataCpuOperEntry, dataCpu=dataCpu, dataCpuOperTable=dataCpuOperTable, dataCpuOperCpuUsage60Sec=dataCpuOperCpuUsage60Sec, dataCpuOperCpuUsageTable=dataCpuOperCpuUsageTable, systemCpuDataCpuModule=systemCpuDataCpuModule, dataCpuOperSlotId=dataCpuOperSlotId, dataCpuOperCpuUsageEntry=dataCpuOperCpuUsageEntry, dataCpuOperCpuUsageDcpuStr=dataCpuOperCpuUsageDcpuStr, dataCpuOperCpuUsage10Sec=dataCpuOperCpuUsage10Sec)

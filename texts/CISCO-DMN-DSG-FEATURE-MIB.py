@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-FEATURE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-FEATURE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDSGFeature = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 27))
 ciscoDSGFeature.setRevisions(('2012-02-28 18:00',))
@@ -52,4 +52,4 @@ if mibBuilder.loadTexts: installedOptionID.setDescription('The identification of
 installedOptionStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 27, 2, 2, 1, 3), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(1, 32))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: installedOptionStatus.setStatus('current')
 if mibBuilder.loadTexts: installedOptionStatus.setDescription('The status of optional component.')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-FEATURE-MIB", installedOptionTable=installedOptionTable, ciscoDSGFeature=ciscoDSGFeature, featureLicenceStatus=featureLicenceStatus, installedOptionIdx=installedOptionIdx, featureTable=featureTable, featureLicenceEntry=featureLicenceEntry, featureLicenceID=featureLicenceID, installedOptionID=installedOptionID, featureLicenceIdx=featureLicenceIdx, installedOptionStatus=installedOptionStatus, installedOptionEntry=installedOptionEntry, PYSNMP_MODULE_ID=ciscoDSGFeature, featureLicenceTable=featureLicenceTable)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-FEATURE-MIB", featureTable=featureTable, installedOptionTable=installedOptionTable, featureLicenceStatus=featureLicenceStatus, featureLicenceTable=featureLicenceTable, installedOptionIdx=installedOptionIdx, installedOptionEntry=installedOptionEntry, featureLicenceEntry=featureLicenceEntry, PYSNMP_MODULE_ID=ciscoDSGFeature, featureLicenceIdx=featureLicenceIdx, installedOptionStatus=installedOptionStatus, ciscoDSGFeature=ciscoDSGFeature, featureLicenceID=featureLicenceID, installedOptionID=installedOptionID)

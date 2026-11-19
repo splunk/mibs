@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCOSB-SpecialBpdu-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-SpecialBpdu-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, MacAddress, TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "MacAddress", "TextualConvention", "DisplayString", "TruthValue")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, MacAddress, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "MacAddress", "RowStatus", "TextualConvention")
 rlSpecialBpdu = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 144))
 rlSpecialBpdu.setRevisions(('2008-05-03 12:34',))
 
@@ -70,4 +70,4 @@ if mibBuilder.loadTexts: rlSpecialBpduHwEntry.setDescription('An entry of Specia
 rlSpecialBpduHwAction = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 144, 2, 1, 2), HwAction()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlSpecialBpduHwAction.setStatus('current')
 if mibBuilder.loadTexts: rlSpecialBpduHwAction.setDescription('HW action per MAC address: Forward, Drop or Trap.')
-mibBuilder.exportSymbols("CISCOSB-SpecialBpdu-MIB", rlSpecialBpduHwAction=rlSpecialBpduHwAction, Action=Action, rlSpecialBpduHwTable=rlSpecialBpduHwTable, rlSpecialBpdu=rlSpecialBpdu, HwAction=HwAction, rlSpecialBpduProtId=rlSpecialBpduProtId, rlSpecialBpduTable=rlSpecialBpduTable, rlSpecialBpduAction=rlSpecialBpduAction, rlSpecialBpduMacAddr=rlSpecialBpduMacAddr, rlSpecialBpduRowStatus=rlSpecialBpduRowStatus, EncapType=EncapType, rlSpecialBpduHwEntry=rlSpecialBpduHwEntry, rlSpecialBpduEntry=rlSpecialBpduEntry, rlSpecialBpduEncap=rlSpecialBpduEncap, PYSNMP_MODULE_ID=rlSpecialBpdu)
+mibBuilder.exportSymbols("CISCOSB-SpecialBpdu-MIB", HwAction=HwAction, PYSNMP_MODULE_ID=rlSpecialBpdu, rlSpecialBpduAction=rlSpecialBpduAction, rlSpecialBpduHwAction=rlSpecialBpduHwAction, rlSpecialBpduProtId=rlSpecialBpduProtId, EncapType=EncapType, Action=Action, rlSpecialBpduRowStatus=rlSpecialBpduRowStatus, rlSpecialBpduTable=rlSpecialBpduTable, rlSpecialBpdu=rlSpecialBpdu, rlSpecialBpduEncap=rlSpecialBpduEncap, rlSpecialBpduHwEntry=rlSpecialBpduHwEntry, rlSpecialBpduMacAddr=rlSpecialBpduMacAddr, rlSpecialBpduHwTable=rlSpecialBpduHwTable, rlSpecialBpduEntry=rlSpecialBpduEntry)

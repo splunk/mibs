@@ -7,21 +7,21 @@
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "iso",
-      "Integer32",
-      "Counter32",
-      "enterprises",
-      "Counter64",
-      "Gauge32",
       "MODULE-IDENTITY",
+      "Integer32",
+      "Bits",
+      "Counter64",
+      "OBJECT-TYPE",
+      "OBJECT-IDENTITY",
+      "enterprises",
       "NOTIFICATION-TYPE",
-      "TimeTicks",
       "Unsigned32",
       "IpAddress",
-      "Bits",
+      "Counter32",
+      "iso",
+      "TimeTicks",
       "MibIdentifier",
-      "OBJECT-TYPE",
-      "OBJECT-IDENTITY"
+      "Gauge32"
     ],
     "SNMPv2-TC": [
       "DisplayString",
@@ -311,7 +311,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ateme/TITAN-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:30:59 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:33:45 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

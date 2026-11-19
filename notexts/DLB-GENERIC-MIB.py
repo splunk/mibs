@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module DLB-GENERIC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/deliberant/DLB-GENERIC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:27 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:30 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint")
+ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint")
 dlbMgmt, = mibBuilder.importSymbols("DELIBERANT-MIB", "dlbMgmt")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
 sysLocation, = mibBuilder.importSymbols("SNMPv2-MIB", "sysLocation")
-Counter32, MibIdentifier, Integer32, IpAddress, NotificationType, ModuleIdentity, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, TimeTicks, Counter64, ObjectIdentity, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "MibIdentifier", "Integer32", "IpAddress", "NotificationType", "ModuleIdentity", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "TimeTicks", "Counter64", "ObjectIdentity", "Bits")
+NotificationType, Integer32, TimeTicks, ObjectIdentity, Bits, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, iso, Unsigned32, Counter32, MibIdentifier, IpAddress, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "Integer32", "TimeTicks", "ObjectIdentity", "Bits", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "iso", "Unsigned32", "Counter32", "MibIdentifier", "IpAddress", "Gauge32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 dlbGenericMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 32761, 3, 1))
 dlbGenericMIB.setRevisions(('2009-02-13 00:00',))
@@ -24,4 +24,4 @@ dlbPowerLoss = NotificationType((1, 3, 6, 1, 4, 1, 32761, 3, 1, 1, 0, 1)).setObj
 if mibBuilder.loadTexts: dlbPowerLoss.setStatus('current')
 dlbAdministrativeReboot = NotificationType((1, 3, 6, 1, 4, 1, 32761, 3, 1, 1, 0, 2)).setObjects(("SNMPv2-MIB", "sysLocation"))
 if mibBuilder.loadTexts: dlbAdministrativeReboot.setStatus('current')
-mibBuilder.exportSymbols("DLB-GENERIC-MIB", dlbGenericMIBObjects=dlbGenericMIBObjects, dlbGenericInfo=dlbGenericInfo, dlbAdministrativeReboot=dlbAdministrativeReboot, dlbPowerLoss=dlbPowerLoss, dlbGenericMIB=dlbGenericMIB, PYSNMP_MODULE_ID=dlbGenericMIB, dlbGenericNotifs=dlbGenericNotifs)
+mibBuilder.exportSymbols("DLB-GENERIC-MIB", dlbAdministrativeReboot=dlbAdministrativeReboot, dlbGenericMIB=dlbGenericMIB, PYSNMP_MODULE_ID=dlbGenericMIB, dlbGenericNotifs=dlbGenericNotifs, dlbGenericMIBObjects=dlbGenericMIBObjects, dlbPowerLoss=dlbPowerLoss, dlbGenericInfo=dlbGenericInfo)

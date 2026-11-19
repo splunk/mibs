@@ -6,21 +6,21 @@
       "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "enterprises",
-      "Unsigned32",
-      "iso",
-      "MODULE-IDENTITY",
-      "Gauge32",
-      "OBJECT-TYPE",
       "Counter64",
       "NOTIFICATION-TYPE",
-      "Bits",
-      "IpAddress",
-      "OBJECT-IDENTITY",
-      "Integer32",
-      "Counter32",
       "MibIdentifier",
+      "iso",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "OBJECT-IDENTITY",
       "TRAP-TYPE",
+      "Integer32",
+      "MODULE-IDENTITY",
+      "IpAddress",
+      "Bits",
+      "Counter32",
+      "Unsigned32",
+      "enterprises",
       "TimeTicks"
     ],
     "SNMPv2-TC": [
@@ -2906,7 +2906,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/Cisco90Series-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:49 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:35:43 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

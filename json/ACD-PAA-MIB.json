@@ -5,32 +5,32 @@
       "acdMibs"
     ],
     "SNMPv2-CONF": [
-      "NOTIFICATION-GROUP",
       "OBJECT-GROUP",
+      "NOTIFICATION-GROUP",
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "iso",
-      "TimeTicks",
-      "Gauge32",
-      "Integer32",
-      "OBJECT-IDENTITY",
-      "IpAddress",
-      "Counter32",
-      "Counter64",
-      "MODULE-IDENTITY",
       "MibIdentifier",
       "Unsigned32",
-      "NOTIFICATION-TYPE",
+      "Integer32",
+      "IpAddress",
+      "Counter32",
+      "TimeTicks",
+      "Gauge32",
+      "OBJECT-TYPE",
+      "iso",
+      "Counter64",
       "Bits",
-      "OBJECT-TYPE"
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY"
     ],
     "SNMPv2-TC": [
-      "MacAddress",
+      "DisplayString",
       "TruthValue",
+      "MacAddress",
       "TEXTUAL-CONVENTION",
-      "DateAndTime",
-      "DisplayString"
+      "DateAndTime"
     ]
   },
   "acdPaa": {
@@ -4376,7 +4376,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/accedian/ACD-PAA-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:30:05 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:33:09 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

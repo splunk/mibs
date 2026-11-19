@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-BITS-CLOCK-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-BITS-CLOCK-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-entPhysicalDescr, entPhysicalIndex = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalDescr", "entPhysicalIndex")
+entPhysicalIndex, entPhysicalDescr = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex", "entPhysicalDescr")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-DisplayString, TimeStamp, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TimeStamp", "TextualConvention", "TruthValue")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+TimeStamp, DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "DisplayString", "TruthValue", "TextualConvention")
 ciscoBitsClockMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 459))
 ciscoBitsClockMIB.setRevisions(('2005-01-21 00:00',))
 
@@ -77,4 +77,4 @@ ciscoBitsClockNotifGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 459, 2, 2,
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoBitsClockNotifGroup = ciscoBitsClockNotifGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoBitsClockNotifGroup.setDescription('BITS Clock Source Notifications Group')
-mibBuilder.exportSymbols("CISCO-BITS-CLOCK-MIB", cBitsClkSourceActiveSeconds=cBitsClkSourceActiveSeconds, ciscoBitsClockMIBNotifs=ciscoBitsClockMIBNotifs, cBitsClkSourceEntry=cBitsClkSourceEntry, cBitsClkSourceDescription=cBitsClkSourceDescription, ciscoBitsClockMIBGroups=ciscoBitsClockMIBGroups, ciscoBitsClockMIBCompliances=ciscoBitsClockMIBCompliances, ciscoBitsClockFreerun=ciscoBitsClockFreerun, ciscoBitsClockSource=ciscoBitsClockSource, PYSNMP_MODULE_ID=ciscoBitsClockMIB, ciscoBitsClockNotifGroup=ciscoBitsClockNotifGroup, cBitsClkSourceTimestamp=cBitsClkSourceTimestamp, cBitsClkSourceInactiveSeconds=cBitsClkSourceInactiveSeconds, ciscoBitsClockMIBConform=ciscoBitsClockMIBConform, ciscoBitsClockSourceGroup=ciscoBitsClockSourceGroup, cBitsClkSourceRoleCurrent=cBitsClkSourceRoleCurrent, ciscoBitsClockMIB=ciscoBitsClockMIB, cBitsClkNotifEnabled=cBitsClkNotifEnabled, ciscoBitsClockMIBCompliance=ciscoBitsClockMIBCompliance, cBitsClkSourceTable=cBitsClkSourceTable, ciscoBitsClockMIBObjects=ciscoBitsClockMIBObjects, cBitsClkSourceRoleAdmin=cBitsClkSourceRoleAdmin, ciscoBitsClockHoldover=ciscoBitsClockHoldover)
+mibBuilder.exportSymbols("CISCO-BITS-CLOCK-MIB", cBitsClkSourceInactiveSeconds=cBitsClkSourceInactiveSeconds, cBitsClkSourceDescription=cBitsClkSourceDescription, cBitsClkSourceRoleAdmin=cBitsClkSourceRoleAdmin, ciscoBitsClockMIBObjects=ciscoBitsClockMIBObjects, ciscoBitsClockMIBNotifs=ciscoBitsClockMIBNotifs, PYSNMP_MODULE_ID=ciscoBitsClockMIB, cBitsClkSourceEntry=cBitsClkSourceEntry, ciscoBitsClockSource=ciscoBitsClockSource, ciscoBitsClockMIBGroups=ciscoBitsClockMIBGroups, ciscoBitsClockMIB=ciscoBitsClockMIB, ciscoBitsClockMIBCompliance=ciscoBitsClockMIBCompliance, cBitsClkSourceRoleCurrent=cBitsClkSourceRoleCurrent, ciscoBitsClockSourceGroup=ciscoBitsClockSourceGroup, ciscoBitsClockMIBConform=ciscoBitsClockMIBConform, ciscoBitsClockNotifGroup=ciscoBitsClockNotifGroup, cBitsClkSourceTable=cBitsClkSourceTable, ciscoBitsClockMIBCompliances=ciscoBitsClockMIBCompliances, cBitsClkSourceActiveSeconds=cBitsClkSourceActiveSeconds, cBitsClkSourceTimestamp=cBitsClkSourceTimestamp, ciscoBitsClockFreerun=ciscoBitsClockFreerun, ciscoBitsClockHoldover=ciscoBitsClockHoldover, cBitsClkNotifEnabled=cBitsClkNotifEnabled)

@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-IF-CALL-SERVICE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-IF-CALL-SERVICE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ConfigIterator, BulkConfigResult = mibBuilder.importSymbols("CISCO-TC", "ConfigIterator", "BulkConfigResult")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 OwnerString, = mibBuilder.importSymbols("RMON-MIB", "OwnerString")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoIfCallServiceMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 9968))
 ciscoIfCallServiceMIB.setRevisions(('2003-04-25 00:00',))
@@ -75,4 +75,4 @@ cicServiceGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 9968, 2, 2, 1)).setObject
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cicServiceGroup = cicServiceGroup.setStatus('current')
 if mibBuilder.loadTexts: cicServiceGroup.setDescription('A collection of objects for managing per interface basis \n         call service state information.\n        ')
-mibBuilder.exportSymbols("CISCO-IF-CALL-SERVICE-MIB", ciscoIfCallServiceMIB=ciscoIfCallServiceMIB, cicServiceGroups=cicServiceGroups, ciscoIfCallServiceMIBObjects=ciscoIfCallServiceMIBObjects, CIfCallServiceAdminState=CIfCallServiceAdminState, cicServiceRepeatOwner=cicServiceRepeatOwner, cicServiceCompliance=cicServiceCompliance, cicServiceConfig=cicServiceConfig, cicServiceGraceTime=cicServiceGraceTime, cicServiceOperState=cicServiceOperState, ciscoIfCallServiceMIBConformance=ciscoIfCallServiceMIBConformance, cicServiceRepetition=cicServiceRepetition, cicServiceGroup=cicServiceGroup, cicServiceTable=cicServiceTable, CIfCallServiceOperState=CIfCallServiceOperState, cicServiceEntry=cicServiceEntry, ciscoIfCallServiceMIBNotifs=ciscoIfCallServiceMIBNotifs, cicServiceCompliances=cicServiceCompliances, cicServiceAdminState=cicServiceAdminState, cicServiceRepeatResult=cicServiceRepeatResult, PYSNMP_MODULE_ID=ciscoIfCallServiceMIB)
+mibBuilder.exportSymbols("CISCO-IF-CALL-SERVICE-MIB", cicServiceOperState=cicServiceOperState, ciscoIfCallServiceMIBObjects=ciscoIfCallServiceMIBObjects, cicServiceRepeatOwner=cicServiceRepeatOwner, cicServiceGraceTime=cicServiceGraceTime, ciscoIfCallServiceMIB=ciscoIfCallServiceMIB, cicServiceGroup=cicServiceGroup, cicServiceGroups=cicServiceGroups, ciscoIfCallServiceMIBConformance=ciscoIfCallServiceMIBConformance, cicServiceCompliances=cicServiceCompliances, ciscoIfCallServiceMIBNotifs=ciscoIfCallServiceMIBNotifs, PYSNMP_MODULE_ID=ciscoIfCallServiceMIB, cicServiceAdminState=cicServiceAdminState, cicServiceRepetition=cicServiceRepetition, CIfCallServiceOperState=CIfCallServiceOperState, cicServiceEntry=cicServiceEntry, CIfCallServiceAdminState=CIfCallServiceAdminState, cicServiceConfig=cicServiceConfig, cicServiceTable=cicServiceTable, cicServiceCompliance=cicServiceCompliance, cicServiceRepeatResult=cicServiceRepeatResult)

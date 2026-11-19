@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-IF-LOOPBACK-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-IF-LOOPBACK-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoIfLoopbackMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 9399))
 ciscoIfLoopbackMIB.setRevisions(('2001-11-15 00:00',))
 
@@ -54,4 +54,4 @@ ciscoIfLoopbackGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 9399, 8, 2, 1)).setO
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoIfLoopbackGroup = ciscoIfLoopbackGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoIfLoopbackGroup.setDescription('Collection of objects related to Loopback Configuration and\n           Loopback status.')
-mibBuilder.exportSymbols("CISCO-IF-LOOPBACK-MIB", cifLLoopbackStatus=cifLLoopbackStatus, ciscoIfLoopbackGroup=ciscoIfLoopbackGroup, cifLLoopback=cifLLoopback, cifLRowStatus=cifLRowStatus, ciscoIfLoopbackMIB=ciscoIfLoopbackMIB, ciscoIfLoopbackMIBGroups=ciscoIfLoopbackMIBGroups, ciscoIfLoopbackMIBObjects=ciscoIfLoopbackMIBObjects, ciscoIfLoopbackMIBConformance=ciscoIfLoopbackMIBConformance, ciscoIfLoopbackMIBCompliance=ciscoIfLoopbackMIBCompliance, PYSNMP_MODULE_ID=ciscoIfLoopbackMIB, ciscoIfLoopbackMIBCompliances=ciscoIfLoopbackMIBCompliances, cifLConfTable=cifLConfTable, cifLFELoopbackDeviceAndCode=cifLFELoopbackDeviceAndCode, ciscoIfLoopbackConfig=ciscoIfLoopbackConfig, cifLConfEntry=cifLConfEntry)
+mibBuilder.exportSymbols("CISCO-IF-LOOPBACK-MIB", ciscoIfLoopbackMIB=ciscoIfLoopbackMIB, cifLRowStatus=cifLRowStatus, ciscoIfLoopbackMIBConformance=ciscoIfLoopbackMIBConformance, cifLLoopback=cifLLoopback, ciscoIfLoopbackMIBGroups=ciscoIfLoopbackMIBGroups, cifLConfEntry=cifLConfEntry, ciscoIfLoopbackMIBCompliances=ciscoIfLoopbackMIBCompliances, cifLLoopbackStatus=cifLLoopbackStatus, PYSNMP_MODULE_ID=ciscoIfLoopbackMIB, ciscoIfLoopbackMIBCompliance=ciscoIfLoopbackMIBCompliance, ciscoIfLoopbackMIBObjects=ciscoIfLoopbackMIBObjects, cifLConfTable=cifLConfTable, cifLFELoopbackDeviceAndCode=cifLFELoopbackDeviceAndCode, ciscoIfLoopbackGroup=ciscoIfLoopbackGroup, ciscoIfLoopbackConfig=ciscoIfLoopbackConfig)

@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCOSB-EEE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-EEE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
-ifOperStatus, ifIndex = mibBuilder.importSymbols("IF-MIB", "ifOperStatus", "ifIndex")
+ifIndex, ifOperStatus = mibBuilder.importSymbols("IF-MIB", "ifIndex", "ifOperStatus")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 rlEee = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 149))
 rlEee.setRevisions(('2010-05-15 00:00',))
 
@@ -97,4 +97,4 @@ if mibBuilder.loadTexts: rlEeePortLldpRemoteTxEcho.setDescription('Indicates the
 rlEeePortLldpRemoteRxEcho = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 149, 5, 1, 4), Unsigned32()).setUnits('uSec').setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlEeePortLldpRemoteRxEcho.setStatus('current')
 if mibBuilder.loadTexts: rlEeePortLldpRemoteRxEcho.setDescription('Indicates the value Receive Tw_sys_tx echoed back by the remote system, in micro-seconds')
-mibBuilder.exportSymbols("CISCOSB-EEE-MIB", rlEeePortLldpRemoteTx=rlEeePortLldpRemoteTx, PYSNMP_MODULE_ID=rlEee, rlEeePortEntry=rlEeePortEntry, rlEeePortLldpRemoteRxEcho=rlEeePortLldpRemoteRxEcho, rlEeePortLldpLocalTx=rlEeePortLldpLocalTx, rlEeePortLldpTable=rlEeePortLldpTable, rlEeePortLldpRemoteTable=rlEeePortLldpRemoteTable, rlEeePortLldpRemoteTxEcho=rlEeePortLldpRemoteTxEcho, rlEeePortLldpRemoteEntry=rlEeePortLldpRemoteEntry, rlEeePortLldpAdminStatus=rlEeePortLldpAdminStatus, rlEeePortSupported=rlEeePortSupported, rlEeePortTable=rlEeePortTable, rlEeePortLldpLocalResolvedRx=rlEeePortLldpLocalResolvedRx, rlEeePortLldpOperStatus=rlEeePortLldpOperStatus, rlEeePortLldpLocalTxEcho=rlEeePortLldpLocalTxEcho, rlEeePortAdminStatus=rlEeePortAdminStatus, rlEeePortLldpLocalRxEcho=rlEeePortLldpLocalRxEcho, rlEeePortLldpRemoteRx=rlEeePortLldpRemoteRx, rlEee=rlEee, rlEeePortLldpLocalResolvedTx=rlEeePortLldpLocalResolvedTx, rlEeePortOperStatus=rlEeePortOperStatus, rlEeePortLldpEntry=rlEeePortLldpEntry, rlEeePortLldpLocalEntry=rlEeePortLldpLocalEntry, rlEeeEnable=rlEeeEnable, rlEeePortRemoteStatus=rlEeePortRemoteStatus, rlEeePortLldpLocalRx=rlEeePortLldpLocalRx, rlEeePortLldpLocalTable=rlEeePortLldpLocalTable)
+mibBuilder.exportSymbols("CISCOSB-EEE-MIB", rlEeeEnable=rlEeeEnable, rlEeePortAdminStatus=rlEeePortAdminStatus, rlEeePortLldpLocalRxEcho=rlEeePortLldpLocalRxEcho, rlEeePortLldpLocalEntry=rlEeePortLldpLocalEntry, rlEeePortLldpLocalRx=rlEeePortLldpLocalRx, rlEeePortLldpOperStatus=rlEeePortLldpOperStatus, rlEeePortEntry=rlEeePortEntry, rlEeePortSupported=rlEeePortSupported, rlEeePortOperStatus=rlEeePortOperStatus, rlEee=rlEee, rlEeePortLldpLocalTable=rlEeePortLldpLocalTable, rlEeePortLldpTable=rlEeePortLldpTable, rlEeePortRemoteStatus=rlEeePortRemoteStatus, rlEeePortLldpEntry=rlEeePortLldpEntry, rlEeePortLldpRemoteRxEcho=rlEeePortLldpRemoteRxEcho, rlEeePortLldpRemoteTx=rlEeePortLldpRemoteTx, rlEeePortLldpLocalTx=rlEeePortLldpLocalTx, rlEeePortLldpAdminStatus=rlEeePortLldpAdminStatus, rlEeePortLldpLocalTxEcho=rlEeePortLldpLocalTxEcho, rlEeePortLldpRemoteEntry=rlEeePortLldpRemoteEntry, rlEeePortLldpLocalResolvedTx=rlEeePortLldpLocalResolvedTx, rlEeePortLldpRemoteTxEcho=rlEeePortLldpRemoteTxEcho, rlEeePortTable=rlEeePortTable, rlEeePortLldpRemoteRx=rlEeePortLldpRemoteRx, rlEeePortLldpRemoteTable=rlEeePortLldpRemoteTable, rlEeePortLldpLocalResolvedRx=rlEeePortLldpLocalResolvedRx, PYSNMP_MODULE_ID=rlEee)

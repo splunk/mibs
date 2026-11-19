@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module MY-SMI (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ruijie/MY-SMI
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:39:45 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:39:59 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion")
+ValueRangeConstraint, ConstraintsUnion, ValueSizeConstraint, ConstraintsIntersection, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsUnion", "ValueSizeConstraint", "ConstraintsIntersection", "SingleValueConstraint")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Unsigned32, TimeTicks, Counter32, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, NotificationType, Bits, MibIdentifier, IpAddress, enterprises, iso, ModuleIdentity, Gauge32, Integer32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "TimeTicks", "Counter32", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "NotificationType", "Bits", "MibIdentifier", "IpAddress", "enterprises", "iso", "ModuleIdentity", "Gauge32", "Integer32", "ObjectIdentity")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+Unsigned32, NotificationType, TimeTicks, Counter32, enterprises, ObjectIdentity, Gauge32, Bits, IpAddress, Counter64, iso, Integer32, MibIdentifier, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "NotificationType", "TimeTicks", "Counter32", "enterprises", "ObjectIdentity", "Gauge32", "Bits", "IpAddress", "Counter64", "iso", "Integer32", "MibIdentifier", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 my = MibIdentifier((1, 3, 6, 1, 4, 1, 4881))
 products = MibIdentifier((1, 3, 6, 1, 4, 1, 4881, 1))
 switch = MibIdentifier((1, 3, 6, 1, 4, 1, 4881, 1, 1))
@@ -51,4 +51,4 @@ if mibBuilder.loadTexts: myWirelessProducts.setDescription('myWirelessProducts i
 myWirelessMgmt = ObjectIdentity((1, 3, 6, 1, 4, 1, 4881, 1, 3, 1, 2))
 if mibBuilder.loadTexts: myWirelessMgmt.setStatus('current')
 if mibBuilder.loadTexts: myWirelessMgmt.setDescription('myWirelessMgmt is the main subtree for those functional mib.')
-mibBuilder.exportSymbols("MY-SMI", switchMib=switchMib, mySwitchProducts=mySwitchProducts, switch=switch, myRouterProducts=myRouterProducts, myMgmt=myMgmt, wirelessMib=wirelessMib, router=router, my=my, wireless=wireless, myAgentCapability=myAgentCapability, myExperiment=myExperiment, myWirelessProducts=myWirelessProducts, myModules=myModules, routerMib=routerMib, myWirelessMgmt=myWirelessMgmt, products=products, PYSNMP_MODULE_ID=switchMib)
+mibBuilder.exportSymbols("MY-SMI", my=my, myExperiment=myExperiment, mySwitchProducts=mySwitchProducts, switchMib=switchMib, myModules=myModules, wirelessMib=wirelessMib, myWirelessProducts=myWirelessProducts, router=router, myAgentCapability=myAgentCapability, myRouterProducts=myRouterProducts, switch=switch, PYSNMP_MODULE_ID=switchMib, wireless=wireless, myMgmt=myMgmt, myWirelessMgmt=myWirelessMgmt, products=products, routerMib=routerMib)

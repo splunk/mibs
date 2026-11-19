@@ -2,31 +2,31 @@
   "imports": {
     "class": "imports",
     "SNMPv2-CONF": [
-      "MODULE-COMPLIANCE",
       "OBJECT-GROUP",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "Counter64",
+      "Unsigned32",
       "Gauge32",
       "MODULE-IDENTITY",
-      "Unsigned32",
-      "IpAddress",
       "enterprises",
-      "MibIdentifier",
-      "Counter32",
-      "iso",
+      "Counter64",
       "OBJECT-TYPE",
-      "Bits",
+      "iso",
       "NOTIFICATION-TYPE",
+      "IpAddress",
       "Integer32",
       "TimeTicks",
-      "OBJECT-IDENTITY"
+      "MibIdentifier",
+      "OBJECT-IDENTITY",
+      "Bits",
+      "Counter32"
     ],
     "SNMPv2-TC": [
-      "DisplayString",
       "DateAndTime",
-      "TEXTUAL-CONVENTION"
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
     ]
   },
   "ciscoBroadWorksMIB": {
@@ -11522,7 +11522,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/broadsoft/BW-Provisioning",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:31:28 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:34:05 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

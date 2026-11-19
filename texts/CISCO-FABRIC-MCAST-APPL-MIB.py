@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-FABRIC-MCAST-APPL-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-FABRIC-MCAST-APPL-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 CfmPoolIndex, = mibBuilder.importSymbols("CISCO-FABRIC-MCAST-MIB", "CfmPoolIndex")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 entLogicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "entLogicalIndex")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoFabricMcastApplMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 256))
 ciscoFabricMcastApplMIB.setRevisions(('2002-12-18 00:00',))
@@ -61,4 +61,4 @@ cfmaApplGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 256, 3, 2, 1)).setObjects((
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cfmaApplGroup = cfmaApplGroup.setStatus('current')
 if mibBuilder.loadTexts: cfmaApplGroup.setDescription('A collection of objects providing information for\n        the applications that use the fabric multicast resource.')
-mibBuilder.exportSymbols("CISCO-FABRIC-MCAST-APPL-MIB", cfmaAppl=cfmaAppl, cfmaApplEntry=cfmaApplEntry, cfmaApplInuseFgids=cfmaApplInuseFgids, cfmaMIBConformance=cfmaMIBConformance, cfmaApplPoolId=cfmaApplPoolId, cfmaMIBGroups=cfmaMIBGroups, cfmaApplTable=cfmaApplTable, cfmaApplHighWaterInuseFGIDs=cfmaApplHighWaterInuseFGIDs, cfmaMIBNotificationPrefix=cfmaMIBNotificationPrefix, cfmaMIBNotifications=cfmaMIBNotifications, cfmaApplGroup=cfmaApplGroup, cfmaApplName=cfmaApplName, PYSNMP_MODULE_ID=ciscoFabricMcastApplMIB, ciscoFabricMcastApplMIBObjects=ciscoFabricMcastApplMIBObjects, cfmaMIBCompliances=cfmaMIBCompliances, ciscoFabricMcastApplMIB=ciscoFabricMcastApplMIB, cfmaApplId=cfmaApplId, cfmaMIBCompliance=cfmaMIBCompliance)
+mibBuilder.exportSymbols("CISCO-FABRIC-MCAST-APPL-MIB", cfmaMIBConformance=cfmaMIBConformance, cfmaApplName=cfmaApplName, cfmaApplInuseFgids=cfmaApplInuseFgids, cfmaApplGroup=cfmaApplGroup, cfmaMIBCompliance=cfmaMIBCompliance, cfmaMIBGroups=cfmaMIBGroups, cfmaMIBNotificationPrefix=cfmaMIBNotificationPrefix, cfmaApplTable=cfmaApplTable, ciscoFabricMcastApplMIBObjects=ciscoFabricMcastApplMIBObjects, cfmaMIBNotifications=cfmaMIBNotifications, cfmaApplEntry=cfmaApplEntry, cfmaApplId=cfmaApplId, cfmaApplPoolId=cfmaApplPoolId, ciscoFabricMcastApplMIB=ciscoFabricMcastApplMIB, cfmaMIBCompliances=cfmaMIBCompliances, PYSNMP_MODULE_ID=ciscoFabricMcastApplMIB, cfmaApplHighWaterInuseFGIDs=cfmaApplHighWaterInuseFGIDs, cfmaAppl=cfmaAppl)

@@ -2,47 +2,47 @@
   "imports": {
     "class": "imports",
     "HPN-ICF-DOT11-REF-MIB": [
-      "HpnicfDot11ChannelScopeType",
-      "HpnicfDot11ObjectIDType",
-      "HpnicfDot11AssocFailType",
-      "HpnicfDot11SSIDEncryptModeType",
-      "HpnicfDot11AuthenType",
       "HpnicfDot11AuthorFailType",
-      "HpnicfDot11AKMType",
+      "HpnicfDot11CipherType",
+      "HpnicfDot11SSIDEncryptModeType",
+      "HpnicfDot11AssocFailType",
+      "HpnicfDot11AuthenType",
+      "HpnicfDot11ObjectIDType",
+      "HpnicfDot11SecIEStatusType",
       "HpnicfDot11RadioType2",
       "HpnicfDot11RadioScopeType",
-      "HpnicfDot11SecIEStatusType",
-      "hpnicfDot11",
-      "HpnicfDot11RadioType",
+      "HpnicfDot11ChannelScopeType",
+      "HpnicfDot11AKMType",
       "HpnicfDot11SSIDStringType",
-      "HpnicfDot11CipherType"
+      "HpnicfDot11RadioType",
+      "hpnicfDot11"
     ],
     "SNMPv2-CONF": [
-      "NOTIFICATION-GROUP",
-      "MODULE-COMPLIANCE"
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
+      "MibIdentifier",
+      "Bits",
       "iso",
       "Unsigned32",
       "Integer32",
-      "Bits",
-      "NOTIFICATION-TYPE",
-      "Gauge32",
-      "Counter64",
-      "MibIdentifier",
-      "IpAddress",
-      "OBJECT-IDENTITY",
-      "Counter32",
-      "MODULE-IDENTITY",
       "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "IpAddress",
+      "Counter64",
+      "Gauge32",
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY",
+      "Counter32",
       "OBJECT-TYPE"
     ],
     "SNMPv2-TC": [
       "DateAndTime",
-      "TEXTUAL-CONVENTION",
       "MacAddress",
-      "TruthValue",
-      "DisplayString"
+      "DisplayString",
+      "TEXTUAL-CONVENTION",
+      "TruthValue"
     ]
   },
   "hpnicfDot11STATION": {
@@ -1743,7 +1743,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hp/HPN-ICF-DOT11-STATION-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:07 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:37:22 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

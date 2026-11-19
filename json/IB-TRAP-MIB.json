@@ -3,32 +3,32 @@
     "class": "imports",
     "IB-SMI-MIB": [
       "ibTrapOne",
-      "IbNode",
-      "IbString"
+      "IbString",
+      "IbNode"
     ],
     "SNMPv2-CONF": [
-      "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Bits",
+      "Counter64",
       "Counter32",
+      "MibIdentifier",
+      "MODULE-IDENTITY",
+      "Unsigned32",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "iso",
       "Gauge32",
       "NOTIFICATION-TYPE",
-      "TimeTicks",
-      "Integer32",
-      "Unsigned32",
-      "iso",
-      "Counter64",
-      "MODULE-IDENTITY",
-      "IpAddress",
-      "OBJECT-TYPE",
-      "MibIdentifier",
-      "OBJECT-IDENTITY",
-      "Bits"
+      "IpAddress"
     ],
     "SNMPv2-TC": [
-      "DisplayString",
-      "TEXTUAL-CONVENTION"
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
     ]
   },
   "ibTrapOneModule": {
@@ -1061,7 +1061,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/infoblox/IB-TRAP-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:28 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:37:37 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

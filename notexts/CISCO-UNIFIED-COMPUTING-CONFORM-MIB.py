@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-UNIFIED-COMPUTING-CONFORM-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-UNIFIED-COMPUTING-CONFORM-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-cucsFaultAffectedObjectDn, cucsFaultCreationTime, cucsFaultType, cucsFaultAffectedObjectId, cucsFaultCode, cucsFaultDescription, cucsFaultSeverity, cucsFaultLastModificationTime, cucsFaultProbableCause, cucsFaultOccur = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-FAULT-MIB", "cucsFaultAffectedObjectDn", "cucsFaultCreationTime", "cucsFaultType", "cucsFaultAffectedObjectId", "cucsFaultCode", "cucsFaultDescription", "cucsFaultSeverity", "cucsFaultLastModificationTime", "cucsFaultProbableCause", "cucsFaultOccur")
-ciscoUnifiedComputingMIBObjects, ciscoUnifiedComputingMIB = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "ciscoUnifiedComputingMIBObjects", "ciscoUnifiedComputingMIB")
+cucsFaultAffectedObjectDn, cucsFaultProbableCause, cucsFaultType, cucsFaultCode, cucsFaultOccur, cucsFaultLastModificationTime, cucsFaultSeverity, cucsFaultAffectedObjectId, cucsFaultCreationTime, cucsFaultDescription = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-FAULT-MIB", "cucsFaultAffectedObjectDn", "cucsFaultProbableCause", "cucsFaultType", "cucsFaultCode", "cucsFaultOccur", "cucsFaultLastModificationTime", "cucsFaultSeverity", "cucsFaultAffectedObjectId", "cucsFaultCreationTime", "cucsFaultDescription")
+ciscoUnifiedComputingMIB, ciscoUnifiedComputingMIBObjects = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "ciscoUnifiedComputingMIB", "ciscoUnifiedComputingMIBObjects")
 cucsFaultClearNotif, cucsFaultActiveNotif = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-NOTIFS-MIB", "cucsFaultClearNotif", "cucsFaultActiveNotif")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, NotificationType, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "NotificationType", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoUnifiedComputingMIBConform = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 719, 2))
 ciscoUnifiedComputingMIBConform.setRevisions(('2010-01-29 00:00',))
@@ -32,4 +32,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cucsFaultsNotifGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 719, 2, 1, 2, 2)).setObjects(("CISCO-UNIFIED-COMPUTING-NOTIFS-MIB", "cucsFaultActiveNotif"), ("CISCO-UNIFIED-COMPUTING-NOTIFS-MIB", "cucsFaultClearNotif"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cucsFaultsNotifGroup = cucsFaultsNotifGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-CONFORM-MIB", PYSNMP_MODULE_ID=ciscoUnifiedComputingMIBConform, cucsFaultsGroup=cucsFaultsGroup, cucsFaultsNotifGroup=cucsFaultsNotifGroup, cucsFaultMIBGroups=cucsFaultMIBGroups, cucsFaultMIBCompliance=cucsFaultMIBCompliance, ciscoUnifiedComputingMIBConform=ciscoUnifiedComputingMIBConform, cucsFaultMIBConform=cucsFaultMIBConform, cucsFaultMIBCompliances=cucsFaultMIBCompliances)
+mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-CONFORM-MIB", PYSNMP_MODULE_ID=ciscoUnifiedComputingMIBConform, cucsFaultMIBCompliance=cucsFaultMIBCompliance, cucsFaultMIBGroups=cucsFaultMIBGroups, cucsFaultsGroup=cucsFaultsGroup, cucsFaultMIBCompliances=cucsFaultMIBCompliances, ciscoUnifiedComputingMIBConform=ciscoUnifiedComputingMIBConform, cucsFaultMIBConform=cucsFaultMIBConform, cucsFaultsNotifGroup=cucsFaultsNotifGroup)

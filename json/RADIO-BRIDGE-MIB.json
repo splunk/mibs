@@ -8,36 +8,36 @@
       "ieee8021QBridgeTpFdbEntry"
     ],
     "IF-MIB": [
-      "InterfaceIndex",
-      "ifIndex"
+      "ifIndex",
+      "InterfaceIndex"
     ],
     "SNMPv2-CONF": [
-      "OBJECT-GROUP",
       "MODULE-COMPLIANCE",
+      "OBJECT-GROUP",
       "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "TimeTicks",
-      "enterprises",
-      "OBJECT-TYPE",
-      "OBJECT-IDENTITY",
-      "NOTIFICATION-TYPE",
-      "Bits",
-      "Counter32",
-      "Unsigned32",
-      "Counter64",
-      "iso",
-      "IpAddress",
-      "Gauge32",
       "MODULE-IDENTITY",
       "Integer32",
-      "MibIdentifier"
+      "OBJECT-TYPE",
+      "Unsigned32",
+      "NOTIFICATION-TYPE",
+      "TimeTicks",
+      "Bits",
+      "Counter64",
+      "Counter32",
+      "enterprises",
+      "OBJECT-IDENTITY",
+      "MibIdentifier",
+      "iso",
+      "IpAddress",
+      "Gauge32"
     ],
     "SNMPv2-TC": [
       "TruthValue",
+      "DisplayString",
       "RowStatus",
-      "TEXTUAL-CONVENTION",
-      "DisplayString"
+      "TEXTUAL-CONVENTION"
     ]
   },
   "radioBridgeRoot": {
@@ -4651,7 +4651,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/siklu/RADIO-BRIDGE-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:40:04 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:40:13 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

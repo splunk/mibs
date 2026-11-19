@@ -9,8 +9,8 @@
       "ifIndex"
     ],
     "RMON-MIB": [
-      "EntryStatus",
-      "OwnerString"
+      "OwnerString",
+      "EntryStatus"
     ],
     "SNMPv2-CONF": [
       "NOTIFICATION-GROUP",
@@ -18,30 +18,30 @@
       "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
+      "Counter64",
       "Bits",
-      "Unsigned32",
+      "OBJECT-IDENTITY",
+      "Counter32",
+      "Gauge32",
       "NOTIFICATION-TYPE",
-      "MibIdentifier",
-      "iso",
       "mib-2",
-      "MODULE-IDENTITY",
+      "Integer32",
+      "zeroDotZero",
+      "iso",
+      "OBJECT-TYPE",
       "TimeTicks",
       "IpAddress",
-      "Counter32",
-      "OBJECT-IDENTITY",
-      "zeroDotZero",
-      "Counter64",
-      "Integer32",
-      "OBJECT-TYPE",
-      "Gauge32"
+      "MibIdentifier",
+      "Unsigned32",
+      "MODULE-IDENTITY"
     ],
     "SNMPv2-TC": [
-      "MacAddress",
-      "RowStatus",
+      "TEXTUAL-CONVENTION",
       "DateAndTime",
       "DisplayString",
       "TruthValue",
-      "TEXTUAL-CONVENTION"
+      "RowStatus",
+      "MacAddress"
     ]
   },
   "hwXponCommonMIB": {
@@ -8323,7 +8323,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/huawei/HUAWEI-XPON-COMMON-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:04 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:37:19 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

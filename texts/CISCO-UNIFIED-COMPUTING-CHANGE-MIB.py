@@ -1,22 +1,22 @@
 #
 # PySNMP MIB module CISCO-UNIFIED-COMPUTING-CHANGE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-UNIFIED-COMPUTING-CHANGE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-CiscoInetAddressMask, CiscoAlarmSeverity, Unsigned64, TimeIntervalSec, CiscoNetworkAddress = mibBuilder.importSymbols("CISCO-TC", "CiscoInetAddressMask", "CiscoAlarmSeverity", "Unsigned64", "TimeIntervalSec", "CiscoNetworkAddress")
-CucsManagedObjectId, ciscoUnifiedComputingMIBObjects, CucsManagedObjectDn = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "CucsManagedObjectId", "ciscoUnifiedComputingMIBObjects", "CucsManagedObjectDn")
-CucsMoMoClassId, CucsChangeStatus = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-TC-MIB", "CucsMoMoClassId", "CucsChangeStatus")
-InetAddressIPv4, InetAddressIPv6 = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressIPv4", "InetAddressIPv6")
+CiscoNetworkAddress, TimeIntervalSec, Unsigned64, CiscoInetAddressMask, CiscoAlarmSeverity = mibBuilder.importSymbols("CISCO-TC", "CiscoNetworkAddress", "TimeIntervalSec", "Unsigned64", "CiscoInetAddressMask", "CiscoAlarmSeverity")
+ciscoUnifiedComputingMIBObjects, CucsManagedObjectId, CucsManagedObjectDn = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "ciscoUnifiedComputingMIBObjects", "CucsManagedObjectId", "CucsManagedObjectDn")
+CucsChangeStatus, CucsMoMoClassId = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-TC-MIB", "CucsChangeStatus", "CucsMoMoClassId")
+InetAddressIPv6, InetAddressIPv4 = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressIPv6", "InetAddressIPv4")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
-TimeStamp, TimeInterval, RowPointer, MacAddress, TextualConvention, DisplayString, DateAndTime, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "TimeInterval", "RowPointer", "MacAddress", "TextualConvention", "DisplayString", "DateAndTime", "TruthValue")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, TimeStamp, MacAddress, TimeInterval, DateAndTime, RowPointer, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TimeStamp", "MacAddress", "TimeInterval", "DateAndTime", "RowPointer", "TextualConvention")
 cucsChangeObjects = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 71))
 if mibBuilder.loadTexts: cucsChangeObjects.setLastUpdated('201601180000Z')
 if mibBuilder.loadTexts: cucsChangeObjects.setOrganization('Cisco Systems Inc.')
@@ -58,4 +58,4 @@ if mibBuilder.loadTexts: cucsChangeChangedObjectRefUcsmMoDn.setDescription('Cisc
 cucsChangeChangedObjectRefGuid = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 71, 1, 1, 10), SnmpAdminString()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: cucsChangeChangedObjectRefGuid.setStatus('current')
 if mibBuilder.loadTexts: cucsChangeChangedObjectRefGuid.setDescription('Cisco UCS change:ChangedObjectRef:guid managed object property')
-mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-CHANGE-MIB", cucsChangeChangedObjectRefTable=cucsChangeChangedObjectRefTable, cucsChangeChangedObjectRefUcsmMoDn=cucsChangeChangedObjectRefUcsmMoDn, cucsChangeChangedObjectRefRefObjStatus=cucsChangeChangedObjectRefRefObjStatus, cucsChangeChangedObjectRefGuid=cucsChangeChangedObjectRefGuid, cucsChangeChangedObjectRefEntry=cucsChangeChangedObjectRefEntry, cucsChangeChangedObjectRefCentraleMoDn=cucsChangeChangedObjectRefCentraleMoDn, cucsChangeChangedObjectRefRn=cucsChangeChangedObjectRefRn, cucsChangeChangedObjectRefInstanceId=cucsChangeChangedObjectRefInstanceId, cucsChangeChangedObjectRefOldCentraleMoDn=cucsChangeChangedObjectRefOldCentraleMoDn, cucsChangeChangedObjectRefId=cucsChangeChangedObjectRefId, cucsChangeChangedObjectRefChangedMoClassId=cucsChangeChangedObjectRefChangedMoClassId, PYSNMP_MODULE_ID=cucsChangeObjects, cucsChangeChangedObjectRefDn=cucsChangeChangedObjectRefDn, cucsChangeObjects=cucsChangeObjects)
+mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-CHANGE-MIB", cucsChangeChangedObjectRefRn=cucsChangeChangedObjectRefRn, cucsChangeChangedObjectRefEntry=cucsChangeChangedObjectRefEntry, cucsChangeChangedObjectRefDn=cucsChangeChangedObjectRefDn, cucsChangeChangedObjectRefRefObjStatus=cucsChangeChangedObjectRefRefObjStatus, cucsChangeObjects=cucsChangeObjects, cucsChangeChangedObjectRefUcsmMoDn=cucsChangeChangedObjectRefUcsmMoDn, PYSNMP_MODULE_ID=cucsChangeObjects, cucsChangeChangedObjectRefInstanceId=cucsChangeChangedObjectRefInstanceId, cucsChangeChangedObjectRefCentraleMoDn=cucsChangeChangedObjectRefCentraleMoDn, cucsChangeChangedObjectRefGuid=cucsChangeChangedObjectRefGuid, cucsChangeChangedObjectRefOldCentraleMoDn=cucsChangeChangedObjectRefOldCentraleMoDn, cucsChangeChangedObjectRefId=cucsChangeChangedObjectRefId, cucsChangeChangedObjectRefTable=cucsChangeChangedObjectRefTable, cucsChangeChangedObjectRefChangedMoClassId=cucsChangeChangedObjectRefChangedMoClassId)

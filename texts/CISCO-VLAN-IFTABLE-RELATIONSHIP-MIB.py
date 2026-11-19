@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-VLAN-IFTABLE-RELATIONSHIP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VLAN-IFTABLE-RELATIONSHIP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 InterfaceIndexOrZero, = mibBuilder.importSymbols("CISCO-TC", "InterfaceIndexOrZero")
 VlanIndex, = mibBuilder.importSymbols("CISCO-VTP-MIB", "VlanIndex")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoVlanIfTableRelationshipMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 128))
 ciscoVlanIfTableRelationshipMIB.setRevisions(('2013-07-15 00:00',))
@@ -53,4 +53,4 @@ cviMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 128, 1, 3, 2, 1)).setObjects(
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cviMIBGroup = cviMIBGroup.setStatus('current')
 if mibBuilder.loadTexts: cviMIBGroup.setDescription('A set of objects to obtain VLAN-ID and ifIndex\n        information for routed VLAN interfaces.')
-mibBuilder.exportSymbols("CISCO-VLAN-IFTABLE-RELATIONSHIP-MIB", cviVlanInterfaceIndexEntry=cviVlanInterfaceIndexEntry, cviMIBGroups=cviMIBGroups, cviVlanInterfaceIndexTable=cviVlanInterfaceIndexTable, cviVlanId=cviVlanId, ciscoVlanIfTableRelationshipMIB=ciscoVlanIfTableRelationshipMIB, cviRoutedVlanIfIndex=cviRoutedVlanIfIndex, cviMIBGroup=cviMIBGroup, PYSNMP_MODULE_ID=ciscoVlanIfTableRelationshipMIB, cviMIBObjects=cviMIBObjects, cviMIBCompliance=cviMIBCompliance, cviGlobals=cviGlobals, cviPhysicalIfIndex=cviPhysicalIfIndex, cviMIBConformance=cviMIBConformance, cviMIBCompliances=cviMIBCompliances)
+mibBuilder.exportSymbols("CISCO-VLAN-IFTABLE-RELATIONSHIP-MIB", cviMIBGroups=cviMIBGroups, PYSNMP_MODULE_ID=ciscoVlanIfTableRelationshipMIB, cviPhysicalIfIndex=cviPhysicalIfIndex, ciscoVlanIfTableRelationshipMIB=ciscoVlanIfTableRelationshipMIB, cviMIBGroup=cviMIBGroup, cviMIBCompliance=cviMIBCompliance, cviVlanId=cviVlanId, cviVlanInterfaceIndexTable=cviVlanInterfaceIndexTable, cviRoutedVlanIfIndex=cviRoutedVlanIfIndex, cviMIBCompliances=cviMIBCompliances, cviMIBObjects=cviMIBObjects, cviGlobals=cviGlobals, cviMIBConformance=cviMIBConformance, cviVlanInterfaceIndexEntry=cviVlanInterfaceIndexEntry)

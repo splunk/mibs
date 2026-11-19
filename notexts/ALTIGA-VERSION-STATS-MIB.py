@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ALTIGA-VERSION-STATS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/ALTIGA-VERSION-STATS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 alVersionMibModule, = mibBuilder.importSymbols("ALTIGA-GLOBAL-REG", "alVersionMibModule")
-alVersionGroup, alStatsVersion = mibBuilder.importSymbols("ALTIGA-MIB", "alVersionGroup", "alStatsVersion")
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+alStatsVersion, alVersionGroup = mibBuilder.importSymbols("ALTIGA-MIB", "alStatsVersion", "alVersionGroup")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 altigaVersionStatsMibModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 3076, 1, 1, 6, 2))
 altigaVersionStatsMibModule.setRevisions(('2002-09-05 13:00',))
@@ -41,4 +41,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 altigaVersionStatsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 3076, 2, 1, 1, 1, 1, 2)).setObjects(("ALTIGA-VERSION-STATS-MIB", "alVersionMajor"), ("ALTIGA-VERSION-STATS-MIB", "alVersionMinor"), ("ALTIGA-VERSION-STATS-MIB", "alVersionInt"), ("ALTIGA-VERSION-STATS-MIB", "alVersionString"), ("ALTIGA-VERSION-STATS-MIB", "alVersionLong"), ("ALTIGA-VERSION-STATS-MIB", "alVersionShort"), ("ALTIGA-VERSION-STATS-MIB", "alVersionBoot"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     altigaVersionStatsGroup = altigaVersionStatsGroup.setStatus('current')
-mibBuilder.exportSymbols("ALTIGA-VERSION-STATS-MIB", altigaVersionStatsMibCompliances=altigaVersionStatsMibCompliances, alVersionLong=alVersionLong, altigaVersionStatsMibConformance=altigaVersionStatsMibConformance, alStatsVersionGlobal=alStatsVersionGlobal, PYSNMP_MODULE_ID=altigaVersionStatsMibModule, alVersionShort=alVersionShort, altigaVersionStatsMibCompliance=altigaVersionStatsMibCompliance, altigaVersionStatsMibModule=altigaVersionStatsMibModule, altigaVersionStatsGroup=altigaVersionStatsGroup, alVersionInt=alVersionInt, alVersionMajor=alVersionMajor, alVersionMinor=alVersionMinor, alVersionString=alVersionString, alVersionBoot=alVersionBoot)
+mibBuilder.exportSymbols("ALTIGA-VERSION-STATS-MIB", PYSNMP_MODULE_ID=altigaVersionStatsMibModule, altigaVersionStatsMibModule=altigaVersionStatsMibModule, alVersionString=alVersionString, altigaVersionStatsMibConformance=altigaVersionStatsMibConformance, altigaVersionStatsMibCompliance=altigaVersionStatsMibCompliance, altigaVersionStatsMibCompliances=altigaVersionStatsMibCompliances, alVersionMajor=alVersionMajor, alVersionLong=alVersionLong, alVersionMinor=alVersionMinor, alVersionInt=alVersionInt, altigaVersionStatsGroup=altigaVersionStatsGroup, alStatsVersionGlobal=alStatsVersionGlobal, alVersionShort=alVersionShort, alVersionBoot=alVersionBoot)

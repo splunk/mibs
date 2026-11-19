@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module LINKSYS-ProtectedPorts-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/linksys/LINKSYS-ProtectedPorts-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:37:16 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:08 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ConstraintsUnion, SingleValueConstraint, ValueRangeConstraint, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "SingleValueConstraint", "ValueRangeConstraint", "ValueSizeConstraint")
+ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 rnd, = mibBuilder.importSymbols("LINKSYS-MIB", "rnd")
 PortList, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "PortList")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Integer32, Bits, TimeTicks, NotificationType, MibIdentifier, Counter64, iso, Unsigned32, IpAddress, ObjectIdentity, Counter32, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Bits", "TimeTicks", "NotificationType", "MibIdentifier", "Counter64", "iso", "Unsigned32", "IpAddress", "ObjectIdentity", "Counter32", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity")
-TextualConvention, RowStatus, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString", "TruthValue")
+Bits, iso, IpAddress, Unsigned32, Integer32, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, MibIdentifier, NotificationType, ObjectIdentity, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "iso", "IpAddress", "Unsigned32", "Integer32", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "MibIdentifier", "NotificationType", "ObjectIdentity", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TruthValue", "TextualConvention")
 rlProtectedPorts = ModuleIdentity((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 132))
 rlProtectedPorts.setRevisions(('2008-05-03 12:34',))
 if mibBuilder.loadTexts: rlProtectedPorts.setLastUpdated('200805031234Z')
@@ -34,4 +34,4 @@ rlProtectedPortEgressPorts = MibTableColumn((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 
 if mibBuilder.loadTexts: rlProtectedPortEgressPorts.setStatus('current')
 rlProtectedPortsGlobalEnable = MibScalar((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 132, 3), TruthValue().clone('false')).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlProtectedPortsGlobalEnable.setStatus('current')
-mibBuilder.exportSymbols("LINKSYS-ProtectedPorts-MIB", rlProtectedPortEgressPorts=rlProtectedPortEgressPorts, rlProtectedPortsStatusEntry=rlProtectedPortsStatusEntry, rlProtectedPortsTable=rlProtectedPortsTable, PYSNMP_MODULE_ID=rlProtectedPorts, rlProtectedPorts=rlProtectedPorts, rlProtectedPortType=rlProtectedPortType, rlProtectedPortsEntry=rlProtectedPortsEntry, rlProtectedPortsStatusTable=rlProtectedPortsStatusTable, rlProtectedPortsGlobalEnable=rlProtectedPortsGlobalEnable, rlProtectedPortCommunity=rlProtectedPortCommunity)
+mibBuilder.exportSymbols("LINKSYS-ProtectedPorts-MIB", rlProtectedPorts=rlProtectedPorts, rlProtectedPortsStatusTable=rlProtectedPortsStatusTable, PYSNMP_MODULE_ID=rlProtectedPorts, rlProtectedPortEgressPorts=rlProtectedPortEgressPorts, rlProtectedPortType=rlProtectedPortType, rlProtectedPortsEntry=rlProtectedPortsEntry, rlProtectedPortsStatusEntry=rlProtectedPortsStatusEntry, rlProtectedPortsTable=rlProtectedPortsTable, rlProtectedPortCommunity=rlProtectedPortCommunity, rlProtectedPortsGlobalEnable=rlProtectedPortsGlobalEnable)

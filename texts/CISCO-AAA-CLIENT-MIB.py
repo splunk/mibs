@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-AAA-CLIENT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-AAA-CLIENT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoAAAClientMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 158))
 ciscoAAAClientMIB.setRevisions(('2001-11-19 00:00', '2001-05-10 00:00',))
 
@@ -107,4 +107,4 @@ cacLoginConfigGroupRev1 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 158, 3, 2, 3)).se
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cacLoginConfigGroupRev1 = cacLoginConfigGroupRev1.setStatus('current')
 if mibBuilder.loadTexts: cacLoginConfigGroupRev1.setDescription('A collection of objects providing the\n             AAA client login configuration. \n            ')
-mibBuilder.exportSymbols("CISCO-AAA-CLIENT-MIB", SessionType=SessionType, cacMIBConformance=cacMIBConformance, cacPriorityGroup=cacPriorityGroup, cacMIBCompliance2=cacMIBCompliance2, LoginMode=LoginMode, cacPriority=cacPriority, cacPriorityEntry=cacPriorityEntry, cacLoginMode=cacLoginMode, cacLoginConfigGroupRev1=cacLoginConfigGroupRev1, cacMaxLoginAttempt=cacMaxLoginAttempt, cacMIBObjects=cacMIBObjects, cacMIBNotifications=cacMIBNotifications, PYSNMP_MODULE_ID=ciscoAAAClientMIB, cacLoginConfigGroup=cacLoginConfigGroup, cacLoginConfigEntry=cacLoginConfigEntry, cacSession=cacSession, cacMIBGroups=cacMIBGroups, ciscoAAAClientMIB=ciscoAAAClientMIB, cacLockoutPeriod=cacLockoutPeriod, cacLoginConfigTable=cacLoginConfigTable, cacPriorityTable=cacPriorityTable, AuthenMethod=AuthenMethod, cacEnable=cacEnable, cacAuthen=cacAuthen, cacMIBCompliances=cacMIBCompliances, cacMIBCompliance=cacMIBCompliance, cacPriorityNumber=cacPriorityNumber, cacPrimaryMethod=cacPrimaryMethod, cacLoginConfig=cacLoginConfig, cacLockoutPeriodExt=cacLockoutPeriodExt)
+mibBuilder.exportSymbols("CISCO-AAA-CLIENT-MIB", cacMIBCompliance2=cacMIBCompliance2, cacSession=cacSession, cacLoginConfig=cacLoginConfig, cacAuthen=cacAuthen, cacPriorityNumber=cacPriorityNumber, cacPriority=cacPriority, cacPrimaryMethod=cacPrimaryMethod, cacLoginMode=cacLoginMode, cacLoginConfigGroupRev1=cacLoginConfigGroupRev1, cacLoginConfigTable=cacLoginConfigTable, AuthenMethod=AuthenMethod, LoginMode=LoginMode, cacEnable=cacEnable, cacMIBCompliances=cacMIBCompliances, cacPriorityGroup=cacPriorityGroup, cacMIBGroups=cacMIBGroups, PYSNMP_MODULE_ID=ciscoAAAClientMIB, cacMIBConformance=cacMIBConformance, SessionType=SessionType, cacMaxLoginAttempt=cacMaxLoginAttempt, cacMIBNotifications=cacMIBNotifications, cacLockoutPeriodExt=cacLockoutPeriodExt, ciscoAAAClientMIB=ciscoAAAClientMIB, cacPriorityTable=cacPriorityTable, cacLoginConfigEntry=cacLoginConfigEntry, cacPriorityEntry=cacPriorityEntry, cacLoginConfigGroup=cacLoginConfigGroup, cacMIBCompliance=cacMIBCompliance, cacMIBObjects=cacMIBObjects, cacLockoutPeriod=cacLockoutPeriod)

@@ -15,30 +15,30 @@
       "egpNeighAddr"
     ],
     "SNMPv2-CONF": [
-      "NOTIFICATION-GROUP",
-      "MODULE-COMPLIANCE"
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "enterprises",
-      "Integer32",
-      "Counter32",
-      "TimeTicks",
-      "Gauge32",
-      "TRAP-TYPE",
-      "NOTIFICATION-TYPE",
-      "MODULE-IDENTITY",
-      "Unsigned32",
       "Counter64",
-      "OBJECT-TYPE",
-      "MibIdentifier",
-      "OBJECT-IDENTITY",
+      "NOTIFICATION-TYPE",
+      "TRAP-TYPE",
+      "Unsigned32",
       "Bits",
+      "enterprises",
+      "OBJECT-TYPE",
+      "IpAddress",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "Gauge32",
+      "TimeTicks",
+      "Counter32",
       "iso",
-      "IpAddress"
+      "MODULE-IDENTITY",
+      "MibIdentifier"
     ],
     "SNMPv2-TC": [
-      "DisplayString",
       "TEXTUAL-CONVENTION",
+      "DisplayString",
       "PhysAddress"
     ],
     "ZYXEL-MIB": [
@@ -1654,7 +1654,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/zyxel/ZYXEL-PRESTIGE-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:41:22 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:41:13 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

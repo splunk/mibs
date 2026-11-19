@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module TIMERANGE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/TIMERANGE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:46 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint")
+SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlink_common_mgmt, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlink-common-mgmt")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, iso, TimeTicks, ModuleIdentity, NotificationType, ObjectIdentity, Unsigned32, MibIdentifier, Gauge32, Counter32, Counter64, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "iso", "TimeTicks", "ModuleIdentity", "NotificationType", "ObjectIdentity", "Unsigned32", "MibIdentifier", "Gauge32", "Counter32", "Counter64", "IpAddress")
-DateAndTime, RowStatus, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "RowStatus", "TextualConvention", "DisplayString")
+Counter32, IpAddress, Counter64, ModuleIdentity, Gauge32, Unsigned32, Bits, iso, ObjectIdentity, Integer32, NotificationType, MibIdentifier, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "IpAddress", "Counter64", "ModuleIdentity", "Gauge32", "Unsigned32", "Bits", "iso", "ObjectIdentity", "Integer32", "NotificationType", "MibIdentifier", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
+DateAndTime, DisplayString, TextualConvention, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "DisplayString", "TextualConvention", "RowStatus")
 swTimeRangeMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 12, 50))
 if mibBuilder.loadTexts: swTimeRangeMIB.setLastUpdated('0811200000Z')
 if mibBuilder.loadTexts: swTimeRangeMIB.setOrganization('D-Link Corp.')
@@ -52,4 +52,4 @@ swTimeRangeCPUACLAccessID = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 12, 50, 3, 3,
 if mibBuilder.loadTexts: swTimeRangeCPUACLAccessID.setStatus('current')
 swTimeRangeCPUACLTimeRangeName = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 12, 50, 3, 3, 1, 3), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 32))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: swTimeRangeCPUACLTimeRangeName.setStatus('current')
-mibBuilder.exportSymbols("TIMERANGE-MIB", swTimeRangeCPUACLProfileID=swTimeRangeCPUACLProfileID, swTimeRangeACLTable=swTimeRangeACLTable, swTimeRangeCPUACLTimeRangeName=swTimeRangeCPUACLTimeRangeName, swTimeRangeCPUACLTable=swTimeRangeCPUACLTable, swTimeRangeMgmtStartTime=swTimeRangeMgmtStartTime, swTimeRangeCtrl=swTimeRangeCtrl, swTimeRangeCPUACLEntry=swTimeRangeCPUACLEntry, swTimeRangeMgmtSelectDays=swTimeRangeMgmtSelectDays, swTimeRangeMIB=swTimeRangeMIB, swTimeRangeMgmtEndTime=swTimeRangeMgmtEndTime, swTimeRangeInfo=swTimeRangeInfo, swTimeRangeACLTimeRangeName=swTimeRangeACLTimeRangeName, swTimeRangeCPUACLAccessID=swTimeRangeCPUACLAccessID, swTimeRangeACLProfileID=swTimeRangeACLProfileID, swTimeRangeMgmtTable=swTimeRangeMgmtTable, swTimeRangeACLAccessID=swTimeRangeACLAccessID, swTimeRangeMgmtRangeName=swTimeRangeMgmtRangeName, swTimeRangeMgmtEntry=swTimeRangeMgmtEntry, swTimeRangeMgmt=swTimeRangeMgmt, PYSNMP_MODULE_ID=swTimeRangeMIB, swimeRangeMgmtStatus=swimeRangeMgmtStatus, swTimeRangeACLEntry=swTimeRangeACLEntry)
+mibBuilder.exportSymbols("TIMERANGE-MIB", swTimeRangeMIB=swTimeRangeMIB, swTimeRangeACLAccessID=swTimeRangeACLAccessID, swTimeRangeACLTimeRangeName=swTimeRangeACLTimeRangeName, swTimeRangeCPUACLTimeRangeName=swTimeRangeCPUACLTimeRangeName, swimeRangeMgmtStatus=swimeRangeMgmtStatus, swTimeRangeACLProfileID=swTimeRangeACLProfileID, swTimeRangeCPUACLEntry=swTimeRangeCPUACLEntry, swTimeRangeCPUACLTable=swTimeRangeCPUACLTable, swTimeRangeCtrl=swTimeRangeCtrl, swTimeRangeInfo=swTimeRangeInfo, swTimeRangeMgmt=swTimeRangeMgmt, swTimeRangeMgmtSelectDays=swTimeRangeMgmtSelectDays, swTimeRangeCPUACLProfileID=swTimeRangeCPUACLProfileID, swTimeRangeMgmtStartTime=swTimeRangeMgmtStartTime, swTimeRangeACLEntry=swTimeRangeACLEntry, swTimeRangeMgmtEntry=swTimeRangeMgmtEntry, swTimeRangeMgmtTable=swTimeRangeMgmtTable, swTimeRangeACLTable=swTimeRangeACLTable, swTimeRangeMgmtEndTime=swTimeRangeMgmtEndTime, swTimeRangeCPUACLAccessID=swTimeRangeCPUACLAccessID, PYSNMP_MODULE_ID=swTimeRangeMIB, swTimeRangeMgmtRangeName=swTimeRangeMgmtRangeName)

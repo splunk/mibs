@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCOSB-ProtectedPorts-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-ProtectedPorts-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 PortList, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "PortList")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
-RowStatus, DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention", "TruthValue")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
 rlProtectedPorts = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 132))
 rlProtectedPorts.setRevisions(('2008-05-03 12:34',))
 
@@ -47,4 +47,4 @@ if mibBuilder.loadTexts: rlProtectedPortEgressPorts.setDescription('list of port
 rlProtectedPortsGlobalEnable = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 132, 3), TruthValue().clone('false')).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlProtectedPortsGlobalEnable.setStatus('current')
 if mibBuilder.loadTexts: rlProtectedPortsGlobalEnable.setDescription('true  - set all system fast ethernet ports to protected state\n         false - set all system fast ethernet ports to not protected state')
-mibBuilder.exportSymbols("CISCOSB-ProtectedPorts-MIB", PYSNMP_MODULE_ID=rlProtectedPorts, rlProtectedPortsGlobalEnable=rlProtectedPortsGlobalEnable, rlProtectedPortsStatusEntry=rlProtectedPortsStatusEntry, rlProtectedPortCommunity=rlProtectedPortCommunity, rlProtectedPortType=rlProtectedPortType, rlProtectedPorts=rlProtectedPorts, rlProtectedPortsEntry=rlProtectedPortsEntry, rlProtectedPortsStatusTable=rlProtectedPortsStatusTable, rlProtectedPortEgressPorts=rlProtectedPortEgressPorts, rlProtectedPortsTable=rlProtectedPortsTable)
+mibBuilder.exportSymbols("CISCOSB-ProtectedPorts-MIB", rlProtectedPortsStatusTable=rlProtectedPortsStatusTable, rlProtectedPortCommunity=rlProtectedPortCommunity, rlProtectedPortEgressPorts=rlProtectedPortEgressPorts, rlProtectedPortsTable=rlProtectedPortsTable, rlProtectedPortType=rlProtectedPortType, rlProtectedPortsStatusEntry=rlProtectedPortsStatusEntry, rlProtectedPortsGlobalEnable=rlProtectedPortsGlobalEnable, PYSNMP_MODULE_ID=rlProtectedPorts, rlProtectedPorts=rlProtectedPorts, rlProtectedPortsEntry=rlProtectedPortsEntry)

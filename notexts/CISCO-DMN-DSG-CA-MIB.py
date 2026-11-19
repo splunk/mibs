@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-CA-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-CA-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDSGCA = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 11))
 ciscoDSGCA.setRevisions(('2010-08-30 05:00', '2010-06-17 06:00', '2010-03-22 05:00', '2010-02-12 12:00', '2009-12-07 12:00',))
@@ -38,4 +38,4 @@ caADPNonEncPass = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 11, 2, 1, 1, 
 if mibBuilder.loadTexts: caADPNonEncPass.setStatus('current')
 caADPNonEncTotal = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 11, 2, 1, 1, 7), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(1, 32))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: caADPNonEncTotal.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-CA-MIB", caADPNonEncTotal=caADPNonEncTotal, caIndex=caIndex, ca=ca, caClearADP=caClearADP, caADPEncTotal=caADPEncTotal, caADPTable=caADPTable, caADPEncPass=caADPEncPass, caUsrAddr=caUsrAddr, caTable=caTable, caADPEntry=caADPEntry, PYSNMP_MODULE_ID=ciscoDSGCA, ciscoDSGCA=ciscoDSGCA, caISEVer=caISEVer, caADPNonEncPass=caADPNonEncPass)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-CA-MIB", caADPEncTotal=caADPEncTotal, caIndex=caIndex, PYSNMP_MODULE_ID=ciscoDSGCA, caTable=caTable, caADPEncPass=caADPEncPass, caADPTable=caADPTable, caADPEntry=caADPEntry, ciscoDSGCA=ciscoDSGCA, caADPNonEncTotal=caADPNonEncTotal, caADPNonEncPass=caADPNonEncPass, caUsrAddr=caUsrAddr, caISEVer=caISEVer, ca=ca, caClearADP=caClearADP)

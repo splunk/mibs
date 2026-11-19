@@ -9,26 +9,26 @@
       "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "OBJECT-IDENTITY",
-      "Unsigned32",
-      "MibIdentifier",
-      "Bits",
-      "IpAddress",
-      "OBJECT-TYPE",
-      "Integer32",
-      "Counter64",
-      "Counter32",
-      "Gauge32",
+      "MODULE-IDENTITY",
       "TimeTicks",
+      "OBJECT-TYPE",
+      "IpAddress",
+      "Unsigned32",
+      "Counter64",
+      "MibIdentifier",
+      "Counter32",
       "NOTIFICATION-TYPE",
       "iso",
-      "MODULE-IDENTITY"
+      "OBJECT-IDENTITY",
+      "Gauge32",
+      "Integer32",
+      "Bits"
     ],
     "SNMPv2-TC": [
-      "TEXTUAL-CONVENTION",
       "PhysAddress",
-      "DisplayString",
-      "TruthValue"
+      "TruthValue",
+      "TEXTUAL-CONVENTION",
+      "DisplayString"
     ]
   },
   "rndDeviceParams": {
@@ -947,7 +947,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dell/Dell-VRTX-DEVICEPARAMS-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:33:38 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:35:38 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

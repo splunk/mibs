@@ -2,9 +2,9 @@
   "imports": {
     "class": "imports",
     "HP-ICF-OID": [
-      "hpSwitch",
+      "hpicfCommon",
       "hpicfCommonSecurity",
-      "hpicfCommon"
+      "hpSwitch"
     ],
     "IF-MIB": [
       "InterfaceIndex"
@@ -13,33 +13,33 @@
       "VlanIndex"
     ],
     "SNMPv2-CONF": [
-      "OBJECT-GROUP",
+      "MODULE-COMPLIANCE",
       "NOTIFICATION-GROUP",
-      "MODULE-COMPLIANCE"
+      "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
-      "MODULE-IDENTITY",
-      "Integer32",
-      "Unsigned32",
-      "iso",
-      "Bits",
-      "NOTIFICATION-TYPE",
-      "Gauge32",
       "MibIdentifier",
-      "Counter32",
+      "Bits",
+      "iso",
+      "Unsigned32",
+      "Integer32",
+      "TimeTicks",
+      "OBJECT-TYPE",
+      "NOTIFICATION-TYPE",
       "OBJECT-IDENTITY",
       "Counter64",
-      "IpAddress",
-      "TimeTicks",
-      "OBJECT-TYPE"
+      "Gauge32",
+      "MODULE-IDENTITY",
+      "Counter32",
+      "IpAddress"
     ],
     "SNMPv2-TC": [
       "RowStatus",
-      "TEXTUAL-CONVENTION",
       "MacAddress",
+      "DisplayString",
+      "TEXTUAL-CONVENTION",
       "TruthValue",
-      "PhysAddress",
-      "DisplayString"
+      "PhysAddress"
     ]
   },
   "hpicfUsrProfileMIB": {
@@ -1297,7 +1297,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hp/HP-ICF-USER-PROFILE-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:08 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:37:22 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

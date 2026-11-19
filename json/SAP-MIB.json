@@ -2,29 +2,29 @@
   "imports": {
     "class": "imports",
     "SNMPv2-CONF": [
-      "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
       "Unsigned32",
-      "Counter64",
-      "OBJECT-TYPE",
-      "IpAddress",
-      "iso",
-      "Integer32",
-      "Counter32",
-      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY",
       "TimeTicks",
+      "Bits",
       "MibIdentifier",
+      "Counter64",
+      "OBJECT-IDENTITY",
       "enterprises",
       "Gauge32",
-      "Bits",
+      "iso",
+      "Counter32",
       "NOTIFICATION-TYPE",
-      "MODULE-IDENTITY"
+      "Integer32",
+      "OBJECT-TYPE",
+      "IpAddress"
     ],
     "SNMPv2-TC": [
-      "TEXTUAL-CONVENTION",
-      "DisplayString"
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
     ]
   },
   "sap": {
@@ -5264,7 +5264,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/sap/SAP-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:39:48 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:40:02 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

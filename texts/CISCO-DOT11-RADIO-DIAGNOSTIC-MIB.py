@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-DOT11-RADIO-DIAGNOSTIC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DOT11-RADIO-DIAGNOSTIC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoDot11RadioDiagMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 105))
 ciscoDot11RadioDiagMIB.setRevisions(('2003-12-23 00:00', '2003-05-08 00:00',))
 
@@ -71,4 +71,4 @@ cDot11RadioDiagConfigGroupRev1 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 105, 2, 2
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cDot11RadioDiagConfigGroupRev1 = cDot11RadioDiagConfigGroupRev1.setStatus('current')
 if mibBuilder.loadTexts: cDot11RadioDiagConfigGroupRev1.setDescription("This collection of objects provide information about\n                the temporary radio configuration to be applied to\n                the station's 802.11 interfaces and the associated\n                clients. ")
-mibBuilder.exportSymbols("CISCO-DOT11-RADIO-DIAGNOSTIC-MIB", cDot11RadioDiagSettingsEnabled=cDot11RadioDiagSettingsEnabled, cDot11RadioDiagMIBComplianceRev1=cDot11RadioDiagMIBComplianceRev1, cDot11RadioDiagMIBCompliances=cDot11RadioDiagMIBCompliances, cDot11RadioDiagConfigGlobal=cDot11RadioDiagConfigGlobal, cDot11RadioDiagTable=cDot11RadioDiagTable, cDot11RadioDiagMIBCompliance=cDot11RadioDiagMIBCompliance, cDot11RadioDiagMode=cDot11RadioDiagMode, cDot11RadioDiagTempChannel=cDot11RadioDiagTempChannel, cDot11RadioDiagConfigGroupRev1=cDot11RadioDiagConfigGroupRev1, cDot11RadioDiagMIBObjects=cDot11RadioDiagMIBObjects, ciscoDot11RadioDiagMIB=ciscoDot11RadioDiagMIB, cDot11RadioDiagMIBConform=cDot11RadioDiagMIBConform, cDot11RadioDiagEntry=cDot11RadioDiagEntry, cDot11RadioDiagMIBNotifs=cDot11RadioDiagMIBNotifs, cDot11RadioDiagMIBGroups=cDot11RadioDiagMIBGroups, cDot11RadioDiagConfigGlobalGroup=cDot11RadioDiagConfigGlobalGroup, cDot11RadioDiagTempDataRateSet=cDot11RadioDiagTempDataRateSet, cDot11RadioDiagTempClientTxPower=cDot11RadioDiagTempClientTxPower, PYSNMP_MODULE_ID=ciscoDot11RadioDiagMIB, cDot11RadioDiagTempTxPowerLevel=cDot11RadioDiagTempTxPowerLevel)
+mibBuilder.exportSymbols("CISCO-DOT11-RADIO-DIAGNOSTIC-MIB", cDot11RadioDiagConfigGlobalGroup=cDot11RadioDiagConfigGlobalGroup, cDot11RadioDiagMIBNotifs=cDot11RadioDiagMIBNotifs, cDot11RadioDiagEntry=cDot11RadioDiagEntry, cDot11RadioDiagConfigGlobal=cDot11RadioDiagConfigGlobal, cDot11RadioDiagTable=cDot11RadioDiagTable, cDot11RadioDiagTempClientTxPower=cDot11RadioDiagTempClientTxPower, cDot11RadioDiagMIBConform=cDot11RadioDiagMIBConform, cDot11RadioDiagMIBCompliance=cDot11RadioDiagMIBCompliance, cDot11RadioDiagMIBCompliances=cDot11RadioDiagMIBCompliances, cDot11RadioDiagMIBObjects=cDot11RadioDiagMIBObjects, cDot11RadioDiagTempTxPowerLevel=cDot11RadioDiagTempTxPowerLevel, cDot11RadioDiagMode=cDot11RadioDiagMode, ciscoDot11RadioDiagMIB=ciscoDot11RadioDiagMIB, cDot11RadioDiagMIBComplianceRev1=cDot11RadioDiagMIBComplianceRev1, cDot11RadioDiagMIBGroups=cDot11RadioDiagMIBGroups, cDot11RadioDiagTempChannel=cDot11RadioDiagTempChannel, cDot11RadioDiagConfigGroupRev1=cDot11RadioDiagConfigGroupRev1, cDot11RadioDiagSettingsEnabled=cDot11RadioDiagSettingsEnabled, PYSNMP_MODULE_ID=ciscoDot11RadioDiagMIB, cDot11RadioDiagTempDataRateSet=cDot11RadioDiagTempDataRateSet)

@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-BRIDGE-DOMAIN-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-BRIDGE-DOMAIN-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-TruthValue, StorageType, RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "StorageType", "RowStatus", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+DisplayString, StorageType, RowStatus, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "StorageType", "RowStatus", "TextualConvention", "TruthValue")
 ciscoBridgeDomainMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 642))
 ciscoBridgeDomainMIB.setRevisions(('2007-12-29 00:00', '2007-12-04 00:00',))
 if mibBuilder.loadTexts: ciscoBridgeDomainMIB.setLastUpdated('200712290000Z')
@@ -64,4 +64,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cbdMemberInfoGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 642, 2, 2, 2)).setObjects(("CISCO-BRIDGE-DOMAIN-MIB", "cbdMemberType"), ("CISCO-BRIDGE-DOMAIN-MIB", "cbdMemberOperState"), ("CISCO-BRIDGE-DOMAIN-MIB", "cbdMemberAdminState"), ("CISCO-BRIDGE-DOMAIN-MIB", "cbdMemberSplitHorizon"), ("CISCO-BRIDGE-DOMAIN-MIB", "cbdMemberSplitHorizonNum"), ("CISCO-BRIDGE-DOMAIN-MIB", "cbdMemberStorageType"), ("CISCO-BRIDGE-DOMAIN-MIB", "cbdMemberStatus"), ("CISCO-BRIDGE-DOMAIN-MIB", "cbdMembercMac"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cbdMemberInfoGroup = cbdMemberInfoGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-BRIDGE-DOMAIN-MIB", cbdMemberStorageType=cbdMemberStorageType, cbdMemberOperState=cbdMemberOperState, ciscoBdMIBConformance=ciscoBdMIBConformance, ciscoBdMIBComplianceRev1=ciscoBdMIBComplianceRev1, cbdSIIndex=cbdSIIndex, ciscoBdMIBGroups=ciscoBdMIBGroups, cbdMemberInfo=cbdMemberInfo, cbdMembercMac=cbdMembercMac, cbdMemberAdminState=cbdMemberAdminState, cbdMemberInfoGroup=cbdMemberInfoGroup, CbdType=CbdType, PYSNMP_MODULE_ID=ciscoBridgeDomainMIB, ciscoBridgeDomainMIB=ciscoBridgeDomainMIB, cbdMemberType=cbdMemberType, cbdMemberSplitHorizon=cbdMemberSplitHorizon, cbdMemberInfoTable=cbdMemberInfoTable, cbdMemberInfoEntry=cbdMemberInfoEntry, cbdSystemInfo=cbdSystemInfo, cbdMembersConfigured=cbdMembersConfigured, cbdMemberSplitHorizonNum=cbdMemberSplitHorizonNum, cbdMemberStatus=cbdMemberStatus, cbdSystemInfoGroup=cbdSystemInfoGroup, ciscoBdMIBNotifications=ciscoBdMIBNotifications, ciscoBdMIBCompliances=ciscoBdMIBCompliances, ciscoBdNotificationPrefix=ciscoBdNotificationPrefix, ciscoBdMIBObjects=ciscoBdMIBObjects)
+mibBuilder.exportSymbols("CISCO-BRIDGE-DOMAIN-MIB", ciscoBdMIBConformance=ciscoBdMIBConformance, ciscoBdNotificationPrefix=ciscoBdNotificationPrefix, ciscoBdMIBCompliances=ciscoBdMIBCompliances, cbdMemberOperState=cbdMemberOperState, PYSNMP_MODULE_ID=ciscoBridgeDomainMIB, CbdType=CbdType, cbdMemberType=cbdMemberType, cbdSystemInfo=cbdSystemInfo, cbdMemberInfo=cbdMemberInfo, cbdMembersConfigured=cbdMembersConfigured, cbdSystemInfoGroup=cbdSystemInfoGroup, ciscoBdMIBObjects=ciscoBdMIBObjects, ciscoBdMIBComplianceRev1=ciscoBdMIBComplianceRev1, cbdMemberStorageType=cbdMemberStorageType, cbdMembercMac=cbdMembercMac, cbdMemberInfoEntry=cbdMemberInfoEntry, cbdSIIndex=cbdSIIndex, cbdMemberInfoTable=cbdMemberInfoTable, cbdMemberInfoGroup=cbdMemberInfoGroup, cbdMemberAdminState=cbdMemberAdminState, ciscoBdMIBGroups=ciscoBdMIBGroups, cbdMemberSplitHorizonNum=cbdMemberSplitHorizonNum, ciscoBdMIBNotifications=ciscoBdMIBNotifications, cbdMemberSplitHorizon=cbdMemberSplitHorizon, cbdMemberStatus=cbdMemberStatus, ciscoBridgeDomainMIB=ciscoBridgeDomainMIB)

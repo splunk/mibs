@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module AT-G8032v2-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/allied/AT-G8032v2-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:38 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:30 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint", "ConstraintsIntersection")
-modules, DisplayStringUnsized = mibBuilder.importSymbols("AT-SMI-MIB", "modules", "DisplayStringUnsized")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Integer32, TimeTicks, IpAddress, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, Counter64, MibIdentifier, ObjectIdentity, Unsigned32, Bits, Counter32, Gauge32, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "TimeTicks", "IpAddress", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "Counter64", "MibIdentifier", "ObjectIdentity", "Unsigned32", "Bits", "Counter32", "Gauge32", "NotificationType")
+SingleValueConstraint, ValueRangeConstraint, ConstraintsUnion, ValueSizeConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsUnion", "ValueSizeConstraint", "ConstraintsIntersection")
+DisplayStringUnsized, modules = mibBuilder.importSymbols("AT-SMI-MIB", "DisplayStringUnsized", "modules")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+Counter32, Unsigned32, iso, IpAddress, ModuleIdentity, MibIdentifier, Integer32, Counter64, TimeTicks, Gauge32, NotificationType, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Unsigned32", "iso", "IpAddress", "ModuleIdentity", "MibIdentifier", "Integer32", "Counter64", "TimeTicks", "Gauge32", "NotificationType", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity")
 DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
 atG8032v2 = ModuleIdentity((1, 3, 6, 1, 4, 1, 207, 8, 4, 4, 4, 604))
 atG8032v2.setRevisions(('2017-02-06 00:00', '2017-01-17 00:00',))
@@ -47,4 +47,4 @@ if mibBuilder.loadTexts: atG8032v2NotificationInstanceCurrentState.setDescriptio
 atG8032v2NotificationSystemAlarmState = MibScalar((1, 3, 6, 1, 4, 1, 207, 8, 4, 4, 4, 604, 1, 4), TruthValue()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: atG8032v2NotificationSystemAlarmState.setStatus('current')
 if mibBuilder.loadTexts: atG8032v2NotificationSystemAlarmState.setDescription('Has value of 1 (true) if one or more G8032 ERP instance(s) are\n                 in alarm state, else has value of 2 (false).')
-mibBuilder.exportSymbols("AT-G8032v2-MIB", atG8032v2NotificationVariable=atG8032v2NotificationVariable, AtG8032v2InstanceState=AtG8032v2InstanceState, atG8032v2InstanceNotify=atG8032v2InstanceNotify, atG8032v2NotificationInstanceFromState=atG8032v2NotificationInstanceFromState, atG8032v2NotificationInstanceName=atG8032v2NotificationInstanceName, PYSNMP_MODULE_ID=atG8032v2, atG8032v2Notifications=atG8032v2Notifications, atG8032v2SystemAlarmNotify=atG8032v2SystemAlarmNotify, atG8032v2NotificationInstanceCurrentState=atG8032v2NotificationInstanceCurrentState, atG8032v2=atG8032v2, atG8032v2NotificationSystemAlarmState=atG8032v2NotificationSystemAlarmState)
+mibBuilder.exportSymbols("AT-G8032v2-MIB", atG8032v2Notifications=atG8032v2Notifications, atG8032v2NotificationVariable=atG8032v2NotificationVariable, atG8032v2NotificationInstanceFromState=atG8032v2NotificationInstanceFromState, atG8032v2NotificationSystemAlarmState=atG8032v2NotificationSystemAlarmState, atG8032v2NotificationInstanceCurrentState=atG8032v2NotificationInstanceCurrentState, PYSNMP_MODULE_ID=atG8032v2, AtG8032v2InstanceState=AtG8032v2InstanceState, atG8032v2=atG8032v2, atG8032v2InstanceNotify=atG8032v2InstanceNotify, atG8032v2NotificationInstanceName=atG8032v2NotificationInstanceName, atG8032v2SystemAlarmNotify=atG8032v2SystemAlarmNotify)

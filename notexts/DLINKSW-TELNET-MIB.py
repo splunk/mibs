@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module DLINKSW-TELNET-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-TELNET-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:46 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint")
+SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 InterfaceIndexOrZero, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndexOrZero")
-InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
+InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, iso, TimeTicks, ModuleIdentity, NotificationType, Unsigned32, ObjectIdentity, MibIdentifier, Gauge32, Counter32, Counter64, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "iso", "TimeTicks", "ModuleIdentity", "NotificationType", "Unsigned32", "ObjectIdentity", "MibIdentifier", "Gauge32", "Counter32", "Counter64", "IpAddress")
-TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
+NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
+Counter32, Counter64, IpAddress, ModuleIdentity, Unsigned32, Gauge32, Bits, iso, ObjectIdentity, Integer32, NotificationType, MibIdentifier, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Counter64", "IpAddress", "ModuleIdentity", "Unsigned32", "Gauge32", "Bits", "iso", "ObjectIdentity", "Integer32", "NotificationType", "MibIdentifier", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
+DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
 dlinkSwTelnetMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 40))
 dlinkSwTelnetMIB.setRevisions(('2013-04-22 00:00',))
 if mibBuilder.loadTexts: dlinkSwTelnetMIB.setLastUpdated('201304220000Z')
@@ -56,4 +56,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 dTelnetSessionInfoGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 40, 2, 2, 2)).setObjects(("DLINKSW-TELNET-MIB", "dTelnetSessionUserName"), ("DLINKSW-TELNET-MIB", "dTelnetSessionUserPrivilegeLvl"), ("DLINKSW-TELNET-MIB", "dTelnetSessionLoginDuration"), ("DLINKSW-TELNET-MIB", "dTelnetSessionHostAddrType"), ("DLINKSW-TELNET-MIB", "dTelnetSessionHostAddr"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dTelnetSessionInfoGroup = dTelnetSessionInfoGroup.setStatus('current')
-mibBuilder.exportSymbols("DLINKSW-TELNET-MIB", dTelnetSessionInfoGroup=dTelnetSessionInfoGroup, dTelnetConformance=dTelnetConformance, dTelnetServerTcpPort=dTelnetServerTcpPort, dTelnetSessionEntry=dTelnetSessionEntry, dTelnetSessionHostAddr=dTelnetSessionHostAddr, dTelnetSessionUserPrivilegeLvl=dTelnetSessionUserPrivilegeLvl, dTelnetGroups=dTelnetGroups, dTelnetSessionID=dTelnetSessionID, dlinkSwTelnetMIB=dlinkSwTelnetMIB, dTelnetNotifications=dTelnetNotifications, dTelnetCompliances=dTelnetCompliances, dTelnetCompliance=dTelnetCompliance, PYSNMP_MODULE_ID=dlinkSwTelnetMIB, dTelnetConfigGroup=dTelnetConfigGroup, dTelnetSessionLoginDuration=dTelnetSessionLoginDuration, dTelnetServerEnabled=dTelnetServerEnabled, dTelnetObjects=dTelnetObjects, dTelnetSessionUserName=dTelnetSessionUserName, dTelnetSessionTable=dTelnetSessionTable, dTelnetSourceInterfaceIndex=dTelnetSourceInterfaceIndex, dTelnetSessionHostAddrType=dTelnetSessionHostAddrType)
+mibBuilder.exportSymbols("DLINKSW-TELNET-MIB", dTelnetServerTcpPort=dTelnetServerTcpPort, dlinkSwTelnetMIB=dlinkSwTelnetMIB, dTelnetCompliance=dTelnetCompliance, dTelnetSourceInterfaceIndex=dTelnetSourceInterfaceIndex, dTelnetCompliances=dTelnetCompliances, dTelnetNotifications=dTelnetNotifications, dTelnetSessionEntry=dTelnetSessionEntry, dTelnetSessionLoginDuration=dTelnetSessionLoginDuration, dTelnetSessionUserName=dTelnetSessionUserName, dTelnetConfigGroup=dTelnetConfigGroup, dTelnetGroups=dTelnetGroups, PYSNMP_MODULE_ID=dlinkSwTelnetMIB, dTelnetSessionID=dTelnetSessionID, dTelnetSessionHostAddr=dTelnetSessionHostAddr, dTelnetServerEnabled=dTelnetServerEnabled, dTelnetSessionUserPrivilegeLvl=dTelnetSessionUserPrivilegeLvl, dTelnetSessionTable=dTelnetSessionTable, dTelnetConformance=dTelnetConformance, dTelnetObjects=dTelnetObjects, dTelnetSessionInfoGroup=dTelnetSessionInfoGroup, dTelnetSessionHostAddrType=dTelnetSessionHostAddrType)

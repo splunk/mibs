@@ -8,47 +8,47 @@
       "ieee8021QBridgeVlanCurrentComponentId"
     ],
     "IEEE8021-TC-MIB": [
-      "IEEE8021BridgePortNumber",
-      "IEEE8021PbbTeTSidId",
+      "IEEE8021VlanIndexOrWildcard",
       "IEEE8021PbbTeProtectionGroupId",
-      "IEEE8021PbbTeProtectionGroupConfigAdmin",
-      "IEEE8021PbbTeProtectionGroupActiveRequests",
-      "IEEE8021PbbServiceIdentifier",
-      "IEEE8021PbbComponentIdentifier",
       "ieee802dot1mibs",
       "IEEE8021PbbTeEsp",
-      "IEEE8021VlanIndexOrWildcard"
+      "IEEE8021PbbComponentIdentifier",
+      "IEEE8021PbbServiceIdentifier",
+      "IEEE8021PbbTeProtectionGroupActiveRequests",
+      "IEEE8021BridgePortNumber",
+      "IEEE8021PbbTeTSidId",
+      "IEEE8021PbbTeProtectionGroupConfigAdmin"
     ],
     "Q-BRIDGE-MIB": [
       "PortList"
     ],
     "SNMPv2-CONF": [
       "OBJECT-GROUP",
-      "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "NOTIFICATION-TYPE",
-      "MODULE-IDENTITY",
-      "TimeTicks",
-      "Integer32",
-      "Gauge32",
-      "OBJECT-TYPE",
-      "MibIdentifier",
-      "Counter32",
-      "Unsigned32",
-      "OBJECT-IDENTITY",
-      "Counter64",
       "Bits",
+      "IpAddress",
+      "Counter32",
+      "Counter64",
+      "Unsigned32",
+      "OBJECT-TYPE",
+      "TimeTicks",
+      "Gauge32",
+      "OBJECT-IDENTITY",
+      "MibIdentifier",
       "iso",
-      "IpAddress"
+      "Integer32",
+      "NOTIFICATION-TYPE",
+      "MODULE-IDENTITY"
     ],
     "SNMPv2-TC": [
-      "TruthValue",
       "RowStatus",
+      "TruthValue",
+      "StorageType",
       "TEXTUAL-CONVENTION",
-      "DisplayString",
-      "StorageType"
+      "DisplayString"
     ]
   },
   "ieee8021PbbTeMib": {
@@ -1079,7 +1079,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/standard/iee/IEEE8021-PBBTE-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:29:48 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:32:57 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

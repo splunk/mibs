@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-VOICE-DNIS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VOICE-DNIS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-DisplayString, RowStatus, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TruthValue", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+DisplayString, RowStatus, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention", "TruthValue")
 ciscoVoiceDnisMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 219))
 if mibBuilder.loadTexts: ciscoVoiceDnisMIB.setLastUpdated('200205010000Z')
 if mibBuilder.loadTexts: ciscoVoiceDnisMIB.setOrganization('Cisco Systems, Inc.')
@@ -70,4 +70,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cvDnisNotificationGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 219, 3, 2, 2)).setObjects(("CISCO-VOICE-DNIS-MIB", "cvDnisMappingUrlInaccessible"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvDnisNotificationGroup = cvDnisNotificationGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-VOICE-DNIS-MIB", cvDnisMappingUrl=cvDnisMappingUrl, cvDnisMappingTable=cvDnisMappingTable, cvDnisMIBConformance=cvDnisMIBConformance, cvDnisNodeEntry=cvDnisNodeEntry, cvDnisMappingName=cvDnisMappingName, cvDnisNumber=cvDnisNumber, cvDnisMap=cvDnisMap, cvDnisMappingRefresh=cvDnisMappingRefresh, CvE164String=CvE164String, cvDnisMappingUrlInaccessible=cvDnisMappingUrlInaccessible, cvDnisGroup=cvDnisGroup, cvDnisMIBNotificationPrefix=cvDnisMIBNotificationPrefix, cvDnisMIBGroups=cvDnisMIBGroups, cvDnisNotificationGroup=cvDnisNotificationGroup, cvDnisNodeUrl=cvDnisNodeUrl, cvDnisNodeTable=cvDnisNodeTable, cvDnisMappingEntry=cvDnisMappingEntry, cvDnisMIBNotifications=cvDnisMIBNotifications, cvDnisNodeModifiable=cvDnisNodeModifiable, ciscoVoiceDnisMIB=ciscoVoiceDnisMIB, cvDnisMappingStatus=cvDnisMappingStatus, PYSNMP_MODULE_ID=ciscoVoiceDnisMIB, cvDnisMIBCompliances=cvDnisMIBCompliances, cvDnisMIBCompliance=cvDnisMIBCompliance, cvDnisMIBObjects=cvDnisMIBObjects, cvDnisNodeStatus=cvDnisNodeStatus, cvDnisMappingUrlAccessError=cvDnisMappingUrlAccessError, DnisMapname=DnisMapname)
+mibBuilder.exportSymbols("CISCO-VOICE-DNIS-MIB", cvDnisMIBNotifications=cvDnisMIBNotifications, cvDnisMIBObjects=cvDnisMIBObjects, cvDnisMappingTable=cvDnisMappingTable, CvE164String=CvE164String, cvDnisMappingUrlAccessError=cvDnisMappingUrlAccessError, cvDnisNodeUrl=cvDnisNodeUrl, cvDnisNumber=cvDnisNumber, cvDnisMIBNotificationPrefix=cvDnisMIBNotificationPrefix, cvDnisNotificationGroup=cvDnisNotificationGroup, DnisMapname=DnisMapname, cvDnisMIBCompliance=cvDnisMIBCompliance, cvDnisMappingUrl=cvDnisMappingUrl, cvDnisNodeTable=cvDnisNodeTable, cvDnisMIBConformance=cvDnisMIBConformance, cvDnisMappingRefresh=cvDnisMappingRefresh, cvDnisNodeModifiable=cvDnisNodeModifiable, cvDnisNodeEntry=cvDnisNodeEntry, cvDnisMappingUrlInaccessible=cvDnisMappingUrlInaccessible, cvDnisMappingName=cvDnisMappingName, PYSNMP_MODULE_ID=ciscoVoiceDnisMIB, cvDnisGroup=cvDnisGroup, cvDnisNodeStatus=cvDnisNodeStatus, cvDnisMappingEntry=cvDnisMappingEntry, ciscoVoiceDnisMIB=ciscoVoiceDnisMIB, cvDnisMappingStatus=cvDnisMappingStatus, cvDnisMap=cvDnisMap, cvDnisMIBGroups=cvDnisMIBGroups, cvDnisMIBCompliances=cvDnisMIBCompliances)

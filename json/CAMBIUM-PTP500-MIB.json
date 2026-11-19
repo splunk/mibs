@@ -2,30 +2,30 @@
   "imports": {
     "class": "imports",
     "SNMPv2-CONF": [
-      "MODULE-COMPLIANCE",
       "OBJECT-GROUP",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "OBJECT-TYPE",
-      "enterprises",
-      "NOTIFICATION-TYPE",
-      "OBJECT-IDENTITY",
-      "Unsigned32",
-      "Integer32",
-      "iso",
-      "MibIdentifier",
-      "Bits",
-      "Gauge32",
-      "MODULE-IDENTITY",
       "IpAddress",
-      "TimeTicks",
+      "Integer32",
+      "OBJECT-IDENTITY",
       "Counter64",
-      "Counter32"
+      "NOTIFICATION-TYPE",
+      "Unsigned32",
+      "Bits",
+      "OBJECT-TYPE",
+      "MODULE-IDENTITY",
+      "iso",
+      "Gauge32",
+      "MibIdentifier",
+      "enterprises",
+      "Counter32",
+      "TimeTicks"
     ],
     "SNMPv2-TC": [
-      "TEXTUAL-CONVENTION",
-      "DisplayString"
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
     ]
   },
   "cambium": {
@@ -4168,7 +4168,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cambium/CAMBIUM-PTP500-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:31:36 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:34:10 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

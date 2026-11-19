@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCOSB-MIR-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-MIR-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 rlMir = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 61))
 rlMir.setRevisions(('2007-01-02 00:00',))
 
@@ -82,4 +82,4 @@ if mibBuilder.loadTexts: rlMirCurMriNumRouter.setDescription('Returns Router Mri
 rlMirCurMriNumOob = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 61, 9), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlMirCurMriNumOob.setStatus('current')
 if mibBuilder.loadTexts: rlMirCurMriNumOob.setDescription('Returns Router Mri Number.')
-mibBuilder.exportSymbols("CISCOSB-MIR-MIB", rlMirVlanBaseReservedPortsIfIndex=rlMirVlanBaseReservedPortsIfIndex, rlMirMaxNumOfMRIsAfterReset=rlMirMaxNumOfMRIsAfterReset, rlMirVlanBaseLogicalPortsStatus=rlMirVlanBaseLogicalPortsStatus, rlMirInterfaceMrid=rlMirInterfaceMrid, rlMir=rlMir, rlMirVlanBaseReservedPortsEntry=rlMirVlanBaseReservedPortsEntry, rlMirCurMriNumRouter=rlMirCurMriNumRouter, rlMirMibVersion=rlMirMibVersion, rlMirInterfaceEntry=rlMirInterfaceEntry, PYSNMP_MODULE_ID=rlMir, rlMirCurMriNumOob=rlMirCurMriNumOob, rlMirVlanBaseLogicalPortsIfIndex=rlMirVlanBaseLogicalPortsIfIndex, rlMirInterfaceIfIndex=rlMirInterfaceIfIndex, rlMirInterfaceTable=rlMirInterfaceTable, rlMirVlanBaseReservedPortsStatus=rlMirVlanBaseReservedPortsStatus, rlMirVlanBaseReservedPortsTable=rlMirVlanBaseReservedPortsTable, rlMirVlanBaseLogicalPortsReservedIfIndex=rlMirVlanBaseLogicalPortsReservedIfIndex, rlMirMaxNumOfMRIs=rlMirMaxNumOfMRIs, rlMirVlanBaseLogicalPortsEntry=rlMirVlanBaseLogicalPortsEntry, rlMirCurMriNum=rlMirCurMriNum, rlMirVlanBaseLogicalPortsVlanTag=rlMirVlanBaseLogicalPortsVlanTag, rlMirVlanBaseLogicalPortsTable=rlMirVlanBaseLogicalPortsTable)
+mibBuilder.exportSymbols("CISCOSB-MIR-MIB", rlMirVlanBaseLogicalPortsVlanTag=rlMirVlanBaseLogicalPortsVlanTag, rlMirMaxNumOfMRIs=rlMirMaxNumOfMRIs, rlMir=rlMir, rlMirVlanBaseLogicalPortsStatus=rlMirVlanBaseLogicalPortsStatus, rlMirMibVersion=rlMirMibVersion, rlMirCurMriNumOob=rlMirCurMriNumOob, rlMirInterfaceTable=rlMirInterfaceTable, rlMirVlanBaseLogicalPortsReservedIfIndex=rlMirVlanBaseLogicalPortsReservedIfIndex, rlMirVlanBaseLogicalPortsEntry=rlMirVlanBaseLogicalPortsEntry, rlMirVlanBaseReservedPortsStatus=rlMirVlanBaseReservedPortsStatus, rlMirVlanBaseLogicalPortsTable=rlMirVlanBaseLogicalPortsTable, rlMirVlanBaseReservedPortsIfIndex=rlMirVlanBaseReservedPortsIfIndex, rlMirMaxNumOfMRIsAfterReset=rlMirMaxNumOfMRIsAfterReset, rlMirVlanBaseLogicalPortsIfIndex=rlMirVlanBaseLogicalPortsIfIndex, rlMirCurMriNumRouter=rlMirCurMriNumRouter, rlMirCurMriNum=rlMirCurMriNum, rlMirVlanBaseReservedPortsEntry=rlMirVlanBaseReservedPortsEntry, PYSNMP_MODULE_ID=rlMir, rlMirInterfaceIfIndex=rlMirInterfaceIfIndex, rlMirVlanBaseReservedPortsTable=rlMirVlanBaseReservedPortsTable, rlMirInterfaceEntry=rlMirInterfaceEntry, rlMirInterfaceMrid=rlMirInterfaceMrid)

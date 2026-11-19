@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCOSB-rlIP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-rlIP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
-InetVersion, InetAddressPrefixLength, InetAddressType, InetAddress, InetZoneIndex = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetVersion", "InetAddressPrefixLength", "InetAddressType", "InetAddress", "InetZoneIndex")
+InetVersion, InetZoneIndex, InetAddress, InetAddressType, InetAddressPrefixLength = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetVersion", "InetZoneIndex", "InetAddress", "InetAddressType", "InetAddressPrefixLength")
 IpAddressStatusTC, IpAddressOriginTC = mibBuilder.importSymbols("IP-MIB", "IpAddressStatusTC", "IpAddressOriginTC")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, mib_2, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, zeroDotZero, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "mib-2", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "zeroDotZero", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-TimeStamp, RowPointer, TestAndIncr, RowStatus, StorageType, TextualConvention, PhysAddress, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "RowPointer", "TestAndIncr", "RowStatus", "StorageType", "TextualConvention", "PhysAddress", "DisplayString", "TruthValue")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, zeroDotZero, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, ObjectIdentity, mib_2, iso, TimeTicks, Counter32, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "zeroDotZero", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "ObjectIdentity", "mib-2", "iso", "TimeTicks", "Counter32", "IpAddress", "Counter64")
+DisplayString, TestAndIncr, PhysAddress, TruthValue, TimeStamp, RowStatus, StorageType, RowPointer, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TestAndIncr", "PhysAddress", "TruthValue", "TimeStamp", "RowStatus", "StorageType", "RowPointer", "TextualConvention")
 rlIp = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 250))
 rlIp.setRevisions(('2013-06-16 12:00',))
 
@@ -78,4 +78,4 @@ if mibBuilder.loadTexts: rlIpAddressExtdPrefixLength.setDescription('The prefix 
 rlIpAddressCompleteAddr = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 250, 1, 1, 14), InetAddress()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlIpAddressCompleteAddr.setStatus('current')
 if mibBuilder.loadTexts: rlIpAddressCompleteAddr.setDescription("The Complete IP address to which this entry's addressing information\n            pertains.\n\n            In case of auto-configure address such as eui-64, general-prefix and others\n            it contains the complete address after appropriate manipulation")
-mibBuilder.exportSymbols("CISCOSB-rlIP-MIB", rlIpAddressStatus=rlIpAddressStatus, rlIpAddressCreated=rlIpAddressCreated, rlIpAddressTable=rlIpAddressTable, rlIpAddressGeneralPrefixName=rlIpAddressGeneralPrefixName, rlIpAddressCompleteAddr=rlIpAddressCompleteAddr, rlIpAddressAddr=rlIpAddressAddr, rlIpAddressExtdPrefixLength=rlIpAddressExtdPrefixLength, rlIpAddressLastChanged=rlIpAddressLastChanged, rlIpAddressEntry=rlIpAddressEntry, rlIpAddressAddrType=rlIpAddressAddrType, rlIpAddressExtdType=rlIpAddressExtdType, PYSNMP_MODULE_ID=rlIp, rlIpAddressPrefix=rlIpAddressPrefix, rlIpAddressStorageType=rlIpAddressStorageType, rlIpAddressOrigin=rlIpAddressOrigin, rlIp=rlIp, rlIpAddressIfIndex=rlIpAddressIfIndex, rlIpAddressRowStatus=rlIpAddressRowStatus, RlIpAddressOriginTC=RlIpAddressOriginTC)
+mibBuilder.exportSymbols("CISCOSB-rlIP-MIB", rlIpAddressGeneralPrefixName=rlIpAddressGeneralPrefixName, rlIpAddressCompleteAddr=rlIpAddressCompleteAddr, rlIpAddressExtdType=rlIpAddressExtdType, rlIp=rlIp, rlIpAddressRowStatus=rlIpAddressRowStatus, RlIpAddressOriginTC=RlIpAddressOriginTC, rlIpAddressTable=rlIpAddressTable, rlIpAddressCreated=rlIpAddressCreated, rlIpAddressExtdPrefixLength=rlIpAddressExtdPrefixLength, rlIpAddressStatus=rlIpAddressStatus, rlIpAddressAddrType=rlIpAddressAddrType, rlIpAddressPrefix=rlIpAddressPrefix, PYSNMP_MODULE_ID=rlIp, rlIpAddressIfIndex=rlIpAddressIfIndex, rlIpAddressAddr=rlIpAddressAddr, rlIpAddressEntry=rlIpAddressEntry, rlIpAddressLastChanged=rlIpAddressLastChanged, rlIpAddressStorageType=rlIpAddressStorageType, rlIpAddressOrigin=rlIpAddressOrigin)

@@ -5,26 +5,26 @@
       "ifIndex"
     ],
     "SNMPv2-CONF": [
-      "OBJECT-GROUP",
       "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
-      "IpAddress",
-      "TimeTicks",
-      "MibIdentifier",
-      "Integer32",
-      "Unsigned32",
-      "Bits",
-      "Gauge32",
-      "OBJECT-TYPE",
-      "MODULE-IDENTITY",
-      "OBJECT-IDENTITY",
-      "Counter32",
       "transmission",
-      "Counter64",
       "NOTIFICATION-TYPE",
-      "iso"
+      "MODULE-IDENTITY",
+      "Integer32",
+      "iso",
+      "Counter64",
+      "OBJECT-IDENTITY",
+      "IpAddress",
+      "MibIdentifier",
+      "Counter32",
+      "TimeTicks",
+      "Unsigned32",
+      "OBJECT-TYPE",
+      "Bits",
+      "Gauge32"
     ],
     "SNMPv2-TC": [
       "DisplayString",
@@ -32,18 +32,18 @@
     ],
     "SONET-MIB": [
       "sonetMediumStuff2",
+      "sonetMediumType",
+      "sonetMediumCircuitIdentifier",
+      "sonetSESthresholdSet",
+      "sonetFarEndLineStuff2",
       "sonetMediumLineType",
       "sonetPathCurrentWidth",
-      "sonetSectionStuff2",
-      "sonetFarEndLineStuff2",
-      "sonetMediumCircuitIdentifier",
-      "sonetPathStuff2",
-      "sonetFarEndPathStuff2",
-      "sonetSESthresholdSet",
       "sonetMediumLoopbackConfig",
       "sonetLineStuff2",
-      "sonetMediumType",
-      "sonetMediumLineCoding"
+      "sonetSectionStuff2",
+      "sonetFarEndPathStuff2",
+      "sonetMediumLineCoding",
+      "sonetPathStuff2"
     ]
   },
   "etherWisMIB": {
@@ -494,7 +494,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/standard/ietf/ETHER-WIS",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:29:57 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:33:03 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

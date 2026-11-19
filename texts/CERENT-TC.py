@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CERENT-TC (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CERENT-TC
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:08 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
-cerentGenericDummyObjects, cerentModules = mibBuilder.importSymbols("CERENT-GLOBAL-REGISTRY", "cerentGenericDummyObjects", "cerentModules")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+cerentModules, cerentGenericDummyObjects = mibBuilder.importSymbols("CERENT-GLOBAL-REGISTRY", "cerentModules", "cerentGenericDummyObjects")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 cerentTextualConventions = ModuleIdentity((1, 3, 6, 1, 4, 1, 3607, 1, 10, 30))
 cerentTextualConventions.setRevisions(('1903-07-22 00:00', '1902-11-11 00:00', '1902-06-07 00:00', '1902-01-17 00:00', '1900-12-22 00:00', '1900-05-17 00:00', '1900-02-21 00:00', '1900-02-20 00:00', '1900-01-14 00:00', '1900-01-07 00:00',))
@@ -106,4 +106,4 @@ if mibBuilder.loadTexts: cerentTcDummyAlarmStatus.setDescription('')
 cerentTcDummyAlarmServiceAffecting = MibScalar((1, 3, 6, 1, 4, 1, 3607, 2, 1, 10), CerentAlarmServiceAffecting()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: cerentTcDummyAlarmServiceAffecting.setStatus('current')
 if mibBuilder.loadTexts: cerentTcDummyAlarmServiceAffecting.setDescription('')
-mibBuilder.exportSymbols("CERENT-TC", CerentAlarmStatus=CerentAlarmStatus, CerentPeriod=CerentPeriod, cerentTcDummyGroup=cerentTcDummyGroup, cerentTcDummyAlarmServiceAffecting=cerentTcDummyAlarmServiceAffecting, cerentTcDummyLoc=cerentTcDummyLoc, cerentTcDummyAlarmSeverity=cerentTcDummyAlarmSeverity, PYSNMP_MODULE_ID=cerentTextualConventions, cerentTcDummyPortNumber=cerentTcDummyPortNumber, cerentTcDummyNotifClass=cerentTcDummyNotifClass, CerentAlarmSeverity=CerentAlarmSeverity, cerentTextualConventions=cerentTextualConventions, cerentTcDummyMonType=cerentTcDummyMonType, cerentTcDummyAlarmThresholdMonType=cerentTcDummyAlarmThresholdMonType, CerentAlarmServiceAffecting=CerentAlarmServiceAffecting, cerentTcDummyPeriod=cerentTcDummyPeriod, CerentNotificationClass=CerentNotificationClass, CerentAlarmThresholdMonitorType=CerentAlarmThresholdMonitorType, CerentLocation=CerentLocation, CerentMonitorType=CerentMonitorType, CerentPortNumber=CerentPortNumber, cerentTcDummyAlarmStatus=cerentTcDummyAlarmStatus)
+mibBuilder.exportSymbols("CERENT-TC", cerentTcDummyAlarmSeverity=cerentTcDummyAlarmSeverity, cerentTcDummyGroup=cerentTcDummyGroup, CerentPeriod=CerentPeriod, PYSNMP_MODULE_ID=cerentTextualConventions, CerentAlarmStatus=CerentAlarmStatus, cerentTcDummyAlarmThresholdMonType=cerentTcDummyAlarmThresholdMonType, CerentPortNumber=CerentPortNumber, cerentTcDummyPortNumber=cerentTcDummyPortNumber, cerentTextualConventions=cerentTextualConventions, CerentAlarmSeverity=CerentAlarmSeverity, CerentLocation=CerentLocation, cerentTcDummyAlarmStatus=cerentTcDummyAlarmStatus, cerentTcDummyLoc=cerentTcDummyLoc, CerentAlarmThresholdMonitorType=CerentAlarmThresholdMonitorType, CerentNotificationClass=CerentNotificationClass, CerentAlarmServiceAffecting=CerentAlarmServiceAffecting, cerentTcDummyAlarmServiceAffecting=cerentTcDummyAlarmServiceAffecting, CerentMonitorType=CerentMonitorType, cerentTcDummyMonType=cerentTcDummyMonType, cerentTcDummyPeriod=cerentTcDummyPeriod, cerentTcDummyNotifClass=cerentTcDummyNotifClass)

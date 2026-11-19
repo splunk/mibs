@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCOSB-TIMEBASED-PORT-SHUTDOWN-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-TIMEBASED-PORT-SHUTDOWN-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 PortList, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "PortList")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention", "TruthValue")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
 rlTimeBasedPort = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 208))
 rlTimeBasedPort.setRevisions(('2011-08-06 00:00',))
 
@@ -44,4 +44,4 @@ if mibBuilder.loadTexts: rlTimeBasedPortActive.setDescription('This field indica
 rlTimeBasedPortRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 208, 2, 1, 4), RowStatus()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlTimeBasedPortRowStatus.setStatus('current')
 if mibBuilder.loadTexts: rlTimeBasedPortRowStatus.setDescription('The status of a table entry.\n          It is used to delete an entry from this table.')
-mibBuilder.exportSymbols("CISCOSB-TIMEBASED-PORT-SHUTDOWN-MIB", rlTimeBasedPortVersion=rlTimeBasedPortVersion, rlTimeBasedPortRowStatus=rlTimeBasedPortRowStatus, rlTimeBasedPortActive=rlTimeBasedPortActive, rlTimeBasedPort=rlTimeBasedPort, rlTimeBasedPortEntry=rlTimeBasedPortEntry, rlTimeBasedPortTable=rlTimeBasedPortTable, rlTimeBasedPortTimeRangeName=rlTimeBasedPortTimeRangeName, rlTimeBasedPortAction=rlTimeBasedPortAction, PYSNMP_MODULE_ID=rlTimeBasedPort)
+mibBuilder.exportSymbols("CISCOSB-TIMEBASED-PORT-SHUTDOWN-MIB", rlTimeBasedPort=rlTimeBasedPort, rlTimeBasedPortTable=rlTimeBasedPortTable, rlTimeBasedPortAction=rlTimeBasedPortAction, rlTimeBasedPortTimeRangeName=rlTimeBasedPortTimeRangeName, PYSNMP_MODULE_ID=rlTimeBasedPort, rlTimeBasedPortActive=rlTimeBasedPortActive, rlTimeBasedPortVersion=rlTimeBasedPortVersion, rlTimeBasedPortEntry=rlTimeBasedPortEntry, rlTimeBasedPortRowStatus=rlTimeBasedPortRowStatus)

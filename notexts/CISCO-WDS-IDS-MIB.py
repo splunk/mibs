@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-WDS-IDS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WDS-IDS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:42 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-TextualConvention, DisplayString, MacAddress, TimeStamp = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "MacAddress", "TimeStamp")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+MacAddress, TextualConvention, TimeStamp, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "MacAddress", "TextualConvention", "TimeStamp", "DisplayString")
 ciscoWdsIdsMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 457))
 ciscoWdsIdsMIB.setRevisions(('2004-10-17 00:00',))
 if mibBuilder.loadTexts: ciscoWdsIdsMIB.setLastUpdated('200410170000Z')
@@ -47,4 +47,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoWdsIdsMacSpoofingGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 457, 2, 2, 1)).setObjects(("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMaxMacAddresses"), ("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMaxEntriesPerMac"), ("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMacSpoofClient"), ("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMacSpoofUserId"), ("CISCO-WDS-IDS-MIB", "ciscoWdsIdsMacSpoofDetectTime"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoWdsIdsMacSpoofingGroup = ciscoWdsIdsMacSpoofingGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-WDS-IDS-MIB", ciscoWdsIdsMacSpoofing=ciscoWdsIdsMacSpoofing, ciscoWdsIdsMacSpoofDetectTime=ciscoWdsIdsMacSpoofDetectTime, ciscoWdsIdsMIBConform=ciscoWdsIdsMIBConform, ciscoWdsIdsMIBCompliances=ciscoWdsIdsMIBCompliances, ciscoWdsIdsMIBCompliance=ciscoWdsIdsMIBCompliance, ciscoWdsIdsMacSpoofIndex=ciscoWdsIdsMacSpoofIndex, PYSNMP_MODULE_ID=ciscoWdsIdsMIB, ciscoWdsIdsMIBObjects=ciscoWdsIdsMIBObjects, ciscoWdsIdsMacSpoofClient=ciscoWdsIdsMacSpoofClient, ciscoWdsIdsMaxEntriesPerMac=ciscoWdsIdsMaxEntriesPerMac, ciscoWdsIdsMIB=ciscoWdsIdsMIB, ciscoWdsIdsMacSpoofingGroup=ciscoWdsIdsMacSpoofingGroup, ciscoWdsIdsMacSpoofStaMacAddress=ciscoWdsIdsMacSpoofStaMacAddress, ciscoWdsIdsMacSpoofTable=ciscoWdsIdsMacSpoofTable, ciscoWdsIdsMacSpoofEntry=ciscoWdsIdsMacSpoofEntry, ciscoWdsIdsMIBGroups=ciscoWdsIdsMIBGroups, ciscoWdsIdsMaxMacAddresses=ciscoWdsIdsMaxMacAddresses, ciscoWdsIdsMacSpoofUserId=ciscoWdsIdsMacSpoofUserId)
+mibBuilder.exportSymbols("CISCO-WDS-IDS-MIB", ciscoWdsIdsMacSpoofClient=ciscoWdsIdsMacSpoofClient, PYSNMP_MODULE_ID=ciscoWdsIdsMIB, ciscoWdsIdsMIBCompliance=ciscoWdsIdsMIBCompliance, ciscoWdsIdsMIBGroups=ciscoWdsIdsMIBGroups, ciscoWdsIdsMIBConform=ciscoWdsIdsMIBConform, ciscoWdsIdsMIBCompliances=ciscoWdsIdsMIBCompliances, ciscoWdsIdsMacSpoofUserId=ciscoWdsIdsMacSpoofUserId, ciscoWdsIdsMacSpoofingGroup=ciscoWdsIdsMacSpoofingGroup, ciscoWdsIdsMaxEntriesPerMac=ciscoWdsIdsMaxEntriesPerMac, ciscoWdsIdsMacSpoofDetectTime=ciscoWdsIdsMacSpoofDetectTime, ciscoWdsIdsMaxMacAddresses=ciscoWdsIdsMaxMacAddresses, ciscoWdsIdsMacSpoofTable=ciscoWdsIdsMacSpoofTable, ciscoWdsIdsMacSpoofEntry=ciscoWdsIdsMacSpoofEntry, ciscoWdsIdsMacSpoofIndex=ciscoWdsIdsMacSpoofIndex, ciscoWdsIdsMacSpoofStaMacAddress=ciscoWdsIdsMacSpoofStaMacAddress, ciscoWdsIdsMacSpoofing=ciscoWdsIdsMacSpoofing, ciscoWdsIdsMIB=ciscoWdsIdsMIB, ciscoWdsIdsMIBObjects=ciscoWdsIdsMIBObjects)

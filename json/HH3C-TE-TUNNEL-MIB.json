@@ -5,36 +5,36 @@
       "hh3cCommon"
     ],
     "MPLS-TC-STD-MIB": [
-      "MplsTunnelIndex",
       "MplsLabel",
       "MplsExtendedTunnelId",
+      "MplsTunnelIndex",
       "MplsTunnelInstanceIndex"
     ],
     "SNMPv2-CONF": [
+      "OBJECT-GROUP",
       "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP",
-      "OBJECT-GROUP"
+      "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
       "Counter32",
-      "OBJECT-IDENTITY",
-      "OBJECT-TYPE",
-      "Bits",
-      "MODULE-IDENTITY",
-      "Counter64",
-      "MibIdentifier",
-      "Unsigned32",
-      "NOTIFICATION-TYPE",
       "Gauge32",
+      "OBJECT-TYPE",
+      "MODULE-IDENTITY",
+      "iso",
       "IpAddress",
+      "Unsigned32",
       "TimeTicks",
+      "MibIdentifier",
+      "Counter64",
+      "OBJECT-IDENTITY",
       "Integer32",
-      "iso"
+      "Bits",
+      "NOTIFICATION-TYPE"
     ],
     "SNMPv2-TC": [
+      "DisplayString",
       "TEXTUAL-CONVENTION",
-      "RowPointer",
-      "DisplayString"
+      "RowPointer"
     ]
   },
   "hh3cTeTunnel": {
@@ -788,7 +788,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/comware/HH3C-TE-TUNNEL-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

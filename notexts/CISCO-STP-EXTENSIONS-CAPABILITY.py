@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-STP-EXTENSIONS-CAPABILITY (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-STP-EXTENSIONS-CAPABILITY
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:21 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:42 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoAgentCapability, = mibBuilder.importSymbols("CISCO-SMI", "ciscoAgentCapability")
-ModuleCompliance, NotificationGroup, AgentCapabilities = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "AgentCapabilities")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ModuleCompliance, AgentCapabilities, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "AgentCapabilities", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, MibIdentifier, Bits, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "MibIdentifier", "Bits", "iso", "Unsigned32", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoStpExtensionsCapability = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 7, 360))
 ciscoStpExtensionsCapability.setRevisions(('2014-03-27 00:00', '2013-09-30 00:00', '2011-09-30 00:00', '2007-02-23 00:00', '2005-09-15 00:00', '2005-06-15 00:00', '2004-11-20 00:00', '2004-06-02 00:00', '2004-04-02 00:00', '2004-01-21 00:00', '2003-09-10 00:00',))
@@ -81,4 +81,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cstpxCapNxOSV05R0201PN7k = cstpxCapNxOSV05R0201PN7k.setProductRelease('Cisco NX-OS 5.2(1) on Nexus 7000\n                    series devices.')
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cstpxCapNxOSV05R0201PN7k = cstpxCapNxOSV05R0201PN7k.setStatus('current')
-mibBuilder.exportSymbols("CISCO-STP-EXTENSIONS-CAPABILITY", PYSNMP_MODULE_ID=ciscoStpExtensionsCapability, cstpxCapNxOSV05R0201PN7k=cstpxCapNxOSV05R0201PN7k, cstpxCapV12R0214SX=cstpxCapV12R0214SX, cstpxCapCatOSV08R0501=cstpxCapCatOSV08R0501, cstpxCapCatOSV08R0401=cstpxCapCatOSV08R0401, cstpxCapV15R0001SYPCat6kSup2T=cstpxCapV15R0001SYPCat6kSup2T, ciscoStpExtensionsCapability=ciscoStpExtensionsCapability, cstpxCapV12R0218SXEPCat6k=cstpxCapV12R0218SXEPCat6k, cstpxCapCatOSV08R0101=cstpxCapCatOSV08R0101, cstpxCapV12R0217bSXACat6k=cstpxCapV12R0217bSXACat6k, cstpxCapCatOSV08R0301=cstpxCapCatOSV08R0301, cstpxCapV12R0113E=cstpxCapV12R0113E, cstpxCapV15R0102SYPCat6k=cstpxCapV15R0102SYPCat6k, cstpxCapV15R0102SYPCat6kSup2T=cstpxCapV15R0102SYPCat6kSup2T, cstpxCapV12R0218SXFPCat6k=cstpxCapV12R0218SXFPCat6k)
+mibBuilder.exportSymbols("CISCO-STP-EXTENSIONS-CAPABILITY", cstpxCapCatOSV08R0101=cstpxCapCatOSV08R0101, cstpxCapV12R0214SX=cstpxCapV12R0214SX, cstpxCapV12R0113E=cstpxCapV12R0113E, cstpxCapCatOSV08R0501=cstpxCapCatOSV08R0501, PYSNMP_MODULE_ID=ciscoStpExtensionsCapability, cstpxCapV15R0001SYPCat6kSup2T=cstpxCapV15R0001SYPCat6kSup2T, cstpxCapNxOSV05R0201PN7k=cstpxCapNxOSV05R0201PN7k, ciscoStpExtensionsCapability=ciscoStpExtensionsCapability, cstpxCapCatOSV08R0401=cstpxCapCatOSV08R0401, cstpxCapV15R0102SYPCat6k=cstpxCapV15R0102SYPCat6k, cstpxCapV12R0218SXEPCat6k=cstpxCapV12R0218SXEPCat6k, cstpxCapV12R0218SXFPCat6k=cstpxCapV12R0218SXFPCat6k, cstpxCapV15R0102SYPCat6kSup2T=cstpxCapV15R0102SYPCat6kSup2T, cstpxCapCatOSV08R0301=cstpxCapCatOSV08R0301, cstpxCapV12R0217bSXACat6k=cstpxCapV12R0217bSXACat6k)

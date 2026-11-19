@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-WAN-ATM-CUG-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-ATM-CUG-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 AtmAddr, = mibBuilder.importSymbols("ATM-TC-MIB", "AtmAddr")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoWanAtmCugMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 99999))
 ciscoWanAtmCugMIB.setRevisions(('2002-03-22 00:00',))
 
@@ -112,4 +112,4 @@ ciscoWanAtmAddressCugGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 99999, 3, 2, 2
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoWanAtmAddressCugGroup = ciscoWanAtmAddressCugGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoWanAtmAddressCugGroup.setDescription('This group contains objects for the CUG for each \n         ATM address on the managed system.')
-mibBuilder.exportSymbols("CISCO-WAN-ATM-CUG-MIB", CiscoAtmInterlockCode=CiscoAtmInterlockCode, cwaCugIndex=cwaCugIndex, CiscoAtmAddressType=CiscoAtmAddressType, cwaAddressCugEntry=cwaAddressCugEntry, cwaAddressLength=cwaAddressLength, PYSNMP_MODULE_ID=ciscoWanAtmCugMIB, cwaAddressPlan=cwaAddressPlan, cwaCallsBarred=cwaCallsBarred, cwaIncomingAccess=cwaIncomingAccess, cwaAtmAddress=cwaAtmAddress, cwaCugRowStatus=cwaCugRowStatus, cwaCugAtmAddressPlan=cwaCugAtmAddressPlan, ciscoWanAtmCugMIBCompliance=ciscoWanAtmCugMIBCompliance, ciscoWanAtmCugGroup=ciscoWanAtmCugGroup, cwaPreferentialCug=cwaPreferentialCug, cwaCug=cwaCug, cwaCugEntry=cwaCugEntry, cwaInterlockCode=cwaInterlockCode, cwaOutgoingAccess=cwaOutgoingAccess, cwaCugMIBNotifications=cwaCugMIBNotifications, CiscoAtmAddressLength=CiscoAtmAddressLength, ciscoWanAtmAddressCugGroup=ciscoWanAtmAddressCugGroup, cwaCugTable=cwaCugTable, ciscoWanAtmCugMIBCompliances=ciscoWanAtmCugMIBCompliances, ciscoWanAtmCugMIBConformance=ciscoWanAtmCugMIBConformance, ciscoWanAtmCugMIBGroups=ciscoWanAtmCugMIBGroups, cwaAddressCugTable=cwaAddressCugTable, cwaCugMIBObjects=cwaCugMIBObjects, ciscoWanAtmCugMIB=ciscoWanAtmCugMIB, cwaAddressCug=cwaAddressCug)
+mibBuilder.exportSymbols("CISCO-WAN-ATM-CUG-MIB", cwaInterlockCode=cwaInterlockCode, cwaCugRowStatus=cwaCugRowStatus, cwaAddressCugTable=cwaAddressCugTable, cwaCugEntry=cwaCugEntry, cwaAddressCug=cwaAddressCug, CiscoAtmInterlockCode=CiscoAtmInterlockCode, ciscoWanAtmAddressCugGroup=ciscoWanAtmAddressCugGroup, CiscoAtmAddressLength=CiscoAtmAddressLength, cwaAddressPlan=cwaAddressPlan, ciscoWanAtmCugGroup=ciscoWanAtmCugGroup, ciscoWanAtmCugMIBCompliances=ciscoWanAtmCugMIBCompliances, ciscoWanAtmCugMIBConformance=ciscoWanAtmCugMIBConformance, cwaCugMIBObjects=cwaCugMIBObjects, ciscoWanAtmCugMIBCompliance=ciscoWanAtmCugMIBCompliance, cwaPreferentialCug=cwaPreferentialCug, cwaOutgoingAccess=cwaOutgoingAccess, cwaCug=cwaCug, PYSNMP_MODULE_ID=ciscoWanAtmCugMIB, cwaCugTable=cwaCugTable, cwaCugIndex=cwaCugIndex, ciscoWanAtmCugMIB=ciscoWanAtmCugMIB, cwaCugAtmAddressPlan=cwaCugAtmAddressPlan, ciscoWanAtmCugMIBGroups=ciscoWanAtmCugMIBGroups, cwaCugMIBNotifications=cwaCugMIBNotifications, cwaAtmAddress=cwaAtmAddress, cwaCallsBarred=cwaCallsBarred, cwaAddressLength=cwaAddressLength, CiscoAtmAddressType=CiscoAtmAddressType, cwaAddressCugEntry=cwaAddressCugEntry, cwaIncomingAccess=cwaIncomingAccess)

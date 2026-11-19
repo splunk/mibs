@@ -6,21 +6,21 @@
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "IpAddress",
-      "Counter64",
-      "Unsigned32",
-      "MibIdentifier",
-      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
       "Gauge32",
+      "TimeTicks",
+      "IpAddress",
+      "Integer32",
+      "MODULE-IDENTITY",
+      "OBJECT-TYPE",
+      "Counter64",
+      "NOTIFICATION-TYPE",
+      "MibIdentifier",
+      "iso",
+      "Unsigned32",
       "enterprises",
       "Counter32",
-      "Integer32",
-      "iso",
-      "OBJECT-IDENTITY",
-      "OBJECT-TYPE",
-      "TimeTicks",
-      "Bits",
-      "NOTIFICATION-TYPE"
+      "Bits"
     ],
     "SNMPv2-TC": [
       "DisplayString",
@@ -47,7 +47,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/axis/AXIS-ROOT-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:31:13 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:33:55 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

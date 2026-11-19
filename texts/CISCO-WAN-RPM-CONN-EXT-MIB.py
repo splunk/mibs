@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-WAN-RPM-CONN-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-RPM-CONN-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 cwAtmChanCnfgEntry, = mibBuilder.importSymbols("CISCO-WAN-ATM-CONN-MIB", "cwAtmChanCnfgEntry")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoWanRpmConnExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 9))
 ciscoWanRpmConnExtMIB.setRevisions(('2002-05-21 00:00', '2002-03-18 00:00', '1999-09-30 00:00',))
 
@@ -74,4 +74,4 @@ ciscoWanRpmConnExtMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 9, 2, 2, 1
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoWanRpmConnExtMIBGroup = ciscoWanRpmConnExtMIBGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoWanRpmConnExtMIBGroup.setDescription('Objects related to ATM connection in RPM module.')
-mibBuilder.exportSymbols("CISCO-WAN-RPM-CONN-EXT-MIB", cwRpmConnExtMIBObjects=cwRpmConnExtMIBObjects, cwrChanOamRetryUpCount=cwrChanOamRetryUpCount, cwRpmChanExtEntry=cwRpmChanExtEntry, PYSNMP_MODULE_ID=ciscoWanRpmConnExtMIB, cwrChanVirtualTemplate=cwrChanVirtualTemplate, cwrChanAalEncapType=cwrChanAalEncapType, cwrChanInArpInterval=cwrChanInArpInterval, cwRpmConnExt=cwRpmConnExt, cwrChanSubInterface=cwrChanSubInterface, ciscoWanRpmConnExtMIBGroups=ciscoWanRpmConnExtMIBGroups, cwrChanOamManage=cwrChanOamManage, cwrChanOamRetryDownCount=cwrChanOamRetryDownCount, ciscoWanRpmConnExtMIBConformance=ciscoWanRpmConnExtMIBConformance, cwrChanOamLoopbkTxInterval=cwrChanOamLoopbkTxInterval, ciscoWanRpmConnExtMIB=ciscoWanRpmConnExtMIB, ciscoWanRpmConnExtMIBGroup=ciscoWanRpmConnExtMIBGroup, cwRpmChanExtTable=cwRpmChanExtTable, cwrChanOamRetryInterval=cwrChanOamRetryInterval, cwrChanVcd=cwrChanVcd, ciscoWanRpmConnExtMIBCompliances=ciscoWanRpmConnExtMIBCompliances, ciscoWanRpmConnExtMIBCompliance=ciscoWanRpmConnExtMIBCompliance)
+mibBuilder.exportSymbols("CISCO-WAN-RPM-CONN-EXT-MIB", cwRpmConnExt=cwRpmConnExt, cwrChanSubInterface=cwrChanSubInterface, cwrChanOamLoopbkTxInterval=cwrChanOamLoopbkTxInterval, cwrChanOamRetryDownCount=cwrChanOamRetryDownCount, ciscoWanRpmConnExtMIBCompliances=ciscoWanRpmConnExtMIBCompliances, ciscoWanRpmConnExtMIB=ciscoWanRpmConnExtMIB, ciscoWanRpmConnExtMIBGroup=ciscoWanRpmConnExtMIBGroup, ciscoWanRpmConnExtMIBCompliance=ciscoWanRpmConnExtMIBCompliance, cwRpmChanExtTable=cwRpmChanExtTable, cwrChanInArpInterval=cwrChanInArpInterval, cwRpmConnExtMIBObjects=cwRpmConnExtMIBObjects, cwrChanOamRetryInterval=cwrChanOamRetryInterval, cwrChanOamRetryUpCount=cwrChanOamRetryUpCount, PYSNMP_MODULE_ID=ciscoWanRpmConnExtMIB, cwrChanVirtualTemplate=cwrChanVirtualTemplate, cwRpmChanExtEntry=cwRpmChanExtEntry, cwrChanVcd=cwrChanVcd, ciscoWanRpmConnExtMIBGroups=ciscoWanRpmConnExtMIBGroups, ciscoWanRpmConnExtMIBConformance=ciscoWanRpmConnExtMIBConformance, cwrChanAalEncapType=cwrChanAalEncapType, cwrChanOamManage=cwrChanOamManage)

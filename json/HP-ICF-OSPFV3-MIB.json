@@ -5,56 +5,56 @@
       "hpSwitch"
     ],
     "HP-ICF-OSPF": [
-      "HpicfOspfLogAction",
-      "HpicfOspfLogType"
+      "HpicfOspfLogType",
+      "HpicfOspfLogAction"
     ],
     "INET-ADDRESS-MIB": [
       "InetAddressIPv6"
     ],
     "OSPF-MIB": [
-      "Metric",
-      "BigMetric"
+      "BigMetric",
+      "Metric"
     ],
     "OSPFV3-MIB": [
-      "Ospfv3RouterIdTC",
-      "ospfv3AreaLsdbAreaId",
-      "ospfv3NbrEntry",
-      "ospfv3AreaLsdbLsid",
-      "ospfv3IfInstId",
-      "ospfv3LinkLsdbIfIndex",
-      "ospfv3AreaLsdbEntry",
-      "ospfv3LinkLsdbType",
-      "ospfv3LinkLsdbIfInstId",
-      "ospfv3AsLsdbEntry",
-      "ospfv3AreaAggregateEntry",
-      "ospfv3AreaLsdbType",
-      "ospfv3AreaEntry",
       "ospfv3IfIndex",
-      "ospfv3AreaLsdbRouterId",
-      "ospfv3LinkLsdbRouterId",
+      "ospfv3LinkLsdbLsid",
       "ospfv3LinkLsdbEntry",
+      "ospfv3LinkLsdbIfInstId",
+      "ospfv3IfInstId",
+      "ospfv3AreaLsdbLsid",
+      "ospfv3AreaEntry",
+      "ospfv3LinkLsdbRouterId",
+      "Ospfv3RouterIdTC",
+      "ospfv3AreaLsdbType",
+      "ospfv3LinkLsdbIfIndex",
+      "ospfv3NbrEntry",
+      "ospfv3LinkLsdbType",
+      "ospfv3AreaAggregateEntry",
+      "ospfv3AsLsdbEntry",
+      "ospfv3AreaLsdbEntry",
       "ospfv3IfEntry",
-      "ospfv3LinkLsdbLsid"
+      "ospfv3AreaLsdbRouterId",
+      "ospfv3AreaLsdbAreaId"
     ],
     "SNMPv2-CONF": [
-      "OBJECT-GROUP",
+      "MODULE-COMPLIANCE",
       "NOTIFICATION-GROUP",
-      "MODULE-COMPLIANCE"
+      "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
+      "MibIdentifier",
+      "Bits",
       "iso",
       "Unsigned32",
       "Integer32",
-      "Bits",
-      "Gauge32",
-      "NOTIFICATION-TYPE",
-      "Counter64",
-      "MibIdentifier",
-      "IpAddress",
-      "OBJECT-IDENTITY",
-      "Counter32",
-      "MODULE-IDENTITY",
       "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
+      "Counter64",
+      "OBJECT-IDENTITY",
+      "IpAddress",
+      "MODULE-IDENTITY",
+      "Counter32",
       "OBJECT-TYPE"
     ],
     "SNMPv2-TC": [
@@ -2703,7 +2703,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hp/HP-ICF-OSPFV3-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:07 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:37:22 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

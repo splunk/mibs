@@ -7,9 +7,9 @@
     ],
     "ASAM-TC-MIB": [
       "AsamProfileIndex",
-      "AsamProfileName",
       "AsamProfileRefCount",
-      "AsamProfilePointer"
+      "AsamProfilePointer",
+      "AsamProfileName"
     ],
     "BRIDGE-MIB": [
       "MacAddress"
@@ -18,30 +18,30 @@
       "ifIndex"
     ],
     "SNMPv2-CONF": [
-      "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "iso",
-      "TimeTicks",
-      "Counter64",
       "Bits",
-      "OBJECT-IDENTITY",
-      "MibIdentifier",
       "OBJECT-TYPE",
-      "Gauge32",
-      "Counter32",
-      "MODULE-IDENTITY",
       "IpAddress",
-      "Unsigned32",
+      "Gauge32",
+      "Counter64",
+      "iso",
+      "OBJECT-IDENTITY",
       "NOTIFICATION-TYPE",
+      "MODULE-IDENTITY",
+      "MibIdentifier",
+      "Unsigned32",
+      "Counter32",
+      "TimeTicks",
       "Integer32"
     ],
     "SNMPv2-TC": [
-      "DisplayString",
       "TEXTUAL-CONVENTION",
+      "RowStatus",
       "PhysAddress",
-      "RowStatus"
+      "DisplayString"
     ],
     "SYSTEM-MIB": [
       "asam"
@@ -3526,7 +3526,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/nokia/SFP-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:38:20 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:38:55 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

@@ -1,21 +1,21 @@
 #
 # PySNMP MIB module CISCO-MPOA-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MPOA-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 AtmAddress, = mibBuilder.importSymbols("ATM-FORUM-TC-MIB", "AtmAddress")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
 VciInteger, VpiInteger = mibBuilder.importSymbols("LAN-EMULATION-CLIENT-MIB", "VciInteger", "VpiInteger")
-mpsIndex, mpcIndex = mibBuilder.importSymbols("MPOA-MIB", "mpsIndex", "mpcIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+mpcIndex, mpsIndex = mibBuilder.importSymbols("MPOA-MIB", "mpcIndex", "mpsIndex")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoMpoaExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 99999))
 ciscoMpoaExtMIB.setRevisions(('2000-01-10 12:30',))
 
@@ -90,4 +90,4 @@ ciscoMpoaExtMpsInterfaceMappingGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 9999
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoMpoaExtMpsInterfaceMappingGroup = ciscoMpoaExtMpsInterfaceMappingGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoMpoaExtMpsInterfaceMappingGroup.setDescription('A collection of objects related to identify the\n                interface to which an MPS is bound to.')
-mibBuilder.exportSymbols("CISCO-MPOA-EXT-MIB", cMpcExtShortcutVCCEntry=cMpcExtShortcutVCCEntry, ciscoMpoaExtMIBNotifications=ciscoMpoaExtMIBNotifications, ciscoMpoaExtMIB=ciscoMpoaExtMIB, cMpcExtShortcutVCC=cMpcExtShortcutVCC, ciscoMpoaExtShorcutVCCMIBGroup=ciscoMpoaExtShorcutVCCMIBGroup, ciscoMpoaExtMpcInterfaceMappingGroup=ciscoMpoaExtMpcInterfaceMappingGroup, cMpcInterfaceMappingTable=cMpcInterfaceMappingTable, ciscoMpoaExtMIBGroups=ciscoMpoaExtMIBGroups, cMpsInterfaceMappingRowStatus=cMpsInterfaceMappingRowStatus, cMpsInterface=cMpsInterface, ciscoMpoaExtMIBNotificationPrefix=ciscoMpoaExtMIBNotificationPrefix, cmpcSCVci=cmpcSCVci, cMpsInterfaceMappingIndex=cMpsInterfaceMappingIndex, PYSNMP_MODULE_ID=ciscoMpoaExtMIB, ciscoMpoaExtMIBCompliance=ciscoMpoaExtMIBCompliance, cMpsInterfaceMappingTable=cMpsInterfaceMappingTable, cMpcInterface=cMpcInterface, cmpcDestAtmAddr=cmpcDestAtmAddr, cMpcInterfaceMappingIndex=cMpcInterfaceMappingIndex, ciscoMpoaExtMIBConformance=ciscoMpoaExtMIBConformance, cMpsInterfaceMappingEntry=cMpsInterfaceMappingEntry, cMpcInterfaceMappingEntry=cMpcInterfaceMappingEntry, ciscoMpoaExtMpsInterfaceMappingGroup=ciscoMpoaExtMpsInterfaceMappingGroup, cMpcExtShortcutVCCTable=cMpcExtShortcutVCCTable, ciscoMpoaExtMIBObjects=ciscoMpoaExtMIBObjects, ciscoMpoaExtMIBCompliances=ciscoMpoaExtMIBCompliances, cmpcSCVpi=cmpcSCVpi, cMpcInterfaceMappingRowStatus=cMpcInterfaceMappingRowStatus)
+mibBuilder.exportSymbols("CISCO-MPOA-EXT-MIB", ciscoMpoaExtMpsInterfaceMappingGroup=ciscoMpoaExtMpsInterfaceMappingGroup, cMpcInterfaceMappingIndex=cMpcInterfaceMappingIndex, cMpcInterfaceMappingTable=cMpcInterfaceMappingTable, cMpsInterfaceMappingEntry=cMpsInterfaceMappingEntry, cmpcSCVci=cmpcSCVci, cMpsInterface=cMpsInterface, ciscoMpoaExtMIBNotificationPrefix=ciscoMpoaExtMIBNotificationPrefix, ciscoMpoaExtMIBCompliance=ciscoMpoaExtMIBCompliance, cmpcDestAtmAddr=cmpcDestAtmAddr, cMpsInterfaceMappingRowStatus=cMpsInterfaceMappingRowStatus, ciscoMpoaExtMIBObjects=ciscoMpoaExtMIBObjects, ciscoMpoaExtMIBGroups=ciscoMpoaExtMIBGroups, ciscoMpoaExtMIBNotifications=ciscoMpoaExtMIBNotifications, ciscoMpoaExtMIBCompliances=ciscoMpoaExtMIBCompliances, cmpcSCVpi=cmpcSCVpi, cMpcInterfaceMappingRowStatus=cMpcInterfaceMappingRowStatus, ciscoMpoaExtShorcutVCCMIBGroup=ciscoMpoaExtShorcutVCCMIBGroup, cMpcExtShortcutVCCEntry=cMpcExtShortcutVCCEntry, cMpcExtShortcutVCC=cMpcExtShortcutVCC, ciscoMpoaExtMIB=ciscoMpoaExtMIB, cMpcInterfaceMappingEntry=cMpcInterfaceMappingEntry, ciscoMpoaExtMIBConformance=ciscoMpoaExtMIBConformance, cMpcExtShortcutVCCTable=cMpcExtShortcutVCCTable, ciscoMpoaExtMpcInterfaceMappingGroup=ciscoMpoaExtMpcInterfaceMappingGroup, cMpsInterfaceMappingIndex=cMpsInterfaceMappingIndex, cMpsInterfaceMappingTable=cMpsInterfaceMappingTable, cMpcInterface=cMpcInterface, PYSNMP_MODULE_ID=ciscoMpoaExtMIB)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-1-BONJOUR-SERVICE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-1-BONJOUR-SERVICE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention", "TruthValue")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, NotificationType, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "NotificationType", "TimeTicks")
+DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
 rlCustom1BonjourService = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 143))
 rlCustom1BonjourService.setRevisions(('2009-03-24 00:00',))
 
@@ -45,4 +45,4 @@ if mibBuilder.loadTexts: rlCustom1BonjourServiceOptions.setDescription('Bonjour 
 rlCustom1BonjourServiceStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 143, 1, 1, 6), RowStatus()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlCustom1BonjourServiceStatus.setStatus('current')
 if mibBuilder.loadTexts: rlCustom1BonjourServiceStatus.setDescription('The status of a table entry.\n        It is used to delete/Add an entry from this table.')
-mibBuilder.exportSymbols("CISCOSB-1-BONJOUR-SERVICE-MIB", rlCustom1BonjourServiceStatus=rlCustom1BonjourServiceStatus, PYSNMP_MODULE_ID=rlCustom1BonjourService, rlCustom1BonjourServiceOptions=rlCustom1BonjourServiceOptions, rlCustom1BonjourServiceTypeName=rlCustom1BonjourServiceTypeName, rlCustom1BonjourServiceTransport=rlCustom1BonjourServiceTransport, rlCustom1BonjourService=rlCustom1BonjourService, rlCustom1BonjourServiceTable=rlCustom1BonjourServiceTable, rlCustom1BonjourServicePort=rlCustom1BonjourServicePort, rlCustom1BonjourServiceEnable=rlCustom1BonjourServiceEnable, rlCustom1BonjourServiceEntry=rlCustom1BonjourServiceEntry)
+mibBuilder.exportSymbols("CISCOSB-1-BONJOUR-SERVICE-MIB", rlCustom1BonjourServiceTable=rlCustom1BonjourServiceTable, rlCustom1BonjourService=rlCustom1BonjourService, rlCustom1BonjourServiceOptions=rlCustom1BonjourServiceOptions, rlCustom1BonjourServiceStatus=rlCustom1BonjourServiceStatus, rlCustom1BonjourServicePort=rlCustom1BonjourServicePort, rlCustom1BonjourServiceEnable=rlCustom1BonjourServiceEnable, PYSNMP_MODULE_ID=rlCustom1BonjourService, rlCustom1BonjourServiceEntry=rlCustom1BonjourServiceEntry, rlCustom1BonjourServiceTypeName=rlCustom1BonjourServiceTypeName, rlCustom1BonjourServiceTransport=rlCustom1BonjourServiceTransport)

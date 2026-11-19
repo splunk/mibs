@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-SWITCH-QOS-CAPABILITY (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SWITCH-QOS-CAPABILITY
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoAgentCapability, = mibBuilder.importSymbols("CISCO-SMI", "ciscoAgentCapability")
-NotificationGroup, AgentCapabilities, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "AgentCapabilities", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+AgentCapabilities, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "AgentCapabilities", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoSwitchQosCapability = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 7, 541))
 ciscoSwitchQosCapability.setRevisions(('2014-10-03 00:00', '2014-04-03 00:00', '2013-10-16 00:00', '2011-09-26 00:00', '2010-11-17 00:00', '2010-03-19 00:00', '2008-06-04 00:00', '2007-06-29 00:00',))
@@ -75,4 +75,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoSwitchQosCapNxOSV06R0210PN7K = ciscoSwitchQosCapNxOSV06R0210PN7K.setStatus('current')
 if mibBuilder.loadTexts: ciscoSwitchQosCapNxOSV06R0210PN7K.setDescription('CISCO-SWITCH-QOS-MIB capabilities.')
-mibBuilder.exportSymbols("CISCO-SWITCH-QOS-CAPABILITY", ciscoSwitchQosCapV12R0250SYPCat6k=ciscoSwitchQosCapV12R0250SYPCat6k, ciscoSwitchQosCapV06R0002U0201PN3K=ciscoSwitchQosCapV06R0002U0201PN3K, ciscoSwitchQosCapV12R0233SXIPCat6k=ciscoSwitchQosCapV12R0233SXIPCat6k, ciscoSwitchQosCapNxOSV06R0210PN7K=ciscoSwitchQosCapNxOSV06R0210PN7K, PYSNMP_MODULE_ID=ciscoSwitchQosCapability, ciscoSwitchQosCapV15R0001SYPCat6k=ciscoSwitchQosCapV15R0001SYPCat6k, ciscoSwitchQosCapV6R0002U0101PN3K=ciscoSwitchQosCapV6R0002U0101PN3K, ciscoSwitchQosCapV12R0233SXHPCat6k=ciscoSwitchQosCapV12R0233SXHPCat6k, ciscoSwitchQosCapV12R0233SXI4PCat6k=ciscoSwitchQosCapV12R0233SXI4PCat6k, ciscoSwitchQosCapability=ciscoSwitchQosCapability, ciscoSwitchQosCapV5R0003U0501gPN3K=ciscoSwitchQosCapV5R0003U0501gPN3K)
+mibBuilder.exportSymbols("CISCO-SWITCH-QOS-CAPABILITY", ciscoSwitchQosCapV12R0250SYPCat6k=ciscoSwitchQosCapV12R0250SYPCat6k, ciscoSwitchQosCapability=ciscoSwitchQosCapability, PYSNMP_MODULE_ID=ciscoSwitchQosCapability, ciscoSwitchQosCapV06R0002U0201PN3K=ciscoSwitchQosCapV06R0002U0201PN3K, ciscoSwitchQosCapV5R0003U0501gPN3K=ciscoSwitchQosCapV5R0003U0501gPN3K, ciscoSwitchQosCapV6R0002U0101PN3K=ciscoSwitchQosCapV6R0002U0101PN3K, ciscoSwitchQosCapV15R0001SYPCat6k=ciscoSwitchQosCapV15R0001SYPCat6k, ciscoSwitchQosCapV12R0233SXIPCat6k=ciscoSwitchQosCapV12R0233SXIPCat6k, ciscoSwitchQosCapNxOSV06R0210PN7K=ciscoSwitchQosCapNxOSV06R0210PN7K, ciscoSwitchQosCapV12R0233SXI4PCat6k=ciscoSwitchQosCapV12R0233SXI4PCat6k, ciscoSwitchQosCapV12R0233SXHPCat6k=ciscoSwitchQosCapV12R0233SXHPCat6k)

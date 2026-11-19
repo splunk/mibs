@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-ALARM-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ALARM-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 EntPhysicalIndexOrZero, = mibBuilder.importSymbols("CISCO-TC", "EntPhysicalIndexOrZero")
 InterfaceIndexOrZero, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndexOrZero")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TruthValue, TextualConvention, TimeStamp = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention", "TimeStamp")
 ciscoAlarmMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 869))
 ciscoAlarmMIB.setRevisions(('2020-08-31 00:00', '2019-08-28 00:00',))
@@ -54,4 +54,4 @@ coiAlarmDescription = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 869, 1, 1, 1, 1, 1
 if mibBuilder.loadTexts: coiAlarmDescription.setStatus('current')
 coiAlarmStatusChange = NotificationType((1, 3, 6, 1, 4, 1, 9, 9, 869, 0, 1)).setObjects(("CISCO-ALARM-MIB", "coiAlarmIndex"), ("CISCO-ALARM-MIB", "coiAlarmObjectIfIndex"), ("CISCO-ALARM-MIB", "coiAlarmObjectEntPhyIndex"), ("CISCO-ALARM-MIB", "coiAlarmObjectName"), ("CISCO-ALARM-MIB", "coiAlarmType"), ("CISCO-ALARM-MIB", "coiAlarmSeverity"), ("CISCO-ALARM-MIB", "coiAlarmStatus"), ("CISCO-ALARM-MIB", "coiAlarmDescription"))
 if mibBuilder.loadTexts: coiAlarmStatusChange.setStatus('current')
-mibBuilder.exportSymbols("CISCO-ALARM-MIB", ciscoAlarmMIBNotifs=ciscoAlarmMIBNotifs, coiAlarmActiveEntry=coiAlarmActiveEntry, coiAlarmDescription=coiAlarmDescription, coiAlarmActive=coiAlarmActive, coiAlarmObjectIfIndex=coiAlarmObjectIfIndex, coiAlarmObjectType=coiAlarmObjectType, PYSNMP_MODULE_ID=ciscoAlarmMIB, coiAlarmStatusChange=coiAlarmStatusChange, coiAlarmObjectEntPhyIndex=coiAlarmObjectEntPhyIndex, coiAlarmTimeStamp=coiAlarmTimeStamp, coiAlarmIndex=coiAlarmIndex, ciscoAlarmMIB=ciscoAlarmMIB, coiAlarmType=coiAlarmType, ciscoAlarmMIBObjects=ciscoAlarmMIBObjects, coiAlarmActiveTable=coiAlarmActiveTable, coiAlarmObjectName=coiAlarmObjectName, coiAlarmServiceAffecting=coiAlarmServiceAffecting, coiAlarmStatus=coiAlarmStatus, coiAlarmSeverity=coiAlarmSeverity, CoiAlarmObjectTypeClass=CoiAlarmObjectTypeClass)
+mibBuilder.exportSymbols("CISCO-ALARM-MIB", ciscoAlarmMIBObjects=ciscoAlarmMIBObjects, coiAlarmType=coiAlarmType, coiAlarmTimeStamp=coiAlarmTimeStamp, coiAlarmActiveTable=coiAlarmActiveTable, coiAlarmObjectType=coiAlarmObjectType, coiAlarmSeverity=coiAlarmSeverity, coiAlarmObjectEntPhyIndex=coiAlarmObjectEntPhyIndex, coiAlarmStatus=coiAlarmStatus, coiAlarmObjectIfIndex=coiAlarmObjectIfIndex, coiAlarmDescription=coiAlarmDescription, coiAlarmStatusChange=coiAlarmStatusChange, CoiAlarmObjectTypeClass=CoiAlarmObjectTypeClass, coiAlarmActive=coiAlarmActive, PYSNMP_MODULE_ID=ciscoAlarmMIB, coiAlarmActiveEntry=coiAlarmActiveEntry, coiAlarmObjectName=coiAlarmObjectName, ciscoAlarmMIBNotifs=ciscoAlarmMIBNotifs, coiAlarmServiceAffecting=coiAlarmServiceAffecting, ciscoAlarmMIB=ciscoAlarmMIB, coiAlarmIndex=coiAlarmIndex)

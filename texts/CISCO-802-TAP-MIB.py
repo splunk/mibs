@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-802-TAP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-802-TAP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-cTap2MediationContentId, cTap2StreamIndex = mibBuilder.importSymbols("CISCO-TAP2-MIB", "cTap2MediationContentId", "cTap2StreamIndex")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, MacAddress, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "MacAddress", "TextualConvention", "DisplayString")
+cTap2StreamIndex, cTap2MediationContentId = mibBuilder.importSymbols("CISCO-TAP2-MIB", "cTap2StreamIndex", "cTap2MediationContentId")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, MacAddress, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "MacAddress", "RowStatus", "TextualConvention")
 cisco802TapMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 395))
 cisco802TapMIB.setRevisions(('2004-03-11 00:00',))
 
@@ -71,4 +71,4 @@ cisco802TapStreamGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 395, 2, 2, 1)).set
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cisco802TapStreamGroup = cisco802TapStreamGroup.setStatus('current')
 if mibBuilder.loadTexts: cisco802TapStreamGroup.setDescription('These objects are necessary for a description of IEEE 802\n        packets to select for interception.')
-mibBuilder.exportSymbols("CISCO-802-TAP-MIB", c802tapStreamSourceLlcSap=c802tapStreamSourceLlcSap, c802tapStreamSourceAddress=c802tapStreamSourceAddress, cisco802TapStreamGroup=cisco802TapStreamGroup, c802tapStreamEncodePacket=c802tapStreamEncodePacket, c802tapStreamCapabilities=c802tapStreamCapabilities, c802tapStreamDestinationAddress=c802tapStreamDestinationAddress, cisco802TapMIBConform=cisco802TapMIBConform, c802tapStreamDestinationLlcSap=c802tapStreamDestinationLlcSap, c802tapStreamEntry=c802tapStreamEntry, cisco802TapMIBGroups=cisco802TapMIBGroups, c802tapStreamInterface=c802tapStreamInterface, c802tapStreamEthernetPid=c802tapStreamEthernetPid, cisco802TapMIBNotifs=cisco802TapMIBNotifs, cisco802TapMIB=cisco802TapMIB, c802tapStreamTable=c802tapStreamTable, c802tapStreamFields=c802tapStreamFields, cisco802TapMIBCompliances=cisco802TapMIBCompliances, c802tapStreamStatus=c802tapStreamStatus, cisco802TapMIBCompliance=cisco802TapMIBCompliance, PYSNMP_MODULE_ID=cisco802TapMIB, cisco802TapMIBObjects=cisco802TapMIBObjects)
+mibBuilder.exportSymbols("CISCO-802-TAP-MIB", c802tapStreamSourceAddress=c802tapStreamSourceAddress, c802tapStreamStatus=c802tapStreamStatus, c802tapStreamDestinationLlcSap=c802tapStreamDestinationLlcSap, cisco802TapMIBCompliances=cisco802TapMIBCompliances, cisco802TapMIBCompliance=cisco802TapMIBCompliance, c802tapStreamEncodePacket=c802tapStreamEncodePacket, c802tapStreamDestinationAddress=c802tapStreamDestinationAddress, c802tapStreamCapabilities=c802tapStreamCapabilities, cisco802TapStreamGroup=cisco802TapStreamGroup, c802tapStreamSourceLlcSap=c802tapStreamSourceLlcSap, cisco802TapMIBNotifs=cisco802TapMIBNotifs, cisco802TapMIBConform=cisco802TapMIBConform, c802tapStreamInterface=c802tapStreamInterface, c802tapStreamEthernetPid=c802tapStreamEthernetPid, c802tapStreamFields=c802tapStreamFields, cisco802TapMIB=cisco802TapMIB, PYSNMP_MODULE_ID=cisco802TapMIB, c802tapStreamTable=c802tapStreamTable, cisco802TapMIBGroups=cisco802TapMIBGroups, cisco802TapMIBObjects=cisco802TapMIBObjects, c802tapStreamEntry=c802tapStreamEntry)

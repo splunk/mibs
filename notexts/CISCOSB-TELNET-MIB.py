@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-TELNET-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-TELNET-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 rlTelnet = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 58))
 rlTelnet.setRevisions(('2008-11-24 00:00',))
@@ -43,4 +43,4 @@ rlTelnetSecondLoginBanner = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 58, 6), D
 if mibBuilder.loadTexts: rlTelnetSecondLoginBanner.setStatus('current')
 rlTelnetEnable = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 58, 7), TruthValue()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlTelnetEnable.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-TELNET-MIB", rlTelnetSecondLoginBanner=rlTelnetSecondLoginBanner, rlTelnetEnable=rlTelnetEnable, rlTelnetMibVersion=rlTelnetMibVersion, PYSNMP_MODULE_ID=rlTelnet, rlTelnetUsersTable=rlTelnetUsersTable, rlTelnetSessionLoginTime=rlTelnetSessionLoginTime, rlTelnetSessionStatus=rlTelnetSessionStatus, rlTelnetSessionClientAddress=rlTelnetSessionClientAddress, rlTelnetUsersEntry=rlTelnetUsersEntry, rlTelnetSessionClientAddressType=rlTelnetSessionClientAddressType, rlTelnet=rlTelnet, rlTelnetLoginBanner=rlTelnetLoginBanner, rlTelnetSessionId=rlTelnetSessionId, rlTelnetPassword=rlTelnetPassword, rlTelnetTimeout=rlTelnetTimeout)
+mibBuilder.exportSymbols("CISCOSB-TELNET-MIB", rlTelnetSessionClientAddressType=rlTelnetSessionClientAddressType, rlTelnetPassword=rlTelnetPassword, rlTelnetSessionStatus=rlTelnetSessionStatus, rlTelnetLoginBanner=rlTelnetLoginBanner, rlTelnetUsersTable=rlTelnetUsersTable, rlTelnetSessionLoginTime=rlTelnetSessionLoginTime, rlTelnet=rlTelnet, rlTelnetSessionId=rlTelnetSessionId, rlTelnetSecondLoginBanner=rlTelnetSecondLoginBanner, rlTelnetUsersEntry=rlTelnetUsersEntry, PYSNMP_MODULE_ID=rlTelnet, rlTelnetMibVersion=rlTelnetMibVersion, rlTelnetSessionClientAddress=rlTelnetSessionClientAddress, rlTelnetEnable=rlTelnetEnable, rlTelnetTimeout=rlTelnetTimeout)

@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module DLINKSW-ND-INSPECT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-ND-INSPECT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:46 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint")
+SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, iso, TimeTicks, ModuleIdentity, NotificationType, Unsigned32, ObjectIdentity, MibIdentifier, Gauge32, Counter32, Counter64, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "iso", "TimeTicks", "ModuleIdentity", "NotificationType", "Unsigned32", "ObjectIdentity", "MibIdentifier", "Gauge32", "Counter32", "Counter64", "IpAddress")
-RowStatus, TruthValue, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "TruthValue", "DisplayString", "TextualConvention")
+NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
+Counter32, Counter64, IpAddress, ModuleIdentity, Unsigned32, Gauge32, Bits, iso, ObjectIdentity, Integer32, NotificationType, MibIdentifier, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Counter64", "IpAddress", "ModuleIdentity", "Unsigned32", "Gauge32", "Bits", "iso", "ObjectIdentity", "Integer32", "NotificationType", "MibIdentifier", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
+DisplayString, TextualConvention, TruthValue, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue", "RowStatus")
 dlinkSwNdInspecMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 144))
 dlinkSwNdInspecMIB.setRevisions(('2013-07-18 00:00',))
 if mibBuilder.loadTexts: dlinkSwNdInspecMIB.setLastUpdated('201307180000Z')
@@ -65,4 +65,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 dNdInspecIfAttachGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 144, 2, 2, 3)).setObjects(("DLINKSW-ND-INSPECT-MIB", "dNdInspecIfAttachPolicy"), ("DLINKSW-ND-INSPECT-MIB", "dNdInspecIfAttachRowStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dNdInspecIfAttachGroup = dNdInspecIfAttachGroup.setStatus('current')
-mibBuilder.exportSymbols("DLINKSW-ND-INSPECT-MIB", dNdInspecPolicyNumber=dNdInspecPolicyNumber, dNdInspecPolicyEntry=dNdInspecPolicyEntry, dNdInspecIfAttachGroup=dNdInspecIfAttachGroup, dNdInspecIfEnabled=dNdInspecIfEnabled, dNdInspecNotifications=dNdInspecNotifications, dNdInspecIfAttachTable=dNdInspecIfAttachTable, dNdInspecPolicyDeviceRole=dNdInspecPolicyDeviceRole, dNdInspecMIBCompliance=dNdInspecMIBCompliance, dlinkSwNdInspecMIB=dlinkSwNdInspecMIB, dNdInspecPolicyGroup=dNdInspecPolicyGroup, dNdInspecIfAttachRowStatus=dNdInspecIfAttachRowStatus, dNdInspecObjects=dNdInspecObjects, dNdInspecIfAttachEntry=dNdInspecIfAttachEntry, dNdInspecIfAttachPolicy=dNdInspecIfAttachPolicy, dNdInspecMIBGroups=dNdInspecMIBGroups, dNdInspecMIBCompliances=dNdInspecMIBCompliances, dNdInspecConformance=dNdInspecConformance, dNdInspecInterface=dNdInspecInterface, dNdInspecIfConfigTable=dNdInspecIfConfigTable, PYSNMP_MODULE_ID=dlinkSwNdInspecMIB, dNdInspecPolicyValidateSrcMac=dNdInspecPolicyValidateSrcMac, dNdInspecPolicyRowStatus=dNdInspecPolicyRowStatus, dNdInspecPolicyTable=dNdInspecPolicyTable, dNdInspecIfConfigEntry=dNdInspecIfConfigEntry, dNdInspecPolicy=dNdInspecPolicy, dNdInspecPolicyName=dNdInspecPolicyName, dNdInspecIfConfigGroup=dNdInspecIfConfigGroup)
+mibBuilder.exportSymbols("DLINKSW-ND-INSPECT-MIB", dNdInspecIfConfigEntry=dNdInspecIfConfigEntry, dNdInspecIfEnabled=dNdInspecIfEnabled, dNdInspecPolicy=dNdInspecPolicy, dNdInspecIfAttachGroup=dNdInspecIfAttachGroup, dNdInspecPolicyTable=dNdInspecPolicyTable, dNdInspecIfAttachRowStatus=dNdInspecIfAttachRowStatus, dNdInspecPolicyNumber=dNdInspecPolicyNumber, dNdInspecIfAttachTable=dNdInspecIfAttachTable, dNdInspecMIBCompliances=dNdInspecMIBCompliances, dlinkSwNdInspecMIB=dlinkSwNdInspecMIB, dNdInspecMIBGroups=dNdInspecMIBGroups, dNdInspecMIBCompliance=dNdInspecMIBCompliance, dNdInspecPolicyEntry=dNdInspecPolicyEntry, dNdInspecObjects=dNdInspecObjects, dNdInspecPolicyName=dNdInspecPolicyName, dNdInspecPolicyValidateSrcMac=dNdInspecPolicyValidateSrcMac, dNdInspecIfConfigGroup=dNdInspecIfConfigGroup, dNdInspecInterface=dNdInspecInterface, dNdInspecConformance=dNdInspecConformance, dNdInspecNotifications=dNdInspecNotifications, dNdInspecIfAttachEntry=dNdInspecIfAttachEntry, dNdInspecIfAttachPolicy=dNdInspecIfAttachPolicy, dNdInspecPolicyRowStatus=dNdInspecPolicyRowStatus, dNdInspecIfConfigTable=dNdInspecIfConfigTable, dNdInspecPolicyGroup=dNdInspecPolicyGroup, PYSNMP_MODULE_ID=dlinkSwNdInspecMIB, dNdInspecPolicyDeviceRole=dNdInspecPolicyDeviceRole)

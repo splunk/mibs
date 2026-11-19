@@ -1,15 +1,15 @@
 #
 # PySNMP MIB module CISCO-LATITUDE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-LATITUDE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, enterprises, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "enterprises", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, iso, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, enterprises, IpAddress, NotificationType, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "iso", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "enterprises", "IpAddress", "NotificationType", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 latitudeComm = ModuleIdentity((1, 3, 6, 1, 4, 1, 7185))
 latitudeComm.setRevisions(('2004-08-16 00:00',))
@@ -83,4 +83,4 @@ ciscoLatitudeNotifsGroupRev1 = NotificationGroup((1, 3, 6, 1, 4, 1, 7185, 3, 1, 
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoLatitudeNotifsGroupRev1 = ciscoLatitudeNotifsGroupRev1.setStatus('current')
 if mibBuilder.loadTexts: ciscoLatitudeNotifsGroupRev1.setDescription('Notifications applicable to meetingplace.')
-mibBuilder.exportSymbols("CISCO-LATITUDE-MIB", ciscoLatitudeAlarmGroupRev1=ciscoLatitudeAlarmGroupRev1, latitudeGeneric=latitudeGeneric, mpHwDev=mpHwDev, mpMinSwAlarm=mpMinSwAlarm, meetingplaceEventsV2=meetingplaceEventsV2, mpGWSimAlarm=mpGWSimAlarm, PYSNMP_MODULE_ID=latitudeComm, mpHwUnit=mpHwUnit, mpT1Down=mpT1Down, mpExCode=mpExCode, latitudeComm=latitudeComm, latitudeProducts=latitudeProducts, ciscoLatitudeMIBComplianceRev1=ciscoLatitudeMIBComplianceRev1, mpHwSlot=mpHwSlot, meetingplaceConfs=meetingplaceConfs, mpMajSwAlarm=mpMajSwAlarm, ciscoLatitudeMIBCompliances=ciscoLatitudeMIBCompliances, meetingplace=meetingplace, meetingplaceObjs=meetingplaceObjs, mpMajHwAlarm=mpMajHwAlarm, mpHwPort=mpHwPort, latitudeModules=latitudeModules, latitudeReg=latitudeReg, mpMinHwAlarm=mpMinHwAlarm, ciscoLatitudeMIBGroups=ciscoLatitudeMIBGroups, mpAlarmDesc=mpAlarmDesc, ciscoLatitudeNotifsGroupRev1=ciscoLatitudeNotifsGroupRev1, meetingplaceEvents=meetingplaceEvents, mpSysUnit=mpSysUnit)
+mibBuilder.exportSymbols("CISCO-LATITUDE-MIB", ciscoLatitudeMIBComplianceRev1=ciscoLatitudeMIBComplianceRev1, latitudeGeneric=latitudeGeneric, meetingplace=meetingplace, ciscoLatitudeAlarmGroupRev1=ciscoLatitudeAlarmGroupRev1, mpSysUnit=mpSysUnit, mpHwDev=mpHwDev, PYSNMP_MODULE_ID=latitudeComm, latitudeReg=latitudeReg, latitudeModules=latitudeModules, mpHwUnit=mpHwUnit, meetingplaceEventsV2=meetingplaceEventsV2, latitudeComm=latitudeComm, meetingplaceConfs=meetingplaceConfs, meetingplaceEvents=meetingplaceEvents, mpMinHwAlarm=mpMinHwAlarm, mpMinSwAlarm=mpMinSwAlarm, meetingplaceObjs=meetingplaceObjs, ciscoLatitudeMIBCompliances=ciscoLatitudeMIBCompliances, mpExCode=mpExCode, ciscoLatitudeMIBGroups=ciscoLatitudeMIBGroups, mpHwSlot=mpHwSlot, ciscoLatitudeNotifsGroupRev1=ciscoLatitudeNotifsGroupRev1, mpHwPort=mpHwPort, latitudeProducts=latitudeProducts, mpAlarmDesc=mpAlarmDesc, mpMajSwAlarm=mpMajSwAlarm, mpMajHwAlarm=mpMajHwAlarm, mpGWSimAlarm=mpGWSimAlarm, mpT1Down=mpT1Down)

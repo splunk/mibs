@@ -2,8 +2,8 @@
   "imports": {
     "class": "imports",
     "SAEUROPE-ROOT-MIB": [
-      "tsProcessorsMIBGroups",
-      "tsProcessors"
+      "tsProcessors",
+      "tsProcessorsMIBGroups"
     ],
     "SNMPv2-CONF": [
       "NOTIFICATION-GROUP",
@@ -11,26 +11,26 @@
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "MODULE-IDENTITY",
-      "NOTIFICATION-TYPE",
-      "OBJECT-IDENTITY",
-      "IpAddress",
       "Bits",
-      "Gauge32",
       "OBJECT-TYPE",
-      "Counter64",
       "MibIdentifier",
+      "IpAddress",
+      "Counter64",
       "TimeTicks",
       "Counter32",
-      "Integer32",
+      "NOTIFICATION-TYPE",
+      "Gauge32",
       "Unsigned32",
-      "iso"
+      "iso",
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY",
+      "Integer32"
     ],
     "SNMPv2-TC": [
+      "RowStatus",
       "TruthValue",
       "DisplayString",
-      "TEXTUAL-CONVENTION",
-      "RowStatus"
+      "TEXTUAL-CONVENTION"
     ]
   },
   "saEuropeDcmModule": {
@@ -9216,7 +9216,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/saeurope/SAEUROPE-DCM-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:39:45 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:39:59 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

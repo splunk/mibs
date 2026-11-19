@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-VOICE-LMR-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VOICE-LMR-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
 DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoVoiceLmrMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 510))
 ciscoVoiceLmrMIB.setRevisions(('2004-10-14 00:00',))
@@ -79,4 +79,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cvlToneSignalGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 510, 2, 2, 2)).setObjects(("CISCO-VOICE-LMR-MIB", "cvlSignalToneName"), ("CISCO-VOICE-LMR-MIB", "cvlSignalToneFreq"), ("CISCO-VOICE-LMR-MIB", "cvlSignalToneAmp"), ("CISCO-VOICE-LMR-MIB", "cvlSignalToneDur"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvlToneSignalGroup = cvlToneSignalGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-VOICE-LMR-MIB", cvlToneClassGroup=cvlToneClassGroup, cvlMIBGroups=cvlMIBGroups, cvlMIBConformance=cvlMIBConformance, VoiceAmplitude=VoiceAmplitude, cvlClassIndex=cvlClassIndex, cvlSignalToneTable=cvlSignalToneTable, cvlMIBCompliances=cvlMIBCompliances, ciscoVoiceLmrMIB=ciscoVoiceLmrMIB, cvlSignalToneFreq=cvlSignalToneFreq, cvlMIBObjects=cvlMIBObjects, cvlClassName=cvlClassName, cvlToneObjects=cvlToneObjects, cvlSignalToneAmp=cvlSignalToneAmp, cvlToneSignalGroup=cvlToneSignalGroup, cvlSignalToneName=cvlSignalToneName, LmrToneDuration=LmrToneDuration, cvlDigitalFilter=cvlDigitalFilter, cvlClassEntry=cvlClassEntry, cvlSignalToneDur=cvlSignalToneDur, VoiceFrequency=VoiceFrequency, cvlGuardToneAmp=cvlGuardToneAmp, cvlClassTable=cvlClassTable, cvlMIBCompliance=cvlMIBCompliance, PYSNMP_MODULE_ID=ciscoVoiceLmrMIB, cvlIdleToneFlag=cvlIdleToneFlag, cvlSignalToneGroupIndex=cvlSignalToneGroupIndex, cvlSignalToneEntry=cvlSignalToneEntry, cvlGuardToneFreq=cvlGuardToneFreq, cvlSignalToneIndex=cvlSignalToneIndex)
+mibBuilder.exportSymbols("CISCO-VOICE-LMR-MIB", cvlSignalToneDur=cvlSignalToneDur, cvlToneClassGroup=cvlToneClassGroup, VoiceFrequency=VoiceFrequency, PYSNMP_MODULE_ID=ciscoVoiceLmrMIB, cvlToneSignalGroup=cvlToneSignalGroup, cvlDigitalFilter=cvlDigitalFilter, cvlSignalToneGroupIndex=cvlSignalToneGroupIndex, LmrToneDuration=LmrToneDuration, cvlIdleToneFlag=cvlIdleToneFlag, cvlSignalToneFreq=cvlSignalToneFreq, cvlGuardToneFreq=cvlGuardToneFreq, VoiceAmplitude=VoiceAmplitude, cvlToneObjects=cvlToneObjects, cvlMIBCompliance=cvlMIBCompliance, cvlClassIndex=cvlClassIndex, cvlGuardToneAmp=cvlGuardToneAmp, cvlMIBCompliances=cvlMIBCompliances, cvlSignalToneIndex=cvlSignalToneIndex, cvlSignalToneName=cvlSignalToneName, cvlClassEntry=cvlClassEntry, cvlMIBObjects=cvlMIBObjects, cvlSignalToneAmp=cvlSignalToneAmp, cvlMIBGroups=cvlMIBGroups, cvlClassName=cvlClassName, cvlSignalToneEntry=cvlSignalToneEntry, cvlMIBConformance=cvlMIBConformance, ciscoVoiceLmrMIB=ciscoVoiceLmrMIB, cvlSignalToneTable=cvlSignalToneTable, cvlClassTable=cvlClassTable)

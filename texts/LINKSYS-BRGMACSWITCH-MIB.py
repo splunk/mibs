@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module LINKSYS-BRGMACSWITCH-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/linksys/LINKSYS-BRGMACSWITCH-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:37:19 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:11 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint")
+ValueSizeConstraint, ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsUnion")
 rnd, = mibBuilder.importSymbols("LINKSYS-MIB", "rnd")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Counter64, MibIdentifier, Bits, Counter32, Gauge32, IpAddress, Unsigned32, ModuleIdentity, TimeTicks, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, NotificationType, Integer32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "MibIdentifier", "Bits", "Counter32", "Gauge32", "IpAddress", "Unsigned32", "ModuleIdentity", "TimeTicks", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "NotificationType", "Integer32", "ObjectIdentity")
-TruthValue, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "DisplayString", "TextualConvention")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+Gauge32, Counter64, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, ModuleIdentity, NotificationType, iso, Integer32, TimeTicks, Unsigned32, Counter32, IpAddress, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "Counter64", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "ModuleIdentity", "NotificationType", "iso", "Integer32", "TimeTicks", "Unsigned32", "Counter32", "IpAddress", "ObjectIdentity")
+TruthValue, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "TextualConvention", "DisplayString")
 rlBrgMacSwitch = ModuleIdentity((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 50))
 rlBrgMacSwitch.setRevisions(('2007-01-02 00:00',))
 
@@ -54,4 +54,4 @@ if mibBuilder.loadTexts: rlBrgMacSwOperTrapCount.setDescription("This variable i
 rlBrgMacSwAdminTrapFrequency = MibScalar((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 50, 12), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 86400)).clone(60)).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlBrgMacSwAdminTrapFrequency.setStatus('current')
 if mibBuilder.loadTexts: rlBrgMacSwAdminTrapFrequency.setDescription('This variable indicates the minimal frequency (in seconds)\n         of sending a trap.\n         It is relevant only when trap is enabled.')
-mibBuilder.exportSymbols("LINKSYS-BRGMACSWITCH-MIB", rlBrgMacSwOperTrapCount=rlBrgMacSwOperTrapCount, rlBrgMacSwRedBoundary=rlBrgMacSwRedBoundary, PYSNMP_MODULE_ID=rlBrgMacSwitch, rlBrgMacSwOldEntryDeleteMode=rlBrgMacSwOldEntryDeleteMode, rlBrgMacSwAdminTrapFrequency=rlBrgMacSwAdminTrapFrequency, rlBrgMacSwDynamicTables=rlBrgMacSwDynamicTables, rlBrgMacSwYellowBoundary=rlBrgMacSwYellowBoundary, rlBrgMacSwKeyType=rlBrgMacSwKeyType, rlBrgMacSwMaxTableNumber=rlBrgMacSwMaxTableNumber, rlBrgMacSwVersion=rlBrgMacSwVersion, rlBrgMacSwitch=rlBrgMacSwitch, rlBrgMacSwTrapEnable=rlBrgMacSwTrapEnable, rlBrgMacSwSpanningTree=rlBrgMacSwSpanningTree)
+mibBuilder.exportSymbols("LINKSYS-BRGMACSWITCH-MIB", rlBrgMacSwVersion=rlBrgMacSwVersion, rlBrgMacSwOldEntryDeleteMode=rlBrgMacSwOldEntryDeleteMode, rlBrgMacSwRedBoundary=rlBrgMacSwRedBoundary, rlBrgMacSwYellowBoundary=rlBrgMacSwYellowBoundary, rlBrgMacSwOperTrapCount=rlBrgMacSwOperTrapCount, rlBrgMacSwKeyType=rlBrgMacSwKeyType, rlBrgMacSwTrapEnable=rlBrgMacSwTrapEnable, rlBrgMacSwAdminTrapFrequency=rlBrgMacSwAdminTrapFrequency, rlBrgMacSwSpanningTree=rlBrgMacSwSpanningTree, PYSNMP_MODULE_ID=rlBrgMacSwitch, rlBrgMacSwitch=rlBrgMacSwitch, rlBrgMacSwMaxTableNumber=rlBrgMacSwMaxTableNumber, rlBrgMacSwDynamicTables=rlBrgMacSwDynamicTables)

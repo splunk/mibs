@@ -2,8 +2,8 @@
   "imports": {
     "class": "imports",
     "HPN-ICF-LswINF-MIB": [
-      "hpnicfifVLANTrunkStatusEntry",
-      "PortList"
+      "PortList",
+      "hpnicfifVLANTrunkStatusEntry"
     ],
     "HPN-ICF-OID-MIB": [
       "hpnicflswCommon"
@@ -15,31 +15,31 @@
       "SnmpAdminString"
     ],
     "SNMPv2-CONF": [
-      "NOTIFICATION-GROUP",
-      "MODULE-COMPLIANCE"
+      "MODULE-COMPLIANCE",
+      "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "iso",
-      "Integer32",
-      "Unsigned32",
-      "Bits",
-      "NOTIFICATION-TYPE",
-      "Gauge32",
-      "Counter64",
       "MibIdentifier",
-      "IpAddress",
-      "OBJECT-IDENTITY",
-      "Counter32",
-      "MODULE-IDENTITY",
+      "Bits",
+      "iso",
+      "Unsigned32",
+      "Integer32",
       "TimeTicks",
+      "NOTIFICATION-TYPE",
+      "OBJECT-IDENTITY",
+      "IpAddress",
+      "Counter64",
+      "Gauge32",
+      "MODULE-IDENTITY",
+      "Counter32",
       "OBJECT-TYPE"
     ],
     "SNMPv2-TC": [
-      "TimeInterval",
       "RowStatus",
+      "TimeInterval",
+      "DisplayString",
       "TEXTUAL-CONVENTION",
-      "TruthValue",
-      "DisplayString"
+      "TruthValue"
     ]
   },
   "hpnicfLswVlan": {
@@ -1136,7 +1136,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hp/HPN-ICF-LswVLAN-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:36:07 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:37:22 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

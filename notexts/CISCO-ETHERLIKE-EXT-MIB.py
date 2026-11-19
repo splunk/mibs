@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-ETHERLIKE-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ETHERLIKE-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 dot3StatsIndex, = mibBuilder.importSymbols("EtherLike-MIB", "dot3StatsIndex")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoEtherExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 645))
 ciscoEtherExtMIB.setRevisions(('2010-06-04 00:00', '2008-10-15 00:00', '2008-01-09 00:00',))
@@ -53,4 +53,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoEtherExtSubIfGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 645, 2, 2, 2)).setObjects(("CISCO-ETHERLIKE-EXT-MIB", "ceeSubInterfaceCount"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoEtherExtSubIfGroup = ciscoEtherExtSubIfGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-ETHERLIKE-EXT-MIB", ceeSubInterfaceEntry=ceeSubInterfaceEntry, ceeSubInterfaceTable=ceeSubInterfaceTable, ciscoEtherExtMIBObjects=ciscoEtherExtMIBObjects, ciscoEtherExtMIB=ciscoEtherExtMIB, ceeDot3PauseExtTable=ceeDot3PauseExtTable, ceeDot3PauseExt=ceeDot3PauseExt, ciscoEtherExtSubIfGroup=ciscoEtherExtSubIfGroup, ceeDot3PauseExtAdminMode=ceeDot3PauseExtAdminMode, ceeSubIf=ceeSubIf, PYSNMP_MODULE_ID=ciscoEtherExtMIB, ceeDot3PauseExtOperMode=ceeDot3PauseExtOperMode, ceeSubInterfaceCount=ceeSubInterfaceCount, ceeEtherExtMIBCompliances=ceeEtherExtMIBCompliances, ciscoEtherExtPauseGroup=ciscoEtherExtPauseGroup, ceeDot3PauseExtEntry=ceeDot3PauseExtEntry, ceeEtherExtMIBCompliance=ceeEtherExtMIBCompliance, ceeEtherExtMIBGroups=ceeEtherExtMIBGroups, ceeEtherExtMIBComplianceR01=ceeEtherExtMIBComplianceR01, ciscoEtherExtMIBNotifs=ciscoEtherExtMIBNotifs, ciscoEtherExtMIBConform=ciscoEtherExtMIBConform)
+mibBuilder.exportSymbols("CISCO-ETHERLIKE-EXT-MIB", ceeSubIf=ceeSubIf, ciscoEtherExtSubIfGroup=ciscoEtherExtSubIfGroup, ceeSubInterfaceEntry=ceeSubInterfaceEntry, PYSNMP_MODULE_ID=ciscoEtherExtMIB, ceeDot3PauseExtEntry=ceeDot3PauseExtEntry, ceeEtherExtMIBCompliance=ceeEtherExtMIBCompliance, ceeSubInterfaceCount=ceeSubInterfaceCount, ceeEtherExtMIBComplianceR01=ceeEtherExtMIBComplianceR01, ciscoEtherExtMIB=ciscoEtherExtMIB, ceeSubInterfaceTable=ceeSubInterfaceTable, ceeEtherExtMIBGroups=ceeEtherExtMIBGroups, ciscoEtherExtMIBNotifs=ciscoEtherExtMIBNotifs, ceeEtherExtMIBCompliances=ceeEtherExtMIBCompliances, ciscoEtherExtMIBObjects=ciscoEtherExtMIBObjects, ceeDot3PauseExtOperMode=ceeDot3PauseExtOperMode, ceeDot3PauseExtAdminMode=ceeDot3PauseExtAdminMode, ceeDot3PauseExt=ceeDot3PauseExt, ciscoEtherExtMIBConform=ciscoEtherExtMIBConform, ciscoEtherExtPauseGroup=ciscoEtherExtPauseGroup, ceeDot3PauseExtTable=ceeDot3PauseExtTable)

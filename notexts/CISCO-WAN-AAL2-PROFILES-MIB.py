@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-WAN-AAL2-PROFILES-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-AAL2-PROFILES-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoWanAal2ProfilesMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 17))
 ciscoWanAal2ProfilesMIB.setRevisions(('2005-09-01 00:00', '2004-04-09 00:00', '2003-10-10 00:00', '2003-08-14 00:00', '2003-05-23 00:00', '2001-09-10 00:00', '2001-08-24 15:00', '2001-01-19 15:00',))
@@ -48,4 +48,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 aal2ProfileGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 17, 2, 2, 1)).setObjects(("CISCO-WAN-AAL2-PROFILES-MIB", "aal2ProfilePreference"), ("CISCO-WAN-AAL2-PROFILES-MIB", "aal2ProfileVoiceCodec"), ("CISCO-WAN-AAL2-PROFILES-MIB", "aal2ProfileVoicePktPeriod"), ("CISCO-WAN-AAL2-PROFILES-MIB", "aal2ProfileVoiceVAD"), ("CISCO-WAN-AAL2-PROFILES-MIB", "aal2ProfileVBDCodec"), ("CISCO-WAN-AAL2-PROFILES-MIB", "aal2ProfileVBDPktPeriod"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     aal2ProfileGroup = aal2ProfileGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-WAN-AAL2-PROFILES-MIB", aal2ProfileVBDPktPeriod=aal2ProfileVBDPktPeriod, aal2ProfilePreference=aal2ProfilePreference, aal2ProfileVoicePktPeriod=aal2ProfileVoicePktPeriod, aal2ProfileMIBCompliance=aal2ProfileMIBCompliance, aal2ProfilesGrpTable=aal2ProfilesGrpTable, aal2ProfileVoiceCodec=aal2ProfileVoiceCodec, aal2ProfileVBDCodec=aal2ProfileVBDCodec, aal2ProfileMIBConformance=aal2ProfileMIBConformance, aal2ProfileType=aal2ProfileType, aal2ProfilesGrp=aal2ProfilesGrp, aal2ProfileMIBCompliances=aal2ProfileMIBCompliances, ciscoWanAal2ProfilesMIB=ciscoWanAal2ProfilesMIB, PYSNMP_MODULE_ID=ciscoWanAal2ProfilesMIB, aal2ProfileMIBGroups=aal2ProfileMIBGroups, ciscoWanAal2ProfilesMIBObjects=ciscoWanAal2ProfilesMIBObjects, aal2ProfileGroup=aal2ProfileGroup, aal2ProfileVoiceVAD=aal2ProfileVoiceVAD, aal2ProfileNumber=aal2ProfileNumber, aal2ProfilesGrpEntry=aal2ProfilesGrpEntry)
+mibBuilder.exportSymbols("CISCO-WAN-AAL2-PROFILES-MIB", aal2ProfilePreference=aal2ProfilePreference, aal2ProfileMIBConformance=aal2ProfileMIBConformance, aal2ProfileMIBCompliances=aal2ProfileMIBCompliances, aal2ProfileMIBCompliance=aal2ProfileMIBCompliance, aal2ProfileVoiceCodec=aal2ProfileVoiceCodec, aal2ProfileGroup=aal2ProfileGroup, aal2ProfileMIBGroups=aal2ProfileMIBGroups, ciscoWanAal2ProfilesMIB=ciscoWanAal2ProfilesMIB, aal2ProfileNumber=aal2ProfileNumber, PYSNMP_MODULE_ID=ciscoWanAal2ProfilesMIB, aal2ProfileVoiceVAD=aal2ProfileVoiceVAD, aal2ProfilesGrpTable=aal2ProfilesGrpTable, aal2ProfilesGrpEntry=aal2ProfilesGrpEntry, aal2ProfileVBDCodec=aal2ProfileVBDCodec, aal2ProfileVoicePktPeriod=aal2ProfileVoicePktPeriod, aal2ProfilesGrp=aal2ProfilesGrp, ciscoWanAal2ProfilesMIBObjects=ciscoWanAal2ProfilesMIBObjects, aal2ProfileType=aal2ProfileType, aal2ProfileVBDPktPeriod=aal2ProfileVBDPktPeriod)

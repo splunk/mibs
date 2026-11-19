@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-SYSLOG-EVENT-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SYSLOG-EVENT-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 SyslogSeverity, = mibBuilder.importSymbols("CISCO-SYSLOG-MIB", "SyslogSeverity")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoSyslogEventExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 270))
 ciscoSyslogEventExtMIB.setRevisions(('2002-02-12 00:00',))
@@ -54,4 +54,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoSlogEventExtStatsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 270, 2, 2, 2)).setObjects(("CISCO-SYSLOG-EVENT-EXT-MIB", "cslogEventDispositionCount"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoSlogEventExtStatsGroup = ciscoSlogEventExtStatsGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-SYSLOG-EVENT-EXT-MIB", cslogEventDispositionSeverity=cslogEventDispositionSeverity, cslogEventSeverityDispHtmlConsol=cslogEventSeverityDispHtmlConsol, CslogEventDisposition=CslogEventDisposition, PYSNMP_MODULE_ID=ciscoSyslogEventExtMIB, ciscoSyslogEventExtMIBObjects=ciscoSyslogEventExtMIBObjects, cslogEventDispositionCount=cslogEventDispositionCount, ciscoSlogEventExtCompliance=ciscoSlogEventExtCompliance, cslogEventDisposition=cslogEventDisposition, ciscoSlogEventExtConfigGroup=ciscoSlogEventExtConfigGroup, ciscoSlogEventExtStatsGroup=ciscoSlogEventExtStatsGroup, cslogEventSeverityDispConsole=cslogEventSeverityDispConsole, cslogEventDispositionEntry=cslogEventDispositionEntry, cslogEventConfig=cslogEventConfig, cslogEventSeverityDispHtmlGUI=cslogEventSeverityDispHtmlGUI, ciscoSlogEventExtMIBConformance=ciscoSlogEventExtMIBConformance, cslogEventDispositionTable=cslogEventDispositionTable, ciscoSyslogEventExtMIB=ciscoSyslogEventExtMIB, ciscoSlogEventExtMIBGroups=ciscoSlogEventExtMIBGroups, ciscoSlogEventExtMIBCompliances=ciscoSlogEventExtMIBCompliances, cslogEventDetailDefault=cslogEventDetailDefault)
+mibBuilder.exportSymbols("CISCO-SYSLOG-EVENT-EXT-MIB", ciscoSyslogEventExtMIB=ciscoSyslogEventExtMIB, cslogEventSeverityDispHtmlConsol=cslogEventSeverityDispHtmlConsol, ciscoSlogEventExtConfigGroup=ciscoSlogEventExtConfigGroup, ciscoSyslogEventExtMIBObjects=ciscoSyslogEventExtMIBObjects, cslogEventDetailDefault=cslogEventDetailDefault, cslogEventSeverityDispHtmlGUI=cslogEventSeverityDispHtmlGUI, cslogEventDispositionTable=cslogEventDispositionTable, ciscoSlogEventExtMIBCompliances=ciscoSlogEventExtMIBCompliances, PYSNMP_MODULE_ID=ciscoSyslogEventExtMIB, ciscoSlogEventExtMIBGroups=ciscoSlogEventExtMIBGroups, ciscoSlogEventExtCompliance=ciscoSlogEventExtCompliance, CslogEventDisposition=CslogEventDisposition, cslogEventDispositionSeverity=cslogEventDispositionSeverity, ciscoSlogEventExtMIBConformance=ciscoSlogEventExtMIBConformance, ciscoSlogEventExtStatsGroup=ciscoSlogEventExtStatsGroup, cslogEventDispositionCount=cslogEventDispositionCount, cslogEventDispositionEntry=cslogEventDispositionEntry, cslogEventConfig=cslogEventConfig, cslogEventSeverityDispConsole=cslogEventSeverityDispConsole, cslogEventDisposition=cslogEventDisposition)

@@ -5,29 +5,29 @@
       "hillstoneSys"
     ],
     "SNMPv2-CONF": [
-      "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "iso",
-      "OBJECT-TYPE",
-      "MibIdentifier",
-      "MODULE-IDENTITY",
+      "Gauge32",
+      "Counter64",
       "Counter32",
-      "TimeTicks",
       "IpAddress",
-      "Integer32",
-      "NOTIFICATION-TYPE",
+      "MODULE-IDENTITY",
       "OBJECT-IDENTITY",
+      "Integer32",
+      "MibIdentifier",
       "Unsigned32",
       "Bits",
-      "Gauge32",
-      "Counter64"
+      "TimeTicks",
+      "iso",
+      "NOTIFICATION-TYPE",
+      "OBJECT-TYPE"
     ],
     "SNMPv2-TC": [
-      "TruthValue",
+      "DisplayString",
       "TEXTUAL-CONVENTION",
-      "DisplayString"
+      "TruthValue"
     ]
   },
   "DisplayString": {
@@ -260,7 +260,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/hillstone/HILLSTONE-SYSTEM-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:35:29 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:36:57 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module Unity-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/emc/Unity-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:34:17 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:36:05 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion, ConstraintsIntersection, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion", "ConstraintsIntersection", "ValueRangeConstraint")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Gauge32, Unsigned32, Bits, MibIdentifier, TimeTicks, Counter32, enterprises, Integer32, NotificationType, ModuleIdentity, ObjectIdentity, IpAddress, iso, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "Unsigned32", "Bits", "MibIdentifier", "TimeTicks", "Counter32", "enterprises", "Integer32", "NotificationType", "ModuleIdentity", "ObjectIdentity", "IpAddress", "iso", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
-TimeStamp, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "TextualConvention", "DisplayString")
+ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection", "SingleValueConstraint")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+Bits, ModuleIdentity, MibIdentifier, Counter32, Gauge32, Counter64, NotificationType, iso, Integer32, TimeTicks, IpAddress, ObjectIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, enterprises = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "ModuleIdentity", "MibIdentifier", "Counter32", "Gauge32", "Counter64", "NotificationType", "iso", "Integer32", "TimeTicks", "IpAddress", "ObjectIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "enterprises")
+DisplayString, TimeStamp, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TimeStamp", "TextualConvention")
 unity = ModuleIdentity((1, 3, 6, 1, 4, 1, 1139, 103))
 unity.setRevisions(('2016-08-26 00:00',))
 if mibBuilder.loadTexts: unity.setLastUpdated('201608260000Z')
@@ -47,4 +47,4 @@ unityGenericTrapInformational = NotificationType((1, 3, 6, 1, 4, 1, 1139, 103, 1
 if mibBuilder.loadTexts: unityGenericTrapInformational.setStatus('current')
 unityGenericTrapDebug = NotificationType((1, 3, 6, 1, 4, 1, 1139, 103, 1, 18, 2, 7)).setObjects(("Unity-MIB", "unityTrapNode"), ("Unity-MIB", "unityTrapComponent"), ("Unity-MIB", "unityTrapSymptomID"), ("Unity-MIB", "unityTrapSymptomText"), ("Unity-MIB", "unityTrapTimeStamp"))
 if mibBuilder.loadTexts: unityGenericTrapDebug.setStatus('current')
-mibBuilder.exportSymbols("Unity-MIB", unityTrapTimeStamp=unityTrapTimeStamp, unityGenericTrap=unityGenericTrap, unityTrapVariable=unityTrapVariable, emc=emc, unityGenericTrapEmergency=unityGenericTrapEmergency, unityTrap=unityTrap, PYSNMP_MODULE_ID=unity, unityObjects=unityObjects, unityGenericTrapError=unityGenericTrapError, unityTrapComponent=unityTrapComponent, unityGenericTrapAlert=unityGenericTrapAlert, unityGenericTrapInformational=unityGenericTrapInformational, unityGenericTrapDebug=unityGenericTrapDebug, unity=unity, unityTrapSymptomText=unityTrapSymptomText, unityTrapNode=unityTrapNode, unityGenericTrapCritical=unityGenericTrapCritical, unityTrapSymptomID=unityTrapSymptomID, unityGenericTrapNotice=unityGenericTrapNotice, unityGenericTrapWarning=unityGenericTrapWarning)
+mibBuilder.exportSymbols("Unity-MIB", unityTrapTimeStamp=unityTrapTimeStamp, PYSNMP_MODULE_ID=unity, unityTrapNode=unityTrapNode, unityGenericTrapDebug=unityGenericTrapDebug, emc=emc, unityTrapSymptomText=unityTrapSymptomText, unityTrapVariable=unityTrapVariable, unityGenericTrapCritical=unityGenericTrapCritical, unityGenericTrapWarning=unityGenericTrapWarning, unityGenericTrapError=unityGenericTrapError, unityGenericTrapEmergency=unityGenericTrapEmergency, unityObjects=unityObjects, unityTrapComponent=unityTrapComponent, unityGenericTrapAlert=unityGenericTrapAlert, unityGenericTrap=unityGenericTrap, unityTrap=unityTrap, unityGenericTrapNotice=unityGenericTrapNotice, unity=unity, unityTrapSymptomID=unityTrapSymptomID, unityGenericTrapInformational=unityGenericTrapInformational)

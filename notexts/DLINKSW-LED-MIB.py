@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module DLINKSW-LED-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-LED-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:46 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint")
+SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, iso, TimeTicks, ModuleIdentity, NotificationType, ObjectIdentity, Unsigned32, MibIdentifier, Gauge32, Counter32, Counter64, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "iso", "TimeTicks", "ModuleIdentity", "NotificationType", "ObjectIdentity", "Unsigned32", "MibIdentifier", "Gauge32", "Counter32", "Counter64", "IpAddress")
-TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
+Counter32, Counter64, IpAddress, ModuleIdentity, Gauge32, Unsigned32, Bits, iso, ObjectIdentity, Integer32, NotificationType, MibIdentifier, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Counter64", "IpAddress", "ModuleIdentity", "Gauge32", "Unsigned32", "Bits", "iso", "ObjectIdentity", "Integer32", "NotificationType", "MibIdentifier", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 dlinkSwLedMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 163))
 dlinkSwLedMIB.setRevisions(('2013-09-13 00:00', '2013-09-06 00:00',))
 if mibBuilder.loadTexts: dlinkSwLedMIB.setLastUpdated('201309130000Z')
@@ -38,4 +38,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 dLedInfoGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 163, 2, 2, 1)).setObjects(("DLINKSW-LED-MIB", "dLedSysLedStatus"), ("DLINKSW-LED-MIB", "dLedIfLedStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dLedInfoGroup = dLedInfoGroup.setStatus('current')
-mibBuilder.exportSymbols("DLINKSW-LED-MIB", PYSNMP_MODULE_ID=dlinkSwLedMIB, dLedMIBGroups=dLedMIBGroups, dLedSysLedStatus=dLedSysLedStatus, dLedMIBObjects=dLedMIBObjects, dLedIfLedStatus=dLedIfLedStatus, dLedMIBCompliances=dLedMIBCompliances, dlinkSwLedMIB=dlinkSwLedMIB, dLedMIBConformance=dLedMIBConformance, dLedInfoEntry=dLedInfoEntry, dLedInfoGroup=dLedInfoGroup, dLedMIBCompliance=dLedMIBCompliance, dLedBoxId=dLedBoxId, dLedMIBNotifications=dLedMIBNotifications, dLedInfoTable=dLedInfoTable)
+mibBuilder.exportSymbols("DLINKSW-LED-MIB", dLedInfoEntry=dLedInfoEntry, dLedSysLedStatus=dLedSysLedStatus, dLedMIBCompliances=dLedMIBCompliances, dLedInfoTable=dLedInfoTable, PYSNMP_MODULE_ID=dlinkSwLedMIB, dlinkSwLedMIB=dlinkSwLedMIB, dLedMIBNotifications=dLedMIBNotifications, dLedMIBGroups=dLedMIBGroups, dLedInfoGroup=dLedInfoGroup, dLedMIBCompliance=dLedMIBCompliance, dLedMIBConformance=dLedMIBConformance, dLedBoxId=dLedBoxId, dLedMIBObjects=dLedMIBObjects, dLedIfLedStatus=dLedIfLedStatus)

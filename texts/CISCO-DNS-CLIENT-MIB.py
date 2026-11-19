@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-DNS-CLIENT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DNS-CLIENT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoDNSClientMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 436))
 ciscoDNSClientMIB.setRevisions(('2004-09-09 00:00',))
 
@@ -87,4 +87,4 @@ ciscoDNSDomainNameConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 436, 2, 2, 
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoDNSDomainNameConfigGroup = ciscoDNSDomainNameConfigGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoDNSDomainNameConfigGroup.setDescription('A collection of objects for DNS \n                Domain Name Configuration.')
-mibBuilder.exportSymbols("CISCO-DNS-CLIENT-MIB", ciscoDNSClientMIBCompliances=ciscoDNSClientMIBCompliances, cdcNoOfDNSServerConfig=cdcNoOfDNSServerConfig, cdcDNSServerEntry=cdcDNSServerEntry, cdcDNSDomainNameIndex=cdcDNSDomainNameIndex, cdcDNSServerAddrType=cdcDNSServerAddrType, ciscoDNSClientMIBNotifs=ciscoDNSClientMIBNotifs, cdcDNSDomainName=cdcDNSDomainName, ciscoDNSClientMIBObjects=ciscoDNSClientMIBObjects, cdcDNSConfigEnable=cdcDNSConfigEnable, cdcDNSServerAddr=cdcDNSServerAddr, cdcDNSServerIndex=cdcDNSServerIndex, cdcDNSServerStatus=cdcDNSServerStatus, ciscoDNSDomainNameConfigGroup=ciscoDNSDomainNameConfigGroup, cdcDNSDomainNameEntry=cdcDNSDomainNameEntry, cdcDefaultDNSDomainName=cdcDefaultDNSDomainName, ciscoDNSServerConfigGroup=ciscoDNSServerConfigGroup, cdcConfigGroup=cdcConfigGroup, cdcDNSServerNextAvailIndex=cdcDNSServerNextAvailIndex, cdcDNSServerTable=cdcDNSServerTable, ciscoDNSClientMIBCompliance=ciscoDNSClientMIBCompliance, cdcDNSDomainNameTable=cdcDNSDomainNameTable, PYSNMP_MODULE_ID=ciscoDNSClientMIB, ciscoDNSClientMIBConformance=ciscoDNSClientMIBConformance, ciscoDNSClientMIB=ciscoDNSClientMIB, ciscoDNSClientMIBGroups=ciscoDNSClientMIBGroups, cdcDNSDomainNameStatus=cdcDNSDomainNameStatus)
+mibBuilder.exportSymbols("CISCO-DNS-CLIENT-MIB", ciscoDNSClientMIB=ciscoDNSClientMIB, cdcDefaultDNSDomainName=cdcDefaultDNSDomainName, cdcNoOfDNSServerConfig=cdcNoOfDNSServerConfig, cdcDNSServerAddr=cdcDNSServerAddr, PYSNMP_MODULE_ID=ciscoDNSClientMIB, cdcDNSServerIndex=cdcDNSServerIndex, cdcDNSServerStatus=cdcDNSServerStatus, ciscoDNSClientMIBConformance=ciscoDNSClientMIBConformance, cdcDNSServerEntry=cdcDNSServerEntry, cdcConfigGroup=cdcConfigGroup, cdcDNSServerTable=cdcDNSServerTable, cdcDNSConfigEnable=cdcDNSConfigEnable, ciscoDNSClientMIBGroups=ciscoDNSClientMIBGroups, cdcDNSServerNextAvailIndex=cdcDNSServerNextAvailIndex, cdcDNSDomainNameIndex=cdcDNSDomainNameIndex, ciscoDNSClientMIBNotifs=ciscoDNSClientMIBNotifs, ciscoDNSClientMIBObjects=ciscoDNSClientMIBObjects, ciscoDNSClientMIBCompliance=ciscoDNSClientMIBCompliance, cdcDNSDomainNameTable=cdcDNSDomainNameTable, ciscoDNSServerConfigGroup=ciscoDNSServerConfigGroup, cdcDNSDomainNameStatus=cdcDNSDomainNameStatus, ciscoDNSDomainNameConfigGroup=ciscoDNSDomainNameConfigGroup, cdcDNSDomainNameEntry=cdcDNSDomainNameEntry, cdcDNSDomainName=cdcDNSDomainName, cdcDNSServerAddrType=cdcDNSServerAddrType, ciscoDNSClientMIBCompliances=ciscoDNSClientMIBCompliances)

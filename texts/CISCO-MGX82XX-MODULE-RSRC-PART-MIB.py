@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-MGX82XX-MODULE-RSRC-PART-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MGX82XX-MODULE-RSRC-PART-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 cardGeneric, = mibBuilder.importSymbols("BASIS-MIB", "cardGeneric")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoMgx82xxModuleRsrcPartMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 73))
 ciscoMgx82xxModuleRsrcPartMIB.setRevisions(('2003-04-18 00:00',))
@@ -53,4 +53,4 @@ cmmRsrcPartGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 73, 2, 2, 1)).setObj
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmmRsrcPartGroup = cmmRsrcPartGroup.setStatus('current')
 if mibBuilder.loadTexts: cmmRsrcPartGroup.setDescription('A collection of objects providing the\n        resource partition configuration information\n        in service modules.')
-mibBuilder.exportSymbols("CISCO-MGX82XX-MODULE-RSRC-PART-MIB", cardResourcePartition=cardResourcePartition, cmmRsrcPartMIBCompliances=cmmRsrcPartMIBCompliances, cmmRsrcPartCompliance=cmmRsrcPartCompliance, cardLcnPartitionType=cardLcnPartitionType, cardResPartRowStatus=cardResPartRowStatus, PYSNMP_MODULE_ID=ciscoMgx82xxModuleRsrcPartMIB, cardResPartNumOfLcnAvail=cardResPartNumOfLcnAvail, cmmRsrcPartMIBGroups=cmmRsrcPartMIBGroups, cmmRsrcPartMIBConformance=cmmRsrcPartMIBConformance, cardResPartCtrlrNum=cardResPartCtrlrNum, cmmRsrcPartGroup=cmmRsrcPartGroup, cardResPartGrpEntry=cardResPartGrpEntry, ciscoMgx82xxModuleRsrcPartMIB=ciscoMgx82xxModuleRsrcPartMIB, cardResPartGrpTable=cardResPartGrpTable)
+mibBuilder.exportSymbols("CISCO-MGX82XX-MODULE-RSRC-PART-MIB", cardLcnPartitionType=cardLcnPartitionType, cardResPartRowStatus=cardResPartRowStatus, cmmRsrcPartGroup=cmmRsrcPartGroup, cardResPartGrpTable=cardResPartGrpTable, cmmRsrcPartMIBCompliances=cmmRsrcPartMIBCompliances, cardResPartGrpEntry=cardResPartGrpEntry, cardResPartCtrlrNum=cardResPartCtrlrNum, cmmRsrcPartCompliance=cmmRsrcPartCompliance, PYSNMP_MODULE_ID=ciscoMgx82xxModuleRsrcPartMIB, cmmRsrcPartMIBConformance=cmmRsrcPartMIBConformance, cardResPartNumOfLcnAvail=cardResPartNumOfLcnAvail, ciscoMgx82xxModuleRsrcPartMIB=ciscoMgx82xxModuleRsrcPartMIB, cmmRsrcPartMIBGroups=cmmRsrcPartMIBGroups, cardResourcePartition=cardResourcePartition)

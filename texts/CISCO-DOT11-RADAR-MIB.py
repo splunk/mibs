@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-DOT11-RADAR-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DOT11-RADAR-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:08 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, iso, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, NotificationType, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "iso", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "NotificationType", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoDot11RadarMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 627))
 ciscoDot11RadarMIB.setRevisions(('2007-05-07 00:00',))
 
@@ -69,4 +69,4 @@ ciscoDot11RadarNotificationGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 62
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoDot11RadarNotificationGroup = ciscoDot11RadarNotificationGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoDot11RadarNotificationGroup.setDescription('This group provides notifications related to Radar\n        Channel.')
-mibBuilder.exportSymbols("CISCO-DOT11-RADAR-MIB", ciscoDot11RadarMIBConform=ciscoDot11RadarMIBConform, cdrDot11RadarDetectInfo=cdrDot11RadarDetectInfo, cdrChannelReturnNotifEnabled=cdrChannelReturnNotifEnabled, ciscoDot11RadarDetectInfoGroup=ciscoDot11RadarDetectInfoGroup, ciscoDot11RadarMIBGroups=ciscoDot11RadarMIBGroups, ciscoDot11RadarCompliance=ciscoDot11RadarCompliance, ciscoDot11RadarChannelReturn=ciscoDot11RadarChannelReturn, cdrDot11RadarNotifObjectGroup=cdrDot11RadarNotifObjectGroup, ciscoDot11RadarChannelSwitch=ciscoDot11RadarChannelSwitch, ciscoDot11RadarMIBObjects=ciscoDot11RadarMIBObjects, ciscoDot11RadarNotificationGroup=ciscoDot11RadarNotificationGroup, ciscoDot11RadarMIBCompliances=ciscoDot11RadarMIBCompliances, ciscoDot11RadarMIBNotifs=ciscoDot11RadarMIBNotifs, cdrChannelSwitchNotifEnabled=cdrChannelSwitchNotifEnabled, cdrDot11PreferFrequency=cdrDot11PreferFrequency, ciscoDot11RadarMIB=ciscoDot11RadarMIB, cdrChannelReturnLastTime=cdrChannelReturnLastTime, cdrDot11NewFrequency=cdrDot11NewFrequency, cdrDot11RadarNotifConfig=cdrDot11RadarNotifConfig, cdrChannelSwitchLastTime=cdrChannelSwitchLastTime, PYSNMP_MODULE_ID=ciscoDot11RadarMIB)
+mibBuilder.exportSymbols("CISCO-DOT11-RADAR-MIB", ciscoDot11RadarMIBConform=ciscoDot11RadarMIBConform, cdrDot11RadarNotifObjectGroup=cdrDot11RadarNotifObjectGroup, ciscoDot11RadarCompliance=ciscoDot11RadarCompliance, cdrDot11NewFrequency=cdrDot11NewFrequency, ciscoDot11RadarMIBObjects=ciscoDot11RadarMIBObjects, cdrDot11RadarNotifConfig=cdrDot11RadarNotifConfig, ciscoDot11RadarNotificationGroup=ciscoDot11RadarNotificationGroup, ciscoDot11RadarChannelSwitch=ciscoDot11RadarChannelSwitch, PYSNMP_MODULE_ID=ciscoDot11RadarMIB, cdrChannelReturnLastTime=cdrChannelReturnLastTime, ciscoDot11RadarChannelReturn=ciscoDot11RadarChannelReturn, cdrChannelSwitchLastTime=cdrChannelSwitchLastTime, cdrChannelReturnNotifEnabled=cdrChannelReturnNotifEnabled, ciscoDot11RadarMIBCompliances=ciscoDot11RadarMIBCompliances, ciscoDot11RadarMIBGroups=ciscoDot11RadarMIBGroups, ciscoDot11RadarMIBNotifs=ciscoDot11RadarMIBNotifs, ciscoDot11RadarMIB=ciscoDot11RadarMIB, cdrDot11RadarDetectInfo=cdrDot11RadarDetectInfo, ciscoDot11RadarDetectInfoGroup=ciscoDot11RadarDetectInfoGroup, cdrChannelSwitchNotifEnabled=cdrChannelSwitchNotifEnabled, cdrDot11PreferFrequency=cdrDot11PreferFrequency)

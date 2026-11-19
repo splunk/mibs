@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module FIREBRICK-CPU-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/firebrick/FIREBRICK-CPU-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:34:53 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:36:30 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint, SingleValueConstraint, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint", "SingleValueConstraint", "ValueRangeConstraint")
+ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion", "ValueSizeConstraint", "SingleValueConstraint")
 firebrickNewStyle, = mibBuilder.importSymbols("FIREBRICK-MIB", "firebrickNewStyle")
-InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ObjectIdentity, NotificationType, Unsigned32, Integer32, iso, enterprises, TimeTicks, Counter32, IpAddress, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Gauge32, Counter64, ModuleIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "ObjectIdentity", "NotificationType", "Unsigned32", "Integer32", "iso", "enterprises", "TimeTicks", "Counter32", "IpAddress", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Gauge32", "Counter64", "ModuleIdentity")
+InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+enterprises, MibIdentifier, TimeTicks, Counter64, Gauge32, IpAddress, ModuleIdentity, Counter32, ObjectIdentity, iso, Integer32, Unsigned32, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "enterprises", "MibIdentifier", "TimeTicks", "Counter64", "Gauge32", "IpAddress", "ModuleIdentity", "Counter32", "ObjectIdentity", "iso", "Integer32", "Unsigned32", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 fbCpuMib = ModuleIdentity((1, 3, 6, 1, 4, 1, 24693, 100, 2))
 fbCpuMib.setRevisions(('2020-06-17 00:00',))
@@ -33,4 +33,4 @@ fbCpuIRQPeak = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 2, 1, 1, 3), Gauge3
 if mibBuilder.loadTexts: fbCpuIRQPeak.setStatus('current')
 fbCpuAllPeak = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 2, 1, 1, 4), Gauge32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: fbCpuAllPeak.setStatus('current')
-mibBuilder.exportSymbols("FIREBRICK-CPU-MIB", fbCpuIRQPeak=fbCpuIRQPeak, PYSNMP_MODULE_ID=fbCpuMib, fbCpuPeriod=fbCpuPeriod, fbCpuAllPeak=fbCpuAllPeak, fbCpuAll=fbCpuAll, fbCpuCore=fbCpuCore, fbCpuUsageEntry=fbCpuUsageEntry, fbCpuIRQ=fbCpuIRQ, fbCpuMib=fbCpuMib, fbCpuUsageTable=fbCpuUsageTable)
+mibBuilder.exportSymbols("FIREBRICK-CPU-MIB", fbCpuAllPeak=fbCpuAllPeak, fbCpuIRQPeak=fbCpuIRQPeak, fbCpuAll=fbCpuAll, fbCpuMib=fbCpuMib, fbCpuUsageEntry=fbCpuUsageEntry, fbCpuUsageTable=fbCpuUsageTable, fbCpuPeriod=fbCpuPeriod, PYSNMP_MODULE_ID=fbCpuMib, fbCpuCore=fbCpuCore, fbCpuIRQ=fbCpuIRQ)

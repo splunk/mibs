@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CT-FLASH-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/enterasys/CT-FLASH-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:34:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:36:10 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueRangeConstraint")
+ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion", "SingleValueConstraint", "ConstraintsIntersection")
 ctFlash, = mibBuilder.importSymbols("CTRON-MIB-NAMES", "ctFlash")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Counter32, ModuleIdentity, TimeTicks, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, NotificationType, Gauge32, MibIdentifier, Integer32, Unsigned32, Bits, Counter64, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "NotificationType", "Gauge32", "MibIdentifier", "Integer32", "Unsigned32", "Bits", "Counter64", "IpAddress")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+ModuleIdentity, Counter64, NotificationType, Bits, Counter32, TimeTicks, Unsigned32, MibIdentifier, IpAddress, Gauge32, ObjectIdentity, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "Counter64", "NotificationType", "Bits", "Counter32", "TimeTicks", "Unsigned32", "MibIdentifier", "IpAddress", "Gauge32", "ObjectIdentity", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 flashStatus = MibIdentifier((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 10, 1))
 flashFile = MibIdentifier((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 10, 2))
@@ -61,4 +61,4 @@ flashCmdSize = MibScalar((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 10, 3, 10), Integer32()
 if mibBuilder.loadTexts: flashCmdSize.setStatus('mandatory')
 flashBlockCount = MibScalar((1, 3, 6, 1, 4, 1, 52, 4, 1, 5, 10, 3, 11), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: flashBlockCount.setStatus('mandatory')
-mibBuilder.exportSymbols("CT-FLASH-MIB", flashCmdStatus=flashCmdStatus, flashFilename=flashFilename, flashFileSize=flashFileSize, flashVolFiles=flashVolFiles, flashFileEntry=flashFileEntry, flashVolumeStatusTable=flashVolumeStatusTable, flashFileTable=flashFileTable, flashFileID=flashFileID, flashCmdNetAddress=flashCmdNetAddress, flashVolumeStatusEntry=flashVolumeStatusEntry, flashFile=flashFile, flashCmd=flashCmd, flashVolume=flashVolume, flashCmdType=flashCmdType, flashCmdError=flashCmdError, flashBlockCount=flashBlockCount, flashCmdSize=flashCmdSize, flashFileVersion=flashFileVersion, flashCmdOperation=flashCmdOperation, flashCmdVersion=flashCmdVersion, flashStatus=flashStatus, flashFileType=flashFileType, flashCmdVolume=flashCmdVolume, flashVolSpace=flashVolSpace, flashCmdPath=flashCmdPath, flashCmdFile=flashCmdFile)
+mibBuilder.exportSymbols("CT-FLASH-MIB", flashCmdFile=flashCmdFile, flashFileSize=flashFileSize, flashCmdStatus=flashCmdStatus, flashStatus=flashStatus, flashFileTable=flashFileTable, flashCmdVersion=flashCmdVersion, flashCmd=flashCmd, flashFileID=flashFileID, flashCmdOperation=flashCmdOperation, flashCmdType=flashCmdType, flashFilename=flashFilename, flashCmdError=flashCmdError, flashCmdNetAddress=flashCmdNetAddress, flashVolSpace=flashVolSpace, flashFileVersion=flashFileVersion, flashBlockCount=flashBlockCount, flashVolumeStatusTable=flashVolumeStatusTable, flashVolumeStatusEntry=flashVolumeStatusEntry, flashCmdVolume=flashCmdVolume, flashFileType=flashFileType, flashFile=flashFile, flashCmdSize=flashCmdSize, flashFileEntry=flashFileEntry, flashVolFiles=flashVolFiles, flashCmdPath=flashCmdPath, flashVolume=flashVolume)

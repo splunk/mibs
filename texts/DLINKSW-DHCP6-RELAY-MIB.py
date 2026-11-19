@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module DLINKSW-DHCP6-RELAY-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-DHCP6-RELAY-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:48 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 InterfaceIndexOrZero, InterfaceIndex = mibBuilder.importSymbols("IF-MIB", "InterfaceIndexOrZero", "InterfaceIndex")
 InetAddressIPv6, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressIPv6")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-Integer32, Counter32, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, Gauge32, ObjectIdentity, ModuleIdentity, Bits, IpAddress, iso, NotificationType, MibIdentifier, Unsigned32 = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Counter32", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "Gauge32", "ObjectIdentity", "ModuleIdentity", "Bits", "IpAddress", "iso", "NotificationType", "MibIdentifier", "Unsigned32")
-RowStatus, TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "TextualConvention", "DisplayString", "TruthValue")
+ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
+Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Unsigned32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Unsigned32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
+TextualConvention, TruthValue, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "RowStatus", "DisplayString")
 dlinkSwDhcp6RelayMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 88))
 dlinkSwDhcp6RelayMIB.setRevisions(('2013-01-18 00:00', '2013-09-05 00:00',))
 
@@ -82,4 +82,4 @@ dDhcp6RelayOption37Group = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 88, 2, 2, 2))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dDhcp6RelayOption37Group = dDhcp6RelayOption37Group.setStatus('current')
 if mibBuilder.loadTexts: dDhcp6RelayOption37Group.setDescription('This group contains the collection of objects related to  \n\t\t    DHCPv6 relay agent Remote ID configuration.')
-mibBuilder.exportSymbols("DLINKSW-DHCP6-RELAY-MIB", dDhcp6RIfRelayDestEntry=dDhcp6RIfRelayDestEntry, dDhcp6RIfRelayDestRowStatus=dDhcp6RIfRelayDestRowStatus, dDhcp6RelayGeneral=dDhcp6RelayGeneral, dDhcp6RBasicGroup=dDhcp6RBasicGroup, dDhcp6RIfRelayDestOutIfIndex=dDhcp6RIfRelayDestOutIfIndex, dDhcp6RRemoteIdPolicy=dDhcp6RRemoteIdPolicy, dDhcp6RelayGroups=dDhcp6RelayGroups, PYSNMP_MODULE_ID=dlinkSwDhcp6RelayMIB, dDhcp6RelayOption37Group=dDhcp6RelayOption37Group, dDhcp6RelayCompliances=dDhcp6RelayCompliances, dDhcp6RelayMIBNotifications=dDhcp6RelayMIBNotifications, dDhcp6RRemoteIdInsertEnabled=dDhcp6RRemoteIdInsertEnabled, dDhcp6RRemoteIdUdfType=dDhcp6RRemoteIdUdfType, dDhcp6RRemoteIdUdfValue=dDhcp6RRemoteIdUdfValue, dDhcp6RIfRelayDestDestAddr=dDhcp6RIfRelayDestDestAddr, dDhcp6RelayMIBConformance=dDhcp6RelayMIBConformance, RemoteIdType=RemoteIdType, dlinkSwDhcp6RelayMIB=dlinkSwDhcp6RelayMIB, dDhcp6RelayCompliance=dDhcp6RelayCompliance, dDhcp6RRemoteIdFormat=dDhcp6RRemoteIdFormat, dDhcp6RelayMIBObjects=dDhcp6RelayMIBObjects, dDhcp6RIfRelayDestTable=dDhcp6RIfRelayDestTable, dDhcp6RIfRelayDestIndex=dDhcp6RIfRelayDestIndex, dDhcp6RelayIfObjects=dDhcp6RelayIfObjects)
+mibBuilder.exportSymbols("DLINKSW-DHCP6-RELAY-MIB", dDhcp6RelayOption37Group=dDhcp6RelayOption37Group, dDhcp6RIfRelayDestIndex=dDhcp6RIfRelayDestIndex, dDhcp6RBasicGroup=dDhcp6RBasicGroup, dDhcp6RRemoteIdPolicy=dDhcp6RRemoteIdPolicy, dlinkSwDhcp6RelayMIB=dlinkSwDhcp6RelayMIB, dDhcp6RelayGroups=dDhcp6RelayGroups, dDhcp6RRemoteIdFormat=dDhcp6RRemoteIdFormat, dDhcp6RIfRelayDestDestAddr=dDhcp6RIfRelayDestDestAddr, RemoteIdType=RemoteIdType, dDhcp6RIfRelayDestTable=dDhcp6RIfRelayDestTable, dDhcp6RIfRelayDestOutIfIndex=dDhcp6RIfRelayDestOutIfIndex, dDhcp6RelayMIBNotifications=dDhcp6RelayMIBNotifications, dDhcp6RIfRelayDestEntry=dDhcp6RIfRelayDestEntry, dDhcp6RelayCompliance=dDhcp6RelayCompliance, dDhcp6RelayMIBObjects=dDhcp6RelayMIBObjects, dDhcp6RRemoteIdInsertEnabled=dDhcp6RRemoteIdInsertEnabled, dDhcp6RelayMIBConformance=dDhcp6RelayMIBConformance, dDhcp6RRemoteIdUdfValue=dDhcp6RRemoteIdUdfValue, dDhcp6RelayGeneral=dDhcp6RelayGeneral, PYSNMP_MODULE_ID=dlinkSwDhcp6RelayMIB, dDhcp6RelayCompliances=dDhcp6RelayCompliances, dDhcp6RRemoteIdUdfType=dDhcp6RRemoteIdUdfType, dDhcp6RIfRelayDestRowStatus=dDhcp6RIfRelayDestRowStatus, dDhcp6RelayIfObjects=dDhcp6RelayIfObjects)

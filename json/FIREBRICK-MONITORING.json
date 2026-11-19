@@ -10,28 +10,28 @@
       "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
-      "NOTIFICATION-TYPE",
-      "Bits",
-      "IpAddress",
-      "Unsigned32",
-      "MibIdentifier",
-      "enterprises",
-      "iso",
-      "OBJECT-IDENTITY",
       "Gauge32",
-      "TimeTicks",
+      "iso",
+      "MODULE-IDENTITY",
+      "OBJECT-IDENTITY",
+      "enterprises",
+      "Bits",
+      "MibIdentifier",
       "Integer32",
+      "Counter32",
       "Counter64",
       "OBJECT-TYPE",
-      "Counter32",
-      "MODULE-IDENTITY"
+      "TimeTicks",
+      "Unsigned32",
+      "IpAddress",
+      "NOTIFICATION-TYPE"
     ],
     "SNMPv2-TC": [
-      "TimeInterval",
-      "TEXTUAL-CONVENTION",
       "TimeStamp",
+      "TruthValue",
+      "TEXTUAL-CONVENTION",
       "DisplayString",
-      "TruthValue"
+      "TimeInterval"
     ]
   },
   "fbMonitoringMib": {
@@ -119,7 +119,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/firebrick/FIREBRICK-MONITORING",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:34:55 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:36:31 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

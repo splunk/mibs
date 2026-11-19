@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-DOT11-ANTENNA-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DOT11-ANTENNA-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoDot11AntennaMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 384))
 ciscoDot11AntennaMIB.setRevisions(('2016-02-15 00:00', '2003-12-08 00:00',))
@@ -37,4 +37,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cDot11AntennaGlobalGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 384, 2, 2, 1)).setObjects(("CISCO-DOT11-ANTENNA-MIB", "cDot11AntennaIsGainConfigured"), ("CISCO-DOT11-ANTENNA-MIB", "cDot11AntennaResultantGain"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cDot11AntennaGlobalGroup = cDot11AntennaGlobalGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DOT11-ANTENNA-MIB", cDot11AntennaEntry=cDot11AntennaEntry, cDot11AntennaMIBCompliance=cDot11AntennaMIBCompliance, cDot11AntennaMIBObjects=cDot11AntennaMIBObjects, cDot11AntennaIsGainConfigured=cDot11AntennaIsGainConfigured, cDot11AntennaMIBConform=cDot11AntennaMIBConform, cDot11AntennaGlobalGroup=cDot11AntennaGlobalGroup, cDot11AntennaTable=cDot11AntennaTable, PYSNMP_MODULE_ID=ciscoDot11AntennaMIB, cDot11AntennaMIBGroups=cDot11AntennaMIBGroups, ciscoDot11AntennaMIB=ciscoDot11AntennaMIB, cDot11AntennaGlobal=cDot11AntennaGlobal, cDot11AntennaMIBCompliances=cDot11AntennaMIBCompliances, cDot11AntennaResultantGain=cDot11AntennaResultantGain)
+mibBuilder.exportSymbols("CISCO-DOT11-ANTENNA-MIB", cDot11AntennaMIBCompliance=cDot11AntennaMIBCompliance, cDot11AntennaGlobalGroup=cDot11AntennaGlobalGroup, cDot11AntennaMIBCompliances=cDot11AntennaMIBCompliances, cDot11AntennaResultantGain=cDot11AntennaResultantGain, cDot11AntennaMIBGroups=cDot11AntennaMIBGroups, cDot11AntennaMIBObjects=cDot11AntennaMIBObjects, cDot11AntennaIsGainConfigured=cDot11AntennaIsGainConfigured, cDot11AntennaTable=cDot11AntennaTable, cDot11AntennaGlobal=cDot11AntennaGlobal, ciscoDot11AntennaMIB=ciscoDot11AntennaMIB, cDot11AntennaMIBConform=cDot11AntennaMIBConform, PYSNMP_MODULE_ID=ciscoDot11AntennaMIB, cDot11AntennaEntry=cDot11AntennaEntry)

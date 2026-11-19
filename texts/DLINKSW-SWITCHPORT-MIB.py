@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module DLINKSW-SWITCHPORT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-SWITCHPORT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:48 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-Integer32, Counter32, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, Gauge32, ObjectIdentity, ModuleIdentity, Bits, IpAddress, iso, NotificationType, MibIdentifier, Unsigned32 = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Counter32", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "Gauge32", "ObjectIdentity", "ModuleIdentity", "Bits", "IpAddress", "iso", "NotificationType", "MibIdentifier", "Unsigned32")
-TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
+ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
+Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, Integer32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "Integer32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
+TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
 dlinkSwSwitchPortMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 11))
 dlinkSwSwitchPortMIB.setRevisions(('2013-03-04 00:00',))
 
@@ -57,4 +57,4 @@ dSwPortBasicGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 11, 2, 2, 1)).setObj
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dSwPortBasicGroup = dSwPortBasicGroup.setStatus('current')
 if mibBuilder.loadTexts: dSwPortBasicGroup.setDescription('This group contains the collection of fundamental port configuration\n\t\t\tobjects which are not covered by standard MIBs.')
-mibBuilder.exportSymbols("DLINKSW-SWITCHPORT-MIB", dSwPortIfTable=dSwPortIfTable, dSwPortIfB10GbaseTCtrl=dSwPortIfB10GbaseTCtrl, dSwPortIfMdix=dSwPortIfMdix, dSwPortCompliance=dSwPortCompliance, dSwPortIfJumboFrameSize=dSwPortIfJumboFrameSize, dSwPortGroups=dSwPortGroups, dSwPortObjects=dSwPortObjects, dlinkSwSwitchPortMIB=dlinkSwSwitchPortMIB, dSwPortIfSpeedAutoDowngrade=dSwPortIfSpeedAutoDowngrade, dSwPortConformance=dSwPortConformance, dSwPortCompliances=dSwPortCompliances, dSwPortNotifications=dSwPortNotifications, PYSNMP_MODULE_ID=dlinkSwSwitchPortMIB, dSwPortIfB1000baseTCtrl=dSwPortIfB1000baseTCtrl, dSwPortBasicGroup=dSwPortBasicGroup, dSwPortIfEntry=dSwPortIfEntry)
+mibBuilder.exportSymbols("DLINKSW-SWITCHPORT-MIB", dlinkSwSwitchPortMIB=dlinkSwSwitchPortMIB, dSwPortIfTable=dSwPortIfTable, dSwPortIfMdix=dSwPortIfMdix, dSwPortIfEntry=dSwPortIfEntry, dSwPortIfB10GbaseTCtrl=dSwPortIfB10GbaseTCtrl, dSwPortIfB1000baseTCtrl=dSwPortIfB1000baseTCtrl, dSwPortConformance=dSwPortConformance, dSwPortCompliances=dSwPortCompliances, dSwPortCompliance=dSwPortCompliance, dSwPortIfJumboFrameSize=dSwPortIfJumboFrameSize, dSwPortBasicGroup=dSwPortBasicGroup, dSwPortIfSpeedAutoDowngrade=dSwPortIfSpeedAutoDowngrade, dSwPortGroups=dSwPortGroups, dSwPortObjects=dSwPortObjects, PYSNMP_MODULE_ID=dlinkSwSwitchPortMIB, dSwPortNotifications=dSwPortNotifications)

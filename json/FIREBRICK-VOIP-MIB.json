@@ -14,21 +14,21 @@
       "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
-      "Bits",
-      "NOTIFICATION-TYPE",
-      "IpAddress",
-      "Unsigned32",
-      "MibIdentifier",
-      "enterprises",
       "iso",
-      "Counter32",
       "Gauge32",
+      "MODULE-IDENTITY",
       "OBJECT-IDENTITY",
-      "TimeTicks",
       "Counter64",
-      "OBJECT-TYPE",
+      "enterprises",
+      "Bits",
+      "MibIdentifier",
       "Integer32",
-      "MODULE-IDENTITY"
+      "OBJECT-TYPE",
+      "Counter32",
+      "TimeTicks",
+      "Unsigned32",
+      "IpAddress",
+      "NOTIFICATION-TYPE"
     ],
     "SNMPv2-TC": [
       "TEXTUAL-CONVENTION",
@@ -287,7 +287,7 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/firebrick/FIREBRICK-VOIP-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 08:34:55 2026",
+      "Produced by pysmi-1.1.12 at Thu Nov 19 14:36:31 2026",
       "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
       "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
     ],

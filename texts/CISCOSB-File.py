@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-File (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-File
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
-RowStatus, DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention", "TruthValue")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, NotificationType, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "NotificationType", "TimeTicks")
+TruthValue, DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "DisplayString", "RowStatus", "TextualConvention")
 rlFile = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 96))
 rlFile.setRevisions(('2013-04-01 00:00',))
 
@@ -92,4 +92,4 @@ if mibBuilder.loadTexts: rlFileTotalSizeOfUSB.setDescription('Indicates the tota
 rlFileFreeSizeOfUSB = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 96, 8), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlFileFreeSizeOfUSB.setStatus('current')
 if mibBuilder.loadTexts: rlFileFreeSizeOfUSB.setDescription('Indicates the number of free bytes in the USB.')
-mibBuilder.exportSymbols("CISCOSB-File", rlFileFreeSizeOfUSB=rlFileFreeSizeOfUSB, rlFileTable=rlFileTable, rlFileActionCommand=rlFileActionCommand, rlFileAuditingEnable=rlFileAuditingEnable, rlFileMibVersion=rlFileMibVersion, rlFileModificationDate=rlFileModificationDate, rlFileActionRowStatus=rlFileActionRowStatus, PYSNMP_MODULE_ID=rlFile, rlFilePermission=rlFilePermission, rlFileModificationTime=rlFileModificationTime, rlFileRowStatus=rlFileRowStatus, rlFileName=rlFileName, FilePermission=FilePermission, rlFileSize=rlFileSize, rlFileFlashSize=rlFileFlashSize, rlFileActionTable=rlFileActionTable, rlFileTotalSizeOfFlash=rlFileTotalSizeOfFlash, rlFileEntry=rlFileEntry, rlFileFullNormalizedName=rlFileFullNormalizedName, rlFile=rlFile, rlFileTotalSizeOfUSB=rlFileTotalSizeOfUSB, rlFileActionNewName=rlFileActionNewName, rlFileFreeSizeOfFlash=rlFileFreeSizeOfFlash, rlFileActionName=rlFileActionName, rlFileActionEntry=rlFileActionEntry)
+mibBuilder.exportSymbols("CISCOSB-File", rlFileActionName=rlFileActionName, rlFileFullNormalizedName=rlFileFullNormalizedName, rlFileActionTable=rlFileActionTable, rlFile=rlFile, rlFileTable=rlFileTable, rlFileFlashSize=rlFileFlashSize, rlFileModificationDate=rlFileModificationDate, rlFileRowStatus=rlFileRowStatus, rlFileActionRowStatus=rlFileActionRowStatus, FilePermission=FilePermission, PYSNMP_MODULE_ID=rlFile, rlFilePermission=rlFilePermission, rlFileActionNewName=rlFileActionNewName, rlFileTotalSizeOfFlash=rlFileTotalSizeOfFlash, rlFileName=rlFileName, rlFileSize=rlFileSize, rlFileEntry=rlFileEntry, rlFileMibVersion=rlFileMibVersion, rlFileActionEntry=rlFileActionEntry, rlFileTotalSizeOfUSB=rlFileTotalSizeOfUSB, rlFileAuditingEnable=rlFileAuditingEnable, rlFileModificationTime=rlFileModificationTime, rlFileFreeSizeOfUSB=rlFileFreeSizeOfUSB, rlFileActionCommand=rlFileActionCommand, rlFileFreeSizeOfFlash=rlFileFreeSizeOfFlash)

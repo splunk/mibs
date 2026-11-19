@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-FETHRESHOLDS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-FETHRESHOLDS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDSGFeThresholds = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 9))
 ciscoDSGFeThresholds.setRevisions(('2010-08-30 11:00', '2010-04-26 05:00', '2010-03-22 05:00', '2009-12-07 12:00',))
@@ -42,4 +42,4 @@ mutThreshDVBS2AudioMute = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 9, 1,
 if mibBuilder.loadTexts: mutThreshDVBS2AudioMute.setStatus('current')
 mutThreshDVBS2AudioRestore = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 9, 1, 1, 11), Integer32().subtype(subtypeSpec=ValueRangeConstraint(-50, 200))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: mutThreshDVBS2AudioRestore.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-FETHRESHOLDS-MIB", mutingThreshholdsInstance=mutingThreshholdsInstance, mutThreshDVBSTransportMute=mutThreshDVBSTransportMute, mutThreshDVBS2AudioMute=mutThreshDVBS2AudioMute, mutThreshDVBS2AudioRestore=mutThreshDVBS2AudioRestore, mutingThresholdsEntry=mutingThresholdsEntry, mutThreshDVBSAudioRestore=mutThreshDVBSAudioRestore, mutThreshDVBS2TransportMute=mutThreshDVBS2TransportMute, mutingThresholdsTable=mutingThresholdsTable, mutThreshControl=mutThreshControl, mutThreshDVBS2TransportRestore=mutThreshDVBS2TransportRestore, mutThreshDVBSTransportRestore=mutThreshDVBSTransportRestore, PYSNMP_MODULE_ID=ciscoDSGFeThresholds, mutThreshRestoreDefaults=mutThreshRestoreDefaults, ciscoDSGFeThresholds=ciscoDSGFeThresholds, mutThreshDVBSAudioMute=mutThreshDVBSAudioMute)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-FETHRESHOLDS-MIB", PYSNMP_MODULE_ID=ciscoDSGFeThresholds, mutThreshDVBS2AudioMute=mutThreshDVBS2AudioMute, mutThreshControl=mutThreshControl, mutingThresholdsTable=mutingThresholdsTable, mutThreshDVBS2AudioRestore=mutThreshDVBS2AudioRestore, mutingThresholdsEntry=mutingThresholdsEntry, mutThreshDVBSAudioMute=mutThreshDVBSAudioMute, mutThreshRestoreDefaults=mutThreshRestoreDefaults, mutThreshDVBSAudioRestore=mutThreshDVBSAudioRestore, mutThreshDVBSTransportMute=mutThreshDVBSTransportMute, ciscoDSGFeThresholds=ciscoDSGFeThresholds, mutThreshDVBS2TransportMute=mutThreshDVBS2TransportMute, mutThreshDVBSTransportRestore=mutThreshDVBSTransportRestore, mutThreshDVBS2TransportRestore=mutThreshDVBS2TransportRestore, mutingThreshholdsInstance=mutingThreshholdsInstance)

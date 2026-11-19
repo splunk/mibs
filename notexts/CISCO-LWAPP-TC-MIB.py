@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-LWAPP-TC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-LWAPP-TC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:22 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:42 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, MibIdentifier, Bits, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "MibIdentifier", "Bits", "iso", "Unsigned32", "Counter32")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoLwappTextualConventions = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 514))
 ciscoLwappTextualConventions.setRevisions(('2019-11-29 00:00', '2016-08-23 00:00', '2011-09-13 00:00', '2010-02-23 00:00', '2007-09-11 00:00', '2007-02-05 00:00', '2006-10-31 00:00', '2006-04-13 00:00',))
@@ -130,4 +130,4 @@ class Dscp(TextualConvention, Integer32):
     status = 'current'
     subtypeSpec = Integer32.subtypeSpec + ValueRangeConstraint(0, 63)
 
-mibBuilder.exportSymbols("CISCO-LWAPP-TC-MIB", CLWebAuthType=CLWebAuthType, CcxServiceVersion=CcxServiceVersion, CLApAssocFailureReason=CLApAssocFailureReason, CLDot11Channel=CLDot11Channel, CLMfpEventType=CLMfpEventType, PYSNMP_MODULE_ID=ciscoLwappTextualConventions, CLDot11ChannelBandwidth=CLDot11ChannelBandwidth, CLDot11Band=CLDot11Band, CLSecKeyFormat=CLSecKeyFormat, Dscp=Dscp, CLTsmDot11CurrentPackets=CLTsmDot11CurrentPackets, CLDot11RfParamMode=CLDot11RfParamMode, CLEventFrames=CLEventFrames, CLApMode=CLApMode, CLClientPowerSaveMode=CLClientPowerSaveMode, CLMfpVersion=CLMfpVersion, CLApDot11RadioRole=CLApDot11RadioRole, CLSecEncryptType=CLSecEncryptType, CLMfpEventSource=CLMfpEventSource, CLDot11ClientStatus=CLDot11ClientStatus, CLApIfType=CLApIfType, CLTimeBaseStatus=CLTimeBaseStatus, CLApNtpStatus=CLApNtpStatus, ciscoLwappTextualConventions=ciscoLwappTextualConventions, CLApDot11RadioSubband=CLApDot11RadioSubband, CLCdpAdvtVersionType=CLCdpAdvtVersionType)
+mibBuilder.exportSymbols("CISCO-LWAPP-TC-MIB", CLEventFrames=CLEventFrames, CLMfpEventSource=CLMfpEventSource, CLSecEncryptType=CLSecEncryptType, CcxServiceVersion=CcxServiceVersion, CLDot11RfParamMode=CLDot11RfParamMode, CLSecKeyFormat=CLSecKeyFormat, CLWebAuthType=CLWebAuthType, CLApAssocFailureReason=CLApAssocFailureReason, Dscp=Dscp, CLApMode=CLApMode, CLClientPowerSaveMode=CLClientPowerSaveMode, CLApDot11RadioSubband=CLApDot11RadioSubband, CLApDot11RadioRole=CLApDot11RadioRole, PYSNMP_MODULE_ID=ciscoLwappTextualConventions, CLTimeBaseStatus=CLTimeBaseStatus, CLTsmDot11CurrentPackets=CLTsmDot11CurrentPackets, ciscoLwappTextualConventions=ciscoLwappTextualConventions, CLApIfType=CLApIfType, CLDot11Channel=CLDot11Channel, CLMfpVersion=CLMfpVersion, CLDot11Band=CLDot11Band, CLApNtpStatus=CLApNtpStatus, CLDot11ClientStatus=CLDot11ClientStatus, CLDot11ChannelBandwidth=CLDot11ChannelBandwidth, CLCdpAdvtVersionType=CLCdpAdvtVersionType, CLMfpEventType=CLMfpEventType)

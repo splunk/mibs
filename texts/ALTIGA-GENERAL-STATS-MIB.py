@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ALTIGA-GENERAL-STATS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/ALTIGA-GENERAL-STATS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 alGeneralMibModule, = mibBuilder.importSymbols("ALTIGA-GLOBAL-REG", "alGeneralMibModule")
 alStatsGeneral, alGeneralGroup = mibBuilder.importSymbols("ALTIGA-MIB", "alStatsGeneral", "alGeneralGroup")
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Integer32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Integer32", "Counter32")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, iso, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, NotificationType, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "iso", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "NotificationType", "Counter32", "ModuleIdentity", "TimeTicks")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 altigaGeneralStatsMibModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 3076, 1, 1, 30, 2))
 altigaGeneralStatsMibModule.setRevisions(('2002-09-11 13:00', '2002-07-10 00:00',))
@@ -49,4 +49,4 @@ altigaGeneralStatsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 3076, 2, 1, 1, 1, 25, 2
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     altigaGeneralStatsGroup = altigaGeneralStatsGroup.setStatus('current')
 if mibBuilder.loadTexts: altigaGeneralStatsGroup.setDescription('The objects for general information.')
-mibBuilder.exportSymbols("ALTIGA-GENERAL-STATS-MIB", alGeneralTimeZone=alGeneralTimeZone, altigaGeneralStatsMibModule=altigaGeneralStatsMibModule, altigaGeneralStatsMibCompliances=altigaGeneralStatsMibCompliances, alGeneralGaugeThroughput=alGeneralGaugeThroughput, altigaGeneralStatsMibConformance=altigaGeneralStatsMibConformance, alStatsGeneralGlobal=alStatsGeneralGlobal, alGeneralGaugeCpuUtil=alGeneralGaugeCpuUtil, altigaGeneralStatsGroup=altigaGeneralStatsGroup, PYSNMP_MODULE_ID=altigaGeneralStatsMibModule, altigaGeneralStatsMibCompliance=altigaGeneralStatsMibCompliance, alGeneralGaugeActiveSessions=alGeneralGaugeActiveSessions, alGeneralTime=alGeneralTime)
+mibBuilder.exportSymbols("ALTIGA-GENERAL-STATS-MIB", altigaGeneralStatsMibConformance=altigaGeneralStatsMibConformance, PYSNMP_MODULE_ID=altigaGeneralStatsMibModule, altigaGeneralStatsMibCompliances=altigaGeneralStatsMibCompliances, alGeneralGaugeCpuUtil=alGeneralGaugeCpuUtil, alGeneralGaugeThroughput=alGeneralGaugeThroughput, altigaGeneralStatsMibCompliance=altigaGeneralStatsMibCompliance, alGeneralGaugeActiveSessions=alGeneralGaugeActiveSessions, alGeneralTimeZone=alGeneralTimeZone, altigaGeneralStatsMibModule=altigaGeneralStatsMibModule, altigaGeneralStatsGroup=altigaGeneralStatsGroup, alGeneralTime=alGeneralTime, alStatsGeneralGlobal=alStatsGeneralGlobal)

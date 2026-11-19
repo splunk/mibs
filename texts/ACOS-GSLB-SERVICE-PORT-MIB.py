@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ACOS-GSLB-SERVICE-PORT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/a10/ACOS-GSLB-SERVICE-PORT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:05 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:09 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 acosSchema, = mibBuilder.importSymbols("A10-AX-MIB", "acosSchema")
 OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 InetAddressType, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Gauge32, MibIdentifier, IpAddress, ObjectIdentity, Counter32, Bits, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, iso, TimeTicks, Unsigned32, NotificationType, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "MibIdentifier", "IpAddress", "ObjectIdentity", "Counter32", "Bits", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "iso", "TimeTicks", "Unsigned32", "NotificationType", "Counter64")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+ModuleIdentity, iso, Counter64, NotificationType, TimeTicks, Bits, Unsigned32, MibIdentifier, Integer32, Counter32, ObjectIdentity, IpAddress, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "iso", "Counter64", "NotificationType", "TimeTicks", "Bits", "Unsigned32", "MibIdentifier", "Integer32", "Counter32", "ObjectIdentity", "IpAddress", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
 TextualConvention, DisplayString, PhysAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "PhysAddress")
 gslbServicePortModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 434))
 if mibBuilder.loadTexts: gslbServicePortModule.setLastUpdated('200705071327Z')
@@ -46,4 +46,4 @@ if mibBuilder.loadTexts: servicePortOperServicePortListActiveRealServer.setDescr
 servicePortOperServicePortListCurrentConnections = MibTableColumn((1, 3, 6, 1, 4, 1, 22610, 2, 4, 8, 434, 1, 2, 1, 7), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: servicePortOperServicePortListCurrentConnections.setStatus('current')
 if mibBuilder.loadTexts: servicePortOperServicePortListCurrentConnections.setDescription('current-connections')
-mibBuilder.exportSymbols("ACOS-GSLB-SERVICE-PORT-MIB", servicePortOperServicePortListAttributes=servicePortOperServicePortListAttributes, servicePortOperServicePortListState=servicePortOperServicePortListState, servicePortOperServicePortListServicePortListListId=servicePortOperServicePortListServicePortListListId, servicePortOperServicePortListSlotId=servicePortOperServicePortListSlotId, PYSNMP_MODULE_ID=gslbServicePortModule, servicePort=servicePort, gslbServicePortModule=gslbServicePortModule, servicePortOperServicePortListServicePortName=servicePortOperServicePortListServicePortName, servicePortOperServicePortListCurrentConnections=servicePortOperServicePortListCurrentConnections, servicePortOperServicePortListActiveRealServer=servicePortOperServicePortListActiveRealServer, servicePortOperServicePortListTable=servicePortOperServicePortListTable, servicePortOperServicePortListEntry=servicePortOperServicePortListEntry)
+mibBuilder.exportSymbols("ACOS-GSLB-SERVICE-PORT-MIB", servicePortOperServicePortListServicePortName=servicePortOperServicePortListServicePortName, servicePortOperServicePortListActiveRealServer=servicePortOperServicePortListActiveRealServer, PYSNMP_MODULE_ID=gslbServicePortModule, servicePortOperServicePortListSlotId=servicePortOperServicePortListSlotId, servicePortOperServicePortListAttributes=servicePortOperServicePortListAttributes, servicePortOperServicePortListState=servicePortOperServicePortListState, servicePort=servicePort, servicePortOperServicePortListTable=servicePortOperServicePortListTable, servicePortOperServicePortListEntry=servicePortOperServicePortListEntry, servicePortOperServicePortListCurrentConnections=servicePortOperServicePortListCurrentConnections, servicePortOperServicePortListServicePortListListId=servicePortOperServicePortListServicePortListListId, gslbServicePortModule=gslbServicePortModule)

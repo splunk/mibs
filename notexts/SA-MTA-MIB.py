@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module SA-MTA-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/SA-MTA-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:24 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, enterprises, Counter64, Unsigned32, Gauge32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "enterprises", "Counter64", "Unsigned32", "Gauge32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-DateAndTime, DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "DisplayString", "TruthValue", "TextualConvention")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, enterprises, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "enterprises", "iso", "Unsigned32", "Counter32")
+DisplayString, TruthValue, DateAndTime, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "DateAndTime", "TextualConvention")
 sa = MibIdentifier((1, 3, 6, 1, 4, 1, 1429))
 saVoip = MibIdentifier((1, 3, 6, 1, 4, 1, 1429, 78))
 saMta = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 78, 3))
@@ -34,4 +34,4 @@ saMtaEndPntStatePhysical = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 78, 3, 2, 1, 
 if mibBuilder.loadTexts: saMtaEndPntStatePhysical.setStatus('current')
 saMtaEndPntStateLogical = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 78, 3, 2, 1, 7), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4))).clone(namedValues=NamedValues(("connectedIdle", 1), ("disconnected", 2), ("inCallVoice", 3), ("inCallData", 4)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: saMtaEndPntStateLogical.setStatus('current')
-mibBuilder.exportSymbols("SA-MTA-MIB", saMtaEndPntStateLogical=saMtaEndPntStateLogical, PYSNMP_MODULE_ID=saMta, sa=sa, saMtaEndPntHookFlashMaxTime=saMtaEndPntHookFlashMaxTime, saMtaEndPntStatePhysical=saMtaEndPntStatePhysical, saMta=saMta, saMtaDevice=saMtaDevice, saMtaEndPointEntry=saMtaEndPointEntry, saMtaEndPointTable=saMtaEndPointTable, saVoip=saVoip, saMtaDevOffHookWarnTOBusy=saMtaDevOffHookWarnTOBusy, saMtaEndPntHookFlashMinTime=saMtaEndPntHookFlashMinTime)
+mibBuilder.exportSymbols("SA-MTA-MIB", saMtaEndPntStatePhysical=saMtaEndPntStatePhysical, saMtaEndPointEntry=saMtaEndPointEntry, saVoip=saVoip, PYSNMP_MODULE_ID=saMta, saMtaEndPntHookFlashMaxTime=saMtaEndPntHookFlashMaxTime, saMtaEndPointTable=saMtaEndPointTable, saMtaDevice=saMtaDevice, saMtaEndPntHookFlashMinTime=saMtaEndPntHookFlashMinTime, saMta=saMta, saMtaEndPntStateLogical=saMtaEndPntStateLogical, sa=sa, saMtaDevOffHookWarnTOBusy=saMtaDevOffHookWarnTOBusy)

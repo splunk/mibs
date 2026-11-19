@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCOSB-WBA-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-WBA-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:32:23 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
-InetAddressType, InetAddress, InetAddressIPv6 = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress", "InetAddressIPv6")
+InetAddressType, InetAddressIPv6, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddressIPv6", "InetAddress")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-ModuleIdentity, TimeTicks, IpAddress, Bits, ObjectIdentity, NotificationType, Gauge32, Counter64, Unsigned32, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "TimeTicks", "IpAddress", "Bits", "ObjectIdentity", "NotificationType", "Gauge32", "Counter64", "Unsigned32", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "iso")
-MacAddress, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "MacAddress", "DisplayString", "TextualConvention")
+NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+DisplayString, TextualConvention, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "MacAddress")
 rlWBA = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 228))
 rlWBA.setRevisions(('2010-07-05 00:00',))
 if mibBuilder.loadTexts: rlWBA.setLastUpdated('201007050000Z')
@@ -80,4 +80,4 @@ rlWBADataClear = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 228, 6), Integer32()
 if mibBuilder.loadTexts: rlWBADataClear.setStatus('current')
 rlWBAImageDownloadFinishStatus = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 228, 7), Integer32()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlWBAImageDownloadFinishStatus.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-WBA-MIB", rlWBAImageInfoTable=rlWBAImageInfoTable, rlWBAImageInfoEntry=rlWBAImageInfoEntry, rlWBAIp=rlWBAIp, rlWBAStatus=rlWBAStatus, PYSNMP_MODULE_ID=rlWBA, rlWBAImageClear=rlWBAImageClear, rlWBADataNumber=rlWBADataNumber, rlAuxFailReason=rlAuxFailReason, rlWBADataTable=rlWBADataTable, rlWBAImageInfoName=rlWBAImageInfoName, rlWBAPassword=rlWBAPassword, rlWBAImageText=rlWBAImageText, rlWBAImageInfoNumber=rlWBAImageInfoNumber, rlWBAImageInfoSize=rlWBAImageInfoSize, rlIsRetryFlag=rlIsRetryFlag, rlWBAUsername=rlWBAUsername, rlWBAImageEntry=rlWBAImageEntry, RlWBARetryFlagOp=RlWBARetryFlagOp, rlWBAImageNumber=rlWBAImageNumber, rlWBADataText=rlWBADataText, rlWBAAuxiliaryTable=rlWBAAuxiliaryTable, rlWBADataEntry=rlWBADataEntry, rlWBAImageIndex=rlWBAImageIndex, rlWBAAuxiliaryEntry=rlWBAAuxiliaryEntry, rlWBADataClear=rlWBADataClear, rlWBADataIndex=rlWBADataIndex, rlWBA=rlWBA, rlWBAImageTable=rlWBAImageTable, RlWBAStatusType=RlWBAStatusType, rlWBAImageDownloadFinishStatus=rlWBAImageDownloadFinishStatus)
+mibBuilder.exportSymbols("CISCOSB-WBA-MIB", rlWBAImageDownloadFinishStatus=rlWBAImageDownloadFinishStatus, rlAuxFailReason=rlAuxFailReason, rlWBAImageText=rlWBAImageText, PYSNMP_MODULE_ID=rlWBA, rlWBAAuxiliaryEntry=rlWBAAuxiliaryEntry, rlWBAImageIndex=rlWBAImageIndex, rlWBAImageEntry=rlWBAImageEntry, rlWBAPassword=rlWBAPassword, rlWBADataText=rlWBADataText, rlWBAImageInfoSize=rlWBAImageInfoSize, RlWBAStatusType=RlWBAStatusType, rlWBAImageInfoNumber=rlWBAImageInfoNumber, rlWBAImageTable=rlWBAImageTable, rlWBADataIndex=rlWBADataIndex, rlWBAIp=rlWBAIp, rlWBAAuxiliaryTable=rlWBAAuxiliaryTable, rlIsRetryFlag=rlIsRetryFlag, RlWBARetryFlagOp=RlWBARetryFlagOp, rlWBAUsername=rlWBAUsername, rlWBADataEntry=rlWBADataEntry, rlWBADataNumber=rlWBADataNumber, rlWBAImageClear=rlWBAImageClear, rlWBA=rlWBA, rlWBAImageInfoEntry=rlWBAImageInfoEntry, rlWBADataTable=rlWBADataTable, rlWBAStatus=rlWBAStatus, rlWBADataClear=rlWBADataClear, rlWBAImageInfoTable=rlWBAImageInfoTable, rlWBAImageNumber=rlWBAImageNumber, rlWBAImageInfoName=rlWBAImageInfoName)

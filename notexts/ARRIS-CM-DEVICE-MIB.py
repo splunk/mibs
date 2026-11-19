@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module ARRIS-CM-DEVICE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/arris/ARRIS-CM-DEVICE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:30:52 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:39 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
 arrisProdIdCM, = mibBuilder.importSymbols("ARRIS-MIB", "arrisProdIdCM")
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ConstraintsUnion, SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsUnion", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Integer32, NotificationType, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, IpAddress, Gauge32, Unsigned32, iso, ModuleIdentity, ObjectIdentity, TimeTicks, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "NotificationType", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "IpAddress", "Gauge32", "Unsigned32", "iso", "ModuleIdentity", "ObjectIdentity", "TimeTicks", "Counter32")
+SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+ModuleIdentity, iso, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, NotificationType, ObjectIdentity, Gauge32, MibIdentifier, IpAddress, Bits, Counter32, Unsigned32, Counter64, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "iso", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "NotificationType", "ObjectIdentity", "Gauge32", "MibIdentifier", "IpAddress", "Bits", "Counter32", "Unsigned32", "Counter64", "TimeTicks")
 TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
 arrisCmDevMib = ModuleIdentity((1, 3, 6, 1, 4, 1, 4115, 1, 3, 1))
 arrisCmDevMib.setRevisions(('1902-11-08 00:00', '1902-10-29 00:00', '1902-10-23 00:00', '1902-07-10 00:00',))
@@ -40,4 +40,4 @@ arrisCmDevProvMethodIndicator = MibScalar((1, 3, 6, 1, 4, 1, 4115, 1, 3, 1, 1, 2
 if mibBuilder.loadTexts: arrisCmDevProvMethodIndicator.setStatus('current')
 arrisCmDevEnableDocsis20 = MibScalar((1, 3, 6, 1, 4, 1, 4115, 1, 3, 1, 1, 2, 3, 3), TruthValue()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: arrisCmDevEnableDocsis20.setStatus('current')
-mibBuilder.exportSymbols("ARRIS-CM-DEVICE-MIB", arrisCmDevOperationalSetup=arrisCmDevOperationalSetup, arrisCmDevPermanentSetup=arrisCmDevPermanentSetup, arrisCmDevBase=arrisCmDevBase, PYSNMP_MODULE_ID=arrisCmDevMib, arrisCmDevProvMethodIndicator=arrisCmDevProvMethodIndicator, arrisCmDevCmSetup=arrisCmDevCmSetup, arrisCmDevManufacturingTest=arrisCmDevManufacturingTest, arrisCmDevSwImageBuildTime=arrisCmDevSwImageBuildTime, arrisCmDevEnableDocsis20=arrisCmDevEnableDocsis20, arrisCmDevWanIsolationState=arrisCmDevWanIsolationState, arrisCmDevSwImageName=arrisCmDevSwImageName, arrisCmDevCmTest=arrisCmDevCmTest, arrisCmDevMib=arrisCmDevMib, ArrsCmDevProvMethod=ArrsCmDevProvMethod, arrisCmDevSalesSetup=arrisCmDevSalesSetup, arrisCmDevOperationalTest=arrisCmDevOperationalTest, arrisCmDevMibObjects=arrisCmDevMibObjects)
+mibBuilder.exportSymbols("ARRIS-CM-DEVICE-MIB", arrisCmDevSalesSetup=arrisCmDevSalesSetup, arrisCmDevEnableDocsis20=arrisCmDevEnableDocsis20, arrisCmDevBase=arrisCmDevBase, arrisCmDevMib=arrisCmDevMib, arrisCmDevCmSetup=arrisCmDevCmSetup, arrisCmDevSwImageBuildTime=arrisCmDevSwImageBuildTime, arrisCmDevPermanentSetup=arrisCmDevPermanentSetup, arrisCmDevMibObjects=arrisCmDevMibObjects, ArrsCmDevProvMethod=ArrsCmDevProvMethod, arrisCmDevOperationalTest=arrisCmDevOperationalTest, PYSNMP_MODULE_ID=arrisCmDevMib, arrisCmDevManufacturingTest=arrisCmDevManufacturingTest, arrisCmDevSwImageName=arrisCmDevSwImageName, arrisCmDevWanIsolationState=arrisCmDevWanIsolationState, arrisCmDevCmTest=arrisCmDevCmTest, arrisCmDevProvMethodIndicator=arrisCmDevProvMethodIndicator, arrisCmDevOperationalSetup=arrisCmDevOperationalSetup)

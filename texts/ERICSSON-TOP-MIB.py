@@ -1,15 +1,15 @@
 #
 # PySNMP MIB module ERICSSON-TOP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ericsson/ERICSSON-TOP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:34:33 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:36:15 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsUnion, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueRangeConstraint")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Unsigned32, Counter32, TimeTicks, Gauge32, Bits, iso, IpAddress, ModuleIdentity, ObjectIdentity, Integer32, NotificationType, enterprises, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "Counter32", "TimeTicks", "Gauge32", "Bits", "iso", "IpAddress", "ModuleIdentity", "ObjectIdentity", "Integer32", "NotificationType", "enterprises", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64")
+MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, NotificationType, enterprises, MibIdentifier, Gauge32, TimeTicks, ModuleIdentity, IpAddress, Bits, Integer32, iso, Counter32, Unsigned32, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "NotificationType", "enterprises", "MibIdentifier", "Gauge32", "TimeTicks", "ModuleIdentity", "IpAddress", "Bits", "Integer32", "iso", "Counter32", "Unsigned32", "Counter64")
 TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ericsson = ModuleIdentity((1, 3, 6, 1, 4, 1, 193))
 ericsson.setRevisions(('2008-10-17 00:00', '2002-05-28 00:00',))
@@ -23,4 +23,4 @@ if mibBuilder.loadTexts: ericsson.setDescription("This very small module is made
 ericssonModules = ObjectIdentity((1, 3, 6, 1, 4, 1, 193, 183))
 if mibBuilder.loadTexts: ericssonModules.setStatus('current')
 if mibBuilder.loadTexts: ericssonModules.setDescription('ericssonModules provides a root object identifier\r\n        from which MODULE-IDENTITY values may be assigned\r\n        for Ericsson Group-wide MIB modules.')
-mibBuilder.exportSymbols("ERICSSON-TOP-MIB", ericssonModules=ericssonModules, ericsson=ericsson, PYSNMP_MODULE_ID=ericsson)
+mibBuilder.exportSymbols("ERICSSON-TOP-MIB", ericsson=ericsson, PYSNMP_MODULE_ID=ericsson, ericssonModules=ericssonModules)

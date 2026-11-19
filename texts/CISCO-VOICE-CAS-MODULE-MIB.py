@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-VOICE-CAS-MODULE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VOICE-CAS-MODULE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:06 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 EntPhysicalIndexOrZero, = mibBuilder.importSymbols("CISCO-TC", "EntPhysicalIndexOrZero")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoVoiceCasModuleMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 389))
 ciscoVoiceCasModuleMIB.setRevisions(('2004-03-15 00:00',))
 
@@ -91,4 +91,4 @@ cvcmCasBitGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 389, 2, 1, 1)).setObjects
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvcmCasBitGroup = cvcmCasBitGroup.setStatus('current')
 if mibBuilder.loadTexts: cvcmCasBitGroup.setDescription('A collection of objects used for configuring \n         DSP signaling channel.\n        ')
-mibBuilder.exportSymbols("CISCO-VOICE-CAS-MODULE-MIB", cvcmABCDBitTemplateConfigTable=cvcmABCDBitTemplateConfigTable, cvcmCasBitRowStatus=cvcmCasBitRowStatus, ciscoVoiceCasModuleNotifs=ciscoVoiceCasModuleNotifs, cvcmModuleIndex=cvcmModuleIndex, CvcmCasPatternBitPosition=CvcmCasPatternBitPosition, ciscoVoiceCasModuleObjects=ciscoVoiceCasModuleObjects, cvcmCasDBitAction=cvcmCasDBitAction, cvcmABCDBitTemplateConfigEntry=cvcmABCDBitTemplateConfigEntry, cvcmMIBGroups=cvcmMIBGroups, cvcmCasTemplateName=cvcmCasTemplateName, cvcmABCDPatternIndex=cvcmABCDPatternIndex, CvcmCasBitAction=CvcmCasBitAction, cvcmCasBBitAction=cvcmCasBBitAction, ciscoVoiceCasModuleMIB=ciscoVoiceCasModuleMIB, cvcmModulePhysicalIndex=cvcmModulePhysicalIndex, cvcmCasCBitAction=cvcmCasCBitAction, cvcmCasConfig=cvcmCasConfig, cvcmABCDIncomingPattern=cvcmABCDIncomingPattern, cvcmMIBCompliances=cvcmMIBCompliances, cvcmMIBConformance=cvcmMIBConformance, cvcmCasBitGroup=cvcmCasBitGroup, cvcmABCDOutgoingPattern=cvcmABCDOutgoingPattern, PYSNMP_MODULE_ID=ciscoVoiceCasModuleMIB, cvcmCasTemplateIndex=cvcmCasTemplateIndex, cvcmCasABitAction=cvcmCasABitAction, ciscoVoiceCasModuleMIBCompliance=ciscoVoiceCasModuleMIBCompliance)
+mibBuilder.exportSymbols("CISCO-VOICE-CAS-MODULE-MIB", ciscoVoiceCasModuleObjects=ciscoVoiceCasModuleObjects, ciscoVoiceCasModuleNotifs=ciscoVoiceCasModuleNotifs, cvcmCasBBitAction=cvcmCasBBitAction, cvcmCasBitRowStatus=cvcmCasBitRowStatus, cvcmCasCBitAction=cvcmCasCBitAction, cvcmCasConfig=cvcmCasConfig, cvcmMIBGroups=cvcmMIBGroups, cvcmCasABitAction=cvcmCasABitAction, cvcmModulePhysicalIndex=cvcmModulePhysicalIndex, cvcmModuleIndex=cvcmModuleIndex, CvcmCasBitAction=CvcmCasBitAction, cvcmCasBitGroup=cvcmCasBitGroup, cvcmCasDBitAction=cvcmCasDBitAction, PYSNMP_MODULE_ID=ciscoVoiceCasModuleMIB, cvcmMIBCompliances=cvcmMIBCompliances, ciscoVoiceCasModuleMIB=ciscoVoiceCasModuleMIB, cvcmCasTemplateName=cvcmCasTemplateName, cvcmMIBConformance=cvcmMIBConformance, cvcmCasTemplateIndex=cvcmCasTemplateIndex, cvcmABCDOutgoingPattern=cvcmABCDOutgoingPattern, ciscoVoiceCasModuleMIBCompliance=ciscoVoiceCasModuleMIBCompliance, cvcmABCDIncomingPattern=cvcmABCDIncomingPattern, CvcmCasPatternBitPosition=CvcmCasPatternBitPosition, cvcmABCDBitTemplateConfigTable=cvcmABCDBitTemplateConfigTable, cvcmABCDBitTemplateConfigEntry=cvcmABCDBitTemplateConfigEntry, cvcmABCDPatternIndex=cvcmABCDPatternIndex)

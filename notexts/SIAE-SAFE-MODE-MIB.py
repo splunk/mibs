@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module SIAE-SAFE-MODE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/siae/SIAE-SAFE-MODE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:39:57 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:40:08 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueRangeConstraint")
+SingleValueConstraint, ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint")
 AlarmSeverityCode, AlarmStatus = mibBuilder.importSymbols("SIAE-ALARM-MIB", "AlarmSeverityCode", "AlarmStatus")
 siaeMib, = mibBuilder.importSymbols("SIAE-TREE-MIB", "siaeMib")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Unsigned32, ObjectIdentity, Gauge32, TimeTicks, NotificationType, MibIdentifier, ModuleIdentity, iso, Bits, IpAddress, Integer32, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "ObjectIdentity", "Gauge32", "TimeTicks", "NotificationType", "MibIdentifier", "ModuleIdentity", "iso", "Bits", "IpAddress", "Integer32", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+Integer32, Counter32, NotificationType, Bits, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, IpAddress, iso, Counter64, ObjectIdentity, TimeTicks, MibIdentifier, ModuleIdentity, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Counter32", "NotificationType", "Bits", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "IpAddress", "iso", "Counter64", "ObjectIdentity", "TimeTicks", "MibIdentifier", "ModuleIdentity", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 safeMode = ModuleIdentity((1, 3, 6, 1, 4, 1, 3373, 1103, 99))
 safeMode.setRevisions(('2016-03-10 00:00',))
 if mibBuilder.loadTexts: safeMode.setLastUpdated('201603100000Z')
@@ -33,4 +33,4 @@ safeModeRescueIpAddress = MibScalar((1, 3, 6, 1, 4, 1, 3373, 1103, 99, 7), IpAdd
 if mibBuilder.loadTexts: safeModeRescueIpAddress.setStatus('current')
 safeModeRescueIpNetMask = MibScalar((1, 3, 6, 1, 4, 1, 3373, 1103, 99, 8), IpAddress()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: safeModeRescueIpNetMask.setStatus('current')
-mibBuilder.exportSymbols("SIAE-SAFE-MODE-MIB", safeModeRescueIpNetMask=safeModeRescueIpNetMask, safeModeRescuePwd=safeModeRescuePwd, safeModeMibVersion=safeModeMibVersion, safeModeAlarm=safeModeAlarm, safeModeRescueIpAddress=safeModeRescueIpAddress, safeModeRescueAdminStatus=safeModeRescueAdminStatus, safeModeAlarmSeverityCode=safeModeAlarmSeverityCode, PYSNMP_MODULE_ID=safeMode, safeModeStatus=safeModeStatus, safeMode=safeMode)
+mibBuilder.exportSymbols("SIAE-SAFE-MODE-MIB", safeModeAlarm=safeModeAlarm, safeModeRescueIpAddress=safeModeRescueIpAddress, safeModeRescuePwd=safeModeRescuePwd, PYSNMP_MODULE_ID=safeMode, safeModeMibVersion=safeModeMibVersion, safeModeStatus=safeModeStatus, safeModeRescueIpNetMask=safeModeRescueIpNetMask, safeModeAlarmSeverityCode=safeModeAlarmSeverityCode, safeModeRescueAdminStatus=safeModeRescueAdminStatus, safeMode=safeMode)

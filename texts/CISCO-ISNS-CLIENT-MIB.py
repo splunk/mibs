@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCO-ISNS-CLIENT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ISNS-CLIENT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 08:33:07 2026
+# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
 # On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
 # Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 CiscoPort, = mibBuilder.importSymbols("CISCO-TC", "CiscoPort")
-InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
+InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-NotificationType, MibIdentifier, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, TimeTicks, IpAddress, Bits, Counter64, Gauge32, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibIdentifier", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "TimeTicks", "IpAddress", "Bits", "Counter64", "Gauge32", "Unsigned32", "Counter32")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
+DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoIsnsClientMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 372))
 ciscoIsnsClientMIB.setRevisions(('2003-11-10 00:00',))
 
@@ -64,4 +64,4 @@ cIsnsServerConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 372, 2, 2, 1)).set
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cIsnsServerConfigGroup = cIsnsServerConfigGroup.setStatus('current')
 if mibBuilder.loadTexts: cIsnsServerConfigGroup.setDescription('A collection of objects for iSNS server \n                configuration.')
-mibBuilder.exportSymbols("CISCO-ISNS-CLIENT-MIB", cIsnsClntServerProfileAddrType=cIsnsClntServerProfileAddrType, cIsnsClntServerProfileTable=cIsnsClntServerProfileTable, cIsnsClntServerProfileAddr=cIsnsClntServerProfileAddr, cIsnsServerConfigGroup=cIsnsServerConfigGroup, cIsnsClientConfig=cIsnsClientConfig, ciscoIsnsClientMIBGroups=ciscoIsnsClientMIBGroups, ciscoIsnsClientMIB=ciscoIsnsClientMIB, cIsnsClntServerProfileName=cIsnsClntServerProfileName, ciscoIsnsClientMIBCompliance=ciscoIsnsClientMIBCompliance, cIsnsClntServerIndex=cIsnsClntServerIndex, cIsnsClntServerProfileStatus=cIsnsClntServerProfileStatus, PYSNMP_MODULE_ID=ciscoIsnsClientMIB, ciscoIsnsClientMIBNotifications=ciscoIsnsClientMIBNotifications, ciscoIsnsClientMIBConformance=ciscoIsnsClientMIBConformance, ciscoiIsnsClientMIBCompliances=ciscoiIsnsClientMIBCompliances, ciscoIsnsClientMIBMIBObjects=ciscoIsnsClientMIBMIBObjects, cIsnsClntServerProfileEntry=cIsnsClntServerProfileEntry, cIsnsClntServerProfilePort=cIsnsClntServerProfilePort)
+mibBuilder.exportSymbols("CISCO-ISNS-CLIENT-MIB", ciscoIsnsClientMIBCompliance=ciscoIsnsClientMIBCompliance, ciscoIsnsClientMIBGroups=ciscoIsnsClientMIBGroups, ciscoiIsnsClientMIBCompliances=ciscoiIsnsClientMIBCompliances, cIsnsClientConfig=cIsnsClientConfig, ciscoIsnsClientMIBConformance=ciscoIsnsClientMIBConformance, cIsnsClntServerIndex=cIsnsClntServerIndex, cIsnsClntServerProfilePort=cIsnsClntServerProfilePort, cIsnsClntServerProfileName=cIsnsClntServerProfileName, cIsnsClntServerProfileAddrType=cIsnsClntServerProfileAddrType, cIsnsClntServerProfileTable=cIsnsClntServerProfileTable, cIsnsClntServerProfileAddr=cIsnsClntServerProfileAddr, cIsnsServerConfigGroup=cIsnsServerConfigGroup, ciscoIsnsClientMIBNotifications=ciscoIsnsClientMIBNotifications, ciscoIsnsClientMIBMIBObjects=ciscoIsnsClientMIBMIBObjects, cIsnsClntServerProfileStatus=cIsnsClntServerProfileStatus, PYSNMP_MODULE_ID=ciscoIsnsClientMIB, ciscoIsnsClientMIB=ciscoIsnsClientMIB, cIsnsClntServerProfileEntry=cIsnsClntServerProfileEntry)
