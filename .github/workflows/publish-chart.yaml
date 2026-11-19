@@ -115,6 +115,19 @@ jobs:
           VERSION="$GITHUB_REF_NAME"
           wget -q https://splunk.github.io/mibs/charts/index.yaml -P /tmp/origin || true
           helm package charts/mibserver -d /tmp/package
+          # The tag triggers this workflow before semantic-release may have
+          # created the GitHub release, so wait for it to exist.
+          for attempt in $(seq 1 30); do
+            if gh release view "$VERSION" > /dev/null 2>&1; then
+              break
+            fi
+            if [ "$attempt" -eq 30 ]; then
+              echo "::error::GitHub release $VERSION was not created within 5 minutes"
+              exit 1
+            fi
+            echo "Release $VERSION not found yet (attempt $attempt/30), retrying in 10s"
+            sleep 10
+          done
           gh release upload "$VERSION" /tmp/package/*
           helm repo index /tmp/package --url "https://github.com/splunk/mibs/releases/download/$VERSION" --merge /tmp/origin/index.yaml
           cp /tmp/package/index.yaml /tmp/index/
