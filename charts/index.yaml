@@ -2,6 +2,16 @@ apiVersion: v1
 entries:
   mibserver:
   - apiVersion: v2
+    appVersion: 1.17.1
+    created: "2026-11-19T14:49:44.171914782Z"
+    description: A Helm chart for serving mib files
+    digest: ffcadbd6b4bc216a4eea8c3abae61e332a60f295a14a220a6128811395b3daed
+    name: mibserver
+    type: application
+    urls:
+    - https://github.com/splunk/mibs/releases/download/v1.17.1/mibserver-1.17.1.tgz
+    version: 1.17.1
+  - apiVersion: v2
     appVersion: 1.17.1-beta.1
     created: "2026-11-19T13:49:25.317158988Z"
     description: A Helm chart for serving mib files
@@ -21,4 +31,4 @@ entries:
     urls:
     - https://github.com/splunk/mibs/releases/download/v1.17.0/mibserver-1.17.0.tgz
     version: 1.17.0
-generated: "2026-11-19T13:49:25.316771394Z"
+generated: "2026-11-19T14:49:44.171576401Z"
