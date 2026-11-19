@@ -3,7 +3,7 @@ if [ -n "$(ls -A /app/new_mibs/src/vendor 2>/dev/null)" ]
 then
   cd /app/new_mibs
   mkdir output
-  source /app/.cache/pysnmp-mibs*/bin/activate
+  source /app/.cache/splunk-mibs*/bin/activate
   echo "**********************************"
   echo "Found local mibs. Compiling..."
   echo "**********************************"

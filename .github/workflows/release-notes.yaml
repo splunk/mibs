@@ -2,38 +2,15 @@ name: Release-Notes-Preview
 
 on:
   pull_request:
-#    branches: [main, develop]
+    branches: [main]
   issue_comment:
-    types: [edited]
+    types: [ edited ]
 
 jobs:
-  preview:
-    if: >-
-      (github.event_name == 'pull_request' &&
-       github.event.pull_request.head.repo.full_name == github.repository) ||
-      (github.event_name == 'issue_comment' && github.event.issue.pull_request != null)
-    runs-on: ubuntu-latest
+  call-workflow-preview:
     permissions:
-      contents: read
-      pull-requests: write
-      statuses: write
-    steps:
-      - name: Free Disk Space
-        uses: jlumbroso/free-disk-space@main
-        with:
-          android: true
-          dotnet: true
-          haskell: true
-          large-packages: true
-          docker-images: false
-          swap-storage: false
-      - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0
-          filter: blob:none
-      - uses: snyk/release-notes-preview@v1.6.2
-        with:
-          releaseBranch: main
-        env:
-          GITHUB_PR_USERNAME: ${{ github.actor }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      contents: write
+      packages: write
+    uses: splunk/addonfactory-github-workflows/.github/workflows/reusable-release-notes.yaml@v1.7.4
+    secrets:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
