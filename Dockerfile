@@ -1,3 +1,5 @@
+FROM python:3.13-slim-bookworm AS python-runtime
+
 FROM nginxinc/nginx-unprivileged:1.29.1-bookworm
 USER 10001
 
@@ -13,6 +15,7 @@ COPY mibserver-entrypoint.sh /app/mibserver-entrypoint.sh
 
 # Install necassary dependecies
 USER root
+COPY --from=python-runtime /usr/local /usr/local
 RUN chmod 644 /etc/nginx/nginx.conf
 RUN apt update
 RUN apt install -y parallel
@@ -20,7 +23,7 @@ RUN apt install -y python3-pip
 RUN apt-get update && apt-get install -y --no-install-recommends pipx
 ENV PIPX_HOME=/opt/pipx \
     PIPX_BIN_DIR=/usr/local/bin
-RUN pipx install 'poetry==2.1.2' \
+RUN pipx install --python /usr/local/bin/python3 'poetry==2.5.2' \
  && chmod -R a+rX /opt/pipx
 
 # Create directory for poetry's virtual environment

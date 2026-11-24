@@ -8,6 +8,9 @@ metadata:
     "helm.sh/hook": test
     "kube-score/ignore": "pod-probes,pod-networkpolicy"
 spec:
+  securityContext:
+    seccompProfile:
+      type: RuntimeDefault
   containers:
     - name: wget
       image: {{ (.Values.test).image.repository | default "busybox" }}:{{ (.Values.test).image.tag | default "1.37.0" }}
@@ -15,6 +18,7 @@ spec:
       command: ['wget']
       args: ['{{ include "mibserver.fullname" . }}:{{ (.Values.service).port | default 80 }}/index.csv', '-O', '/dev/null']
       securityContext:
+        allowPrivilegeEscalation: false
         capabilities:
           drop:
           - ALL

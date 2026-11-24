@@ -30,9 +30,12 @@ spec:
       serviceAccountName: {{ include "mibserver.serviceAccountName" . }}
       securityContext:
         fsGroup: 10001
+        seccompProfile:
+          type: RuntimeDefault
       containers:
         - name: {{ .Chart.Name }}
           securityContext:
+            allowPrivilegeEscalation: false
             capabilities:
               drop:
                 - ALL
