@@ -18,6 +18,7 @@ spec:
   template:
     metadata:
       {{- with .Values.podAnnotations }}
+      annotations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
@@ -65,6 +66,11 @@ spec:
             httpGet:
               path: /
               port: http-status
+          lifecycle:
+            preStop:
+              exec:
+                # Keep serving while Service endpoints are updated.
+                command: ["/bin/sleep", "5"]
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:

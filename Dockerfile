@@ -1,6 +1,4 @@
-FROM python:3.13-slim-bookworm AS python-runtime
-
-FROM nginxinc/nginx-unprivileged:1.29.1-bookworm
+FROM nginx/nginx-unprivileged:1.30.8-trixie
 USER 10001
 
 # Copy files necessary to compile mibs
@@ -15,15 +13,14 @@ COPY mibserver-entrypoint.sh /app/mibserver-entrypoint.sh
 
 # Install necassary dependecies
 USER root
-COPY --from=python-runtime /usr/local /usr/local
 RUN chmod 644 /etc/nginx/nginx.conf
-RUN apt update
-RUN apt install -y parallel
-RUN apt install -y python3-pip
-RUN apt-get update && apt-get install -y --no-install-recommends pipx
+
+RUN apt-get update && apt-get install -y --no-install-recommends parallel make pipx
+RUN rm -rf /var/lib/apt/lists/*
+
 ENV PIPX_HOME=/opt/pipx \
     PIPX_BIN_DIR=/usr/local/bin
-RUN pipx install --python /usr/local/bin/python3 'poetry==2.5.2' \
+RUN pipx install --python /usr/bin/python3 'poetry==2.5.2' \
  && chmod -R a+rX /opt/pipx
 
 # Create directory for poetry's virtual environment
@@ -38,6 +35,7 @@ RUN poetry install
 RUN chmod a+x /app/local_mibs.sh /app/mibserver-entrypoint.sh
 RUN chown -R 10001:10001 /usr/share/nginx/html
 RUN chown -R 10001:10001 /app
+
 USER 10001
 ENTRYPOINT ["/app/mibserver-entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]
