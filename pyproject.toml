@@ -7,8 +7,8 @@ license = "BSD-2-Clause"
 package-mode = false
 
 [tool.poetry.dependencies]
-python = ">=3.10,<3.12"
-pysnmp-pysmi = "^1.1.12"
+python = ">=3.13,<3.15"
+pysnmp-pysmi = "1.1.12"
 pyyaml = { version = "!=6.0.0" }
 
 [tool.poetry.group.dev.dependencies]

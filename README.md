@@ -6,6 +6,10 @@ In addition, an index is published allowing remote clients to identify a mib bas
 
 pysnmplib (formerly pysnmp) applications can retrieve mibs from `https://splunk.github.io/mibs/asn1/@mib@`
 
+## Python and container builds
+
+Use Python 3.13 or 3.14 to compile MIBs and generate the index when building locally. CI builds and container images use Python 3.13 with Poetry 2.5.2.
+
 ## IPv6 listeners
 
 IPv6 listener support is disabled by default. Enabling it adds IPv6 listeners while preserving the existing IPv4 listeners on both endpoints:
