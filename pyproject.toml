@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "splunk-mibs"
-version = "1.17.2-beta.2"
+version = "1.17.2"
 description = ""
 authors = ["ajasnosz <ajasnosz@cisco.com>"]
 license = "BSD-2-Clause"
