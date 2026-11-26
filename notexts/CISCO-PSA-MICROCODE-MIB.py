@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-PSA-MICROCODE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-PSA-MICROCODE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-entPhysicalDescr, entPhysicalIndex, entPhysicalName = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalDescr", "entPhysicalIndex", "entPhysicalName")
+entPhysicalIndex, entPhysicalName, entPhysicalDescr = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex", "entPhysicalName", "entPhysicalDescr")
 ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoPsaMicrocodeMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 259))
 ciscoPsaMicrocodeMIB.setRevisions(('2002-06-18 00:00',))
@@ -68,4 +68,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoPsaMicrocodeNotifGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 259, 2, 2, 2)).setObjects(("CISCO-PSA-MICROCODE-MIB", "ciscoPsaMicrocodeReload"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoPsaMicrocodeNotifGroup = ciscoPsaMicrocodeNotifGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-PSA-MICROCODE-MIB", cpmcBundle=cpmcBundle, ciscoPsaMicrocodeMIBNotifs=ciscoPsaMicrocodeMIBNotifs, cpmcModulePsaEntry=cpmcModulePsaEntry, PsaMicrocodeBundleId=PsaMicrocodeBundleId, ciscoPsaMicrocodeParamsGroup=ciscoPsaMicrocodeParamsGroup, ciscoPsaMicrocodeMIBObjects=ciscoPsaMicrocodeMIBObjects, PYSNMP_MODULE_ID=ciscoPsaMicrocodeMIB, cpmcBundleTable=cpmcBundleTable, cpmcModulePsaPrevBundleId=cpmcModulePsaPrevBundleId, cpmcNotifEnables=cpmcNotifEnables, ciscoPsaMicrocodeReload=ciscoPsaMicrocodeReload, cpmcModulePsaCurrBundleId=cpmcModulePsaCurrBundleId, ciscoPsaMicrocodeMIB=ciscoPsaMicrocodeMIB, cpmcNotif=cpmcNotif, cpmcBundleEntry=cpmcBundleEntry, ciscoPsaMicrocodeMIBConformance=ciscoPsaMicrocodeMIBConformance, cpmcBundleFeatures=cpmcBundleFeatures, cpmcModulePsaFeaturesEnabled=cpmcModulePsaFeaturesEnabled, cpmcModulePsaFeaturesDisabled=cpmcModulePsaFeaturesDisabled, ciscoPsaMicrocodeMIBCompliances=ciscoPsaMicrocodeMIBCompliances, ciscoPsaMicrocodeMIBGroups=ciscoPsaMicrocodeMIBGroups, cpmcModulePsaTable=cpmcModulePsaTable, cpmcModulePsa=cpmcModulePsa, cpmcBundleId=cpmcBundleId, PsaMicrocodeFeatures=PsaMicrocodeFeatures, ciscoPsaMicrocodeNotifGroup=ciscoPsaMicrocodeNotifGroup, ciscoPsaMicrocodeMIBCompliance=ciscoPsaMicrocodeMIBCompliance)
+mibBuilder.exportSymbols("CISCO-PSA-MICROCODE-MIB", cpmcModulePsa=cpmcModulePsa, PsaMicrocodeBundleId=PsaMicrocodeBundleId, cpmcModulePsaFeaturesDisabled=cpmcModulePsaFeaturesDisabled, PsaMicrocodeFeatures=PsaMicrocodeFeatures, cpmcBundleTable=cpmcBundleTable, cpmcModulePsaPrevBundleId=cpmcModulePsaPrevBundleId, cpmcBundleId=cpmcBundleId, cpmcModulePsaCurrBundleId=cpmcModulePsaCurrBundleId, cpmcModulePsaFeaturesEnabled=cpmcModulePsaFeaturesEnabled, cpmcNotif=cpmcNotif, ciscoPsaMicrocodeMIBGroups=ciscoPsaMicrocodeMIBGroups, cpmcBundleFeatures=cpmcBundleFeatures, cpmcBundleEntry=cpmcBundleEntry, ciscoPsaMicrocodeMIBCompliances=ciscoPsaMicrocodeMIBCompliances, ciscoPsaMicrocodeMIBNotifs=ciscoPsaMicrocodeMIBNotifs, ciscoPsaMicrocodeMIBCompliance=ciscoPsaMicrocodeMIBCompliance, ciscoPsaMicrocodeReload=ciscoPsaMicrocodeReload, cpmcModulePsaEntry=cpmcModulePsaEntry, cpmcNotifEnables=cpmcNotifEnables, cpmcBundle=cpmcBundle, cpmcModulePsaTable=cpmcModulePsaTable, ciscoPsaMicrocodeMIBObjects=ciscoPsaMicrocodeMIBObjects, ciscoPsaMicrocodeNotifGroup=ciscoPsaMicrocodeNotifGroup, ciscoPsaMicrocodeMIBConformance=ciscoPsaMicrocodeMIBConformance, ciscoPsaMicrocodeMIB=ciscoPsaMicrocodeMIB, PYSNMP_MODULE_ID=ciscoPsaMicrocodeMIB, ciscoPsaMicrocodeParamsGroup=ciscoPsaMicrocodeParamsGroup)

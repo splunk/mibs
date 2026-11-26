@@ -1,21 +1,21 @@
 #
 # PySNMP MIB module EQLIPADDR-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/equallogic/EQLIPADDR-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:36:11 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:09:06 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ConstraintsIntersection, ValueSizeConstraint, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ConstraintsIntersection", "ValueSizeConstraint", "ValueRangeConstraint", "SingleValueConstraint")
+ValueRangeConstraint, ValueSizeConstraint, ConstraintsIntersection, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ConstraintsUnion")
 UTFString, eqlGroupId = mibBuilder.importSymbols("EQLGROUP-MIB", "UTFString", "eqlGroupId")
 eqlMemberIndex, = mibBuilder.importSymbols("EQLMEMBER-MIB", "eqlMemberIndex")
 equalLogic, = mibBuilder.importSymbols("EQUALLOGIC-SMI", "equalLogic")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, MibIdentifier, NotificationType, ModuleIdentity, enterprises, Unsigned32, ObjectIdentity, TimeTicks, Counter32, Gauge32, IpAddress, Counter64, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "MibIdentifier", "NotificationType", "ModuleIdentity", "enterprises", "Unsigned32", "ObjectIdentity", "TimeTicks", "Counter32", "Gauge32", "IpAddress", "Counter64", "Bits")
-TextualConvention, DisplayString, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "RowStatus")
+iso, ModuleIdentity, NotificationType, Bits, IpAddress, enterprises, Counter64, Counter32, Integer32, Unsigned32, MibIdentifier, ObjectIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, TimeTicks, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "iso", "ModuleIdentity", "NotificationType", "Bits", "IpAddress", "enterprises", "Counter64", "Counter32", "Integer32", "Unsigned32", "MibIdentifier", "ObjectIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "TimeTicks", "Gauge32")
+DisplayString, TextualConvention, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "RowStatus")
 eqlipaddrModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 12740, 9))
 eqlipaddrModule.setRevisions(('2002-09-06 00:00',))
 if mibBuilder.loadTexts: eqlipaddrModule.setLastUpdated('201503171528Z')
@@ -86,4 +86,4 @@ eqlInetAddrEntFlags = MibTableColumn((1, 3, 6, 1, 4, 1, 12740, 9, 5, 1, 7), Inte
 if mibBuilder.loadTexts: eqlInetAddrEntFlags.setStatus('current')
 eqlInetAddrEntRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 12740, 9, 5, 1, 8), RowStatus()).setMaxAccess("readcreate")
 if mibBuilder.loadTexts: eqlInetAddrEntRowStatus.setStatus('current')
-mibBuilder.exportSymbols("EQLIPADDR-MIB", eqlInetAddrEntFlags=eqlInetAddrEntFlags, eqlWKARowStatus=eqlWKARowStatus, eqlifStatusConfigurationFlags=eqlifStatusConfigurationFlags, PYSNMP_MODULE_ID=eqlipaddrModule, eqlWKAEntry=eqlWKAEntry, eqlIpAdEntIfName=eqlIpAdEntIfName, eqlifDescr=eqlifDescr, eqlInetAddrEntIfName=eqlInetAddrEntIfName, eqlInetAddrEntIfIndex=eqlInetAddrEntIfIndex, eqlifStatusEntry=eqlifStatusEntry, eqlInetAddrEntAddrType=eqlInetAddrEntAddrType, eqlipAddrTable=eqlipAddrTable, eqlifPortAttr=eqlifPortAttr, eqlInetAddrEntNetMaskType=eqlInetAddrEntNetMaskType, eqlIpAdEntRowStatus=eqlIpAdEntRowStatus, eqlipaddrModule=eqlipaddrModule, eqlWKARole=eqlWKARole, eqlipAddrEntry=eqlipAddrEntry, eqlIpAdEntNetMask=eqlIpAdEntNetMask, eqlifStatusTable=eqlifStatusTable, eqlinetAddrEntry=eqlinetAddrEntry, eqlinetAddrTable=eqlinetAddrTable, eqlInetAddrEntRowStatus=eqlInetAddrEntRowStatus, eqlIpAdEntAddr=eqlIpAdEntAddr, eqlifAdminStatus=eqlifAdminStatus, eqlifTable=eqlifTable, eqlifEntry=eqlifEntry, eqlifStatusMgmtRolePolicy=eqlifStatusMgmtRolePolicy, eqlIpAdEntIfIndex=eqlIpAdEntIfIndex, eqlWKATable=eqlWKATable, eqlifOperStatus=eqlifOperStatus, eqlInetAddrEntNetMask=eqlInetAddrEntNetMask, eqlInetAddrEntAddr=eqlInetAddrEntAddr, eqlifRole=eqlifRole)
+mibBuilder.exportSymbols("EQLIPADDR-MIB", eqlipAddrEntry=eqlipAddrEntry, eqlIpAdEntIfIndex=eqlIpAdEntIfIndex, eqlWKATable=eqlWKATable, eqlifRole=eqlifRole, eqlifAdminStatus=eqlifAdminStatus, eqlifPortAttr=eqlifPortAttr, eqlifStatusMgmtRolePolicy=eqlifStatusMgmtRolePolicy, eqlWKARowStatus=eqlWKARowStatus, eqlWKAEntry=eqlWKAEntry, eqlipAddrTable=eqlipAddrTable, eqlInetAddrEntIfName=eqlInetAddrEntIfName, eqlInetAddrEntRowStatus=eqlInetAddrEntRowStatus, eqlifDescr=eqlifDescr, eqlinetAddrTable=eqlinetAddrTable, eqlIpAdEntAddr=eqlIpAdEntAddr, eqlifStatusConfigurationFlags=eqlifStatusConfigurationFlags, eqlifStatusEntry=eqlifStatusEntry, eqlIpAdEntRowStatus=eqlIpAdEntRowStatus, eqlInetAddrEntNetMaskType=eqlInetAddrEntNetMaskType, PYSNMP_MODULE_ID=eqlipaddrModule, eqlInetAddrEntNetMask=eqlInetAddrEntNetMask, eqlIpAdEntNetMask=eqlIpAdEntNetMask, eqlifStatusTable=eqlifStatusTable, eqlWKARole=eqlWKARole, eqlInetAddrEntFlags=eqlInetAddrEntFlags, eqlinetAddrEntry=eqlinetAddrEntry, eqlifEntry=eqlifEntry, eqlInetAddrEntAddrType=eqlInetAddrEntAddrType, eqlIpAdEntIfName=eqlIpAdEntIfName, eqlipaddrModule=eqlipaddrModule, eqlInetAddrEntAddr=eqlInetAddrEntAddr, eqlInetAddrEntIfIndex=eqlInetAddrEntIfIndex, eqlifTable=eqlifTable, eqlifOperStatus=eqlifOperStatus)

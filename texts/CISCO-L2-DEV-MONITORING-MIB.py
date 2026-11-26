@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-L2-DEV-MONITORING-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-L2-DEV-MONITORING-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
 ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, MacAddress, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "MacAddress", "RowStatus", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+RowStatus, DisplayString, TruthValue, TextualConvention, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TruthValue", "TextualConvention", "MacAddress")
 ciscoL2DevMonMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 271))
 ciscoL2DevMonMIB.setRevisions(('2003-07-22 00:00', '2001-09-27 00:00',))
 
@@ -84,4 +84,4 @@ ciscoL2DevMonRadioConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 271, 2, 2, 
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoL2DevMonRadioConfigGroup = ciscoL2DevMonRadioConfigGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoL2DevMonRadioConfigGroup.setDescription('Management information to identify the MAC type \n                 of a IEEE 802.11 Wireless LAN device and local\n                 radio ifIndex.')
-mibBuilder.exportSymbols("CISCO-L2-DEV-MONITORING-MIB", ciscoL2DevMonMIBObjects=ciscoL2DevMonMIBObjects, ciscoL2DevMonMIBConformance=ciscoL2DevMonMIBConformance, ciscoL2DevMonMIBGroups=ciscoL2DevMonMIBGroups, cl2DevMonActiveRadioMacType=cl2DevMonActiveRadioMacType, cl2DevMonActiveMacAddress=cl2DevMonActiveMacAddress, ciscoL2DevMonCompliance=ciscoL2DevMonCompliance, cl2DevMonSwitchover=cl2DevMonSwitchover, cl2DevMonActiveTable=cl2DevMonActiveTable, ciscoL2DevMonMIB=ciscoL2DevMonMIB, cl2DevMonInStandbyMode=cl2DevMonInStandbyMode, cl2DevMonActivePollingTimeOut=cl2DevMonActivePollingTimeOut, cl2DevMonNotifEnabled=cl2DevMonNotifEnabled, ciscoL2DevMonConfigGroup=ciscoL2DevMonConfigGroup, ciscoL2DevMonMIBCompliances=ciscoL2DevMonMIBCompliances, ciscoL2DevMonRadioConfigGroup=ciscoL2DevMonRadioConfigGroup, PYSNMP_MODULE_ID=ciscoL2DevMonMIB, cl2DevMonActiveLocalRadioIndex=cl2DevMonActiveLocalRadioIndex, ciscoL2DevMonMIBNotifications=ciscoL2DevMonMIBNotifications, ciscoL2DevMonComplianceRev1=ciscoL2DevMonComplianceRev1, cl2DevMonActiveEntry=cl2DevMonActiveEntry, cl2DevMonActiveRowStatus=cl2DevMonActiveRowStatus, cl2DevMonConfig=cl2DevMonConfig, cl2DevMonActivePollingFrequency=cl2DevMonActivePollingFrequency, ciscoL2DevMonNotificationGroup=ciscoL2DevMonNotificationGroup)
+mibBuilder.exportSymbols("CISCO-L2-DEV-MONITORING-MIB", ciscoL2DevMonMIB=ciscoL2DevMonMIB, cl2DevMonActiveTable=cl2DevMonActiveTable, ciscoL2DevMonRadioConfigGroup=ciscoL2DevMonRadioConfigGroup, cl2DevMonActiveRowStatus=cl2DevMonActiveRowStatus, ciscoL2DevMonCompliance=ciscoL2DevMonCompliance, cl2DevMonActiveEntry=cl2DevMonActiveEntry, ciscoL2DevMonComplianceRev1=ciscoL2DevMonComplianceRev1, cl2DevMonActiveLocalRadioIndex=cl2DevMonActiveLocalRadioIndex, ciscoL2DevMonMIBGroups=ciscoL2DevMonMIBGroups, cl2DevMonInStandbyMode=cl2DevMonInStandbyMode, cl2DevMonSwitchover=cl2DevMonSwitchover, ciscoL2DevMonMIBObjects=ciscoL2DevMonMIBObjects, ciscoL2DevMonConfigGroup=ciscoL2DevMonConfigGroup, PYSNMP_MODULE_ID=ciscoL2DevMonMIB, cl2DevMonActiveRadioMacType=cl2DevMonActiveRadioMacType, ciscoL2DevMonNotificationGroup=ciscoL2DevMonNotificationGroup, cl2DevMonActivePollingTimeOut=cl2DevMonActivePollingTimeOut, cl2DevMonActiveMacAddress=cl2DevMonActiveMacAddress, cl2DevMonConfig=cl2DevMonConfig, ciscoL2DevMonMIBCompliances=ciscoL2DevMonMIBCompliances, cl2DevMonActivePollingFrequency=cl2DevMonActivePollingFrequency, ciscoL2DevMonMIBConformance=ciscoL2DevMonMIBConformance, cl2DevMonNotifEnabled=cl2DevMonNotifEnabled, ciscoL2DevMonMIBNotifications=ciscoL2DevMonMIBNotifications)

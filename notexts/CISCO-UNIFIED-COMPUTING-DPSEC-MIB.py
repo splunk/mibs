@@ -1,22 +1,22 @@
 #
 # PySNMP MIB module CISCO-UNIFIED-COMPUTING-DPSEC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-UNIFIED-COMPUTING-DPSEC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-CiscoNetworkAddress, CiscoInetAddressMask, Unsigned64, TimeIntervalSec, CiscoAlarmSeverity = mibBuilder.importSymbols("CISCO-TC", "CiscoNetworkAddress", "CiscoInetAddressMask", "Unsigned64", "TimeIntervalSec", "CiscoAlarmSeverity")
-CucsManagedObjectDn, ciscoUnifiedComputingMIBObjects, CucsManagedObjectId = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "CucsManagedObjectDn", "ciscoUnifiedComputingMIBObjects", "CucsManagedObjectId")
-CucsDpsecForgedTransmit, CucsPolicyPolicyOwner = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-TC-MIB", "CucsDpsecForgedTransmit", "CucsPolicyPolicyOwner")
+CiscoInetAddressMask, CiscoAlarmSeverity, Unsigned64, TimeIntervalSec, CiscoNetworkAddress = mibBuilder.importSymbols("CISCO-TC", "CiscoInetAddressMask", "CiscoAlarmSeverity", "Unsigned64", "TimeIntervalSec", "CiscoNetworkAddress")
+ciscoUnifiedComputingMIBObjects, CucsManagedObjectDn, CucsManagedObjectId = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "ciscoUnifiedComputingMIBObjects", "CucsManagedObjectDn", "CucsManagedObjectId")
+CucsPolicyPolicyOwner, CucsDpsecForgedTransmit = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-TC-MIB", "CucsPolicyPolicyOwner", "CucsDpsecForgedTransmit")
 InetAddressIPv4, InetAddressIPv6 = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressIPv4", "InetAddressIPv6")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
-DisplayString, TextualConvention, TimeStamp, RowPointer, MacAddress, TimeInterval, TruthValue, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TimeStamp", "RowPointer", "MacAddress", "TimeInterval", "TruthValue", "DateAndTime")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
+TimeStamp, TruthValue, TextualConvention, TimeInterval, DisplayString, MacAddress, RowPointer, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "TruthValue", "TextualConvention", "TimeInterval", "DisplayString", "MacAddress", "RowPointer", "DateAndTime")
 cucsDpsecObjects = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 13))
 if mibBuilder.loadTexts: cucsDpsecObjects.setLastUpdated('201601180000Z')
 if mibBuilder.loadTexts: cucsDpsecObjects.setOrganization('Cisco Systems Inc.')
@@ -44,4 +44,4 @@ cucsDpsecMacPolicyOwner = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 13, 1,
 if mibBuilder.loadTexts: cucsDpsecMacPolicyOwner.setStatus('current')
 cucsDpsecMacPropAcl = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 13, 1, 1, 10), Unsigned64()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: cucsDpsecMacPropAcl.setStatus('current')
-mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-DPSEC-MIB", PYSNMP_MODULE_ID=cucsDpsecObjects, cucsDpsecMacTable=cucsDpsecMacTable, cucsDpsecMacDn=cucsDpsecMacDn, cucsDpsecObjects=cucsDpsecObjects, cucsDpsecMacPropAcl=cucsDpsecMacPropAcl, cucsDpsecMacPolicyOwner=cucsDpsecMacPolicyOwner, cucsDpsecMacPolicyLevel=cucsDpsecMacPolicyLevel, cucsDpsecMacForge=cucsDpsecMacForge, cucsDpsecMacInstanceId=cucsDpsecMacInstanceId, cucsDpsecMacName=cucsDpsecMacName, cucsDpsecMacRn=cucsDpsecMacRn, cucsDpsecMacEntry=cucsDpsecMacEntry, cucsDpsecMacDescr=cucsDpsecMacDescr, cucsDpsecMacIntId=cucsDpsecMacIntId)
+mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-DPSEC-MIB", cucsDpsecMacPolicyLevel=cucsDpsecMacPolicyLevel, cucsDpsecMacDn=cucsDpsecMacDn, cucsDpsecObjects=cucsDpsecObjects, cucsDpsecMacRn=cucsDpsecMacRn, cucsDpsecMacPolicyOwner=cucsDpsecMacPolicyOwner, cucsDpsecMacPropAcl=cucsDpsecMacPropAcl, cucsDpsecMacForge=cucsDpsecMacForge, PYSNMP_MODULE_ID=cucsDpsecObjects, cucsDpsecMacIntId=cucsDpsecMacIntId, cucsDpsecMacDescr=cucsDpsecMacDescr, cucsDpsecMacInstanceId=cucsDpsecMacInstanceId, cucsDpsecMacTable=cucsDpsecMacTable, cucsDpsecMacEntry=cucsDpsecMacEntry, cucsDpsecMacName=cucsDpsecMacName)

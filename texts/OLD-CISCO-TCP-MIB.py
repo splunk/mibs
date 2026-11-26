@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module OLD-CISCO-TCP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/OLD-CISCO-TCP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 local, = mibBuilder.importSymbols("CISCO-SMI", "local")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, NotificationType, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "NotificationType", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
-tcpConnLocalAddress, tcpConnLocalPort, tcpConnRemAddress, tcpConnRemPort = mibBuilder.importSymbols("TCP-MIB", "tcpConnLocalAddress", "tcpConnLocalPort", "tcpConnRemAddress", "tcpConnRemPort")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, TimeTicks, ModuleIdentity, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "TimeTicks", "ModuleIdentity", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+tcpConnRemPort, tcpConnRemAddress, tcpConnLocalAddress, tcpConnLocalPort = mibBuilder.importSymbols("TCP-MIB", "tcpConnRemPort", "tcpConnRemAddress", "tcpConnLocalAddress", "tcpConnLocalPort")
 ltcp = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 2, 6))
 ltcpConnTable = MibTable((1, 3, 6, 1, 4, 1, 9, 2, 6, 1), )
 if mibBuilder.loadTexts: ltcpConnTable.setStatus('deprecated')
@@ -35,4 +35,4 @@ if mibBuilder.loadTexts: loctcpConnOutPkts.setDescription('Packets output for th
 loctcpConnElapsed = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 2, 6, 1, 1, 5), TimeTicks()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: loctcpConnElapsed.setStatus('deprecated')
 if mibBuilder.loadTexts: loctcpConnElapsed.setDescription('How long this TCP connection has been\n                           established.')
-mibBuilder.exportSymbols("OLD-CISCO-TCP-MIB", loctcpConnInBytes=loctcpConnInBytes, loctcpConnInPkts=loctcpConnInPkts, ltcpConnTable=ltcpConnTable, loctcpConnOutPkts=loctcpConnOutPkts, loctcpConnOutBytes=loctcpConnOutBytes, ltcpConnEntry=ltcpConnEntry, loctcpConnElapsed=loctcpConnElapsed, ltcp=ltcp)
+mibBuilder.exportSymbols("OLD-CISCO-TCP-MIB", loctcpConnElapsed=loctcpConnElapsed, loctcpConnInBytes=loctcpConnInBytes, ltcpConnEntry=ltcpConnEntry, loctcpConnOutBytes=loctcpConnOutBytes, loctcpConnOutPkts=loctcpConnOutPkts, ltcp=ltcp, ltcpConnTable=ltcpConnTable, loctcpConnInPkts=loctcpConnInPkts)

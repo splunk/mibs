@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-PING-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-PING-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 CiscoNetworkProtocol, CiscoNetworkAddress = mibBuilder.importSymbols("CISCO-TC", "CiscoNetworkProtocol", "CiscoNetworkAddress")
 OwnerString, = mibBuilder.importSymbols("IF-MIB", "OwnerString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, iso, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, NotificationType, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "iso", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "NotificationType", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString", "TruthValue")
 ciscoPingMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 16))
 ciscoPingMIB.setRevisions(('2001-08-28 00:00', '2001-05-14 00:00', '1999-10-08 00:00', '1994-11-11 00:00', '1994-07-22 00:00',))
 
@@ -111,4 +111,4 @@ ciscoPingMIBNotificationGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 16, 3
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoPingMIBNotificationGroup = ciscoPingMIBNotificationGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoPingMIBNotificationGroup.setDescription('Set of notifications implemented in this module.')
-mibBuilder.exportSymbols("CISCO-PING-MIB", ciscoPingMinRtt=ciscoPingMinRtt, ciscoPingMIBTraps=ciscoPingMIBTraps, PYSNMP_MODULE_ID=ciscoPingMIB, ciscoPingEntryStatus=ciscoPingEntryStatus, ciscoPingTrapOnCompletion=ciscoPingTrapOnCompletion, ciscoPingVrfName=ciscoPingVrfName, ciscoPingMIBGroups=ciscoPingMIBGroups, ciscoPingMIBGroupVpn=ciscoPingMIBGroupVpn, ciscoPingProtocol=ciscoPingProtocol, ciscoPingMIBCompliance=ciscoPingMIBCompliance, ciscoPingReceivedPackets=ciscoPingReceivedPackets, ciscoPingCompleted=ciscoPingCompleted, ciscoPingPacketSize=ciscoPingPacketSize, ciscoPingDelay=ciscoPingDelay, ciscoPingMIBCompliances=ciscoPingMIBCompliances, ciscoPingMIBComplianceVpn=ciscoPingMIBComplianceVpn, ciscoPingEntryOwner=ciscoPingEntryOwner, ciscoPingSerialNumber=ciscoPingSerialNumber, ciscoPingMIB=ciscoPingMIB, ciscoPingMIBTrapPrefix=ciscoPingMIBTrapPrefix, ciscoPingPacketTimeout=ciscoPingPacketTimeout, ciscoPingMIBObjects=ciscoPingMIBObjects, ciscoPingAddress=ciscoPingAddress, ciscoPingEntry=ciscoPingEntry, ciscoPingPacketCount=ciscoPingPacketCount, ciscoPingCompletion=ciscoPingCompletion, ciscoPingTable=ciscoPingTable, ciscoPingMIBNotificationGroup=ciscoPingMIBNotificationGroup, ciscoPingMIBConformance=ciscoPingMIBConformance, ciscoPingSentPackets=ciscoPingSentPackets, ciscoPingMaxRtt=ciscoPingMaxRtt, ciscoPingMIBGroup=ciscoPingMIBGroup, ciscoPingAvgRtt=ciscoPingAvgRtt)
+mibBuilder.exportSymbols("CISCO-PING-MIB", ciscoPingMIBComplianceVpn=ciscoPingMIBComplianceVpn, ciscoPingTrapOnCompletion=ciscoPingTrapOnCompletion, ciscoPingMIB=ciscoPingMIB, ciscoPingPacketCount=ciscoPingPacketCount, ciscoPingMIBNotificationGroup=ciscoPingMIBNotificationGroup, ciscoPingMIBObjects=ciscoPingMIBObjects, ciscoPingAddress=ciscoPingAddress, ciscoPingEntryOwner=ciscoPingEntryOwner, ciscoPingReceivedPackets=ciscoPingReceivedPackets, ciscoPingProtocol=ciscoPingProtocol, ciscoPingMIBGroup=ciscoPingMIBGroup, ciscoPingMinRtt=ciscoPingMinRtt, ciscoPingEntryStatus=ciscoPingEntryStatus, ciscoPingMIBTrapPrefix=ciscoPingMIBTrapPrefix, ciscoPingPacketSize=ciscoPingPacketSize, ciscoPingCompleted=ciscoPingCompleted, ciscoPingCompletion=ciscoPingCompletion, ciscoPingDelay=ciscoPingDelay, ciscoPingEntry=ciscoPingEntry, ciscoPingSentPackets=ciscoPingSentPackets, ciscoPingMIBCompliances=ciscoPingMIBCompliances, ciscoPingMIBGroupVpn=ciscoPingMIBGroupVpn, PYSNMP_MODULE_ID=ciscoPingMIB, ciscoPingTable=ciscoPingTable, ciscoPingSerialNumber=ciscoPingSerialNumber, ciscoPingPacketTimeout=ciscoPingPacketTimeout, ciscoPingAvgRtt=ciscoPingAvgRtt, ciscoPingMaxRtt=ciscoPingMaxRtt, ciscoPingMIBTraps=ciscoPingMIBTraps, ciscoPingMIBGroups=ciscoPingMIBGroups, ciscoPingVrfName=ciscoPingVrfName, ciscoPingMIBConformance=ciscoPingMIBConformance, ciscoPingMIBCompliance=ciscoPingMIBCompliance)

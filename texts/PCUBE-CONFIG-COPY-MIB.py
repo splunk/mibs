@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module PCUBE-CONFIG-COPY-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/PCUBE-CONFIG-COPY-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 pcubeMgmt, = mibBuilder.importSymbols("PCUBE-SMI", "pcubeMgmt")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString")
 pcubeConfigCopyMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 5655, 3, 1))
 pcubeConfigCopyMIB.setRevisions(('2006-04-06 20:00', '2002-01-14 20:00',))
 
@@ -59,4 +59,4 @@ pcubeCopyGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 5655, 3, 1, 2, 1, 1)).setObjects
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     pcubeCopyGroup = pcubeCopyGroup.setStatus('current')
 if mibBuilder.loadTexts: pcubeCopyGroup.setDescription('A collection of objects used for specifying \n                            the configuration of the copy operation.')
-mibBuilder.exportSymbols("PCUBE-CONFIG-COPY-MIB", pcubeConfigCopyMIBCompliances=pcubeConfigCopyMIBCompliances, pcubeCopyTable=pcubeCopyTable, pcubeCopyDestFileType=pcubeCopyDestFileType, pcubeCopyGroup=pcubeCopyGroup, pcubeConfigCopyMIBCompliance=pcubeConfigCopyMIBCompliance, pcubeConfigCopyMIBObjects=pcubeConfigCopyMIBObjects, pcubeCopyEntryRowStatus=pcubeCopyEntryRowStatus, ConfigFileType=ConfigFileType, pcubeConfigCopyMIBConformance=pcubeConfigCopyMIBConformance, pcubeConfigCopyMIBGroups=pcubeConfigCopyMIBGroups, pcubeCopyEntry=pcubeCopyEntry, pcubeCopySourceFileType=pcubeCopySourceFileType, pcubeConfigCopyMIB=pcubeConfigCopyMIB, pcubeCopy=pcubeCopy, pcubeCopyIndex=pcubeCopyIndex, PYSNMP_MODULE_ID=pcubeConfigCopyMIB)
+mibBuilder.exportSymbols("PCUBE-CONFIG-COPY-MIB", pcubeCopyEntry=pcubeCopyEntry, pcubeCopyIndex=pcubeCopyIndex, pcubeConfigCopyMIBCompliance=pcubeConfigCopyMIBCompliance, pcubeCopyDestFileType=pcubeCopyDestFileType, ConfigFileType=ConfigFileType, pcubeConfigCopyMIBGroups=pcubeConfigCopyMIBGroups, pcubeConfigCopyMIBConformance=pcubeConfigCopyMIBConformance, pcubeCopy=pcubeCopy, pcubeConfigCopyMIB=pcubeConfigCopyMIB, pcubeConfigCopyMIBObjects=pcubeConfigCopyMIBObjects, pcubeCopyTable=pcubeCopyTable, pcubeCopyEntryRowStatus=pcubeCopyEntryRowStatus, pcubeCopyGroup=pcubeCopyGroup, PYSNMP_MODULE_ID=pcubeConfigCopyMIB, pcubeCopySourceFileType=pcubeCopySourceFileType, pcubeConfigCopyMIBCompliances=pcubeConfigCopyMIBCompliances)

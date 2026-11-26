@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-QUEUE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-QUEUE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoQueueMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 37))
 ciscoQueueMIB.setRevisions(('1995-08-21 00:00',))
 
@@ -92,4 +92,4 @@ cQRotationGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 37, 3, 2, 3)).setObjects(
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cQRotationGroup = cQRotationGroup.setStatus('current')
 if mibBuilder.loadTexts: cQRotationGroup.setDescription('The Custom Queuing queue rotation weights.')
-mibBuilder.exportSymbols("CISCO-QUEUE-MIB", cQCompliances=cQCompliances, ciscoQueueMIB=ciscoQueueMIB, cQIfSubqueues=cQIfSubqueues, cQStatsEntry=cQStatsEntry, cQIfQType=cQIfQType, cQStatsDepth=cQStatsDepth, cQCompliance=cQCompliance, ciscoQueueObjects=ciscoQueueObjects, cQRotationOctets=cQRotationOctets, cQStatsTable=cQStatsTable, cQStatsDiscards=cQStatsDiscards, CQAlgorithm=CQAlgorithm, cQRotationEntry=cQRotationEntry, cQStatsGroup=cQStatsGroup, ciscoQueueConformance=ciscoQueueConformance, cQIfGroup=cQIfGroup, cQIfEntry=cQIfEntry, cQStatsQNumber=cQStatsQNumber, cQGroups=cQGroups, cQRotationGroup=cQRotationGroup, ciscoQueueTraps=ciscoQueueTraps, cQStatsMaxDepth=cQStatsMaxDepth, cQRotationTable=cQRotationTable, PYSNMP_MODULE_ID=ciscoQueueMIB, cQIfTable=cQIfTable, cQIfTxLimit=cQIfTxLimit)
+mibBuilder.exportSymbols("CISCO-QUEUE-MIB", cQStatsTable=cQStatsTable, cQStatsGroup=cQStatsGroup, CQAlgorithm=CQAlgorithm, cQIfTxLimit=cQIfTxLimit, cQRotationEntry=cQRotationEntry, cQRotationOctets=cQRotationOctets, PYSNMP_MODULE_ID=ciscoQueueMIB, cQIfQType=cQIfQType, cQStatsDiscards=cQStatsDiscards, cQStatsDepth=cQStatsDepth, cQGroups=cQGroups, cQStatsQNumber=cQStatsQNumber, cQRotationTable=cQRotationTable, cQIfGroup=cQIfGroup, cQStatsMaxDepth=cQStatsMaxDepth, ciscoQueueMIB=ciscoQueueMIB, cQIfTable=cQIfTable, ciscoQueueTraps=ciscoQueueTraps, cQIfSubqueues=cQIfSubqueues, ciscoQueueObjects=ciscoQueueObjects, cQCompliances=cQCompliances, cQCompliance=cQCompliance, cQIfEntry=cQIfEntry, cQRotationGroup=cQRotationGroup, cQStatsEntry=cQStatsEntry, ciscoQueueConformance=ciscoQueueConformance)

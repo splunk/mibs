@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-DDP-IAPP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DDP-IAPP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 CiscoPort, = mibBuilder.importSymbols("CISCO-TC", "CiscoPort")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-TruthValue, MacAddress, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "MacAddress", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, MacAddress, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "MacAddress", "DisplayString", "TruthValue")
 ciscoDdpIappMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 277))
 ciscoDdpIappMIB.setRevisions(('2002-07-31 00:00', '2002-07-17 00:00', '2002-03-19 00:00', '2002-03-07 00:00', '2001-09-28 00:00',))
 
@@ -65,4 +65,4 @@ ciscoDdpIappNotificationGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 277, 
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoDdpIappNotificationGroup = ciscoDdpIappNotificationGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoDdpIappNotificationGroup.setDescription('This is the notification group for the\n                CISCO-DDP-IAPP-MIB.')
-mibBuilder.exportSymbols("CISCO-DDP-IAPP-MIB", cDdpIappLastRogueApMacAddr=cDdpIappLastRogueApMacAddr, ciscoDdpIappMIBObjects=ciscoDdpIappMIBObjects, PYSNMP_MODULE_ID=ciscoDdpIappMIB, ciscoDdpIappMIB=ciscoDdpIappMIB, ciscoDdpIappMIBGroups=ciscoDdpIappMIBGroups, ciscoDdpIappCompliance=ciscoDdpIappCompliance, cDdpIappRogueApNotifEnabled=cDdpIappRogueApNotifEnabled, ciscoDdpIappMIBCompliances=ciscoDdpIappMIBCompliances, cDdpIappMcastIpAddrType=cDdpIappMcastIpAddrType, ciscoDdpIappMIBNotifications=ciscoDdpIappMIBNotifications, cDdpIappPort=cDdpIappPort, cDdpIappMcastIpAddr=cDdpIappMcastIpAddr, ciscoDdpIappRogueApInfoGroup=ciscoDdpIappRogueApInfoGroup, cDdpIappGlobalConfig=cDdpIappGlobalConfig, cDdpIappLastRogueApNotif=cDdpIappLastRogueApNotif, cDdpIappRogueApInfo=cDdpIappRogueApInfo, ciscoDdpIappConfigGroup=ciscoDdpIappConfigGroup, ciscoDdpIappNotificationGroup=ciscoDdpIappNotificationGroup, ciscoDdpIappMIBConformance=ciscoDdpIappMIBConformance)
+mibBuilder.exportSymbols("CISCO-DDP-IAPP-MIB", ciscoDdpIappCompliance=ciscoDdpIappCompliance, cDdpIappLastRogueApMacAddr=cDdpIappLastRogueApMacAddr, cDdpIappMcastIpAddrType=cDdpIappMcastIpAddrType, ciscoDdpIappMIBCompliances=ciscoDdpIappMIBCompliances, ciscoDdpIappMIBConformance=ciscoDdpIappMIBConformance, ciscoDdpIappMIB=ciscoDdpIappMIB, cDdpIappMcastIpAddr=cDdpIappMcastIpAddr, ciscoDdpIappMIBGroups=ciscoDdpIappMIBGroups, ciscoDdpIappNotificationGroup=ciscoDdpIappNotificationGroup, ciscoDdpIappMIBNotifications=ciscoDdpIappMIBNotifications, cDdpIappRogueApInfo=cDdpIappRogueApInfo, ciscoDdpIappConfigGroup=ciscoDdpIappConfigGroup, ciscoDdpIappMIBObjects=ciscoDdpIappMIBObjects, cDdpIappLastRogueApNotif=cDdpIappLastRogueApNotif, ciscoDdpIappRogueApInfoGroup=ciscoDdpIappRogueApInfoGroup, cDdpIappPort=cDdpIappPort, PYSNMP_MODULE_ID=ciscoDdpIappMIB, cDdpIappRogueApNotifEnabled=cDdpIappRogueApNotifEnabled, cDdpIappGlobalConfig=cDdpIappGlobalConfig)

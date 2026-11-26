@@ -1,22 +1,22 @@
 #
 # PySNMP MIB module CISCO-UNIFIED-COMPUTING-NWCTRL-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-UNIFIED-COMPUTING-NWCTRL-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-CiscoNetworkAddress, CiscoInetAddressMask, Unsigned64, TimeIntervalSec, CiscoAlarmSeverity = mibBuilder.importSymbols("CISCO-TC", "CiscoNetworkAddress", "CiscoInetAddressMask", "Unsigned64", "TimeIntervalSec", "CiscoAlarmSeverity")
-CucsManagedObjectDn, ciscoUnifiedComputingMIBObjects, CucsManagedObjectId = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "CucsManagedObjectDn", "ciscoUnifiedComputingMIBObjects", "CucsManagedObjectId")
-CucsNwctrlLinkFailAction, CucsNwctrlRegistrationMode, CucsNwctrlAdminState, CucsPolicyPolicyOwner = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-TC-MIB", "CucsNwctrlLinkFailAction", "CucsNwctrlRegistrationMode", "CucsNwctrlAdminState", "CucsPolicyPolicyOwner")
+CiscoInetAddressMask, CiscoAlarmSeverity, Unsigned64, TimeIntervalSec, CiscoNetworkAddress = mibBuilder.importSymbols("CISCO-TC", "CiscoInetAddressMask", "CiscoAlarmSeverity", "Unsigned64", "TimeIntervalSec", "CiscoNetworkAddress")
+ciscoUnifiedComputingMIBObjects, CucsManagedObjectDn, CucsManagedObjectId = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "ciscoUnifiedComputingMIBObjects", "CucsManagedObjectDn", "CucsManagedObjectId")
+CucsNwctrlRegistrationMode, CucsPolicyPolicyOwner, CucsNwctrlLinkFailAction, CucsNwctrlAdminState = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-TC-MIB", "CucsNwctrlRegistrationMode", "CucsPolicyPolicyOwner", "CucsNwctrlLinkFailAction", "CucsNwctrlAdminState")
 InetAddressIPv4, InetAddressIPv6 = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressIPv4", "InetAddressIPv6")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
-DisplayString, TextualConvention, TimeStamp, RowPointer, MacAddress, TimeInterval, TruthValue, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TimeStamp", "RowPointer", "MacAddress", "TimeInterval", "TruthValue", "DateAndTime")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
+TimeStamp, TruthValue, TextualConvention, TimeInterval, DisplayString, MacAddress, RowPointer, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "TruthValue", "TextualConvention", "TimeInterval", "DisplayString", "MacAddress", "RowPointer", "DateAndTime")
 cucsNwctrlObjects = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 33))
 if mibBuilder.loadTexts: cucsNwctrlObjects.setLastUpdated('201601180000Z')
 if mibBuilder.loadTexts: cucsNwctrlObjects.setOrganization('Cisco Systems Inc.')
@@ -52,4 +52,4 @@ cucsNwctrlDefinitionLldpReceive = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 719, 1
 if mibBuilder.loadTexts: cucsNwctrlDefinitionLldpReceive.setStatus('current')
 cucsNwctrlDefinitionLldpTransmit = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 33, 1, 1, 14), CucsNwctrlAdminState()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: cucsNwctrlDefinitionLldpTransmit.setStatus('current')
-mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-NWCTRL-MIB", cucsNwctrlDefinitionPolicyOwner=cucsNwctrlDefinitionPolicyOwner, cucsNwctrlDefinitionCdp=cucsNwctrlDefinitionCdp, cucsNwctrlDefinitionEntry=cucsNwctrlDefinitionEntry, cucsNwctrlDefinitionPropAcl=cucsNwctrlDefinitionPropAcl, cucsNwctrlDefinitionUplinkFailAction=cucsNwctrlDefinitionUplinkFailAction, cucsNwctrlDefinitionMacRegisterMode=cucsNwctrlDefinitionMacRegisterMode, cucsNwctrlDefinitionDn=cucsNwctrlDefinitionDn, cucsNwctrlDefinitionName=cucsNwctrlDefinitionName, cucsNwctrlDefinitionLldpTransmit=cucsNwctrlDefinitionLldpTransmit, cucsNwctrlDefinitionTable=cucsNwctrlDefinitionTable, cucsNwctrlDefinitionDescr=cucsNwctrlDefinitionDescr, cucsNwctrlDefinitionRn=cucsNwctrlDefinitionRn, PYSNMP_MODULE_ID=cucsNwctrlObjects, cucsNwctrlObjects=cucsNwctrlObjects, cucsNwctrlDefinitionPolicyLevel=cucsNwctrlDefinitionPolicyLevel, cucsNwctrlDefinitionIntId=cucsNwctrlDefinitionIntId, cucsNwctrlDefinitionLldpReceive=cucsNwctrlDefinitionLldpReceive, cucsNwctrlDefinitionInstanceId=cucsNwctrlDefinitionInstanceId)
+mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-NWCTRL-MIB", cucsNwctrlDefinitionTable=cucsNwctrlDefinitionTable, cucsNwctrlDefinitionIntId=cucsNwctrlDefinitionIntId, cucsNwctrlDefinitionPolicyOwner=cucsNwctrlDefinitionPolicyOwner, cucsNwctrlDefinitionLldpReceive=cucsNwctrlDefinitionLldpReceive, cucsNwctrlDefinitionMacRegisterMode=cucsNwctrlDefinitionMacRegisterMode, cucsNwctrlDefinitionRn=cucsNwctrlDefinitionRn, cucsNwctrlDefinitionDescr=cucsNwctrlDefinitionDescr, cucsNwctrlDefinitionName=cucsNwctrlDefinitionName, cucsNwctrlDefinitionLldpTransmit=cucsNwctrlDefinitionLldpTransmit, cucsNwctrlDefinitionDn=cucsNwctrlDefinitionDn, cucsNwctrlDefinitionPolicyLevel=cucsNwctrlDefinitionPolicyLevel, cucsNwctrlDefinitionCdp=cucsNwctrlDefinitionCdp, PYSNMP_MODULE_ID=cucsNwctrlObjects, cucsNwctrlDefinitionInstanceId=cucsNwctrlDefinitionInstanceId, cucsNwctrlDefinitionPropAcl=cucsNwctrlDefinitionPropAcl, cucsNwctrlDefinitionEntry=cucsNwctrlDefinitionEntry, cucsNwctrlDefinitionUplinkFailAction=cucsNwctrlDefinitionUplinkFailAction, cucsNwctrlObjects=cucsNwctrlObjects)

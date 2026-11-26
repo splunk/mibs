@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-IMAGE-CHECK-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-IMAGE-CHECK-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoImageCheckMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 99990))
 if mibBuilder.loadTexts: ciscoImageCheckMIB.setLastUpdated('200305150000Z')
@@ -59,4 +59,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoImgChkResultsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 99990, 2, 2, 2)).setObjects(("CISCO-IMAGE-CHECK-MIB", "ciscoImgChkFeatureName"), ("CISCO-IMAGE-CHECK-MIB", "ciscoImgChkCapabilityName"), ("CISCO-IMAGE-CHECK-MIB", "ciscoImgChkCapabilityReq"), ("CISCO-IMAGE-CHECK-MIB", "ciscoImgChkInCompDescr"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoImgChkResultsGroup = ciscoImgChkResultsGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-IMAGE-CHECK-MIB", ciscoImageCheckStatus=ciscoImageCheckStatus, ciscoImageCheckImageName=ciscoImageCheckImageName, ciscoImageCheckMIBCompliances=ciscoImageCheckMIBCompliances, ciscoImageCheckMIBConformance=ciscoImageCheckMIBConformance, ciscoImageCheckMIBObjects=ciscoImageCheckMIBObjects, ciscoImageCheckOpTable=ciscoImageCheckOpTable, ciscoImageCheckMIBCompliance=ciscoImageCheckMIBCompliance, ciscoImgChkCapabilityName=ciscoImgChkCapabilityName, ciscoImageCheckEntryStatus=ciscoImageCheckEntryStatus, ciscoImgChkResultsEntry=ciscoImgChkResultsEntry, ciscoImgChkFeatureIndex=ciscoImgChkFeatureIndex, ciscoImgChkFeatureName=ciscoImgChkFeatureName, ciscoImageCheckMIB=ciscoImageCheckMIB, ciscoImgChkResultsGroup=ciscoImgChkResultsGroup, ciscoImageCheck=ciscoImageCheck, ciscoImgChkCapabilityReq=ciscoImgChkCapabilityReq, ciscoImageCheckSerialNum=ciscoImageCheckSerialNum, ciscoImgChkInCompDescr=ciscoImgChkInCompDescr, ciscoImgChkResultsTable=ciscoImgChkResultsTable, ciscoImageCheckOpGroup=ciscoImageCheckOpGroup, ciscoImageCheckMIBGroups=ciscoImageCheckMIBGroups, PYSNMP_MODULE_ID=ciscoImageCheckMIB, ciscoImageCheckOpEntry=ciscoImageCheckOpEntry, ciscoImgChkCapabIndex=ciscoImgChkCapabIndex)
+mibBuilder.exportSymbols("CISCO-IMAGE-CHECK-MIB", ciscoImgChkInCompDescr=ciscoImgChkInCompDescr, ciscoImageCheckOpGroup=ciscoImageCheckOpGroup, ciscoImgChkCapabIndex=ciscoImgChkCapabIndex, ciscoImageCheckOpTable=ciscoImageCheckOpTable, ciscoImageCheckOpEntry=ciscoImageCheckOpEntry, ciscoImageCheckStatus=ciscoImageCheckStatus, ciscoImageCheckMIBObjects=ciscoImageCheckMIBObjects, ciscoImageCheckMIBGroups=ciscoImageCheckMIBGroups, ciscoImgChkFeatureIndex=ciscoImgChkFeatureIndex, ciscoImgChkResultsEntry=ciscoImgChkResultsEntry, ciscoImageCheckMIBCompliance=ciscoImageCheckMIBCompliance, ciscoImageCheckMIBConformance=ciscoImageCheckMIBConformance, ciscoImgChkCapabilityReq=ciscoImgChkCapabilityReq, ciscoImageCheckEntryStatus=ciscoImageCheckEntryStatus, ciscoImgChkFeatureName=ciscoImgChkFeatureName, ciscoImgChkCapabilityName=ciscoImgChkCapabilityName, ciscoImageCheckImageName=ciscoImageCheckImageName, ciscoImageCheckMIB=ciscoImageCheckMIB, ciscoImgChkResultsTable=ciscoImgChkResultsTable, ciscoImageCheckSerialNum=ciscoImageCheckSerialNum, PYSNMP_MODULE_ID=ciscoImageCheckMIB, ciscoImageCheckMIBCompliances=ciscoImageCheckMIBCompliances, ciscoImageCheck=ciscoImageCheck, ciscoImgChkResultsGroup=ciscoImgChkResultsGroup)

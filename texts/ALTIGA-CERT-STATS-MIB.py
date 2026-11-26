@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module ALTIGA-CERT-STATS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/ALTIGA-CERT-STATS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 alCertMibModule, = mibBuilder.importSymbols("ALTIGA-GLOBAL-REG", "alCertMibModule")
-alCertGroup, alStatsCert = mibBuilder.importSymbols("ALTIGA-MIB", "alCertGroup", "alStatsCert")
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+alStatsCert, alCertGroup = mibBuilder.importSymbols("ALTIGA-MIB", "alStatsCert", "alCertGroup")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, iso, Counter32, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "iso", "Counter32", "IpAddress", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, IpAddress, Counter32, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "IpAddress", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 altigaCertStatsMibModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 3076, 1, 1, 32, 2))
 altigaCertStatsMibModule.setRevisions(('2002-09-05 13:00', '2002-07-10 00:00',))
 
@@ -79,4 +79,4 @@ altigaCertStatsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 3076, 2, 1, 1, 1, 27, 2)).
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     altigaCertStatsGroup = altigaCertStatsGroup.setStatus('current')
 if mibBuilder.loadTexts: altigaCertStatsGroup.setDescription('The objects for Cert statistics.')
-mibBuilder.exportSymbols("ALTIGA-CERT-STATS-MIB", alCertStatsServerCertTimeouts=alCertStatsServerCertTimeouts, alStatsCertGlobal=alStatsCertGlobal, alCertStatsServerIndex=alCertStatsServerIndex, alCertStatsServerPortNumber=alCertStatsServerPortNumber, altigaCertStatsGroup=altigaCertStatsGroup, alCertStatsServerCertRcvd=alCertStatsServerCertRcvd, altigaCertStatsMibModule=altigaCertStatsMibModule, altigaCertStatsMibCompliance=altigaCertStatsMibCompliance, altigaCertStatsMibConformance=altigaCertStatsMibConformance, alCertStatsServerCRLRetransmissions=alCertStatsServerCRLRetransmissions, PYSNMP_MODULE_ID=altigaCertStatsMibModule, alCertStatsServerCertRequests=alCertStatsServerCertRequests, alCertStatsServerAddress=alCertStatsServerAddress, alCertStatsServerCertPendingRequests=alCertStatsServerCertPendingRequests, alCertStatsServerCRLRcvd=alCertStatsServerCRLRcvd, alCertStatsServerCRLTimeouts=alCertStatsServerCRLTimeouts, alCertStatsServerCRLPendingRequests=alCertStatsServerCRLPendingRequests, alCertStatsServerEntry=alCertStatsServerEntry, alCertStatsServerTable=alCertStatsServerTable, alCertStatsServerCRLRequests=alCertStatsServerCRLRequests, altigaCertStatsMibCompliances=altigaCertStatsMibCompliances, alCertStatsServerCertRetransmissions=alCertStatsServerCertRetransmissions)
+mibBuilder.exportSymbols("ALTIGA-CERT-STATS-MIB", alCertStatsServerCertTimeouts=alCertStatsServerCertTimeouts, alCertStatsServerCRLTimeouts=alCertStatsServerCRLTimeouts, alCertStatsServerCRLRequests=alCertStatsServerCRLRequests, alStatsCertGlobal=alStatsCertGlobal, altigaCertStatsMibCompliances=altigaCertStatsMibCompliances, alCertStatsServerEntry=alCertStatsServerEntry, alCertStatsServerCRLPendingRequests=alCertStatsServerCRLPendingRequests, alCertStatsServerPortNumber=alCertStatsServerPortNumber, alCertStatsServerCertRetransmissions=alCertStatsServerCertRetransmissions, altigaCertStatsGroup=altigaCertStatsGroup, alCertStatsServerTable=alCertStatsServerTable, alCertStatsServerCertRequests=alCertStatsServerCertRequests, alCertStatsServerCRLRetransmissions=alCertStatsServerCRLRetransmissions, alCertStatsServerCertRcvd=alCertStatsServerCertRcvd, altigaCertStatsMibCompliance=altigaCertStatsMibCompliance, altigaCertStatsMibConformance=altigaCertStatsMibConformance, alCertStatsServerCRLRcvd=alCertStatsServerCRLRcvd, alCertStatsServerIndex=alCertStatsServerIndex, alCertStatsServerAddress=alCertStatsServerAddress, alCertStatsServerCertPendingRequests=alCertStatsServerCertPendingRequests, altigaCertStatsMibModule=altigaCertStatsMibModule, PYSNMP_MODULE_ID=altigaCertStatsMibModule)

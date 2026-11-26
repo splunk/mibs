@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module NBS-FEC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/mrv/NBS-FEC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:20 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:12:15 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint")
+SingleValueConstraint, ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion", "ValueSizeConstraint")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
 nbs, = mibBuilder.importSymbols("NBS-MIB", "nbs")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-iso, MibIdentifier, Integer32, ModuleIdentity, Counter64, Unsigned32, ObjectIdentity, Counter32, Bits, Gauge32, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "iso", "MibIdentifier", "Integer32", "ModuleIdentity", "Counter64", "Unsigned32", "ObjectIdentity", "Counter32", "Bits", "Gauge32", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "IpAddress", "TimeTicks")
+iso, ModuleIdentity, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ObjectIdentity, Unsigned32, TimeTicks, IpAddress, Counter32, MibIdentifier, Counter64, NotificationType, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "iso", "ModuleIdentity", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ObjectIdentity", "Unsigned32", "TimeTicks", "IpAddress", "Counter32", "MibIdentifier", "Counter64", "NotificationType", "Bits")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 nbsFecMib = ModuleIdentity((1, 3, 6, 1, 4, 1, 629, 232))
 if mibBuilder.loadTexts: nbsFecMib.setLastUpdated('201504290000Z')
@@ -45,4 +45,4 @@ if mibBuilder.loadTexts: nbsFecCfgCodeAdmin.setDescription('The administratively
 nbsFecCfgCodeOper = MibTableColumn((1, 3, 6, 1, 4, 1, 629, 232, 1, 1, 1, 4), NbsFecCode()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: nbsFecCfgCodeOper.setStatus('current')
 if mibBuilder.loadTexts: nbsFecCfgCodeOper.setDescription('The operationally active Forward Error Correction code')
-mibBuilder.exportSymbols("NBS-FEC-MIB", nbsFecCfgCodeOper=nbsFecCfgCodeOper, NbsFecCode=NbsFecCode, nbsFecCfgCodeAdmin=nbsFecCfgCodeAdmin, nbsFecCfgGrp=nbsFecCfgGrp, nbsFecMib=nbsFecMib, nbsFecCfgTable=nbsFecCfgTable, PYSNMP_MODULE_ID=nbsFecMib, nbsFecCfgIfIndex=nbsFecCfgIfIndex, nbsFecCfgCodeCaps=nbsFecCfgCodeCaps, nbsFecCfgEntry=nbsFecCfgEntry)
+mibBuilder.exportSymbols("NBS-FEC-MIB", PYSNMP_MODULE_ID=nbsFecMib, nbsFecCfgTable=nbsFecCfgTable, nbsFecCfgCodeOper=nbsFecCfgCodeOper, nbsFecCfgIfIndex=nbsFecCfgIfIndex, nbsFecCfgCodeCaps=nbsFecCfgCodeCaps, nbsFecCfgCodeAdmin=nbsFecCfgCodeAdmin, NbsFecCode=NbsFecCode, nbsFecCfgGrp=nbsFecCfgGrp, nbsFecCfgEntry=nbsFecCfgEntry, nbsFecMib=nbsFecMib)

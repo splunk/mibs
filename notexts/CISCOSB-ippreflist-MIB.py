@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCOSB-ippreflist-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-ippreflist-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:01 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
-InetAddressType, InetAddressPrefixLength, InetVersion, InetZoneIndex, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddressPrefixLength", "InetVersion", "InetZoneIndex", "InetAddress")
+InetAddressType, InetVersion, InetZoneIndex, InetAddress, InetAddressPrefixLength = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetVersion", "InetZoneIndex", "InetAddress", "InetAddressPrefixLength")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Counter64, MibIdentifier, NotificationType, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Counter64", "MibIdentifier", "NotificationType", "iso", "Unsigned32", "Counter32")
-DisplayString, RowStatus, TextualConvention, TimeStamp, TruthValue, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention", "TimeStamp", "TruthValue", "DateAndTime")
+Counter64, TimeTicks, NotificationType, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, Integer32, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "Integer32", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
+TimeStamp, TruthValue, TextualConvention, DisplayString, RowStatus, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "TruthValue", "TextualConvention", "DisplayString", "RowStatus", "DateAndTime")
 rlIpPrefList = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 212))
 class RlIpPrefListEntryType(TextualConvention, Integer32):
     status = 'current'
@@ -73,4 +73,4 @@ rlIpPrefListInfoRangeEntries = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 2
 if mibBuilder.loadTexts: rlIpPrefListInfoRangeEntries.setStatus('current')
 rlIpPrefListInfoNextFreeIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 212, 2, 1, 5), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlIpPrefListInfoNextFreeIndex.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-ippreflist-MIB", rlIpPrefListDescription=rlIpPrefListDescription, rlIpPrefListAction=rlIpPrefListAction, rlIpPrefListRowStatus=rlIpPrefListRowStatus, rlIpPrefList=rlIpPrefList, rlIpPrefListInetAddrType=rlIpPrefListInetAddrType, RlIpPrefListEntryType=RlIpPrefListEntryType, rlIpPrefListType=rlIpPrefListType, rlIpPrefListEntryType=rlIpPrefListEntryType, rlIpPrefListName=rlIpPrefListName, rlIpPrefListInfoName=rlIpPrefListInfoName, rlIpPrefListInetAddr=rlIpPrefListInetAddr, rlIpPrefListInfoTable=rlIpPrefListInfoTable, rlIpPrefListHitCount=rlIpPrefListHitCount, rlIpPrefListInfoEntry=rlIpPrefListInfoEntry, RlIpPrefListType=RlIpPrefListType, rlIpPrefListPrefixLength=rlIpPrefListPrefixLength, RlIpPrefListActionType=RlIpPrefListActionType, rlIpPrefListEntry=rlIpPrefListEntry, rlIpPrefListGeLength=rlIpPrefListGeLength, rlIpPrefListTable=rlIpPrefListTable, rlIpPrefListEntryIndex=rlIpPrefListEntryIndex, rlIpPrefListInfoEntriesNumber=rlIpPrefListInfoEntriesNumber, rlIpPrefListInfoRangeEntries=rlIpPrefListInfoRangeEntries, rlIpPrefListInfoNextFreeIndex=rlIpPrefListInfoNextFreeIndex, rlIpPrefListInfoType=rlIpPrefListInfoType, rlIpPrefListLeLength=rlIpPrefListLeLength)
+mibBuilder.exportSymbols("CISCOSB-ippreflist-MIB", rlIpPrefListHitCount=rlIpPrefListHitCount, rlIpPrefListInfoEntriesNumber=rlIpPrefListInfoEntriesNumber, rlIpPrefListInfoNextFreeIndex=rlIpPrefListInfoNextFreeIndex, rlIpPrefListInfoTable=rlIpPrefListInfoTable, rlIpPrefListInfoType=rlIpPrefListInfoType, rlIpPrefListRowStatus=rlIpPrefListRowStatus, rlIpPrefListEntry=rlIpPrefListEntry, rlIpPrefListAction=rlIpPrefListAction, rlIpPrefListEntryType=rlIpPrefListEntryType, rlIpPrefListInetAddrType=rlIpPrefListInetAddrType, rlIpPrefListType=rlIpPrefListType, rlIpPrefListInfoRangeEntries=rlIpPrefListInfoRangeEntries, rlIpPrefListInfoEntry=rlIpPrefListInfoEntry, rlIpPrefListInfoName=rlIpPrefListInfoName, rlIpPrefListDescription=rlIpPrefListDescription, rlIpPrefList=rlIpPrefList, rlIpPrefListGeLength=rlIpPrefListGeLength, rlIpPrefListName=rlIpPrefListName, rlIpPrefListLeLength=rlIpPrefListLeLength, rlIpPrefListTable=rlIpPrefListTable, RlIpPrefListType=RlIpPrefListType, rlIpPrefListInetAddr=rlIpPrefListInetAddr, RlIpPrefListActionType=RlIpPrefListActionType, rlIpPrefListPrefixLength=rlIpPrefListPrefixLength, rlIpPrefListEntryIndex=rlIpPrefListEntryIndex, RlIpPrefListEntryType=RlIpPrefListEntryType)

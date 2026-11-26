@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCOSB-SPAN-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-SPAN-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 rndNotifications, switch001 = mibBuilder.importSymbols("CISCOSB-MIB", "rndNotifications", "switch001")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, iso, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, NotificationType, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "iso", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "NotificationType", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString", "TruthValue")
 class SpanDestinationPortType(TextualConvention, Integer32):
     description = 'SPAN destination mode type:\n                    1 - monitor-only\n                    2 - network.'
     status = 'current'
@@ -94,4 +94,4 @@ if mibBuilder.loadTexts: rlSpanSourceDirection.setDescription('This variable ind
 rlSpanSourceRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 219, 3, 1, 5), RowStatus()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlSpanSourceRowStatus.setStatus('current')
 if mibBuilder.loadTexts: rlSpanSourceRowStatus.setDescription('The row status variable, used according to\n       row installation and removal conventions.')
-mibBuilder.exportSymbols("CISCOSB-SPAN-MIB", rlSpanSourceRowStatus=rlSpanSourceRowStatus, rlSpanSourceType=rlSpanSourceType, SpanSourceType=SpanSourceType, rlSpanDestinationTable=rlSpanDestinationTable, SpanDestinationPortType=SpanDestinationPortType, rlSpanDestinationIfIndex=rlSpanDestinationIfIndex, rlSpan=rlSpan, rlSpanDestinationRowStatus=rlSpanDestinationRowStatus, rlSpanSourceIndex=rlSpanSourceIndex, rlSpanDestinationIsReflector=rlSpanDestinationIsReflector, SpanDestinationReflectorType=SpanDestinationReflectorType, SpanSourceDirection=SpanSourceDirection, rlSpanSourceEntry=rlSpanSourceEntry, rlSpanSourceDirection=rlSpanSourceDirection, rlSpanDestinationEntry=rlSpanDestinationEntry, rlSpanSourceTable=rlSpanSourceTable, rlSpanDestinationRemoteVlanId=rlSpanDestinationRemoteVlanId, rlSpanMibVersion=rlSpanMibVersion, rlSpanDestinationSessionId=rlSpanDestinationSessionId, rlSpanSourceSessionId=rlSpanSourceSessionId, rlSpanDestinationPortType=rlSpanDestinationPortType, PYSNMP_MODULE_ID=rlSpan)
+mibBuilder.exportSymbols("CISCOSB-SPAN-MIB", rlSpanDestinationSessionId=rlSpanDestinationSessionId, rlSpanSourceDirection=rlSpanSourceDirection, rlSpanSourceRowStatus=rlSpanSourceRowStatus, rlSpanMibVersion=rlSpanMibVersion, SpanDestinationPortType=SpanDestinationPortType, rlSpanSourceType=rlSpanSourceType, rlSpanSourceEntry=rlSpanSourceEntry, rlSpanDestinationPortType=rlSpanDestinationPortType, rlSpanDestinationIfIndex=rlSpanDestinationIfIndex, rlSpanSourceIndex=rlSpanSourceIndex, rlSpanDestinationIsReflector=rlSpanDestinationIsReflector, SpanSourceType=SpanSourceType, rlSpan=rlSpan, rlSpanDestinationRowStatus=rlSpanDestinationRowStatus, PYSNMP_MODULE_ID=rlSpan, rlSpanDestinationTable=rlSpanDestinationTable, SpanSourceDirection=SpanSourceDirection, rlSpanSourceTable=rlSpanSourceTable, SpanDestinationReflectorType=SpanDestinationReflectorType, rlSpanDestinationRemoteVlanId=rlSpanDestinationRemoteVlanId, rlSpanSourceSessionId=rlSpanSourceSessionId, rlSpanDestinationEntry=rlSpanDestinationEntry)

@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module EQLINTERNAL-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/equallogic/EQLINTERNAL-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:36:12 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:09:08 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
+ValueSizeConstraint, ConstraintsIntersection, SingleValueConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 UTFString, = mibBuilder.importSymbols("EQLGROUP-MIB", "UTFString")
 equalLogic, = mibBuilder.importSymbols("EQUALLOGIC-SMI", "equalLogic")
-InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
-NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Counter32, Counter64, ObjectIdentity, Unsigned32, Integer32, iso, TimeTicks, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, Bits, Gauge32, enterprises, ModuleIdentity, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Counter64", "ObjectIdentity", "Unsigned32", "Integer32", "iso", "TimeTicks", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "Bits", "Gauge32", "enterprises", "ModuleIdentity", "NotificationType")
-RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
+InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
+ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
+Counter64, Gauge32, iso, NotificationType, ObjectIdentity, Unsigned32, TimeTicks, Counter32, enterprises, Bits, MibIdentifier, Integer32, ModuleIdentity, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "Gauge32", "iso", "NotificationType", "ObjectIdentity", "Unsigned32", "TimeTicks", "Counter32", "enterprises", "Bits", "MibIdentifier", "Integer32", "ModuleIdentity", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
+DisplayString, TextualConvention, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "RowStatus")
 eqlInternalModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 12740, 27))
 eqlInternalModule.setRevisions(('2013-01-28 00:00',))
 
@@ -75,4 +75,4 @@ if mibBuilder.loadTexts: eqlMonitorStatusEntry.setDescription('An entry (row) co
 eqlMonitorStatusReminder = MibTableColumn((1, 3, 6, 1, 4, 1, 12740, 27, 1, 2, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(0, 1))).clone(namedValues=NamedValues(("monitoringExpired", 0), ("monitoringCurrent", 1)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: eqlMonitorStatusReminder.setStatus('current')
 if mibBuilder.loadTexts: eqlMonitorStatusReminder.setDescription('This field indicates if the SANHQ currently monitoring this group\n                     has recently contacted the group.')
-mibBuilder.exportSymbols("EQLINTERNAL-MIB", eqlMonitorSupportAssistTimestamp=eqlMonitorSupportAssistTimestamp, eqlMonitorRowStatus=eqlMonitorRowStatus, PYSNMP_MODULE_ID=eqlInternalModule, eqlMonitorInetAddressType=eqlMonitorInetAddressType, eqlMonitorSupportAssist=eqlMonitorSupportAssist, eqlMonitorIndex=eqlMonitorIndex, eqlInternalObjects=eqlInternalObjects, eqlMonitorLicensingTimestamp=eqlMonitorLicensingTimestamp, eqlInternalModule=eqlInternalModule, eqlMonitorEntry=eqlMonitorEntry, eqlMonitorTimestamp=eqlMonitorTimestamp, eqlMonitorStatusTable=eqlMonitorStatusTable, eqlMonitorStatusEntry=eqlMonitorStatusEntry, eqlMonitorStatusReminder=eqlMonitorStatusReminder, eqlMonitorDomainName=eqlMonitorDomainName, eqlMonitorInetAddress=eqlMonitorInetAddress, eqlMonitorTable=eqlMonitorTable, eqlMonitorDescription=eqlMonitorDescription, eqlMonitorUUID=eqlMonitorUUID, eqlMonitorServerName=eqlMonitorServerName)
+mibBuilder.exportSymbols("EQLINTERNAL-MIB", eqlInternalModule=eqlInternalModule, eqlMonitorStatusReminder=eqlMonitorStatusReminder, eqlMonitorStatusTable=eqlMonitorStatusTable, eqlMonitorInetAddressType=eqlMonitorInetAddressType, eqlMonitorStatusEntry=eqlMonitorStatusEntry, PYSNMP_MODULE_ID=eqlInternalModule, eqlMonitorRowStatus=eqlMonitorRowStatus, eqlMonitorUUID=eqlMonitorUUID, eqlMonitorServerName=eqlMonitorServerName, eqlMonitorTable=eqlMonitorTable, eqlMonitorLicensingTimestamp=eqlMonitorLicensingTimestamp, eqlMonitorInetAddress=eqlMonitorInetAddress, eqlInternalObjects=eqlInternalObjects, eqlMonitorTimestamp=eqlMonitorTimestamp, eqlMonitorEntry=eqlMonitorEntry, eqlMonitorDescription=eqlMonitorDescription, eqlMonitorSupportAssist=eqlMonitorSupportAssist, eqlMonitorSupportAssistTimestamp=eqlMonitorSupportAssistTimestamp, eqlMonitorIndex=eqlMonitorIndex, eqlMonitorDomainName=eqlMonitorDomainName)

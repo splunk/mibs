@@ -6,22 +6,22 @@
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "Integer32",
-      "Counter32",
-      "OBJECT-IDENTITY",
-      "enterprises",
-      "Gauge32",
-      "Counter64",
-      "MibIdentifier",
-      "TimeTicks",
-      "Unsigned32",
-      "MODULE-IDENTITY",
-      "Bits",
-      "TRAP-TYPE",
-      "OBJECT-TYPE",
-      "IpAddress",
       "NOTIFICATION-TYPE",
-      "iso"
+      "OBJECT-TYPE",
+      "MODULE-IDENTITY",
+      "Counter32",
+      "iso",
+      "IpAddress",
+      "OBJECT-IDENTITY",
+      "Gauge32",
+      "Unsigned32",
+      "enterprises",
+      "Integer32",
+      "Bits",
+      "TimeTicks",
+      "MibIdentifier",
+      "Counter64",
+      "TRAP-TYPE"
     ],
     "SNMPv2-TC": [
       "TEXTUAL-CONVENTION",
@@ -540,9 +540,9 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ict/ICT-MODULAR-POWER-SYSTEM-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 14:37:29 2026",
-      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
-      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+      "Produced by pysmi-1.1.12 at Thu Nov 26 06:10:56 2026",
+      "On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner",
+      "Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]"
     ],
     "module": "ICT-MODULAR-POWER-SYSTEM-MIB"
   }

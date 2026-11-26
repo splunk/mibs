@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCOSB-rlBrgMcMngr-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-rlBrgMcMngr-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 InetAddressType, = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType")
 VlanIndex, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "VlanIndex")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 rlBrgMcMngr = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 117))
 rlBrgMcMngr.setRevisions(('2006-02-12 00:00', '2004-04-19 00:00',))
 
@@ -56,4 +56,4 @@ if mibBuilder.loadTexts: rlBrgMulticastInetManagerAdminVlanMode.setDescription('
 rlBrgMulticastInetManagerOperVlanMode = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 117, 2, 1, 4), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3))).clone(namedValues=NamedValues(("mac-group", 1), ("ip-group", 2), ("ip-src-group", 3))).clone('mac-group')).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlBrgMulticastInetManagerOperVlanMode.setStatus('current')
 if mibBuilder.loadTexts: rlBrgMulticastInetManagerOperVlanMode.setDescription('The Bridge Multicast Oper Lookup Mode.')
-mibBuilder.exportSymbols("CISCOSB-rlBrgMcMngr-MIB", rlBrgMulticastInetManagerEntry=rlBrgMulticastInetManagerEntry, rlBrgMulticastInetManagerOperVlanMode=rlBrgMulticastInetManagerOperVlanMode, rlBrgMulticastManagerOperVlanMode=rlBrgMulticastManagerOperVlanMode, rlBrgMulticastManagerTable=rlBrgMulticastManagerTable, rlBrgMulticastInetManagerAdminVlanMode=rlBrgMulticastInetManagerAdminVlanMode, rlBrgMulticastManagerAdminVlanMode=rlBrgMulticastManagerAdminVlanMode, rlBrgMulticastManagerEntry=rlBrgMulticastManagerEntry, rlBrgMulticastInetManagerVlanTag=rlBrgMulticastInetManagerVlanTag, rlBrgMulticastInetManagerIpType=rlBrgMulticastInetManagerIpType, rlBrgMulticastInetManagerTable=rlBrgMulticastInetManagerTable, PYSNMP_MODULE_ID=rlBrgMcMngr, rlBrgMulticastManagerVlanTag=rlBrgMulticastManagerVlanTag, rlBrgMcMngr=rlBrgMcMngr)
+mibBuilder.exportSymbols("CISCOSB-rlBrgMcMngr-MIB", rlBrgMcMngr=rlBrgMcMngr, PYSNMP_MODULE_ID=rlBrgMcMngr, rlBrgMulticastInetManagerEntry=rlBrgMulticastInetManagerEntry, rlBrgMulticastManagerEntry=rlBrgMulticastManagerEntry, rlBrgMulticastManagerVlanTag=rlBrgMulticastManagerVlanTag, rlBrgMulticastInetManagerIpType=rlBrgMulticastInetManagerIpType, rlBrgMulticastInetManagerVlanTag=rlBrgMulticastInetManagerVlanTag, rlBrgMulticastInetManagerOperVlanMode=rlBrgMulticastInetManagerOperVlanMode, rlBrgMulticastManagerOperVlanMode=rlBrgMulticastManagerOperVlanMode, rlBrgMulticastManagerTable=rlBrgMulticastManagerTable, rlBrgMulticastManagerAdminVlanMode=rlBrgMulticastManagerAdminVlanMode, rlBrgMulticastInetManagerTable=rlBrgMulticastInetManagerTable, rlBrgMulticastInetManagerAdminVlanMode=rlBrgMulticastInetManagerAdminVlanMode)

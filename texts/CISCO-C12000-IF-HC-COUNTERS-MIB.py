@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-C12000-IF-HC-COUNTERS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-C12000-IF-HC-COUNTERS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:43 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoC12000IfHcCountersMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 31))
 if mibBuilder.loadTexts: ciscoC12000IfHcCountersMIB.setLastUpdated('9805270000Z')
 if mibBuilder.loadTexts: ciscoC12000IfHcCountersMIB.setOrganization('Cisco Systems, Inc.')
@@ -62,4 +62,4 @@ ciscoHCCountersMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 31, 3, 2, 1)).se
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoHCCountersMIBGroup = ciscoHCCountersMIBGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoHCCountersMIBGroup.setDescription('A collection of objects providing the HC Counter capability.\n\tThese objects will ONLY be supported in the 11.2GS version of \n\tIOS and will NOT be ported to any later versions.')
-mibBuilder.exportSymbols("CISCO-C12000-IF-HC-COUNTERS-MIB", cHCCounterTable=cHCCounterTable, cHCCounterIfInOctetsUpper=cHCCounterIfInOctetsUpper, cHCCounterEntry=cHCCounterEntry, ciscoC12000IfHcCountersMIB=ciscoC12000IfHcCountersMIB, ciscoHCCountersMIBGroups=ciscoHCCountersMIBGroups, cHCCounterIfOutUcastPktsUpper=cHCCounterIfOutUcastPktsUpper, cHCCounterIfOutUcastPktsLower=cHCCounterIfOutUcastPktsLower, ciscoHCCountersMIBNotifications=ciscoHCCountersMIBNotifications, ciscoHCCountersMIBGroup=ciscoHCCountersMIBGroup, cHCCounterIfInUcastPktsUpper=cHCCounterIfInUcastPktsUpper, cHCCounterIfOutOctetsLower=cHCCounterIfOutOctetsLower, ciscoHCCountersMIBCompliances=ciscoHCCountersMIBCompliances, cHCCounterMIBObjects=cHCCounterMIBObjects, cHCCounterIfInUcastPktsLower=cHCCounterIfInUcastPktsLower, cHCCounterIfInOctetsLower=cHCCounterIfInOctetsLower, cHCCounterIfOutOctetsUpper=cHCCounterIfOutOctetsUpper, ciscoHCCountersMIBCompliance=ciscoHCCountersMIBCompliance, ciscoHCCountersMIBConformance=ciscoHCCountersMIBConformance, PYSNMP_MODULE_ID=ciscoC12000IfHcCountersMIB)
+mibBuilder.exportSymbols("CISCO-C12000-IF-HC-COUNTERS-MIB", ciscoC12000IfHcCountersMIB=ciscoC12000IfHcCountersMIB, cHCCounterIfOutUcastPktsLower=cHCCounterIfOutUcastPktsLower, ciscoHCCountersMIBNotifications=ciscoHCCountersMIBNotifications, ciscoHCCountersMIBCompliances=ciscoHCCountersMIBCompliances, ciscoHCCountersMIBGroups=ciscoHCCountersMIBGroups, cHCCounterIfInOctetsLower=cHCCounterIfInOctetsLower, ciscoHCCountersMIBConformance=ciscoHCCountersMIBConformance, cHCCounterIfInUcastPktsUpper=cHCCounterIfInUcastPktsUpper, cHCCounterMIBObjects=cHCCounterMIBObjects, cHCCounterIfInUcastPktsLower=cHCCounterIfInUcastPktsLower, ciscoHCCountersMIBGroup=ciscoHCCountersMIBGroup, PYSNMP_MODULE_ID=ciscoC12000IfHcCountersMIB, cHCCounterTable=cHCCounterTable, cHCCounterIfOutOctetsUpper=cHCCounterIfOutOctetsUpper, cHCCounterIfOutOctetsLower=cHCCounterIfOutOctetsLower, cHCCounterEntry=cHCCounterEntry, cHCCounterIfOutUcastPktsUpper=cHCCounterIfOutUcastPktsUpper, cHCCounterIfInOctetsUpper=cHCCounterIfInOctetsUpper, ciscoHCCountersMIBCompliance=ciscoHCCountersMIBCompliance)

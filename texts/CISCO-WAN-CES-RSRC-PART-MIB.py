@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-WAN-CES-RSRC-PART-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-CES-RSRC-PART-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 cesmPort, = mibBuilder.importSymbols("CISCO-WAN-CES-PORT-MIB", "cesmPort")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoWanCesRsrcPartMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 41))
 ciscoWanCesRsrcPartMIB.setRevisions(('2002-09-03 00:00',))
 
@@ -68,4 +68,4 @@ ciscoWanCesRsrcPartGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 41, 2, 2, 1)
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoWanCesRsrcPartGroup = ciscoWanCesRsrcPartGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoWanCesRsrcPartGroup.setDescription('A collection of objects providing the\n        resource partition configuration on CES\n        ports.')
-mibBuilder.exportSymbols("CISCO-WAN-CES-RSRC-PART-MIB", cwcRsrcPartMIBGroups=cwcRsrcPartMIBGroups, cwcRsrcPartMIBCompliances=cwcRsrcPartMIBCompliances, PYSNMP_MODULE_ID=ciscoWanCesRsrcPartMIB, ciscoWanCesRsrcPartMIB=ciscoWanCesRsrcPartMIB, ciscoWanCesRsrcPartCompliance=ciscoWanCesRsrcPartCompliance, cesmPortCnfResPartGrp=cesmPortCnfResPartGrp, cesmPortCnfResPartGrpEntry=cesmPortCnfResPartGrpEntry, cesmResPartPortNum=cesmResPartPortNum, cesmResPartIngrPctBW=cesmResPartIngrPctBW, ciscoWanCesRsrcPartGroup=ciscoWanCesRsrcPartGroup, cesmPortCnfResPartGrpTable=cesmPortCnfResPartGrpTable, cesmResPartCtrlrNum=cesmResPartCtrlrNum, cesmResPartNumOfLcnAvail=cesmResPartNumOfLcnAvail, cesmResPartLcnHigh=cesmResPartLcnHigh, cesmResPartLcnLow=cesmResPartLcnLow, cesmResPartEgrPctBW=cesmResPartEgrPctBW, cesmResPartRowStatus=cesmResPartRowStatus, cwcRsrcPartMIBConformance=cwcRsrcPartMIBConformance, cesmResPartCtrlrID=cesmResPartCtrlrID)
+mibBuilder.exportSymbols("CISCO-WAN-CES-RSRC-PART-MIB", PYSNMP_MODULE_ID=ciscoWanCesRsrcPartMIB, cwcRsrcPartMIBCompliances=cwcRsrcPartMIBCompliances, cwcRsrcPartMIBGroups=cwcRsrcPartMIBGroups, cwcRsrcPartMIBConformance=cwcRsrcPartMIBConformance, ciscoWanCesRsrcPartGroup=ciscoWanCesRsrcPartGroup, cesmResPartLcnLow=cesmResPartLcnLow, cesmResPartRowStatus=cesmResPartRowStatus, cesmResPartPortNum=cesmResPartPortNum, cesmResPartEgrPctBW=cesmResPartEgrPctBW, cesmResPartNumOfLcnAvail=cesmResPartNumOfLcnAvail, ciscoWanCesRsrcPartMIB=ciscoWanCesRsrcPartMIB, cesmResPartIngrPctBW=cesmResPartIngrPctBW, cesmPortCnfResPartGrpTable=cesmPortCnfResPartGrpTable, ciscoWanCesRsrcPartCompliance=ciscoWanCesRsrcPartCompliance, cesmResPartCtrlrID=cesmResPartCtrlrID, cesmPortCnfResPartGrpEntry=cesmPortCnfResPartGrpEntry, cesmPortCnfResPartGrp=cesmPortCnfResPartGrp, cesmResPartLcnHigh=cesmResPartLcnHigh, cesmResPartCtrlrNum=cesmResPartCtrlrNum)

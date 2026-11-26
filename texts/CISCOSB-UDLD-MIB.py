@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCOSB-UDLD-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-UDLD-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 rndNotifications, switch001 = mibBuilder.importSymbols("CISCOSB-MIB", "rndNotifications", "switch001")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, iso, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, NotificationType, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "iso", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "NotificationType", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, MacAddress, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "MacAddress", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+RowStatus, DisplayString, TruthValue, TextualConvention, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TruthValue", "TextualConvention", "MacAddress")
 class UdldString(SnmpAdminString):
     description = 'The Device-ID TLV should contain the switch base MAC address in ACSII format.'
     status = 'current'
@@ -111,4 +111,4 @@ if mibBuilder.loadTexts: rlUdldGlobalUDLDMode.setDescription('Define Global UDLD
 rlUdldGlobalMessageTime = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 218, 4), Integer32()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlUdldGlobalMessageTime.setStatus('current')
 if mibBuilder.loadTexts: rlUdldGlobalMessageTime.setDescription('Define global value of the interval between two sent probe messages, use the udld\n        message time command in Global Configuration mode.')
-mibBuilder.exportSymbols("CISCOSB-UDLD-MIB", rlUdldPortDefaultConfiguration=rlUdldPortDefaultConfiguration, rlUdldNeighborDeviceID=rlUdldNeighborDeviceID, UdldNeighborCurrentState=UdldNeighborCurrentState, rlUdldNeighborPortID=rlUdldNeighborPortID, rlUdldPortTable=rlUdldPortTable, PYSNMP_MODULE_ID=rlUdld, UdldPortMode=UdldPortMode, rlUdldNeighborTable=rlUdldNeighborTable, rlUdld=rlUdld, rlUdldNeighborEntry=rlUdldNeighborEntry, rlUdldBidirectionalState=rlUdldBidirectionalState, rlUdldNeighborDeviceName=rlUdldNeighborDeviceName, rlUdldPortAdminMode=rlUdldPortAdminMode, UdldPortBidirectionalState=UdldPortBidirectionalState, UdldString=UdldString, rlUdldNeighborLeftLifeTime=rlUdldNeighborLeftLifeTime, rlUdldNeighborCurrentState=rlUdldNeighborCurrentState, rlUdldNumberOfDetectedNeighbors=rlUdldNumberOfDetectedNeighbors, rlUdldNeighborMessageTime=rlUdldNeighborMessageTime, UdldGlobalMode=UdldGlobalMode, rlUdldPortOperMode=rlUdldPortOperMode, rlUdldPortIfIndex=rlUdldPortIfIndex, rlUdldNeighborDeviceMACAddress=rlUdldNeighborDeviceMACAddress, rlUdldPortEntry=rlUdldPortEntry, rlUdldGlobalUDLDMode=rlUdldGlobalUDLDMode, rlUdldNeighborPortIfIndex=rlUdldNeighborPortIfIndex, rlUdldGlobalMessageTime=rlUdldGlobalMessageTime)
+mibBuilder.exportSymbols("CISCOSB-UDLD-MIB", UdldPortBidirectionalState=UdldPortBidirectionalState, rlUdldGlobalMessageTime=rlUdldGlobalMessageTime, UdldNeighborCurrentState=UdldNeighborCurrentState, rlUdldNeighborTable=rlUdldNeighborTable, rlUdldNeighborPortIfIndex=rlUdldNeighborPortIfIndex, rlUdldPortTable=rlUdldPortTable, UdldString=UdldString, rlUdldPortEntry=rlUdldPortEntry, rlUdldGlobalUDLDMode=rlUdldGlobalUDLDMode, UdldPortMode=UdldPortMode, rlUdldNeighborLeftLifeTime=rlUdldNeighborLeftLifeTime, rlUdld=rlUdld, rlUdldPortOperMode=rlUdldPortOperMode, UdldGlobalMode=UdldGlobalMode, rlUdldNeighborEntry=rlUdldNeighborEntry, rlUdldPortIfIndex=rlUdldPortIfIndex, rlUdldNeighborDeviceMACAddress=rlUdldNeighborDeviceMACAddress, rlUdldNeighborDeviceID=rlUdldNeighborDeviceID, rlUdldPortAdminMode=rlUdldPortAdminMode, rlUdldPortDefaultConfiguration=rlUdldPortDefaultConfiguration, rlUdldNeighborPortID=rlUdldNeighborPortID, rlUdldNeighborCurrentState=rlUdldNeighborCurrentState, rlUdldBidirectionalState=rlUdldBidirectionalState, PYSNMP_MODULE_ID=rlUdld, rlUdldNeighborMessageTime=rlUdldNeighborMessageTime, rlUdldNumberOfDetectedNeighbors=rlUdldNumberOfDetectedNeighbors, rlUdldNeighborDeviceName=rlUdldNeighborDeviceName)

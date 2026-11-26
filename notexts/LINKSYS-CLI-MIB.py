@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module LINKSYS-CLI-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/linksys/LINKSYS-CLI-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:08 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:11:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection")
+ConstraintsUnion, SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint")
 rnd, = mibBuilder.importSymbols("LINKSYS-MIB", "rnd")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Bits, iso, IpAddress, Unsigned32, Integer32, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, MibIdentifier, NotificationType, ObjectIdentity, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "iso", "IpAddress", "Unsigned32", "Integer32", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "MibIdentifier", "NotificationType", "ObjectIdentity", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, RowStatus, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TruthValue", "TextualConvention")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+Gauge32, ModuleIdentity, Bits, ObjectIdentity, iso, Unsigned32, Counter32, IpAddress, TimeTicks, MibIdentifier, NotificationType, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "ModuleIdentity", "Bits", "ObjectIdentity", "iso", "Unsigned32", "Counter32", "IpAddress", "TimeTicks", "MibIdentifier", "NotificationType", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32")
+TextualConvention, DisplayString, RowStatus, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "RowStatus", "TruthValue")
 rlCli = ModuleIdentity((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 52))
 rlCli.setRevisions(('2010-05-25 00:00', '2007-01-02 00:00',))
 if mibBuilder.loadTexts: rlCli.setLastUpdated('201005250000Z')
@@ -65,4 +65,4 @@ rlCLIremoteCLIoutputCommandNumber = MibTableColumn((1, 3, 6, 1, 4, 1, 3955, 1000
 if mibBuilder.loadTexts: rlCLIremoteCLIoutputCommandNumber.setStatus('current')
 rlCLIremoteCLIinstance = MibScalar((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 52, 6, 7), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlCLIremoteCLIinstance.setStatus('current')
-mibBuilder.exportSymbols("LINKSYS-CLI-MIB", rlCLIremoteCLIcommandsTable=rlCLIremoteCLIcommandsTable, rlCLIremoteCLIoutputsTable=rlCLIremoteCLIoutputsTable, rlCliTimer=rlCliTimer, rlCLIremoteCLIactivationStatus=rlCLIremoteCLIactivationStatus, rlCLIremoteCLIcommandPartNumber=rlCLIremoteCLIcommandPartNumber, rlCLIremoteCLIoutputRowStatus=rlCLIremoteCLIoutputRowStatus, rlCLIremoteCLIoutputCommandNumber=rlCLIremoteCLIoutputCommandNumber, rlCliFileEnable=rlCliFileEnable, rlCLIremoteCLImode=rlCLIremoteCLImode, rlCliMibVersion=rlCliMibVersion, PYSNMP_MODULE_ID=rlCli, rlCli=rlCli, rlCLIremoteCLIexecutionCommandIndex=rlCLIremoteCLIexecutionCommandIndex, rlCLIremoteCLIcommandPart=rlCLIremoteCLIcommandPart, rlCliFileEnableAfterReset=rlCliFileEnableAfterReset, rlCLIremoteCLIoutputRowIndex=rlCLIremoteCLIoutputRowIndex, rlCLIremoteCLIcommandIndex=rlCLIremoteCLIcommandIndex, rlCLIremoteCLIcommand=rlCLIremoteCLIcommand, rlCLIremoteCLIcommandStatus=rlCLIremoteCLIcommandStatus, rlCLIremoteCLIoutputRowPartNumber=rlCLIremoteCLIoutputRowPartNumber, rlCLIremoteCLIcommandsEntry=rlCLIremoteCLIcommandsEntry, rlCLIremoteCLIoutputsEntry=rlCLIremoteCLIoutputsEntry, rlCLIremoteCLIinstance=rlCLIremoteCLIinstance, rlCliPassword=rlCliPassword, rlCLIremoteCLIexecutionState=rlCLIremoteCLIexecutionState, rlCLIremoteCLIoutputRowPart=rlCLIremoteCLIoutputRowPart, rlCLIremoteCLIsupport=rlCLIremoteCLIsupport)
+mibBuilder.exportSymbols("LINKSYS-CLI-MIB", rlCliFileEnableAfterReset=rlCliFileEnableAfterReset, rlCLIremoteCLIoutputRowPartNumber=rlCLIremoteCLIoutputRowPartNumber, rlCLIremoteCLImode=rlCLIremoteCLImode, rlCLIremoteCLIcommandsTable=rlCLIremoteCLIcommandsTable, rlCLIremoteCLIcommandPart=rlCLIremoteCLIcommandPart, rlCLIremoteCLIcommandsEntry=rlCLIremoteCLIcommandsEntry, rlCLIremoteCLIoutputsTable=rlCLIremoteCLIoutputsTable, rlCLIremoteCLIoutputsEntry=rlCLIremoteCLIoutputsEntry, rlCliFileEnable=rlCliFileEnable, rlCLIremoteCLIcommandPartNumber=rlCLIremoteCLIcommandPartNumber, rlCLIremoteCLIcommandIndex=rlCLIremoteCLIcommandIndex, rlCLIremoteCLIexecutionCommandIndex=rlCLIremoteCLIexecutionCommandIndex, rlCLIremoteCLIoutputCommandNumber=rlCLIremoteCLIoutputCommandNumber, rlCliMibVersion=rlCliMibVersion, rlCLIremoteCLIoutputRowIndex=rlCLIremoteCLIoutputRowIndex, rlCLIremoteCLIinstance=rlCLIremoteCLIinstance, rlCLIremoteCLIsupport=rlCLIremoteCLIsupport, rlCliTimer=rlCliTimer, rlCLIremoteCLIexecutionState=rlCLIremoteCLIexecutionState, rlCli=rlCli, rlCLIremoteCLIoutputRowStatus=rlCLIremoteCLIoutputRowStatus, rlCLIremoteCLIactivationStatus=rlCLIremoteCLIactivationStatus, rlCLIremoteCLIcommand=rlCLIremoteCLIcommand, rlCLIremoteCLIoutputRowPart=rlCLIremoteCLIoutputRowPart, rlCliPassword=rlCliPassword, PYSNMP_MODULE_ID=rlCli, rlCLIremoteCLIcommandStatus=rlCLIremoteCLIcommandStatus)

@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-VOICE-CAS-MODULE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VOICE-CAS-MODULE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 EntPhysicalIndexOrZero, = mibBuilder.importSymbols("CISCO-TC", "EntPhysicalIndexOrZero")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString")
 ciscoVoiceCasModuleMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 389))
 ciscoVoiceCasModuleMIB.setRevisions(('2004-03-15 00:00',))
 
@@ -91,4 +91,4 @@ cvcmCasBitGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 389, 2, 1, 1)).setObjects
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvcmCasBitGroup = cvcmCasBitGroup.setStatus('current')
 if mibBuilder.loadTexts: cvcmCasBitGroup.setDescription('A collection of objects used for configuring \n         DSP signaling channel.\n        ')
-mibBuilder.exportSymbols("CISCO-VOICE-CAS-MODULE-MIB", ciscoVoiceCasModuleObjects=ciscoVoiceCasModuleObjects, ciscoVoiceCasModuleNotifs=ciscoVoiceCasModuleNotifs, cvcmCasBBitAction=cvcmCasBBitAction, cvcmCasBitRowStatus=cvcmCasBitRowStatus, cvcmCasCBitAction=cvcmCasCBitAction, cvcmCasConfig=cvcmCasConfig, cvcmMIBGroups=cvcmMIBGroups, cvcmCasABitAction=cvcmCasABitAction, cvcmModulePhysicalIndex=cvcmModulePhysicalIndex, cvcmModuleIndex=cvcmModuleIndex, CvcmCasBitAction=CvcmCasBitAction, cvcmCasBitGroup=cvcmCasBitGroup, cvcmCasDBitAction=cvcmCasDBitAction, PYSNMP_MODULE_ID=ciscoVoiceCasModuleMIB, cvcmMIBCompliances=cvcmMIBCompliances, ciscoVoiceCasModuleMIB=ciscoVoiceCasModuleMIB, cvcmCasTemplateName=cvcmCasTemplateName, cvcmMIBConformance=cvcmMIBConformance, cvcmCasTemplateIndex=cvcmCasTemplateIndex, cvcmABCDOutgoingPattern=cvcmABCDOutgoingPattern, ciscoVoiceCasModuleMIBCompliance=ciscoVoiceCasModuleMIBCompliance, cvcmABCDIncomingPattern=cvcmABCDIncomingPattern, CvcmCasPatternBitPosition=CvcmCasPatternBitPosition, cvcmABCDBitTemplateConfigTable=cvcmABCDBitTemplateConfigTable, cvcmABCDBitTemplateConfigEntry=cvcmABCDBitTemplateConfigEntry, cvcmABCDPatternIndex=cvcmABCDPatternIndex)
+mibBuilder.exportSymbols("CISCO-VOICE-CAS-MODULE-MIB", ciscoVoiceCasModuleNotifs=ciscoVoiceCasModuleNotifs, cvcmModulePhysicalIndex=cvcmModulePhysicalIndex, CvcmCasPatternBitPosition=CvcmCasPatternBitPosition, cvcmModuleIndex=cvcmModuleIndex, cvcmCasConfig=cvcmCasConfig, ciscoVoiceCasModuleMIBCompliance=ciscoVoiceCasModuleMIBCompliance, cvcmMIBGroups=cvcmMIBGroups, cvcmABCDBitTemplateConfigEntry=cvcmABCDBitTemplateConfigEntry, cvcmABCDIncomingPattern=cvcmABCDIncomingPattern, cvcmCasCBitAction=cvcmCasCBitAction, ciscoVoiceCasModuleMIB=ciscoVoiceCasModuleMIB, cvcmABCDOutgoingPattern=cvcmABCDOutgoingPattern, cvcmABCDPatternIndex=cvcmABCDPatternIndex, cvcmCasDBitAction=cvcmCasDBitAction, cvcmCasTemplateIndex=cvcmCasTemplateIndex, CvcmCasBitAction=CvcmCasBitAction, ciscoVoiceCasModuleObjects=ciscoVoiceCasModuleObjects, cvcmCasTemplateName=cvcmCasTemplateName, cvcmCasBitRowStatus=cvcmCasBitRowStatus, cvcmABCDBitTemplateConfigTable=cvcmABCDBitTemplateConfigTable, cvcmCasBitGroup=cvcmCasBitGroup, cvcmMIBConformance=cvcmMIBConformance, PYSNMP_MODULE_ID=ciscoVoiceCasModuleMIB, cvcmCasBBitAction=cvcmCasBBitAction, cvcmMIBCompliances=cvcmMIBCompliances, cvcmCasABitAction=cvcmCasABitAction)

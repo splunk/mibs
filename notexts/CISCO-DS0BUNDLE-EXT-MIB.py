@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-DS0BUNDLE-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DS0BUNDLE-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 dsx0BundleEntry, = mibBuilder.importSymbols("CISCO-DS0BUNDLE-MIB", "dsx0BundleEntry")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
 InterfaceIndex, ifIndex = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDs0BundleExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 33))
 if mibBuilder.loadTexts: ciscoDs0BundleExtMIB.setLastUpdated('9806300000Z')
@@ -57,4 +57,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoDs0BundleExtInfoGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 33, 3, 2, 2)).setObjects(("CISCO-DS0BUNDLE-EXT-MIB", "cdsx0BundleUseDs0Used"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoDs0BundleExtInfoGroup = ciscoDs0BundleExtInfoGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DS0BUNDLE-EXT-MIB", PYSNMP_MODULE_ID=ciscoDs0BundleExtMIB, ciscoDs0BundleExtMIBCompliances=ciscoDs0BundleExtMIBCompliances, cdsx0BundleExtTable=cdsx0BundleExtTable, cdsx0BundleExtDs1Index=cdsx0BundleExtDs1Index, ciscoDs0BundleExtMIBCompliance=ciscoDs0BundleExtMIBCompliance, cdsx0BundleInfo=cdsx0BundleInfo, cdsx0BundleExtChannelMap=cdsx0BundleExtChannelMap, ciscoDs0BundleExtMIB=ciscoDs0BundleExtMIB, ciscoDs0BundleExtInfoGroup=ciscoDs0BundleExtInfoGroup, ciscoDs0BundleExtConfigGroup=ciscoDs0BundleExtConfigGroup, cdsx0BundleExtEncapType=cdsx0BundleExtEncapType, ciscoDs0BundleExtMIBConformance=ciscoDs0BundleExtMIBConformance, cdsx0BundleConfig=cdsx0BundleConfig, ciscoDs0BundleExtMIBObjects=ciscoDs0BundleExtMIBObjects, ciscoDs0BundleExtMIBGroups=ciscoDs0BundleExtMIBGroups, cdsx0BundleUseDs0Used=cdsx0BundleUseDs0Used, cdsx0BundleExtChannelRate=cdsx0BundleExtChannelRate, Ds0ChannelList=Ds0ChannelList, cdsx0BundleUseTable=cdsx0BundleUseTable, cdsx0BundleUseEntry=cdsx0BundleUseEntry, cdsx0BundleExtEntry=cdsx0BundleExtEntry)
+mibBuilder.exportSymbols("CISCO-DS0BUNDLE-EXT-MIB", cdsx0BundleExtEntry=cdsx0BundleExtEntry, cdsx0BundleExtDs1Index=cdsx0BundleExtDs1Index, ciscoDs0BundleExtMIBGroups=ciscoDs0BundleExtMIBGroups, cdsx0BundleExtChannelRate=cdsx0BundleExtChannelRate, cdsx0BundleInfo=cdsx0BundleInfo, ciscoDs0BundleExtMIBCompliance=ciscoDs0BundleExtMIBCompliance, cdsx0BundleExtTable=cdsx0BundleExtTable, ciscoDs0BundleExtMIBConformance=ciscoDs0BundleExtMIBConformance, cdsx0BundleConfig=cdsx0BundleConfig, cdsx0BundleUseEntry=cdsx0BundleUseEntry, cdsx0BundleExtChannelMap=cdsx0BundleExtChannelMap, cdsx0BundleExtEncapType=cdsx0BundleExtEncapType, cdsx0BundleUseDs0Used=cdsx0BundleUseDs0Used, Ds0ChannelList=Ds0ChannelList, ciscoDs0BundleExtMIBObjects=ciscoDs0BundleExtMIBObjects, ciscoDs0BundleExtMIB=ciscoDs0BundleExtMIB, ciscoDs0BundleExtInfoGroup=ciscoDs0BundleExtInfoGroup, PYSNMP_MODULE_ID=ciscoDs0BundleExtMIB, cdsx0BundleUseTable=cdsx0BundleUseTable, ciscoDs0BundleExtConfigGroup=ciscoDs0BundleExtConfigGroup, ciscoDs0BundleExtMIBCompliances=ciscoDs0BundleExtMIBCompliances)

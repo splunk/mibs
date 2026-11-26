@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-SSM-PROV-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SSM-PROV-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 entPhysicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
 ciscoSsmProvMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 448))
 ciscoSsmProvMIB.setRevisions(('2005-02-15 00:00',))
@@ -71,4 +71,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ssmProvDppGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 448, 2, 2, 3)).setObjects(("CISCO-SSM-PROV-MIB", "ssmProvDppEndPort"), ("CISCO-SSM-PROV-MIB", "ssmProvDppName"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ssmProvDppGroup = ssmProvDppGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-SSM-PROV-MIB", ssmProvFeatureEntry=ssmProvFeatureEntry, ciscoSsmProvMIBObjects=ciscoSsmProvMIBObjects, ssmProvDppEntry=ssmProvDppEntry, PYSNMP_MODULE_ID=ciscoSsmProvMIB, ssmProvDppTable=ssmProvDppTable, ssmProvFeatureTable=ssmProvFeatureTable, ssmProvDppGroup=ssmProvDppGroup, ssmProvFeatureIfPartnerImageURI=ssmProvFeatureIfPartnerImageURI, ssmProvMIBCompliance=ssmProvMIBCompliance, ssmProvDppName=ssmProvDppName, ciscoSsmProvMIB=ciscoSsmProvMIB, ssmProvDppEndPort=ssmProvDppEndPort, ssmProvMIBGroups=ssmProvMIBGroups, ssmProvFeatureIfFeatureName=ssmProvFeatureIfFeatureName, ssmProvDppStartPort=ssmProvDppStartPort, ssmProvFeatureIfEndPort=ssmProvFeatureIfEndPort, ssmProvFeatureIfGroup=ssmProvFeatureIfGroup, ssmProvConfiguration=ssmProvConfiguration, ssmProvFeatureIfRowStatus=ssmProvFeatureIfRowStatus, ciscoSsmProvMIBConform=ciscoSsmProvMIBConform, ssmProvFeatureIfStartPort=ssmProvFeatureIfStartPort, ssmProvFeatureIfEntry=ssmProvFeatureIfEntry, ssmProvFeatureName=ssmProvFeatureName, ssmProvFeatureNeedsImage=ssmProvFeatureNeedsImage, ssmProvFeatureGroup=ssmProvFeatureGroup, ssmProvFeatureIfTable=ssmProvFeatureIfTable, ssmProvFeatureIfForceRemove=ssmProvFeatureIfForceRemove, ssmProvMIBCompliances=ssmProvMIBCompliances)
+mibBuilder.exportSymbols("CISCO-SSM-PROV-MIB", ssmProvFeatureIfGroup=ssmProvFeatureIfGroup, ssmProvConfiguration=ssmProvConfiguration, ssmProvMIBCompliance=ssmProvMIBCompliance, ciscoSsmProvMIBConform=ciscoSsmProvMIBConform, ssmProvDppTable=ssmProvDppTable, ssmProvFeatureIfFeatureName=ssmProvFeatureIfFeatureName, ssmProvFeatureIfEndPort=ssmProvFeatureIfEndPort, ssmProvFeatureTable=ssmProvFeatureTable, ssmProvFeatureGroup=ssmProvFeatureGroup, PYSNMP_MODULE_ID=ciscoSsmProvMIB, ssmProvDppName=ssmProvDppName, ssmProvFeatureName=ssmProvFeatureName, ciscoSsmProvMIBObjects=ciscoSsmProvMIBObjects, ciscoSsmProvMIB=ciscoSsmProvMIB, ssmProvFeatureIfTable=ssmProvFeatureIfTable, ssmProvFeatureEntry=ssmProvFeatureEntry, ssmProvFeatureIfEntry=ssmProvFeatureIfEntry, ssmProvFeatureIfRowStatus=ssmProvFeatureIfRowStatus, ssmProvFeatureIfPartnerImageURI=ssmProvFeatureIfPartnerImageURI, ssmProvMIBGroups=ssmProvMIBGroups, ssmProvFeatureIfStartPort=ssmProvFeatureIfStartPort, ssmProvFeatureNeedsImage=ssmProvFeatureNeedsImage, ssmProvDppGroup=ssmProvDppGroup, ssmProvDppEntry=ssmProvDppEntry, ssmProvDppEndPort=ssmProvDppEndPort, ssmProvMIBCompliances=ssmProvMIBCompliances, ssmProvDppStartPort=ssmProvDppStartPort, ssmProvFeatureIfForceRemove=ssmProvFeatureIfForceRemove)

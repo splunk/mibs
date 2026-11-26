@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCOSB-DEBUGCAPABILITIES-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-DEBUGCAPABILITIES-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
-InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
+InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
-DisplayString, RowStatus, TextualConvention, TimeInterval, TruthValue, TestAndIncr = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention", "TimeInterval", "TruthValue", "TestAndIncr")
+Counter64, TimeTicks, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
+TestAndIncr, TruthValue, TextualConvention, TimeInterval, DisplayString, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "TestAndIncr", "TruthValue", "TextualConvention", "TimeInterval", "DisplayString", "RowStatus")
 rlSna = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 229))
 rlSna.setRevisions(('2015-05-12 00:00',))
 if mibBuilder.loadTexts: rlSna.setLastUpdated('201101050000Z')
@@ -41,4 +41,4 @@ rlSnaClientAgentPollingInterval = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101
 if mibBuilder.loadTexts: rlSnaClientAgentPollingInterval.setStatus('current')
 rlSnaClientAgentStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 229, 2, 1, 9), RowStatus()).setMaxAccess("readcreate")
 if mibBuilder.loadTexts: rlSnaClientAgentStatus.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-DEBUGCAPABILITIES-MIB", rlSnaNextFreeSessionId=rlSnaNextFreeSessionId, rlSnaClientAgentPollingTable=rlSnaClientAgentPollingTable, rlSnaClientAgentAgentAddress=rlSnaClientAgentAgentAddress, rlSnaClientAgentMibName=rlSnaClientAgentMibName, rlSnaClientAgentAgentAddressType=rlSnaClientAgentAgentAddressType, rlSnaClientAgentPollingInterval=rlSnaClientAgentPollingInterval, rlSnaClientAgentPollingEntry=rlSnaClientAgentPollingEntry, PYSNMP_MODULE_ID=rlSna, rlSnaClientAgentMibFieldsMask=rlSnaClientAgentMibFieldsMask, rlSnaClientAgentPollingEnable=rlSnaClientAgentPollingEnable, rlSnaClientAgentStatus=rlSnaClientAgentStatus, rlSnaClientAgentClientSessionId=rlSnaClientAgentClientSessionId, rlSna=rlSna, rlSnaClientAgentSecondaryMibName=rlSnaClientAgentSecondaryMibName)
+mibBuilder.exportSymbols("CISCOSB-DEBUGCAPABILITIES-MIB", rlSnaClientAgentAgentAddressType=rlSnaClientAgentAgentAddressType, rlSnaClientAgentPollingEntry=rlSnaClientAgentPollingEntry, rlSnaClientAgentStatus=rlSnaClientAgentStatus, rlSnaNextFreeSessionId=rlSnaNextFreeSessionId, rlSna=rlSna, rlSnaClientAgentMibName=rlSnaClientAgentMibName, rlSnaClientAgentPollingTable=rlSnaClientAgentPollingTable, rlSnaClientAgentClientSessionId=rlSnaClientAgentClientSessionId, rlSnaClientAgentAgentAddress=rlSnaClientAgentAgentAddress, rlSnaClientAgentSecondaryMibName=rlSnaClientAgentSecondaryMibName, rlSnaClientAgentPollingEnable=rlSnaClientAgentPollingEnable, rlSnaClientAgentPollingInterval=rlSnaClientAgentPollingInterval, rlSnaClientAgentMibFieldsMask=rlSnaClientAgentMibFieldsMask, PYSNMP_MODULE_ID=rlSna)

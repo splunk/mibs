@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-WAN-ATM-PARTY-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-ATM-PARTY-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString", "TruthValue")
 ciscoWanAtmPartyMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 99998))
 ciscoWanAtmPartyMIB.setRevisions(('2002-06-17 00:00',))
 
@@ -100,4 +100,4 @@ ciscoWanAtmPartyGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 99998, 2, 2, 2)).se
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoWanAtmPartyGroup = ciscoWanAtmPartyGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoWanAtmPartyGroup.setDescription("This group contains the information of a\n        'party' per each SPVC point-to-multipoint\n        connection.")
-mibBuilder.exportSymbols("CISCO-WAN-ATM-PARTY-MIB", ciscoWanAtmPartyMIBCompliances=ciscoWanAtmPartyMIBCompliances, ciscoWanAtmPartyMIBCompliance=ciscoWanAtmPartyMIBCompliance, ciscoWanAtmPartyMIBNotifs=ciscoWanAtmPartyMIBNotifs, WanPartyAdminStatus=WanPartyAdminStatus, WanNsapAtmAddress=WanNsapAtmAddress, cwapConfigEntry=cwapConfigEntry, ciscoWanAtmPartyMIBObjects=ciscoWanAtmPartyMIBObjects, cwapVpi=cwapVpi, ciscoWanAtmPartyMIB=ciscoWanAtmPartyMIB, cwapReference=cwapReference, cwapUploadCounter=cwapUploadCounter, WanPartyOperStatus=WanPartyOperStatus, ciscoWanAtmPartyMIBGroups=ciscoWanAtmPartyMIBGroups, cwapReroute=cwapReroute, cwapRowStatus=cwapRowStatus, ciscoWanAtmPartyGroup=ciscoWanAtmPartyGroup, cwapRootPhysicalId=cwapRootPhysicalId, cwapRootVci=cwapRootVci, cwapNSAPAddress=cwapNSAPAddress, cwapOperStatus=cwapOperStatus, cwapVci=cwapVci, cwapRootVpi=cwapRootVpi, ciscoWanAtmPartyMIBConform=ciscoWanAtmPartyMIBConform, PYSNMP_MODULE_ID=ciscoWanAtmPartyMIB, cwapConfig=cwapConfig, cwapIdentifier=cwapIdentifier, cwapConfigTable=cwapConfigTable, cwapAdminStatus=cwapAdminStatus)
+mibBuilder.exportSymbols("CISCO-WAN-ATM-PARTY-MIB", ciscoWanAtmPartyMIBNotifs=ciscoWanAtmPartyMIBNotifs, cwapRootVci=cwapRootVci, cwapRowStatus=cwapRowStatus, cwapConfigEntry=cwapConfigEntry, cwapVci=cwapVci, cwapRootVpi=cwapRootVpi, ciscoWanAtmPartyGroup=ciscoWanAtmPartyGroup, ciscoWanAtmPartyMIBCompliances=ciscoWanAtmPartyMIBCompliances, WanPartyAdminStatus=WanPartyAdminStatus, cwapReference=cwapReference, cwapRootPhysicalId=cwapRootPhysicalId, cwapUploadCounter=cwapUploadCounter, cwapOperStatus=cwapOperStatus, WanPartyOperStatus=WanPartyOperStatus, ciscoWanAtmPartyMIBObjects=ciscoWanAtmPartyMIBObjects, cwapConfigTable=cwapConfigTable, cwapReroute=cwapReroute, PYSNMP_MODULE_ID=ciscoWanAtmPartyMIB, cwapVpi=cwapVpi, cwapAdminStatus=cwapAdminStatus, WanNsapAtmAddress=WanNsapAtmAddress, cwapNSAPAddress=cwapNSAPAddress, cwapIdentifier=cwapIdentifier, ciscoWanAtmPartyMIBConform=ciscoWanAtmPartyMIBConform, ciscoWanAtmPartyMIBGroups=ciscoWanAtmPartyMIBGroups, ciscoWanAtmPartyMIBCompliance=ciscoWanAtmPartyMIBCompliance, cwapConfig=cwapConfig, ciscoWanAtmPartyMIB=ciscoWanAtmPartyMIB)

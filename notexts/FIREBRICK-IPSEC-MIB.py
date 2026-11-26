@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module FIREBRICK-IPSEC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/firebrick/FIREBRICK-IPSEC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:36:30 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:09:34 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion", "ValueSizeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion")
 firebrickNewStyle, = mibBuilder.importSymbols("FIREBRICK-MIB", "firebrickNewStyle")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-enterprises, MibIdentifier, TimeTicks, Counter64, Gauge32, IpAddress, ModuleIdentity, Counter32, ObjectIdentity, iso, Integer32, Unsigned32, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "enterprises", "MibIdentifier", "TimeTicks", "Counter64", "Gauge32", "IpAddress", "ModuleIdentity", "Counter32", "ObjectIdentity", "iso", "Integer32", "Unsigned32", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+Counter64, IpAddress, Bits, Integer32, ModuleIdentity, NotificationType, iso, Counter32, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, Gauge32, enterprises, ObjectIdentity, Unsigned32, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "IpAddress", "Bits", "Integer32", "ModuleIdentity", "NotificationType", "iso", "Counter32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "Gauge32", "enterprises", "ObjectIdentity", "Unsigned32", "TimeTicks")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 fbIPsecMib = ModuleIdentity((1, 3, 6, 1, 4, 1, 24693, 100, 500))
 fbIPsecMib.setRevisions(('2020-06-16 00:00',))
 if mibBuilder.loadTexts: fbIPsecMib.setLastUpdated('202006160000Z')
@@ -40,4 +40,4 @@ fbIPsecConnectionPeerID = MibScalar((1, 3, 6, 1, 4, 1, 24693, 100, 500, 2, 1, 6)
 if mibBuilder.loadTexts: fbIPsecConnectionPeerID.setStatus('current')
 fbIPsecConnectionPeerAddress = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 500, 2, 1, 7), DisplayString()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: fbIPsecConnectionPeerAddress.setStatus('current')
-mibBuilder.exportSymbols("FIREBRICK-IPSEC-MIB", fbIPsecHalfOpen=fbIPsecHalfOpen, fbIPsecMib=fbIPsecMib, fbIPsecConnectionEntry=fbIPsecConnectionEntry, fbIPsecConnectionName=fbIPsecConnectionName, fbIPsecConnectionLocalID=fbIPsecConnectionLocalID, fbIPsecConnectionPeerID=fbIPsecConnectionPeerID, fbIPsecConnectionIndex=fbIPsecConnectionIndex, fbIPsecConnectionState=fbIPsecConnectionState, fbIPsecConnectionUptime=fbIPsecConnectionUptime, fbIPsecGeneral=fbIPsecGeneral, fbIPsecConnectionTable=fbIPsecConnectionTable, fbIPsecConnectionPeerAddress=fbIPsecConnectionPeerAddress, PYSNMP_MODULE_ID=fbIPsecMib, fbIPsecEstablished=fbIPsecEstablished)
+mibBuilder.exportSymbols("FIREBRICK-IPSEC-MIB", fbIPsecConnectionIndex=fbIPsecConnectionIndex, PYSNMP_MODULE_ID=fbIPsecMib, fbIPsecGeneral=fbIPsecGeneral, fbIPsecConnectionUptime=fbIPsecConnectionUptime, fbIPsecConnectionPeerID=fbIPsecConnectionPeerID, fbIPsecConnectionPeerAddress=fbIPsecConnectionPeerAddress, fbIPsecHalfOpen=fbIPsecHalfOpen, fbIPsecMib=fbIPsecMib, fbIPsecConnectionEntry=fbIPsecConnectionEntry, fbIPsecConnectionState=fbIPsecConnectionState, fbIPsecEstablished=fbIPsecEstablished, fbIPsecConnectionTable=fbIPsecConnectionTable, fbIPsecConnectionLocalID=fbIPsecConnectionLocalID, fbIPsecConnectionName=fbIPsecConnectionName)

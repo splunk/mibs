@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-WAN-ANNOUNCEMENT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-ANNOUNCEMENT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString")
 ciscoWanAnnouncementMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 25))
 ciscoWanAnnouncementMIB.setRevisions(('2003-12-22 00:00', '2001-12-26 00:00',))
 
@@ -88,4 +88,4 @@ cwAnnounceTableGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 25, 3, 2, 2)).se
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cwAnnounceTableGroup = cwAnnounceTableGroup.setStatus('current')
 if mibBuilder.loadTexts: cwAnnounceTableGroup.setDescription('This group contains objects related to configuration of\n             Media Gateway Card Announcement Table.\n             ')
-mibBuilder.exportSymbols("CISCO-WAN-ANNOUNCEMENT-MIB", cwAnnounceGeneric=cwAnnounceGeneric, cwAnnounceTableGroup=cwAnnounceTableGroup, ciscoWanAnnouncementMIB=ciscoWanAnnouncementMIB, cwAnnounceControlGrp=cwAnnounceControlGrp, announceMIBCompliance=announceMIBCompliance, cwAnnPreferenceCodec=cwAnnPreferenceCodec, cwAnnFileServerName=cwAnnFileServerName, cwAnnounceEntry=cwAnnounceEntry, cwAnnReqTimeout=cwAnnReqTimeout, cwAnnounceControlGroup=cwAnnounceControlGroup, cwAnnFileCodec=cwAnnFileCodec, cwAnnounceMIBConformance=cwAnnounceMIBConformance, cwAnnounceGrpMIBObjects=cwAnnounceGrpMIBObjects, AnnCodecType=AnnCodecType, PYSNMP_MODULE_ID=ciscoWanAnnouncementMIB, cwAnnMaximumSize=cwAnnMaximumSize, cwAnnounceNotifications=cwAnnounceNotifications, cwAnnounceMIBCompliances=cwAnnounceMIBCompliances, cwAnnFileName=cwAnnFileName, cwAnnRowStatus=cwAnnRowStatus, cwAnnounceNumber=cwAnnounceNumber, cwAnnounceMIBGroups=cwAnnounceMIBGroups, cwAnnounceTable=cwAnnounceTable, cwAnnounceNotificationPrefix=cwAnnounceNotificationPrefix, cwAnnAgeTime=cwAnnAgeTime, cwAnnFileStatus=cwAnnFileStatus, cwAnnounceTableGrp=cwAnnounceTableGrp, cwAnnPrefixPath=cwAnnPrefixPath)
+mibBuilder.exportSymbols("CISCO-WAN-ANNOUNCEMENT-MIB", cwAnnounceTableGrp=cwAnnounceTableGrp, cwAnnounceNotifications=cwAnnounceNotifications, cwAnnReqTimeout=cwAnnReqTimeout, cwAnnounceMIBCompliances=cwAnnounceMIBCompliances, cwAnnounceMIBConformance=cwAnnounceMIBConformance, cwAnnounceTable=cwAnnounceTable, cwAnnounceControlGroup=cwAnnounceControlGroup, cwAnnounceEntry=cwAnnounceEntry, cwAnnRowStatus=cwAnnRowStatus, cwAnnounceTableGroup=cwAnnounceTableGroup, cwAnnFileName=cwAnnFileName, cwAnnPrefixPath=cwAnnPrefixPath, cwAnnounceControlGrp=cwAnnounceControlGrp, cwAnnMaximumSize=cwAnnMaximumSize, AnnCodecType=AnnCodecType, ciscoWanAnnouncementMIB=ciscoWanAnnouncementMIB, cwAnnounceMIBGroups=cwAnnounceMIBGroups, announceMIBCompliance=announceMIBCompliance, cwAnnFileServerName=cwAnnFileServerName, cwAnnounceGrpMIBObjects=cwAnnounceGrpMIBObjects, cwAnnAgeTime=cwAnnAgeTime, cwAnnFileCodec=cwAnnFileCodec, PYSNMP_MODULE_ID=ciscoWanAnnouncementMIB, cwAnnounceNotificationPrefix=cwAnnounceNotificationPrefix, cwAnnounceNumber=cwAnnounceNumber, cwAnnPreferenceCodec=cwAnnPreferenceCodec, cwAnnounceGeneric=cwAnnounceGeneric, cwAnnFileStatus=cwAnnFileStatus)

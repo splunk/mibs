@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module TELESTE-ROOT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/teleste/TELESTE-ROOT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:40:29 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:15:10 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-enterprises, MibIdentifier, Counter64, Unsigned32, IpAddress, TimeTicks, Integer32, Bits, Gauge32, iso, Counter32, ModuleIdentity, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "enterprises", "MibIdentifier", "Counter64", "Unsigned32", "IpAddress", "TimeTicks", "Integer32", "Bits", "Gauge32", "iso", "Counter32", "ModuleIdentity", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+Counter64, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, NotificationType, Counter32, Gauge32, IpAddress, enterprises, TimeTicks, ObjectIdentity, Bits, Integer32, Unsigned32, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "NotificationType", "Counter32", "Gauge32", "IpAddress", "enterprises", "TimeTicks", "ObjectIdentity", "Bits", "Integer32", "Unsigned32", "MibIdentifier")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 class TDisplayString(OctetString):
     subtypeSpec = OctetString.subtypeSpec + ValueSizeConstraint(0, 255)
 
@@ -66,4 +66,4 @@ ntpcontrol = MibIdentifier((1, 3, 6, 1, 4, 1, 3715, 100, 4))
 hfcOptics = MibIdentifier((1, 3, 6, 1, 4, 1, 3715, 100, 10))
 headEnd = MibIdentifier((1, 3, 6, 1, 4, 1, 3715, 100, 20))
 experimental = MibIdentifier((1, 3, 6, 1, 4, 1, 3715, 999))
-mibBuilder.exportSymbols("TELESTE-ROOT-MIB", bxx=bxx, headEnd=headEnd, cfo=cfo, atmux=atmux, Int16=Int16, Uint32=Uint32, inf=inf, luminato=luminato, Uint8=Uint8, Int8=Int8, functional=functional, hdo=hdo, spectrumAnalyser=spectrumAnalyser, gendata=gendata, etth=etth, DateAndTime=DateAndTime, bk=bk, TDisplayString=TDisplayString, ValueStatus=ValueStatus, hfcOptics=hfcOptics, dvo=dvo, pilotGenerator=pilotGenerator, teleste=teleste, hmsModem=hmsModem, easi=easi, experimental=experimental, acx=acx, emt=emt, ftth=ftth, TPhysAddress=TPhysAddress, ntpcontrol=ntpcontrol, common=common, Uint16=Uint16, ems=ems, dvx=dvx)
+mibBuilder.exportSymbols("TELESTE-ROOT-MIB", bk=bk, Uint32=Uint32, Uint8=Uint8, ftth=ftth, functional=functional, Uint16=Uint16, bxx=bxx, hfcOptics=hfcOptics, emt=emt, dvo=dvo, spectrumAnalyser=spectrumAnalyser, easi=easi, acx=acx, common=common, atmux=atmux, ValueStatus=ValueStatus, ntpcontrol=ntpcontrol, hdo=hdo, TDisplayString=TDisplayString, dvx=dvx, cfo=cfo, hmsModem=hmsModem, Int8=Int8, DateAndTime=DateAndTime, luminato=luminato, inf=inf, pilotGenerator=pilotGenerator, etth=etth, headEnd=headEnd, Int16=Int16, ems=ems, gendata=gendata, experimental=experimental, teleste=teleste, TPhysAddress=TPhysAddress)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-IPV4V6-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-IPV4V6-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, iso, Counter32, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "iso", "Counter32", "IpAddress", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, IpAddress, Counter32, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "IpAddress", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoDSGIPv4v6 = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 25))
 ciscoDSGIPv4v6.setRevisions(('2012-03-20 11:00', '2010-08-30 11:00', '2010-04-30 05:00', '2010-04-12 05:00', '2010-03-22 05:00', '2009-12-20 12:00',))
 
@@ -112,4 +112,4 @@ if mibBuilder.loadTexts: ethBackupStatusChangeReason.setDescription('Ethernet ba
 ethBackupStatusChangeDateTime = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 25, 2, 4, 1, 4), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 30))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: ethBackupStatusChangeDateTime.setStatus('current')
 if mibBuilder.loadTexts: ethBackupStatusChangeDateTime.setDescription('Time of last ethernet backup change.')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-IPV4V6-MIB", PYSNMP_MODULE_ID=ciscoDSGIPv4v6, ethStatusXover=ethStatusXover, ethBackupStatusEntry=ethBackupStatusEntry, ethBackupDelayBack=ethBackupDelayBack, ethStatusDuplex=ethStatusDuplex, ipConfigCurIPAddressV4=ipConfigCurIPAddressV4, ethBackupDelayForward=ethBackupDelayForward, ipConfigV4V6Flag=ipConfigV4V6Flag, ethBackupIndex=ethBackupIndex, ipConfigName=ipConfigName, ipConfigPortMode=ipConfigPortMode, ethBackupStatusChangeReason=ethBackupStatusChangeReason, ipConfigPortIdKey=ipConfigPortIdKey, ipConfigEntry=ipConfigEntry, ethBackupStatusIndex=ethBackupStatusIndex, ethBackupStatusTable=ethBackupStatusTable, ethStatusSpeed=ethStatusSpeed, ethBackupEntry=ethBackupEntry, macInfoMacIndex=macInfoMacIndex, macInfoMacAddr=macInfoMacAddr, macInfoTable=macInfoTable, macInfoEntry=macInfoEntry, ipConfigCurNetworkMaskV4=ipConfigCurNetworkMaskV4, ethBackupTable=ethBackupTable, ethBackupStatusChangeDateTime=ethBackupStatusChangeDateTime, ipConfigCurDefaultGatewayV4=ipConfigCurDefaultGatewayV4, ethStatusLink=ethStatusLink, ciscoDSGIPv4v6=ciscoDSGIPv4v6, ethBackupMode=ethBackupMode, ipConfigTable=ipConfigTable, ipV4v6Table=ipV4v6Table, ethBackupDirection=ethBackupDirection, ethBackupStatusPortsInUse=ethBackupStatusPortsInUse)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-IPV4V6-MIB", ipConfigTable=ipConfigTable, ipConfigPortMode=ipConfigPortMode, ipConfigV4V6Flag=ipConfigV4V6Flag, ethStatusXover=ethStatusXover, ethBackupStatusChangeDateTime=ethBackupStatusChangeDateTime, ethBackupStatusTable=ethBackupStatusTable, macInfoMacAddr=macInfoMacAddr, macInfoEntry=macInfoEntry, ethBackupStatusEntry=ethBackupStatusEntry, ethBackupMode=ethBackupMode, ipConfigEntry=ipConfigEntry, ethBackupDelayBack=ethBackupDelayBack, ethStatusDuplex=ethStatusDuplex, macInfoTable=macInfoTable, ethBackupEntry=ethBackupEntry, ethStatusSpeed=ethStatusSpeed, ipConfigCurNetworkMaskV4=ipConfigCurNetworkMaskV4, ipConfigName=ipConfigName, PYSNMP_MODULE_ID=ciscoDSGIPv4v6, ipConfigCurDefaultGatewayV4=ipConfigCurDefaultGatewayV4, ipConfigCurIPAddressV4=ipConfigCurIPAddressV4, ethBackupTable=ethBackupTable, ethBackupIndex=ethBackupIndex, ethBackupStatusIndex=ethBackupStatusIndex, macInfoMacIndex=macInfoMacIndex, ethBackupStatusPortsInUse=ethBackupStatusPortsInUse, ipConfigPortIdKey=ipConfigPortIdKey, ethBackupDelayForward=ethBackupDelayForward, ethStatusLink=ethStatusLink, ethBackupDirection=ethBackupDirection, ciscoDSGIPv4v6=ciscoDSGIPv4v6, ethBackupStatusChangeReason=ethBackupStatusChangeReason, ipV4v6Table=ipV4v6Table)

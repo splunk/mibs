@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCOSB-UDP (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-UDP
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
-ipCidrRouteMask, ipCidrRouteTos, ipCidrRouteNextHop, ipCidrRouteEntry, ipCidrRouteDest = mibBuilder.importSymbols("IP-FORWARD-MIB", "ipCidrRouteMask", "ipCidrRouteTos", "ipCidrRouteNextHop", "ipCidrRouteEntry", "ipCidrRouteDest")
+ipCidrRouteNextHop, ipCidrRouteDest, ipCidrRouteMask, ipCidrRouteEntry, ipCidrRouteTos = mibBuilder.importSymbols("IP-FORWARD-MIB", "ipCidrRouteNextHop", "ipCidrRouteDest", "ipCidrRouteMask", "ipCidrRouteEntry", "ipCidrRouteTos")
 ipAddrEntry, = mibBuilder.importSymbols("IP-MIB", "ipAddrEntry")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
-DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
+Counter64, IpAddress, TimeTicks, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, NotificationType, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "IpAddress", "TimeTicks", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "NotificationType", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
+TruthValue, DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "DisplayString", "RowStatus", "TextualConvention")
 rsUDP = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 42))
 rsUDP.setRevisions(('2004-06-01 00:00',))
 if mibBuilder.loadTexts: rsUDP.setLastUpdated('200406010000Z')
@@ -49,4 +49,4 @@ rlUdpSessionAppInst = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 42, 3, 1, 
 if mibBuilder.loadTexts: rlUdpSessionAppInst.setStatus('current')
 rlUdpSessionAppName = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 42, 3, 1, 5), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 12))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlUdpSessionAppName.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-UDP", rsUDP=rsUDP, rsUdpRelayDstIpAddr=rsUdpRelayDstIpAddr, rlUdpSessionLocalAddrType=rlUdpSessionLocalAddrType, rlUdpSessionLocalAddr=rlUdpSessionLocalAddr, rsUdpRelayUserInfo=rsUdpRelayUserInfo, rsUdpRelayDstPort=rsUdpRelayDstPort, rlUdpSessionEntry=rlUdpSessionEntry, rlUdpSessionTable=rlUdpSessionTable, rsUdpRelayMibVersion=rsUdpRelayMibVersion, rsUdpRelayStatus=rsUdpRelayStatus, PYSNMP_MODULE_ID=rsUDP, rsUdpRelayEntry=rsUdpRelayEntry, rlUdpSessionAppInst=rlUdpSessionAppInst, rsUdpRelayTable=rsUdpRelayTable, rlUdpSessionAppName=rlUdpSessionAppName, rsUdpRelaySrcIpInf=rsUdpRelaySrcIpInf, rlUdpSessionLocalPort=rlUdpSessionLocalPort)
+mibBuilder.exportSymbols("CISCOSB-UDP", rsUDP=rsUDP, rsUdpRelayTable=rsUdpRelayTable, rsUdpRelayStatus=rsUdpRelayStatus, rlUdpSessionLocalPort=rlUdpSessionLocalPort, rsUdpRelayDstPort=rsUdpRelayDstPort, rsUdpRelaySrcIpInf=rsUdpRelaySrcIpInf, rlUdpSessionTable=rlUdpSessionTable, rlUdpSessionEntry=rlUdpSessionEntry, rlUdpSessionLocalAddr=rlUdpSessionLocalAddr, rlUdpSessionLocalAddrType=rlUdpSessionLocalAddrType, rlUdpSessionAppInst=rlUdpSessionAppInst, rsUdpRelayEntry=rsUdpRelayEntry, rlUdpSessionAppName=rlUdpSessionAppName, rsUdpRelayMibVersion=rsUdpRelayMibVersion, PYSNMP_MODULE_ID=rsUDP, rsUdpRelayUserInfo=rsUdpRelayUserInfo, rsUdpRelayDstIpAddr=rsUdpRelayDstIpAddr)

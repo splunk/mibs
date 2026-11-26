@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-WAN-CODEC-GEN-PARM-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-CODEC-GEN-PARM-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:57 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoWanCodecGenParmMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 21))
 ciscoWanCodecGenParmMIB.setRevisions(('2004-03-17 00:00', '2004-01-30 00:00', '2003-05-23 00:00', '2001-09-10 00:00', '2001-08-21 15:00', '2001-08-02 15:00', '2001-06-15 15:00', '2001-03-20 15:00',))
@@ -40,4 +40,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 vismCodecGenParmGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 21, 3, 2, 1)).setObjects(("CISCO-WAN-CODEC-GEN-PARM-MIB", "vismCodecJitterDelayMode"), ("CISCO-WAN-CODEC-GEN-PARM-MIB", "vismCodecJitterInitialDelay"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     vismCodecGenParmGroup = vismCodecGenParmGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-WAN-CODEC-GEN-PARM-MIB", vismCodecGenParmMIBGroups=vismCodecGenParmMIBGroups, vismCodecIndex=vismCodecIndex, PYSNMP_MODULE_ID=ciscoWanCodecGenParmMIB, vismCodecGenParmGroup=vismCodecGenParmGroup, ciscoWanCodecGenParmMIBObjects=ciscoWanCodecGenParmMIBObjects, vismCodecJitterDelayMode=vismCodecJitterDelayMode, vismCodecGenParmNotifications=vismCodecGenParmNotifications, vismCodecGenParmGrp=vismCodecGenParmGrp, ciscoWanCodecGenParmMIB=ciscoWanCodecGenParmMIB, vismCodecGenParmNotificationPrefix=vismCodecGenParmNotificationPrefix, vismCodecGenParmMIBConformance=vismCodecGenParmMIBConformance, vismCodecGenParmMIBCompliances=vismCodecGenParmMIBCompliances, vismCodecGenParmMIBCompliance=vismCodecGenParmMIBCompliance, vismCodecGenParmEntry=vismCodecGenParmEntry, vismCodecJitterInitialDelay=vismCodecJitterInitialDelay, vismCodecGenParmTable=vismCodecGenParmTable)
+mibBuilder.exportSymbols("CISCO-WAN-CODEC-GEN-PARM-MIB", ciscoWanCodecGenParmMIB=ciscoWanCodecGenParmMIB, vismCodecGenParmTable=vismCodecGenParmTable, vismCodecGenParmGrp=vismCodecGenParmGrp, vismCodecGenParmEntry=vismCodecGenParmEntry, vismCodecGenParmMIBCompliance=vismCodecGenParmMIBCompliance, ciscoWanCodecGenParmMIBObjects=ciscoWanCodecGenParmMIBObjects, vismCodecGenParmMIBConformance=vismCodecGenParmMIBConformance, vismCodecGenParmMIBCompliances=vismCodecGenParmMIBCompliances, vismCodecGenParmNotifications=vismCodecGenParmNotifications, vismCodecGenParmNotificationPrefix=vismCodecGenParmNotificationPrefix, vismCodecJitterDelayMode=vismCodecJitterDelayMode, vismCodecIndex=vismCodecIndex, vismCodecGenParmMIBGroups=vismCodecGenParmMIBGroups, vismCodecGenParmGroup=vismCodecGenParmGroup, vismCodecJitterInitialDelay=vismCodecJitterInitialDelay, PYSNMP_MODULE_ID=ciscoWanCodecGenParmMIB)

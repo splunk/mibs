@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-UBE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-UBE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
 ciscoUbeMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 764))
 ciscoUbeMIB.setRevisions(('2010-11-29 00:00',))
 
@@ -44,4 +44,4 @@ ciscoUbeMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 764, 1, 2, 1)).setObject
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoUbeMIBGroup = ciscoUbeMIBGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoUbeMIBGroup.setDescription('A collection of objects which provides the\n        capabilities of the CUBE feature.')
-mibBuilder.exportSymbols("CISCO-UBE-MIB", ciscoUbeMIBObjects=ciscoUbeMIBObjects, ciscoUbeMIBCompliances=ciscoUbeMIBCompliances, ciscoUbeMIBGroup=ciscoUbeMIBGroup, ciscoUbeMIBGroups=ciscoUbeMIBGroups, ciscoUbeMIBConform=ciscoUbeMIBConform, ciscoCubeMIBCompliance=ciscoCubeMIBCompliance, cubeTotalSessionAllowed=cubeTotalSessionAllowed, cubeVersion=cubeVersion, cubeEnabled=cubeEnabled, ciscoUbeMIB=ciscoUbeMIB, PYSNMP_MODULE_ID=ciscoUbeMIB)
+mibBuilder.exportSymbols("CISCO-UBE-MIB", ciscoUbeMIBGroup=ciscoUbeMIBGroup, PYSNMP_MODULE_ID=ciscoUbeMIB, ciscoUbeMIBObjects=ciscoUbeMIBObjects, ciscoUbeMIBCompliances=ciscoUbeMIBCompliances, cubeVersion=cubeVersion, ciscoUbeMIBConform=ciscoUbeMIBConform, ciscoUbeMIB=ciscoUbeMIB, ciscoCubeMIBCompliance=ciscoCubeMIBCompliance, cubeEnabled=cubeEnabled, ciscoUbeMIBGroups=ciscoUbeMIBGroups, cubeTotalSessionAllowed=cubeTotalSessionAllowed)

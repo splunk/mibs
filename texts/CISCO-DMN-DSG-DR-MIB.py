@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-DR-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-DR-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString")
 ciscoDSGDR = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 43))
 ciscoDSGDR.setRevisions(('2014-08-30 08:00',))
 
@@ -106,4 +106,4 @@ if mibBuilder.loadTexts: backupSetBkpchDispText.setDescription('Backup Channel D
 backupSetRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 43, 3, 1, 6), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("active", 1), ("inactive", 2)))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: backupSetRowStatus.setStatus('current')
 if mibBuilder.loadTexts: backupSetRowStatus.setDescription('Backup Row Status.')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-DR-MIB", PYSNMP_MODULE_ID=ciscoDSGDR, profile=profile, sigLockTime=sigLockTime, backupSetPeid=backupSetPeid, backupSetEntry=backupSetEntry, backupTransportModSys=backupTransportModSys, backupTransportIndex=backupTransportIndex, verifyTimer=verifyTimer, drGlobalCfg=drGlobalCfg, backupSetCsiidx=backupSetCsiidx, backupSetRowStatus=backupSetRowStatus, backupTransportRFInput=backupTransportRFInput, backupTransportRowstatus=backupTransportRowstatus, backupTransportEntry=backupTransportEntry, backupTransportOrbpolarization=backupTransportOrbpolarization, backupSetBkpchDispText=backupSetBkpchDispText, backupTransportEwFlag=backupTransportEwFlag, backupTransportFrequency=backupTransportFrequency, enable=enable, sigLossTime=sigLossTime, backupSetTable=backupSetTable, backupTransportOrbitalPos=backupTransportOrbitalPos, backupTransportSetIdx=backupTransportSetIdx, backupTransportRollOffFactor=backupTransportRollOffFactor, backupTransportTable=backupTransportTable, backupTransportNetId=backupTransportNetId, backupSetRecid=backupSetRecid, backupTransportDvbsFec=backupTransportDvbsFec, backupSetBkpch=backupSetBkpch, ciscoDSGDR=ciscoDSGDR, backupTransportSymbRate=backupTransportSymbRate)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-DR-MIB", backupTransportRowstatus=backupTransportRowstatus, ciscoDSGDR=ciscoDSGDR, PYSNMP_MODULE_ID=ciscoDSGDR, backupSetEntry=backupSetEntry, backupSetRecid=backupSetRecid, drGlobalCfg=drGlobalCfg, backupTransportRFInput=backupTransportRFInput, backupSetBkpch=backupSetBkpch, sigLossTime=sigLossTime, backupTransportIndex=backupTransportIndex, verifyTimer=verifyTimer, sigLockTime=sigLockTime, backupTransportFrequency=backupTransportFrequency, backupTransportSymbRate=backupTransportSymbRate, backupTransportRollOffFactor=backupTransportRollOffFactor, backupSetRowStatus=backupSetRowStatus, backupSetCsiidx=backupSetCsiidx, backupTransportTable=backupTransportTable, backupTransportEwFlag=backupTransportEwFlag, backupTransportDvbsFec=backupTransportDvbsFec, backupTransportOrbitalPos=backupTransportOrbitalPos, backupSetBkpchDispText=backupSetBkpchDispText, backupTransportModSys=backupTransportModSys, backupTransportSetIdx=backupTransportSetIdx, enable=enable, backupTransportNetId=backupTransportNetId, backupTransportOrbpolarization=backupTransportOrbpolarization, profile=profile, backupSetPeid=backupSetPeid, backupSetTable=backupSetTable, backupTransportEntry=backupTransportEntry)

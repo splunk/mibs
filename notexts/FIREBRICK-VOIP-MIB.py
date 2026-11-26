@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module FIREBRICK-VOIP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/firebrick/FIREBRICK-VOIP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:36:30 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:09:34 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion", "ValueSizeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion")
 firebrickNewStyle, = mibBuilder.importSymbols("FIREBRICK-MIB", "firebrickNewStyle")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-enterprises, MibIdentifier, TimeTicks, Counter64, Gauge32, IpAddress, ModuleIdentity, Counter32, ObjectIdentity, iso, Integer32, Unsigned32, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "enterprises", "MibIdentifier", "TimeTicks", "Counter64", "Gauge32", "IpAddress", "ModuleIdentity", "Counter32", "ObjectIdentity", "iso", "Integer32", "Unsigned32", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+Counter64, IpAddress, Bits, Integer32, ModuleIdentity, NotificationType, iso, Counter32, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, Gauge32, enterprises, ObjectIdentity, Unsigned32, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "IpAddress", "Bits", "Integer32", "ModuleIdentity", "NotificationType", "iso", "Counter32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "Gauge32", "enterprises", "ObjectIdentity", "Unsigned32", "TimeTicks")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 fbSipMib = ModuleIdentity((1, 3, 6, 1, 4, 1, 24693, 100, 5060))
 fbSipMib.setRevisions(('2022-07-15 00:00', '2021-12-08 00:00', '2020-06-17 00:00',))
 if mibBuilder.loadTexts: fbSipMib.setLastUpdated('202207150000Z')
@@ -53,4 +53,4 @@ fbSipPhoneTotalLegs = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 5060, 4, 1, 
 if mibBuilder.loadTexts: fbSipPhoneTotalLegs.setStatus('current')
 fbSipPhoneConnectedLegs = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 5060, 4, 1, 3), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: fbSipPhoneConnectedLegs.setStatus('current')
-mibBuilder.exportSymbols("FIREBRICK-VOIP-MIB", fbSipCarrierConnectedLegs=fbSipCarrierConnectedLegs, fbSipActiveLegs=fbSipActiveLegs, fbSipPhoneEntry=fbSipPhoneEntry, fbSipCarrierName=fbSipCarrierName, fbSipPhoneTotalLegs=fbSipPhoneTotalLegs, fbSipCarrierIndex=fbSipCarrierIndex, PYSNMP_MODULE_ID=fbSipMib, fbSipCarriers=fbSipCarriers, fbSipCarrierEntry=fbSipCarrierEntry, fbSipPhoneName=fbSipPhoneName, fbSipPhoneIndex=fbSipPhoneIndex, fbSipPhoneConnectedLegs=fbSipPhoneConnectedLegs, fbSipMib=fbSipMib, fbSipMixerHWM=fbSipMixerHWM, fbSipMixerMax=fbSipMixerMax, fbSipPhoneTable=fbSipPhoneTable, fbSipCarrierTable=fbSipCarrierTable, fbSipRadiusRegs=fbSipRadiusRegs, fbSipMixerUsage=fbSipMixerUsage, fbSipCarrierTotalLegs=fbSipCarrierTotalLegs)
+mibBuilder.exportSymbols("FIREBRICK-VOIP-MIB", PYSNMP_MODULE_ID=fbSipMib, fbSipRadiusRegs=fbSipRadiusRegs, fbSipMixerMax=fbSipMixerMax, fbSipCarrierConnectedLegs=fbSipCarrierConnectedLegs, fbSipCarrierTotalLegs=fbSipCarrierTotalLegs, fbSipActiveLegs=fbSipActiveLegs, fbSipMixerHWM=fbSipMixerHWM, fbSipCarrierEntry=fbSipCarrierEntry, fbSipCarrierName=fbSipCarrierName, fbSipPhoneEntry=fbSipPhoneEntry, fbSipPhoneConnectedLegs=fbSipPhoneConnectedLegs, fbSipPhoneName=fbSipPhoneName, fbSipPhoneIndex=fbSipPhoneIndex, fbSipCarrierTable=fbSipCarrierTable, fbSipCarrierIndex=fbSipCarrierIndex, fbSipPhoneTotalLegs=fbSipPhoneTotalLegs, fbSipCarriers=fbSipCarriers, fbSipMixerUsage=fbSipMixerUsage, fbSipPhoneTable=fbSipPhoneTable, fbSipMib=fbSipMib)

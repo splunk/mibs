@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module APAGENTCAP2-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/oracle/APAGENTCAP2-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:52 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:13:03 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 acmepacketAgentCapability, = mibBuilder.importSymbols("ACMEPACKET-SMI", "acmepacketAgentCapability")
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion")
-AgentCapabilities, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "AgentCapabilities", "ModuleCompliance", "NotificationGroup")
-Integer32, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn, snmpModules, enterprises, iso, TimeTicks, NotificationType, Gauge32, ObjectIdentity, mib_2, Counter32, MibIdentifier, Counter64, ModuleIdentity, Unsigned32, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "snmpModules", "enterprises", "iso", "TimeTicks", "NotificationType", "Gauge32", "ObjectIdentity", "mib-2", "Counter32", "MibIdentifier", "Counter64", "ModuleIdentity", "Unsigned32", "Bits")
-TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+ConstraintsUnion, SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ValueRangeConstraint")
+ModuleCompliance, AgentCapabilities, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "AgentCapabilities", "NotificationGroup")
+snmpModules, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, mib_2, Counter32, Counter64, IpAddress, enterprises, MibIdentifier, iso, Gauge32, Unsigned32, ObjectIdentity, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "snmpModules", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "mib-2", "Counter32", "Counter64", "IpAddress", "enterprises", "MibIdentifier", "iso", "Gauge32", "Unsigned32", "ObjectIdentity", "ModuleIdentity", "TimeTicks")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 apAgentCap2Module = ModuleIdentity((1, 3, 6, 1, 4, 1, 9148, 2, 2))
 apAgentCap2Module.setRevisions(('2020-10-26 00:00', '2021-07-06 00:00', '2022-02-16 00:00', '2022-03-24 00:00',))
 
@@ -62,4 +62,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     apSmgmtNSEPOutboundSession = apSmgmtNSEPOutboundSession.setStatus('current')
 if mibBuilder.loadTexts: apSmgmtNSEPOutboundSession.setDescription('Acme Packet Agent Capability for NSEP\n                                Outbound KPI statistics MIB.')
-mibBuilder.exportSymbols("APAGENTCAP2-MIB", apAgentCap2Module=apAgentCap2Module, apNSEPRealmKPIStatsCap=apNSEPRealmKPIStatsCap, apIPForwardMibCapabilities=apIPForwardMibCapabilities, apMSRPKPIStatsCap=apMSRPKPIStatsCap, apNSEPRealmKPIMibCapabilities=apNSEPRealmKPIMibCapabilities, apSmgmtNSEPOutboundSession=apSmgmtNSEPOutboundSession, apMSRPKPIMibCapabilities=apMSRPKPIMibCapabilities, apNSEPOutboundSessionMibCapabilities=apNSEPOutboundSessionMibCapabilities, apStirCap2=apStirCap2, apIpForwardCap=apIpForwardCap, apAppsStirMibCapabilities=apAppsStirMibCapabilities, apStirCap=apStirCap, PYSNMP_MODULE_ID=apAgentCap2Module)
+mibBuilder.exportSymbols("APAGENTCAP2-MIB", apAgentCap2Module=apAgentCap2Module, apIPForwardMibCapabilities=apIPForwardMibCapabilities, apAppsStirMibCapabilities=apAppsStirMibCapabilities, apStirCap=apStirCap, apStirCap2=apStirCap2, apIpForwardCap=apIpForwardCap, PYSNMP_MODULE_ID=apAgentCap2Module, apMSRPKPIMibCapabilities=apMSRPKPIMibCapabilities, apMSRPKPIStatsCap=apMSRPKPIStatsCap, apNSEPOutboundSessionMibCapabilities=apNSEPOutboundSessionMibCapabilities, apNSEPRealmKPIStatsCap=apNSEPRealmKPIStatsCap, apNSEPRealmKPIMibCapabilities=apNSEPRealmKPIMibCapabilities, apSmgmtNSEPOutboundSession=apSmgmtNSEPOutboundSession)

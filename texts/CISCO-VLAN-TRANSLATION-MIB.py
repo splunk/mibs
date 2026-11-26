@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-VLAN-TRANSLATION-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VLAN-TRANSLATION-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 VlanIndex, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "VlanIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString", "TruthValue")
 ciscoVlanTranslationMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 411))
 ciscoVlanTranslationMIB.setRevisions(('2004-06-01 00:00',))
 
@@ -91,4 +91,4 @@ cvtPortTranslationGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 411, 2, 2, 2)).se
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvtPortTranslationGroup = cvtPortTranslationGroup.setStatus('current')
 if mibBuilder.loadTexts: cvtPortTranslationGroup.setDescription('A collection of objects providing the port level\n                VLAN translation ability on the device.')
-mibBuilder.exportSymbols("CISCO-VLAN-TRANSLATION-MIB", cvtPortBasedTranslation=cvtPortBasedTranslation, cvtGlobalTranslationEntry=cvtGlobalTranslationEntry, cvtPortTranslationStatus=cvtPortTranslationStatus, cvtPortTranslationTable=cvtPortTranslationTable, cvtGlobalTranslation=cvtGlobalTranslation, cvtGlobalOriginalVlan=cvtGlobalOriginalVlan, cvtMIBCompliances=cvtMIBCompliances, ciscoVlanTranslationMIBObjects=ciscoVlanTranslationMIBObjects, cvtMIBGroups=cvtMIBGroups, cvtGlobalTranslationMax=cvtGlobalTranslationMax, PYSNMP_MODULE_ID=ciscoVlanTranslationMIB, ciscoVlanTranslationMIB=ciscoVlanTranslationMIB, cvtPortTranslationMax=cvtPortTranslationMax, cvtMIBCompliance=cvtMIBCompliance, cvtPortTranslationEntry=cvtPortTranslationEntry, cvtPortTranslatedVlan=cvtPortTranslatedVlan, ciscoVlanTranslationMIBNotifs=ciscoVlanTranslationMIBNotifs, cvtPortTranslationGroup=cvtPortTranslationGroup, cvtGlobalTranslationStatus=cvtGlobalTranslationStatus, ciscoVlanTranslationMIBConform=ciscoVlanTranslationMIBConform, cvtGlobalTranslatedVlan=cvtGlobalTranslatedVlan, cvtPortOriginalVlan=cvtPortOriginalVlan, cvtPortConfigTable=cvtPortConfigTable, cvtGlobalTranslationTable=cvtGlobalTranslationTable, cvtPortTranslationEnabled=cvtPortTranslationEnabled, cvtGlobalTranslationEffective=cvtGlobalTranslationEffective, cvtGlobalTranslationGroup=cvtGlobalTranslationGroup, cvtPortConfigEntry=cvtPortConfigEntry)
+mibBuilder.exportSymbols("CISCO-VLAN-TRANSLATION-MIB", ciscoVlanTranslationMIBObjects=ciscoVlanTranslationMIBObjects, cvtMIBGroups=cvtMIBGroups, ciscoVlanTranslationMIB=ciscoVlanTranslationMIB, cvtPortTranslationEnabled=cvtPortTranslationEnabled, cvtPortTranslationGroup=cvtPortTranslationGroup, cvtGlobalTranslation=cvtGlobalTranslation, cvtMIBCompliances=cvtMIBCompliances, cvtGlobalTranslationGroup=cvtGlobalTranslationGroup, cvtPortBasedTranslation=cvtPortBasedTranslation, cvtGlobalTranslationTable=cvtGlobalTranslationTable, cvtPortTranslationStatus=cvtPortTranslationStatus, ciscoVlanTranslationMIBConform=ciscoVlanTranslationMIBConform, cvtGlobalTranslationStatus=cvtGlobalTranslationStatus, cvtPortTranslatedVlan=cvtPortTranslatedVlan, cvtGlobalTranslationEffective=cvtGlobalTranslationEffective, cvtPortTranslationMax=cvtPortTranslationMax, ciscoVlanTranslationMIBNotifs=ciscoVlanTranslationMIBNotifs, cvtGlobalOriginalVlan=cvtGlobalOriginalVlan, cvtPortTranslationTable=cvtPortTranslationTable, PYSNMP_MODULE_ID=ciscoVlanTranslationMIB, cvtGlobalTranslationEntry=cvtGlobalTranslationEntry, cvtGlobalTranslationMax=cvtGlobalTranslationMax, cvtGlobalTranslatedVlan=cvtGlobalTranslatedVlan, cvtPortConfigEntry=cvtPortConfigEntry, cvtMIBCompliance=cvtMIBCompliance, cvtPortOriginalVlan=cvtPortOriginalVlan, cvtPortConfigTable=cvtPortConfigTable, cvtPortTranslationEntry=cvtPortTranslationEntry)

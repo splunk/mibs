@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-MGX82XX-DSX3-BERT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MGX82XX-DSX3-BERT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 axisDiagnostics, = mibBuilder.importSymbols("BASIS-MIB", "axisDiagnostics")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoMgx82xxDsx3BertMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 39))
 ciscoMgx82xxDsx3BertMIB.setRevisions(('2003-01-02 00:00',))
 
@@ -96,4 +96,4 @@ cmDsx3BertConfGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 39, 2, 1, 1)).set
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmDsx3BertConfGroup = cmDsx3BertConfGroup.setStatus('current')
 if mibBuilder.loadTexts: cmDsx3BertConfGroup.setDescription('The collection of objects which are used for\n          configuring/running BERT on DSX3 interfaces.')
-mibBuilder.exportSymbols("CISCO-MGX82XX-DSX3-BERT-MIB", dsx3bertStartDate=dsx3bertStartDate, dsx3bertBitCountLower=dsx3bertBitCountLower, dsx3bertLine=dsx3bertLine, dsx3bertErrorInsertionRate=dsx3bertErrorInsertionRate, dsx3bertErrorInjectCount=dsx3bertErrorInjectCount, dsx3bertMode=dsx3bertMode, dsx3bertControl=dsx3bertControl, cmDsx3BertMIBConformance=cmDsx3BertMIBConformance, dsx3bert=dsx3bert, dsx3bertResourceStatus=dsx3bertResourceStatus, cmDsx3BertMIBCompliances=cmDsx3BertMIBCompliances, dsx3bertTestMedium=dsx3bertTestMedium, dsx3bertCleanupAction=dsx3bertCleanupAction, dsx3bertLoopback=dsx3bertLoopback, PYSNMP_MODULE_ID=ciscoMgx82xxDsx3BertMIB, dsx3bertPattern=dsx3bertPattern, dsx3bertBitCountUpper=dsx3bertBitCountUpper, cmDsx3BertCompliance=cmDsx3BertCompliance, ciscoMgx82xxDsx3BertMIB=ciscoMgx82xxDsx3BertMIB, dsx3bertStartTime=dsx3bertStartTime, cmDsx3BertConfGroup=cmDsx3BertConfGroup, dsx3bertBitErrorCountUpper=dsx3bertBitErrorCountUpper, dsx3bertPort=dsx3bertPort, dsx3bertOwner=dsx3bertOwner, dsx3bertUserId=dsx3bertUserId, dsx3bertBitErrorCountLower=dsx3bertBitErrorCountLower, cmDsx3BertMIBGroups=cmDsx3BertMIBGroups, dsx3bertStatus=dsx3bertStatus)
+mibBuilder.exportSymbols("CISCO-MGX82XX-DSX3-BERT-MIB", dsx3bertStartTime=dsx3bertStartTime, dsx3bertPort=dsx3bertPort, dsx3bertControl=dsx3bertControl, dsx3bertUserId=dsx3bertUserId, cmDsx3BertCompliance=cmDsx3BertCompliance, dsx3bertPattern=dsx3bertPattern, dsx3bertTestMedium=dsx3bertTestMedium, cmDsx3BertMIBCompliances=cmDsx3BertMIBCompliances, cmDsx3BertConfGroup=cmDsx3BertConfGroup, dsx3bertErrorInjectCount=dsx3bertErrorInjectCount, dsx3bertStatus=dsx3bertStatus, dsx3bertLoopback=dsx3bertLoopback, dsx3bertStartDate=dsx3bertStartDate, dsx3bertResourceStatus=dsx3bertResourceStatus, dsx3bertBitCountUpper=dsx3bertBitCountUpper, cmDsx3BertMIBConformance=cmDsx3BertMIBConformance, PYSNMP_MODULE_ID=ciscoMgx82xxDsx3BertMIB, dsx3bertCleanupAction=dsx3bertCleanupAction, dsx3bertErrorInsertionRate=dsx3bertErrorInsertionRate, dsx3bertBitErrorCountUpper=dsx3bertBitErrorCountUpper, dsx3bertBitErrorCountLower=dsx3bertBitErrorCountLower, dsx3bertOwner=dsx3bertOwner, dsx3bert=dsx3bert, dsx3bertLine=dsx3bertLine, dsx3bertMode=dsx3bertMode, ciscoMgx82xxDsx3BertMIB=ciscoMgx82xxDsx3BertMIB, cmDsx3BertMIBGroups=cmDsx3BertMIBGroups, dsx3bertBitCountLower=dsx3bertBitCountLower)

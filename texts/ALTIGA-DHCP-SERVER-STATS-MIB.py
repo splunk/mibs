@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module ALTIGA-DHCP-SERVER-STATS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/ALTIGA-DHCP-SERVER-STATS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 alDhcpServerMibModule, = mibBuilder.importSymbols("ALTIGA-GLOBAL-REG", "alDhcpServerMibModule")
-alStatsDhcpServer, alDhcpServerGroup = mibBuilder.importSymbols("ALTIGA-MIB", "alStatsDhcpServer", "alDhcpServerGroup")
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+alDhcpServerGroup, alStatsDhcpServer = mibBuilder.importSymbols("ALTIGA-MIB", "alDhcpServerGroup", "alStatsDhcpServer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, iso, Counter32, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "iso", "Counter32", "IpAddress", "TimeTicks")
-DisplayString, MacAddress, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "MacAddress", "RowStatus", "TextualConvention")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, IpAddress, Counter32, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "IpAddress", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, MacAddress, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "MacAddress", "DisplayString")
 altigaDhcpServerStatsMibModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 3076, 1, 1, 42, 2))
 altigaDhcpServerStatsMibModule.setRevisions(('2002-09-05 13:00', '2002-07-10 00:00',))
 
@@ -79,4 +79,4 @@ altigaDhcpServerStatsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 3076, 2, 1, 1, 1, 37
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     altigaDhcpServerStatsGroup = altigaDhcpServerStatsGroup.setStatus('current')
 if mibBuilder.loadTexts: altigaDhcpServerStatsGroup.setDescription('The objects for the DHCP Server statistics.')
-mibBuilder.exportSymbols("ALTIGA-DHCP-SERVER-STATS-MIB", alDhcpServerStatsSessRowStatus=alDhcpServerStatsSessRowStatus, alDhcpServerStatsSessMacAddr=alDhcpServerStatsSessMacAddr, alDhcpServerStatsAcksSent=alDhcpServerStatsAcksSent, alDhcpServerStatsSessHostName=alDhcpServerStatsSessHostName, alDhcpServerStatsMaximumLeases=alDhcpServerStatsMaximumLeases, alDhcpServerStatsSessId=alDhcpServerStatsSessId, altigaDhcpServerStatsMibConformance=altigaDhcpServerStatsMibConformance, alDhcpServerStatsReqTimeouts=alDhcpServerStatsReqTimeouts, alDhcpServerStatsSessEntry=alDhcpServerStatsSessEntry, altigaDhcpServerStatsMibCompliance=altigaDhcpServerStatsMibCompliance, alDhcpServerStatsNaksSent=alDhcpServerStatsNaksSent, alStatsDhcpServerGlobal=alStatsDhcpServerGlobal, alDhcpServerStatsSessLeaseExpire=alDhcpServerStatsSessLeaseExpire, altigaDhcpServerStatsGroup=altigaDhcpServerStatsGroup, alDhcpServerStatsOffersSent=alDhcpServerStatsOffersSent, altigaDhcpServerStatsMibModule=altigaDhcpServerStatsMibModule, alDhcpServerStatsActiveLeases=alDhcpServerStatsActiveLeases, alDhcpServerStatsSessTable=alDhcpServerStatsSessTable, altigaDhcpServerStatsMibCompliances=altigaDhcpServerStatsMibCompliances, alDhcpServerStatsSessIpAddr=alDhcpServerStatsSessIpAddr, PYSNMP_MODULE_ID=altigaDhcpServerStatsMibModule, alDhcpServerStatsDiscoversRcvd=alDhcpServerStatsDiscoversRcvd)
+mibBuilder.exportSymbols("ALTIGA-DHCP-SERVER-STATS-MIB", alDhcpServerStatsSessHostName=alDhcpServerStatsSessHostName, altigaDhcpServerStatsMibModule=altigaDhcpServerStatsMibModule, alDhcpServerStatsNaksSent=alDhcpServerStatsNaksSent, PYSNMP_MODULE_ID=altigaDhcpServerStatsMibModule, alDhcpServerStatsSessRowStatus=alDhcpServerStatsSessRowStatus, alDhcpServerStatsSessEntry=alDhcpServerStatsSessEntry, alStatsDhcpServerGlobal=alStatsDhcpServerGlobal, alDhcpServerStatsDiscoversRcvd=alDhcpServerStatsDiscoversRcvd, alDhcpServerStatsSessTable=alDhcpServerStatsSessTable, alDhcpServerStatsSessIpAddr=alDhcpServerStatsSessIpAddr, alDhcpServerStatsReqTimeouts=alDhcpServerStatsReqTimeouts, alDhcpServerStatsOffersSent=alDhcpServerStatsOffersSent, alDhcpServerStatsSessMacAddr=alDhcpServerStatsSessMacAddr, altigaDhcpServerStatsMibConformance=altigaDhcpServerStatsMibConformance, alDhcpServerStatsSessId=alDhcpServerStatsSessId, alDhcpServerStatsActiveLeases=alDhcpServerStatsActiveLeases, altigaDhcpServerStatsGroup=altigaDhcpServerStatsGroup, altigaDhcpServerStatsMibCompliances=altigaDhcpServerStatsMibCompliances, alDhcpServerStatsSessLeaseExpire=alDhcpServerStatsSessLeaseExpire, alDhcpServerStatsMaximumLeases=alDhcpServerStatsMaximumLeases, altigaDhcpServerStatsMibCompliance=altigaDhcpServerStatsMibCompliance, alDhcpServerStatsAcksSent=alDhcpServerStatsAcksSent)

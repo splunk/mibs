@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-SDLLC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SDLLC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, TextualConvention, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention", "MacAddress")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, MacAddress, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "MacAddress", "DisplayString", "TruthValue")
 ciscoSnaSdllcMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 28))
 ciscoSnaSdllcMIB.setRevisions(('1995-08-21 00:00', '1998-12-17 00:00',))
 
@@ -94,4 +94,4 @@ convSdllcAddrGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 28, 3, 2, 2)).setObjec
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     convSdllcAddrGroup = convSdllcAddrGroup.setStatus('current')
 if mibBuilder.loadTexts: convSdllcAddrGroup.setDescription('A collection of objects providing configuration and\n                 operational information about an SDLC address.')
-mibBuilder.exportSymbols("CISCO-SDLLC-MIB", convSdllcPortLocalAckState=convSdllcPortLocalAckState, convSdllcPeerStateChangeNotification=convSdllcPeerStateChangeNotification, convSdllcPortEntry=convSdllcPortEntry, sdllcMibCompliances=sdllcMibCompliances, convSdllcPorts=convSdllcPorts, convSdllcPortLocalAck=convSdllcPortLocalAck, ciscoSnaSdllcMIB=ciscoSnaSdllcMIB, convSdllcAddrXID=convSdllcAddrXID, convSdllcAddrGroup=convSdllcAddrGroup, convSdllcAddrState=convSdllcAddrState, convSdllcPortVirtMacAddr=convSdllcPortVirtMacAddr, convSdllcAddrPartnerMacAddr=convSdllcAddrPartnerMacAddr, convSdllcAddrSdlcAddr=convSdllcAddrSdlcAddr, convSdllcNotifications=convSdllcNotifications, convSdllcPortLlc2Ring=convSdllcPortLlc2Ring, convSdllcAddrTable=convSdllcAddrTable, convSdllcPortMaxLlc2FrameSize=convSdllcPortMaxLlc2FrameSize, convSdllcPortGroup=convSdllcPortGroup, sdllcMibGroups=sdllcMibGroups, convSdllcPortBridge=convSdllcPortBridge, convSdllcPortVirtRing=convSdllcPortVirtRing, convSdllcObjects=convSdllcObjects, convSdllcAddrMaxSdlcFrameSize=convSdllcAddrMaxSdlcFrameSize, sdllcMibConformance=sdllcMibConformance, convSdllcAddrs=convSdllcAddrs, convSdllcPortTable=convSdllcPortTable, sdllcMibCompliance=sdllcMibCompliance, convSdllcAddrEntry=convSdllcAddrEntry, PYSNMP_MODULE_ID=ciscoSnaSdllcMIB, convSdllcNotificationPrefix=convSdllcNotificationPrefix)
+mibBuilder.exportSymbols("CISCO-SDLLC-MIB", convSdllcAddrSdlcAddr=convSdllcAddrSdlcAddr, PYSNMP_MODULE_ID=ciscoSnaSdllcMIB, convSdllcPortBridge=convSdllcPortBridge, sdllcMibCompliance=sdllcMibCompliance, convSdllcAddrGroup=convSdllcAddrGroup, convSdllcPortTable=convSdllcPortTable, sdllcMibConformance=sdllcMibConformance, convSdllcAddrXID=convSdllcAddrXID, convSdllcAddrs=convSdllcAddrs, convSdllcPortMaxLlc2FrameSize=convSdllcPortMaxLlc2FrameSize, convSdllcAddrMaxSdlcFrameSize=convSdllcAddrMaxSdlcFrameSize, sdllcMibCompliances=sdllcMibCompliances, convSdllcObjects=convSdllcObjects, sdllcMibGroups=sdllcMibGroups, convSdllcPortLocalAckState=convSdllcPortLocalAckState, convSdllcNotificationPrefix=convSdllcNotificationPrefix, convSdllcAddrTable=convSdllcAddrTable, convSdllcPortGroup=convSdllcPortGroup, convSdllcNotifications=convSdllcNotifications, convSdllcPortEntry=convSdllcPortEntry, convSdllcAddrPartnerMacAddr=convSdllcAddrPartnerMacAddr, convSdllcAddrEntry=convSdllcAddrEntry, convSdllcAddrState=convSdllcAddrState, convSdllcPortVirtRing=convSdllcPortVirtRing, convSdllcPeerStateChangeNotification=convSdllcPeerStateChangeNotification, ciscoSnaSdllcMIB=ciscoSnaSdllcMIB, convSdllcPortLocalAck=convSdllcPortLocalAck, convSdllcPorts=convSdllcPorts, convSdllcPortLlc2Ring=convSdllcPortLlc2Ring, convSdllcPortVirtMacAddr=convSdllcPortVirtMacAddr)

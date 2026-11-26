@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-TCP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-TCP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:57 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 tcpConnEntry, = mibBuilder.importSymbols("TCP-MIB", "tcpConnEntry")
 ciscoTcpMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 6))
@@ -60,4 +60,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoTcpMIBGroupRev1 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 6, 3, 2, 2)).setObjects(("CISCO-TCP-MIB", "ciscoTcpConnInBytes"), ("CISCO-TCP-MIB", "ciscoTcpConnOutBytes"), ("CISCO-TCP-MIB", "ciscoTcpConnInPkts"), ("CISCO-TCP-MIB", "ciscoTcpConnOutPkts"), ("CISCO-TCP-MIB", "ciscoTcpConnElapsed"), ("CISCO-TCP-MIB", "ciscoTcpConnSRTT"), ("CISCO-TCP-MIB", "ciscoTcpConnRto"), ("CISCO-TCP-MIB", "ciscoTcpConnRetransPkts"), ("CISCO-TCP-MIB", "ciscoTcpConnFastRetransPkts"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoTcpMIBGroupRev1 = ciscoTcpMIBGroupRev1.setStatus('current')
-mibBuilder.exportSymbols("CISCO-TCP-MIB", ciscoTcpConnOutBytes=ciscoTcpConnOutBytes, ciscoTcpConnRto=ciscoTcpConnRto, ciscoTcpMIBGroup=ciscoTcpMIBGroup, ciscoTcpConnElapsed=ciscoTcpConnElapsed, ciscoTcpMIBCompliances=ciscoTcpMIBCompliances, ciscoTcpConnFastRetransPkts=ciscoTcpConnFastRetransPkts, ciscoTcpMIB=ciscoTcpMIB, ciscoTcpConnInBytes=ciscoTcpConnInBytes, ciscoTcpConnRetransPkts=ciscoTcpConnRetransPkts, ciscoTcpConnTable=ciscoTcpConnTable, ciscoTcpMIBGroups=ciscoTcpMIBGroups, ciscoTcpMIBCompliance=ciscoTcpMIBCompliance, ciscoTcpMIBObjects=ciscoTcpMIBObjects, ciscoTcpMIBGroupRev1=ciscoTcpMIBGroupRev1, ciscoTcpConnEntry=ciscoTcpConnEntry, ciscoTcpConnInPkts=ciscoTcpConnInPkts, PYSNMP_MODULE_ID=ciscoTcpMIB, ciscoTcpConnOutPkts=ciscoTcpConnOutPkts, ciscoTcpMIBComplianceRev1=ciscoTcpMIBComplianceRev1, ciscoTcpConnSRTT=ciscoTcpConnSRTT, ciscoTcpMIBConformance=ciscoTcpMIBConformance, ciscoTcpMIBTraps=ciscoTcpMIBTraps)
+mibBuilder.exportSymbols("CISCO-TCP-MIB", ciscoTcpMIBObjects=ciscoTcpMIBObjects, ciscoTcpConnRto=ciscoTcpConnRto, ciscoTcpConnTable=ciscoTcpConnTable, ciscoTcpMIBComplianceRev1=ciscoTcpMIBComplianceRev1, ciscoTcpConnInBytes=ciscoTcpConnInBytes, ciscoTcpConnOutPkts=ciscoTcpConnOutPkts, ciscoTcpMIBGroup=ciscoTcpMIBGroup, ciscoTcpMIBGroupRev1=ciscoTcpMIBGroupRev1, ciscoTcpConnFastRetransPkts=ciscoTcpConnFastRetransPkts, ciscoTcpConnOutBytes=ciscoTcpConnOutBytes, ciscoTcpConnRetransPkts=ciscoTcpConnRetransPkts, ciscoTcpMIBCompliance=ciscoTcpMIBCompliance, ciscoTcpMIB=ciscoTcpMIB, ciscoTcpConnEntry=ciscoTcpConnEntry, ciscoTcpMIBTraps=ciscoTcpMIBTraps, ciscoTcpConnElapsed=ciscoTcpConnElapsed, ciscoTcpMIBGroups=ciscoTcpMIBGroups, ciscoTcpConnInPkts=ciscoTcpConnInPkts, ciscoTcpMIBCompliances=ciscoTcpMIBCompliances, PYSNMP_MODULE_ID=ciscoTcpMIB, ciscoTcpMIBConformance=ciscoTcpMIBConformance, ciscoTcpConnSRTT=ciscoTcpConnSRTT)

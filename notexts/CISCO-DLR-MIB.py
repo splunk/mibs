@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DLR-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DLR-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:42 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDlrMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 865))
 ciscoDlrMIB.setRevisions(('2019-09-11 00:00',))
@@ -79,4 +79,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoDlrMIBNotifyGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 865, 2, 2, 2)).setObjects(("CISCO-DLR-MIB", "ciscoDlrRingStatus"), ("CISCO-DLR-MIB", "ciscoDlrRingSupervisorStatus"), ("CISCO-DLR-MIB", "ciscoDlrRingGatewayStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoDlrMIBNotifyGroup = ciscoDlrMIBNotifyGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DLR-MIB", ciscoDlrMIB=ciscoDlrMIB, ciscoDlrRingDeviceState=ciscoDlrRingDeviceState, ciscoDlrRingEntry=ciscoDlrRingEntry, ciscoDlrRingTable=ciscoDlrRingTable, ciscoDlrMIBNotifyGroup=ciscoDlrMIBNotifyGroup, ciscoDlrMIBObjects=ciscoDlrMIBObjects, ciscoDlrMIBGroups=ciscoDlrMIBGroups, ciscoDlrMIBNotifs=ciscoDlrMIBNotifs, ciscoDlrRingGatewayStatus=ciscoDlrRingGatewayStatus, ciscoDlrMIBMainObjectGroup=ciscoDlrMIBMainObjectGroup, ciscoDlrRingGatewayDeviceStatus=ciscoDlrRingGatewayDeviceStatus, ciscoDlrMIBModuleCompliance=ciscoDlrMIBModuleCompliance, ciscoDlrRingName=ciscoDlrRingName, ciscoDlrRingGatewayDeviceState=ciscoDlrRingGatewayDeviceState, DlrGatewayDeviceStatus=DlrGatewayDeviceStatus, ciscoDlrMIBConform=ciscoDlrMIBConform, ciscoDlrRingIndex=ciscoDlrRingIndex, DlrGatewayDeviceState=DlrGatewayDeviceState, ciscoDlrRingID=ciscoDlrRingID, DlrNetworkStatus=DlrNetworkStatus, ciscoDlrRingNetworkStatus=ciscoDlrRingNetworkStatus, ciscoDlrMIBCompliances=ciscoDlrMIBCompliances, DlrDeviceState=DlrDeviceState, ciscoDlrRingStatus=ciscoDlrRingStatus, ciscoDlrRingSupervisorStatus=ciscoDlrRingSupervisorStatus, PYSNMP_MODULE_ID=ciscoDlrMIB)
+mibBuilder.exportSymbols("CISCO-DLR-MIB", DlrGatewayDeviceState=DlrGatewayDeviceState, ciscoDlrMIBCompliances=ciscoDlrMIBCompliances, PYSNMP_MODULE_ID=ciscoDlrMIB, ciscoDlrMIBNotifyGroup=ciscoDlrMIBNotifyGroup, ciscoDlrRingStatus=ciscoDlrRingStatus, ciscoDlrRingNetworkStatus=ciscoDlrRingNetworkStatus, ciscoDlrRingName=ciscoDlrRingName, ciscoDlrRingSupervisorStatus=ciscoDlrRingSupervisorStatus, ciscoDlrMIBNotifs=ciscoDlrMIBNotifs, ciscoDlrRingGatewayStatus=ciscoDlrRingGatewayStatus, DlrGatewayDeviceStatus=DlrGatewayDeviceStatus, DlrNetworkStatus=DlrNetworkStatus, ciscoDlrRingDeviceState=ciscoDlrRingDeviceState, DlrDeviceState=DlrDeviceState, ciscoDlrMIBModuleCompliance=ciscoDlrMIBModuleCompliance, ciscoDlrRingTable=ciscoDlrRingTable, ciscoDlrMIB=ciscoDlrMIB, ciscoDlrRingGatewayDeviceState=ciscoDlrRingGatewayDeviceState, ciscoDlrMIBGroups=ciscoDlrMIBGroups, ciscoDlrRingEntry=ciscoDlrRingEntry, ciscoDlrRingIndex=ciscoDlrRingIndex, ciscoDlrMIBObjects=ciscoDlrMIBObjects, ciscoDlrRingGatewayDeviceStatus=ciscoDlrRingGatewayDeviceStatus, ciscoDlrMIBMainObjectGroup=ciscoDlrMIBMainObjectGroup, ciscoDlrMIBConform=ciscoDlrMIBConform, ciscoDlrRingID=ciscoDlrRingID)

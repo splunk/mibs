@@ -1,15 +1,15 @@
 #
 # PySNMP MIB module CLOUDGENIX-SMI (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cloudgenix/CLOUDGENIX-SMI
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:28 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:35 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion")
-ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-Gauge32, iso, Integer32, enterprises, Unsigned32, ObjectIdentity, TimeTicks, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, NotificationType, IpAddress, MibIdentifier, ModuleIdentity, Counter32, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "iso", "Integer32", "enterprises", "Unsigned32", "ObjectIdentity", "TimeTicks", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "NotificationType", "IpAddress", "MibIdentifier", "ModuleIdentity", "Counter32", "Bits")
+ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+Counter64, MibIdentifier, Counter32, ModuleIdentity, iso, IpAddress, Unsigned32, Bits, TimeTicks, ObjectIdentity, enterprises, Gauge32, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "MibIdentifier", "Counter32", "ModuleIdentity", "iso", "IpAddress", "Unsigned32", "Bits", "TimeTicks", "ObjectIdentity", "enterprises", "Gauge32", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "NotificationType")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 cloudgenix = ModuleIdentity((1, 3, 6, 1, 4, 1, 50114))
 cloudgenix.setRevisions(('2017-06-19 18:00',))
@@ -35,4 +35,4 @@ cgxMgmt = ObjectIdentity((1, 3, 6, 1, 4, 1, 50114, 10))
 if mibBuilder.loadTexts: cgxMgmt.setStatus('current')
 cgxProducts = ObjectIdentity((1, 3, 6, 1, 4, 1, 50114, 11))
 if mibBuilder.loadTexts: cgxProducts.setStatus('current')
-mibBuilder.exportSymbols("CLOUDGENIX-SMI", CgxDegreesC=CgxDegreesC, CgxVolts=CgxVolts, cgxObjects=cgxObjects, cgxCompliances=cgxCompliances, PYSNMP_MODULE_ID=cloudgenix, cgxMgmt=cgxMgmt, cgxConformance=cgxConformance, cgxGroups=cgxGroups, cloudgenixCompliance=cloudgenixCompliance, cloudgenix=cloudgenix, cgxProducts=cgxProducts)
+mibBuilder.exportSymbols("CLOUDGENIX-SMI", cgxCompliances=cgxCompliances, cloudgenixCompliance=cloudgenixCompliance, cloudgenix=cloudgenix, CgxVolts=CgxVolts, CgxDegreesC=CgxDegreesC, cgxMgmt=cgxMgmt, cgxGroups=cgxGroups, cgxProducts=cgxProducts, cgxObjects=cgxObjects, PYSNMP_MODULE_ID=cloudgenix, cgxConformance=cgxConformance)

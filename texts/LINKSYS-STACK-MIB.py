@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module LINKSYS-STACK-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/linksys/LINKSYS-STACK-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:11 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:12:02 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueSizeConstraint, ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint")
 MacAddress, = mibBuilder.importSymbols("BRIDGE-MIB", "MacAddress")
 rnd, = mibBuilder.importSymbols("LINKSYS-MIB", "rnd")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Gauge32, Counter64, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, ModuleIdentity, NotificationType, iso, Integer32, TimeTicks, Unsigned32, Counter32, IpAddress, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "Counter64", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "ModuleIdentity", "NotificationType", "iso", "Integer32", "TimeTicks", "Unsigned32", "Counter32", "IpAddress", "ObjectIdentity")
-TruthValue, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "TextualConvention", "DisplayString")
+Integer32, Counter32, Gauge32, Unsigned32, NotificationType, iso, Bits, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, Counter64, MibIdentifier, IpAddress, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Counter32", "Gauge32", "Unsigned32", "NotificationType", "iso", "Bits", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "Counter64", "MibIdentifier", "IpAddress", "ObjectIdentity")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 rlStack = ModuleIdentity((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 107))
 rlStack.setRevisions(('2005-04-14 00:00',))
 
@@ -44,4 +44,4 @@ rlStackUnitMacAddressAfterReset = MibScalar((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 
 if mibBuilder.loadTexts: rlStackUnitMacAddressAfterReset.setReference('IEEE 802.1D-1990: Sections 6.4.1.1.3 and 3.12.5')
 if mibBuilder.loadTexts: rlStackUnitMacAddressAfterReset.setStatus('current')
 if mibBuilder.loadTexts: rlStackUnitMacAddressAfterReset.setDescription('The MAC address used by this bridge after rest.')
-mibBuilder.exportSymbols("LINKSYS-STACK-MIB", rlStackActiveUnitIdTable=rlStackActiveUnitIdTable, rlStackActiveUnitIdAfterReset=rlStackActiveUnitIdAfterReset, rlStack=rlStack, PYSNMP_MODULE_ID=rlStack, rlStackUnitMode=rlStackUnitMode, rlStackCurrentUnitId=rlStackCurrentUnitId, rlStackUnitModeAfterReset=rlStackUnitModeAfterReset, rlStackActiveUnitIdEntry=rlStackActiveUnitIdEntry, rlStackUnitMacAddressAfterReset=rlStackUnitMacAddressAfterReset)
+mibBuilder.exportSymbols("LINKSYS-STACK-MIB", rlStackActiveUnitIdTable=rlStackActiveUnitIdTable, rlStackUnitMacAddressAfterReset=rlStackUnitMacAddressAfterReset, rlStack=rlStack, rlStackUnitModeAfterReset=rlStackUnitModeAfterReset, PYSNMP_MODULE_ID=rlStack, rlStackActiveUnitIdAfterReset=rlStackActiveUnitIdAfterReset, rlStackUnitMode=rlStackUnitMode, rlStackCurrentUnitId=rlStackCurrentUnitId, rlStackActiveUnitIdEntry=rlStackActiveUnitIdEntry)

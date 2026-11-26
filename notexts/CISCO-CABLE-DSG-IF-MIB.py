@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCO-CABLE-DSG-IF-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-CABLE-DSG-IF-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
-InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
+InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
-MacAddress, TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "MacAddress", "TextualConvention", "RowStatus", "DisplayString")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
+DisplayString, MacAddress, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "MacAddress", "RowStatus", "TextualConvention")
 ciscoCableDsgIfMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 999))
 ciscoCableDsgIfMIB.setRevisions(('2004-03-29 00:00',))
 if mibBuilder.loadTexts: ciscoCableDsgIfMIB.setLastUpdated('200403290000Z')
@@ -78,4 +78,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ccdsgIfDownstreamGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 999, 4, 2, 3)).setObjects(("CISCO-CABLE-DSG-IF-MIB", "ccdsgIfDownTunnelIndex"), ("CISCO-CABLE-DSG-IF-MIB", "ccdsgIfDownIfIndex"), ("CISCO-CABLE-DSG-IF-MIB", "ccdsgIfDownRowStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ccdsgIfDownstreamGroup = ccdsgIfDownstreamGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-CABLE-DSG-IF-MIB", ccdsgIfDownDsgIndex=ccdsgIfDownDsgIndex, ccdsgIfDownstreamGroup=ccdsgIfDownstreamGroup, ccdsgIfCaVendorTable=ccdsgIfCaVendorTable, ccdsgIfDownstreamEntry=ccdsgIfDownstreamEntry, ccdsgIfCaVendorName=ccdsgIfCaVendorName, ccdsgIfTunnelInAddressType=ccdsgIfTunnelInAddressType, ccdsgIfTunnelInIpAddress=ccdsgIfTunnelInIpAddress, ccdsgIfDownRowStatus=ccdsgIfDownRowStatus, ccdsgIfTunnelEntry=ccdsgIfTunnelEntry, ccdsgIfDownstreamTable=ccdsgIfDownstreamTable, ciscoCableDsgIfCompliances=ciscoCableDsgIfCompliances, ccdsgIfBasicCompliance=ccdsgIfBasicCompliance, ccdsgIfDownTunnelIndex=ccdsgIfDownTunnelIndex, ccdsgIfCaVendorEntry=ccdsgIfCaVendorEntry, ccdsgIfDownstream=ccdsgIfDownstream, PYSNMP_MODULE_ID=ciscoCableDsgIfMIB, ccdsgIfTunnel=ccdsgIfTunnel, ciscoCableDsgIfConformance=ciscoCableDsgIfConformance, ccdsgIfTunnelGroup=ccdsgIfTunnelGroup, ccdsgIfCaVendorRowStatus=ccdsgIfCaVendorRowStatus, ccdsgIfTunnelIndex=ccdsgIfTunnelIndex, ccdsgIfDownIfIndex=ccdsgIfDownIfIndex, ccdsgIfCaVendorGroup=ccdsgIfCaVendorGroup, ccdsgIfTunnelRowStatus=ccdsgIfTunnelRowStatus, ccdsgIfCaVendor=ccdsgIfCaVendor, ccdsgIfCaVendorIndex=ccdsgIfCaVendorIndex, ciscoCableDsgIfGroups=ciscoCableDsgIfGroups, ciscoCableDsgIfMIB=ciscoCableDsgIfMIB, ccdsgIfCaVendorTunnelCnt=ccdsgIfCaVendorTunnelCnt, ccdsgIfTunnelCaVendorIndex=ccdsgIfTunnelCaVendorIndex, ccdsgIfTunnelTable=ccdsgIfTunnelTable, ccdsgIfTunnelMacAddress=ccdsgIfTunnelMacAddress)
+mibBuilder.exportSymbols("CISCO-CABLE-DSG-IF-MIB", ciscoCableDsgIfConformance=ciscoCableDsgIfConformance, ccdsgIfTunnelGroup=ccdsgIfTunnelGroup, ccdsgIfCaVendorTunnelCnt=ccdsgIfCaVendorTunnelCnt, ccdsgIfBasicCompliance=ccdsgIfBasicCompliance, ccdsgIfDownRowStatus=ccdsgIfDownRowStatus, ccdsgIfTunnelRowStatus=ccdsgIfTunnelRowStatus, ccdsgIfCaVendorIndex=ccdsgIfCaVendorIndex, ccdsgIfCaVendorEntry=ccdsgIfCaVendorEntry, ccdsgIfTunnel=ccdsgIfTunnel, ccdsgIfCaVendorRowStatus=ccdsgIfCaVendorRowStatus, ccdsgIfTunnelMacAddress=ccdsgIfTunnelMacAddress, ciscoCableDsgIfGroups=ciscoCableDsgIfGroups, ccdsgIfDownstreamGroup=ccdsgIfDownstreamGroup, ccdsgIfTunnelIndex=ccdsgIfTunnelIndex, ccdsgIfDownTunnelIndex=ccdsgIfDownTunnelIndex, ciscoCableDsgIfMIB=ciscoCableDsgIfMIB, ccdsgIfDownstreamEntry=ccdsgIfDownstreamEntry, ccdsgIfTunnelTable=ccdsgIfTunnelTable, ccdsgIfTunnelCaVendorIndex=ccdsgIfTunnelCaVendorIndex, ccdsgIfDownIfIndex=ccdsgIfDownIfIndex, ccdsgIfDownstreamTable=ccdsgIfDownstreamTable, ccdsgIfCaVendorTable=ccdsgIfCaVendorTable, ccdsgIfCaVendorName=ccdsgIfCaVendorName, ccdsgIfCaVendor=ccdsgIfCaVendor, ccdsgIfTunnelInIpAddress=ccdsgIfTunnelInIpAddress, ccdsgIfDownstream=ccdsgIfDownstream, ccdsgIfCaVendorGroup=ccdsgIfCaVendorGroup, ccdsgIfTunnelInAddressType=ccdsgIfTunnelInAddressType, ccdsgIfTunnelEntry=ccdsgIfTunnelEntry, ciscoCableDsgIfCompliances=ciscoCableDsgIfCompliances, PYSNMP_MODULE_ID=ciscoCableDsgIfMIB, ccdsgIfDownDsgIndex=ccdsgIfDownDsgIndex)

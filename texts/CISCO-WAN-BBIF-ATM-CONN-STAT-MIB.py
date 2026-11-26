@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-WAN-BBIF-ATM-CONN-STAT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-BBIF-ATM-CONN-STAT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 bbChanCntGrp, = mibBuilder.importSymbols("BASIS-MIB", "bbChanCntGrp")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoWanBbifAtmConnStatMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 36))
 ciscoWanBbifAtmConnStatMIB.setRevisions(('2002-10-18 00:00',))
 
@@ -83,4 +83,4 @@ cwbAtmConnStatsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 36, 2, 1, 1)).se
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cwbAtmConnStatsGroup = cwbAtmConnStatsGroup.setStatus('current')
 if mibBuilder.loadTexts: cwbAtmConnStatsGroup.setDescription('The objects related to broadband interface\n       connection statistics.')
-mibBuilder.exportSymbols("CISCO-WAN-BBIF-ATM-CONN-STAT-MIB", PYSNMP_MODULE_ID=ciscoWanBbifAtmConnStatMIB, cwbAtmConnStatMIBCompliances=cwbAtmConnStatMIBCompliances, bbChanRcvEOFCells=bbChanRcvEOFCells, bbChanDscdClpZeroCellsToPort=bbChanDscdClpZeroCellsToPort, cwbAtmConnStatMIBGroups=cwbAtmConnStatMIBGroups, cwbAtmConnStatsGroup=cwbAtmConnStatsGroup, bbChanCntGrpEntry=bbChanCntGrpEntry, bbChanXmtClp0Cells=bbChanXmtClp0Cells, bbChanRcvClp0Cells=bbChanRcvClp0Cells, ciscoWanBbifAtmConnStatMIB=ciscoWanBbifAtmConnStatMIB, bbChanNonConformCellsAtGcra2Policer=bbChanNonConformCellsAtGcra2Policer, bbChanDscdClpOneCellsToPort=bbChanDscdClpOneCellsToPort, bbChanDscdClp1Cells=bbChanDscdClp1Cells, bbChanXmtClp1Cells=bbChanXmtClp1Cells, bbChanCntClrButton=bbChanCntClrButton, cwbAtmConnStatCompliance=cwbAtmConnStatCompliance, cwbAtmConnStatMIBConformance=cwbAtmConnStatMIBConformance, bbChanCntNum=bbChanCntNum, bbChanDscdClp0Cells=bbChanDscdClp0Cells, bbChanCntGrpTable=bbChanCntGrpTable, bbChanRcvClp1Cells=bbChanRcvClp1Cells, bbChanRcvCellsSent=bbChanRcvCellsSent, bbChanNonConformCellsAtGcra1Policer=bbChanNonConformCellsAtGcra1Policer)
+mibBuilder.exportSymbols("CISCO-WAN-BBIF-ATM-CONN-STAT-MIB", bbChanXmtClp0Cells=bbChanXmtClp0Cells, bbChanDscdClp1Cells=bbChanDscdClp1Cells, bbChanRcvClp0Cells=bbChanRcvClp0Cells, bbChanNonConformCellsAtGcra2Policer=bbChanNonConformCellsAtGcra2Policer, PYSNMP_MODULE_ID=ciscoWanBbifAtmConnStatMIB, cwbAtmConnStatCompliance=cwbAtmConnStatCompliance, bbChanNonConformCellsAtGcra1Policer=bbChanNonConformCellsAtGcra1Policer, bbChanRcvClp1Cells=bbChanRcvClp1Cells, bbChanRcvEOFCells=bbChanRcvEOFCells, bbChanCntGrpEntry=bbChanCntGrpEntry, cwbAtmConnStatMIBGroups=cwbAtmConnStatMIBGroups, cwbAtmConnStatMIBCompliances=cwbAtmConnStatMIBCompliances, cwbAtmConnStatsGroup=cwbAtmConnStatsGroup, bbChanXmtClp1Cells=bbChanXmtClp1Cells, bbChanCntClrButton=bbChanCntClrButton, bbChanDscdClpZeroCellsToPort=bbChanDscdClpZeroCellsToPort, bbChanDscdClp0Cells=bbChanDscdClp0Cells, bbChanCntNum=bbChanCntNum, bbChanDscdClpOneCellsToPort=bbChanDscdClpOneCellsToPort, bbChanRcvCellsSent=bbChanRcvCellsSent, bbChanCntGrpTable=bbChanCntGrpTable, cwbAtmConnStatMIBConformance=cwbAtmConnStatMIBConformance, ciscoWanBbifAtmConnStatMIB=ciscoWanBbifAtmConnStatMIB)

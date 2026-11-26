@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-WAN-CES-PORT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-CES-PORT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 circuitEmulation, = mibBuilder.importSymbols("BASIS-MIB", "circuitEmulation")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoWanCesPortMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 40))
 ciscoWanCesPortMIB.setRevisions(('2002-11-13 00:00',))
 
@@ -107,4 +107,4 @@ ciscoWanCesPortDs0InDs1Group = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 40, 2, 1
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoWanCesPortDs0InDs1Group = ciscoWanCesPortDs0InDs1Group.setStatus('current')
 if mibBuilder.loadTexts: ciscoWanCesPortDs0InDs1Group.setDescription('The collection of objects related to information\n        on DS0 time slots used in each DS1 line.')
-mibBuilder.exportSymbols("CISCO-WAN-CES-PORT-MIB", cesPortState=cesPortState, cesPortsUsedLine6=cesPortsUsedLine6, ciscoWanCesPortMIBGroups=ciscoWanCesPortMIBGroups, cesPortDs0ConfigBitMap=cesPortDs0ConfigBitMap, cesPortSpeed=cesPortSpeed, ciscoWanCesPortCompliance=ciscoWanCesPortCompliance, cesPortsUsedLine2=cesPortsUsedLine2, cesPortNum=cesPortNum, ciscoWanCesPortMIBConformance=ciscoWanCesPortMIBConformance, ciscoWanCesPortConfGroup=ciscoWanCesPortConfGroup, cesPortLineNum=cesPortLineNum, cesPortsUsedLine4=cesPortsUsedLine4, cesmPortCnfGrpEntry=cesmPortCnfGrpEntry, cesPortNumOfDs0Slot=cesPortNumOfDs0Slot, cesPortsUsedLine7=cesPortsUsedLine7, cesPortsUsedLine5=cesPortsUsedLine5, cesPortBERTEnable=cesPortBERTEnable, cesPortNextAvailable=cesPortNextAvailable, cesmPortCnfGrp=cesmPortCnfGrp, cesPortsUsedLine3=cesPortsUsedLine3, ciscoWanCesPortMIBCompliances=ciscoWanCesPortMIBCompliances, cesmPortCnfGrpTable=cesmPortCnfGrpTable, ciscoWanCesPortDs0InDs1Group=ciscoWanCesPortDs0InDs1Group, PYSNMP_MODULE_ID=ciscoWanCesPortMIB, ciscoWanCesPortsUsedGroup=ciscoWanCesPortsUsedGroup, cesPortRowStatus=cesPortRowStatus, cesPortType=cesPortType, ciscoWanCesPortMIB=ciscoWanCesPortMIB, cesmPort=cesmPort, cesPortsUsedLine8=cesPortsUsedLine8, cesPortsUsedLine1=cesPortsUsedLine1, cesPortNumOfSCIPerDS0=cesPortNumOfSCIPerDS0)
+mibBuilder.exportSymbols("CISCO-WAN-CES-PORT-MIB", cesPortsUsedLine5=cesPortsUsedLine5, cesPortNextAvailable=cesPortNextAvailable, cesPortsUsedLine2=cesPortsUsedLine2, ciscoWanCesPortCompliance=ciscoWanCesPortCompliance, cesPortRowStatus=cesPortRowStatus, cesPortsUsedLine1=cesPortsUsedLine1, cesPortDs0ConfigBitMap=cesPortDs0ConfigBitMap, cesmPortCnfGrpTable=cesmPortCnfGrpTable, cesPortNumOfSCIPerDS0=cesPortNumOfSCIPerDS0, PYSNMP_MODULE_ID=ciscoWanCesPortMIB, ciscoWanCesPortMIBConformance=ciscoWanCesPortMIBConformance, cesmPortCnfGrpEntry=cesmPortCnfGrpEntry, cesPortsUsedLine4=cesPortsUsedLine4, cesPortsUsedLine3=cesPortsUsedLine3, ciscoWanCesPortsUsedGroup=ciscoWanCesPortsUsedGroup, ciscoWanCesPortConfGroup=ciscoWanCesPortConfGroup, cesmPort=cesmPort, cesPortsUsedLine7=cesPortsUsedLine7, cesPortSpeed=cesPortSpeed, ciscoWanCesPortMIB=ciscoWanCesPortMIB, ciscoWanCesPortMIBCompliances=ciscoWanCesPortMIBCompliances, ciscoWanCesPortDs0InDs1Group=ciscoWanCesPortDs0InDs1Group, cesPortsUsedLine8=cesPortsUsedLine8, cesPortLineNum=cesPortLineNum, cesPortBERTEnable=cesPortBERTEnable, cesPortType=cesPortType, cesPortsUsedLine6=cesPortsUsedLine6, ciscoWanCesPortMIBGroups=ciscoWanCesPortMIBGroups, cesmPortCnfGrp=cesmPortCnfGrp, cesPortNumOfDs0Slot=cesPortNumOfDs0Slot, cesPortState=cesPortState, cesPortNum=cesPortNum)

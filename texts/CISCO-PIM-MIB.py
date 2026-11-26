@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-PIM-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-PIM-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 pimInterfaceStatus, pimRPSetHoldTime = mibBuilder.importSymbols("PIM-MIB", "pimInterfaceStatus", "pimRPSetHoldTime")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoPimMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 184))
 ciscoPimMIB.setRevisions(('2000-11-02 00:00',))
 
@@ -89,4 +89,4 @@ ciscoPimNotificationObjectGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 184, 3, 2
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoPimNotificationObjectGroup = ciscoPimNotificationObjectGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoPimNotificationObjectGroup.setDescription('A collection of objects that are supported only for\n            notification purpose.')
-mibBuilder.exportSymbols("CISCO-PIM-MIB", cpimLastErrorRPType=cpimLastErrorRPType, ciscoPimRPMappingChange=ciscoPimRPMappingChange, ciscoPimMIBGroups=ciscoPimMIBGroups, ciscoPimMIB=ciscoPimMIB, ciscoPimMIBNotificationObjects=ciscoPimMIBNotificationObjects, cpimRPMappingChangeType=cpimRPMappingChangeType, ciscoPimInterfaceDown=ciscoPimInterfaceDown, cpimInvalidRegisterMsgsRcvd=cpimInvalidRegisterMsgsRcvd, cpimLastErrorOrigin=cpimLastErrorOrigin, cpimLastErrorType=cpimLastErrorType, ciscoPimInterfaceUp=ciscoPimInterfaceUp, cpimInvalidJoinPruneMsgsRcvd=cpimInvalidJoinPruneMsgsRcvd, ciscoPimMIBNotificationPrefix=ciscoPimMIBNotificationPrefix, PYSNMP_MODULE_ID=ciscoPimMIB, ciscoPimInvalidRegister=ciscoPimInvalidRegister, ciscoPimSparseMIBGroup=ciscoPimSparseMIBGroup, ciscoPimMIBObjects=ciscoPimMIBObjects, ciscoPimNotificationObjectGroup=ciscoPimNotificationObjectGroup, cpimLastErrorGroupType=cpimLastErrorGroupType, ciscoPimSparseMIBCompliance=ciscoPimSparseMIBCompliance, ciscoPimMIBConformance=ciscoPimMIBConformance, ciscoPimMIBCompliances=ciscoPimMIBCompliances, cpimLastErrorRP=cpimLastErrorRP, ciscoPimMIBNotifications=ciscoPimMIBNotifications, cpimLastErrorGroup=cpimLastErrorGroup, cpimLastErrorOriginType=cpimLastErrorOriginType, ciscoPimInvalidJoinPrune=ciscoPimInvalidJoinPrune, cpim=cpim)
+mibBuilder.exportSymbols("CISCO-PIM-MIB", ciscoPimInterfaceUp=ciscoPimInterfaceUp, ciscoPimRPMappingChange=ciscoPimRPMappingChange, ciscoPimNotificationObjectGroup=ciscoPimNotificationObjectGroup, ciscoPimMIB=ciscoPimMIB, cpimInvalidJoinPruneMsgsRcvd=cpimInvalidJoinPruneMsgsRcvd, PYSNMP_MODULE_ID=ciscoPimMIB, cpimLastErrorGroup=cpimLastErrorGroup, ciscoPimMIBNotificationPrefix=ciscoPimMIBNotificationPrefix, ciscoPimSparseMIBGroup=ciscoPimSparseMIBGroup, ciscoPimMIBNotifications=ciscoPimMIBNotifications, ciscoPimMIBConformance=ciscoPimMIBConformance, cpimInvalidRegisterMsgsRcvd=cpimInvalidRegisterMsgsRcvd, ciscoPimInvalidJoinPrune=ciscoPimInvalidJoinPrune, cpimLastErrorType=cpimLastErrorType, ciscoPimMIBNotificationObjects=ciscoPimMIBNotificationObjects, cpimLastErrorRP=cpimLastErrorRP, cpim=cpim, cpimRPMappingChangeType=cpimRPMappingChangeType, ciscoPimMIBGroups=ciscoPimMIBGroups, ciscoPimSparseMIBCompliance=ciscoPimSparseMIBCompliance, cpimLastErrorOrigin=cpimLastErrorOrigin, ciscoPimMIBCompliances=ciscoPimMIBCompliances, cpimLastErrorRPType=cpimLastErrorRPType, ciscoPimMIBObjects=ciscoPimMIBObjects, ciscoPimInterfaceDown=ciscoPimInterfaceDown, ciscoPimInvalidRegister=ciscoPimInvalidRegister, cpimLastErrorOriginType=cpimLastErrorOriginType, cpimLastErrorGroupType=cpimLastErrorGroupType)

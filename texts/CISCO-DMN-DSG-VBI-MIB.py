@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-VBI-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-VBI-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoDSGVBI = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 31))
 ciscoDSGVBI.setRevisions(('2012-03-20 10:00', '2010-07-26 10:00',))
 
@@ -51,4 +51,4 @@ if mibBuilder.loadTexts: vbiDropFrame.setDescription('Select whether to enable V
 vbiVitcStatus = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 31, 10), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4))).clone(namedValues=NamedValues(("ltc", 1), ("vitc", 2), ("both", 3), ("undefined", 4)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: vbiVitcStatus.setStatus('current')
 if mibBuilder.loadTexts: vbiVitcStatus.setDescription('Output VITC status')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-VBI-MIB", vbiVitsFlag17=vbiVitsFlag17, vbiDelayComp=vbiDelayComp, ciscoDSGVBI=ciscoDSGVBI, vbiVitcStatus=vbiVitcStatus, PYSNMP_MODULE_ID=ciscoDSGVBI, vbiColorMode=vbiColorMode, vbiVitsFlag330=vbiVitsFlag330, vbiVitsFlag18=vbiVitsFlag18, vbiVitsFlag331=vbiVitsFlag331, vbiVitcMode=vbiVitcMode, vbiTimeCode=vbiTimeCode, vbiDropFrame=vbiDropFrame)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-VBI-MIB", vbiDropFrame=vbiDropFrame, vbiVitsFlag330=vbiVitsFlag330, PYSNMP_MODULE_ID=ciscoDSGVBI, vbiVitsFlag17=vbiVitsFlag17, vbiVitsFlag18=vbiVitsFlag18, vbiColorMode=vbiColorMode, vbiDelayComp=vbiDelayComp, vbiTimeCode=vbiTimeCode, vbiVitcMode=vbiVitcMode, ciscoDSGVBI=ciscoDSGVBI, vbiVitcStatus=vbiVitcStatus, vbiVitsFlag331=vbiVitsFlag331)

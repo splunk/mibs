@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-IETF-ATM2-PVCTRAP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-IETF-ATM2-PVCTRAP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
-atmVclVci, atmVclVpi, atmInterfaceConfEntry = mibBuilder.importSymbols("ATM-MIB", "atmVclVci", "atmVclVpi", "atmInterfaceConfEntry")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+atmVclVpi, atmInterfaceConfEntry, atmVclVci = mibBuilder.importSymbols("ATM-MIB", "atmVclVpi", "atmInterfaceConfEntry", "atmVclVci")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, iso, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, NotificationType, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "iso", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "NotificationType", "Counter32", "ModuleIdentity", "TimeTicks")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
 TimeStamp, DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "DisplayString", "TruthValue", "TextualConvention")
 ciscoIetfAtm2PvctrapMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 29))
 if mibBuilder.loadTexts: ciscoIetfAtm2PvctrapMIB.setLastUpdated('9802030000Z')
@@ -73,4 +73,4 @@ atmSwitchServcHostGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 29, 3, 1, 1)).se
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     atmSwitchServcHostGroup = atmSwitchServcHostGroup.setStatus('current')
 if mibBuilder.loadTexts: atmSwitchServcHostGroup.setDescription('A collection of objects providing information\n\t  for a Switch/Service/Host that implements\n\t  PVC traps for an ATM interfaces.')
-mibBuilder.exportSymbols("CISCO-IETF-ATM2-PVCTRAP-MIB", atmInterfaceExtEntry=atmInterfaceExtEntry, atm2MIBCompliances=atm2MIBCompliances, atmIntfPvcNotificationInterval=atmIntfPvcNotificationInterval, atm2MIBObjects=atm2MIBObjects, ciscoIetfAtm2PvctrapMIB=ciscoIetfAtm2PvctrapMIB, atmSwitchServcHostGroup=atmSwitchServcHostGroup, atm2MIBTraps=atm2MIBTraps, atmCurrentlyFailingPVclTimeStamp=atmCurrentlyFailingPVclTimeStamp, atmPreviouslyFailedPVclTimeStamp=atmPreviouslyFailedPVclTimeStamp, atmIntfCurrentlyFailingPVcls=atmIntfCurrentlyFailingPVcls, atmCurrentlyFailingPVclTable=atmCurrentlyFailingPVclTable, atmPvcTrapsPrefix=atmPvcTrapsPrefix, atmCurrentlyFailingPVclEntry=atmCurrentlyFailingPVclEntry, atmPvcTraps=atmPvcTraps, atm2MIBGroups=atm2MIBGroups, atmIntfPvcFailuresTrap=atmIntfPvcFailuresTrap, atm2MIBCompliance=atm2MIBCompliance, atmIntfPvcFailures=atmIntfPvcFailures, atmInterfaceExtTable=atmInterfaceExtTable, atmPreviouslyFailedPVclInterval=atmPreviouslyFailedPVclInterval, atmIntfPvcFailuresTrapEnable=atmIntfPvcFailuresTrapEnable, atm2MIBConformance=atm2MIBConformance, PYSNMP_MODULE_ID=ciscoIetfAtm2PvctrapMIB)
+mibBuilder.exportSymbols("CISCO-IETF-ATM2-PVCTRAP-MIB", atmCurrentlyFailingPVclTimeStamp=atmCurrentlyFailingPVclTimeStamp, atmInterfaceExtTable=atmInterfaceExtTable, atmSwitchServcHostGroup=atmSwitchServcHostGroup, ciscoIetfAtm2PvctrapMIB=ciscoIetfAtm2PvctrapMIB, PYSNMP_MODULE_ID=ciscoIetfAtm2PvctrapMIB, atmPreviouslyFailedPVclInterval=atmPreviouslyFailedPVclInterval, atmIntfPvcNotificationInterval=atmIntfPvcNotificationInterval, atmIntfPvcFailures=atmIntfPvcFailures, atm2MIBConformance=atm2MIBConformance, atm2MIBCompliance=atm2MIBCompliance, atm2MIBTraps=atm2MIBTraps, atm2MIBCompliances=atm2MIBCompliances, atmPreviouslyFailedPVclTimeStamp=atmPreviouslyFailedPVclTimeStamp, atmPvcTrapsPrefix=atmPvcTrapsPrefix, atmInterfaceExtEntry=atmInterfaceExtEntry, atmCurrentlyFailingPVclTable=atmCurrentlyFailingPVclTable, atm2MIBObjects=atm2MIBObjects, atmCurrentlyFailingPVclEntry=atmCurrentlyFailingPVclEntry, atmIntfCurrentlyFailingPVcls=atmIntfCurrentlyFailingPVcls, atmIntfPvcFailuresTrapEnable=atmIntfPvcFailuresTrapEnable, atm2MIBGroups=atm2MIBGroups, atmIntfPvcFailuresTrap=atmIntfPvcFailuresTrap, atmPvcTraps=atmPvcTraps)

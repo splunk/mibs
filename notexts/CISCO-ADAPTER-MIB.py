@@ -1,15 +1,15 @@
 #
 # PySNMP MIB module CISCO-ADAPTER-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ADAPTER-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, ModuleIdentity, MibIdentifier, enterprises, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "ModuleIdentity", "MibIdentifier", "enterprises", "iso", "Counter64", "Counter32")
+Counter64, IpAddress, TimeTicks, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, enterprises, Integer32, NotificationType, Bits, Gauge32, ModuleIdentity, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "IpAddress", "TimeTicks", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "enterprises", "Integer32", "NotificationType", "Bits", "Gauge32", "ModuleIdentity", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 cisco = MibIdentifier((1, 3, 6, 1, 4, 1, 9))
 workgroup = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 5))
@@ -74,4 +74,4 @@ adptrMgmtHiVersion = MibScalar((1, 3, 6, 1, 4, 1, 9, 5, 2, 6), Integer32().subty
 if mibBuilder.loadTexts: adptrMgmtHiVersion.setStatus('mandatory')
 adptrMgmtLoVersion = MibScalar((1, 3, 6, 1, 4, 1, 9, 5, 2, 7), Integer32().subtype(subtypeSpec=ValueRangeConstraint(0, 65535))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: adptrMgmtLoVersion.setStatus('mandatory')
-mibBuilder.exportSymbols("CISCO-ADAPTER-MIB", adptrHwHiVersion=adptrHwHiVersion, adptrMgmtHiVersion=adptrMgmtHiVersion, adptrSwLoVersion=adptrSwLoVersion, adptrCommunityString=adptrCommunityString, adptrSerialNumber=adptrSerialNumber, adptrType=adptrType, adptrFwHiVersion=adptrFwHiVersion, adptrCommunityTable=adptrCommunityTable, adptrMediaType=adptrMediaType, adptrDriverHiVersion=adptrDriverHiVersion, adptrDriverLoVersion=adptrDriverLoVersion, adptrTrapReceiverEntry=adptrTrapReceiverEntry, workgroup=workgroup, adptrSelfTestResult=adptrSelfTestResult, adptrStatus=adptrStatus, adptrEntry=adptrEntry, adptrHwLoVersion=adptrHwLoVersion, adptrTrapReceiverType=adptrTrapReceiverType, adptrTrapReceiverComm=adptrTrapReceiverComm, adptrMgmtLoVersion=adptrMgmtLoVersion, adptrSwHiVersion=adptrSwHiVersion, cisco=cisco, adptrTrapReceiverAddr=adptrTrapReceiverAddr, adptrIndex=adptrIndex, adptrCommunityEntry=adptrCommunityEntry, adptrTrapReceiverTable=adptrTrapReceiverTable, adptrMgmtType=adptrMgmtType, adptrFwLoVersion=adptrFwLoVersion, adptrNumber=adptrNumber, adptrCommunityAccess=adptrCommunityAccess, adptrTable=adptrTable, adapterCard=adapterCard, adptrModel=adptrModel)
+mibBuilder.exportSymbols("CISCO-ADAPTER-MIB", adptrTrapReceiverEntry=adptrTrapReceiverEntry, adptrIndex=adptrIndex, adptrCommunityTable=adptrCommunityTable, adptrCommunityEntry=adptrCommunityEntry, adptrFwHiVersion=adptrFwHiVersion, adptrModel=adptrModel, adptrEntry=adptrEntry, adptrMgmtLoVersion=adptrMgmtLoVersion, cisco=cisco, adptrTrapReceiverComm=adptrTrapReceiverComm, adptrNumber=adptrNumber, workgroup=workgroup, adptrSwHiVersion=adptrSwHiVersion, adptrHwHiVersion=adptrHwHiVersion, adptrMgmtHiVersion=adptrMgmtHiVersion, adptrMediaType=adptrMediaType, adapterCard=adapterCard, adptrFwLoVersion=adptrFwLoVersion, adptrTrapReceiverType=adptrTrapReceiverType, adptrTrapReceiverAddr=adptrTrapReceiverAddr, adptrCommunityAccess=adptrCommunityAccess, adptrStatus=adptrStatus, adptrTable=adptrTable, adptrSerialNumber=adptrSerialNumber, adptrSelfTestResult=adptrSelfTestResult, adptrType=adptrType, adptrMgmtType=adptrMgmtType, adptrSwLoVersion=adptrSwLoVersion, adptrTrapReceiverTable=adptrTrapReceiverTable, adptrCommunityString=adptrCommunityString, adptrHwLoVersion=adptrHwLoVersion, adptrDriverHiVersion=adptrDriverHiVersion, adptrDriverLoVersion=adptrDriverLoVersion)

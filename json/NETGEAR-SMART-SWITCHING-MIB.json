@@ -8,45 +8,45 @@
       "ifIndex"
     ],
     "INET-ADDRESS-MIB": [
-      "InetAddressType",
-      "InetAddress"
+      "InetAddress",
+      "InetAddressType"
     ],
     "NETGEAR-REF-MIB": [
       "ng700smartswitch"
     ],
     "Q-BRIDGE-MIB": [
-      "dot1qFdbId",
-      "VlanIndex",
       "dot1qTpFdbAddress",
-      "dot1qVlanIndex"
+      "dot1qVlanIndex",
+      "dot1qFdbId",
+      "VlanIndex"
     ],
     "SNMPv2-CONF": [
       "MODULE-COMPLIANCE",
       "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
+      "Counter64",
+      "IpAddress",
+      "NOTIFICATION-TYPE",
+      "iso",
+      "Counter32",
+      "OBJECT-IDENTITY",
       "Bits",
       "MibIdentifier",
-      "IpAddress",
-      "iso",
-      "Integer32",
-      "Unsigned32",
-      "Counter32",
-      "Counter64",
-      "TimeTicks",
       "MODULE-IDENTITY",
-      "OBJECT-TYPE",
+      "Unsigned32",
       "Gauge32",
-      "NOTIFICATION-TYPE",
-      "OBJECT-IDENTITY"
+      "Integer32",
+      "OBJECT-TYPE",
+      "TimeTicks"
     ],
     "SNMPv2-TC": [
-      "TEXTUAL-CONVENTION",
-      "RowStatus",
       "DateAndTime",
-      "DisplayString",
+      "RowStatus",
       "PhysAddress",
-      "MacAddress"
+      "MacAddress",
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
     ]
   },
   "agentSwitching": {
@@ -7315,9 +7315,9 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/quanta/NETGEAR-SMART-SWITCHING-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 14:39:37 2026",
-      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
-      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+      "Produced by pysmi-1.1.12 at Thu Nov 26 06:14:01 2026",
+      "On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner",
+      "Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]"
     ],
     "module": "NETGEAR-SMART-SWITCHING-MIB"
   }

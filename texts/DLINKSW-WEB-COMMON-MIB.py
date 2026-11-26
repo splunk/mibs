@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module DLINKSW-WEB-COMMON-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-WEB-COMMON-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:27 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
-ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
-Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, Integer32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "Integer32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
-TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+Counter64, TimeTicks, ModuleIdentity, iso, Integer32, IpAddress, NotificationType, Counter32, ObjectIdentity, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "ModuleIdentity", "iso", "Integer32", "IpAddress", "NotificationType", "Counter32", "ObjectIdentity", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "MibIdentifier")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 dlinkSwWebCommonMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 162))
 dlinkSwWebCommonMIB.setRevisions(('2013-10-28 00:00',))
 
@@ -56,4 +56,4 @@ dSslServerGroups = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 162, 2, 2, 2)).setObj
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dSslServerGroups = dSslServerGroups.setStatus('current')
 if mibBuilder.loadTexts: dSslServerGroups.setDescription('Objects for globally configuring SSL server feature.\n\t        ')
-mibBuilder.exportSymbols("DLINKSW-WEB-COMMON-MIB", dWebCommonMIBNotifications=dWebCommonMIBNotifications, dSslServicePolicyName=dSslServicePolicyName, dHttpServerGroups=dHttpServerGroups, dHttpServerStatus=dHttpServerStatus, dSslServerStatus=dSslServerStatus, dlinkSwWebCommonMIB=dlinkSwWebCommonMIB, dWebCommonGroups=dWebCommonGroups, dWebMIBObjects=dWebMIBObjects, PYSNMP_MODULE_ID=dlinkSwWebCommonMIB, dWebMIBCompliance=dWebMIBCompliance, dHttpTcpPort=dHttpTcpPort, dHttpIdleTimeoutVal=dHttpIdleTimeoutVal, dSslServerObjects=dSslServerObjects, dHttpServerObjects=dHttpServerObjects, dSslServerGroups=dSslServerGroups, dWebCommonMIBConformance=dWebCommonMIBConformance, dWebCommonMIBCompliances=dWebCommonMIBCompliances)
+mibBuilder.exportSymbols("DLINKSW-WEB-COMMON-MIB", dHttpIdleTimeoutVal=dHttpIdleTimeoutVal, dWebCommonMIBNotifications=dWebCommonMIBNotifications, dSslServerGroups=dSslServerGroups, dWebMIBObjects=dWebMIBObjects, dSslServerObjects=dSslServerObjects, dWebCommonGroups=dWebCommonGroups, dHttpServerObjects=dHttpServerObjects, dHttpServerGroups=dHttpServerGroups, dSslServicePolicyName=dSslServicePolicyName, dWebMIBCompliance=dWebMIBCompliance, dHttpServerStatus=dHttpServerStatus, dWebCommonMIBConformance=dWebCommonMIBConformance, dWebCommonMIBCompliances=dWebCommonMIBCompliances, PYSNMP_MODULE_ID=dlinkSwWebCommonMIB, dHttpTcpPort=dHttpTcpPort, dlinkSwWebCommonMIB=dlinkSwWebCommonMIB, dSslServerStatus=dSslServerStatus)

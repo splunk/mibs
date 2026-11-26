@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-MAU-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MAU-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ifMauIfIndex, ifMauIndex, ifJackEntry = mibBuilder.importSymbols("MAU-MIB", "ifMauIfIndex", "ifMauIndex", "ifJackEntry")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
+ifJackEntry, ifMauIndex, ifMauIfIndex = mibBuilder.importSymbols("MAU-MIB", "ifJackEntry", "ifMauIndex", "ifMauIfIndex")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
 ciscoMauExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 398))
 ciscoMauExtMIB.setRevisions(('2008-03-05 00:00', '2004-04-21 00:00',))
 
@@ -90,4 +90,4 @@ cmExtIfMauTrafficGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 398, 2, 2, 3)).set
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmExtIfMauTrafficGroup = cmExtIfMauTrafficGroup.setStatus('current')
 if mibBuilder.loadTexts: cmExtIfMauTrafficGroup.setDescription('Object that provides the type of traffic carried by MAUs in\n        devices having admin or control traffic internal to the device.')
-mibBuilder.exportSymbols("CISCO-MAU-EXT-MIB", cmExtMIBObjects=cmExtMIBObjects, cmExtMIBNotifs=cmExtMIBNotifs, cmExtIfAutoMdixConfigTable=cmExtIfAutoMdixConfigTable, cmExtIfMauTrafficType=cmExtIfMauTrafficType, cmExtMIBCompliances=cmExtMIBCompliances, cmExtIfAutoMdixConfigGroup=cmExtIfAutoMdixConfigGroup, cmExtJackConfigGroup=cmExtJackConfigGroup, cmExtIfAutoMdixEnabled=cmExtIfAutoMdixEnabled, ciscoMauExtMIB=ciscoMauExtMIB, cmExtJackState=cmExtJackState, cmExtIfAutoMdixConfigEntry=cmExtIfAutoMdixConfigEntry, cmExtAutoMdixConfig=cmExtAutoMdixConfig, cmExtJackConfigTable=cmExtJackConfigTable, PYSNMP_MODULE_ID=ciscoMauExtMIB, cmExtIfMauTrafficTable=cmExtIfMauTrafficTable, cmExtIfMauTrafficGroup=cmExtIfMauTrafficGroup, cmExtMIBCompliance2=cmExtMIBCompliance2, cmExtIfMauTrafficEntry=cmExtIfMauTrafficEntry, cmExtIfMau=cmExtIfMau, cmExtMIBConformance=cmExtMIBConformance, cmExtMauConfig=cmExtMauConfig, cmExtMIBCompliance3=cmExtMIBCompliance3, cmExtMIBCompliance=cmExtMIBCompliance, cmExtJackConfigEntry=cmExtJackConfigEntry, cmExtMIBGroups=cmExtMIBGroups)
+mibBuilder.exportSymbols("CISCO-MAU-EXT-MIB", cmExtMIBGroups=cmExtMIBGroups, cmExtMIBConformance=cmExtMIBConformance, cmExtMIBCompliance=cmExtMIBCompliance, cmExtMIBObjects=cmExtMIBObjects, cmExtMauConfig=cmExtMauConfig, cmExtMIBCompliance2=cmExtMIBCompliance2, cmExtJackState=cmExtJackState, cmExtIfAutoMdixConfigEntry=cmExtIfAutoMdixConfigEntry, cmExtIfMau=cmExtIfMau, ciscoMauExtMIB=ciscoMauExtMIB, cmExtAutoMdixConfig=cmExtAutoMdixConfig, PYSNMP_MODULE_ID=ciscoMauExtMIB, cmExtJackConfigEntry=cmExtJackConfigEntry, cmExtIfMauTrafficTable=cmExtIfMauTrafficTable, cmExtIfAutoMdixEnabled=cmExtIfAutoMdixEnabled, cmExtJackConfigTable=cmExtJackConfigTable, cmExtIfAutoMdixConfigTable=cmExtIfAutoMdixConfigTable, cmExtIfMauTrafficGroup=cmExtIfMauTrafficGroup, cmExtMIBCompliances=cmExtMIBCompliances, cmExtMIBNotifs=cmExtMIBNotifs, cmExtIfMauTrafficEntry=cmExtIfMauTrafficEntry, cmExtIfAutoMdixConfigGroup=cmExtIfAutoMdixConfigGroup, cmExtIfMauTrafficType=cmExtIfMauTrafficType, cmExtJackConfigGroup=cmExtJackConfigGroup, cmExtMIBCompliance3=cmExtMIBCompliance3)

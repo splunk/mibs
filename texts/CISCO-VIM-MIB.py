@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-VIM-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VIM-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DateAndTime, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "DateAndTime")
 ciscoVimMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 855))
 ciscoVimMIB.setRevisions(('2018-07-16 00:00',))
 
@@ -78,4 +78,4 @@ cvimMIBNotificationGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 855, 2, 2,
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvimMIBNotificationGroup = cvimMIBNotificationGroup.setStatus('current')
 if mibBuilder.loadTexts: cvimMIBNotificationGroup.setDescription('The set of CVIM notifications defined by this MIB')
-mibBuilder.exportSymbols("CISCO-VIM-MIB", cvimFaultDescription=cvimFaultDescription, cvimFaultActiveNotif=cvimFaultActiveNotif, cvimPodId=cvimPodId, ciscoVimMIBCompliances=ciscoVimMIBCompliances, PYSNMP_MODULE_ID=ciscoVimMIB, ciscoVimMIBFaults=ciscoVimMIBFaults, cvimFaultCreationTime=cvimFaultCreationTime, cvimMIBCompliance=cvimMIBCompliance, cvimFaultSeverity=cvimFaultSeverity, ciscoVimMIBGroups=ciscoVimMIBGroups, cvimMIBNotificationGroup=cvimMIBNotificationGroup, ciscoVimMIB=ciscoVimMIB, cvimFaultCode=cvimFaultCode, ciscoVimMIBConform=ciscoVimMIBConform, CFaultSeverity=CFaultSeverity, cvimNodeId=cvimNodeId, CFaultCode=CFaultCode, cvimFaultSource=cvimFaultSource, cvimMIBFaultGroup=cvimMIBFaultGroup, ciscoVimMIBNotifs=ciscoVimMIBNotifs, cvimFaultClearNotif=cvimFaultClearNotif)
+mibBuilder.exportSymbols("CISCO-VIM-MIB", ciscoVimMIBFaults=ciscoVimMIBFaults, CFaultSeverity=CFaultSeverity, cvimPodId=cvimPodId, ciscoVimMIB=ciscoVimMIB, cvimFaultDescription=cvimFaultDescription, cvimFaultSource=cvimFaultSource, cvimFaultSeverity=cvimFaultSeverity, cvimFaultCode=cvimFaultCode, cvimMIBCompliance=cvimMIBCompliance, cvimNodeId=cvimNodeId, CFaultCode=CFaultCode, PYSNMP_MODULE_ID=ciscoVimMIB, ciscoVimMIBCompliances=ciscoVimMIBCompliances, cvimMIBFaultGroup=cvimMIBFaultGroup, ciscoVimMIBConform=ciscoVimMIBConform, cvimMIBNotificationGroup=cvimMIBNotificationGroup, ciscoVimMIBNotifs=ciscoVimMIBNotifs, cvimFaultActiveNotif=cvimFaultActiveNotif, cvimFaultClearNotif=cvimFaultClearNotif, cvimFaultCreationTime=cvimFaultCreationTime, ciscoVimMIBGroups=ciscoVimMIBGroups)

@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-TPC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-TPC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 FcNameIdOrZero, = mibBuilder.importSymbols("CISCO-ST-TC", "FcNameIdOrZero")
 vsanIndex, = mibBuilder.importSymbols("CISCO-VSAN-MIB", "vsanIndex")
 PhysicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "PhysicalIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
 DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoTpcMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 460))
 ciscoTpcMIB.setRevisions(('2005-01-24 00:00',))
@@ -69,4 +69,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ctpcVsanTargetGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 460, 2, 2, 1)).setObjects(("CISCO-TPC-MIB", "ctpcModuleId"), ("CISCO-TPC-MIB", "ctpcVsanRowStatus"), ("CISCO-TPC-MIB", "ctpcTargetNodeName"), ("CISCO-TPC-MIB", "ctpcTargetPortName"), ("CISCO-TPC-MIB", "ctpcTargetState"), ("CISCO-TPC-MIB", "ctpcTargetNumXcopies"), ("CISCO-TPC-MIB", "ctpcTargetMinXcopy"), ("CISCO-TPC-MIB", "ctpcTargetMaxXcopy"), ("CISCO-TPC-MIB", "ctpcTargetAvgKbPerSec"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ctpcVsanTargetGroup = ctpcVsanTargetGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-TPC-MIB", ctpcTargetMinXcopy=ctpcTargetMinXcopy, ctpcMIBGroups=ctpcMIBGroups, ctpcModuleId=ctpcModuleId, ciscoTpcObjects=ciscoTpcObjects, ctpcMIBCompliances=ctpcMIBCompliances, ctpcMIBCompliance=ctpcMIBCompliance, ctpcModuleTable=ctpcModuleTable, ciscoTpcMIBConformance=ciscoTpcMIBConformance, ctpcTargetState=ctpcTargetState, ctpcTargetAvgKbPerSec=ctpcTargetAvgKbPerSec, ctpcVsanTargetGroup=ctpcVsanTargetGroup, ciscoTpcNotification=ciscoTpcNotification, ctpcTargetNodeName=ctpcTargetNodeName, PYSNMP_MODULE_ID=ciscoTpcMIB, ctpcTargetPortName=ctpcTargetPortName, TpcTargetState=TpcTargetState, ciscoTpcMIB=ciscoTpcMIB, ctpcVsanEntry=ctpcVsanEntry, ctpcTargetNumXcopies=ctpcTargetNumXcopies, ciscoTpcConfig=ciscoTpcConfig, ctpcTargetTable=ctpcTargetTable, ctpcModuleEntry=ctpcModuleEntry, ctpcVsanRowStatus=ctpcVsanRowStatus, ctpcTargetIndex=ctpcTargetIndex, ctpcTargetMaxXcopy=ctpcTargetMaxXcopy, ctpcTargetEntry=ctpcTargetEntry, ctpcVsanTable=ctpcVsanTable)
+mibBuilder.exportSymbols("CISCO-TPC-MIB", ctpcTargetAvgKbPerSec=ctpcTargetAvgKbPerSec, ctpcTargetEntry=ctpcTargetEntry, ctpcTargetState=ctpcTargetState, ctpcMIBCompliances=ctpcMIBCompliances, ciscoTpcMIBConformance=ciscoTpcMIBConformance, ciscoTpcObjects=ciscoTpcObjects, ctpcModuleTable=ctpcModuleTable, ctpcModuleEntry=ctpcModuleEntry, ciscoTpcNotification=ciscoTpcNotification, ctpcVsanEntry=ctpcVsanEntry, ctpcVsanTargetGroup=ctpcVsanTargetGroup, ciscoTpcConfig=ciscoTpcConfig, ctpcTargetPortName=ctpcTargetPortName, ctpcMIBCompliance=ctpcMIBCompliance, ctpcTargetMinXcopy=ctpcTargetMinXcopy, ctpcTargetIndex=ctpcTargetIndex, TpcTargetState=TpcTargetState, ctpcModuleId=ctpcModuleId, PYSNMP_MODULE_ID=ciscoTpcMIB, ctpcMIBGroups=ctpcMIBGroups, ctpcTargetMaxXcopy=ctpcTargetMaxXcopy, ciscoTpcMIB=ciscoTpcMIB, ctpcTargetNodeName=ctpcTargetNodeName, ctpcTargetNumXcopies=ctpcTargetNumXcopies, ctpcVsanRowStatus=ctpcVsanRowStatus, ctpcVsanTable=ctpcVsanTable, ctpcTargetTable=ctpcTargetTable)

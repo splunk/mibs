@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-REMINDER-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-REMINDER-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString")
 ciscoDSGReminder = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 30))
 ciscoDSGReminder.setRevisions(('2010-08-30 11:00', '2010-06-17 06:00', '2010-04-12 06:00',))
 
@@ -61,4 +61,4 @@ if mibBuilder.loadTexts: reminderTimerFrequency.setDescription('Frequency of tim
 reminderTimerRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 30, 2, 1, 1, 11), RowStatus()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: reminderTimerRowStatus.setStatus('current')
 if mibBuilder.loadTexts: reminderTimerRowStatus.setDescription(' Status of the row.')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-REMINDER-MIB", reminderTimerDay=reminderTimerDay, reminderTimerStartTime=reminderTimerStartTime, reminderTimerTable=reminderTimerTable, reminderTimerEvtParentalRating=reminderTimerEvtParentalRating, reminderTimerChType=reminderTimerChType, reminderTimerChName=reminderTimerChName, reminderTable=reminderTable, reminderTimerChNum=reminderTimerChNum, reminderTimerEvtName=reminderTimerEvtName, reminderTimerEntry=reminderTimerEntry, PYSNMP_MODULE_ID=ciscoDSGReminder, reminderTimerFrequency=reminderTimerFrequency, reminderTimerEndTime=reminderTimerEndTime, reminderTimerID=reminderTimerID, reminderTimerRowStatus=reminderTimerRowStatus, ciscoDSGReminder=ciscoDSGReminder)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-REMINDER-MIB", reminderTimerStartTime=reminderTimerStartTime, reminderTimerChNum=reminderTimerChNum, reminderTimerRowStatus=reminderTimerRowStatus, reminderTimerID=reminderTimerID, reminderTimerEvtParentalRating=reminderTimerEvtParentalRating, reminderTimerChName=reminderTimerChName, reminderTimerEntry=reminderTimerEntry, PYSNMP_MODULE_ID=ciscoDSGReminder, reminderTable=reminderTable, ciscoDSGReminder=ciscoDSGReminder, reminderTimerEndTime=reminderTimerEndTime, reminderTimerEvtName=reminderTimerEvtName, reminderTimerFrequency=reminderTimerFrequency, reminderTimerDay=reminderTimerDay, reminderTimerTable=reminderTimerTable, reminderTimerChType=reminderTimerChType)

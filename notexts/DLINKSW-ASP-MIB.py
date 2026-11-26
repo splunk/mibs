@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module DLINKSW-ASP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-ASP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:25 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 PortList, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "PortList")
-NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
-Counter32, IpAddress, Counter64, ModuleIdentity, Gauge32, Unsigned32, Bits, iso, ObjectIdentity, Integer32, NotificationType, MibIdentifier, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "IpAddress", "Counter64", "ModuleIdentity", "Gauge32", "Unsigned32", "Bits", "iso", "ObjectIdentity", "Integer32", "NotificationType", "MibIdentifier", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
-RowStatus, MacAddress, DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "MacAddress", "DisplayString", "TruthValue", "TextualConvention")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Counter32, Bits, Counter64, TimeTicks, NotificationType, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, IpAddress, ObjectIdentity, iso = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Counter32", "Bits", "Counter64", "TimeTicks", "NotificationType", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "IpAddress", "ObjectIdentity", "iso")
+TextualConvention, MacAddress, DisplayString, RowStatus, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "MacAddress", "DisplayString", "RowStatus", "TruthValue")
 dlinkSwArpSpoofingPreventMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 76))
 dlinkSwArpSpoofingPreventMIB.setRevisions(('2016-07-05 00:00', '2013-07-18 00:00',))
 if mibBuilder.loadTexts: dlinkSwArpSpoofingPreventMIB.setLastUpdated('201607050000Z')
@@ -50,4 +50,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 dAspLoggingGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 76, 2, 2, 2)).setObjects(("DLINKSW-ASP-MIB", "dAspLoggingEnabled"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dAspLoggingGroup = dAspLoggingGroup.setStatus('current')
-mibBuilder.exportSymbols("DLINKSW-ASP-MIB", dlinkSwArpSpoofingPreventMIB=dlinkSwArpSpoofingPreventMIB, dAspActivePortList=dAspActivePortList, dAspGatewayIP=dAspGatewayIP, dAspLoggingEnabled=dAspLoggingEnabled, dAspCompliance=dAspCompliance, dAspCompliance2=dAspCompliance2, dAspGatewayMAC=dAspGatewayMAC, dAspGatewayEntry=dAspGatewayEntry, dAspLoggingGroup=dAspLoggingGroup, dAspMIBNotifications=dAspMIBNotifications, dAspGatewayRowStatus=dAspGatewayRowStatus, dAspMIBGroups=dAspMIBGroups, dAspMgtGroup=dAspMgtGroup, PYSNMP_MODULE_ID=dlinkSwArpSpoofingPreventMIB, dAspGatewayTable=dAspGatewayTable, dAspMIBObjects=dAspMIBObjects, dAspMIBCompliances=dAspMIBCompliances, dAspMIBConformance=dAspMIBConformance)
+mibBuilder.exportSymbols("DLINKSW-ASP-MIB", dAspActivePortList=dAspActivePortList, dAspMIBGroups=dAspMIBGroups, dAspMIBConformance=dAspMIBConformance, dAspGatewayRowStatus=dAspGatewayRowStatus, dAspLoggingGroup=dAspLoggingGroup, dAspGatewayEntry=dAspGatewayEntry, dAspMIBCompliances=dAspMIBCompliances, dAspGatewayIP=dAspGatewayIP, dAspMIBObjects=dAspMIBObjects, PYSNMP_MODULE_ID=dlinkSwArpSpoofingPreventMIB, dAspCompliance2=dAspCompliance2, dAspCompliance=dAspCompliance, dAspGatewayMAC=dAspGatewayMAC, dAspLoggingEnabled=dAspLoggingEnabled, dlinkSwArpSpoofingPreventMIB=dlinkSwArpSpoofingPreventMIB, dAspGatewayTable=dAspGatewayTable, dAspMIBNotifications=dAspMIBNotifications, dAspMgtGroup=dAspMgtGroup)

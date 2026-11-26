@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module FIREBRICK-MONITORING (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/firebrick/FIREBRICK-MONITORING
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:36:31 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:09:35 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint")
+SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion")
 firebrickNewStyle, = mibBuilder.importSymbols("FIREBRICK-MIB", "firebrickNewStyle")
-ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
-enterprises, TimeTicks, Bits, ModuleIdentity, ObjectIdentity, Unsigned32, MibIdentifier, Counter64, IpAddress, NotificationType, Counter32, iso, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "enterprises", "TimeTicks", "Bits", "ModuleIdentity", "ObjectIdentity", "Unsigned32", "MibIdentifier", "Counter64", "IpAddress", "NotificationType", "Counter32", "iso", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32")
-DisplayString, TimeStamp, TextualConvention, TimeInterval, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TimeStamp", "TextualConvention", "TimeInterval", "TruthValue")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+Gauge32, iso, MibIdentifier, Counter32, Bits, Unsigned32, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, enterprises, Counter64, TimeTicks, ObjectIdentity, IpAddress, NotificationType, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "iso", "MibIdentifier", "Counter32", "Bits", "Unsigned32", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "enterprises", "Counter64", "TimeTicks", "ObjectIdentity", "IpAddress", "NotificationType", "Integer32")
+TruthValue, TimeStamp, TextualConvention, DisplayString, TimeInterval = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "TimeStamp", "TextualConvention", "DisplayString", "TimeInterval")
 fbMonitoringMib = ModuleIdentity((1, 3, 6, 1, 4, 1, 24693, 100, 1))
 fbMonitoringMib.setRevisions(('2020-06-17 00:00',))
 
@@ -39,4 +39,4 @@ if mibBuilder.loadTexts: fbMonReadingName.setDescription('The name of this readi
 fbMonReadingValue = MibTableColumn((1, 3, 6, 1, 4, 1, 24693, 100, 1, 1, 1, 4), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: fbMonReadingValue.setStatus('current')
 if mibBuilder.loadTexts: fbMonReadingValue.setDescription('The value of this reading')
-mibBuilder.exportSymbols("FIREBRICK-MONITORING", fbMonReadingIndex=fbMonReadingIndex, fbMonitoringMib=fbMonitoringMib, fbMonReadingType=fbMonReadingType, fbMonReadingValue=fbMonReadingValue, fbMonReadingEntry=fbMonReadingEntry, fbMonReadingName=fbMonReadingName, PYSNMP_MODULE_ID=fbMonitoringMib, fbMonReadingTable=fbMonReadingTable)
+mibBuilder.exportSymbols("FIREBRICK-MONITORING", fbMonReadingValue=fbMonReadingValue, fbMonReadingName=fbMonReadingName, fbMonReadingType=fbMonReadingType, PYSNMP_MODULE_ID=fbMonitoringMib, fbMonReadingIndex=fbMonReadingIndex, fbMonReadingTable=fbMonReadingTable, fbMonReadingEntry=fbMonReadingEntry, fbMonitoringMib=fbMonitoringMib)

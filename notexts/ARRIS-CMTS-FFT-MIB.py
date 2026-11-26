@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module ARRIS-CMTS-FFT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/arris/ARRIS-CMTS-FFT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:39 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:05:23 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 cmtsCommon, = mibBuilder.importSymbols("ARRIS-MIB", "cmtsCommon")
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection")
+ConstraintsUnion, ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-ModuleIdentity, iso, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, NotificationType, ObjectIdentity, Gauge32, MibIdentifier, enterprises, IpAddress, Bits, Counter32, Unsigned32, Counter64, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "iso", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "NotificationType", "ObjectIdentity", "Gauge32", "MibIdentifier", "enterprises", "IpAddress", "Bits", "Counter32", "Unsigned32", "Counter64", "TimeTicks")
-TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibIdentifier, iso, Counter64, enterprises, IpAddress, Gauge32, Bits, Unsigned32, Integer32, Counter32, ModuleIdentity, ObjectIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, TimeTicks, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "MibIdentifier", "iso", "Counter64", "enterprises", "IpAddress", "Gauge32", "Bits", "Unsigned32", "Integer32", "Counter32", "ModuleIdentity", "ObjectIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "TimeTicks", "NotificationType")
+TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
 cmtsFftMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 4115, 1, 4, 5, 1))
 if mibBuilder.loadTexts: cmtsFftMIB.setLastUpdated('200402270000Z')
 if mibBuilder.loadTexts: cmtsFftMIB.setOrganization('Arris International')
@@ -65,4 +65,4 @@ dcxFftPayloadIndex = MibTableColumn((1, 3, 6, 1, 4, 1, 4115, 1, 4, 5, 1, 1, 2, 1
 if mibBuilder.loadTexts: dcxFftPayloadIndex.setStatus('current')
 dcxFftPayloadData = MibTableColumn((1, 3, 6, 1, 4, 1, 4115, 1, 4, 5, 1, 1, 2, 1, 2), DcxFftPayloadBuffer()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: dcxFftPayloadData.setStatus('current')
-mibBuilder.exportSymbols("ARRIS-CMTS-FFT-MIB", dcxFftSampleRate=dcxFftSampleRate, dcxFftCurrentTriggers=dcxFftCurrentTriggers, dcxFftOutputFormat=dcxFftOutputFormat, dcxFftIdleInterval=dcxFftIdleInterval, dcxFftBurstSid=dcxFftBurstSid, dcxFftCentreFrequency=dcxFftCentreFrequency, dcxFftInProgress=dcxFftInProgress, dcxFftLogicalChannel=dcxFftLogicalChannel, dcxFftPayloadTable=dcxFftPayloadTable, dcxFftPayloadIndex=dcxFftPayloadIndex, dcxFftApplyConfig=dcxFftApplyConfig, dcxFftPayloadData=dcxFftPayloadData, dcxFftSize=dcxFftSize, cmtsFftMIB=cmtsFftMIB, dcxFftUpstreamChannelTable=dcxFftUpstreamChannelTable, PYSNMP_MODULE_ID=cmtsFftMIB, dcxFftPayloadEntry=dcxFftPayloadEntry, dcxFftObjects=dcxFftObjects, dcxFftUpstreamChannelEntry=dcxFftUpstreamChannelEntry, DcxFftPayloadBuffer=DcxFftPayloadBuffer, dcxFftWindowing=dcxFftWindowing, dcxFftTriggerCount=dcxFftTriggerCount, dcxFftEnable=dcxFftEnable, dcxFftLogAveragingTimeConstant=dcxFftLogAveragingTimeConstant, dcxFftOperatingMode=dcxFftOperatingMode, dcxFftBurstIUC=dcxFftBurstIUC)
+mibBuilder.exportSymbols("ARRIS-CMTS-FFT-MIB", dcxFftTriggerCount=dcxFftTriggerCount, dcxFftBurstIUC=dcxFftBurstIUC, dcxFftUpstreamChannelEntry=dcxFftUpstreamChannelEntry, dcxFftSampleRate=dcxFftSampleRate, dcxFftOperatingMode=dcxFftOperatingMode, dcxFftPayloadIndex=dcxFftPayloadIndex, dcxFftPayloadTable=dcxFftPayloadTable, dcxFftLogAveragingTimeConstant=dcxFftLogAveragingTimeConstant, dcxFftEnable=dcxFftEnable, PYSNMP_MODULE_ID=cmtsFftMIB, dcxFftBurstSid=dcxFftBurstSid, dcxFftLogicalChannel=dcxFftLogicalChannel, cmtsFftMIB=cmtsFftMIB, dcxFftSize=dcxFftSize, dcxFftCurrentTriggers=dcxFftCurrentTriggers, dcxFftOutputFormat=dcxFftOutputFormat, dcxFftIdleInterval=dcxFftIdleInterval, dcxFftApplyConfig=dcxFftApplyConfig, dcxFftInProgress=dcxFftInProgress, dcxFftPayloadEntry=dcxFftPayloadEntry, dcxFftObjects=dcxFftObjects, DcxFftPayloadBuffer=DcxFftPayloadBuffer, dcxFftPayloadData=dcxFftPayloadData, dcxFftWindowing=dcxFftWindowing, dcxFftCentreFrequency=dcxFftCentreFrequency, dcxFftUpstreamChannelTable=dcxFftUpstreamChannelTable)

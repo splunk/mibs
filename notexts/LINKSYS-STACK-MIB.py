@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module LINKSYS-STACK-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/linksys/LINKSYS-STACK-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:08 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:11:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection")
+ConstraintsUnion, SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint")
 MacAddress, = mibBuilder.importSymbols("BRIDGE-MIB", "MacAddress")
 rnd, = mibBuilder.importSymbols("LINKSYS-MIB", "rnd")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Bits, iso, IpAddress, Unsigned32, Integer32, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, MibIdentifier, NotificationType, ObjectIdentity, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "iso", "IpAddress", "Unsigned32", "Integer32", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "MibIdentifier", "NotificationType", "ObjectIdentity", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+Gauge32, ModuleIdentity, Bits, ObjectIdentity, iso, Unsigned32, Counter32, IpAddress, TimeTicks, MibIdentifier, NotificationType, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "ModuleIdentity", "Bits", "ObjectIdentity", "iso", "Unsigned32", "Counter32", "IpAddress", "TimeTicks", "MibIdentifier", "NotificationType", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32")
+TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
 rlStack = ModuleIdentity((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 107))
 rlStack.setRevisions(('2005-04-14 00:00',))
 if mibBuilder.loadTexts: rlStack.setLastUpdated('200504140000Z')
@@ -31,4 +31,4 @@ rlStackUnitMode = MibScalar((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 107, 3), Integer
 if mibBuilder.loadTexts: rlStackUnitMode.setStatus('current')
 rlStackUnitMacAddressAfterReset = MibScalar((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 107, 4), MacAddress()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlStackUnitMacAddressAfterReset.setStatus('current')
-mibBuilder.exportSymbols("LINKSYS-STACK-MIB", rlStackUnitModeAfterReset=rlStackUnitModeAfterReset, rlStack=rlStack, PYSNMP_MODULE_ID=rlStack, rlStackUnitMode=rlStackUnitMode, rlStackUnitMacAddressAfterReset=rlStackUnitMacAddressAfterReset, rlStackActiveUnitIdEntry=rlStackActiveUnitIdEntry, rlStackActiveUnitIdTable=rlStackActiveUnitIdTable, rlStackCurrentUnitId=rlStackCurrentUnitId, rlStackActiveUnitIdAfterReset=rlStackActiveUnitIdAfterReset)
+mibBuilder.exportSymbols("LINKSYS-STACK-MIB", rlStackActiveUnitIdTable=rlStackActiveUnitIdTable, rlStackActiveUnitIdEntry=rlStackActiveUnitIdEntry, rlStackActiveUnitIdAfterReset=rlStackActiveUnitIdAfterReset, rlStackUnitMacAddressAfterReset=rlStackUnitMacAddressAfterReset, rlStackCurrentUnitId=rlStackCurrentUnitId, rlStack=rlStack, rlStackUnitModeAfterReset=rlStackUnitModeAfterReset, PYSNMP_MODULE_ID=rlStack, rlStackUnitMode=rlStackUnitMode)

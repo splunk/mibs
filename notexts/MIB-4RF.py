@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module MIB-4RF (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/4rf/MIB-4RF
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:05 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:04:28 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueSizeConstraint, ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-ObjectIdentity, MibIdentifier, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Gauge32, IpAddress, Unsigned32, iso, NotificationType, Counter32, Counter64, enterprises, TimeTicks, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "ObjectIdentity", "MibIdentifier", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Gauge32", "IpAddress", "Unsigned32", "iso", "NotificationType", "Counter32", "Counter64", "enterprises", "TimeTicks", "Bits")
-TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+ObjectIdentity, Integer32, Counter32, NotificationType, iso, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, MibIdentifier, TimeTicks, Counter64, enterprises, Bits, Unsigned32, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "ObjectIdentity", "Integer32", "Counter32", "NotificationType", "iso", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "MibIdentifier", "TimeTicks", "Counter64", "enterprises", "Bits", "Unsigned32", "IpAddress")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 fourRFRootModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 14817, 2, 1))
 fourRFRootModule.setRevisions(('2007-04-30 00:00', '2004-02-13 00:00',))
 if mibBuilder.loadTexts: fourRFRootModule.setLastUpdated('200704300000Z')
@@ -31,4 +31,4 @@ fourRFRequirements = ObjectIdentity((1, 3, 6, 1, 4, 1, 14817, 6))
 if mibBuilder.loadTexts: fourRFRequirements.setStatus('current')
 fourRFExperimental = ObjectIdentity((1, 3, 6, 1, 4, 1, 14817, 7))
 if mibBuilder.loadTexts: fourRFExperimental.setStatus('current')
-mibBuilder.exportSymbols("MIB-4RF", fourRFRequirements=fourRFRequirements, PYSNMP_MODULE_ID=fourRFRootModule, fourRFModules=fourRFModules, fourRFRegistrations=fourRFRegistrations, fourRFProducts=fourRFProducts, fourRFCapabilities=fourRFCapabilities, fourRFRootModule=fourRFRootModule, fourRFExperimental=fourRFExperimental, fourRFGeneric=fourRFGeneric, fourRFRoot=fourRFRoot)
+mibBuilder.exportSymbols("MIB-4RF", fourRFRequirements=fourRFRequirements, fourRFRootModule=fourRFRootModule, fourRFRoot=fourRFRoot, fourRFCapabilities=fourRFCapabilities, PYSNMP_MODULE_ID=fourRFRootModule, fourRFProducts=fourRFProducts, fourRFModules=fourRFModules, fourRFRegistrations=fourRFRegistrations, fourRFGeneric=fourRFGeneric, fourRFExperimental=fourRFExperimental)

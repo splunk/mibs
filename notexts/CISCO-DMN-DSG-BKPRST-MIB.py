@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-BKPRST-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-BKPRST-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, IpAddress, TimeTicks, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, NotificationType, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "IpAddress", "TimeTicks", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "NotificationType", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDSGBKPRST = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 3))
 ciscoDSGBKPRST.setRevisions(('2012-03-26 17:00', '2010-08-30 05:00', '2010-06-17 06:00', '2010-03-22 05:00', '2010-02-12 15:00', '2009-11-22 15:00',))
@@ -45,4 +45,4 @@ backupRestoreDetailedStatus = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 3, 1, 
 if mibBuilder.loadTexts: backupRestoreDetailedStatus.setStatus('current')
 backupRestorePercentageComp = MibScalar((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 3, 1, 14), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(1, 32))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: backupRestorePercentageComp.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-BKPRST-MIB", backupRestoreLastRestoreFile=backupRestoreLastRestoreFile, backupRestoreFtpPortno=backupRestoreFtpPortno, backupRestoreDetailedStatus=backupRestoreDetailedStatus, backupRestoreFtpPassword=backupRestoreFtpPassword, backupRestoreOperationStatus=backupRestoreOperationStatus, backupRestorePercentageComp=backupRestorePercentageComp, PYSNMP_MODULE_ID=ciscoDSGBKPRST, backupRestoreFtpServerIp=backupRestoreFtpServerIp, backupRestoreLastBackupFile=backupRestoreLastBackupFile, backupRestoreFtpUsername=backupRestoreFtpUsername, backupRestoreType=backupRestoreType, backupRestoreInfo=backupRestoreInfo, backupRestoreOperation=backupRestoreOperation, backupRestoreLastRestoreTime=backupRestoreLastRestoreTime, backupRestoreFileName=backupRestoreFileName, backupRestoreLastBackupTime=backupRestoreLastBackupTime, ciscoDSGBKPRST=ciscoDSGBKPRST)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-BKPRST-MIB", backupRestoreLastRestoreFile=backupRestoreLastRestoreFile, ciscoDSGBKPRST=ciscoDSGBKPRST, PYSNMP_MODULE_ID=ciscoDSGBKPRST, backupRestoreFtpUsername=backupRestoreFtpUsername, backupRestoreFtpPassword=backupRestoreFtpPassword, backupRestoreDetailedStatus=backupRestoreDetailedStatus, backupRestoreInfo=backupRestoreInfo, backupRestoreLastBackupTime=backupRestoreLastBackupTime, backupRestoreFtpPortno=backupRestoreFtpPortno, backupRestoreType=backupRestoreType, backupRestoreFileName=backupRestoreFileName, backupRestoreLastBackupFile=backupRestoreLastBackupFile, backupRestoreLastRestoreTime=backupRestoreLastRestoreTime, backupRestorePercentageComp=backupRestorePercentageComp, backupRestoreOperation=backupRestoreOperation, backupRestoreOperationStatus=backupRestoreOperationStatus, backupRestoreFtpServerIp=backupRestoreFtpServerIp)

@@ -1,21 +1,21 @@
 #
 # PySNMP MIB module CISCO-UNIFIED-COMPUTING-LLDP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-UNIFIED-COMPUTING-LLDP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-CiscoNetworkAddress, CiscoInetAddressMask, Unsigned64, TimeIntervalSec, CiscoAlarmSeverity = mibBuilder.importSymbols("CISCO-TC", "CiscoNetworkAddress", "CiscoInetAddressMask", "Unsigned64", "TimeIntervalSec", "CiscoAlarmSeverity")
-CucsManagedObjectDn, ciscoUnifiedComputingMIBObjects, CucsManagedObjectId = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "CucsManagedObjectDn", "ciscoUnifiedComputingMIBObjects", "CucsManagedObjectId")
+CiscoInetAddressMask, CiscoAlarmSeverity, Unsigned64, TimeIntervalSec, CiscoNetworkAddress = mibBuilder.importSymbols("CISCO-TC", "CiscoInetAddressMask", "CiscoAlarmSeverity", "Unsigned64", "TimeIntervalSec", "CiscoNetworkAddress")
+ciscoUnifiedComputingMIBObjects, CucsManagedObjectDn, CucsManagedObjectId = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "ciscoUnifiedComputingMIBObjects", "CucsManagedObjectDn", "CucsManagedObjectId")
 InetAddressIPv4, InetAddressIPv6 = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressIPv4", "InetAddressIPv6")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
-DisplayString, TextualConvention, TimeStamp, RowPointer, MacAddress, TimeInterval, TruthValue, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TimeStamp", "RowPointer", "MacAddress", "TimeInterval", "TruthValue", "DateAndTime")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
+TimeStamp, TruthValue, TextualConvention, TimeInterval, DisplayString, MacAddress, RowPointer, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "TruthValue", "TextualConvention", "TimeInterval", "DisplayString", "MacAddress", "RowPointer", "DateAndTime")
 cucsLldpObjects = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 58))
 if mibBuilder.loadTexts: cucsLldpObjects.setLastUpdated('201601180000Z')
 if mibBuilder.loadTexts: cucsLldpObjects.setOrganization('Cisco Systems Inc.')
@@ -37,4 +37,4 @@ cucsLldpAcquiredPeerDn = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 58, 1, 
 if mibBuilder.loadTexts: cucsLldpAcquiredPeerDn.setStatus('current')
 cucsLldpAcquiredPortMac = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 58, 1, 1, 7), MacAddress()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: cucsLldpAcquiredPortMac.setStatus('current')
-mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-LLDP-MIB", PYSNMP_MODULE_ID=cucsLldpObjects, cucsLldpAcquiredAcqts=cucsLldpAcquiredAcqts, cucsLldpAcquiredChassisMac=cucsLldpAcquiredChassisMac, cucsLldpAcquiredTable=cucsLldpAcquiredTable, cucsLldpAcquiredPeerDn=cucsLldpAcquiredPeerDn, cucsLldpAcquiredEntry=cucsLldpAcquiredEntry, cucsLldpAcquiredDn=cucsLldpAcquiredDn, cucsLldpAcquiredInstanceId=cucsLldpAcquiredInstanceId, cucsLldpAcquiredPortMac=cucsLldpAcquiredPortMac, cucsLldpObjects=cucsLldpObjects, cucsLldpAcquiredRn=cucsLldpAcquiredRn)
+mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-LLDP-MIB", cucsLldpAcquiredRn=cucsLldpAcquiredRn, cucsLldpAcquiredDn=cucsLldpAcquiredDn, cucsLldpObjects=cucsLldpObjects, PYSNMP_MODULE_ID=cucsLldpObjects, cucsLldpAcquiredInstanceId=cucsLldpAcquiredInstanceId, cucsLldpAcquiredAcqts=cucsLldpAcquiredAcqts, cucsLldpAcquiredEntry=cucsLldpAcquiredEntry, cucsLldpAcquiredTable=cucsLldpAcquiredTable, cucsLldpAcquiredPeerDn=cucsLldpAcquiredPeerDn, cucsLldpAcquiredChassisMac=cucsLldpAcquiredChassisMac, cucsLldpAcquiredPortMac=cucsLldpAcquiredPortMac)

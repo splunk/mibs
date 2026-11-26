@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-ENTITY-ASSET-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ENTITY-ASSET-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 entPhysicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
 ciscoEntityAssetMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 92))
 ciscoEntityAssetMIB.setRevisions(('2003-09-18 00:00', '2002-07-23 16:00', '1999-06-02 16:00',))
 
@@ -109,4 +109,4 @@ ceAssetGroupRev2 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 92, 3, 2, 4)).setObjects
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ceAssetGroupRev2 = ceAssetGroupRev2.setStatus('current')
 if mibBuilder.loadTexts: ceAssetGroupRev2.setDescription('The collection of objects which are used to describe and\n        monitor asset-related extension data of ENTITY-MIB (RFC 2737)\n        entPhysicalTable items.')
-mibBuilder.exportSymbols("CISCO-ENTITY-ASSET-MIB", ceAssetOEMString=ceAssetOEMString, ciscoEntityAssetMIBNotificationsPrefix=ciscoEntityAssetMIBNotificationsPrefix, ciscoEntityAssetMIBCompliance=ciscoEntityAssetMIBCompliance, ceAssetFirmwareRevision=ceAssetFirmwareRevision, ciscoEntityAssetMIBCompliances=ciscoEntityAssetMIBCompliances, ceAssetSoftwareRevision=ceAssetSoftwareRevision, ceAssetMfgAssyRevision=ceAssetMfgAssyRevision, ceAssetHardwareRevision=ceAssetHardwareRevision, ceAssetSerialNumber=ceAssetSerialNumber, ceAssetMfgAssyNumber=ceAssetMfgAssyNumber, ceAssetGroup=ceAssetGroup, ciscoEntityAssetMIB=ciscoEntityAssetMIB, ciscoEntityAssetMIBComplianceRev1=ciscoEntityAssetMIBComplianceRev1, ciscoEntityAssetMIBObjects=ciscoEntityAssetMIBObjects, ceAssetSoftwareID=ceAssetSoftwareID, ceAssetFirmwareID=ceAssetFirmwareID, ciscoEntityAssetMIBGroups=ciscoEntityAssetMIBGroups, ciscoEntityAssetMIBNotifications=ciscoEntityAssetMIBNotifications, ceAssetEntityGroup=ceAssetEntityGroup, ceAssetOrderablePartNumber=ceAssetOrderablePartNumber, ceAssetTag=ceAssetTag, ceAssetEntry=ceAssetEntry, ciscoEntityAssetMIBComplianceRev2=ciscoEntityAssetMIBComplianceRev2, ceAssetCLEI=ceAssetCLEI, ceAssetGroupRev1=ceAssetGroupRev1, ceAssetTable=ceAssetTable, ceAssetGroupRev2=ceAssetGroupRev2, PYSNMP_MODULE_ID=ciscoEntityAssetMIB, ciscoEntityAssetMIBConformance=ciscoEntityAssetMIBConformance, ceAssetIsFRU=ceAssetIsFRU, ceAssetAlias=ceAssetAlias)
+mibBuilder.exportSymbols("CISCO-ENTITY-ASSET-MIB", PYSNMP_MODULE_ID=ciscoEntityAssetMIB, ciscoEntityAssetMIBConformance=ciscoEntityAssetMIBConformance, ceAssetMfgAssyNumber=ceAssetMfgAssyNumber, ceAssetMfgAssyRevision=ceAssetMfgAssyRevision, ceAssetEntityGroup=ceAssetEntityGroup, ciscoEntityAssetMIBNotificationsPrefix=ciscoEntityAssetMIBNotificationsPrefix, ceAssetTable=ceAssetTable, ceAssetOrderablePartNumber=ceAssetOrderablePartNumber, ceAssetGroupRev1=ceAssetGroupRev1, ceAssetIsFRU=ceAssetIsFRU, ciscoEntityAssetMIB=ciscoEntityAssetMIB, ceAssetFirmwareRevision=ceAssetFirmwareRevision, ciscoEntityAssetMIBObjects=ciscoEntityAssetMIBObjects, ceAssetEntry=ceAssetEntry, ciscoEntityAssetMIBComplianceRev1=ciscoEntityAssetMIBComplianceRev1, ceAssetGroup=ceAssetGroup, ceAssetSerialNumber=ceAssetSerialNumber, ceAssetSoftwareID=ceAssetSoftwareID, ceAssetFirmwareID=ceAssetFirmwareID, ceAssetTag=ceAssetTag, ceAssetSoftwareRevision=ceAssetSoftwareRevision, ciscoEntityAssetMIBCompliances=ciscoEntityAssetMIBCompliances, ceAssetOEMString=ceAssetOEMString, ciscoEntityAssetMIBComplianceRev2=ciscoEntityAssetMIBComplianceRev2, ceAssetCLEI=ceAssetCLEI, ceAssetAlias=ceAssetAlias, ciscoEntityAssetMIBCompliance=ciscoEntityAssetMIBCompliance, ceAssetHardwareRevision=ceAssetHardwareRevision, ceAssetGroupRev2=ceAssetGroupRev2, ciscoEntityAssetMIBNotifications=ciscoEntityAssetMIBNotifications, ciscoEntityAssetMIBGroups=ciscoEntityAssetMIBGroups)

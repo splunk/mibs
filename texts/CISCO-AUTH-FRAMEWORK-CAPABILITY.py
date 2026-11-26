@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-AUTH-FRAMEWORK-CAPABILITY (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-AUTH-FRAMEWORK-CAPABILITY
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoAgentCapability, = mibBuilder.importSymbols("CISCO-SMI", "ciscoAgentCapability")
 AgentCapabilities, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "AgentCapabilities", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoAuthFrameworkCapability = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 7, 573))
 ciscoAuthFrameworkCapability.setRevisions(('2012-09-04 00:00', '2012-04-02 00:00', '2011-03-29 00:00', '2011-03-24 00:00', '2010-05-06 00:00', '2010-04-05 00:00', '2010-03-09 00:00', '2009-05-18 00:00', '2008-10-30 00:00',))
 
@@ -75,4 +75,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cafCapV15R0101SYPCat6K = cafCapV15R0101SYPCat6K.setStatus('current')
 if mibBuilder.loadTexts: cafCapV15R0101SYPCat6K.setDescription('CISCO-AUTH-FRAMEWORK-MIB capabilities.')
-mibBuilder.exportSymbols("CISCO-AUTH-FRAMEWORK-CAPABILITY", ciscoAuthFrameworkCapability=ciscoAuthFrameworkCapability, cafCapV15R0002SGPCat4K=cafCapV15R0002SGPCat4K, cafCapV12R0233SXJPCat6K=cafCapV12R0233SXJPCat6K, PYSNMP_MODULE_ID=ciscoAuthFrameworkCapability, cafCapV12R0233SXI2PCat6K=cafCapV12R0233SXI2PCat6K, cafCapV12R0233SXIPCat6K=cafCapV12R0233SXIPCat6K, cafCapV12R0252SGPCat4K=cafCapV12R0252SGPCat4K, cafCapV15R0101SGPCat4K=cafCapV15R0101SGPCat4K, cafCapV12R0254SGPCat4K=cafCapV12R0254SGPCat4K, cafCapV15R0101SYPCat6K=cafCapV15R0101SYPCat6K, cafCapV12R0233SXI4PCat6K=cafCapV12R0233SXI4PCat6K)
+mibBuilder.exportSymbols("CISCO-AUTH-FRAMEWORK-CAPABILITY", cafCapV12R0233SXI2PCat6K=cafCapV12R0233SXI2PCat6K, cafCapV12R0233SXJPCat6K=cafCapV12R0233SXJPCat6K, cafCapV12R0233SXI4PCat6K=cafCapV12R0233SXI4PCat6K, cafCapV12R0254SGPCat4K=cafCapV12R0254SGPCat4K, cafCapV15R0101SGPCat4K=cafCapV15R0101SGPCat4K, cafCapV15R0101SYPCat6K=cafCapV15R0101SYPCat6K, cafCapV15R0002SGPCat4K=cafCapV15R0002SGPCat4K, ciscoAuthFrameworkCapability=ciscoAuthFrameworkCapability, cafCapV12R0233SXIPCat6K=cafCapV12R0233SXIPCat6K, PYSNMP_MODULE_ID=ciscoAuthFrameworkCapability, cafCapV12R0252SGPCat4K=cafCapV12R0252SGPCat4K)

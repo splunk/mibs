@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-SWITCH-CGMP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SWITCH-CGMP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 dot1dBasePort, = mibBuilder.importSymbols("BRIDGE-MIB", "dot1dBasePort")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, MacAddress, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "MacAddress", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, MacAddress, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "MacAddress", "DisplayString")
 ciscoSwitchCgmpMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 101))
 ciscoSwitchCgmpMIB.setRevisions(('1998-05-07 00:00',))
 
@@ -65,4 +65,4 @@ sCgmpGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 101, 3, 2, 1)).setObjects(("CI
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     sCgmpGroup = sCgmpGroup.setStatus('current')
 if mibBuilder.loadTexts: sCgmpGroup.setDescription('Switch-side Cisco Group Management Protocol.')
-mibBuilder.exportSymbols("CISCO-SWITCH-CGMP-MIB", sCgmpRouterMacAddress=sCgmpRouterMacAddress, sCgmpFastLeaveEnable=sCgmpFastLeaveEnable, sCgmpRouterVlanIndex=sCgmpRouterVlanIndex, sCgmpInfo=sCgmpInfo, sCgmpRouterHoldTime=sCgmpRouterHoldTime, sCgmpRouterTable=sCgmpRouterTable, ciscoSwitchCgmpMIBConformance=ciscoSwitchCgmpMIBConformance, sCgmpGroup=sCgmpGroup, ciscoSwitchCgmpMIB=ciscoSwitchCgmpMIB, sCgmpEnable=sCgmpEnable, ciscoSwitchCgmpMIBCompliance=ciscoSwitchCgmpMIBCompliance, PYSNMP_MODULE_ID=ciscoSwitchCgmpMIB, ciscoSwitchCgmpMIBCompliances=ciscoSwitchCgmpMIBCompliances, ciscoSwitchCgmpMIBObjects=ciscoSwitchCgmpMIBObjects, ciscoSwitchCgmpMIBGroups=ciscoSwitchCgmpMIBGroups, sCgmpRouterEntry=sCgmpRouterEntry, SCgmpVlanIndex=SCgmpVlanIndex, sCgmpRouterEntryStatus=sCgmpRouterEntryStatus)
+mibBuilder.exportSymbols("CISCO-SWITCH-CGMP-MIB", sCgmpRouterVlanIndex=sCgmpRouterVlanIndex, sCgmpRouterEntry=sCgmpRouterEntry, ciscoSwitchCgmpMIBCompliance=ciscoSwitchCgmpMIBCompliance, sCgmpFastLeaveEnable=sCgmpFastLeaveEnable, ciscoSwitchCgmpMIBObjects=ciscoSwitchCgmpMIBObjects, sCgmpEnable=sCgmpEnable, sCgmpInfo=sCgmpInfo, sCgmpRouterTable=sCgmpRouterTable, PYSNMP_MODULE_ID=ciscoSwitchCgmpMIB, ciscoSwitchCgmpMIBConformance=ciscoSwitchCgmpMIBConformance, ciscoSwitchCgmpMIBCompliances=ciscoSwitchCgmpMIBCompliances, ciscoSwitchCgmpMIBGroups=ciscoSwitchCgmpMIBGroups, sCgmpRouterEntryStatus=sCgmpRouterEntryStatus, sCgmpRouterHoldTime=sCgmpRouterHoldTime, sCgmpRouterMacAddress=sCgmpRouterMacAddress, sCgmpGroup=sCgmpGroup, ciscoSwitchCgmpMIB=ciscoSwitchCgmpMIB, SCgmpVlanIndex=SCgmpVlanIndex)

@@ -2,29 +2,29 @@
   "imports": {
     "class": "imports",
     "SNMPv2-CONF": [
-      "NOTIFICATION-GROUP",
       "MODULE-COMPLIANCE",
-      "OBJECT-GROUP"
+      "OBJECT-GROUP",
+      "NOTIFICATION-GROUP"
     ],
     "SNMPv2-MIB": [
       "sysUpTime"
     ],
     "SNMPv2-SMI": [
-      "Counter32",
-      "Integer32",
-      "OBJECT-IDENTITY",
-      "Counter64",
-      "iso",
       "MibIdentifier",
-      "Gauge32",
-      "TimeTicks",
-      "NOTIFICATION-TYPE",
-      "OBJECT-TYPE",
-      "Unsigned32",
-      "MODULE-IDENTITY",
+      "Counter64",
+      "OBJECT-IDENTITY",
       "enterprises",
+      "IpAddress",
+      "NOTIFICATION-TYPE",
+      "Integer32",
       "Bits",
-      "IpAddress"
+      "Unsigned32",
+      "TimeTicks",
+      "Counter32",
+      "OBJECT-TYPE",
+      "Gauge32",
+      "iso",
+      "MODULE-IDENTITY"
     ],
     "SNMPv2-TC": [
       "TEXTUAL-CONVENTION",
@@ -1085,9 +1085,9 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/altergy/ALT-DEV-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 14:33:33 2026",
-      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
-      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+      "Produced by pysmi-1.1.12 at Thu Nov 26 06:05:12 2026",
+      "On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner",
+      "Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]"
     ],
     "module": "ALT-DEV-MIB"
   }

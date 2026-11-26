@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module ALTIGA-LBSSF-STATS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/ALTIGA-LBSSF-STATS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 alLBSSFMibModule, = mibBuilder.importSymbols("ALTIGA-GLOBAL-REG", "alLBSSFMibModule")
 alLBSSFGroup, alStatsLBSSF = mibBuilder.importSymbols("ALTIGA-MIB", "alLBSSFGroup", "alStatsLBSSF")
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, TimeTicks, ModuleIdentity, MibIdentifier, iso, IpAddress, Counter32, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "TimeTicks", "ModuleIdentity", "MibIdentifier", "iso", "IpAddress", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString", "TruthValue")
 altigaLBSSFStatsMibModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 3076, 1, 1, 41, 2))
 altigaLBSSFStatsMibModule.setRevisions(('2002-09-05 13:00', '2002-07-10 00:00',))
 
@@ -103,4 +103,4 @@ altigaStatsLBSSFGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 3076, 2, 1, 1, 1, 36, 3))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     altigaStatsLBSSFGroup = altigaStatsLBSSFGroup.setStatus('current')
 if mibBuilder.loadTexts: altigaStatsLBSSFGroup.setDescription('The objects for the LBSSF statistics.')
-mibBuilder.exportSymbols("ALTIGA-LBSSF-STATS-MIB", alLBSSFPeerLoad=alLBSSFPeerLoad, alLBSSFRole=alLBSSFRole, altigaLBSSFStatsMibCompliances=altigaLBSSFStatsMibCompliances, alLBSSFLoad=alLBSSFLoad, alLBSSFPeerDeviceType=alLBSSFPeerDeviceType, alLBSSFNumberOfPeers=alLBSSFNumberOfPeers, altigaLBSSFStatsMibCompliance=altigaLBSSFStatsMibCompliance, altigaLBSSFStatsMibModule=altigaLBSSFStatsMibModule, alLBSSFPeerEntry=alLBSSFPeerEntry, PYSNMP_MODULE_ID=altigaLBSSFStatsMibModule, alStatsLBSSFGlobal=alStatsLBSSFGlobal, DeviceType=DeviceType, alLBSSFPeerTable=alLBSSFPeerTable, alLBSSFPeerJoinTime=alLBSSFPeerJoinTime, alLBSSFPeerPrivIpAddress=alLBSSFPeerPrivIpAddress, alLBSSFPeerActive=alLBSSFPeerActive, alLBSSFPeerPriority=alLBSSFPeerPriority, DeviceRole=DeviceRole, alLBSSFPeerRole=alLBSSFPeerRole, alLBSSFPeerPubIpAddress=alLBSSFPeerPubIpAddress, alLBSSFActive=alLBSSFActive, alLBSSFPeerActiveSessions=alLBSSFPeerActiveSessions, altigaStatsLBSSFGroup=altigaStatsLBSSFGroup, alLBSSFPeerMappedPubIpAddress=alLBSSFPeerMappedPubIpAddress, alLBSSFPeerFaultZone=alLBSSFPeerFaultZone, alLBSSFPeerRowStatus=alLBSSFPeerRowStatus, alLBSSFDeviceType=alLBSSFDeviceType, altigaLBSSFStatsMibConformance=altigaLBSSFStatsMibConformance)
+mibBuilder.exportSymbols("ALTIGA-LBSSF-STATS-MIB", alLBSSFPeerPriority=alLBSSFPeerPriority, alLBSSFPeerLoad=alLBSSFPeerLoad, alLBSSFPeerEntry=alLBSSFPeerEntry, altigaLBSSFStatsMibCompliances=altigaLBSSFStatsMibCompliances, alLBSSFPeerActive=alLBSSFPeerActive, alLBSSFPeerDeviceType=alLBSSFPeerDeviceType, altigaLBSSFStatsMibConformance=altigaLBSSFStatsMibConformance, alLBSSFPeerActiveSessions=alLBSSFPeerActiveSessions, altigaLBSSFStatsMibModule=altigaLBSSFStatsMibModule, alLBSSFPeerRowStatus=alLBSSFPeerRowStatus, alStatsLBSSFGlobal=alStatsLBSSFGlobal, alLBSSFDeviceType=alLBSSFDeviceType, alLBSSFRole=alLBSSFRole, DeviceRole=DeviceRole, altigaLBSSFStatsMibCompliance=altigaLBSSFStatsMibCompliance, alLBSSFPeerMappedPubIpAddress=alLBSSFPeerMappedPubIpAddress, altigaStatsLBSSFGroup=altigaStatsLBSSFGroup, DeviceType=DeviceType, alLBSSFPeerPubIpAddress=alLBSSFPeerPubIpAddress, alLBSSFActive=alLBSSFActive, alLBSSFPeerJoinTime=alLBSSFPeerJoinTime, alLBSSFPeerTable=alLBSSFPeerTable, alLBSSFNumberOfPeers=alLBSSFNumberOfPeers, alLBSSFPeerPrivIpAddress=alLBSSFPeerPrivIpAddress, alLBSSFPeerFaultZone=alLBSSFPeerFaultZone, alLBSSFLoad=alLBSSFLoad, alLBSSFPeerRole=alLBSSFPeerRole, PYSNMP_MODULE_ID=altigaLBSSFStatsMibModule)

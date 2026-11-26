@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-BCP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-BCP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoBcpMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 275))
 ciscoBcpMIB.setRevisions(('2004-08-31 00:00', '2002-08-02 00:00',))
@@ -66,4 +66,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cBcpMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 275, 3, 2, 1)).setObjects(("CISCO-BCP-MIB", "bcpOperStatus"), ("CISCO-BCP-MIB", "bcpConfigBridgeIdControl"), ("CISCO-BCP-MIB", "bcpConfigBridgeId"), ("CISCO-BCP-MIB", "bcpConfigLineIdControl"), ("CISCO-BCP-MIB", "bcpConfigLineId"), ("CISCO-BCP-MIB", "bcpConfigMacSupport"), ("CISCO-BCP-MIB", "bcpConfigMacType"), ("CISCO-BCP-MIB", "bcpConfigTinygram"), ("CISCO-BCP-MIB", "bcpConfigMacAddressControl"), ("CISCO-BCP-MIB", "bcpConfigMacAddress"), ("CISCO-BCP-MIB", "bcpConfigSpanTreeControl"), ("CISCO-BCP-MIB", "bcpConfigSpanTree"), ("CISCO-BCP-MIB", "bcpConfigIeee802dot1qTagged"), ("CISCO-BCP-MIB", "bcpConfigMgmtInline"), ("CISCO-BCP-MIB", "bcpConfigBCPacketIndicator"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cBcpMIBGroup = cBcpMIBGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-BCP-MIB", cBcpMIBGroups=cBcpMIBGroups, bcpConfigMacType=bcpConfigMacType, ciscoBcpMIBObjects=ciscoBcpMIBObjects, PYSNMP_MODULE_ID=ciscoBcpMIB, bcpConfigSpanTree=bcpConfigSpanTree, bcpConfigLineIdControl=bcpConfigLineIdControl, bcpOperTable=bcpOperTable, cBcpMIBCompliance=cBcpMIBCompliance, ciscoBcpMIB=ciscoBcpMIB, bcpConfigSpanTreeControl=bcpConfigSpanTreeControl, bcpOperEntry=bcpOperEntry, bcpConfigTable=bcpConfigTable, bcpConfigMacAddressControl=bcpConfigMacAddressControl, bcpConfigMacSupport=bcpConfigMacSupport, bcpConfigLineId=bcpConfigLineId, bcpConfigIeee802dot1qTagged=bcpConfigIeee802dot1qTagged, cBcpMIBConformance=cBcpMIBConformance, cBcpMIBCompliances=cBcpMIBCompliances, bcpConfigBridgeId=bcpConfigBridgeId, cBcpMIBGroup=cBcpMIBGroup, bcpConfigBCPacketIndicator=bcpConfigBCPacketIndicator, bcpConfigBridgeIdControl=bcpConfigBridgeIdControl, bcpConfigTinygram=bcpConfigTinygram, bcpConfigMacAddress=bcpConfigMacAddress, bcpOperStatus=bcpOperStatus, bcpConfigMgmtInline=bcpConfigMgmtInline, bcpConfigEntry=bcpConfigEntry)
+mibBuilder.exportSymbols("CISCO-BCP-MIB", bcpConfigLineIdControl=bcpConfigLineIdControl, bcpConfigMacSupport=bcpConfigMacSupport, bcpOperTable=bcpOperTable, bcpConfigMacType=bcpConfigMacType, ciscoBcpMIB=ciscoBcpMIB, bcpOperStatus=bcpOperStatus, bcpConfigTinygram=bcpConfigTinygram, bcpConfigTable=bcpConfigTable, bcpConfigBCPacketIndicator=bcpConfigBCPacketIndicator, bcpConfigMacAddress=bcpConfigMacAddress, bcpConfigSpanTree=bcpConfigSpanTree, cBcpMIBGroups=cBcpMIBGroups, bcpConfigBridgeId=bcpConfigBridgeId, bcpConfigLineId=bcpConfigLineId, cBcpMIBCompliance=cBcpMIBCompliance, cBcpMIBGroup=cBcpMIBGroup, PYSNMP_MODULE_ID=ciscoBcpMIB, bcpConfigEntry=bcpConfigEntry, bcpConfigSpanTreeControl=bcpConfigSpanTreeControl, bcpConfigMacAddressControl=bcpConfigMacAddressControl, bcpOperEntry=bcpOperEntry, bcpConfigBridgeIdControl=bcpConfigBridgeIdControl, cBcpMIBCompliances=cBcpMIBCompliances, bcpConfigMgmtInline=bcpConfigMgmtInline, cBcpMIBConformance=cBcpMIBConformance, bcpConfigIeee802dot1qTagged=bcpConfigIeee802dot1qTagged, ciscoBcpMIBObjects=ciscoBcpMIBObjects)

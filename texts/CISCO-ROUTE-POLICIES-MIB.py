@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-ROUTE-POLICIES-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ROUTE-POLICIES-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, IpAddress, iso, TimeTicks, Counter32, ModuleIdentity, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "IpAddress", "iso", "TimeTicks", "Counter32", "ModuleIdentity", "ObjectIdentity")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoRoutePoliciesMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 578))
 ciscoRoutePoliciesMIB.setRevisions(('2006-08-18 00:00',))
 
@@ -31,4 +31,4 @@ crpPolicyIfIndex = ObjectIdentity((1, 3, 6, 1, 4, 1, 9, 9, 578, 1, 1, 1))
 if mibBuilder.loadTexts: crpPolicyIfIndex.setStatus('current')
 if mibBuilder.loadTexts: crpPolicyIfIndex.setDescription('This OID specifies a set of policies, one for each\n                ifIndex value.  Specifically, the OID value of\n                crpPolicyIfIndex.i is defined such that each\n                inetCidrRouteTable entry for which the instance of\n                inetCidrRoutePolicy has this value, is associated with\n                ifIndex=i, and thereby is distinct for any\n                inetCidrRouteTable entry associated with\n                ifIndex=j.  Note that the value of inetCidrRoutePolicy\n                for the latter would be crpPolicyIfIndex.j.\n\n                This set of policies is appropriate only if an ifIndex\n                value is sufficient to distinguish between routes. ')
 if mibBuilder.loadTexts: crpPolicyIfIndex.setReference('inetCidrRouteTable, IP-FORWARD-MIB, RFC4292. ')
-mibBuilder.exportSymbols("CISCO-ROUTE-POLICIES-MIB", ciscoRoutePoliciesMIBConform=ciscoRoutePoliciesMIBConform, ciscoRoutePoliciesMIB=ciscoRoutePoliciesMIB, crpPolicyIfIndex=crpPolicyIfIndex, ciscoRoutePoliciesMIBObjects=ciscoRoutePoliciesMIBObjects, crpPolicies=crpPolicies, ciscoRoutePoliciesMIBNotifs=ciscoRoutePoliciesMIBNotifs, PYSNMP_MODULE_ID=ciscoRoutePoliciesMIB)
+mibBuilder.exportSymbols("CISCO-ROUTE-POLICIES-MIB", crpPolicies=crpPolicies, ciscoRoutePoliciesMIBConform=ciscoRoutePoliciesMIBConform, ciscoRoutePoliciesMIBNotifs=ciscoRoutePoliciesMIBNotifs, crpPolicyIfIndex=crpPolicyIfIndex, ciscoRoutePoliciesMIBObjects=ciscoRoutePoliciesMIBObjects, ciscoRoutePoliciesMIB=ciscoRoutePoliciesMIB, PYSNMP_MODULE_ID=ciscoRoutePoliciesMIB)

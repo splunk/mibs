@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-MGX82XX-ATM-UNI-PORT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MGX82XX-ATM-UNI-PORT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
-AtmAddress, NetPrefix = mibBuilder.importSymbols("ATM-FORUM-TC-MIB", "AtmAddress", "NetPrefix")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+NetPrefix, AtmAddress = mibBuilder.importSymbols("ATM-FORUM-TC-MIB", "NetPrefix", "AtmAddress")
 atmAddressRegistration, = mibBuilder.importSymbols("BASIS-MIB", "atmAddressRegistration")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoMgx82xxAtmUniPortMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 71))
 ciscoMgx82xxAtmUniPortMIB.setRevisions(('2003-04-18 00:00',))
 
@@ -74,4 +74,4 @@ cmauNetPrefixGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 71, 2, 1, 2)).setO
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmauNetPrefixGroup = cmauNetPrefixGroup.setStatus('current')
 if mibBuilder.loadTexts: cmauNetPrefixGroup.setDescription('The collection of objects related to\n         ATM address prefix.')
-mibBuilder.exportSymbols("CISCO-MGX82XX-ATM-UNI-PORT-MIB", axisAtmNetPrefixPrefix=axisAtmNetPrefixPrefix, cmauNetPrefixGroup=cmauNetPrefixGroup, cmauPortMIBCompliances=cmauPortMIBCompliances, ciscoMgx82xxAtmUniPortMIB=ciscoMgx82xxAtmUniPortMIB, axisAtmNetPrefixOperStatus=axisAtmNetPrefixOperStatus, axisAtmNetPrefixAdminStatus=axisAtmNetPrefixAdminStatus, atmAddressTable=atmAddressTable, atmNetPrefixEntry=atmNetPrefixEntry, axisAtmAddressAtmAddress=axisAtmAddressAtmAddress, axisAtmAddressStatus=axisAtmAddressStatus, axisAtmAddressPort=axisAtmAddressPort, atmNetPrefixGroup=atmNetPrefixGroup, cmauPortMIBGroups=cmauPortMIBGroups, atmAddressGroup=atmAddressGroup, PYSNMP_MODULE_ID=ciscoMgx82xxAtmUniPortMIB, axisAtmNetPrefixPort=axisAtmNetPrefixPort, cmauAtmAddressGroup=cmauAtmAddressGroup, atmAddressEntry=atmAddressEntry, cmauPortMIBConformance=cmauPortMIBConformance, cmauPortCompliance=cmauPortCompliance, atmNetPrefixTable=atmNetPrefixTable)
+mibBuilder.exportSymbols("CISCO-MGX82XX-ATM-UNI-PORT-MIB", axisAtmAddressPort=axisAtmAddressPort, cmauPortMIBConformance=cmauPortMIBConformance, axisAtmAddressAtmAddress=axisAtmAddressAtmAddress, axisAtmNetPrefixPort=axisAtmNetPrefixPort, cmauAtmAddressGroup=cmauAtmAddressGroup, atmNetPrefixGroup=atmNetPrefixGroup, axisAtmAddressStatus=axisAtmAddressStatus, cmauPortCompliance=cmauPortCompliance, PYSNMP_MODULE_ID=ciscoMgx82xxAtmUniPortMIB, cmauPortMIBCompliances=cmauPortMIBCompliances, cmauPortMIBGroups=cmauPortMIBGroups, ciscoMgx82xxAtmUniPortMIB=ciscoMgx82xxAtmUniPortMIB, cmauNetPrefixGroup=cmauNetPrefixGroup, atmAddressEntry=atmAddressEntry, atmAddressTable=atmAddressTable, axisAtmNetPrefixAdminStatus=axisAtmNetPrefixAdminStatus, atmNetPrefixEntry=atmNetPrefixEntry, axisAtmNetPrefixOperStatus=axisAtmNetPrefixOperStatus, atmAddressGroup=atmAddressGroup, atmNetPrefixTable=atmNetPrefixTable, axisAtmNetPrefixPrefix=axisAtmNetPrefixPrefix)

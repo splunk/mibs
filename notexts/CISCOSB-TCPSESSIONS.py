@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCOSB-TCPSESSIONS (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-TCPSESSIONS
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:01 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, mib_2, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "mib-2", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+Counter64, TimeTicks, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, mib_2, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "mib-2", "Counter32", "Unsigned32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 tcp = ModuleIdentity((1, 3, 6, 1, 2, 1, 6))
 tcp.setRevisions(('2011-05-30 00:00',))
@@ -36,4 +36,4 @@ rlTcpSessionState = MibTableColumn((1, 3, 6, 1, 2, 1, 6, 16, 1, 7), Integer32().
 if mibBuilder.loadTexts: rlTcpSessionState.setStatus('current')
 rlTcpSessionAppName = MibTableColumn((1, 3, 6, 1, 2, 1, 6, 16, 1, 8), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 12))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlTcpSessionAppName.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-TCPSESSIONS", rlTcpSessionLocalPort=rlTcpSessionLocalPort, PYSNMP_MODULE_ID=tcp, rlTcpSessionAppName=rlTcpSessionAppName, rlTcpSessionLocalAddrType=rlTcpSessionLocalAddrType, rlTcpSessionRemPort=rlTcpSessionRemPort, rlTcpSessionTable=rlTcpSessionTable, rlTcpSessionState=rlTcpSessionState, rlTcpSessionRemAddress=rlTcpSessionRemAddress, rlTcpSessionRemAddrType=rlTcpSessionRemAddrType, rlTcpSessionLocalAddress=rlTcpSessionLocalAddress, rlTcpSessionEntry=rlTcpSessionEntry, tcp=tcp)
+mibBuilder.exportSymbols("CISCOSB-TCPSESSIONS", rlTcpSessionAppName=rlTcpSessionAppName, rlTcpSessionState=rlTcpSessionState, rlTcpSessionTable=rlTcpSessionTable, rlTcpSessionRemAddress=rlTcpSessionRemAddress, tcp=tcp, rlTcpSessionLocalPort=rlTcpSessionLocalPort, rlTcpSessionRemAddrType=rlTcpSessionRemAddrType, rlTcpSessionRemPort=rlTcpSessionRemPort, rlTcpSessionLocalAddrType=rlTcpSessionLocalAddrType, rlTcpSessionLocalAddress=rlTcpSessionLocalAddress, PYSNMP_MODULE_ID=tcp, rlTcpSessionEntry=rlTcpSessionEntry)

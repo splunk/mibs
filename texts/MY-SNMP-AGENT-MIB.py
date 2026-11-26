@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module MY-SNMP-AGENT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ruijie/MY-SNMP-AGENT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:39:59 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:14:28 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ConstraintsUnion, ValueSizeConstraint, ConstraintsIntersection, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsUnion", "ValueSizeConstraint", "ConstraintsIntersection", "SingleValueConstraint")
+ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion")
 myMgmt, = mibBuilder.importSymbols("MY-SMI", "myMgmt")
-MyTrapType, ConfigStatus = mibBuilder.importSymbols("MY-TC", "MyTrapType", "ConfigStatus")
+ConfigStatus, MyTrapType = mibBuilder.importSymbols("MY-TC", "ConfigStatus", "MyTrapType")
 EnabledStatus, = mibBuilder.importSymbols("P-BRIDGE-MIB", "EnabledStatus")
-ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-Unsigned32, NotificationType, TimeTicks, Counter32, Gauge32, ObjectIdentity, Bits, IpAddress, Counter64, iso, Integer32, MibIdentifier, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "NotificationType", "TimeTicks", "Counter32", "Gauge32", "ObjectIdentity", "Bits", "IpAddress", "Counter64", "iso", "Integer32", "MibIdentifier", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
-RowStatus, TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "TextualConvention", "DisplayString", "TruthValue")
+ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
+Bits, IpAddress, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, Integer32, iso, Unsigned32, ModuleIdentity, MibIdentifier, Counter32, Gauge32, ObjectIdentity, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "IpAddress", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "Integer32", "iso", "Unsigned32", "ModuleIdentity", "MibIdentifier", "Counter32", "Gauge32", "ObjectIdentity", "NotificationType")
+TruthValue, DisplayString, TextualConvention, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "DisplayString", "TextualConvention", "RowStatus")
 mySnmpAgentMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 4881, 1, 1, 10, 2, 5))
 mySnmpAgentMIB.setRevisions(('2002-03-20 00:00',))
 
@@ -104,4 +104,4 @@ mySnmpTrapMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 4881, 1, 1, 10, 2, 5, 2, 2, 
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     mySnmpTrapMIBGroup = mySnmpTrapMIBGroup.setStatus('current')
 if mibBuilder.loadTexts: mySnmpTrapMIBGroup.setDescription('A collection of objects providing trap information to a\n                My agent.')
-mibBuilder.exportSymbols("MY-SNMP-AGENT-MIB", myCommunityMIBGroup=myCommunityMIBGroup, mySnmpAgentMIB=mySnmpAgentMIB, myCommunityName=myCommunityName, myTrapAction=myTrapAction, mySnmpAgentMIBCompliance=mySnmpAgentMIBCompliance, myTrapActionTable=myTrapActionTable, myTrapDstSendTrapClass=myTrapDstSendTrapClass, myTrapDstTable=myTrapDstTable, myTrapDstAddr=myTrapDstAddr, myTrapActionEntry=myTrapActionEntry, myCommunityStatus=myCommunityStatus, myCommunityEnableIpAddrAuthen=myCommunityEnableIpAddrAuthen, myTrapDstEntry=myTrapDstEntry, mySnmpCommunityObjects=mySnmpCommunityObjects, myTrapDstEntryStatus=myTrapDstEntryStatus, myCommunityMaxNum=myCommunityMaxNum, myCommunityTable=myCommunityTable, PYSNMP_MODULE_ID=mySnmpAgentMIB, myTrapType=myTrapType, myCommunityWritable=myCommunityWritable, mySnmpTrapObjects=mySnmpTrapObjects, mySnmpAgentMIBObjects=mySnmpAgentMIBObjects, mySnmpAgentMIBCompliances=mySnmpAgentMIBCompliances, myCommunityUserIpAddr=myCommunityUserIpAddr, myTrapDstCommunity=myTrapDstCommunity, mySnmpAgentMIBConformance=mySnmpAgentMIBConformance, Community=Community, myTrapDstMaxNumber=myTrapDstMaxNumber, mySnmpAgentMIBGroups=mySnmpAgentMIBGroups, mySnmpTrapMIBGroup=mySnmpTrapMIBGroup, myCommunityEntry=myCommunityEntry)
+mibBuilder.exportSymbols("MY-SNMP-AGENT-MIB", mySnmpAgentMIBCompliance=mySnmpAgentMIBCompliance, PYSNMP_MODULE_ID=mySnmpAgentMIB, myTrapDstTable=myTrapDstTable, myTrapDstEntry=myTrapDstEntry, myCommunityMaxNum=myCommunityMaxNum, myTrapActionEntry=myTrapActionEntry, myTrapDstMaxNumber=myTrapDstMaxNumber, myCommunityEnableIpAddrAuthen=myCommunityEnableIpAddrAuthen, myCommunityWritable=myCommunityWritable, myCommunityEntry=myCommunityEntry, mySnmpCommunityObjects=mySnmpCommunityObjects, mySnmpAgentMIBObjects=mySnmpAgentMIBObjects, myCommunityTable=myCommunityTable, mySnmpAgentMIBGroups=mySnmpAgentMIBGroups, myCommunityMIBGroup=myCommunityMIBGroup, myCommunityUserIpAddr=myCommunityUserIpAddr, myCommunityName=myCommunityName, myTrapType=myTrapType, mySnmpAgentMIB=mySnmpAgentMIB, myTrapDstAddr=myTrapDstAddr, mySnmpTrapObjects=mySnmpTrapObjects, myCommunityStatus=myCommunityStatus, mySnmpAgentMIBConformance=mySnmpAgentMIBConformance, mySnmpTrapMIBGroup=mySnmpTrapMIBGroup, myTrapDstSendTrapClass=myTrapDstSendTrapClass, mySnmpAgentMIBCompliances=mySnmpAgentMIBCompliances, myTrapDstEntryStatus=myTrapDstEntryStatus, Community=Community, myTrapAction=myTrapAction, myTrapActionTable=myTrapActionTable, myTrapDstCommunity=myTrapDstCommunity)

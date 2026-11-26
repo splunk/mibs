@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module DLINKSW-LBD-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-LBD-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:25 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 Dlink2kVlanList, = mibBuilder.importSymbols("DLINKSW-TC-MIB", "Dlink2kVlanList")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
 VlanId, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "VlanId")
-NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
-Counter32, Counter64, IpAddress, ModuleIdentity, Gauge32, Unsigned32, Bits, iso, TimeTicks, ObjectIdentity, Integer32, MibIdentifier, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Counter64", "IpAddress", "ModuleIdentity", "Gauge32", "Unsigned32", "Bits", "iso", "TimeTicks", "ObjectIdentity", "Integer32", "MibIdentifier", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Counter32, Bits, Counter64, NotificationType, TimeTicks, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, IpAddress, ObjectIdentity, iso = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Counter32", "Bits", "Counter64", "NotificationType", "TimeTicks", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "IpAddress", "ObjectIdentity", "iso")
+TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
 dlinkSwLoopbackDetectMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 46))
 dlinkSwLoopbackDetectMIB.setRevisions(('2014-10-27 00:00', '2013-10-23 00:00', '2013-02-05 00:00',))
 if mibBuilder.loadTexts: dlinkSwLoopbackDetectMIB.setLastUpdated('201410270000Z')
@@ -87,4 +87,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 dLbdNotificationGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 171, 14, 46, 2, 2, 5)).setObjects(("DLINKSW-LBD-MIB", "dLbdLoopOccurred"), ("DLINKSW-LBD-MIB", "dLbdLoopRestart"), ("DLINKSW-LBD-MIB", "dLbdVlanLoopOccurred"), ("DLINKSW-LBD-MIB", "dLbdVlanLoopRestart"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dLbdNotificationGroup = dLbdNotificationGroup.setStatus('current')
-mibBuilder.exportSymbols("DLINKSW-LBD-MIB", PYSNMP_MODULE_ID=dlinkSwLoopbackDetectMIB, dLbdNotifyInfoIfIndex=dLbdNotifyInfoIfIndex, dLbdIfCfgIndex=dLbdIfCfgIndex, dLbdActMode=dLbdActMode, dLbdVlanCtrlObjects=dLbdVlanCtrlObjects, dLbdMIBCompliances=dLbdMIBCompliances, dLbdCtrlGlobalEnabled=dLbdCtrlGlobalEnabled, dlinkSwLoopbackDetectMIB=dlinkSwLoopbackDetectMIB, dLbdVlanCtrlGroup=dLbdVlanCtrlGroup, dLbdNotifications=dLbdNotifications, dLbdCfgGroup=dLbdCfgGroup, dLbdNotifyInfoVlanId=dLbdNotifyInfoVlanId, dLbdIfLoopStatus=dLbdIfLoopStatus, dLbdMIBCompliance=dLbdMIBCompliance, dLbdVlanLoopRestart=dLbdVlanLoopRestart, dLbdIfCfgEnabled=dLbdIfCfgEnabled, dLbdVlanCrlSecond2K=dLbdVlanCrlSecond2K, dLbdVlanCrlFirst2K=dLbdVlanCrlFirst2K, dLbdCtrlMode=dLbdCtrlMode, dLbdMIBGroups=dLbdMIBGroups, dLbdIfCfgEntry=dLbdIfCfgEntry, dLbdConformance=dLbdConformance, dLbdNotifyInfo=dLbdNotifyInfo, dLbdNotifyEnabled=dLbdNotifyEnabled, dLbdIfCfgTable=dLbdIfCfgTable, dLbdLoopRestart=dLbdLoopRestart, dLbdAddressType=dLbdAddressType, dLbdCtrlModeGroup=dLbdCtrlModeGroup, dLbdLoopOccurred=dLbdLoopOccurred, dLbdVlanLoopOccurred=dLbdVlanLoopOccurred, dLbdIfCfgGroup=dLbdIfCfgGroup, dLbdNotificationGroup=dLbdNotificationGroup, dLbdObjects=dLbdObjects, dLbdCtrlInterval=dLbdCtrlInterval, dLbdIfLoopVlans=dLbdIfLoopVlans)
+mibBuilder.exportSymbols("DLINKSW-LBD-MIB", dLbdVlanLoopOccurred=dLbdVlanLoopOccurred, dLbdCtrlMode=dLbdCtrlMode, dLbdNotifyInfoIfIndex=dLbdNotifyInfoIfIndex, dLbdCtrlInterval=dLbdCtrlInterval, dLbdIfLoopStatus=dLbdIfLoopStatus, dLbdVlanLoopRestart=dLbdVlanLoopRestart, PYSNMP_MODULE_ID=dlinkSwLoopbackDetectMIB, dLbdNotifyInfo=dLbdNotifyInfo, dLbdActMode=dLbdActMode, dLbdNotifyInfoVlanId=dLbdNotifyInfoVlanId, dLbdIfLoopVlans=dLbdIfLoopVlans, dLbdLoopOccurred=dLbdLoopOccurred, dLbdCtrlGlobalEnabled=dLbdCtrlGlobalEnabled, dLbdIfCfgGroup=dLbdIfCfgGroup, dLbdCfgGroup=dLbdCfgGroup, dLbdCtrlModeGroup=dLbdCtrlModeGroup, dLbdIfCfgEntry=dLbdIfCfgEntry, dLbdNotifications=dLbdNotifications, dLbdObjects=dLbdObjects, dLbdMIBCompliances=dLbdMIBCompliances, dLbdIfCfgTable=dLbdIfCfgTable, dLbdConformance=dLbdConformance, dLbdIfCfgIndex=dLbdIfCfgIndex, dLbdIfCfgEnabled=dLbdIfCfgEnabled, dLbdMIBGroups=dLbdMIBGroups, dLbdLoopRestart=dLbdLoopRestart, dLbdNotifyEnabled=dLbdNotifyEnabled, dlinkSwLoopbackDetectMIB=dlinkSwLoopbackDetectMIB, dLbdNotificationGroup=dLbdNotificationGroup, dLbdVlanCrlFirst2K=dLbdVlanCrlFirst2K, dLbdMIBCompliance=dLbdMIBCompliance, dLbdAddressType=dLbdAddressType, dLbdVlanCtrlObjects=dLbdVlanCtrlObjects, dLbdVlanCrlSecond2K=dLbdVlanCrlSecond2K, dLbdVlanCtrlGroup=dLbdVlanCtrlGroup)

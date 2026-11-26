@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module ACMEPACKET-TC (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/oracle/ACMEPACKET-TC
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:51 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:13:01 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 acmepacket, = mibBuilder.importSymbols("ACMEPACKET-SMI", "acmepacket")
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint, ConstraintsUnion, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsUnion", "ValueRangeConstraint")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-Unsigned32, iso, ObjectIdentity, NotificationType, Counter64, IpAddress, Bits, Gauge32, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter32, Integer32, TimeTicks, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "Unsigned32", "iso", "ObjectIdentity", "NotificationType", "Counter64", "IpAddress", "Bits", "Gauge32", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter32", "Integer32", "TimeTicks", "MibIdentifier")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+Counter32, Unsigned32, NotificationType, Gauge32, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, MibIdentifier, Counter64, iso, IpAddress, ObjectIdentity, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Unsigned32", "NotificationType", "Gauge32", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "MibIdentifier", "Counter64", "iso", "IpAddress", "ObjectIdentity", "ModuleIdentity", "TimeTicks")
+TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
 apTextualConventions = ModuleIdentity((1, 3, 6, 1, 4, 1, 9148, 0))
 apTextualConventions.setRevisions(('2012-02-06 23:05', '2012-05-05 23:05', '2014-06-26 00:00', '2020-07-20 00:00', '2020-10-26 00:00', '2020-12-14 00:00', '2021-06-07 00:00', '2022-02-16 00:00', '2022-02-16 00:00', '2022-03-17 00:00', '2022-03-22 00:00', '2022-03-01 00:00', '2022-03-24 00:00', '2022-05-17 00:00',))
 if mibBuilder.loadTexts: apTextualConventions.setLastUpdated('202203240000Z')
@@ -115,4 +115,4 @@ class ApNSEPRealmStatsType(TextualConvention, Integer32):
     subtypeSpec = Integer32.subtypeSpec + ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5, 6, 7, 8))
     namedValues = NamedValues(("inboundactivesessions", 1), ("inboundtotalsessions", 2), ("inboundhighsessions", 3), ("inboundtotalrejectedsessions", 4), ("outboundactivesessions", 5), ("outboundtotalsessions", 6), ("outboundhighsessions", 7), ("outboundtotalrejectedsessions", 8))
 
-mibBuilder.exportSymbols("ACMEPACKET-TC", ApHardwareModuleFamily=ApHardwareModuleFamily, ApServerStatus=ApServerStatus, PYSNMP_MODULE_ID=apTextualConventions, ApRedundancyState=ApRedundancyState, ApDosThresholdCrossState=ApDosThresholdCrossState, ApMsrpKpiStatsCounterType=ApMsrpKpiStatsCounterType, ApCounterStatsType=ApCounterStatsType, ApMsrpKpiStatsType=ApMsrpKpiStatsType, ApNSEPRealmRvalueDNIndex=ApNSEPRealmRvalueDNIndex, ApSipMethod=ApSipMethod, apTextualConventions=apTextualConventions, ApDosThresholdTrafficType=ApDosThresholdTrafficType, ApDiamResultCode=ApDiamResultCode, ApTransportType=ApTransportType, ApPercentage=ApPercentage, ApCommMonitorState=ApCommMonitorState, ApPhyPortType=ApPhyPortType, ApThreadOverloaded=ApThreadOverloaded, ApAclType=ApAclType, ApStirStatsType=ApStirStatsType, ApNSEPRealmStatsType=ApNSEPRealmStatsType, ApPresence=ApPresence)
+mibBuilder.exportSymbols("ACMEPACKET-TC", ApCounterStatsType=ApCounterStatsType, ApPercentage=ApPercentage, ApNSEPRealmRvalueDNIndex=ApNSEPRealmRvalueDNIndex, ApPresence=ApPresence, ApThreadOverloaded=ApThreadOverloaded, ApDosThresholdTrafficType=ApDosThresholdTrafficType, ApHardwareModuleFamily=ApHardwareModuleFamily, apTextualConventions=apTextualConventions, ApTransportType=ApTransportType, ApNSEPRealmStatsType=ApNSEPRealmStatsType, ApAclType=ApAclType, ApDosThresholdCrossState=ApDosThresholdCrossState, ApServerStatus=ApServerStatus, ApCommMonitorState=ApCommMonitorState, ApSipMethod=ApSipMethod, ApMsrpKpiStatsType=ApMsrpKpiStatsType, PYSNMP_MODULE_ID=apTextualConventions, ApPhyPortType=ApPhyPortType, ApDiamResultCode=ApDiamResultCode, ApStirStatsType=ApStirStatsType, ApMsrpKpiStatsCounterType=ApMsrpKpiStatsCounterType, ApRedundancyState=ApRedundancyState)

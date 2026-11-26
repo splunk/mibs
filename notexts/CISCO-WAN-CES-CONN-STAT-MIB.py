@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-WAN-CES-CONN-STAT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-CES-CONN-STAT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 cesmChan, = mibBuilder.importSymbols("BASIS-MIB", "cesmChan")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoWanCesConnStatMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 43))
 ciscoWanCesConnStatMIB.setRevisions(('2002-12-24 00:00',))
@@ -75,4 +75,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cwcConnStatsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 43, 2, 1, 2)).setObjects(("CISCO-WAN-CES-CONN-STAT-MIB", "cesPointerReframes"), ("CISCO-WAN-CES-CONN-STAT-MIB", "cesBufUnderflows"), ("CISCO-WAN-CES-CONN-STAT-MIB", "cesBufOverflows"), ("CISCO-WAN-CES-CONN-STAT-MIB", "cesIngrDiscardedBytes"), ("CISCO-WAN-CES-CONN-STAT-MIB", "cesUflowInsCells"), ("CISCO-WAN-CES-CONN-STAT-MIB", "cesOflowDropBytes"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cwcConnStatsGroup = cwcConnStatsGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-WAN-CES-CONN-STAT-MIB", cesChanStatusBitMap=cesChanStatusBitMap, cwcConnStatCompliance=cwcConnStatCompliance, counterClrButton=counterClrButton, cwcConnStatsGroup=cwcConnStatsGroup, cwcConnGenStatsGroup=cwcConnGenStatsGroup, cesCellSeqMismatchCnt=cesCellSeqMismatchCnt, PYSNMP_MODULE_ID=ciscoWanCesConnStatMIB, cesReassCells=cesReassCells, ciscoWanCesConnStatMIB=ciscoWanCesConnStatMIB, cesChanSignalingStatus=cesChanSignalingStatus, cesIngrDiscardedBytes=cesIngrDiscardedBytes, cesCellLossStatus=cesCellLossStatus, cesmChanCntGrp=cesmChanCntGrp, cesPointerReframes=cesPointerReframes, cesRcvATMState=cesRcvATMState, cwcConnStatMIBCompliances=cwcConnStatMIBCompliances, cesBufUnderflows=cesBufUnderflows, cesBufOverflows=cesBufOverflows, cesXmtATMState=cesXmtATMState, cesOflowDropBytes=cesOflowDropBytes, cesLostCells=cesLostCells, cesUflowInsCells=cesUflowInsCells, cwcConnStatMIBGroups=cwcConnStatMIBGroups, cwcConnStatMIBConformance=cwcConnStatMIBConformance, cesChanState=cesChanState, cesGenCells=cesGenCells, cesmChanCntGrpEntry=cesmChanCntGrpEntry, cesmChanCntGrpTable=cesmChanCntGrpTable, cesHdrErrors=cesHdrErrors, cesChanSecUptime=cesChanSecUptime, cesCntChanNum=cesCntChanNum)
+mibBuilder.exportSymbols("CISCO-WAN-CES-CONN-STAT-MIB", cesBufUnderflows=cesBufUnderflows, cesGenCells=cesGenCells, cesLostCells=cesLostCells, cesBufOverflows=cesBufOverflows, cesPointerReframes=cesPointerReframes, cesCellLossStatus=cesCellLossStatus, cesChanState=cesChanState, cesCntChanNum=cesCntChanNum, PYSNMP_MODULE_ID=ciscoWanCesConnStatMIB, cesUflowInsCells=cesUflowInsCells, cwcConnStatMIBGroups=cwcConnStatMIBGroups, cwcConnStatCompliance=cwcConnStatCompliance, cesmChanCntGrpTable=cesmChanCntGrpTable, cesChanSignalingStatus=cesChanSignalingStatus, cesChanSecUptime=cesChanSecUptime, counterClrButton=counterClrButton, cesmChanCntGrpEntry=cesmChanCntGrpEntry, cesChanStatusBitMap=cesChanStatusBitMap, cwcConnStatMIBCompliances=cwcConnStatMIBCompliances, cesReassCells=cesReassCells, cesXmtATMState=cesXmtATMState, cwcConnStatMIBConformance=cwcConnStatMIBConformance, cesRcvATMState=cesRcvATMState, cesHdrErrors=cesHdrErrors, cwcConnStatsGroup=cwcConnStatsGroup, cesmChanCntGrp=cesmChanCntGrp, cesIngrDiscardedBytes=cesIngrDiscardedBytes, cesCellSeqMismatchCnt=cesCellSeqMismatchCnt, cesOflowDropBytes=cesOflowDropBytes, cwcConnGenStatsGroup=cwcConnGenStatsGroup, ciscoWanCesConnStatMIB=ciscoWanCesConnStatMIB)

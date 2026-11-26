@@ -6,29 +6,29 @@
       "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "OBJECT-TYPE",
-      "Counter64",
-      "TimeTicks",
-      "iso",
       "enterprises",
-      "Counter32",
+      "iso",
+      "Gauge32",
+      "Counter64",
       "Unsigned32",
       "NOTIFICATION-TYPE",
-      "MibIdentifier",
-      "Bits",
-      "IpAddress",
-      "OBJECT-IDENTITY",
-      "Gauge32",
+      "TimeTicks",
       "Integer32",
-      "MODULE-IDENTITY"
+      "Counter32",
+      "MibIdentifier",
+      "OBJECT-IDENTITY",
+      "MODULE-IDENTITY",
+      "OBJECT-TYPE",
+      "Bits",
+      "IpAddress"
     ],
     "SNMPv2-TC": [
-      "TEXTUAL-CONVENTION",
-      "DisplayString"
+      "DisplayString",
+      "TEXTUAL-CONVENTION"
     ],
     "WRI-SMI": [
-      "wriProducts",
-      "wri"
+      "wri",
+      "wriProducts"
     ]
   },
   "msppVoltage": {
@@ -318,9 +318,9 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/fiberhome/WRI-VOLTAGE-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 14:36:27 2026",
-      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
-      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+      "Produced by pysmi-1.1.12 at Thu Nov 26 06:09:31 2026",
+      "On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner",
+      "Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]"
     ],
     "module": "WRI-VOLTAGE-MIB"
   }

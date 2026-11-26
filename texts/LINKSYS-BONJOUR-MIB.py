@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module LINKSYS-BONJOUR-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/linksys/LINKSYS-BONJOUR-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:11 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:12:02 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueSizeConstraint, ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
-InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
+InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
 rnd, = mibBuilder.importSymbols("LINKSYS-MIB", "rnd")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Gauge32, Counter64, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, ModuleIdentity, NotificationType, iso, Integer32, TimeTicks, Unsigned32, Counter32, IpAddress, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "Counter64", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "ModuleIdentity", "NotificationType", "iso", "Integer32", "TimeTicks", "Unsigned32", "Counter32", "IpAddress", "ObjectIdentity")
+Integer32, Counter32, Gauge32, Unsigned32, NotificationType, iso, Bits, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, Counter64, MibIdentifier, IpAddress, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Counter32", "Gauge32", "Unsigned32", "NotificationType", "iso", "Bits", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "Counter64", "MibIdentifier", "IpAddress", "ObjectIdentity")
 RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TextualConvention")
 rlBonjour = ModuleIdentity((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 114))
 rlBonjour.setRevisions(('2009-04-23 00:00',))
@@ -101,4 +101,4 @@ if mibBuilder.loadTexts: rlBonjourInstanceName.setDescription('Instance Name is 
 rlBonjourHostName = MibScalar((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 114, 7), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlBonjourHostName.setStatus('current')
 if mibBuilder.loadTexts: rlBonjourHostName.setDescription('Host Name is given to Bonjour driver by the project part (L1Manager)\n        When a conflict occurs: found another station with the same host name.\n        Bonjour driver is required to append _m to the given name\n        while m is an incremental integer, increasing on each conflict')
-mibBuilder.exportSymbols("LINKSYS-BONJOUR-MIB", rlBonjourStateServiceName=rlBonjourStateServiceName, rlBonjourL2Ifindex=rlBonjourL2Ifindex, PYSNMP_MODULE_ID=rlBonjour, rlBonjourL2Mode=rlBonjourL2Mode, rlBonjourStatusTable=rlBonjourStatusTable, RlBonjourOperationReason=RlBonjourOperationReason, rlBonjourStatusIPInterfaceAddr=rlBonjourStatusIPInterfaceAddr, rlBonjourStatusServiceName=rlBonjourStatusServiceName, rlBonjourStateOperationReason=rlBonjourStateOperationReason, RlBonjourServiceState=RlBonjourServiceState, rlBonjourStatusEntry=rlBonjourStatusEntry, RlBonjourOperationState=RlBonjourOperationState, rlBonjourInstanceName=rlBonjourInstanceName, rlBonjourStateL2Interface=rlBonjourStateL2Interface, rlBonjourL2RowStatus=rlBonjourL2RowStatus, rlBonjourL2Table=rlBonjourL2Table, rlBonjour=rlBonjour, rlBonjourStatusState=rlBonjourStatusState, rlBonjourHostName=rlBonjourHostName, rlBonjourPublish=rlBonjourPublish, rlBonjourStateOperationMode=rlBonjourStateOperationMode, rlBonjourStateTable=rlBonjourStateTable, rlBonjourL2Entry=rlBonjourL2Entry, rlBonjourStatusIPInterfaceType=rlBonjourStatusIPInterfaceType, rlBonjourStateEntry=rlBonjourStateEntry)
+mibBuilder.exportSymbols("LINKSYS-BONJOUR-MIB", rlBonjourStateServiceName=rlBonjourStateServiceName, RlBonjourOperationState=RlBonjourOperationState, rlBonjourStateEntry=rlBonjourStateEntry, rlBonjourStateOperationReason=rlBonjourStateOperationReason, rlBonjourHostName=rlBonjourHostName, rlBonjourL2Mode=rlBonjourL2Mode, rlBonjourL2RowStatus=rlBonjourL2RowStatus, rlBonjourL2Ifindex=rlBonjourL2Ifindex, rlBonjourStateL2Interface=rlBonjourStateL2Interface, rlBonjourStatusServiceName=rlBonjourStatusServiceName, rlBonjourInstanceName=rlBonjourInstanceName, rlBonjourStateTable=rlBonjourStateTable, rlBonjourL2Entry=rlBonjourL2Entry, rlBonjourStatusState=rlBonjourStatusState, rlBonjourL2Table=rlBonjourL2Table, rlBonjour=rlBonjour, RlBonjourOperationReason=RlBonjourOperationReason, rlBonjourStatusTable=rlBonjourStatusTable, RlBonjourServiceState=RlBonjourServiceState, rlBonjourStatusIPInterfaceAddr=rlBonjourStatusIPInterfaceAddr, rlBonjourPublish=rlBonjourPublish, rlBonjourStatusEntry=rlBonjourStatusEntry, PYSNMP_MODULE_ID=rlBonjour, rlBonjourStatusIPInterfaceType=rlBonjourStatusIPInterfaceType, rlBonjourStateOperationMode=rlBonjourStateOperationMode)

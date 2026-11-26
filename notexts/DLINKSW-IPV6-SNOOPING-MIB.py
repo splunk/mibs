@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module DLINKSW-IPV6-SNOOPING-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-IPV6-SNOOPING-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:25 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 VlanId, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "VlanId")
-NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
-Counter32, Counter64, IpAddress, ModuleIdentity, Unsigned32, Gauge32, Bits, iso, ObjectIdentity, Integer32, NotificationType, MibIdentifier, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Counter64", "IpAddress", "ModuleIdentity", "Unsigned32", "Gauge32", "Bits", "iso", "ObjectIdentity", "Integer32", "NotificationType", "MibIdentifier", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
-DisplayString, TextualConvention, TruthValue, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue", "RowStatus")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Counter32, Bits, Counter64, TimeTicks, NotificationType, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, IpAddress, ObjectIdentity, iso = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Counter32", "Bits", "Counter64", "TimeTicks", "NotificationType", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "IpAddress", "ObjectIdentity", "iso")
+TextualConvention, TruthValue, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "RowStatus", "DisplayString")
 dlinkSwIpv6SnoopMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 143))
 dlinkSwIpv6SnoopMIB.setRevisions(('2013-07-18 00:00',))
 if mibBuilder.loadTexts: dlinkSwIpv6SnoopMIB.setLastUpdated('201307180000Z')
@@ -64,4 +64,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 dIpv6SnoopStationMoveCfgGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 143, 2, 2, 3)).setObjects(("DLINKSW-IPV6-SNOOPING-MIB", "dIpv6SnoopStationMoveEnabled"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dIpv6SnoopStationMoveCfgGroup = dIpv6SnoopStationMoveCfgGroup.setStatus('current')
-mibBuilder.exportSymbols("DLINKSW-IPV6-SNOOPING-MIB", dIpv6SnoopPolicyAttachPolicy=dIpv6SnoopPolicyAttachPolicy, dIpv6SnoopNotifications=dIpv6SnoopNotifications, dIpv6SnoopMIBCompliance=dIpv6SnoopMIBCompliance, PYSNMP_MODULE_ID=dlinkSwIpv6SnoopMIB, dIpv6SnoopPolicyAttachVlanId=dIpv6SnoopPolicyAttachVlanId, dIpv6SnoopPolicyGroup=dIpv6SnoopPolicyGroup, dIpv6SnoopInterface=dIpv6SnoopInterface, dIpv6SnoopMIBGroups=dIpv6SnoopMIBGroups, dIpv6SnoopMIBCompliances=dIpv6SnoopMIBCompliances, dIpv6SnoopPolicyAttachGroup=dIpv6SnoopPolicyAttachGroup, dIpv6SnoopPolicyNumber=dIpv6SnoopPolicyNumber, dIpv6SnoopPolicyAttachRowStatus=dIpv6SnoopPolicyAttachRowStatus, dlinkSwIpv6SnoopMIB=dlinkSwIpv6SnoopMIB, dIpv6SnoopPolicyTable=dIpv6SnoopPolicyTable, dIpv6SnoopGlobal=dIpv6SnoopGlobal, dIpv6SnoopPolicyName=dIpv6SnoopPolicyName, dIpv6SnoopStationMoveCfgGroup=dIpv6SnoopStationMoveCfgGroup, dIpv6SnoopObjects=dIpv6SnoopObjects, dIpv6SnoopStationMoveEnabled=dIpv6SnoopStationMoveEnabled, dIpv6SnoopPolicyEntry=dIpv6SnoopPolicyEntry, dIpv6SnoopPolicyRowStatus=dIpv6SnoopPolicyRowStatus, dIpv6SnoopPolicyAttachTable=dIpv6SnoopPolicyAttachTable, dIpv6SnoopPolicy=dIpv6SnoopPolicy, dIpv6SnoopPolicyAttachEntry=dIpv6SnoopPolicyAttachEntry, dIpv6SnoopPolicyLimitAddrCount=dIpv6SnoopPolicyLimitAddrCount, dIpv6SnoopConformance=dIpv6SnoopConformance, dIpv6SnoopPolicyProtocol=dIpv6SnoopPolicyProtocol)
+mibBuilder.exportSymbols("DLINKSW-IPV6-SNOOPING-MIB", dIpv6SnoopInterface=dIpv6SnoopInterface, dIpv6SnoopStationMoveEnabled=dIpv6SnoopStationMoveEnabled, dIpv6SnoopPolicyTable=dIpv6SnoopPolicyTable, dIpv6SnoopConformance=dIpv6SnoopConformance, dIpv6SnoopMIBGroups=dIpv6SnoopMIBGroups, dIpv6SnoopPolicyAttachVlanId=dIpv6SnoopPolicyAttachVlanId, dIpv6SnoopPolicyEntry=dIpv6SnoopPolicyEntry, dIpv6SnoopPolicyGroup=dIpv6SnoopPolicyGroup, dIpv6SnoopGlobal=dIpv6SnoopGlobal, dIpv6SnoopMIBCompliances=dIpv6SnoopMIBCompliances, dIpv6SnoopPolicyAttachPolicy=dIpv6SnoopPolicyAttachPolicy, dIpv6SnoopPolicyAttachGroup=dIpv6SnoopPolicyAttachGroup, dIpv6SnoopPolicyNumber=dIpv6SnoopPolicyNumber, dIpv6SnoopPolicyLimitAddrCount=dIpv6SnoopPolicyLimitAddrCount, dIpv6SnoopNotifications=dIpv6SnoopNotifications, PYSNMP_MODULE_ID=dlinkSwIpv6SnoopMIB, dIpv6SnoopPolicyName=dIpv6SnoopPolicyName, dIpv6SnoopPolicyRowStatus=dIpv6SnoopPolicyRowStatus, dIpv6SnoopPolicyAttachRowStatus=dIpv6SnoopPolicyAttachRowStatus, dlinkSwIpv6SnoopMIB=dlinkSwIpv6SnoopMIB, dIpv6SnoopPolicy=dIpv6SnoopPolicy, dIpv6SnoopPolicyAttachTable=dIpv6SnoopPolicyAttachTable, dIpv6SnoopPolicyProtocol=dIpv6SnoopPolicyProtocol, dIpv6SnoopMIBCompliance=dIpv6SnoopMIBCompliance, dIpv6SnoopObjects=dIpv6SnoopObjects, dIpv6SnoopPolicyAttachEntry=dIpv6SnoopPolicyAttachEntry, dIpv6SnoopStationMoveCfgGroup=dIpv6SnoopStationMoveCfgGroup)

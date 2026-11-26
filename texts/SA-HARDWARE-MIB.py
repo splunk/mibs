@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module SA-HARDWARE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/SA-HARDWARE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, enterprises, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "enterprises", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, enterprises, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "enterprises", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 sa = MibIdentifier((1, 3, 6, 1, 4, 1, 1429))
 saVoip = MibIdentifier((1, 3, 6, 1, 4, 1, 1429, 78))
 saHardware = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 78, 4))
@@ -103,4 +103,4 @@ if mibBuilder.loadTexts: saHwDescrIntCountWireless.setDescription('')
 saHwDescrIntCountDect = MibScalar((1, 3, 6, 1, 4, 1, 1429, 78, 4, 1, 101, 6), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: saHwDescrIntCountDect.setStatus('current')
 if mibBuilder.loadTexts: saHwDescrIntCountDect.setDescription('')
-mibBuilder.exportSymbols("SA-HARDWARE-MIB", saHwDescrEthSwitch=saHwDescrEthSwitch, saHwDescrDectType=saHwDescrDectType, saHwDescrIntCountEthernet=saHwDescrIntCountEthernet, saVoip=saVoip, saHwDescrSerialNumber=saHwDescrSerialNumber, saHwDescrFactoryId=saHwDescrFactoryId, saHwDescrDiplexer=saHwDescrDiplexer, saHwDescrUsbType=saHwDescrUsbType, saHwDescrIntCount=saHwDescrIntCount, saHwDescrIntCountUsb=saHwDescrIntCountUsb, saHwDescrWirelessType=saHwDescrWirelessType, saHwDescrModel=saHwDescrModel, saHwDescrCmMacAddress=saHwDescrCmMacAddress, saHwDescrIntCountWireless=saHwDescrIntCountWireless, saHwDescrTuner=saHwDescrTuner, saHwDescrDmsType=saHwDescrDmsType, sa=sa, saHwDescrIntCountDect=saHwDescrIntCountDect, saHwDescrMainProcessor=saHwDescrMainProcessor, saHardware=saHardware, saHwDescrManufactureDate=saHwDescrManufactureDate, saHwDescrIntCountPhoneLine=saHwDescrIntCountPhoneLine, PYSNMP_MODULE_ID=saHardware, saHwDescrHardwareVersion=saHwDescrHardwareVersion, saHwDescrMocaType=saHwDescrMocaType, saHwDescrPowerSupply=saHwDescrPowerSupply, saHwDescrIntCountMaxBattery=saHwDescrIntCountMaxBattery, saHwDescrMemoryMain=saHwDescrMemoryMain, saHwDescrMemoryFlash=saHwDescrMemoryFlash, saHwDescr=saHwDescr, saHwDescrSlic=saHwDescrSlic, saHwDescrWirelessChip=saHwDescrWirelessChip)
+mibBuilder.exportSymbols("SA-HARDWARE-MIB", saHwDescrWirelessChip=saHwDescrWirelessChip, saVoip=saVoip, saHwDescrDiplexer=saHwDescrDiplexer, saHwDescrDectType=saHwDescrDectType, saHwDescr=saHwDescr, saHwDescrWirelessType=saHwDescrWirelessType, saHwDescrHardwareVersion=saHwDescrHardwareVersion, sa=sa, saHwDescrMainProcessor=saHwDescrMainProcessor, saHwDescrPowerSupply=saHwDescrPowerSupply, saHwDescrEthSwitch=saHwDescrEthSwitch, saHwDescrIntCountUsb=saHwDescrIntCountUsb, saHwDescrDmsType=saHwDescrDmsType, saHwDescrIntCountEthernet=saHwDescrIntCountEthernet, saHwDescrIntCountPhoneLine=saHwDescrIntCountPhoneLine, saHwDescrIntCountWireless=saHwDescrIntCountWireless, saHwDescrCmMacAddress=saHwDescrCmMacAddress, saHwDescrIntCount=saHwDescrIntCount, saHwDescrIntCountMaxBattery=saHwDescrIntCountMaxBattery, saHwDescrManufactureDate=saHwDescrManufactureDate, saHwDescrMemoryMain=saHwDescrMemoryMain, saHwDescrMocaType=saHwDescrMocaType, saHwDescrIntCountDect=saHwDescrIntCountDect, saHwDescrSlic=saHwDescrSlic, saHwDescrModel=saHwDescrModel, saHardware=saHardware, saHwDescrFactoryId=saHwDescrFactoryId, saHwDescrUsbType=saHwDescrUsbType, saHwDescrSerialNumber=saHwDescrSerialNumber, saHwDescrMemoryFlash=saHwDescrMemoryFlash, PYSNMP_MODULE_ID=saHardware, saHwDescrTuner=saHwDescrTuner)

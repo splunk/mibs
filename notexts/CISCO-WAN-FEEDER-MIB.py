@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-WAN-FEEDER-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-FEEDER-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, IpAddress, TimeTicks, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, NotificationType, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "IpAddress", "TimeTicks", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "NotificationType", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoWanFeederMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 15))
 ciscoWanFeederMIB.setRevisions(('2003-03-27 00:00', '2000-10-10 00:00', '2000-04-25 00:00',))
@@ -68,4 +68,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cwfFeederGroup2 = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 15, 3, 2, 2)).setObjects(("CISCO-WAN-FEEDER-MIB", "cwfFeederName"), ("CISCO-WAN-FEEDER-MIB", "cwfLanIP"), ("CISCO-WAN-FEEDER-MIB", "cwfNetIP"), ("CISCO-WAN-FEEDER-MIB", "cwfRemoteShelf"), ("CISCO-WAN-FEEDER-MIB", "cwfRemoteSlot"), ("CISCO-WAN-FEEDER-MIB", "cwfRemotePort"), ("CISCO-WAN-FEEDER-MIB", "cwfFeederType"), ("CISCO-WAN-FEEDER-MIB", "cwfModelNumber"), ("CISCO-WAN-FEEDER-MIB", "cwfLMIAdminStatus"), ("CISCO-WAN-FEEDER-MIB", "cwfLMIOperStatus"), ("CISCO-WAN-FEEDER-MIB", "cwfFeederNodeAlarm"), ("CISCO-WAN-FEEDER-MIB", "cwfFeederRowStatus"), ("CISCO-WAN-FEEDER-MIB", "cwfLMIType"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cwfFeederGroup2 = cwfFeederGroup2.setStatus('current')
-mibBuilder.exportSymbols("CISCO-WAN-FEEDER-MIB", cwfFeederEntry=cwfFeederEntry, cwfLMIOperStatus=cwfLMIOperStatus, PYSNMP_MODULE_ID=ciscoWanFeederMIB, cwfRemoteShelf=cwfRemoteShelf, cwfMIBCompliances=cwfMIBCompliances, cwfFeederTable=cwfFeederTable, cwfModelNumber=cwfModelNumber, cwfMIBObjects=cwfMIBObjects, cwfRemoteSlot=cwfRemoteSlot, cwfFeeder=cwfFeeder, cwfFeederName=cwfFeederName, cwfLanIP=cwfLanIP, cwfFeederNodeAlarm=cwfFeederNodeAlarm, cwfFeederRowStatus=cwfFeederRowStatus, cwfMIBGroups=cwfMIBGroups, cwfMIBCompliance2=cwfMIBCompliance2, ciscoWanFeederMIB=ciscoWanFeederMIB, cwfLMIType=cwfLMIType, cwfFeederIfNum=cwfFeederIfNum, cwfNetIP=cwfNetIP, cwfFeederType=cwfFeederType, cwfRemotePort=cwfRemotePort, cwfFeederGroup2=cwfFeederGroup2, cwfMIBCompliance=cwfMIBCompliance, cwfLMIAdminStatus=cwfLMIAdminStatus, cwfMIBConformance=cwfMIBConformance, cwfFeederGroup=cwfFeederGroup)
+mibBuilder.exportSymbols("CISCO-WAN-FEEDER-MIB", cwfLMIOperStatus=cwfLMIOperStatus, cwfFeederEntry=cwfFeederEntry, cwfFeederTable=cwfFeederTable, cwfLMIType=cwfLMIType, PYSNMP_MODULE_ID=ciscoWanFeederMIB, cwfFeederNodeAlarm=cwfFeederNodeAlarm, cwfFeederIfNum=cwfFeederIfNum, cwfMIBCompliance2=cwfMIBCompliance2, ciscoWanFeederMIB=ciscoWanFeederMIB, cwfFeederGroup=cwfFeederGroup, cwfRemoteShelf=cwfRemoteShelf, cwfFeederRowStatus=cwfFeederRowStatus, cwfFeederName=cwfFeederName, cwfFeederGroup2=cwfFeederGroup2, cwfFeederType=cwfFeederType, cwfMIBConformance=cwfMIBConformance, cwfMIBObjects=cwfMIBObjects, cwfFeeder=cwfFeeder, cwfRemoteSlot=cwfRemoteSlot, cwfMIBCompliances=cwfMIBCompliances, cwfNetIP=cwfNetIP, cwfMIBGroups=cwfMIBGroups, cwfModelNumber=cwfModelNumber, cwfMIBCompliance=cwfMIBCompliance, cwfLanIP=cwfLanIP, cwfRemotePort=cwfRemotePort, cwfLMIAdminStatus=cwfLMIAdminStatus)

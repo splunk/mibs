@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-RLINVENTORYENT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-RLINVENTORYENT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, NotificationType, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "NotificationType", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, TimeTicks, ModuleIdentity, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "TimeTicks", "ModuleIdentity", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 class UnitIfindexType(TextualConvention, Integer32):
     description = 'Unit or ifindex type.'
     status = 'current'
@@ -48,4 +48,4 @@ if mibBuilder.loadTexts: rlInventoryEntSerialNumber.setDescription('The serial n
 rlInventoryEntUnitNum = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 217, 1, 8), Unsigned32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlInventoryEntUnitNum.setStatus('current')
 if mibBuilder.loadTexts: rlInventoryEntUnitNum.setDescription('if rlInventoryEntUnitOrIfindex = 1 this field contain the unit number that associated to this port')
-mibBuilder.exportSymbols("CISCOSB-RLINVENTORYENT-MIB", UnitIfindexType=UnitIfindexType, rlInventoryEntPID=rlInventoryEntPID, rlInventoryEntVendorID=rlInventoryEntVendorID, rlInventoryEntName=rlInventoryEntName, rlInventoryEntSerialNumber=rlInventoryEntSerialNumber, rlInventoryEntDescription=rlInventoryEntDescription, rlInventoryEntTable=rlInventoryEntTable, rlInventoryEntUnitIfindexID=rlInventoryEntUnitIfindexID, rlInventoryEntUnitOrIfindex=rlInventoryEntUnitOrIfindex, rlInventoryEntUnitNum=rlInventoryEntUnitNum, rlInventoryEntEntry=rlInventoryEntEntry)
+mibBuilder.exportSymbols("CISCOSB-RLINVENTORYENT-MIB", rlInventoryEntEntry=rlInventoryEntEntry, rlInventoryEntPID=rlInventoryEntPID, rlInventoryEntName=rlInventoryEntName, rlInventoryEntUnitNum=rlInventoryEntUnitNum, UnitIfindexType=UnitIfindexType, rlInventoryEntTable=rlInventoryEntTable, rlInventoryEntSerialNumber=rlInventoryEntSerialNumber, rlInventoryEntDescription=rlInventoryEntDescription, rlInventoryEntUnitOrIfindex=rlInventoryEntUnitOrIfindex, rlInventoryEntVendorID=rlInventoryEntVendorID, rlInventoryEntUnitIfindexID=rlInventoryEntUnitIfindexID)

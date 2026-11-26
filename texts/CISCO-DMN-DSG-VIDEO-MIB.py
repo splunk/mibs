@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-VIDEO-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-VIDEO-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoDSGVideo = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 14))
 ciscoDSGVideo.setRevisions(('2010-10-13 08:00', '2010-08-30 11:00', '2010-03-22 05:00', '2010-02-12 12:00', '2009-12-07 12:00',))
 
@@ -99,4 +99,4 @@ if mibBuilder.loadTexts: aspectRatioWSSStatus.setDescription('Widescreen Signall
 closedCaptionActOP = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 14, 2, 1, 14), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2, 3, 4, 5, 6, 7, 8))).clone(namedValues=NamedValues(("auto", 1), ("saCustom", 2), ("eia708", 3), ("type3", 4), ("type4SA", 5), ("type4ATSC", 6), ("reserved", 7), ("dvs157", 8)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: closedCaptionActOP.setStatus('current')
 if mibBuilder.loadTexts: closedCaptionActOP.setDescription('Actual Closed Captioning Output Mode.')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-VIDEO-MIB", videoStatusTable=videoStatusTable, videoStatusEntry=videoStatusEntry, aspectRatioWSSMode=aspectRatioWSSMode, ciscoDSGVideo=ciscoDSGVideo, videoPVOutput=videoPVOutput, videoPVFormat=videoPVFormat, videoCtrlInstance=videoCtrlInstance, videoCutoff=videoCutoff, closedCaptionPrefMode=closedCaptionPrefMode, PYSNMP_MODULE_ID=ciscoDSGVideo, aspectRatioStreamAR=aspectRatioStreamAR, videoCtrlEntry=videoCtrlEntry, aspectRatioConversion=aspectRatioConversion, videoCtrlTable=videoCtrlTable, videoStatusInstance=videoStatusInstance, videoTriSynch=videoTriSynch, videoStream=videoStream, closedCaptionActOP=closedCaptionActOP, videoSynchMode=videoSynchMode, videoSDFormat=videoSDFormat, videoEncoding=videoEncoding, aspectRatioWSSStatus=aspectRatioWSSStatus, aspectRatioSD=aspectRatioSD, videoBitRate=videoBitRate, video32PullDown=video32PullDown, aspectRatioSelection=aspectRatioSelection, videoFPS=videoFPS, videoSDOutput=videoSDOutput)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-VIDEO-MIB", videoCtrlInstance=videoCtrlInstance, videoEncoding=videoEncoding, aspectRatioStreamAR=aspectRatioStreamAR, video32PullDown=video32PullDown, videoCtrlTable=videoCtrlTable, videoStatusTable=videoStatusTable, closedCaptionActOP=closedCaptionActOP, aspectRatioWSSMode=aspectRatioWSSMode, closedCaptionPrefMode=closedCaptionPrefMode, videoTriSynch=videoTriSynch, videoSynchMode=videoSynchMode, videoPVOutput=videoPVOutput, aspectRatioWSSStatus=aspectRatioWSSStatus, aspectRatioSD=aspectRatioSD, videoStatusInstance=videoStatusInstance, aspectRatioSelection=aspectRatioSelection, videoStream=videoStream, videoSDOutput=videoSDOutput, videoSDFormat=videoSDFormat, ciscoDSGVideo=ciscoDSGVideo, aspectRatioConversion=aspectRatioConversion, videoCtrlEntry=videoCtrlEntry, videoCutoff=videoCutoff, videoPVFormat=videoPVFormat, videoFPS=videoFPS, PYSNMP_MODULE_ID=ciscoDSGVideo, videoBitRate=videoBitRate, videoStatusEntry=videoStatusEntry)

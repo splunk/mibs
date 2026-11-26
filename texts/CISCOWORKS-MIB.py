@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCOWORKS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOWORKS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoworks, = mibBuilder.importSymbols("CISCO-SMI", "ciscoworks")
 ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
 sysUpTime, = mibBuilder.importSymbols("SNMPv2-MIB", "sysUpTime")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 cwLogMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 14, 1))
 cwLogMIB.setRevisions(('2003-02-18 00:00', '1995-04-02 00:00',))
 
@@ -59,4 +59,4 @@ ciscoCwNotificationsGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 14, 1, 3, 2,
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoCwNotificationsGroup = ciscoCwNotificationsGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoCwNotificationsGroup.setDescription('Cisco Works Notification Objects Group.')
-mibBuilder.exportSymbols("CISCOWORKS-MIB", ciscoCwNotificationsGroup=ciscoCwNotificationsGroup, cwDevLogTrap=cwDevLogTrap, ciscoCwObjectsGroup=ciscoCwObjectsGroup, cwLog=cwLog, cwLogMsg=cwLogMsg, cwLogMIB=cwLogMIB, cwMIBConform=cwMIBConform, ciscoCwMIBCompliance=ciscoCwMIBCompliance, cwTrapsPrefix=cwTrapsPrefix, cwAppLogTrap=cwAppLogTrap, PYSNMP_MODULE_ID=cwLogMIB, cwLogDate=cwLogDate, cwLogApp=cwLogApp, ciscoCwMIBCompliances=ciscoCwMIBCompliances, ciscoCwMIBGroups=ciscoCwMIBGroups, cwLogSource=cwLogSource, cwTraps=cwTraps)
+mibBuilder.exportSymbols("CISCOWORKS-MIB", cwAppLogTrap=cwAppLogTrap, ciscoCwMIBCompliance=ciscoCwMIBCompliance, PYSNMP_MODULE_ID=cwLogMIB, cwTraps=cwTraps, ciscoCwNotificationsGroup=ciscoCwNotificationsGroup, cwLogMIB=cwLogMIB, cwTrapsPrefix=cwTrapsPrefix, cwLogDate=cwLogDate, cwLogApp=cwLogApp, cwLogMsg=cwLogMsg, ciscoCwMIBCompliances=ciscoCwMIBCompliances, ciscoCwMIBGroups=ciscoCwMIBGroups, cwLog=cwLog, ciscoCwObjectsGroup=ciscoCwObjectsGroup, cwDevLogTrap=cwDevLogTrap, cwMIBConform=cwMIBConform, cwLogSource=cwLogSource)

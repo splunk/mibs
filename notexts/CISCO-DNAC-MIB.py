@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-DNAC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DNAC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
+InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Counter64, MibIdentifier, NotificationType, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Counter64", "MibIdentifier", "NotificationType", "iso", "Unsigned32", "Counter32")
-DisplayString, TextualConvention, TimeStamp = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TimeStamp")
+Counter64, TimeTicks, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
+TimeStamp, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "DisplayString", "TextualConvention")
 ciscoDnacMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 867))
 ciscoDnacMIB.setRevisions(('2019-08-15 00:00', '2019-08-13 00:00',))
 if mibBuilder.loadTexts: ciscoDnacMIB.setLastUpdated('201908010000Z')
@@ -72,4 +72,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoDnacAlarmGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 867, 2, 2, 2)).setObjects(("CISCO-DNAC-MIB", "cDnacAlarm"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoDnacAlarmGroup = ciscoDnacAlarmGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DNAC-MIB", ciscoDnacMIBCompliances=ciscoDnacMIBCompliances, ciscoDnacObjectGroup=ciscoDnacObjectGroup, ciscoDnacMIBCompliance=ciscoDnacMIBCompliance, cDnacAlarms=cDnacAlarms, cDnacEventID=cDnacEventID, cDnacAlarmEntry=cDnacAlarmEntry, cDnacSubDomain=cDnacSubDomain, cDnacSource=cDnacSource, ciscoDnacMIBObjects=ciscoDnacMIBObjects, cDnacAlarmsTable=cDnacAlarmsTable, cDnacIndex=cDnacIndex, cDnacTimestamp=cDnacTimestamp, cDnacName=cDnacName, cDnacInstanceID=cDnacInstanceID, cDnacType=cDnacType, cDnacDescription=cDnacDescription, cDnacAlarmsMax=cDnacAlarmsMax, cDnacUserMessage=cDnacUserMessage, ciscoDnacMIBNotifs=ciscoDnacMIBNotifs, cDnacDomain=cDnacDomain, cDnacTags=cDnacTags, ciscoDnacAlarmGroup=ciscoDnacAlarmGroup, ciscoDnacMIB=ciscoDnacMIB, PYSNMP_MODULE_ID=ciscoDnacMIB, cDnacAlarm=cDnacAlarm, ciscoDnacMIBConform=ciscoDnacMIBConform, ciscoDnacMIBGroups=ciscoDnacMIBGroups, cDnacSeverity=cDnacSeverity, cDnacVersion=cDnacVersion, cDnacCategory=cDnacCategory)
+mibBuilder.exportSymbols("CISCO-DNAC-MIB", ciscoDnacMIBGroups=ciscoDnacMIBGroups, cDnacIndex=cDnacIndex, ciscoDnacObjectGroup=ciscoDnacObjectGroup, cDnacAlarmEntry=cDnacAlarmEntry, cDnacDescription=cDnacDescription, cDnacUserMessage=cDnacUserMessage, cDnacName=cDnacName, cDnacAlarmsMax=cDnacAlarmsMax, ciscoDnacMIBCompliances=ciscoDnacMIBCompliances, cDnacSeverity=cDnacSeverity, cDnacDomain=cDnacDomain, cDnacAlarm=cDnacAlarm, cDnacCategory=cDnacCategory, cDnacTimestamp=cDnacTimestamp, cDnacInstanceID=cDnacInstanceID, ciscoDnacMIB=ciscoDnacMIB, cDnacSubDomain=cDnacSubDomain, cDnacType=cDnacType, ciscoDnacMIBConform=ciscoDnacMIBConform, ciscoDnacMIBObjects=ciscoDnacMIBObjects, ciscoDnacAlarmGroup=ciscoDnacAlarmGroup, cDnacSource=cDnacSource, ciscoDnacMIBCompliance=ciscoDnacMIBCompliance, PYSNMP_MODULE_ID=ciscoDnacMIB, cDnacVersion=cDnacVersion, cDnacEventID=cDnacEventID, cDnacAlarmsTable=cDnacAlarmsTable, ciscoDnacMIBNotifs=ciscoDnacMIBNotifs, cDnacTags=cDnacTags, cDnacAlarms=cDnacAlarms)

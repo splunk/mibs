@@ -1,15 +1,15 @@
 #
 # PySNMP MIB module PURESTORAGE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/pure/PURESTORAGE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:39:23 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:13:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection")
-ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
-iso, IpAddress, ModuleIdentity, Counter64, ObjectIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, NotificationType, Bits, Gauge32, Counter32, MibIdentifier, Integer32, enterprises, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "iso", "IpAddress", "ModuleIdentity", "Counter64", "ObjectIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "NotificationType", "Bits", "Gauge32", "Counter32", "MibIdentifier", "Integer32", "enterprises", "TimeTicks")
+ConstraintsIntersection, ConstraintsUnion, ValueSizeConstraint, SingleValueConstraint, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "ValueSizeConstraint", "SingleValueConstraint", "ValueRangeConstraint")
+NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
+Integer32, Bits, MibIdentifier, Counter32, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, Gauge32, TimeTicks, enterprises, IpAddress, NotificationType, ModuleIdentity, ObjectIdentity, Unsigned32, iso = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "Bits", "MibIdentifier", "Counter32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "Gauge32", "TimeTicks", "enterprises", "IpAddress", "NotificationType", "ModuleIdentity", "ObjectIdentity", "Unsigned32", "iso")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 purestorage = ModuleIdentity((1, 3, 6, 1, 4, 1, 40482))
 purestorage.setRevisions(('2012-09-20 00:00',))
@@ -57,4 +57,4 @@ pureWarningTrap = NotificationType((1, 3, 6, 1, 4, 1, 40482, 2, 51)).setObjects(
 if mibBuilder.loadTexts: pureWarningTrap.setStatus('current')
 pureCriticalTrap = NotificationType((1, 3, 6, 1, 4, 1, 40482, 2, 52)).setObjects(("PURESTORAGE-MIB", "pureProductName"), ("PURESTORAGE-MIB", "pureProductVersion"), ("PURESTORAGE-MIB", "pureHost"), ("PURESTORAGE-MIB", "pureAlertCode"), ("PURESTORAGE-MIB", "pureAlertSubject"), ("PURESTORAGE-MIB", "pureAlertBody"))
 if mibBuilder.loadTexts: pureCriticalTrap.setStatus('current')
-mibBuilder.exportSymbols("PURESTORAGE-MIB", pureNotifications=pureNotifications, pureCriticalTrap=pureCriticalTrap, pureProductName=pureProductName, pureArrayReadLatency=pureArrayReadLatency, purestorage=purestorage, pureAlertCode=pureAlertCode, purePerformance=purePerformance, pureAlertSubject=pureAlertSubject, pureObjects=pureObjects, PYSNMP_MODULE_ID=purestorage, pureAlertReminder=pureAlertReminder, pureArrayWriteBandwidth=pureArrayWriteBandwidth, pureProductVersion=pureProductVersion, pureHost=pureHost, pureArrayWriteIOPS=pureArrayWriteIOPS, pureArrayWriteLatency=pureArrayWriteLatency, pureArrayReadBandwidth=pureArrayReadBandwidth, pureArrayReadIOPS=pureArrayReadIOPS, pureAlertBody=pureAlertBody, pureWarningTrap=pureWarningTrap, pureSystem=pureSystem, pureExperimental=pureExperimental, pureInfoTrap=pureInfoTrap)
+mibBuilder.exportSymbols("PURESTORAGE-MIB", pureProductName=pureProductName, pureArrayReadIOPS=pureArrayReadIOPS, pureAlertReminder=pureAlertReminder, purestorage=purestorage, pureArrayWriteLatency=pureArrayWriteLatency, pureNotifications=pureNotifications, pureHost=pureHost, pureArrayWriteBandwidth=pureArrayWriteBandwidth, pureArrayReadBandwidth=pureArrayReadBandwidth, pureCriticalTrap=pureCriticalTrap, pureSystem=pureSystem, pureProductVersion=pureProductVersion, pureWarningTrap=pureWarningTrap, pureAlertCode=pureAlertCode, pureAlertSubject=pureAlertSubject, pureArrayWriteIOPS=pureArrayWriteIOPS, pureExperimental=pureExperimental, purePerformance=purePerformance, pureInfoTrap=pureInfoTrap, pureAlertBody=pureAlertBody, PYSNMP_MODULE_ID=purestorage, pureObjects=pureObjects, pureArrayReadLatency=pureArrayReadLatency)

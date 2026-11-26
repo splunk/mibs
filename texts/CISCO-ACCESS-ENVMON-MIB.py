@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-ACCESS-ENVMON-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ACCESS-ENVMON-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
-ciscoEnvMonVoltageState, ciscoEnvMonTemperatureState, ciscoEnvMonTemperatureStatusDescr, ciscoEnvMonSupplyStatusEntry, ciscoEnvMonVoltageStatusDescr = mibBuilder.importSymbols("CISCO-ENVMON-MIB", "ciscoEnvMonVoltageState", "ciscoEnvMonTemperatureState", "ciscoEnvMonTemperatureStatusDescr", "ciscoEnvMonSupplyStatusEntry", "ciscoEnvMonVoltageStatusDescr")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ciscoEnvMonVoltageStatusDescr, ciscoEnvMonVoltageState, ciscoEnvMonTemperatureState, ciscoEnvMonTemperatureStatusDescr, ciscoEnvMonSupplyStatusEntry = mibBuilder.importSymbols("CISCO-ENVMON-MIB", "ciscoEnvMonVoltageStatusDescr", "ciscoEnvMonVoltageState", "ciscoEnvMonTemperatureState", "ciscoEnvMonTemperatureStatusDescr", "ciscoEnvMonSupplyStatusEntry")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoAccessEnvMonMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 61))
 ciscoAccessEnvMonMIB.setRevisions(('1998-08-05 00:00',))
 
@@ -54,4 +54,4 @@ caemGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 61, 3, 2, 1)).setObjects(("CISC
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     caemGroup = caemGroup.setStatus('current')
 if mibBuilder.loadTexts: caemGroup.setDescription('A collection of objects providing the additional Environmental\n             Monitor information beyond that provided by\n             Cisco Environmental Monitor MIB.\n            ')
-mibBuilder.exportSymbols("CISCO-ACCESS-ENVMON-MIB", ciscoAccessEnvMonMIB=ciscoAccessEnvMonMIB, caemCompliance=caemCompliance, caemVoltageNotification=caemVoltageNotification, caemConformance=caemConformance, caemObjects=caemObjects, PYSNMP_MODULE_ID=ciscoAccessEnvMonMIB, caemMIBNotificationPrefix=caemMIBNotificationPrefix, caemGroups=caemGroups, caemCompliances=caemCompliances, caemSupplyStatusEntry=caemSupplyStatusEntry, caemSupplyStatusTable=caemSupplyStatusTable, caemMIBNotifications=caemMIBNotifications, caemTemperatureNotification=caemTemperatureNotification, caemGroup=caemGroup, caemSupplyFailedComponent=caemSupplyFailedComponent)
+mibBuilder.exportSymbols("CISCO-ACCESS-ENVMON-MIB", caemConformance=caemConformance, caemObjects=caemObjects, caemCompliances=caemCompliances, caemSupplyFailedComponent=caemSupplyFailedComponent, caemGroups=caemGroups, caemMIBNotifications=caemMIBNotifications, caemSupplyStatusTable=caemSupplyStatusTable, caemVoltageNotification=caemVoltageNotification, caemCompliance=caemCompliance, caemMIBNotificationPrefix=caemMIBNotificationPrefix, caemGroup=caemGroup, caemTemperatureNotification=caemTemperatureNotification, ciscoAccessEnvMonMIB=ciscoAccessEnvMonMIB, caemSupplyStatusEntry=caemSupplyStatusEntry, PYSNMP_MODULE_ID=ciscoAccessEnvMonMIB)

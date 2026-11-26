@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCO-IETF-PW-ENET-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-IETF-PW-ENET-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 cpwVcIndex, = mibBuilder.importSymbols("CISCO-IETF-PW-MIB", "cpwVcIndex")
 CpwVcVlanCfg, = mibBuilder.importSymbols("CISCO-IETF-PW-TC-MIB", "CpwVcVlanCfg")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
 InterfaceIndexOrZero, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndexOrZero")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, experimental, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "experimental", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
-DisplayString, RowStatus, StorageType, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "StorageType", "TextualConvention")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, experimental, ModuleIdentity, Integer32, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "experimental", "ModuleIdentity", "Integer32", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity", "IpAddress")
+DisplayString, TextualConvention, RowStatus, StorageType = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "RowStatus", "StorageType")
 cpwVcEnetMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 108))
 cpwVcEnetMIB.setRevisions(('2002-09-22 12:00', '2002-08-20 12:00', '2002-02-03 12:00',))
 if mibBuilder.loadTexts: cpwVcEnetMIB.setLastUpdated('200209221200Z')
@@ -73,4 +73,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cpwVcEnetMplsPriGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 108, 2, 1, 3)).setObjects(("CISCO-IETF-PW-ENET-MIB", "cpwVcEnetMplsPriMapping"), ("CISCO-IETF-PW-ENET-MIB", "cpwVcEnetMplsPriMappingRowStatus"), ("CISCO-IETF-PW-ENET-MIB", "cpwVcEnetMplsPriMappingStorageType"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cpwVcEnetMplsPriGroup = cpwVcEnetMplsPriGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-IETF-PW-ENET-MIB", cpwVcEnetMplsPriMapping=cpwVcEnetMplsPriMapping, cpwVcEnetMplsPriMappingTableEntry=cpwVcEnetMplsPriMappingTableEntry, cpwVcEnetPortIfIndex=cpwVcEnetPortIfIndex, cpwVcEnetMplsPriMappingTable=cpwVcEnetMplsPriMappingTable, cpwVcEnetStatsEntry=cpwVcEnetStatsEntry, cpwVcEnetStatsIllegalLength=cpwVcEnetStatsIllegalLength, cpwVcEnetTable=cpwVcEnetTable, cpwVcEnetMplsPriMappingRowStatus=cpwVcEnetMplsPriMappingRowStatus, cpwVcEnetEntry=cpwVcEnetEntry, cpwVcEnetStatsTable=cpwVcEnetStatsTable, cpwVcEnetVcIfIndex=cpwVcEnetVcIfIndex, cpwVcEnetMIB=cpwVcEnetMIB, cpwVcEnetMplsPriGroup=cpwVcEnetMplsPriGroup, cpwVcEnetPortVlan=cpwVcEnetPortVlan, cpwVcEnetConformance=cpwVcEnetConformance, cpwVcEnetStorageType=cpwVcEnetStorageType, cpwVcEnetGroup=cpwVcEnetGroup, cpwVcEnetObjects=cpwVcEnetObjects, cpwVcEnetStatsIllegalVlan=cpwVcEnetStatsIllegalVlan, cpwVcEnetRowStatus=cpwVcEnetRowStatus, PYSNMP_MODULE_ID=cpwVcEnetMIB, cpwVcEnetVlanMode=cpwVcEnetVlanMode, cpwVcEnetMplsPriMappingStorageType=cpwVcEnetMplsPriMappingStorageType, cpwVcEnetModuleCompliance=cpwVcEnetModuleCompliance, cpwVcEnetCompliances=cpwVcEnetCompliances, cpwVcEnetPwVlan=cpwVcEnetPwVlan, cpwVcEnetGroups=cpwVcEnetGroups, cpwVcEnetNotifications=cpwVcEnetNotifications, cpwVcStatsGroup=cpwVcStatsGroup)
+mibBuilder.exportSymbols("CISCO-IETF-PW-ENET-MIB", cpwVcEnetGroup=cpwVcEnetGroup, cpwVcEnetNotifications=cpwVcEnetNotifications, cpwVcEnetVlanMode=cpwVcEnetVlanMode, cpwVcEnetMplsPriMappingTable=cpwVcEnetMplsPriMappingTable, cpwVcEnetPortIfIndex=cpwVcEnetPortIfIndex, cpwVcEnetStatsTable=cpwVcEnetStatsTable, cpwVcEnetMplsPriGroup=cpwVcEnetMplsPriGroup, cpwVcEnetCompliances=cpwVcEnetCompliances, cpwVcEnetGroups=cpwVcEnetGroups, cpwVcEnetMplsPriMappingRowStatus=cpwVcEnetMplsPriMappingRowStatus, cpwVcEnetPwVlan=cpwVcEnetPwVlan, cpwVcEnetStatsIllegalLength=cpwVcEnetStatsIllegalLength, cpwVcEnetEntry=cpwVcEnetEntry, cpwVcEnetMplsPriMapping=cpwVcEnetMplsPriMapping, cpwVcEnetConformance=cpwVcEnetConformance, cpwVcEnetPortVlan=cpwVcEnetPortVlan, cpwVcEnetModuleCompliance=cpwVcEnetModuleCompliance, cpwVcStatsGroup=cpwVcStatsGroup, cpwVcEnetMplsPriMappingStorageType=cpwVcEnetMplsPriMappingStorageType, cpwVcEnetMIB=cpwVcEnetMIB, cpwVcEnetStorageType=cpwVcEnetStorageType, cpwVcEnetObjects=cpwVcEnetObjects, cpwVcEnetTable=cpwVcEnetTable, cpwVcEnetRowStatus=cpwVcEnetRowStatus, PYSNMP_MODULE_ID=cpwVcEnetMIB, cpwVcEnetStatsEntry=cpwVcEnetStatsEntry, cpwVcEnetMplsPriMappingTableEntry=cpwVcEnetMplsPriMappingTableEntry, cpwVcEnetVcIfIndex=cpwVcEnetVcIfIndex, cpwVcEnetStatsIllegalVlan=cpwVcEnetStatsIllegalVlan)

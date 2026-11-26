@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
-InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
-TimeInterval, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TimeInterval", "TextualConvention", "DisplayString")
+InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
+TimeInterval, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TimeInterval", "DisplayString", "TextualConvention")
 ciscoDot11CscMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 109))
 ciscoDot11CscMIB.setRevisions(('2004-06-02 00:00', '2003-05-06 00:00',))
 if mibBuilder.loadTexts: ciscoDot11CscMIB.setLastUpdated('200406020000Z')
@@ -45,4 +45,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoDot11CscConfigGlobalGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 109, 2, 2, 1)).setObjects(("CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB", "cDot11CscAddressType"), ("CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB", "cDot11CscParentWdsAddress"), ("CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB", "cDot11CscRootNodeAddress"), ("CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB", "cDot11CscMnAuthenticatorAddress"), ("CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB", "cDot11CscOperMode"), ("CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB", "cDot11CscMnInactivityTime"), ("CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB", "cDot11CscRegistrationLifeTime"), ("CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB", "cDot11CscStateTransitions"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoDot11CscConfigGlobalGroup = ciscoDot11CscConfigGlobalGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB", ciscoDot11CscConfigGlobalGroup=ciscoDot11CscConfigGlobalGroup, cDot11CscRootNodeAddress=cDot11CscRootNodeAddress, ciscoDot11CscMIBObjects=ciscoDot11CscMIBObjects, ciscoDot11CscConfigGlobal=ciscoDot11CscConfigGlobal, PYSNMP_MODULE_ID=ciscoDot11CscMIB, cDot11CscMnInactivityTime=cDot11CscMnInactivityTime, ciscoDot11CscMIBGroups=ciscoDot11CscMIBGroups, ciscoDot11CscMIBCompliance=ciscoDot11CscMIBCompliance, cDot11CscOperMode=cDot11CscOperMode, cDot11CscMnAuthenticatorAddress=cDot11CscMnAuthenticatorAddress, cDot11CscRegistrationLifeTime=cDot11CscRegistrationLifeTime, ciscoDot11CscMIB=ciscoDot11CscMIB, cDot11CscStateTransitions=cDot11CscStateTransitions, cDot11CscParentWdsAddress=cDot11CscParentWdsAddress, ciscoDot11CscMIBCompliances=ciscoDot11CscMIBCompliances, ciscoDot11CscMIBConformance=ciscoDot11CscMIBConformance, cDot11CscAddressType=cDot11CscAddressType)
+mibBuilder.exportSymbols("CISCO-DOT11-CONTEXT-SERVICES-CLIENT-MIB", cDot11CscMnInactivityTime=cDot11CscMnInactivityTime, ciscoDot11CscConfigGlobalGroup=ciscoDot11CscConfigGlobalGroup, ciscoDot11CscMIBObjects=ciscoDot11CscMIBObjects, cDot11CscAddressType=cDot11CscAddressType, cDot11CscRootNodeAddress=cDot11CscRootNodeAddress, cDot11CscRegistrationLifeTime=cDot11CscRegistrationLifeTime, ciscoDot11CscMIBGroups=ciscoDot11CscMIBGroups, cDot11CscStateTransitions=cDot11CscStateTransitions, ciscoDot11CscMIBConformance=ciscoDot11CscMIBConformance, cDot11CscMnAuthenticatorAddress=cDot11CscMnAuthenticatorAddress, ciscoDot11CscMIBCompliances=ciscoDot11CscMIBCompliances, ciscoDot11CscMIBCompliance=ciscoDot11CscMIBCompliance, cDot11CscParentWdsAddress=cDot11CscParentWdsAddress, cDot11CscOperMode=cDot11CscOperMode, PYSNMP_MODULE_ID=ciscoDot11CscMIB, ciscoDot11CscConfigGlobal=ciscoDot11CscConfigGlobal, ciscoDot11CscMIB=ciscoDot11CscMIB)

@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-IETF-ATM2-PVCTRAP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-IETF-ATM2-PVCTRAP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
-atmVclVpi, atmVclVci, atmInterfaceConfEntry = mibBuilder.importSymbols("ATM-MIB", "atmVclVpi", "atmVclVci", "atmInterfaceConfEntry")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+atmVclVci, atmInterfaceConfEntry, atmVclVpi = mibBuilder.importSymbols("ATM-MIB", "atmVclVci", "atmInterfaceConfEntry", "atmVclVpi")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
-DisplayString, TruthValue, TextualConvention, TimeStamp = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention", "TimeStamp")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
+TimeStamp, TruthValue, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "TruthValue", "DisplayString", "TextualConvention")
 ciscoIetfAtm2PvctrapMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 29))
 if mibBuilder.loadTexts: ciscoIetfAtm2PvctrapMIB.setLastUpdated('9802030000Z')
 if mibBuilder.loadTexts: ciscoIetfAtm2PvctrapMIB.setOrganization('Cisco Systems, Inc.')
@@ -57,4 +57,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 atmSwitchServcHostGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 29, 3, 1, 1)).setObjects(("CISCO-IETF-ATM2-PVCTRAP-MIB", "atmIntfPvcFailures"), ("CISCO-IETF-ATM2-PVCTRAP-MIB", "atmIntfCurrentlyFailingPVcls"), ("CISCO-IETF-ATM2-PVCTRAP-MIB", "atmIntfPvcFailuresTrapEnable"), ("CISCO-IETF-ATM2-PVCTRAP-MIB", "atmIntfPvcNotificationInterval"), ("CISCO-IETF-ATM2-PVCTRAP-MIB", "atmPreviouslyFailedPVclInterval"), ("CISCO-IETF-ATM2-PVCTRAP-MIB", "atmCurrentlyFailingPVclTimeStamp"), ("CISCO-IETF-ATM2-PVCTRAP-MIB", "atmPreviouslyFailedPVclTimeStamp"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     atmSwitchServcHostGroup = atmSwitchServcHostGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-IETF-ATM2-PVCTRAP-MIB", atmIntfPvcFailuresTrapEnable=atmIntfPvcFailuresTrapEnable, atmIntfCurrentlyFailingPVcls=atmIntfCurrentlyFailingPVcls, PYSNMP_MODULE_ID=ciscoIetfAtm2PvctrapMIB, atm2MIBTraps=atm2MIBTraps, atmCurrentlyFailingPVclTable=atmCurrentlyFailingPVclTable, atmPvcTrapsPrefix=atmPvcTrapsPrefix, atmPreviouslyFailedPVclInterval=atmPreviouslyFailedPVclInterval, atmInterfaceExtEntry=atmInterfaceExtEntry, atmCurrentlyFailingPVclTimeStamp=atmCurrentlyFailingPVclTimeStamp, atm2MIBObjects=atm2MIBObjects, atm2MIBConformance=atm2MIBConformance, atmIntfPvcFailuresTrap=atmIntfPvcFailuresTrap, atmInterfaceExtTable=atmInterfaceExtTable, atmCurrentlyFailingPVclEntry=atmCurrentlyFailingPVclEntry, atmPreviouslyFailedPVclTimeStamp=atmPreviouslyFailedPVclTimeStamp, atmPvcTraps=atmPvcTraps, atm2MIBCompliances=atm2MIBCompliances, atm2MIBCompliance=atm2MIBCompliance, atmIntfPvcFailures=atmIntfPvcFailures, atm2MIBGroups=atm2MIBGroups, atmSwitchServcHostGroup=atmSwitchServcHostGroup, atmIntfPvcNotificationInterval=atmIntfPvcNotificationInterval, ciscoIetfAtm2PvctrapMIB=ciscoIetfAtm2PvctrapMIB)
+mibBuilder.exportSymbols("CISCO-IETF-ATM2-PVCTRAP-MIB", ciscoIetfAtm2PvctrapMIB=ciscoIetfAtm2PvctrapMIB, atm2MIBGroups=atm2MIBGroups, atm2MIBConformance=atm2MIBConformance, atmCurrentlyFailingPVclTable=atmCurrentlyFailingPVclTable, atmCurrentlyFailingPVclEntry=atmCurrentlyFailingPVclEntry, atmSwitchServcHostGroup=atmSwitchServcHostGroup, atm2MIBCompliances=atm2MIBCompliances, PYSNMP_MODULE_ID=ciscoIetfAtm2PvctrapMIB, atmIntfCurrentlyFailingPVcls=atmIntfCurrentlyFailingPVcls, atmIntfPvcFailures=atmIntfPvcFailures, atmIntfPvcFailuresTrapEnable=atmIntfPvcFailuresTrapEnable, atmInterfaceExtTable=atmInterfaceExtTable, atmIntfPvcFailuresTrap=atmIntfPvcFailuresTrap, atmPvcTraps=atmPvcTraps, atm2MIBObjects=atm2MIBObjects, atmCurrentlyFailingPVclTimeStamp=atmCurrentlyFailingPVclTimeStamp, atmInterfaceExtEntry=atmInterfaceExtEntry, atmPreviouslyFailedPVclTimeStamp=atmPreviouslyFailedPVclTimeStamp, atmIntfPvcNotificationInterval=atmIntfPvcNotificationInterval, atmPreviouslyFailedPVclInterval=atmPreviouslyFailedPVclInterval, atm2MIBCompliance=atm2MIBCompliance, atmPvcTrapsPrefix=atmPvcTrapsPrefix, atm2MIBTraps=atm2MIBTraps)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-LPTS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-LPTS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoLptsMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 812))
 ciscoLptsMIB.setRevisions(('2013-09-03 00:00',))
@@ -65,4 +65,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 clLocalFlowGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 812, 2, 2, 2)).setObjects(("CISCO-LPTS-MIB", "clLocalCurrentRate"), ("CISCO-LPTS-MIB", "clLocalAccepted"), ("CISCO-LPTS-MIB", "clLocalDropped"), ("CISCO-LPTS-MIB", "clLocalType"), ("CISCO-LPTS-MIB", "clLocalTosValue"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     clLocalFlowGroup = clLocalFlowGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-LPTS-MIB", clGlobalCurrentRate=clGlobalCurrentRate, ciscoLptsMIBObjects=ciscoLptsMIBObjects, clGlobalType=clGlobalType, clLocalFlowGroup=clLocalFlowGroup, ciscoLptsMIBConform=ciscoLptsMIBConform, clGlobalFlowTable=clGlobalFlowTable, clGlobalFlowType=clGlobalFlowType, clGlobalFlowGroup=clGlobalFlowGroup, ciscoLptsMIBGroups=ciscoLptsMIBGroups, ciscoLptsMIBCompliances=ciscoLptsMIBCompliances, clLocalAccepted=clLocalAccepted, clLocalFlowEntry=clLocalFlowEntry, clLocalDropped=clLocalDropped, ciscoLptsMIBNotifs=ciscoLptsMIBNotifs, PYSNMP_MODULE_ID=ciscoLptsMIB, ciscoLptsMIBCompliance=ciscoLptsMIBCompliance, clLocalTosValue=clLocalTosValue, clLocalType=clLocalType, clGlobalFlowIndex=clGlobalFlowIndex, ClFlowType=ClFlowType, clLocalFlowTable=clLocalFlowTable, clLocalCurrentRate=clLocalCurrentRate, clLocalNodeID=clLocalNodeID, clGlobalFlowEntry=clGlobalFlowEntry, ciscoLptsMIB=ciscoLptsMIB)
+mibBuilder.exportSymbols("CISCO-LPTS-MIB", clLocalCurrentRate=clLocalCurrentRate, clLocalFlowGroup=clLocalFlowGroup, clGlobalCurrentRate=clGlobalCurrentRate, ciscoLptsMIBCompliances=ciscoLptsMIBCompliances, clLocalDropped=clLocalDropped, clLocalAccepted=clLocalAccepted, ciscoLptsMIBObjects=ciscoLptsMIBObjects, clGlobalFlowGroup=clGlobalFlowGroup, ClFlowType=ClFlowType, ciscoLptsMIBCompliance=ciscoLptsMIBCompliance, clGlobalFlowIndex=clGlobalFlowIndex, ciscoLptsMIBConform=ciscoLptsMIBConform, clLocalTosValue=clLocalTosValue, clLocalNodeID=clLocalNodeID, clGlobalFlowEntry=clGlobalFlowEntry, clLocalFlowTable=clLocalFlowTable, clLocalFlowEntry=clLocalFlowEntry, ciscoLptsMIBNotifs=ciscoLptsMIBNotifs, ciscoLptsMIBGroups=ciscoLptsMIBGroups, clLocalType=clLocalType, clGlobalFlowTable=clGlobalFlowTable, clGlobalFlowType=clGlobalFlowType, PYSNMP_MODULE_ID=ciscoLptsMIB, ciscoLptsMIB=ciscoLptsMIB, clGlobalType=clGlobalType)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module MY-SYSTEM-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ruijie/MY-SYSTEM-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:39:58 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:14:26 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 myMgmt, = mibBuilder.importSymbols("MY-SMI", "myMgmt")
 ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-IpAddress, Unsigned32, MibIdentifier, ModuleIdentity, ObjectIdentity, Bits, Counter64, NotificationType, Counter32, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Gauge32, iso, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "IpAddress", "Unsigned32", "MibIdentifier", "ModuleIdentity", "ObjectIdentity", "Bits", "Counter64", "NotificationType", "Counter32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Gauge32", "iso", "TimeTicks")
-RowStatus, TruthValue, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "TruthValue", "TextualConvention", "DisplayString")
+Bits, Counter64, ModuleIdentity, Gauge32, ObjectIdentity, IpAddress, Counter32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, TimeTicks, Integer32, iso, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "Counter64", "ModuleIdentity", "Gauge32", "ObjectIdentity", "IpAddress", "Counter32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "TimeTicks", "Integer32", "iso", "NotificationType")
+RowStatus, TruthValue, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "TruthValue", "DisplayString", "TextualConvention")
 mySystemMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 4881, 1, 1, 10, 2, 1))
 mySystemMIB.setRevisions(('2002-03-20 00:00',))
 if mibBuilder.loadTexts: mySystemMIB.setLastUpdated('200203200000Z')
@@ -60,4 +60,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 mySystemMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 4881, 1, 1, 10, 2, 1, 3, 2, 1)).setObjects(("MY-SYSTEM-MIB", "mySystemHwVersion"), ("MY-SYSTEM-MIB", "mySystemSwVersion"), ("MY-SYSTEM-MIB", "mySystemBootVersion"), ("MY-SYSTEM-MIB", "mySystemSysCtrlVersion"), ("MY-SYSTEM-MIB", "mySystemParametersSave"), ("MY-SYSTEM-MIB", "mySystemReset"), ("MY-SYSTEM-MIB", "mySystemOutBandRate"), ("MY-SYSTEM-MIB", "mySwitchLayer"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     mySystemMIBGroup = mySystemMIBGroup.setStatus('current')
-mibBuilder.exportSymbols("MY-SYSTEM-MIB", mySystemMIBTraps=mySystemMIBTraps, mySystemHardChangeDetected=mySystemHardChangeDetected, mySystemFanStateChange=mySystemFanStateChange, mySystemMIBGroup=mySystemMIBGroup, mySystemOutBandRate=mySystemOutBandRate, mySystemMIBCompliances=mySystemMIBCompliances, mySystemHardChangeDesc=mySystemHardChangeDesc, mySystemHwVersion=mySystemHwVersion, mySystemHwPower=mySystemHwPower, mySystemSysCtrlVersion=mySystemSysCtrlVersion, mySystemMIB=mySystemMIB, mySystemBootVersion=mySystemBootVersion, mySystemMIBCompliance=mySystemMIBCompliance, mySystemSwVersion=mySystemSwVersion, mySystemMIBGroups=mySystemMIBGroups, mySystemMIBConformance=mySystemMIBConformance, PYSNMP_MODULE_ID=mySystemMIB, mySystemParametersSave=mySystemParametersSave, mySystemTelnetTimeout=mySystemTelnetTimeout, mySystemHwFan=mySystemHwFan, mySwitchLayer=mySwitchLayer, mySystemPowerStateChange=mySystemPowerStateChange, mySystemMIBObjects=mySystemMIBObjects, mySystemOutBandTimeout=mySystemOutBandTimeout, mySystemReset=mySystemReset)
+mibBuilder.exportSymbols("MY-SYSTEM-MIB", mySystemOutBandTimeout=mySystemOutBandTimeout, mySystemParametersSave=mySystemParametersSave, mySystemMIBGroups=mySystemMIBGroups, mySystemMIBTraps=mySystemMIBTraps, mySystemBootVersion=mySystemBootVersion, mySwitchLayer=mySwitchLayer, mySystemMIBGroup=mySystemMIBGroup, mySystemOutBandRate=mySystemOutBandRate, mySystemHwFan=mySystemHwFan, mySystemSysCtrlVersion=mySystemSysCtrlVersion, mySystemHwPower=mySystemHwPower, mySystemFanStateChange=mySystemFanStateChange, mySystemSwVersion=mySystemSwVersion, mySystemTelnetTimeout=mySystemTelnetTimeout, mySystemReset=mySystemReset, mySystemHardChangeDetected=mySystemHardChangeDetected, mySystemMIBConformance=mySystemMIBConformance, mySystemPowerStateChange=mySystemPowerStateChange, mySystemMIBCompliance=mySystemMIBCompliance, mySystemHwVersion=mySystemHwVersion, PYSNMP_MODULE_ID=mySystemMIB, mySystemMIB=mySystemMIB, mySystemMIBCompliances=mySystemMIBCompliances, mySystemMIBObjects=mySystemMIBObjects, mySystemHardChangeDesc=mySystemHardChangeDesc)

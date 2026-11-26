@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-OPTICAL-PATCH-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-OPTICAL-PATCH-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
-ifIndex, InterfaceIndex = mibBuilder.importSymbols("IF-MIB", "ifIndex", "InterfaceIndex")
+InterfaceIndex, ifIndex = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex", "ifIndex")
 ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, TimeStamp, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TimeStamp", "RowStatus", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TimeStamp, RowStatus, DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "RowStatus", "DisplayString", "TruthValue", "TextualConvention")
 ciscoOpticalPatchMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 67))
 ciscoOpticalPatchMIB.setRevisions(('2002-03-18 00:00', '2001-09-05 00:00',))
 
@@ -123,4 +123,4 @@ cOPatchGroup1 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 67, 3, 2, 5)).setObjects((
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cOPatchGroup1 = cOPatchGroup1.setStatus('current')
 if mibBuilder.loadTexts: cOPatchGroup1.setDescription('Collection of objects needed to implement\n             Patches in transmit, receive or both directions.')
-mibBuilder.exportSymbols("CISCO-OPTICAL-PATCH-MIB", cOPatchIntfTable=cOPatchIntfTable, cOPatchIntfEntry=cOPatchIntfEntry, cOPatchIndexNext=cOPatchIndexNext, cOPatchEventEnabled=cOPatchEventEnabled, cOPatchLastChange=cOPatchLastChange, cOPatchType=cOPatchType, cOPatchGroup=cOPatchGroup, cOPatchHighIfIndex=cOPatchHighIfIndex, cOPatchIntfPatchId=cOPatchIntfPatchId, cOPatchNotifyGroup=cOPatchNotifyGroup, cOPatchTable=cOPatchTable, cOPatchIntfDirection=cOPatchIntfDirection, cOPatchInterfaceTable=cOPatchInterfaceTable, cOPatchMIBObjects=cOPatchMIBObjects, cOPatchCreationTime=cOPatchCreationTime, PYSNMP_MODULE_ID=ciscoOpticalPatchMIB, cOPatchMIBCompliance=cOPatchMIBCompliance, cOPatchMIBGroups=cOPatchMIBGroups, cOPatchInterfaceGroup=cOPatchInterfaceGroup, cOPatchEventType=cOPatchEventType, cOPatchEntry=cOPatchEntry, cOPatchLowIfIndex=cOPatchLowIfIndex, cOPatchMIBCompliance1=cOPatchMIBCompliance1, cOPatchGroup1=cOPatchGroup1, cOPatchDirOnLowIf=cOPatchDirOnLowIf, cOPatchEvent=cOPatchEvent, cOPatchStatus=cOPatchStatus, cOPatchMIBCompliances=cOPatchMIBCompliances, cOPatchIdentifier=cOPatchIdentifier, cOPatchIntfGroup=cOPatchIntfGroup, cOPatchMIBNotifications=cOPatchMIBNotifications, cOPatchMIBConformance=cOPatchMIBConformance, cOPatchInterfaceEntry=cOPatchInterfaceEntry, cOPatchIndex=cOPatchIndex, ciscoOpticalPatchMIB=ciscoOpticalPatchMIB, cOPatchRowStatus=cOPatchRowStatus)
+mibBuilder.exportSymbols("CISCO-OPTICAL-PATCH-MIB", cOPatchIntfGroup=cOPatchIntfGroup, cOPatchDirOnLowIf=cOPatchDirOnLowIf, cOPatchIntfTable=cOPatchIntfTable, cOPatchEntry=cOPatchEntry, cOPatchTable=cOPatchTable, cOPatchMIBCompliance=cOPatchMIBCompliance, ciscoOpticalPatchMIB=ciscoOpticalPatchMIB, cOPatchIndex=cOPatchIndex, cOPatchHighIfIndex=cOPatchHighIfIndex, cOPatchLowIfIndex=cOPatchLowIfIndex, cOPatchGroup=cOPatchGroup, cOPatchMIBGroups=cOPatchMIBGroups, cOPatchMIBCompliances=cOPatchMIBCompliances, cOPatchMIBCompliance1=cOPatchMIBCompliance1, cOPatchEvent=cOPatchEvent, cOPatchIdentifier=cOPatchIdentifier, cOPatchCreationTime=cOPatchCreationTime, cOPatchMIBConformance=cOPatchMIBConformance, cOPatchIntfPatchId=cOPatchIntfPatchId, cOPatchStatus=cOPatchStatus, cOPatchMIBNotifications=cOPatchMIBNotifications, cOPatchInterfaceEntry=cOPatchInterfaceEntry, cOPatchIntfEntry=cOPatchIntfEntry, cOPatchGroup1=cOPatchGroup1, cOPatchRowStatus=cOPatchRowStatus, cOPatchInterfaceTable=cOPatchInterfaceTable, cOPatchNotifyGroup=cOPatchNotifyGroup, cOPatchMIBObjects=cOPatchMIBObjects, cOPatchLastChange=cOPatchLastChange, cOPatchEventEnabled=cOPatchEventEnabled, PYSNMP_MODULE_ID=ciscoOpticalPatchMIB, cOPatchEventType=cOPatchEventType, cOPatchIntfDirection=cOPatchIntfDirection, cOPatchInterfaceGroup=cOPatchInterfaceGroup, cOPatchType=cOPatchType, cOPatchIndexNext=cOPatchIndexNext)

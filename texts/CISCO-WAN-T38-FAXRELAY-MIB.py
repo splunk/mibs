@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-WAN-T38-FAXRELAY-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-T38-FAXRELAY-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoWanT38FaxRelayMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 19))
 ciscoWanT38FaxRelayMIB.setRevisions(('2004-02-19 00:00', '2002-06-01 00:00', '2002-04-12 15:00',))
 
@@ -99,4 +99,4 @@ t38FaxRelayGroupRev1 = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 19, 3, 2, 2)).se
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     t38FaxRelayGroupRev1 = t38FaxRelayGroupRev1.setStatus('current')
 if mibBuilder.loadTexts: t38FaxRelayGroupRev1.setDescription('The collection of objects that were\n         supported earlier but deprecated now.\n        ')
-mibBuilder.exportSymbols("CISCO-WAN-T38-FAXRELAY-MIB", t38TCFmethod=t38TCFmethod, t38T30ECM=t38T30ECM, t38FaxInfoFieldSize=t38FaxInfoFieldSize, t38FaxRelayMIBConformance=t38FaxRelayMIBConformance, t38NSFCountryCode=t38NSFCountryCode, t38FaxRelayGrp=t38FaxRelayGrp, t38MaxFaxTxRate=t38MaxFaxTxRate, t38ErrCorrection=t38ErrCorrection, t38HsDataPacketSize=t38HsDataPacketSize, t38HsDataRedundancy=t38HsDataRedundancy, t38Notifications=t38Notifications, t38NseAckTimeOut=t38NseAckTimeOut, t38NotificationPrefix=t38NotificationPrefix, t38FaxRelayGroup=t38FaxRelayGroup, t38FaxRelayMIBComplianceRev1=t38FaxRelayMIBComplianceRev1, t38LsDataRedundancy=t38LsDataRedundancy, PYSNMP_MODULE_ID=ciscoWanT38FaxRelayMIB, t38FaxRelayMIBGroups=t38FaxRelayMIBGroups, t38FaxRelayMIBCompliances=t38FaxRelayMIBCompliances, t38NSFVendorCode=t38NSFVendorCode, t38FxLCO=t38FxLCO, t38FaxRelayGrpEntry=t38FaxRelayGrpEntry, t38FaxRelayGroupRev1=t38FaxRelayGroupRev1, t38NSFOverride=t38NSFOverride, t38FaxRelayGrpTable=t38FaxRelayGrpTable, t38vismDs1Number=t38vismDs1Number, ciscoWanT38FaxRelayMIBObjects=ciscoWanT38FaxRelayMIBObjects, t38FaxRelayMIBCompliance=t38FaxRelayMIBCompliance, t38Redundancy=t38Redundancy, ciscoWanT38FaxRelayMIB=ciscoWanT38FaxRelayMIB)
+mibBuilder.exportSymbols("CISCO-WAN-T38-FAXRELAY-MIB", PYSNMP_MODULE_ID=ciscoWanT38FaxRelayMIB, t38MaxFaxTxRate=t38MaxFaxTxRate, t38LsDataRedundancy=t38LsDataRedundancy, t38NotificationPrefix=t38NotificationPrefix, t38NseAckTimeOut=t38NseAckTimeOut, t38FaxRelayGrpTable=t38FaxRelayGrpTable, t38NSFVendorCode=t38NSFVendorCode, t38FaxInfoFieldSize=t38FaxInfoFieldSize, ciscoWanT38FaxRelayMIB=ciscoWanT38FaxRelayMIB, t38FaxRelayGroupRev1=t38FaxRelayGroupRev1, t38HsDataRedundancy=t38HsDataRedundancy, t38Notifications=t38Notifications, t38ErrCorrection=t38ErrCorrection, t38FaxRelayGrpEntry=t38FaxRelayGrpEntry, t38FaxRelayMIBConformance=t38FaxRelayMIBConformance, t38FaxRelayMIBCompliances=t38FaxRelayMIBCompliances, t38vismDs1Number=t38vismDs1Number, t38TCFmethod=t38TCFmethod, t38FxLCO=t38FxLCO, t38FaxRelayGroup=t38FaxRelayGroup, t38T30ECM=t38T30ECM, t38FaxRelayMIBComplianceRev1=t38FaxRelayMIBComplianceRev1, t38FaxRelayMIBGroups=t38FaxRelayMIBGroups, t38HsDataPacketSize=t38HsDataPacketSize, t38Redundancy=t38Redundancy, t38FaxRelayMIBCompliance=t38FaxRelayMIBCompliance, ciscoWanT38FaxRelayMIBObjects=ciscoWanT38FaxRelayMIBObjects, t38FaxRelayGrp=t38FaxRelayGrp, t38NSFOverride=t38NSFOverride, t38NSFCountryCode=t38NSFCountryCode)

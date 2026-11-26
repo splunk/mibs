@@ -6,41 +6,41 @@
     ],
     "CISCO-TC": [
       "Unsigned64",
-      "TimeIntervalSec",
-      "CiscoNetworkAddress",
       "CiscoInetAddressMask",
-      "CiscoAlarmSeverity"
+      "CiscoAlarmSeverity",
+      "TimeIntervalSec",
+      "CiscoNetworkAddress"
     ],
     "CISCO-UNIFIED-COMPUTING-MIB": [
-      "CucsManagedObjectDn",
+      "CucsManagedObjectId",
       "ciscoUnifiedComputingMIBObjects",
-      "CucsManagedObjectId"
+      "CucsManagedObjectDn"
     ],
     "CISCO-UNIFIED-COMPUTING-TC-MIB": [
-      "CucsEquipmentOperability",
-      "CucsEquipmentSensorThresholdStatus",
-      "CucsMemoryErrorCorrection",
-      "CucsMemoryFormFactor",
-      "CucsMemoryAdminState",
-      "CucsMemoryUnitId",
-      "CucsMemoryUnitOperability",
-      "CucsMemoryRuntimeThresholded",
-      "CucsEquipmentPowerState",
-      "CucsMemoryBufferUnitId",
-      "CucsMemoryRuntimeType",
-      "CucsMemoryArrayEnvStatsThresholded",
-      "CucsMemoryArrayEnvStatsHistThresholded",
-      "CucsMemoryBufferUnitEnvStatsThresholded",
+      "CucsMemoryArrayId",
       "CucsMemoryType",
-      "CucsMemoryErrorStatsThresholded",
-      "CucsEquipmentPresence",
       "CucsMemoryUnitEnvStatsThresholded",
       "CucsMemoryBufferUnitEnvStatsHistThresholded",
+      "CucsMemoryFormFactor",
       "CucsMemoryVisibility",
+      "CucsMemoryRuntimeType",
+      "CucsMemoryErrorStatsThresholded",
+      "CucsEquipmentPresence",
+      "CucsEquipmentOperability",
+      "CucsMemoryUnitOperability",
       "CucsMemoryUnitEnvStatsHistThresholded",
-      "CucsMemoryArrayId",
+      "CucsMemoryAdminState",
+      "CucsMemoryRuntimeHistThresholded",
+      "CucsMemoryBufferUnitEnvStatsThresholded",
+      "CucsMemoryRuntimeThresholded",
+      "CucsEquipmentPowerState",
+      "CucsEquipmentSensorThresholdStatus",
+      "CucsMemoryErrorCorrection",
+      "CucsMemoryArrayEnvStatsHistThresholded",
+      "CucsMemoryArrayEnvStatsThresholded",
       "CucsMemoryIssues",
-      "CucsMemoryRuntimeHistThresholded"
+      "CucsMemoryUnitId",
+      "CucsMemoryBufferUnitId"
     ],
     "INET-ADDRESS-MIB": [
       "InetAddressIPv4",
@@ -54,30 +54,30 @@
       "NOTIFICATION-GROUP"
     ],
     "SNMPv2-SMI": [
-      "Counter64",
-      "MibIdentifier",
-      "iso",
-      "Gauge32",
-      "OBJECT-TYPE",
-      "OBJECT-IDENTITY",
-      "Integer32",
       "MODULE-IDENTITY",
       "IpAddress",
       "Bits",
+      "TimeTicks",
       "Counter32",
       "Unsigned32",
+      "Integer32",
       "NOTIFICATION-TYPE",
-      "TimeTicks"
+      "OBJECT-IDENTITY",
+      "Counter64",
+      "MibIdentifier",
+      "Gauge32",
+      "iso",
+      "OBJECT-TYPE"
     ],
     "SNMPv2-TC": [
+      "TimeStamp",
+      "RowPointer",
+      "TruthValue",
+      "TEXTUAL-CONVENTION",
+      "DisplayString",
       "DateAndTime",
       "TimeInterval",
-      "TEXTUAL-CONVENTION",
-      "TruthValue",
-      "MacAddress",
-      "RowPointer",
-      "TimeStamp",
-      "DisplayString"
+      "MacAddress"
     ]
   },
   "cucsMemoryObjects": {
@@ -449,7 +449,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -461,7 +461,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -473,7 +473,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -485,7 +485,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -628,7 +628,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -640,7 +640,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -652,7 +652,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -664,7 +664,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -1034,7 +1034,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -1046,7 +1046,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -1058,7 +1058,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -1070,7 +1070,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -1213,7 +1213,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -1225,7 +1225,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -1237,7 +1237,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -1249,7 +1249,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -2003,7 +2003,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -2744,7 +2744,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -3091,7 +3091,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -3103,7 +3103,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -3115,7 +3115,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -3127,7 +3127,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -3270,7 +3270,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -3282,7 +3282,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -3294,7 +3294,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -3306,7 +3306,7 @@
     "nodetype": "column",
     "class": "objecttype",
     "syntax": {
-      "type": "SnmpAdminString",
+      "type": "INTEGER",
       "class": "type"
     },
     "maxaccess": "read-only",
@@ -3339,9 +3339,9 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-UNIFIED-COMPUTING-MEMORY-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026",
-      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
-      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+      "Produced by pysmi-1.1.12 at Thu Nov 26 06:08:31 2026",
+      "On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner",
+      "Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]"
     ],
     "module": "CISCO-UNIFIED-COMPUTING-MEMORY-MIB"
   }

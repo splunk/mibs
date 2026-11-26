@@ -2,47 +2,47 @@
   "imports": {
     "class": "imports",
     "ExaltComm": [
-      "FileTransferStartT",
-      "EnableStatusT",
-      "VlanStatusT",
-      "FileTransferTypeT",
-      "NtpClientEnableT",
-      "Te1LoopBackModeT",
-      "AcmModulationT",
-      "AlarmLevelT",
-      "VlanGroupT",
-      "Led4ColorT",
       "AuxNmsMode",
-      "EthMainStatusT",
+      "Led4ColorT",
+      "FileTransferStartT",
+      "exaltcommunications",
+      "AcmModulationT",
       "Te1LboT",
       "Te1LineCodeT",
       "TimeZoneT",
-      "ExaltEnableT",
-      "exaltcommunications",
       "EthPortMode",
+      "VlanGroupT",
+      "EthAuxStatusT",
+      "NtpClientEnableT",
       "Te1StatusT",
-      "EthAuxStatusT"
+      "EnableStatusT",
+      "VlanStatusT",
+      "EthMainStatusT",
+      "FileTransferTypeT",
+      "ExaltEnableT",
+      "Te1LoopBackModeT",
+      "AlarmLevelT"
     ],
     "SNMPv2-CONF": [
-      "OBJECT-GROUP",
+      "NOTIFICATION-GROUP",
       "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "OBJECT-GROUP"
     ],
     "SNMPv2-SMI": [
-      "MODULE-IDENTITY",
-      "Integer32",
-      "Bits",
       "iso",
+      "Bits",
       "OBJECT-TYPE",
-      "IpAddress",
-      "Unsigned32",
-      "TimeTicks",
       "OBJECT-IDENTITY",
-      "Counter64",
-      "Counter32",
       "NOTIFICATION-TYPE",
+      "MODULE-IDENTITY",
+      "TimeTicks",
+      "Counter32",
+      "Integer32",
+      "IpAddress",
+      "Gauge32",
       "MibIdentifier",
-      "Gauge32"
+      "Counter64",
+      "Unsigned32"
     ],
     "SNMPv2-TC": [
       "DisplayString",
@@ -2951,9 +2951,9 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/exalt/ExaltComProducts",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 14:36:20 2026",
-      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
-      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+      "Produced by pysmi-1.1.12 at Thu Nov 26 06:09:20 2026",
+      "On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner",
+      "Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]"
     ],
     "module": "ExaltComProducts"
   }

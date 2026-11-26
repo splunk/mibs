@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-Redistribute (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-Redistribute
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ipSpec, = mibBuilder.importSymbols("CISCOSB-IP", "ipSpec")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-TruthValue, DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "DisplayString", "RowStatus", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString", "TruthValue")
 class RlRedistSrcProtocol(TextualConvention, Integer32):
     description = 'Source Protocol\n                 this defines the list of sources that redistribute their routes '
     status = 'current'
@@ -82,4 +82,4 @@ if mibBuilder.loadTexts: rlRedistOnlyNSSA.setDescription('Sets the nssa-only att
 rlRedistRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 26, 27, 1, 1, 13), RowStatus()).setMaxAccess("readcreate")
 if mibBuilder.loadTexts: rlRedistRowStatus.setStatus('current')
 if mibBuilder.loadTexts: rlRedistRowStatus.setDescription('Row Status')
-mibBuilder.exportSymbols("CISCOSB-Redistribute", rlRedistSrcProcessId=rlRedistSrcProcessId, rlRedistMetricType=rlRedistMetricType, rlRedistMatchType=rlRedistMatchType, rlRedistOnlyNSSA=rlRedistOnlyNSSA, rlRedistEntry=rlRedistEntry, RlRedistMatchType=RlRedistMatchType, rlRedistMetricValue=rlRedistMetricValue, rlRedistAsNumber=rlRedistAsNumber, RlRedistSrcProtocol=RlRedistSrcProtocol, rlRedistMetricTransparent=rlRedistMetricTransparent, rlRedistribute=rlRedistribute, rlRedistRowStatus=rlRedistRowStatus, rlRedistDstProcessId=rlRedistDstProcessId, rlRedistSrcProtocol=rlRedistSrcProtocol, rlRedistRoutMapName=rlRedistRoutMapName, rlRedistDstProtocol=rlRedistDstProtocol, rlRedistTable=rlRedistTable, rlRedistSubnets=rlRedistSubnets, RlRedistDstProtocol=RlRedistDstProtocol, RlRedistMetricType=RlRedistMetricType)
+mibBuilder.exportSymbols("CISCOSB-Redistribute", rlRedistMetricTransparent=rlRedistMetricTransparent, rlRedistSrcProtocol=rlRedistSrcProtocol, rlRedistDstProcessId=rlRedistDstProcessId, rlRedistMetricValue=rlRedistMetricValue, rlRedistRowStatus=rlRedistRowStatus, rlRedistMatchType=rlRedistMatchType, RlRedistDstProtocol=RlRedistDstProtocol, rlRedistEntry=rlRedistEntry, RlRedistSrcProtocol=RlRedistSrcProtocol, rlRedistTable=rlRedistTable, rlRedistDstProtocol=rlRedistDstProtocol, rlRedistOnlyNSSA=rlRedistOnlyNSSA, RlRedistMetricType=RlRedistMetricType, rlRedistRoutMapName=rlRedistRoutMapName, rlRedistSubnets=rlRedistSubnets, rlRedistribute=rlRedistribute, rlRedistAsNumber=rlRedistAsNumber, rlRedistSrcProcessId=rlRedistSrcProcessId, rlRedistMetricType=rlRedistMetricType, RlRedistMatchType=RlRedistMatchType)

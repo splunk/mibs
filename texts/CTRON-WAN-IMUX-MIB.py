@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CTRON-WAN-IMUX-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/enterasys/CTRON-WAN-IMUX-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:36:12 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:09:08 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion")
+ConstraintsIntersection, ConstraintsUnion, ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint")
 ctWanServices, = mibBuilder.importSymbols("CTRON-MIB-NAMES", "ctWanServices")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-ObjectIdentity, TimeTicks, Unsigned32, IpAddress, Gauge32, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Counter64, iso, MibIdentifier, NotificationType, Counter32, ModuleIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "ObjectIdentity", "TimeTicks", "Unsigned32", "IpAddress", "Gauge32", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Counter64", "iso", "MibIdentifier", "NotificationType", "Counter32", "ModuleIdentity")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+Bits, Integer32, Unsigned32, Counter32, NotificationType, Gauge32, ObjectIdentity, TimeTicks, Counter64, IpAddress, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "Integer32", "Unsigned32", "Counter32", "NotificationType", "Gauge32", "ObjectIdentity", "TimeTicks", "Counter64", "IpAddress", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ctWanMux = MibIdentifier((1, 3, 6, 1, 4, 1, 52, 4, 1, 2, 7, 3, 1))
 ctWANMuxGeneralGroup = MibIdentifier((1, 3, 6, 1, 4, 1, 52, 4, 1, 2, 7, 3, 1, 1))
 ctWANMuxMaxNumGroups = MibScalar((1, 3, 6, 1, 4, 1, 52, 4, 1, 2, 7, 3, 1, 1, 1), Integer32()).setMaxAccess("readonly")
@@ -70,4 +70,4 @@ if mibBuilder.loadTexts: ctWanMuxChannelByteCount.setDescription('Returns a valu
 ctWanMuxChannelStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 52, 4, 1, 2, 7, 3, 1, 3, 1, 7), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("inactive", 1), ("active", 2)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: ctWanMuxChannelStatus.setStatus('mandatory')
 if mibBuilder.loadTexts: ctWanMuxChannelStatus.setDescription('Returns the current status of the channel associated\n                        with an inverse multiplexer group.  The channel is \n                        active when the group admin status is enabled, and \n                        the channel is operational.  The channel is inactive \n                        when either the group admin status is disabled, or \n                        the channel is not operational.')
-mibBuilder.exportSymbols("CTRON-WAN-IMUX-MIB", ctWanMuxChannelIfIndex=ctWanMuxChannelIfIndex, ctWanMuxChannelGroupId=ctWanMuxChannelGroupId, ctWanMuxGroupEntry=ctWanMuxGroupEntry, ctWanMuxGroupTable=ctWanMuxGroupTable, ctWanMuxChannelPhysNum=ctWanMuxChannelPhysNum, ctWanMuxChannelStatus=ctWanMuxChannelStatus, ctWanMuxGroupDelChannel=ctWanMuxGroupDelChannel, ctWanMuxGroupId=ctWanMuxGroupId, ctWanMuxChannelByteCount=ctWanMuxChannelByteCount, ctWanMuxChannelBwAvail=ctWanMuxChannelBwAvail, ctWanMuxChannelId=ctWanMuxChannelId, ctWanMuxGroupAdmin=ctWanMuxGroupAdmin, ctWanMuxChannelEntry=ctWanMuxChannelEntry, ctWanMuxAdmin=ctWanMuxAdmin, ctWanMuxGroupAddChannel=ctWanMuxGroupAddChannel, ctWANMuxMaxNumGroups=ctWANMuxMaxNumGroups, ctWANMuxGeneralGroup=ctWANMuxGeneralGroup, ctWanMuxGroupNumChannels=ctWanMuxGroupNumChannels, ctWanMux=ctWanMux, ctWanMuxChannelTable=ctWanMuxChannelTable)
+mibBuilder.exportSymbols("CTRON-WAN-IMUX-MIB", ctWanMuxGroupEntry=ctWanMuxGroupEntry, ctWanMuxChannelTable=ctWanMuxChannelTable, ctWanMuxGroupDelChannel=ctWanMuxGroupDelChannel, ctWanMuxGroupNumChannels=ctWanMuxGroupNumChannels, ctWanMuxChannelBwAvail=ctWanMuxChannelBwAvail, ctWanMuxChannelId=ctWanMuxChannelId, ctWanMuxGroupAdmin=ctWanMuxGroupAdmin, ctWanMuxChannelEntry=ctWanMuxChannelEntry, ctWanMuxAdmin=ctWanMuxAdmin, ctWanMuxChannelByteCount=ctWanMuxChannelByteCount, ctWanMuxGroupTable=ctWanMuxGroupTable, ctWanMux=ctWanMux, ctWANMuxGeneralGroup=ctWANMuxGeneralGroup, ctWANMuxMaxNumGroups=ctWANMuxMaxNumGroups, ctWanMuxGroupAddChannel=ctWanMuxGroupAddChannel, ctWanMuxGroupId=ctWanMuxGroupId, ctWanMuxChannelGroupId=ctWanMuxChannelGroupId, ctWanMuxChannelPhysNum=ctWanMuxChannelPhysNum, ctWanMuxChannelStatus=ctWanMuxChannelStatus, ctWanMuxChannelIfIndex=ctWanMuxChannelIfIndex)

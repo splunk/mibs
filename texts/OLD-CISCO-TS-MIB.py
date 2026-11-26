@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module OLD-CISCO-TS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/OLD-CISCO-TS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 local, = mibBuilder.importSymbols("CISCO-SMI", "local")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, iso, Counter32, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "iso", "Counter32", "IpAddress", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, TimeTicks, ModuleIdentity, MibIdentifier, iso, IpAddress, Counter32, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "TimeTicks", "ModuleIdentity", "MibIdentifier", "iso", "IpAddress", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 lts = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 2, 9))
 tsLines = MibScalar((1, 3, 6, 1, 4, 1, 9, 2, 9, 1), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: tsLines.setStatus('mandatory')
@@ -136,4 +136,4 @@ if mibBuilder.loadTexts: tsMsgSend.setDescription('Sends the message. The value 
 tsClrTtyLine = MibScalar((1, 3, 6, 1, 4, 1, 9, 2, 9, 10), Integer32()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: tsClrTtyLine.setStatus('mandatory')
 if mibBuilder.loadTexts: tsClrTtyLine.setDescription('tty line to clear.  Read returns the last line\n                           cleared.  A value of -1 indicates no lines have \n                           been cleared.')
-mibBuilder.exportSymbols("OLD-CISCO-TS-MIB", tslineSesCur=tslineSesCur, tsLineActive=tsLineActive, ltsLineSessionTable=ltsLineSessionTable, tslineSesIdle=tslineSesIdle, tsLineType=tsLineType, ltsLineEntry=ltsLineEntry, tsLineNoise=tsLineNoise, tslineSesLine=tslineSesLine, tsClrTtyLine=tsClrTtyLine, tsLineTerm=tsLineTerm, tsMsgIntervaltim=tsMsgIntervaltim, tsLineModem=tsLineModem, tsLineUses=tsLineUses, tslineSesType=tslineSesType, tsMsgDuration=tsMsgDuration, tslineSesName=tslineSesName, tsLineUser=tsLineUser, ltsLineTable=ltsLineTable, tsLineScrlen=tsLineScrlen, tsLineNumber=tsLineNumber, tsLineSestmo=tsLineSestmo, tsLineAutobaud=tsLineAutobaud, tsLineTimeActive=tsLineTimeActive, tsLineFlow=tsLineFlow, tsLineRotary=tsLineRotary, ltsLineSessionEntry=ltsLineSessionEntry, tsLineScrwid=tsLineScrwid, tsMsgSend=tsMsgSend, tsLineSpeedout=tsLineSpeedout, tsMsgTmpBanner=tsMsgTmpBanner, tsLines=tsLines, tslineSesDir=tslineSesDir, tsLineTmo=tsLineTmo, tslineSesAddr=tslineSesAddr, lts=lts, tslineSesSession=tslineSesSession, tsMsgText=tsMsgText, tsLineNses=tsLineNses, tsMsgTtyLine=tsMsgTtyLine, tsLineEsc=tsLineEsc, tsLineLoc=tsLineLoc, tsLineSpeedin=tsLineSpeedin)
+mibBuilder.exportSymbols("OLD-CISCO-TS-MIB", tsLineUser=tsLineUser, lts=lts, tsLineNses=tsLineNses, tslineSesType=tslineSesType, tslineSesCur=tslineSesCur, tslineSesAddr=tslineSesAddr, tslineSesSession=tslineSesSession, tsMsgTtyLine=tsMsgTtyLine, tslineSesDir=tslineSesDir, tsLineFlow=tsLineFlow, tsLineNumber=tsLineNumber, tsClrTtyLine=tsClrTtyLine, ltsLineEntry=ltsLineEntry, tsLineSpeedin=tsLineSpeedin, tsLineTmo=tsLineTmo, ltsLineSessionTable=ltsLineSessionTable, tsLineTerm=tsLineTerm, tslineSesName=tslineSesName, ltsLineSessionEntry=ltsLineSessionEntry, tsLineTimeActive=tsLineTimeActive, tsMsgTmpBanner=tsMsgTmpBanner, tsLineModem=tsLineModem, tsLineType=tsLineType, tsMsgDuration=tsMsgDuration, tsLineLoc=tsLineLoc, tsLineRotary=tsLineRotary, tsLineNoise=tsLineNoise, tsMsgIntervaltim=tsMsgIntervaltim, tsLineUses=tsLineUses, tsLineActive=tsLineActive, tsLineSpeedout=tsLineSpeedout, tsLines=tsLines, tsMsgSend=tsMsgSend, tsLineScrwid=tsLineScrwid, tsLineScrlen=tsLineScrlen, tsLineAutobaud=tsLineAutobaud, tsLineEsc=tsLineEsc, tsLineSestmo=tsLineSestmo, tsMsgText=tsMsgText, ltsLineTable=ltsLineTable, tslineSesLine=tslineSesLine, tslineSesIdle=tslineSesIdle)

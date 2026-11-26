@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-ENTITY-SENSOR-HISTORY-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ENTITY-SENSOR-HISTORY-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 entPhysicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex")
 EntitySensorValue, = mibBuilder.importSymbols("ENTITY-SENSOR-MIB", "EntitySensorValue")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
-DisplayString, TextualConvention, TimeStamp = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TimeStamp")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
+TimeStamp, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "DisplayString", "TextualConvention")
 ciscoEntitySensorHistoryMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 768))
 ciscoEntitySensorHistoryMIB.setRevisions(('2011-03-04 00:00',))
 if mibBuilder.loadTexts: ciscoEntitySensorHistoryMIB.setLastUpdated('201103040000Z')
@@ -63,4 +63,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ceshCollectionIntervalGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 768, 1, 2, 2)).setObjects(("CISCO-ENTITY-SENSOR-HISTORY-MIB", "ceshCollectionIntervalTimeStamp"), ("CISCO-ENTITY-SENSOR-HISTORY-MIB", "ceshCollectionIntervalSensorValue"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ceshCollectionIntervalGroup = ceshCollectionIntervalGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-ENTITY-SENSOR-HISTORY-MIB", PYSNMP_MODULE_ID=ciscoEntitySensorHistoryMIB, ceshCollectionIntervalNumber=ceshCollectionIntervalNumber, ceshCollectionIntervalGroup=ceshCollectionIntervalGroup, ceshCollectionInvalidIntervals=ceshCollectionInvalidIntervals, ceshCollectionMaxIntervals=ceshCollectionMaxIntervals, ceshCollectionGroup=ceshCollectionGroup, ciscoEntitySensorHistoryCompliance=ciscoEntitySensorHistoryCompliance, ciscoEntitySensorHistoryMIBGroups=ciscoEntitySensorHistoryMIBGroups, ceshCollectionIntervals=ceshCollectionIntervals, ciscoEntitySensorHistoryMIBConform=ciscoEntitySensorHistoryMIBConform, ciscoEntitySensorHistoryMIB=ciscoEntitySensorHistoryMIB, ciscoEntitySensorHistoryMIBCompliances=ciscoEntitySensorHistoryMIBCompliances, ceshCollectionEntry=ceshCollectionEntry, ciscoEntitySensorHistoryMIBObjects=ciscoEntitySensorHistoryMIBObjects, ceshCollectionAlgorithm=ceshCollectionAlgorithm, ceshCollectionTable=ceshCollectionTable, SensorHistoryCollectionAlgorithm=SensorHistoryCollectionAlgorithm, ceshCollectionElapsedTime=ceshCollectionElapsedTime, ceshCollectionIntervalTime=ceshCollectionIntervalTime, ceshCollectionIntervalTimeStamp=ceshCollectionIntervalTimeStamp, ceshCollectionIntervalTable=ceshCollectionIntervalTable, ceshCollectionIntervalEntry=ceshCollectionIntervalEntry, ceshCollectionIntervalSensorValue=ceshCollectionIntervalSensorValue)
+mibBuilder.exportSymbols("CISCO-ENTITY-SENSOR-HISTORY-MIB", ceshCollectionIntervals=ceshCollectionIntervals, ceshCollectionIntervalGroup=ceshCollectionIntervalGroup, ciscoEntitySensorHistoryMIBObjects=ciscoEntitySensorHistoryMIBObjects, ceshCollectionTable=ceshCollectionTable, ceshCollectionMaxIntervals=ceshCollectionMaxIntervals, ciscoEntitySensorHistoryMIBCompliances=ciscoEntitySensorHistoryMIBCompliances, ceshCollectionIntervalEntry=ceshCollectionIntervalEntry, PYSNMP_MODULE_ID=ciscoEntitySensorHistoryMIB, ceshCollectionGroup=ceshCollectionGroup, ceshCollectionIntervalSensorValue=ceshCollectionIntervalSensorValue, ciscoEntitySensorHistoryMIB=ciscoEntitySensorHistoryMIB, ciscoEntitySensorHistoryCompliance=ciscoEntitySensorHistoryCompliance, ciscoEntitySensorHistoryMIBGroups=ciscoEntitySensorHistoryMIBGroups, ciscoEntitySensorHistoryMIBConform=ciscoEntitySensorHistoryMIBConform, ceshCollectionAlgorithm=ceshCollectionAlgorithm, ceshCollectionIntervalTimeStamp=ceshCollectionIntervalTimeStamp, ceshCollectionIntervalTime=ceshCollectionIntervalTime, SensorHistoryCollectionAlgorithm=SensorHistoryCollectionAlgorithm, ceshCollectionIntervalNumber=ceshCollectionIntervalNumber, ceshCollectionEntry=ceshCollectionEntry, ceshCollectionInvalidIntervals=ceshCollectionInvalidIntervals, ceshCollectionElapsedTime=ceshCollectionElapsedTime, ceshCollectionIntervalTable=ceshCollectionIntervalTable)

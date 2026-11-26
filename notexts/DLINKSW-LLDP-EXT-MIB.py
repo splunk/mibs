@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module DLINKSW-LLDP-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-LLDP-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:25 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 lldpLocPortNum, = mibBuilder.importSymbols("LLDP-MIB", "lldpLocPortNum")
-NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
-Counter32, Counter64, IpAddress, ModuleIdentity, Gauge32, Unsigned32, iso, Bits, ObjectIdentity, Integer32, NotificationType, MibIdentifier, TimeTicks, MibScalar, MibTable, MibTableRow, MibTableColumn = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "Counter64", "IpAddress", "ModuleIdentity", "Gauge32", "Unsigned32", "iso", "Bits", "ObjectIdentity", "Integer32", "NotificationType", "MibIdentifier", "TimeTicks", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Counter32, Bits, Counter64, TimeTicks, NotificationType, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, IpAddress, ObjectIdentity, iso = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Counter32", "Bits", "Counter64", "TimeTicks", "NotificationType", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "IpAddress", "ObjectIdentity", "iso")
+TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
 dlinkSwLldpExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 20))
 dlinkSwLldpExtMIB.setRevisions(('2013-02-25 00:00',))
 if mibBuilder.loadTexts: dlinkSwLldpExtMIB.setLastUpdated('201305290000Z')
@@ -63,4 +63,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 dLldpExtPortSubtypeGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 20, 2, 2, 4)).setObjects(("DLINKSW-LLDP-EXT-MIB", "dLldpExtPortSubType"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dLldpExtPortSubtypeGroup = dLldpExtPortSubtypeGroup.setStatus('current')
-mibBuilder.exportSymbols("DLINKSW-LLDP-EXT-MIB", dLldpExtClearCounterByPort=dLldpExtClearCounterByPort, dLldpExtClearNeighborsByPort=dLldpExtClearNeighborsByPort, dLldpExtPortSubtypeGroup=dLldpExtPortSubtypeGroup, dLldpExtClearGlobalStats=dLldpExtClearGlobalStats, dLldpExtMIBObjects=dLldpExtMIBObjects, dLldpExtLldpEnabled=dLldpExtLldpEnabled, dLldpExtBasicCfgGroup=dLldpExtBasicCfgGroup, PYSNMP_MODULE_ID=dlinkSwLldpExtMIB, dlinkSwLldpExtMIB=dlinkSwLldpExtMIB, dLldpExtMIBCompliance=dLldpExtMIBCompliance, dLldpExtClearStatsCounterGroup=dLldpExtClearStatsCounterGroup, dLldpExtPortSubTypeEntry=dLldpExtPortSubTypeEntry, dLldpExtLldpForward=dLldpExtLldpForward, dLldpExtPortSubType=dLldpExtPortSubType, dLldpExtLldpTrapEnabled=dLldpExtLldpTrapEnabled, dLldpExtPortSubTypeTable=dLldpExtPortSubTypeTable, dLldpExtMIBGroups=dLldpExtMIBGroups, dLldpExtClearAllNeighbors=dLldpExtClearAllNeighbors, dLldpExtMIBCompliances=dLldpExtMIBCompliances, dLldpExtMIBConformance=dLldpExtMIBConformance, dLldpExtLldpMedTrapEnabled=dLldpExtLldpMedTrapEnabled, dLldpExtClearStats=dLldpExtClearStats, dLldpExtMIBNotifications=dLldpExtMIBNotifications, dLldpExtClearNeighborGroup=dLldpExtClearNeighborGroup, dLldpExtClearAllPortsStats=dLldpExtClearAllPortsStats)
+mibBuilder.exportSymbols("DLINKSW-LLDP-EXT-MIB", dLldpExtMIBNotifications=dLldpExtMIBNotifications, dLldpExtMIBObjects=dLldpExtMIBObjects, dLldpExtBasicCfgGroup=dLldpExtBasicCfgGroup, dLldpExtClearStats=dLldpExtClearStats, dLldpExtLldpEnabled=dLldpExtLldpEnabled, dLldpExtClearAllPortsStats=dLldpExtClearAllPortsStats, dLldpExtMIBConformance=dLldpExtMIBConformance, dLldpExtPortSubType=dLldpExtPortSubType, dLldpExtMIBGroups=dLldpExtMIBGroups, dLldpExtLldpMedTrapEnabled=dLldpExtLldpMedTrapEnabled, dLldpExtPortSubTypeEntry=dLldpExtPortSubTypeEntry, dLldpExtMIBCompliance=dLldpExtMIBCompliance, dLldpExtClearNeighborGroup=dLldpExtClearNeighborGroup, dLldpExtClearStatsCounterGroup=dLldpExtClearStatsCounterGroup, dLldpExtMIBCompliances=dLldpExtMIBCompliances, dLldpExtClearNeighborsByPort=dLldpExtClearNeighborsByPort, dLldpExtLldpForward=dLldpExtLldpForward, dLldpExtPortSubtypeGroup=dLldpExtPortSubtypeGroup, dLldpExtClearGlobalStats=dLldpExtClearGlobalStats, PYSNMP_MODULE_ID=dlinkSwLldpExtMIB, dLldpExtClearAllNeighbors=dLldpExtClearAllNeighbors, dlinkSwLldpExtMIB=dlinkSwLldpExtMIB, dLldpExtClearCounterByPort=dLldpExtClearCounterByPort, dLldpExtLldpTrapEnabled=dLldpExtLldpTrapEnabled, dLldpExtPortSubTypeTable=dLldpExtPortSubTypeTable)

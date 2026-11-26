@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module DLINKSW-IMPB-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-IMPB-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:27 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
-InterfaceIndexOrZero, ifIndex = mibBuilder.importSymbols("IF-MIB", "InterfaceIndexOrZero", "ifIndex")
+ifIndex, InterfaceIndexOrZero = mibBuilder.importSymbols("IF-MIB", "ifIndex", "InterfaceIndexOrZero")
 InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
 VlanId, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "VlanId")
-ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
-Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Integer32, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Integer32", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
-TextualConvention, DisplayString, TruthValue, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue", "MacAddress")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+Counter64, TimeTicks, Integer32, ModuleIdentity, iso, IpAddress, NotificationType, Counter32, ObjectIdentity, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "Integer32", "ModuleIdentity", "iso", "IpAddress", "NotificationType", "Counter32", "ObjectIdentity", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "MibIdentifier")
+DisplayString, TruthValue, MacAddress, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "MacAddress", "TextualConvention")
 dlinkSwImpbMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 22))
 dlinkSwImpbMIB.setRevisions(('2015-11-06 00:00', '2013-10-16 00:00',))
 
@@ -90,4 +90,4 @@ dImpbNotificationsGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 171, 14, 22, 2, 2
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dImpbNotificationsGroup = dImpbNotificationsGroup.setStatus('current')
 if mibBuilder.loadTexts: dImpbNotificationsGroup.setDescription('The collection of objects provides IP-MAC-Port Binding notifications.')
-mibBuilder.exportSymbols("DLINKSW-IMPB-MIB", dImpbMIBCompliance=dImpbMIBCompliance, dImpbNotifications=dImpbNotifications, dImpbViolationAction=dImpbViolationAction, dImpbObjects=dImpbObjects, dImpbMIBGroups=dImpbMIBGroups, dImpbViolationIpAddress=dImpbViolationIpAddress, dImpbIfConfigEntry=dImpbIfConfigEntry, dImpbViolationIpAddrType=dImpbViolationIpAddrType, dImpbClearObjects=dImpbClearObjects, dImpbConformance=dImpbConformance, dImpbClearAllViolation=dImpbClearAllViolation, dImpbClearViolationByIf=dImpbClearViolationByIf, dImpbClearViolationLogGroup=dImpbClearViolationLogGroup, dImpbIfConfigTable=dImpbIfConfigTable, dImpbGlobalNotifyEnabled=dImpbGlobalNotifyEnabled, dImpbViolationTrap=dImpbViolationTrap, dImpbConfigGroup=dImpbConfigGroup, PYSNMP_MODULE_ID=dlinkSwImpbMIB, dlinkSwImpbMIB=dlinkSwImpbMIB, dImpbViolationLogTable=dImpbViolationLogTable, dImpbMIBCompliances=dImpbMIBCompliances, dImpbViolationLogEntry=dImpbViolationLogEntry, dImpbNotificationsGroup=dImpbNotificationsGroup, dImpbViolationMacAddress=dImpbViolationMacAddress, dImpbIfBindMode=dImpbIfBindMode, dImpbViolationVlan=dImpbViolationVlan, dImpbNotifyInfo=dImpbNotifyInfo)
+mibBuilder.exportSymbols("DLINKSW-IMPB-MIB", dImpbViolationAction=dImpbViolationAction, dImpbConfigGroup=dImpbConfigGroup, dImpbViolationIpAddress=dImpbViolationIpAddress, dImpbClearViolationLogGroup=dImpbClearViolationLogGroup, dImpbClearObjects=dImpbClearObjects, dImpbObjects=dImpbObjects, dImpbViolationLogEntry=dImpbViolationLogEntry, PYSNMP_MODULE_ID=dlinkSwImpbMIB, dlinkSwImpbMIB=dlinkSwImpbMIB, dImpbMIBCompliance=dImpbMIBCompliance, dImpbViolationMacAddress=dImpbViolationMacAddress, dImpbViolationLogTable=dImpbViolationLogTable, dImpbIfBindMode=dImpbIfBindMode, dImpbIfConfigEntry=dImpbIfConfigEntry, dImpbNotifyInfo=dImpbNotifyInfo, dImpbClearViolationByIf=dImpbClearViolationByIf, dImpbNotifications=dImpbNotifications, dImpbNotificationsGroup=dImpbNotificationsGroup, dImpbClearAllViolation=dImpbClearAllViolation, dImpbConformance=dImpbConformance, dImpbViolationVlan=dImpbViolationVlan, dImpbIfConfigTable=dImpbIfConfigTable, dImpbMIBCompliances=dImpbMIBCompliances, dImpbGlobalNotifyEnabled=dImpbGlobalNotifyEnabled, dImpbViolationIpAddrType=dImpbViolationIpAddrType, dImpbMIBGroups=dImpbMIBGroups, dImpbViolationTrap=dImpbViolationTrap)

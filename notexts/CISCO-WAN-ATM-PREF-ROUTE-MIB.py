@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-WAN-ATM-PREF-ROUTE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-WAN-ATM-PREF-ROUTE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 PnniPortId, PnniNodeId = mibBuilder.importSymbols("PNNI-MIB", "PnniPortId", "PnniNodeId")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
 DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoWanATMPrefRouteMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 99996))
 ciscoWanATMPrefRouteMIB.setRevisions(('2002-06-25 00:00',))
@@ -55,4 +55,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cwaPrefRouteMIBGroups = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 99996, 2, 2, 1)).setObjects(("CISCO-WAN-ATM-PREF-ROUTE-MIB", "cwaPrefRouteNwElemCount"), ("CISCO-WAN-ATM-PREF-ROUTE-MIB", "cwaPrefRouteRowStatus"), ("CISCO-WAN-ATM-PREF-ROUTE-MIB", "cwaPrefRouteNwElemNodeId"), ("CISCO-WAN-ATM-PREF-ROUTE-MIB", "cwaPrefRouteNwElemPortId"), ("CISCO-WAN-ATM-PREF-ROUTE-MIB", "cwaPrefRouteNwElemRowStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cwaPrefRouteMIBGroups = cwaPrefRouteMIBGroups.setStatus('current')
-mibBuilder.exportSymbols("CISCO-WAN-ATM-PREF-ROUTE-MIB", cwaPrefRouteConfTable=cwaPrefRouteConfTable, cwaPrefRouteNwElemNodeId=cwaPrefRouteNwElemNodeId, RouteId=RouteId, cwaPrefRouteNwElemPos=cwaPrefRouteNwElemPos, cwaPrefRouteNwElemPortId=cwaPrefRouteNwElemPortId, cwaPrefRouteConformance=cwaPrefRouteConformance, cwaPrefRouteNwElemRowStatus=cwaPrefRouteNwElemRowStatus, cwaPrefRouteNwElemCount=cwaPrefRouteNwElemCount, cwaPrefRouteMIBGroups=cwaPrefRouteMIBGroups, cwaPrefRouteId=cwaPrefRouteId, PYSNMP_MODULE_ID=ciscoWanATMPrefRouteMIB, cwaPrefMIBGroups=cwaPrefMIBGroups, ciscoWanATMPrefRouteMIBObjects=ciscoWanATMPrefRouteMIBObjects, ciscoWanATMPrefRouteMIB=ciscoWanATMPrefRouteMIB, cwaPrefMIBCompliance=cwaPrefMIBCompliance, ciscoWanATMPrefRouteMIBNotifs=ciscoWanATMPrefRouteMIBNotifs, cwaPrefRouteNwElemEntry=cwaPrefRouteNwElemEntry, cwaPrefRouteCompliances=cwaPrefRouteCompliances, cwaPrefRouteNwElemTable=cwaPrefRouteNwElemTable, cwaPrefRouteConfEntry=cwaPrefRouteConfEntry, cwaPrefRouteRowStatus=cwaPrefRouteRowStatus)
+mibBuilder.exportSymbols("CISCO-WAN-ATM-PREF-ROUTE-MIB", cwaPrefRouteRowStatus=cwaPrefRouteRowStatus, RouteId=RouteId, ciscoWanATMPrefRouteMIBNotifs=ciscoWanATMPrefRouteMIBNotifs, cwaPrefRouteNwElemCount=cwaPrefRouteNwElemCount, cwaPrefRouteNwElemNodeId=cwaPrefRouteNwElemNodeId, cwaPrefRouteNwElemEntry=cwaPrefRouteNwElemEntry, cwaPrefRouteCompliances=cwaPrefRouteCompliances, cwaPrefRouteNwElemPortId=cwaPrefRouteNwElemPortId, cwaPrefRouteNwElemPos=cwaPrefRouteNwElemPos, ciscoWanATMPrefRouteMIBObjects=ciscoWanATMPrefRouteMIBObjects, ciscoWanATMPrefRouteMIB=ciscoWanATMPrefRouteMIB, cwaPrefRouteNwElemTable=cwaPrefRouteNwElemTable, cwaPrefRouteNwElemRowStatus=cwaPrefRouteNwElemRowStatus, cwaPrefRouteConfEntry=cwaPrefRouteConfEntry, cwaPrefMIBCompliance=cwaPrefMIBCompliance, cwaPrefRouteId=cwaPrefRouteId, cwaPrefRouteMIBGroups=cwaPrefRouteMIBGroups, cwaPrefMIBGroups=cwaPrefMIBGroups, cwaPrefRouteConfTable=cwaPrefRouteConfTable, PYSNMP_MODULE_ID=ciscoWanATMPrefRouteMIB, cwaPrefRouteConformance=cwaPrefRouteConformance)

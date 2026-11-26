@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-AUDIO-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-AUDIO-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoDSGAudio = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 15))
 ciscoDSGAudio.setRevisions(('2013-07-10 12:20', '2012-03-07 05:00', '2010-08-30 05:00', '2010-05-24 06:30', '2010-05-21 16:45', '2010-04-12 05:00', '2010-03-22 05:00', '2010-02-12 15:00', '2009-12-07 12:00',))
@@ -70,4 +70,4 @@ audioStatusDDPMode = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 15, 2, 1, 
 if mibBuilder.loadTexts: audioStatusDDPMode.setStatus('current')
 audioStatusDualMonoMode = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 15, 2, 1, 9), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("off", 1), ("dualMono", 2)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: audioStatusDualMonoMode.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-AUDIO-MIB", audioConsumerVolRight=audioConsumerVolRight, audioStatusLanguage=audioStatusLanguage, audioProfAttenuationLeft=audioProfAttenuationLeft, audioCtrlTable=audioCtrlTable, audioStatusTable=audioStatusTable, audioStatusBufferLevel=audioStatusBufferLevel, audioStatusSFR=audioStatusSFR, audioPmtSource=audioPmtSource, audioStatusBitRate=audioStatusBitRate, audioMuted=audioMuted, audioMode=audioMode, audioStatusSelKey=audioStatusSelKey, audioProfAttenuationRight=audioProfAttenuationRight, audioStatusEntry=audioStatusEntry, audioDolbyDigitalPlusMode=audioDolbyDigitalPlusMode, PYSNMP_MODULE_ID=ciscoDSGAudio, audioStatusMuted=audioStatusMuted, audioSelKey=audioSelKey, audioLangList=audioLangList, audioDigitalComp=audioDigitalComp, audioConsumerVolLeft=audioConsumerVolLeft, audioManualEntry=audioManualEntry, audioDolbyDigitalComp=audioDolbyDigitalComp, audioCtrlEntry=audioCtrlEntry, audioStatusFormat=audioStatusFormat, ciscoDSGAudio=ciscoDSGAudio, audioStatusDualMonoMode=audioStatusDualMonoMode, audioLangMenu=audioLangMenu, audioStatusDDPMode=audioStatusDDPMode)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-AUDIO-MIB", audioDolbyDigitalComp=audioDolbyDigitalComp, audioStatusEntry=audioStatusEntry, audioProfAttenuationRight=audioProfAttenuationRight, audioStatusBufferLevel=audioStatusBufferLevel, audioSelKey=audioSelKey, audioStatusDDPMode=audioStatusDDPMode, PYSNMP_MODULE_ID=ciscoDSGAudio, audioProfAttenuationLeft=audioProfAttenuationLeft, audioDolbyDigitalPlusMode=audioDolbyDigitalPlusMode, audioDigitalComp=audioDigitalComp, audioCtrlEntry=audioCtrlEntry, audioStatusBitRate=audioStatusBitRate, audioStatusSelKey=audioStatusSelKey, audioLangList=audioLangList, audioStatusMuted=audioStatusMuted, audioStatusLanguage=audioStatusLanguage, audioStatusDualMonoMode=audioStatusDualMonoMode, audioConsumerVolRight=audioConsumerVolRight, audioStatusSFR=audioStatusSFR, audioPmtSource=audioPmtSource, audioStatusFormat=audioStatusFormat, audioStatusTable=audioStatusTable, audioConsumerVolLeft=audioConsumerVolLeft, audioManualEntry=audioManualEntry, audioCtrlTable=audioCtrlTable, ciscoDSGAudio=ciscoDSGAudio, audioLangMenu=audioLangMenu, audioMode=audioMode, audioMuted=audioMuted)

@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module LINKSYS-SpecialBpdu-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/linksys/LINKSYS-SpecialBpdu-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:08 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:11:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection")
+ConstraintsUnion, SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 rnd, = mibBuilder.importSymbols("LINKSYS-MIB", "rnd")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Bits, iso, IpAddress, Unsigned32, Integer32, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, MibIdentifier, NotificationType, ObjectIdentity, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "iso", "IpAddress", "Unsigned32", "Integer32", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "MibIdentifier", "NotificationType", "ObjectIdentity", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention, RowStatus, MacAddress, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "RowStatus", "MacAddress", "TruthValue")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+Gauge32, ModuleIdentity, Bits, ObjectIdentity, iso, Unsigned32, Counter32, IpAddress, TimeTicks, MibIdentifier, NotificationType, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "ModuleIdentity", "Bits", "ObjectIdentity", "iso", "Unsigned32", "Counter32", "IpAddress", "TimeTicks", "MibIdentifier", "NotificationType", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32")
+DisplayString, TextualConvention, MacAddress, RowStatus, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "MacAddress", "RowStatus", "TruthValue")
 rlSpecialBpdu = ModuleIdentity((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 144))
 rlSpecialBpdu.setRevisions(('2008-05-03 12:34',))
 if mibBuilder.loadTexts: rlSpecialBpdu.setLastUpdated('200805031234Z')
@@ -52,4 +52,4 @@ rlSpecialBpduHwEntry = MibTableRow((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 144, 2, 1
 if mibBuilder.loadTexts: rlSpecialBpduHwEntry.setStatus('current')
 rlSpecialBpduHwAction = MibTableColumn((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 144, 2, 1, 2), HwAction()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlSpecialBpduHwAction.setStatus('current')
-mibBuilder.exportSymbols("LINKSYS-SpecialBpdu-MIB", rlSpecialBpduHwEntry=rlSpecialBpduHwEntry, HwAction=HwAction, rlSpecialBpduMacAddr=rlSpecialBpduMacAddr, rlSpecialBpduEncap=rlSpecialBpduEncap, rlSpecialBpduRowStatus=rlSpecialBpduRowStatus, rlSpecialBpduHwAction=rlSpecialBpduHwAction, rlSpecialBpduHwTable=rlSpecialBpduHwTable, rlSpecialBpduEntry=rlSpecialBpduEntry, rlSpecialBpduProtId=rlSpecialBpduProtId, rlSpecialBpdu=rlSpecialBpdu, rlSpecialBpduTable=rlSpecialBpduTable, rlSpecialBpduAction=rlSpecialBpduAction, EncapType=EncapType, Action=Action, PYSNMP_MODULE_ID=rlSpecialBpdu)
+mibBuilder.exportSymbols("LINKSYS-SpecialBpdu-MIB", rlSpecialBpduHwEntry=rlSpecialBpduHwEntry, rlSpecialBpduTable=rlSpecialBpduTable, rlSpecialBpduMacAddr=rlSpecialBpduMacAddr, rlSpecialBpduEntry=rlSpecialBpduEntry, rlSpecialBpduAction=rlSpecialBpduAction, rlSpecialBpduRowStatus=rlSpecialBpduRowStatus, Action=Action, rlSpecialBpduEncap=rlSpecialBpduEncap, rlSpecialBpduHwTable=rlSpecialBpduHwTable, HwAction=HwAction, rlSpecialBpdu=rlSpecialBpdu, EncapType=EncapType, rlSpecialBpduHwAction=rlSpecialBpduHwAction, PYSNMP_MODULE_ID=rlSpecialBpdu, rlSpecialBpduProtId=rlSpecialBpduProtId)

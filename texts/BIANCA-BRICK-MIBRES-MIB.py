@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module BIANCA-BRICK-MIBRES-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/bintec/BIANCA-BRICK-MIBRES-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:59 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:05:53 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ConstraintsUnion, ConstraintsIntersection, ValueSizeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsUnion", "ConstraintsIntersection", "ValueSizeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, ConstraintsIntersection, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "ConstraintsIntersection", "SingleValueConstraint")
 resource, = mibBuilder.importSymbols("BINTEC-MIB", "resource")
 DisplayString, = mibBuilder.importSymbols("RFC1158-MIB", "DisplayString")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Counter32, enterprises, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, iso, Counter64, IpAddress, Unsigned32, Integer32, MibIdentifier, NotificationType, ModuleIdentity, ObjectIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "enterprises", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "iso", "Counter64", "IpAddress", "Unsigned32", "Integer32", "MibIdentifier", "NotificationType", "ModuleIdentity", "ObjectIdentity", "TimeTicks")
+ModuleIdentity, Gauge32, IpAddress, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, enterprises, Counter64, ObjectIdentity, iso, TimeTicks, Integer32, Counter32, NotificationType, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "Gauge32", "IpAddress", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "enterprises", "Counter64", "ObjectIdentity", "iso", "TimeTicks", "Integer32", "Counter32", "NotificationType", "MibIdentifier")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 resourceMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 272, 4, 17, 4, 255))
 if mibBuilder.loadTexts: resourceMIB.setLastUpdated('201204120000Z')
@@ -135,4 +135,4 @@ if mibBuilder.loadTexts: dspTotalChannels.setDescription('Total number of channe
 dspUsedChannels = MibTableColumn((1, 3, 6, 1, 4, 1, 272, 4, 17, 4, 3, 1, 6), Integer32().subtype(subtypeSpec=ValueRangeConstraint(1, 1000))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: dspUsedChannels.setStatus('current')
 if mibBuilder.loadTexts: dspUsedChannels.setDescription('Number of used channels of this DSP.')
-mibBuilder.exportSymbols("BIANCA-BRICK-MIBRES-MIB", memoryTotal=memoryTotal, cpuLoadUser10s=cpuLoadUser10s, dspDescr=dspDescr, resourceMIB=resourceMIB, cpuTotalSystem=cpuTotalSystem, memoryInuse=memoryInuse, cpuDescr=cpuDescr, cpuLoadUser=cpuLoadUser, dspTotalChannels=dspTotalChannels, PYSNMP_MODULE_ID=resourceMIB, memoryTable=memoryTable, dspSlot=dspSlot, memoryNFails=memoryNFails, dspUnit=dspUnit, cpuTable=cpuTable, memoryType=memoryType, memoryBlockSize=memoryBlockSize, cpuLoadStreams=cpuLoadStreams, cpuLoadStreams10s=cpuLoadStreams10s, cpuLoadSystem10s=cpuLoadSystem10s, cpuTotalUser=cpuTotalUser, memoryNFrees=memoryNFrees, memoryEntry=memoryEntry, cpuLoadIdle60s=cpuLoadIdle60s, cpuNumber=cpuNumber, dspUsedChannels=dspUsedChannels, cpuLoadIdle=cpuLoadIdle, memoryDescr=memoryDescr, cpuLoadIdle10s=cpuLoadIdle10s, cpuLoadUser60s=cpuLoadUser60s, dspCapabilities=dspCapabilities, cpuEntry=cpuEntry, cpuLoadSystem=cpuLoadSystem, cpuTotalStreams=cpuTotalStreams, cpuLoadSystem60s=cpuLoadSystem60s, cpuLoadStreams60s=cpuLoadStreams60s, dspEntry=dspEntry, memoryNAllocs=memoryNAllocs, memoryDramUse=memoryDramUse, cpuTotalIdle=cpuTotalIdle, dspTable=dspTable)
+mibBuilder.exportSymbols("BIANCA-BRICK-MIBRES-MIB", cpuLoadUser10s=cpuLoadUser10s, cpuLoadSystem60s=cpuLoadSystem60s, dspDescr=dspDescr, dspUnit=dspUnit, dspEntry=dspEntry, memoryNFrees=memoryNFrees, cpuNumber=cpuNumber, PYSNMP_MODULE_ID=resourceMIB, dspUsedChannels=dspUsedChannels, cpuLoadUser60s=cpuLoadUser60s, cpuTotalStreams=cpuTotalStreams, cpuLoadSystem=cpuLoadSystem, cpuEntry=cpuEntry, cpuLoadSystem10s=cpuLoadSystem10s, dspSlot=dspSlot, dspTable=dspTable, memoryType=memoryType, memoryTotal=memoryTotal, memoryDramUse=memoryDramUse, cpuLoadIdle=cpuLoadIdle, memoryInuse=memoryInuse, resourceMIB=resourceMIB, cpuTotalSystem=cpuTotalSystem, cpuLoadUser=cpuLoadUser, cpuLoadStreams60s=cpuLoadStreams60s, memoryTable=memoryTable, cpuLoadIdle60s=cpuLoadIdle60s, memoryNAllocs=memoryNAllocs, cpuLoadStreams=cpuLoadStreams, dspCapabilities=dspCapabilities, cpuTotalUser=cpuTotalUser, memoryEntry=memoryEntry, dspTotalChannels=dspTotalChannels, cpuLoadIdle10s=cpuLoadIdle10s, cpuTable=cpuTable, cpuLoadStreams10s=cpuLoadStreams10s, memoryBlockSize=memoryBlockSize, cpuDescr=cpuDescr, memoryDescr=memoryDescr, cpuTotalIdle=cpuTotalIdle, memoryNFails=memoryNFails)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-VSI-CONTROLLER-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VSI-CONTROLLER-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString")
 ciscoVSIControllerMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 141))
 if mibBuilder.loadTexts: ciscoVSIControllerMIB.setLastUpdated('9906080000Z')
 if mibBuilder.loadTexts: ciscoVSIControllerMIB.setOrganization('Cisco Systems, Inc.')
@@ -77,4 +77,4 @@ cvcConfGroupExternal = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 141, 3, 2, 2)).setOb
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvcConfGroupExternal = cvcConfGroupExternal.setStatus('current')
 if mibBuilder.loadTexts: cvcConfGroupExternal.setDescription('The objects related to configuring VSI controllers\n           running on the shelf external to the switch. ')
-mibBuilder.exportSymbols("CISCO-VSI-CONTROLLER-MIB", cvcConfControllerShelfLocation=cvcConfControllerShelfLocation, cvcConfEntry=cvcConfEntry, cvcConfControllerName=cvcConfControllerName, cvcConfVpi=cvcConfVpi, cvcConfGroup=cvcConfGroup, CvcControllerType=CvcControllerType, cvcConfControllerID=cvcConfControllerID, CvcControllerShelfLocation=CvcControllerShelfLocation, cvcConfControllerType=cvcConfControllerType, cvcMIBCompliance=cvcMIBCompliance, cvcMIBConformance=cvcMIBConformance, cvcConfController=cvcConfController, cvcConfGroupExternal=cvcConfGroupExternal, ciscoVSIControllerMIB=ciscoVSIControllerMIB, cvcConfVci=cvcConfVci, PYSNMP_MODULE_ID=ciscoVSIControllerMIB, cvcConfControllerLocation=cvcConfControllerLocation, cvcConfTable=cvcConfTable, cvcMIBGroups=cvcMIBGroups, cvcMIBCompliances=cvcMIBCompliances, cvcMIBObjects=cvcMIBObjects, cvcConfRowStatus=cvcConfRowStatus)
+mibBuilder.exportSymbols("CISCO-VSI-CONTROLLER-MIB", cvcConfController=cvcConfController, cvcConfVci=cvcConfVci, cvcConfControllerShelfLocation=cvcConfControllerShelfLocation, cvcConfControllerLocation=cvcConfControllerLocation, cvcMIBObjects=cvcMIBObjects, cvcConfRowStatus=cvcConfRowStatus, CvcControllerShelfLocation=CvcControllerShelfLocation, cvcConfGroupExternal=cvcConfGroupExternal, cvcConfEntry=cvcConfEntry, cvcMIBConformance=cvcMIBConformance, PYSNMP_MODULE_ID=ciscoVSIControllerMIB, CvcControllerType=CvcControllerType, cvcConfControllerType=cvcConfControllerType, cvcConfControllerName=cvcConfControllerName, cvcConfVpi=cvcConfVpi, cvcMIBCompliances=cvcMIBCompliances, cvcConfControllerID=cvcConfControllerID, ciscoVSIControllerMIB=ciscoVSIControllerMIB, cvcConfGroup=cvcConfGroup, cvcConfTable=cvcConfTable, cvcMIBCompliance=cvcMIBCompliance, cvcMIBGroups=cvcMIBGroups)

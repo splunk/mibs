@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-PMON-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-PMON-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 CiscoInterfaceIndexList, = mibBuilder.importSymbols("CISCO-TC", "CiscoInterfaceIndexList")
 entPhysicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, ObjectIdentity, IpAddress, iso, TimeTicks, Counter32, ModuleIdentity, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "ObjectIdentity", "IpAddress", "iso", "TimeTicks", "Counter32", "ModuleIdentity", "Counter64")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoPmonMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 779))
 ciscoPmonMIB.setRevisions(('2012-01-03 00:00',))
 
@@ -56,4 +56,4 @@ ciscoPmonPortGroupStatsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 779, 2, 2, 1
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoPmonPortGroupStatsGroup = ciscoPmonPortGroupStatsGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoPmonPortGroupStatsGroup.setDescription('A collection of objects that provides port group statistics\n        information.')
-mibBuilder.exportSymbols("CISCO-PMON-MIB", ciscoPmonPortGroupStatsValue=ciscoPmonPortGroupStatsValue, ciscoPmonMIBGroups=ciscoPmonMIBGroups, ciscoPmonMIBNotifs=ciscoPmonMIBNotifs, ciscoPmonPortGroupStatsTable=ciscoPmonPortGroupStatsTable, ciscoPmonPortGroupStatsGroup=ciscoPmonPortGroupStatsGroup, ciscoPmonMIBObjects=ciscoPmonMIBObjects, ciscoPmonPortGroupStatsEntry=ciscoPmonPortGroupStatsEntry, ciscoPmonStatsMIBObjects=ciscoPmonStatsMIBObjects, ciscoPmonPortGroupStatsType=ciscoPmonPortGroupStatsType, ciscoPmonMIBCompliance=ciscoPmonMIBCompliance, ciscoPmonMIB=ciscoPmonMIB, ciscoPmonMIBConformance=ciscoPmonMIBConformance, ciscoPmonPortGroupIfIndexList=ciscoPmonPortGroupIfIndexList, PYSNMP_MODULE_ID=ciscoPmonMIB, ciscoPmonPortGroupIndex=ciscoPmonPortGroupIndex, ciscoPmonMIBCompliances=ciscoPmonMIBCompliances)
+mibBuilder.exportSymbols("CISCO-PMON-MIB", ciscoPmonMIBCompliances=ciscoPmonMIBCompliances, ciscoPmonMIBGroups=ciscoPmonMIBGroups, PYSNMP_MODULE_ID=ciscoPmonMIB, ciscoPmonMIBCompliance=ciscoPmonMIBCompliance, ciscoPmonMIB=ciscoPmonMIB, ciscoPmonPortGroupIfIndexList=ciscoPmonPortGroupIfIndexList, ciscoPmonPortGroupStatsValue=ciscoPmonPortGroupStatsValue, ciscoPmonPortGroupStatsEntry=ciscoPmonPortGroupStatsEntry, ciscoPmonPortGroupStatsTable=ciscoPmonPortGroupStatsTable, ciscoPmonPortGroupStatsGroup=ciscoPmonPortGroupStatsGroup, ciscoPmonMIBNotifs=ciscoPmonMIBNotifs, ciscoPmonMIBConformance=ciscoPmonMIBConformance, ciscoPmonStatsMIBObjects=ciscoPmonStatsMIBObjects, ciscoPmonPortGroupIndex=ciscoPmonPortGroupIndex, ciscoPmonPortGroupStatsType=ciscoPmonPortGroupStatsType, ciscoPmonMIBObjects=ciscoPmonMIBObjects)

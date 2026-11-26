@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module NET-SNMP-VACM-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/netsnmp/NET-SNMP-VACM-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:27 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:12:25 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, ConstraintsUnion, ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ConstraintsUnion", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint")
+ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection, ConstraintsUnion, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ConstraintsUnion", "ValueRangeConstraint")
 netSnmpGroups, netSnmpObjects = mibBuilder.importSymbols("NET-SNMP-MIB", "netSnmpGroups", "netSnmpObjects")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-vacmAccessSecurityLevel, vacmAccessContextPrefix, vacmGroupName, vacmAccessSecurityModel = mibBuilder.importSymbols("SNMP-VIEW-BASED-ACM-MIB", "vacmAccessSecurityLevel", "vacmAccessContextPrefix", "vacmGroupName", "vacmAccessSecurityModel")
-NotificationGroup, ObjectGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ObjectGroup", "ModuleCompliance")
-Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, IpAddress, iso, ModuleIdentity, Integer32, TimeTicks, Counter64, Counter32, ObjectIdentity, NotificationType, MibIdentifier, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "IpAddress", "iso", "ModuleIdentity", "Integer32", "TimeTicks", "Counter64", "Counter32", "ObjectIdentity", "NotificationType", "MibIdentifier", "Gauge32")
-DisplayString, StorageType, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "StorageType", "RowStatus", "TextualConvention")
+vacmAccessSecurityLevel, vacmGroupName, vacmAccessSecurityModel, vacmAccessContextPrefix = mibBuilder.importSymbols("SNMP-VIEW-BASED-ACM-MIB", "vacmAccessSecurityLevel", "vacmGroupName", "vacmAccessSecurityModel", "vacmAccessContextPrefix")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+TimeTicks, Gauge32, Counter64, Bits, MibIdentifier, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn, ObjectIdentity, Unsigned32, NotificationType, ModuleIdentity, Counter32, iso, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "Gauge32", "Counter64", "Bits", "MibIdentifier", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ObjectIdentity", "Unsigned32", "NotificationType", "ModuleIdentity", "Counter32", "iso", "Integer32")
+StorageType, DisplayString, TextualConvention, RowStatus = mibBuilder.importSymbols("SNMPv2-TC", "StorageType", "DisplayString", "TextualConvention", "RowStatus")
 netSnmpVacmMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 8072, 1, 9))
 netSnmpVacmMIB.setRevisions(('2006-08-27 00:00',))
 
@@ -44,4 +44,4 @@ if mibBuilder.loadTexts: nsVacmStorageType.setDescription("The storage type for 
 nsVacmStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 8072, 1, 9, 1, 1, 5), RowStatus()).setMaxAccess("readcreate")
 if mibBuilder.loadTexts: nsVacmStatus.setStatus('current')
 if mibBuilder.loadTexts: nsVacmStatus.setDescription('The status of this (group of) conceptual rows.\n\n                 The  RowStatus TC [RFC2579] requires that this\n                 DESCRIPTION clause states under which circumstances\n                 other objects in this row can be modified:\n\n                 The value of this object has no effect on whether\n                 other objects in this conceptual row can be modified.\n\n                 The value of this object should be consistent across\n                 all nsVacmAccessEntries corresponding to a single\n                 row of the vacmAccessTable.\n                ')
-mibBuilder.exportSymbols("NET-SNMP-VACM-MIB", nsVacmStorageType=nsVacmStorageType, nsVacmContextMatch=nsVacmContextMatch, nsVacmStatus=nsVacmStatus, nsVacmViewName=nsVacmViewName, nsVacmAccessTable=nsVacmAccessTable, nsVacmAuthType=nsVacmAuthType, netSnmpVacmMIB=netSnmpVacmMIB, nsVacmAccessEntry=nsVacmAccessEntry, PYSNMP_MODULE_ID=netSnmpVacmMIB)
+mibBuilder.exportSymbols("NET-SNMP-VACM-MIB", netSnmpVacmMIB=netSnmpVacmMIB, nsVacmStorageType=nsVacmStorageType, nsVacmAccessTable=nsVacmAccessTable, nsVacmAuthType=nsVacmAuthType, PYSNMP_MODULE_ID=netSnmpVacmMIB, nsVacmContextMatch=nsVacmContextMatch, nsVacmAccessEntry=nsVacmAccessEntry, nsVacmViewName=nsVacmViewName, nsVacmStatus=nsVacmStatus)

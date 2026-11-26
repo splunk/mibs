@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-CALL-TRACKER-TCP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-CALL-TRACKER-TCP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
-cctHistoryIndex, cctActiveCallId = mibBuilder.importSymbols("CISCO-CALL-TRACKER-MIB", "cctHistoryIndex", "cctActiveCallId")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+cctActiveCallId, cctHistoryIndex = mibBuilder.importSymbols("CISCO-CALL-TRACKER-MIB", "cctActiveCallId", "cctHistoryIndex")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 CiscoPort, = mibBuilder.importSymbols("CISCO-TC", "CiscoPort")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, iso, Counter32, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "iso", "Counter32", "IpAddress", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoCallTrackerTCPMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 164))
 ciscoCallTrackerTCPMIB.setRevisions(('2005-12-06 00:00', '2000-06-07 00:00',))
 
@@ -90,4 +90,4 @@ ccttHistoryGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 164, 3, 2, 3)).setObject
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ccttHistoryGroup = ccttHistoryGroup.setStatus('current')
 if mibBuilder.loadTexts: ccttHistoryGroup.setDescription('A collection of objects providing the\n             historical call information.\n            ')
-mibBuilder.exportSymbols("CISCO-CALL-TRACKER-TCP-MIB", ccttHistoryRemoteTcpPort=ccttHistoryRemoteTcpPort, ccttHistoryDestinationFailures=ccttHistoryDestinationFailures, ccttHistoryRemoteIpAddress=ccttHistoryRemoteIpAddress, ccttActiveTable=ccttActiveTable, ccttActive=ccttActive, ccttActiveEntry=ccttActiveEntry, ccttHistory=ccttHistory, ccttMIBCompliance=ccttMIBCompliance, ccttMIBNotificationPrefix=ccttMIBNotificationPrefix, PYSNMP_MODULE_ID=ciscoCallTrackerTCPMIB, ccttActiveRemoteTcpPort=ccttActiveRemoteTcpPort, ccttMIBNotifications=ccttMIBNotifications, ccttActiveDestinationFailures=ccttActiveDestinationFailures, ccttHistoryLocalTcpPort=ccttHistoryLocalTcpPort, ccttHistoryGroup=ccttHistoryGroup, ccttMIBGroups=ccttMIBGroups, ccttActiveGroup=ccttActiveGroup, ccttHistoryEntry=ccttHistoryEntry, ccttMIBObjects=ccttMIBObjects, ccttHistoryTable=ccttHistoryTable, ccttActiveLocalTcpPort=ccttActiveLocalTcpPort, ccttActiveLocalIpAddress=ccttActiveLocalIpAddress, ccttHistoryLocalIpAddress=ccttHistoryLocalIpAddress, ccttMIBConformance=ccttMIBConformance, ccttMIBCompliances=ccttMIBCompliances, ccttActiveRemoteIpAddress=ccttActiveRemoteIpAddress, ciscoCallTrackerTCPMIB=ciscoCallTrackerTCPMIB)
+mibBuilder.exportSymbols("CISCO-CALL-TRACKER-TCP-MIB", ccttMIBNotificationPrefix=ccttMIBNotificationPrefix, ccttMIBNotifications=ccttMIBNotifications, ccttHistoryRemoteIpAddress=ccttHistoryRemoteIpAddress, ccttMIBObjects=ccttMIBObjects, ccttHistoryGroup=ccttHistoryGroup, ccttHistoryRemoteTcpPort=ccttHistoryRemoteTcpPort, ccttMIBConformance=ccttMIBConformance, ccttActiveEntry=ccttActiveEntry, ccttActiveDestinationFailures=ccttActiveDestinationFailures, ccttActiveLocalIpAddress=ccttActiveLocalIpAddress, ccttActiveGroup=ccttActiveGroup, ccttActiveRemoteTcpPort=ccttActiveRemoteTcpPort, ccttActiveLocalTcpPort=ccttActiveLocalTcpPort, ccttHistoryLocalTcpPort=ccttHistoryLocalTcpPort, ccttActiveRemoteIpAddress=ccttActiveRemoteIpAddress, ccttHistoryTable=ccttHistoryTable, ciscoCallTrackerTCPMIB=ciscoCallTrackerTCPMIB, ccttActiveTable=ccttActiveTable, PYSNMP_MODULE_ID=ciscoCallTrackerTCPMIB, ccttHistory=ccttHistory, ccttActive=ccttActive, ccttMIBCompliances=ccttMIBCompliances, ccttMIBCompliance=ccttMIBCompliance, ccttHistoryDestinationFailures=ccttHistoryDestinationFailures, ccttMIBGroups=ccttMIBGroups, ccttHistoryEntry=ccttHistoryEntry, ccttHistoryLocalIpAddress=ccttHistoryLocalIpAddress)

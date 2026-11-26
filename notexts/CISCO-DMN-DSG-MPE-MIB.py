@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-MPE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-MPE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, IpAddress, TimeTicks, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, NotificationType, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "IpAddress", "TimeTicks", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "NotificationType", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoDSGMPE = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 26))
 ciscoDSGMPE.setRevisions(('2010-08-30 11:00', '2010-05-07 06:30', '2010-05-03 11:00', '2010-04-12 06:00',))
@@ -73,4 +73,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 staticMulticastGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 26, 3, 2, 3)).setObjects(("CISCO-DMN-DSG-MPE-MIB", "staticMulticastGroupAddress"), ("CISCO-DMN-DSG-MPE-MIB", "staticMulticastRowstatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     staticMulticastGroup = staticMulticastGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-MPE-MIB", unicastRowStatus=unicastRowStatus, unicastGroup=unicastGroup, mpeConfigForwarding=mpeConfigForwarding, staticMulticastGroupAddress=staticMulticastGroupAddress, mpeMIBConformance=mpeMIBConformance, mpeMIBCompliances=mpeMIBCompliances, unicastMask=unicastMask, staticMulticastGroup=staticMulticastGroup, unicastEntry=unicastEntry, mpeConfigTable=mpeConfigTable, mpeMIBGroups=mpeMIBGroups, staticMulticastTable=staticMulticastTable, mpeTable=mpeTable, unicastGatewayAddr=unicastGatewayAddr, mpeCompliance=mpeCompliance, staticMulticastRowstatus=staticMulticastRowstatus, mpeConfigRIP=mpeConfigRIP, mpeMultipacket=mpeMultipacket, unicastIdx=unicastIdx, unicastOutputPortID=unicastOutputPortID, staticMulticastIdx=staticMulticastIdx, mpeConfigPortID=mpeConfigPortID, mpeConfigEntry=mpeConfigEntry, mpeConfigGroup=mpeConfigGroup, mpeConfigIGMP=mpeConfigIGMP, PYSNMP_MODULE_ID=ciscoDSGMPE, ciscoDSGMPE=ciscoDSGMPE, staticMulticastEntry=staticMulticastEntry, unicastRoute=unicastRoute, unicastTable=unicastTable)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-MPE-MIB", staticMulticastTable=staticMulticastTable, unicastRoute=unicastRoute, mpeMIBGroups=mpeMIBGroups, mpeTable=mpeTable, staticMulticastGroup=staticMulticastGroup, mpeConfigRIP=mpeConfigRIP, staticMulticastGroupAddress=staticMulticastGroupAddress, unicastGatewayAddr=unicastGatewayAddr, mpeMultipacket=mpeMultipacket, mpeConfigEntry=mpeConfigEntry, PYSNMP_MODULE_ID=ciscoDSGMPE, mpeConfigTable=mpeConfigTable, staticMulticastIdx=staticMulticastIdx, staticMulticastEntry=staticMulticastEntry, mpeConfigPortID=mpeConfigPortID, unicastTable=unicastTable, mpeMIBCompliances=mpeMIBCompliances, ciscoDSGMPE=ciscoDSGMPE, unicastGroup=unicastGroup, mpeConfigIGMP=mpeConfigIGMP, unicastMask=unicastMask, unicastRowStatus=unicastRowStatus, mpeMIBConformance=mpeMIBConformance, staticMulticastRowstatus=staticMulticastRowstatus, unicastEntry=unicastEntry, unicastOutputPortID=unicastOutputPortID, unicastIdx=unicastIdx, mpeConfigForwarding=mpeConfigForwarding, mpeCompliance=mpeCompliance, mpeConfigGroup=mpeConfigGroup)

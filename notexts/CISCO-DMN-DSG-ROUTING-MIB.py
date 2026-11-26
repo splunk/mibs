@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-DMN-DSG-ROUTING-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DMN-DSG-ROUTING-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoDSGUtilities, = mibBuilder.importSymbols("CISCO-DMN-DSG-ROOT-MIB", "ciscoDSGUtilities")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, IpAddress, TimeTicks, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, NotificationType, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "IpAddress", "TimeTicks", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "NotificationType", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoDSGRouting = ModuleIdentity((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 40))
 ciscoDSGRouting.setRevisions(('2012-05-14 15:00', '2012-03-07 07:30',))
@@ -68,4 +68,4 @@ unicastRoutesGWOrHost = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 40, 3, 
 if mibBuilder.loadTexts: unicastRoutesGWOrHost.setStatus('current')
 unicastRoutesType = MibTableColumn((1, 3, 6, 1, 4, 1, 1429, 2, 2, 5, 40, 3, 1, 9), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("dynamic", 1), ("static", 2)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: unicastRoutesType.setStatus('current')
-mibBuilder.exportSymbols("CISCO-DMN-DSG-ROUTING-MIB", ciscoDSGRouting=ciscoDSGRouting, unicastRoutesV4IPAddr=unicastRoutesV4IPAddr, staticRoutePort3Enable=staticRoutePort3Enable, staticRouteV4IPAddr=staticRouteV4IPAddr, unicastRoutesIndex=unicastRoutesIndex, multicastRouteRowStatus=multicastRouteRowStatus, staticRouteTable=staticRouteTable, multicastRouteEntry=multicastRouteEntry, unicastRoutesV4Gateway=unicastRoutesV4Gateway, unicastRoutesTable=unicastRoutesTable, unicastRoutesEntry=unicastRoutesEntry, unicastRoutesTTL=unicastRoutesTTL, staticRouteV4Mask=staticRouteV4Mask, unicastRoutesPortID=unicastRoutesPortID, unicastRoutesGWOrHost=unicastRoutesGWOrHost, unicastRoutesType=unicastRoutesType, multicastRouteIndex=multicastRouteIndex, staticRouteRowStatus=staticRouteRowStatus, multicastRouteV4IPAddr=multicastRouteV4IPAddr, staticRoutePort2Enable=staticRoutePort2Enable, staticRoutePort1Enable=staticRoutePort1Enable, unicastRoutesV4Mask=unicastRoutesV4Mask, staticRouteV4Gateway=staticRouteV4Gateway, PYSNMP_MODULE_ID=ciscoDSGRouting, multicastRouteTable=multicastRouteTable, staticRouteIndex=staticRouteIndex, staticRouteEntry=staticRouteEntry, unicastRoutesMTU=unicastRoutesMTU)
+mibBuilder.exportSymbols("CISCO-DMN-DSG-ROUTING-MIB", unicastRoutesEntry=unicastRoutesEntry, unicastRoutesPortID=unicastRoutesPortID, staticRouteIndex=staticRouteIndex, staticRouteV4Mask=staticRouteV4Mask, staticRouteTable=staticRouteTable, multicastRouteRowStatus=multicastRouteRowStatus, unicastRoutesTable=unicastRoutesTable, unicastRoutesV4Gateway=unicastRoutesV4Gateway, unicastRoutesV4IPAddr=unicastRoutesV4IPAddr, staticRouteV4Gateway=staticRouteV4Gateway, unicastRoutesTTL=unicastRoutesTTL, unicastRoutesV4Mask=unicastRoutesV4Mask, ciscoDSGRouting=ciscoDSGRouting, staticRoutePort1Enable=staticRoutePort1Enable, unicastRoutesIndex=unicastRoutesIndex, staticRoutePort3Enable=staticRoutePort3Enable, unicastRoutesMTU=unicastRoutesMTU, staticRouteRowStatus=staticRouteRowStatus, unicastRoutesGWOrHost=unicastRoutesGWOrHost, unicastRoutesType=unicastRoutesType, multicastRouteV4IPAddr=multicastRouteV4IPAddr, multicastRouteIndex=multicastRouteIndex, multicastRouteEntry=multicastRouteEntry, staticRoutePort2Enable=staticRoutePort2Enable, multicastRouteTable=multicastRouteTable, staticRouteEntry=staticRouteEntry, staticRouteV4IPAddr=staticRouteV4IPAddr, PYSNMP_MODULE_ID=ciscoDSGRouting)

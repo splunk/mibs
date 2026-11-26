@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-DTI-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-DTI-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-dtiProtocolServerStatusFlag, dtiProtocolClientStatusFlag = mibBuilder.importSymbols("DTI-MIB", "dtiProtocolServerStatusFlag", "dtiProtocolClientStatusFlag")
+dtiProtocolClientStatusFlag, dtiProtocolServerStatusFlag = mibBuilder.importSymbols("DTI-MIB", "dtiProtocolClientStatusFlag", "dtiProtocolServerStatusFlag")
 ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
 ciscoDtiExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 822))
 ciscoDtiExtMIB.setRevisions(('2014-08-22 00:00',))
 
@@ -52,4 +52,4 @@ ciscoDtiExtNotifsGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 822, 2, 2, 2
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoDtiExtNotifsGroup = ciscoDtiExtNotifsGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoDtiExtNotifsGroup.setDescription('Contains the group of notification objects for DTI client and\n        server status.')
-mibBuilder.exportSymbols("CISCO-DTI-EXT-MIB", cdeServerStatusChangeEnable=cdeServerStatusChangeEnable, ciscoDtiExtNotifsControlGroup=ciscoDtiExtNotifsControlGroup, ciscoDtiExtObjects=ciscoDtiExtObjects, ciscoDtiExtCompliances=ciscoDtiExtCompliances, PYSNMP_MODULE_ID=ciscoDtiExtMIB, cdeClientStatusChangeEnable=cdeClientStatusChangeEnable, ciscoDtiExtNotifsGroup=ciscoDtiExtNotifsGroup, ciscoDtiExtCompliance=ciscoDtiExtCompliance, ciscoDtiExtConform=ciscoDtiExtConform, cdeServerStatusChange=cdeServerStatusChange, ciscoDtiExtGroups=ciscoDtiExtGroups, ciscoDtiExtNotifs=ciscoDtiExtNotifs, cdeClientStatusChange=cdeClientStatusChange, ciscoDtiExtMIB=ciscoDtiExtMIB)
+mibBuilder.exportSymbols("CISCO-DTI-EXT-MIB", ciscoDtiExtCompliances=ciscoDtiExtCompliances, cdeServerStatusChangeEnable=cdeServerStatusChangeEnable, ciscoDtiExtGroups=ciscoDtiExtGroups, PYSNMP_MODULE_ID=ciscoDtiExtMIB, ciscoDtiExtMIB=ciscoDtiExtMIB, ciscoDtiExtNotifsControlGroup=ciscoDtiExtNotifsControlGroup, cdeClientStatusChangeEnable=cdeClientStatusChangeEnable, ciscoDtiExtNotifs=ciscoDtiExtNotifs, ciscoDtiExtConform=ciscoDtiExtConform, ciscoDtiExtObjects=ciscoDtiExtObjects, cdeServerStatusChange=cdeServerStatusChange, cdeClientStatusChange=cdeClientStatusChange, ciscoDtiExtCompliance=ciscoDtiExtCompliance, ciscoDtiExtNotifsGroup=ciscoDtiExtNotifsGroup)

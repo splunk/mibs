@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-ATM-SWITCH-CUG-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ATM-SWITCH-CUG-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
-DisplayString, RowStatus, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention", "TruthValue")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
+DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
 csCugMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 89))
 if mibBuilder.loadTexts: csCugMIB.setLastUpdated('9707070000Z')
 if mibBuilder.loadTexts: csCugMIB.setOrganization('Cisco Systems, Inc.')
@@ -70,4 +70,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 csCugMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 89, 3, 2, 1)).setObjects(("CISCO-ATM-SWITCH-CUG-MIB", "csCugInterlockCodeAliasName"), ("CISCO-ATM-SWITCH-CUG-MIB", "csCugInterlockCodeRowStatus"), ("CISCO-ATM-SWITCH-CUG-MIB", "csCugIfAccessEnable"), ("CISCO-ATM-SWITCH-CUG-MIB", "csCugIfPermitUnknownCugsToUser"), ("CISCO-ATM-SWITCH-CUG-MIB", "csCugIfPermitUnknownCugsFromUser"), ("CISCO-ATM-SWITCH-CUG-MIB", "csCugIfRowStatus"), ("CISCO-ATM-SWITCH-CUG-MIB", "csCugIndex"), ("CISCO-ATM-SWITCH-CUG-MIB", "csCugPreferential"), ("CISCO-ATM-SWITCH-CUG-MIB", "csCugDenySameGroupToUser"), ("CISCO-ATM-SWITCH-CUG-MIB", "csCugDenySameGroupFromUser"), ("CISCO-ATM-SWITCH-CUG-MIB", "csCugRowStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     csCugMIBGroup = csCugMIBGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-ATM-SWITCH-CUG-MIB", csCugMIBConformance=csCugMIBConformance, CsCugInterlockCode=CsCugInterlockCode, csCugInterlockCodeAliasName=csCugInterlockCodeAliasName, csCugIfRowStatus=csCugIfRowStatus, csCugMIBObjects=csCugMIBObjects, csCugMIB=csCugMIB, csCugIfEntry=csCugIfEntry, csCugMIBCompliances=csCugMIBCompliances, PYSNMP_MODULE_ID=csCugMIB, csCugMIBGroup=csCugMIBGroup, csCugIfPermitUnknownCugsFromUser=csCugIfPermitUnknownCugsFromUser, csCugInterlockCodeRowStatus=csCugInterlockCodeRowStatus, csCugInterlockCode=csCugInterlockCode, csCugMIBGroups=csCugMIBGroups, csCugIndex=csCugIndex, csCugIfAccessEnable=csCugIfAccessEnable, csCugIfTable=csCugIfTable, csCugEntry=csCugEntry, csCugRowStatus=csCugRowStatus, csCugInterlockCodeEntry=csCugInterlockCodeEntry, csCugTable=csCugTable, csCugPreferential=csCugPreferential, csCugDenySameGroupToUser=csCugDenySameGroupToUser, csCugMIBCompliance=csCugMIBCompliance, Unsigned32=Unsigned32, csCugInterlockCodeTable=csCugInterlockCodeTable, csCugDenySameGroupFromUser=csCugDenySameGroupFromUser, csCugIfPermitUnknownCugsToUser=csCugIfPermitUnknownCugsToUser)
+mibBuilder.exportSymbols("CISCO-ATM-SWITCH-CUG-MIB", csCugInterlockCodeAliasName=csCugInterlockCodeAliasName, csCugDenySameGroupToUser=csCugDenySameGroupToUser, csCugIfPermitUnknownCugsToUser=csCugIfPermitUnknownCugsToUser, csCugInterlockCodeRowStatus=csCugInterlockCodeRowStatus, csCugTable=csCugTable, csCugMIBConformance=csCugMIBConformance, csCugInterlockCodeTable=csCugInterlockCodeTable, csCugEntry=csCugEntry, csCugInterlockCodeEntry=csCugInterlockCodeEntry, Unsigned32=Unsigned32, csCugMIBCompliances=csCugMIBCompliances, csCugRowStatus=csCugRowStatus, csCugMIBObjects=csCugMIBObjects, csCugIndex=csCugIndex, csCugIfTable=csCugIfTable, csCugPreferential=csCugPreferential, CsCugInterlockCode=CsCugInterlockCode, csCugMIBGroups=csCugMIBGroups, csCugIfEntry=csCugIfEntry, csCugDenySameGroupFromUser=csCugDenySameGroupFromUser, csCugInterlockCode=csCugInterlockCode, csCugMIB=csCugMIB, PYSNMP_MODULE_ID=csCugMIB, csCugMIBCompliance=csCugMIBCompliance, csCugIfPermitUnknownCugsFromUser=csCugIfPermitUnknownCugsFromUser, csCugMIBGroup=csCugMIBGroup, csCugIfRowStatus=csCugIfRowStatus, csCugIfAccessEnable=csCugIfAccessEnable)

@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-TC-NO-U32 (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-TC-NO-U32
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:01 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
-ciscoProducts, ciscoModules = mibBuilder.importSymbols("CISCO-SMI", "ciscoProducts", "ciscoModules")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+ciscoModules, ciscoProducts = mibBuilder.importSymbols("CISCO-SMI", "ciscoModules", "ciscoProducts")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, Bits, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "Bits", "iso", "Counter64", "Counter32")
+Counter64, TimeTicks, NotificationType, iso, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoTextualConventions = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 12, 1))
 ciscoTextualConventions.setRevisions(('1997-03-13 00:00', '1997-03-13 00:00', '1996-08-14 00:00', '1996-07-08 00:00', '1995-06-07 00:00', '1998-10-28 00:00',))
@@ -58,4 +58,4 @@ class CiscoIpProtocol(TextualConvention, Integer32):
     status = 'current'
     subtypeSpec = Integer32.subtypeSpec + ValueRangeConstraint(0, 255)
 
-mibBuilder.exportSymbols("CISCO-TC-NO-U32", CiscoNetworkAddress=CiscoNetworkAddress, CiscoPort=CiscoPort, CiscoIpProtocol=CiscoIpProtocol, CiscoNetworkProtocol=CiscoNetworkProtocol, SAPType=SAPType, EntPhysicalIndexOrZero=EntPhysicalIndexOrZero, CountryCode=CountryCode, PYSNMP_MODULE_ID=ciscoTextualConventions, InterfaceIndexOrZero=InterfaceIndexOrZero, ciscoTextualConventions=ciscoTextualConventions, CiscoRowOperStatus=CiscoRowOperStatus)
+mibBuilder.exportSymbols("CISCO-TC-NO-U32", CiscoNetworkProtocol=CiscoNetworkProtocol, CiscoNetworkAddress=CiscoNetworkAddress, CiscoPort=CiscoPort, CountryCode=CountryCode, EntPhysicalIndexOrZero=EntPhysicalIndexOrZero, CiscoIpProtocol=CiscoIpProtocol, PYSNMP_MODULE_ID=ciscoTextualConventions, ciscoTextualConventions=ciscoTextualConventions, SAPType=SAPType, InterfaceIndexOrZero=InterfaceIndexOrZero, CiscoRowOperStatus=CiscoRowOperStatus)

@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-SERVICE-CONTROL-LINK-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SERVICE-CONTROL-LINK-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:01 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 EntPhysicalIndexOrZero, = mibBuilder.importSymbols("CISCO-TC", "EntPhysicalIndexOrZero")
-PhysicalIndex, entPhysicalIndex = mibBuilder.importSymbols("ENTITY-MIB", "PhysicalIndex", "entPhysicalIndex")
+entPhysicalIndex, PhysicalIndex = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex", "PhysicalIndex")
 ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 ciscoServiceControlLinkMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 631))
 ciscoServiceControlLinkMIB.setRevisions(('2007-06-26 00:00',))
@@ -63,4 +63,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cSCLinkNotifControlGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 631, 2, 2, 3)).setObjects(("CISCO-SERVICE-CONTROL-LINK-MIB", "cscLinkNotifsEnabled"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cSCLinkNotifControlGroup = cSCLinkNotifControlGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-SERVICE-CONTROL-LINK-MIB", cscLinkAdminReflectionState=cscLinkAdminReflectionState, ciscoSCLinkMIBObjects=ciscoSCLinkMIBObjects, cscLinkStatusTable=cscLinkStatusTable, cSCLinkMIBObjectGroup=cSCLinkMIBObjectGroup, ciscoSCLinkMIBObjectGroups=ciscoSCLinkMIBObjectGroups, ciscoSCLinkMIBConform=ciscoSCLinkMIBConform, ciscoSCLinkMIBCompliances=ciscoSCLinkMIBCompliances, ciscoSCLinkMIBNotifs=ciscoSCLinkMIBNotifs, cSCLinkNotifControlGroup=cSCLinkNotifControlGroup, cscLinkNetworkSidePortIndex=cscLinkNetworkSidePortIndex, cscLinkAdminReflectionEnable=cscLinkAdminReflectionEnable, cscLinkStatusEntry=cscLinkStatusEntry, ciscoServiceControlLinkModeChange=ciscoServiceControlLinkModeChange, cSCLinkMIBNotificationGroup=cSCLinkMIBNotificationGroup, cscLinkSubscriberSidePortIndex=cscLinkSubscriberSidePortIndex, cscLinkAdminModeOnFailure=cscLinkAdminModeOnFailure, CsceLinkModeType=CsceLinkModeType, PYSNMP_MODULE_ID=ciscoServiceControlLinkMIB, ciscoServiceControlLinkMIB=ciscoServiceControlLinkMIB, cscLinkNotifsEnabled=cscLinkNotifsEnabled, cscLinkAdminModeOnActive=cscLinkAdminModeOnActive, cServiceLinkMIBCompliance=cServiceLinkMIBCompliance, cscLinkOperMode=cscLinkOperMode)
+mibBuilder.exportSymbols("CISCO-SERVICE-CONTROL-LINK-MIB", ciscoSCLinkMIBCompliances=ciscoSCLinkMIBCompliances, PYSNMP_MODULE_ID=ciscoServiceControlLinkMIB, cSCLinkMIBObjectGroup=cSCLinkMIBObjectGroup, cscLinkAdminModeOnFailure=cscLinkAdminModeOnFailure, ciscoSCLinkMIBConform=ciscoSCLinkMIBConform, cscLinkNotifsEnabled=cscLinkNotifsEnabled, cscLinkStatusTable=cscLinkStatusTable, ciscoSCLinkMIBObjects=ciscoSCLinkMIBObjects, cscLinkAdminReflectionEnable=cscLinkAdminReflectionEnable, cscLinkOperMode=cscLinkOperMode, cSCLinkMIBNotificationGroup=cSCLinkMIBNotificationGroup, cscLinkAdminModeOnActive=cscLinkAdminModeOnActive, cSCLinkNotifControlGroup=cSCLinkNotifControlGroup, ciscoSCLinkMIBNotifs=ciscoSCLinkMIBNotifs, ciscoServiceControlLinkModeChange=ciscoServiceControlLinkModeChange, cscLinkAdminReflectionState=cscLinkAdminReflectionState, CsceLinkModeType=CsceLinkModeType, cscLinkSubscriberSidePortIndex=cscLinkSubscriberSidePortIndex, ciscoSCLinkMIBObjectGroups=ciscoSCLinkMIBObjectGroups, cscLinkNetworkSidePortIndex=cscLinkNetworkSidePortIndex, ciscoServiceControlLinkMIB=ciscoServiceControlLinkMIB, cServiceLinkMIBCompliance=cServiceLinkMIBCompliance, cscLinkStatusEntry=cscLinkStatusEntry)

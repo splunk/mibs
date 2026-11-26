@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-VOICE-IF-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VOICE-IF-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 CountryCode, = mibBuilder.importSymbols("CISCO-TC", "CountryCode")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
 ciscoVoiceInterfaceMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 64))
 ciscoVoiceInterfaceMIB.setRevisions(('2003-07-18 00:00', '2001-03-08 00:00',))
 
@@ -89,4 +89,4 @@ cvIfConnectionGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 64, 2, 2, 2)).setObje
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvIfConnectionGroup = cvIfConnectionGroup.setStatus('current')
 if mibBuilder.loadTexts: cvIfConnectionGroup.setDescription('A collection of objects providing trunking or PLAR\n             (private line automatic ringdown) related configuration\n             for voice analog interfaces.\n            ')
-mibBuilder.exportSymbols("CISCO-VOICE-IF-MIB", cvIfCfgMusicOnHoldThreshold=cvIfCfgMusicOnHoldThreshold, cvIfCfgTable=cvIfCfgTable, cvIfCfgInterDigitTimeOut=cvIfCfgInterDigitTimeOut, cvIfCfgObjects=cvIfCfgObjects, cvIfCfgConnectionMode=cvIfCfgConnectionMode, cvIfObjects=cvIfObjects, cvIfConnectionGroup=cvIfConnectionGroup, cvIfCfgEchoCancelCoverage=cvIfCfgEchoCancelCoverage, cvIfCfgInitialDigitTimeOut=cvIfCfgInitialDigitTimeOut, ciscoVoiceInterfaceMIB=ciscoVoiceInterfaceMIB, cvIfCfgConnectionNumber=cvIfCfgConnectionNumber, cvIfCfgOutAttn=cvIfCfgOutAttn, cvIfCfgInGain=cvIfCfgInGain, cvIfCfgNonLinearProcEnable=cvIfCfgNonLinearProcEnable, cvIfCfgEchoCanceller=cvIfCfgEchoCanceller, cvIfCfgEchoCancelWorstERL=cvIfCfgEchoCancelWorstERL, cvIfCfgEntry=cvIfCfgEntry, cvIfCompliance=cvIfCompliance, PYSNMP_MODULE_ID=ciscoVoiceInterfaceMIB, cvIfCfgEchoCancelEnable=cvIfCfgEchoCancelEnable, cvIfConformance=cvIfConformance, cvIfCfgRegionalTone=cvIfCfgRegionalTone, cvIfGroups=cvIfGroups, cvIfCompliances=cvIfCompliances, cvIfGroup=cvIfGroup, cvIfCfgNoiseRegEnable=cvIfCfgNoiseRegEnable)
+mibBuilder.exportSymbols("CISCO-VOICE-IF-MIB", cvIfCfgTable=cvIfCfgTable, cvIfGroups=cvIfGroups, cvIfCfgInitialDigitTimeOut=cvIfCfgInitialDigitTimeOut, cvIfCfgEchoCancelCoverage=cvIfCfgEchoCancelCoverage, cvIfConformance=cvIfConformance, cvIfCfgConnectionMode=cvIfCfgConnectionMode, cvIfCfgEchoCancelEnable=cvIfCfgEchoCancelEnable, ciscoVoiceInterfaceMIB=ciscoVoiceInterfaceMIB, cvIfCompliances=cvIfCompliances, cvIfCfgNonLinearProcEnable=cvIfCfgNonLinearProcEnable, cvIfGroup=cvIfGroup, cvIfCfgRegionalTone=cvIfCfgRegionalTone, cvIfCompliance=cvIfCompliance, cvIfCfgInGain=cvIfCfgInGain, cvIfObjects=cvIfObjects, PYSNMP_MODULE_ID=ciscoVoiceInterfaceMIB, cvIfCfgNoiseRegEnable=cvIfCfgNoiseRegEnable, cvIfCfgObjects=cvIfCfgObjects, cvIfCfgOutAttn=cvIfCfgOutAttn, cvIfCfgEchoCanceller=cvIfCfgEchoCanceller, cvIfCfgInterDigitTimeOut=cvIfCfgInterDigitTimeOut, cvIfCfgMusicOnHoldThreshold=cvIfCfgMusicOnHoldThreshold, cvIfCfgConnectionNumber=cvIfCfgConnectionNumber, cvIfConnectionGroup=cvIfConnectionGroup, cvIfCfgEchoCancelWorstERL=cvIfCfgEchoCancelWorstERL, cvIfCfgEntry=cvIfCfgEntry)

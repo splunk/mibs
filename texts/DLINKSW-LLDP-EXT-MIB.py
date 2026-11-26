@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module DLINKSW-LLDP-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-LLDP-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:27 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 lldpLocPortNum, = mibBuilder.importSymbols("LLDP-MIB", "lldpLocPortNum")
-ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
-Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Unsigned32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Unsigned32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
-TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+Counter64, TimeTicks, Integer32, ModuleIdentity, iso, IpAddress, NotificationType, Counter32, ObjectIdentity, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "Integer32", "ModuleIdentity", "iso", "IpAddress", "NotificationType", "Counter32", "ObjectIdentity", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "MibIdentifier")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 dlinkSwLldpExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 20))
 dlinkSwLldpExtMIB.setRevisions(('2013-02-25 00:00',))
 
@@ -85,4 +85,4 @@ dLldpExtPortSubtypeGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 20, 2, 2, 4))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dLldpExtPortSubtypeGroup = dLldpExtPortSubtypeGroup.setStatus('current')
 if mibBuilder.loadTexts: dLldpExtPortSubtypeGroup.setDescription('A collection of objects configures the subtype of Port ID TLV.')
-mibBuilder.exportSymbols("DLINKSW-LLDP-EXT-MIB", dLldpExtClearNeighborsByPort=dLldpExtClearNeighborsByPort, dLldpExtClearGlobalStats=dLldpExtClearGlobalStats, dlinkSwLldpExtMIB=dlinkSwLldpExtMIB, dLldpExtClearStatsCounterGroup=dLldpExtClearStatsCounterGroup, dLldpExtPortSubtypeGroup=dLldpExtPortSubtypeGroup, dLldpExtMIBObjects=dLldpExtMIBObjects, PYSNMP_MODULE_ID=dlinkSwLldpExtMIB, dLldpExtLldpEnabled=dLldpExtLldpEnabled, dLldpExtLldpTrapEnabled=dLldpExtLldpTrapEnabled, dLldpExtClearCounterByPort=dLldpExtClearCounterByPort, dLldpExtMIBConformance=dLldpExtMIBConformance, dLldpExtMIBNotifications=dLldpExtMIBNotifications, dLldpExtClearNeighborGroup=dLldpExtClearNeighborGroup, dLldpExtClearStats=dLldpExtClearStats, dLldpExtLldpForward=dLldpExtLldpForward, dLldpExtClearAllNeighbors=dLldpExtClearAllNeighbors, dLldpExtClearAllPortsStats=dLldpExtClearAllPortsStats, dLldpExtMIBCompliances=dLldpExtMIBCompliances, dLldpExtPortSubTypeTable=dLldpExtPortSubTypeTable, dLldpExtPortSubType=dLldpExtPortSubType, dLldpExtLldpMedTrapEnabled=dLldpExtLldpMedTrapEnabled, dLldpExtBasicCfgGroup=dLldpExtBasicCfgGroup, dLldpExtMIBCompliance=dLldpExtMIBCompliance, dLldpExtMIBGroups=dLldpExtMIBGroups, dLldpExtPortSubTypeEntry=dLldpExtPortSubTypeEntry)
+mibBuilder.exportSymbols("DLINKSW-LLDP-EXT-MIB", dLldpExtPortSubtypeGroup=dLldpExtPortSubtypeGroup, dLldpExtMIBConformance=dLldpExtMIBConformance, dLldpExtClearAllNeighbors=dLldpExtClearAllNeighbors, dLldpExtPortSubTypeTable=dLldpExtPortSubTypeTable, dLldpExtClearStats=dLldpExtClearStats, dLldpExtClearStatsCounterGroup=dLldpExtClearStatsCounterGroup, PYSNMP_MODULE_ID=dlinkSwLldpExtMIB, dlinkSwLldpExtMIB=dlinkSwLldpExtMIB, dLldpExtClearAllPortsStats=dLldpExtClearAllPortsStats, dLldpExtLldpMedTrapEnabled=dLldpExtLldpMedTrapEnabled, dLldpExtClearNeighborsByPort=dLldpExtClearNeighborsByPort, dLldpExtBasicCfgGroup=dLldpExtBasicCfgGroup, dLldpExtMIBObjects=dLldpExtMIBObjects, dLldpExtPortSubType=dLldpExtPortSubType, dLldpExtMIBCompliance=dLldpExtMIBCompliance, dLldpExtClearGlobalStats=dLldpExtClearGlobalStats, dLldpExtLldpEnabled=dLldpExtLldpEnabled, dLldpExtClearCounterByPort=dLldpExtClearCounterByPort, dLldpExtMIBNotifications=dLldpExtMIBNotifications, dLldpExtClearNeighborGroup=dLldpExtClearNeighborGroup, dLldpExtMIBGroups=dLldpExtMIBGroups, dLldpExtPortSubTypeEntry=dLldpExtPortSubTypeEntry, dLldpExtLldpTrapEnabled=dLldpExtLldpTrapEnabled, dLldpExtLldpForward=dLldpExtLldpForward, dLldpExtMIBCompliances=dLldpExtMIBCompliances)

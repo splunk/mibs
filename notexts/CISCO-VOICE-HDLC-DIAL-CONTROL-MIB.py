@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-VOICE-HDLC-DIAL-CONTROL-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VOICE-HDLC-DIAL-CONTROL-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:57 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 cCallHistoryIndex, = mibBuilder.importSymbols("CISCO-DIAL-CONTROL-MIB", "cCallHistoryIndex")
 ciscoExperiment, = mibBuilder.importSymbols("CISCO-SMI", "ciscoExperiment")
 CvcGUid, = mibBuilder.importSymbols("CISCO-VOICE-DIAL-CONTROL-MIB", "CvcGUid")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoVoiceHdlcDialControlMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 10, 37))
 if mibBuilder.loadTexts: ciscoVoiceHdlcDialControlMIB.setLastUpdated('9804140000Z')
@@ -39,4 +39,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cvHdlcCallHistoryGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 10, 37, 3, 2, 1)).setObjects(("CISCO-VOICE-HDLC-DIAL-CONTROL-MIB", "cvHdlcCallHistoryConnectionId"), ("CISCO-VOICE-HDLC-DIAL-CONTROL-MIB", "cvHdlcCallHistoryLowerIfName"), ("CISCO-VOICE-HDLC-DIAL-CONTROL-MIB", "cvHdlcCallHistorySessionTarget"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvHdlcCallHistoryGroup = cvHdlcCallHistoryGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-VOICE-HDLC-DIAL-CONTROL-MIB", cvHdlcCallHistorySessionTarget=cvHdlcCallHistorySessionTarget, cvhdlcdcMIBConformance=cvhdlcdcMIBConformance, cvhdlcdcMIBCompliance=cvhdlcdcMIBCompliance, cvHdlcCallHistoryTable=cvHdlcCallHistoryTable, cvhdlcdcMIBGroups=cvhdlcdcMIBGroups, cvHdlcCallHistoryGroup=cvHdlcCallHistoryGroup, cvHdlcCallHistory=cvHdlcCallHistory, ciscoVoiceHdlcDialControlMIB=ciscoVoiceHdlcDialControlMIB, cvhdlcdcMIBObjects=cvhdlcdcMIBObjects, cvHdlcCallHistoryEntry=cvHdlcCallHistoryEntry, cvhdlcdcMIBCompliances=cvhdlcdcMIBCompliances, PYSNMP_MODULE_ID=ciscoVoiceHdlcDialControlMIB, cvHdlcCallHistoryConnectionId=cvHdlcCallHistoryConnectionId, cvHdlcCallHistoryLowerIfName=cvHdlcCallHistoryLowerIfName)
+mibBuilder.exportSymbols("CISCO-VOICE-HDLC-DIAL-CONTROL-MIB", cvHdlcCallHistoryLowerIfName=cvHdlcCallHistoryLowerIfName, cvhdlcdcMIBCompliance=cvhdlcdcMIBCompliance, PYSNMP_MODULE_ID=ciscoVoiceHdlcDialControlMIB, cvHdlcCallHistoryTable=cvHdlcCallHistoryTable, cvHdlcCallHistorySessionTarget=cvHdlcCallHistorySessionTarget, cvhdlcdcMIBGroups=cvhdlcdcMIBGroups, ciscoVoiceHdlcDialControlMIB=ciscoVoiceHdlcDialControlMIB, cvhdlcdcMIBObjects=cvhdlcdcMIBObjects, cvHdlcCallHistoryConnectionId=cvHdlcCallHistoryConnectionId, cvHdlcCallHistoryGroup=cvHdlcCallHistoryGroup, cvHdlcCallHistory=cvHdlcCallHistory, cvhdlcdcMIBConformance=cvhdlcdcMIBConformance, cvHdlcCallHistoryEntry=cvHdlcCallHistoryEntry, cvhdlcdcMIBCompliances=cvhdlcdcMIBCompliances)

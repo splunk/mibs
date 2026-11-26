@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-VISM-CAC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VISM-CAC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
-voice, vismChanCnfGrp = mibBuilder.importSymbols("BASIS-MIB", "voice", "vismChanCnfGrp")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+vismChanCnfGrp, voice = mibBuilder.importSymbols("BASIS-MIB", "vismChanCnfGrp", "voice")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoVismCacMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 96))
 ciscoVismCacMIB.setRevisions(('2004-02-20 00:00', '2003-06-18 00:00',))
 
@@ -87,4 +87,4 @@ ciscoVismCardCacFailuresGrp = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 96, 2, 1,
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoVismCardCacFailuresGrp = ciscoVismCardCacFailuresGrp.setStatus('current')
 if mibBuilder.loadTexts: ciscoVismCardCacFailuresGrp.setDescription('A collection of objects providing CAC statistics\n           for both SVC and PVC connection.\n          ')
-mibBuilder.exportSymbols("CISCO-VISM-CAC-MIB", vismChanVADTolerance=vismChanVADTolerance, vismCardCacFailuresGrp=vismCardCacFailuresGrp, vismPortCacSvcUpspeedFailures=vismPortCacSvcUpspeedFailures, ciscoVismCacCompliance=ciscoVismCacCompliance, vismPortCacSvcAddFailures=vismPortCacSvcAddFailures, vismChanCacRejectionPolicy=vismChanCacRejectionPolicy, PYSNMP_MODULE_ID=ciscoVismCacMIB, vismChanCacEntry=vismChanCacEntry, ciscoVismCacMIBConformance=ciscoVismCacMIBConformance, ciscoVismCacMIBCompliances=ciscoVismCacMIBCompliances, vismChanNum=vismChanNum, vismChanCacTable=vismChanCacTable, vismChanCacPassedCons=vismChanCacPassedCons, vismChanVADDutyCycle=vismChanVADDutyCycle, ciscoVismCardCacFailuresGrp=ciscoVismCardCacFailuresGrp, vismChanCarrierLossPolicy=vismChanCarrierLossPolicy, networkCacConfigState=networkCacConfigState, ciscoVismChanCacGroup=ciscoVismChanCacGroup, vismChanCacRejectedCons=vismChanCacRejectedCons, vismVcCacPvcUpspeedFailures=vismVcCacPvcUpspeedFailures, ciscoVismCacMIBGroups=ciscoVismCacMIBGroups, vismChanCacMaster=vismChanCacMaster, ciscoVismCacMIB=ciscoVismCacMIB, vismPortCacPvcAddFailures=vismPortCacPvcAddFailures, vismVcCacPvcFailures=vismVcCacPvcFailures)
+mibBuilder.exportSymbols("CISCO-VISM-CAC-MIB", vismChanVADDutyCycle=vismChanVADDutyCycle, ciscoVismCacMIBConformance=ciscoVismCacMIBConformance, ciscoVismCacMIB=ciscoVismCacMIB, vismChanCacRejectionPolicy=vismChanCacRejectionPolicy, vismPortCacPvcAddFailures=vismPortCacPvcAddFailures, vismChanCacMaster=vismChanCacMaster, ciscoVismCacMIBGroups=ciscoVismCacMIBGroups, PYSNMP_MODULE_ID=ciscoVismCacMIB, ciscoVismCacCompliance=ciscoVismCacCompliance, vismVcCacPvcUpspeedFailures=vismVcCacPvcUpspeedFailures, ciscoVismChanCacGroup=ciscoVismChanCacGroup, vismChanCarrierLossPolicy=vismChanCarrierLossPolicy, vismCardCacFailuresGrp=vismCardCacFailuresGrp, vismChanNum=vismChanNum, networkCacConfigState=networkCacConfigState, ciscoVismCacMIBCompliances=ciscoVismCacMIBCompliances, vismVcCacPvcFailures=vismVcCacPvcFailures, vismChanCacTable=vismChanCacTable, vismChanCacEntry=vismChanCacEntry, vismPortCacSvcAddFailures=vismPortCacSvcAddFailures, vismPortCacSvcUpspeedFailures=vismPortCacSvcUpspeedFailures, vismChanCacRejectedCons=vismChanCacRejectedCons, vismChanCacPassedCons=vismChanCacPassedCons, vismChanVADTolerance=vismChanVADTolerance, ciscoVismCardCacFailuresGrp=ciscoVismCardCacFailuresGrp)

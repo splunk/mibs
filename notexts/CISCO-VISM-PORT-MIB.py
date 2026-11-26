@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-VISM-PORT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VISM-PORT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 vismPort, = mibBuilder.importSymbols("BASIS-MIB", "vismPort")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoVismPortMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 92))
 ciscoVismPortMIB.setRevisions(('2003-10-16 00:00',))
@@ -46,4 +46,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoVismPortGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 92, 2, 1, 1)).setObjects(("CISCO-VISM-PORT-MIB", "vismPortNum"), ("CISCO-VISM-PORT-MIB", "vismPortRowStatus"), ("CISCO-VISM-PORT-MIB", "vismPortLineNum"), ("CISCO-VISM-PORT-MIB", "vismPortType"), ("CISCO-VISM-PORT-MIB", "vismPortDs0ConfigBitMap"), ("CISCO-VISM-PORT-MIB", "vismPortSpeed"), ("CISCO-VISM-PORT-MIB", "vismPortState"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoVismPortGroup = ciscoVismPortGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-VISM-PORT-MIB", ciscoVismPortCompliance=ciscoVismPortCompliance, vismPortLineNum=vismPortLineNum, vismPortNum=vismPortNum, ciscoVismPortMIBConformance=ciscoVismPortMIBConformance, ciscoVismPortMIB=ciscoVismPortMIB, vismPortCnfGrp=vismPortCnfGrp, vismPortDs0ConfigBitMap=vismPortDs0ConfigBitMap, vismPortState=vismPortState, vismPortSpeed=vismPortSpeed, vismPortCnfGrpTable=vismPortCnfGrpTable, ciscoVismPortMIBGroups=ciscoVismPortMIBGroups, PYSNMP_MODULE_ID=ciscoVismPortMIB, ciscoVismPortMIBCompliances=ciscoVismPortMIBCompliances, ciscoVismPortGroup=ciscoVismPortGroup, vismPortType=vismPortType, vismPortCnfGrpEntry=vismPortCnfGrpEntry, vismPortRowStatus=vismPortRowStatus)
+mibBuilder.exportSymbols("CISCO-VISM-PORT-MIB", vismPortCnfGrp=vismPortCnfGrp, ciscoVismPortMIBConformance=ciscoVismPortMIBConformance, vismPortRowStatus=vismPortRowStatus, vismPortCnfGrpEntry=vismPortCnfGrpEntry, vismPortLineNum=vismPortLineNum, PYSNMP_MODULE_ID=ciscoVismPortMIB, vismPortCnfGrpTable=vismPortCnfGrpTable, vismPortNum=vismPortNum, vismPortType=vismPortType, ciscoVismPortMIBCompliances=ciscoVismPortMIBCompliances, ciscoVismPortMIBGroups=ciscoVismPortMIBGroups, ciscoVismPortCompliance=ciscoVismPortCompliance, vismPortDs0ConfigBitMap=vismPortDs0ConfigBitMap, vismPortSpeed=vismPortSpeed, ciscoVismPortMIB=ciscoVismPortMIB, ciscoVismPortGroup=ciscoVismPortGroup, vismPortState=vismPortState)

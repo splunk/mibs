@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCO-IP-TAP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-IP-TAP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 cTap2StreamIndex, cTap2MediationContentId = mibBuilder.importSymbols("CISCO-TAP2-MIB", "cTap2StreamIndex", "cTap2MediationContentId")
-InetAddress, InetAddressType, InetPortNumber, InetAddressPrefixLength = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType", "InetPortNumber", "InetAddressPrefixLength")
+InetAddressPrefixLength, InetPortNumber, InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressPrefixLength", "InetPortNumber", "InetAddressType", "InetAddress")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString")
 ciscoIpTapMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 394))
 ciscoIpTapMIB.setRevisions(('2004-03-11 00:00',))
 
@@ -97,4 +97,4 @@ ciscoIpTapStreamComplianceGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 394, 2, 2
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoIpTapStreamComplianceGroup = ciscoIpTapStreamComplianceGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoIpTapStreamComplianceGroup.setDescription('These objects are necessary for a description of IPv4 and IPv6\n        packets to select for interception.')
-mibBuilder.exportSymbols("CISCO-IP-TAP-MIB", citapStreamCapabilities=citapStreamCapabilities, citapStreamFlowId=citapStreamFlowId, citapStreamSourceAddress=citapStreamSourceAddress, citapStreamSourceL4PortMin=citapStreamSourceL4PortMin, citapStreamDestL4PortMax=citapStreamDestL4PortMax, citapStreamVRF=citapStreamVRF, citapStreamDestL4PortMin=citapStreamDestL4PortMin, ciscoIpTapMIBNotifs=ciscoIpTapMIBNotifs, citapStreamProtocol=citapStreamProtocol, PYSNMP_MODULE_ID=ciscoIpTapMIB, citapStreamDestinationAddress=citapStreamDestinationAddress, citapStreamSourceL4PortMax=citapStreamSourceL4PortMax, citapStreamTosByte=citapStreamTosByte, ciscoIpTapMIBGroups=ciscoIpTapMIBGroups, citapStreamStatus=citapStreamStatus, ciscoIpTapMIBCompliances=ciscoIpTapMIBCompliances, citapStreamEntry=citapStreamEntry, ciscoIpTapStreamComplianceGroup=ciscoIpTapStreamComplianceGroup, ciscoIpTapMIB=ciscoIpTapMIB, citapStreamTable=citapStreamTable, citapStreamAddrType=citapStreamAddrType, ciscoIpTapMIBConform=ciscoIpTapMIBConform, citapStreamEncodePacket=citapStreamEncodePacket, citapStreamSourceLength=citapStreamSourceLength, ciscoIpTapMIBObjects=ciscoIpTapMIBObjects, citapStreamDestinationLength=citapStreamDestinationLength, citapStreamInterface=citapStreamInterface, ciscoIpTapMIBCompliance=ciscoIpTapMIBCompliance, citapStreamTosByteMask=citapStreamTosByteMask)
+mibBuilder.exportSymbols("CISCO-IP-TAP-MIB", citapStreamFlowId=citapStreamFlowId, citapStreamVRF=citapStreamVRF, citapStreamTosByte=citapStreamTosByte, citapStreamTosByteMask=citapStreamTosByteMask, citapStreamDestinationLength=citapStreamDestinationLength, ciscoIpTapMIBNotifs=ciscoIpTapMIBNotifs, citapStreamAddrType=citapStreamAddrType, citapStreamInterface=citapStreamInterface, ciscoIpTapMIBCompliances=ciscoIpTapMIBCompliances, ciscoIpTapMIB=ciscoIpTapMIB, citapStreamSourceLength=citapStreamSourceLength, citapStreamSourceL4PortMax=citapStreamSourceL4PortMax, citapStreamDestL4PortMax=citapStreamDestL4PortMax, citapStreamSourceAddress=citapStreamSourceAddress, ciscoIpTapMIBCompliance=ciscoIpTapMIBCompliance, citapStreamTable=citapStreamTable, ciscoIpTapStreamComplianceGroup=ciscoIpTapStreamComplianceGroup, citapStreamEntry=citapStreamEntry, ciscoIpTapMIBGroups=ciscoIpTapMIBGroups, citapStreamEncodePacket=citapStreamEncodePacket, citapStreamDestinationAddress=citapStreamDestinationAddress, ciscoIpTapMIBObjects=ciscoIpTapMIBObjects, citapStreamProtocol=citapStreamProtocol, ciscoIpTapMIBConform=ciscoIpTapMIBConform, PYSNMP_MODULE_ID=ciscoIpTapMIB, citapStreamSourceL4PortMin=citapStreamSourceL4PortMin, citapStreamCapabilities=citapStreamCapabilities, citapStreamDestL4PortMin=citapStreamDestL4PortMin, citapStreamStatus=citapStreamStatus)

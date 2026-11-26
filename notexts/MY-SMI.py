@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module MY-SMI (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/ruijie/MY-SMI
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:39:58 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:14:26 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsUnion, ValueSizeConstraint, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "ValueSizeConstraint", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-IpAddress, Unsigned32, MibIdentifier, enterprises, ModuleIdentity, ObjectIdentity, Bits, Counter64, NotificationType, Counter32, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Gauge32, iso, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "IpAddress", "Unsigned32", "MibIdentifier", "enterprises", "ModuleIdentity", "ObjectIdentity", "Bits", "Counter64", "NotificationType", "Counter32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Gauge32", "iso", "TimeTicks")
-TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+Bits, Counter64, ModuleIdentity, ObjectIdentity, Gauge32, IpAddress, Counter32, enterprises, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, MibIdentifier, TimeTicks, iso, Integer32, NotificationType = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "Counter64", "ModuleIdentity", "ObjectIdentity", "Gauge32", "IpAddress", "Counter32", "enterprises", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "MibIdentifier", "TimeTicks", "iso", "Integer32", "NotificationType")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 my = MibIdentifier((1, 3, 6, 1, 4, 1, 4881))
 products = MibIdentifier((1, 3, 6, 1, 4, 1, 4881, 1))
 switch = MibIdentifier((1, 3, 6, 1, 4, 1, 4881, 1, 1))
@@ -38,4 +38,4 @@ myWirelessProducts = ObjectIdentity((1, 3, 6, 1, 4, 1, 4881, 1, 3, 1, 1))
 if mibBuilder.loadTexts: myWirelessProducts.setStatus('current')
 myWirelessMgmt = ObjectIdentity((1, 3, 6, 1, 4, 1, 4881, 1, 3, 1, 2))
 if mibBuilder.loadTexts: myWirelessMgmt.setStatus('current')
-mibBuilder.exportSymbols("MY-SMI", PYSNMP_MODULE_ID=switchMib, myExperiment=myExperiment, myMgmt=myMgmt, myModules=myModules, myRouterProducts=myRouterProducts, mySwitchProducts=mySwitchProducts, myWirelessProducts=myWirelessProducts, switch=switch, products=products, wireless=wireless, router=router, switchMib=switchMib, routerMib=routerMib, myWirelessMgmt=myWirelessMgmt, my=my, myAgentCapability=myAgentCapability, wirelessMib=wirelessMib)
+mibBuilder.exportSymbols("MY-SMI", routerMib=routerMib, myRouterProducts=myRouterProducts, my=my, mySwitchProducts=mySwitchProducts, myWirelessProducts=myWirelessProducts, router=router, switch=switch, products=products, wireless=wireless, switchMib=switchMib, myModules=myModules, myExperiment=myExperiment, wirelessMib=wirelessMib, myWirelessMgmt=myWirelessMgmt, myMgmt=myMgmt, PYSNMP_MODULE_ID=switchMib, myAgentCapability=myAgentCapability)

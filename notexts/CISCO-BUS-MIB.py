@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-BUS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-BUS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 AtmLaneAddress, = mibBuilder.importSymbols("LAN-EMULATION-CLIENT-MIB", "AtmLaneAddress")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
-DisplayString, RowStatus, TextualConvention, TimeStamp = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention", "TimeStamp")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
+TimeStamp, DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "DisplayString", "RowStatus", "TextualConvention")
 ciscoBusMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 40))
 if mibBuilder.loadTexts: ciscoBusMIB.setLastUpdated('9509151702Z')
 if mibBuilder.loadTexts: ciscoBusMIB.setOrganization('Cisco Systems Inc.')
@@ -99,4 +99,4 @@ ciscoBusMIBCompliance = ModuleCompliance((1, 3, 6, 1, 4, 1, 9, 9, 40, 2, 2, 1)).
 
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoBusMIBCompliance = ciscoBusMIBCompliance.setStatus('current')
-mibBuilder.exportSymbols("CISCO-BUS-MIB", ciscoBusMIBGroups=ciscoBusMIBGroups, busIndex=busIndex, ciscoBusClientGroup=ciscoBusClientGroup, ciscoBusMIB=ciscoBusMIB, ciscoBusMIBObjects=ciscoBusMIBObjects, busAtmAddrMask=busAtmAddrMask, busMultiFwdVpi=busMultiFwdVpi, busOperStatus=busOperStatus, busClientAtmAddress=busClientAtmAddress, busFrmTimeOuts=busFrmTimeOuts, busUpTime=busUpTime, ciscoBusMIBCompliances=ciscoBusMIBCompliances, busLanType=busLanType, CiscoVciInteger=CiscoVciInteger, busSubIfNum=busSubIfNum, busMultiFwdVci=busMultiFwdVci, busStatus=busStatus, CiscoVpiInteger=CiscoVpiInteger, busMaxFrm=busMaxFrm, busAdminStatus=busAdminStatus, busClientMSendVci=busClientMSendVci, busClientTable=busClientTable, busMaxFrmAge=busMaxFrmAge, PYSNMP_MODULE_ID=ciscoBusMIB, busAtmAddrSpec=busAtmAddrSpec, busEntry=busEntry, busClientEntry=busClientEntry, ciscoBusSubIfGroup=ciscoBusSubIfGroup, busOutFwdOctets=busOutFwdOctets, busTable=busTable, busElanName=busElanName, busOutFwdUcastFrms=busOutFwdUcastFrms, busAtmAddrActl=busAtmAddrActl, ciscoBusGroup=ciscoBusGroup, busClientId=busClientId, busClientMSendVpi=busClientMSendVpi, ciscoBusMIBCompliance=ciscoBusMIBCompliance, ciscoBusMIBConformance=ciscoBusMIBConformance, busClientIfIndex=busClientIfIndex, busIfIndex=busIfIndex, busOutFwdNUcastFrms=busOutFwdNUcastFrms)
+mibBuilder.exportSymbols("CISCO-BUS-MIB", busIfIndex=busIfIndex, busOutFwdUcastFrms=busOutFwdUcastFrms, busClientEntry=busClientEntry, busMultiFwdVpi=busMultiFwdVpi, busOutFwdOctets=busOutFwdOctets, busAdminStatus=busAdminStatus, busClientIfIndex=busClientIfIndex, PYSNMP_MODULE_ID=ciscoBusMIB, busTable=busTable, busClientId=busClientId, busOutFwdNUcastFrms=busOutFwdNUcastFrms, busOperStatus=busOperStatus, CiscoVpiInteger=CiscoVpiInteger, busUpTime=busUpTime, busAtmAddrSpec=busAtmAddrSpec, ciscoBusMIBCompliances=ciscoBusMIBCompliances, busIndex=busIndex, ciscoBusMIBGroups=ciscoBusMIBGroups, busClientMSendVci=busClientMSendVci, busClientMSendVpi=busClientMSendVpi, ciscoBusMIBConformance=ciscoBusMIBConformance, busAtmAddrMask=busAtmAddrMask, ciscoBusMIBObjects=ciscoBusMIBObjects, busMultiFwdVci=busMultiFwdVci, ciscoBusClientGroup=ciscoBusClientGroup, busAtmAddrActl=busAtmAddrActl, ciscoBusGroup=ciscoBusGroup, CiscoVciInteger=CiscoVciInteger, ciscoBusMIBCompliance=ciscoBusMIBCompliance, busMaxFrm=busMaxFrm, busLanType=busLanType, busFrmTimeOuts=busFrmTimeOuts, busSubIfNum=busSubIfNum, busMaxFrmAge=busMaxFrmAge, ciscoBusMIB=ciscoBusMIB, busClientTable=busClientTable, busStatus=busStatus, busEntry=busEntry, busClientAtmAddress=busClientAtmAddress, busElanName=busElanName, ciscoBusSubIfGroup=ciscoBusSubIfGroup)

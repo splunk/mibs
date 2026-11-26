@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CLOUDGENIX-SMI (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cloudgenix/CLOUDGENIX-SMI
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:29 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:36 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-SingleValueConstraint, ValueRangeConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "SingleValueConstraint", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-ObjectIdentity, Gauge32, Unsigned32, ModuleIdentity, enterprises, TimeTicks, Integer32, iso, MibIdentifier, IpAddress, Bits, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "ObjectIdentity", "Gauge32", "Unsigned32", "ModuleIdentity", "enterprises", "TimeTicks", "Integer32", "iso", "MibIdentifier", "IpAddress", "Bits", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "Counter32")
-TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+ConstraintsIntersection, SingleValueConstraint, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion")
+ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
+enterprises, Bits, NotificationType, iso, ModuleIdentity, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn, IpAddress, MibIdentifier, TimeTicks, Counter32, Integer32, Unsigned32, ObjectIdentity, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "enterprises", "Bits", "NotificationType", "iso", "ModuleIdentity", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "IpAddress", "MibIdentifier", "TimeTicks", "Counter32", "Integer32", "Unsigned32", "ObjectIdentity", "Counter64")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 cloudgenix = ModuleIdentity((1, 3, 6, 1, 4, 1, 50114))
 cloudgenix.setRevisions(('2017-06-19 18:00',))
 
@@ -45,4 +45,4 @@ if mibBuilder.loadTexts: cgxMgmt.setDescription('Root Object Identifier for Pris
 cgxProducts = ObjectIdentity((1, 3, 6, 1, 4, 1, 50114, 11))
 if mibBuilder.loadTexts: cgxProducts.setStatus('current')
 if mibBuilder.loadTexts: cgxProducts.setDescription('Root Object Identifier for Prisma SD-WAN Product specific\n         Objects')
-mibBuilder.exportSymbols("CLOUDGENIX-SMI", cgxCompliances=cgxCompliances, CgxVolts=CgxVolts, cgxMgmt=cgxMgmt, cloudgenixCompliance=cloudgenixCompliance, CgxDegreesC=CgxDegreesC, cgxObjects=cgxObjects, PYSNMP_MODULE_ID=cloudgenix, cgxProducts=cgxProducts, cgxConformance=cgxConformance, cgxGroups=cgxGroups, cloudgenix=cloudgenix)
+mibBuilder.exportSymbols("CLOUDGENIX-SMI", cgxConformance=cgxConformance, CgxVolts=CgxVolts, cloudgenix=cloudgenix, cgxObjects=cgxObjects, cgxCompliances=cgxCompliances, cgxMgmt=cgxMgmt, PYSNMP_MODULE_ID=cloudgenix, CgxDegreesC=CgxDegreesC, cgxProducts=cgxProducts, cloudgenixCompliance=cloudgenixCompliance, cgxGroups=cgxGroups)

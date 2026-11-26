@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-LEC-DATA-VCC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-LEC-DATA-VCC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:01 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
-atmVclVpi, atmVclVci = mibBuilder.importSymbols("ATM-MIB", "atmVclVpi", "atmVclVci")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+atmVclVci, atmVclVpi = mibBuilder.importSymbols("ATM-MIB", "atmVclVci", "atmVclVpi")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 AtmLaneAddress, lecIndex = mibBuilder.importSymbols("LAN-EMULATION-CLIENT-MIB", "AtmLaneAddress", "lecIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoLecDataVccMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 69))
 ciscoLecDataVccMIB.setRevisions(('1997-01-06 00:00',))
@@ -41,4 +41,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoLecDataVccBaseMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 69, 3, 2, 1)).setObjects(("CISCO-LEC-DATA-VCC-MIB", "cLecDataDirectLocalAtmAddress"), ("CISCO-LEC-DATA-VCC-MIB", "cLecDataDirectRemoteAtmAddress"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoLecDataVccBaseMIBGroup = ciscoLecDataVccBaseMIBGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-LEC-DATA-VCC-MIB", cLecDataDirectLocalAtmAddress=cLecDataDirectLocalAtmAddress, cLecDataDirectVccTable=cLecDataDirectVccTable, ciscoLecDataVccMIBGroups=ciscoLecDataVccMIBGroups, ciscoLecDataVccMIBCompliance=ciscoLecDataVccMIBCompliance, cLecDataDirectVccEntry=cLecDataDirectVccEntry, cLecDataDirectVcc=cLecDataDirectVcc, ciscoLecDataVccMIBNotifications=ciscoLecDataVccMIBNotifications, PYSNMP_MODULE_ID=ciscoLecDataVccMIB, cLecDataDirectRemoteAtmAddress=cLecDataDirectRemoteAtmAddress, ciscoLecDataVccMIBCompliances=ciscoLecDataVccMIBCompliances, ciscoLecDataVccMIBNotificationPrefix=ciscoLecDataVccMIBNotificationPrefix, ciscoLecDataVccMIBObjects=ciscoLecDataVccMIBObjects, ciscoLecDataVccBaseMIBGroup=ciscoLecDataVccBaseMIBGroup, ciscoLecDataVccMIBConformance=ciscoLecDataVccMIBConformance, ciscoLecDataVccMIB=ciscoLecDataVccMIB)
+mibBuilder.exportSymbols("CISCO-LEC-DATA-VCC-MIB", ciscoLecDataVccMIBCompliance=ciscoLecDataVccMIBCompliance, ciscoLecDataVccMIBObjects=ciscoLecDataVccMIBObjects, PYSNMP_MODULE_ID=ciscoLecDataVccMIB, cLecDataDirectVccTable=cLecDataDirectVccTable, ciscoLecDataVccMIBNotificationPrefix=ciscoLecDataVccMIBNotificationPrefix, ciscoLecDataVccMIB=ciscoLecDataVccMIB, cLecDataDirectVcc=cLecDataDirectVcc, cLecDataDirectRemoteAtmAddress=cLecDataDirectRemoteAtmAddress, cLecDataDirectVccEntry=cLecDataDirectVccEntry, ciscoLecDataVccMIBCompliances=ciscoLecDataVccMIBCompliances, ciscoLecDataVccMIBConformance=ciscoLecDataVccMIBConformance, ciscoLecDataVccBaseMIBGroup=ciscoLecDataVccBaseMIBGroup, cLecDataDirectLocalAtmAddress=cLecDataDirectLocalAtmAddress, ciscoLecDataVccMIBGroups=ciscoLecDataVccMIBGroups, ciscoLecDataVccMIBNotifications=ciscoLecDataVccMIBNotifications)

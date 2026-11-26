@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module LANOPTICS-HUB-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/LANOPTICS-HUB-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, enterprises, IpAddress, iso, Counter32, NotificationType, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "enterprises", "IpAddress", "iso", "Counter32", "NotificationType", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, TimeTicks, ModuleIdentity, MibIdentifier, enterprises, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "TimeTicks", "ModuleIdentity", "MibIdentifier", "enterprises", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 class BITMAP(Integer32):
     pass
 
@@ -40,8 +40,8 @@ if mibBuilder.loadTexts: snDirtyBit.setDescription('Low level description in bit
 snSlotsTable = MibTable((1, 3, 6, 1, 4, 1, 224, 1, 8), )
 if mibBuilder.loadTexts: snSlotsTable.setStatus('mandatory')
 if mibBuilder.loadTexts: snSlotsTable.setDescription('A list of slots entries.  The number of entries \n     is  given by the value of snSlotsNum.')
-pysmiFakeCol1013 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 8, 1) + (1013, ), Integer32())
-snSlotsEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 8, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1013"))
+pysmiFakeCol1005 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 8, 1) + (1005, ), Integer32())
+snSlotsEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 8, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1005"))
 if mibBuilder.loadTexts: snSlotsEntry.setStatus('mandatory')
 if mibBuilder.loadTexts: snSlotsEntry.setDescription('A slot entry containing a high and low \n     level description of the module in the slot.')
 snCardName = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 8, 1, 1), DisplayString()).setMaxAccess("readwrite")
@@ -83,8 +83,8 @@ if mibBuilder.loadTexts: snPairData.setDescription('Low level port data. The val
 snHubSplitTable = MibTable((1, 3, 6, 1, 4, 1, 224, 1, 11), )
 if mibBuilder.loadTexts: snHubSplitTable.setStatus('mandatory')
 if mibBuilder.loadTexts: snHubSplitTable.setDescription('Status of each split card.')
-pysmiFakeCol1014 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 11, 1) + (1014, ), Integer32())
-snHubSplitEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 11, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1014"))
+pysmiFakeCol1006 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 11, 1) + (1006, ), Integer32())
+snHubSplitEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 11, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1006"))
 if mibBuilder.loadTexts: snHubSplitEntry.setStatus('mandatory')
 snHubSplitStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 11, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("splitted", 1), ("missing", 2)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: snHubSplitStatus.setStatus('mandatory')
@@ -92,8 +92,8 @@ if mibBuilder.loadTexts: snHubSplitStatus.setDescription('This variable describe
 snHubPSTable = MibTable((1, 3, 6, 1, 4, 1, 224, 1, 12), )
 if mibBuilder.loadTexts: snHubPSTable.setStatus('mandatory')
 if mibBuilder.loadTexts: snHubPSTable.setDescription('Status of each Power supply.')
-pysmiFakeCol1015 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 12, 1) + (1015, ), Integer32())
-snHubPSEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 12, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1015"))
+pysmiFakeCol1007 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 12, 1) + (1007, ), Integer32())
+snHubPSEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 12, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1007"))
 if mibBuilder.loadTexts: snHubPSEntry.setStatus('mandatory')
 snHubPSStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 12, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("malfunctioning", 1), ("missing", 2)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: snHubPSStatus.setStatus('mandatory')
@@ -101,8 +101,8 @@ if mibBuilder.loadTexts: snHubPSStatus.setDescription('This variable describes t
 snHubFanTable = MibTable((1, 3, 6, 1, 4, 1, 224, 1, 13), )
 if mibBuilder.loadTexts: snHubFanTable.setStatus('mandatory')
 if mibBuilder.loadTexts: snHubFanTable.setDescription('Status of each Fan.')
-pysmiFakeCol1016 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 13, 1) + (1016, ), Integer32())
-snHubFanEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 13, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1016"))
+pysmiFakeCol1008 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 13, 1) + (1008, ), Integer32())
+snHubFanEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 13, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1008"))
 if mibBuilder.loadTexts: snHubFanEntry.setStatus('mandatory')
 snHubFanStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 13, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("malfunctioning", 1), ("missing", 2)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: snHubFanStatus.setStatus('mandatory')
@@ -110,8 +110,8 @@ if mibBuilder.loadTexts: snHubFanStatus.setDescription('This variable describes 
 snHubSlotsTable = MibTable((1, 3, 6, 1, 4, 1, 224, 1, 14), )
 if mibBuilder.loadTexts: snHubSlotsTable.setStatus('mandatory')
 if mibBuilder.loadTexts: snHubSlotsTable.setDescription("Hub's alerts related information per slot")
-pysmiFakeCol1017 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 14, 1) + (1017, ), Integer32())
-snHubSlotsEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 14, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1017"))
+pysmiFakeCol1009 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 14, 1) + (1009, ), Integer32())
+snHubSlotsEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 14, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1009"))
 if mibBuilder.loadTexts: snHubSlotsEntry.setStatus('mandatory')
 snHubSlotConnected = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 14, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1))).clone(namedValues=NamedValues(("disconnected", 1)))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: snHubSlotConnected.setStatus('mandatory')
@@ -134,12 +134,12 @@ if mibBuilder.loadTexts: snCompanionStatus.setDescription('Gives the companion s
 snGenPortsTable = MibTable((1, 3, 6, 1, 4, 1, 224, 1, 18), )
 if mibBuilder.loadTexts: snGenPortsTable.setStatus('mandatory')
 if mibBuilder.loadTexts: snGenPortsTable.setDescription('A table of all possible I/O ports in address range is 0xC000 - 0xFFFF')
-pysmiFakeCol1018 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 18, 1) + (1018, ), Integer32())
-pysmiFakeCol1019 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 18, 1) + (1019, ), Integer32())
-snGenPortsEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 18, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1018"), (0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1019"))
+pysmiFakeCol1010 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 18, 1) + (1010, ), Integer32())
+pysmiFakeCol1011 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 18, 1) + (1011, ), Integer32())
+snGenPortsEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 1, 18, 1), ).setIndexNames((0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1010"), (0, "LANOPTICS-HUB-MIB", "pysmiFakeCol1011"))
 if mibBuilder.loadTexts: snGenPortsEntry.setStatus('mandatory')
 if mibBuilder.loadTexts: snGenPortsEntry.setDescription('An I/O port entry. Each byte of the I/O address is represented\n     by one index digit; e.g, instance 255.12 is I/O address (port) 0xFF0C.')
 snPortValue = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 1, 18, 1, 1), BITMAP()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: snPortValue.setStatus('mandatory')
 if mibBuilder.loadTexts: snPortValue.setDescription('The I/O port value.')
-mibBuilder.exportSymbols("LANOPTICS-HUB-MIB", snLLControl0=snLLControl0, snHubPSStatus=snHubPSStatus, snAssCode=snAssCode, snHubSlotsEntry=snHubSlotsEntry, snHubSlotFreqError=snHubSlotFreqError, snHubFanTable=snHubFanTable, pysmiFakeCol1014=pysmiFakeCol1014, snHubSlotsTable=snHubSlotsTable, snCardDescr=snCardDescr, snGenPortsTable=snGenPortsTable, snConfig=snConfig, snCompanionStatus=snCompanionStatus, snInternalID=snInternalID, pysmiFakeCol1013=pysmiFakeCol1013, pysmiFakeCol1015=pysmiFakeCol1015, snPollInfCode=snPollInfCode, snMaxSlots=snMaxSlots, snSlotsEntry=snSlotsEntry, snPortValue=snPortValue, snHubSlotRevChanged=snHubSlotRevChanged, snCardName=snCardName, pysmiFakeCol1017=pysmiFakeCol1017, snHubSplitTable=snHubSplitTable, snLLActiveNMS=snLLActiveNMS, snHubSlotConnected=snHubSlotConnected, pysmiFakeCol1016=pysmiFakeCol1016, BITMAP=BITMAP, snHubFanEntry=snHubFanEntry, snReset=snReset, snHubSplitEntry=snHubSplitEntry, snSlotsTable=snSlotsTable, snPairData=snPairData, snSlotsNum=snSlotsNum, snGenPortsEntry=snGenPortsEntry, snLLSwRevision=snLLSwRevision, snCompanionHW=snCompanionHW, snPollInf=snPollInf, snHubPSEntry=snHubPSEntry, pysmiFakeCol1018=pysmiFakeCol1018, snHubPSTable=snHubPSTable, pysmiFakeCol1019=pysmiFakeCol1019, snResetSlot=snResetSlot, lanOptics=lanOptics, snDirtyBit=snDirtyBit, snLLControl1=snLLControl1, lanOpticsHub=lanOpticsHub, snPairAddress=snPairAddress, snHubSplitStatus=snHubSplitStatus, snHubFanStatus=snHubFanStatus, snCompanionReset=snCompanionReset, snLLHwRevision=snLLHwRevision)
+mibBuilder.exportSymbols("LANOPTICS-HUB-MIB", pysmiFakeCol1006=pysmiFakeCol1006, pysmiFakeCol1008=pysmiFakeCol1008, pysmiFakeCol1009=pysmiFakeCol1009, snLLHwRevision=snLLHwRevision, snHubSlotConnected=snHubSlotConnected, snCardDescr=snCardDescr, snHubFanEntry=snHubFanEntry, pysmiFakeCol1007=pysmiFakeCol1007, snHubSplitStatus=snHubSplitStatus, snHubSlotFreqError=snHubSlotFreqError, snHubPSTable=snHubPSTable, snLLSwRevision=snLLSwRevision, snSlotsNum=snSlotsNum, snPollInf=snPollInf, snHubPSEntry=snHubPSEntry, snHubSlotsEntry=snHubSlotsEntry, snDirtyBit=snDirtyBit, snResetSlot=snResetSlot, snConfig=snConfig, snHubSlotRevChanged=snHubSlotRevChanged, lanOptics=lanOptics, snSlotsEntry=snSlotsEntry, snHubFanStatus=snHubFanStatus, pysmiFakeCol1010=pysmiFakeCol1010, snReset=snReset, snPortValue=snPortValue, BITMAP=BITMAP, snHubSplitEntry=snHubSplitEntry, snPairAddress=snPairAddress, snGenPortsEntry=snGenPortsEntry, snLLControl1=snLLControl1, snCompanionStatus=snCompanionStatus, snCardName=snCardName, pysmiFakeCol1005=pysmiFakeCol1005, snHubSlotsTable=snHubSlotsTable, snMaxSlots=snMaxSlots, snCompanionReset=snCompanionReset, pysmiFakeCol1011=pysmiFakeCol1011, snPollInfCode=snPollInfCode, snHubFanTable=snHubFanTable, snHubPSStatus=snHubPSStatus, snHubSplitTable=snHubSplitTable, snGenPortsTable=snGenPortsTable, lanOpticsHub=lanOpticsHub, snLLControl0=snLLControl0, snCompanionHW=snCompanionHW, snLLActiveNMS=snLLActiveNMS, snSlotsTable=snSlotsTable, snPairData=snPairData, snAssCode=snAssCode, snInternalID=snInternalID)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-TBI-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-TBI-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "RowStatus", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString", "TruthValue")
 rlTBIMib = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145))
 rlTBIMib.setRevisions(('2006-02-12 00:00',))
 
@@ -68,4 +68,4 @@ if mibBuilder.loadTexts: rlTBIPeriodicEnd.setDescription('Time of end of periodi
 rlTBIPeriodicRowStatus = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 145, 2, 1, 5), RowStatus()).setMaxAccess("readcreate")
 if mibBuilder.loadTexts: rlTBIPeriodicRowStatus.setStatus('current')
 if mibBuilder.loadTexts: rlTBIPeriodicRowStatus.setDescription('Row Status.\n         It is used for adding/deleting entries of this table.')
-mibBuilder.exportSymbols("CISCOSB-TBI-MIB", rlTBIPeriodicEntry=rlTBIPeriodicEntry, rlTBIPeriodicStart=rlTBIPeriodicStart, RlTBIWeekDayList=RlTBIWeekDayList, rlTBIPeriodicWeekDayList=rlTBIPeriodicWeekDayList, rlTBIMib=rlTBIMib, PYSNMP_MODULE_ID=rlTBIMib, rlTBIPeriodicEnd=rlTBIPeriodicEnd, rlTBIPeriodicTimeRangeName=rlTBIPeriodicTimeRangeName, rlTBITimeRangeAbsoluteEnd=rlTBITimeRangeAbsoluteEnd, rlTBIPeriodicRowStatus=rlTBIPeriodicRowStatus, rlTBITimeRangeRowStatus=rlTBITimeRangeRowStatus, rlTBITimeRangeAbsoluteStart=rlTBITimeRangeAbsoluteStart, rlTBIPeriodicTable=rlTBIPeriodicTable, rlTBITimeRangeName=rlTBITimeRangeName, rlTBITimeRangeTable=rlTBITimeRangeTable, rlTBITimeRangeEntry=rlTBITimeRangeEntry, rlTBITimeRangeActiveStatus=rlTBITimeRangeActiveStatus)
+mibBuilder.exportSymbols("CISCOSB-TBI-MIB", rlTBIPeriodicWeekDayList=rlTBIPeriodicWeekDayList, rlTBIPeriodicRowStatus=rlTBIPeriodicRowStatus, rlTBITimeRangeName=rlTBITimeRangeName, RlTBIWeekDayList=RlTBIWeekDayList, rlTBIPeriodicStart=rlTBIPeriodicStart, rlTBIMib=rlTBIMib, PYSNMP_MODULE_ID=rlTBIMib, rlTBIPeriodicTimeRangeName=rlTBIPeriodicTimeRangeName, rlTBITimeRangeRowStatus=rlTBITimeRangeRowStatus, rlTBITimeRangeActiveStatus=rlTBITimeRangeActiveStatus, rlTBITimeRangeEntry=rlTBITimeRangeEntry, rlTBIPeriodicEntry=rlTBIPeriodicEntry, rlTBITimeRangeAbsoluteStart=rlTBITimeRangeAbsoluteStart, rlTBIPeriodicTable=rlTBIPeriodicTable, rlTBITimeRangeAbsoluteEnd=rlTBITimeRangeAbsoluteEnd, rlTBIPeriodicEnd=rlTBIPeriodicEnd, rlTBITimeRangeTable=rlTBITimeRangeTable)

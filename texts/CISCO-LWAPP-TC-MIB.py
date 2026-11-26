@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-LWAPP-TC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-LWAPP-TC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoLwappTextualConventions = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 514))
 ciscoLwappTextualConventions.setRevisions(('2019-11-29 00:00', '2016-08-23 00:00', '2011-09-13 00:00', '2010-02-23 00:00', '2007-09-11 00:00', '2007-02-05 00:00', '2006-10-31 00:00', '2006-04-13 00:00',))
 
@@ -159,4 +159,4 @@ class Dscp(TextualConvention, Integer32):
     status = 'current'
     subtypeSpec = Integer32.subtypeSpec + ValueRangeConstraint(0, 63)
 
-mibBuilder.exportSymbols("CISCO-LWAPP-TC-MIB", Dscp=Dscp, CLSecEncryptType=CLSecEncryptType, CLApDot11RadioRole=CLApDot11RadioRole, CLDot11Channel=CLDot11Channel, CcxServiceVersion=CcxServiceVersion, CLApMode=CLApMode, CLEventFrames=CLEventFrames, CLApAssocFailureReason=CLApAssocFailureReason, CLApDot11RadioSubband=CLApDot11RadioSubband, CLDot11RfParamMode=CLDot11RfParamMode, CLMfpEventType=CLMfpEventType, CLWebAuthType=CLWebAuthType, ciscoLwappTextualConventions=ciscoLwappTextualConventions, CLDot11ChannelBandwidth=CLDot11ChannelBandwidth, CLClientPowerSaveMode=CLClientPowerSaveMode, CLApNtpStatus=CLApNtpStatus, PYSNMP_MODULE_ID=ciscoLwappTextualConventions, CLMfpEventSource=CLMfpEventSource, CLDot11Band=CLDot11Band, CLApIfType=CLApIfType, CLTimeBaseStatus=CLTimeBaseStatus, CLSecKeyFormat=CLSecKeyFormat, CLTsmDot11CurrentPackets=CLTsmDot11CurrentPackets, CLDot11ClientStatus=CLDot11ClientStatus, CLMfpVersion=CLMfpVersion, CLCdpAdvtVersionType=CLCdpAdvtVersionType)
+mibBuilder.exportSymbols("CISCO-LWAPP-TC-MIB", ciscoLwappTextualConventions=ciscoLwappTextualConventions, CLClientPowerSaveMode=CLClientPowerSaveMode, CLDot11ChannelBandwidth=CLDot11ChannelBandwidth, Dscp=Dscp, CcxServiceVersion=CcxServiceVersion, CLSecEncryptType=CLSecEncryptType, CLDot11RfParamMode=CLDot11RfParamMode, CLApAssocFailureReason=CLApAssocFailureReason, CLApDot11RadioRole=CLApDot11RadioRole, CLMfpVersion=CLMfpVersion, CLEventFrames=CLEventFrames, CLTimeBaseStatus=CLTimeBaseStatus, CLSecKeyFormat=CLSecKeyFormat, CLMfpEventType=CLMfpEventType, PYSNMP_MODULE_ID=ciscoLwappTextualConventions, CLTsmDot11CurrentPackets=CLTsmDot11CurrentPackets, CLDot11Band=CLDot11Band, CLApDot11RadioSubband=CLApDot11RadioSubband, CLApNtpStatus=CLApNtpStatus, CLCdpAdvtVersionType=CLCdpAdvtVersionType, CLApMode=CLApMode, CLMfpEventSource=CLMfpEventSource, CLWebAuthType=CLWebAuthType, CLApIfType=CLApIfType, CLDot11Channel=CLDot11Channel, CLDot11ClientStatus=CLDot11ClientStatus)

@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-XDSL-LINE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-XDSL-LINE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 adslLineConfProfileEntry, = mibBuilder.importSymbols("ADSL-LINE-MIB", "adslLineConfProfileEntry")
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, TimeTicks, ModuleIdentity, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "TimeTicks", "ModuleIdentity", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString", "TruthValue")
 ciscoXdslLineMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 204))
 ciscoXdslLineMIB.setRevisions(('2001-02-10 00:00',))
 
@@ -119,4 +119,4 @@ cXdslModeGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 204, 3, 2, 4)).setObjects(
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cXdslModeGroup = cXdslModeGroup.setStatus('current')
 if mibBuilder.loadTexts: cXdslModeGroup.setDescription('A collection of managed objects defining the\n        enterprise-specific line mode options associated\n        with one or more xDSL XTU-C class devices.\n        Implemention of this group is optional.')
-mibBuilder.exportSymbols("CISCO-XDSL-LINE-MIB", cXdslLineTable=cXdslLineTable, cXdslLineNoOfChanges=cXdslLineNoOfChanges, ciscoXdslLineMIBCompliance=ciscoXdslLineMIBCompliance, cXdslTestBertErrors=cXdslTestBertErrors, cXdslTestTime=cXdslTestTime, cXdslTestTable=cXdslTestTable, ciscoXdslLineMIBCompliances=ciscoXdslLineMIBCompliances, cXdslTestEntry=cXdslTestEntry, cXdslLineConfProfileEntry=cXdslLineConfProfileEntry, cXdslTestStatus=cXdslTestStatus, cXdslLineGroup=cXdslLineGroup, cXdslLineConfAlarmsEnabled=cXdslLineConfAlarmsEnabled, ciscoXdslLineMIBObjects=ciscoXdslLineMIBObjects, ciscoXdslLineMIBConformance=ciscoXdslLineMIBConformance, ciscoXdslLineMIB=ciscoXdslLineMIB, cXdslTestType=cXdslTestType, cXdslTestGroup=cXdslTestGroup, cXdslLineConfLinkUpDownTrap=cXdslLineConfLinkUpDownTrap, ciscoXdslLineMIBGroups=ciscoXdslLineMIBGroups, cXdslModeEntry=cXdslModeEntry, cXdslLineConfPayloadScrambled=cXdslLineConfPayloadScrambled, cXdslLineTimeSinceLastChange=cXdslLineTimeSinceLastChange, cXdslModeLoopback=cXdslModeLoopback, PYSNMP_MODULE_ID=ciscoXdslLineMIB, cXdslTestTrigger=cXdslTestTrigger, cXdslModeGroup=cXdslModeGroup, cXdslModeSpectrum=cXdslModeSpectrum, cXdslTestBertRunTime=cXdslTestBertRunTime, cXdslLineConfProfileGroup=cXdslLineConfProfileGroup, cXdslLineConfProfileTable=cXdslLineConfProfileTable, cXdslTestBertBitRate=cXdslTestBertBitRate, cXdslLineEntry=cXdslLineEntry, cXdslModeTable=cXdslModeTable, cXdslTestBertBitErrors=cXdslTestBertBitErrors)
+mibBuilder.exportSymbols("CISCO-XDSL-LINE-MIB", cXdslLineConfLinkUpDownTrap=cXdslLineConfLinkUpDownTrap, cXdslLineConfPayloadScrambled=cXdslLineConfPayloadScrambled, cXdslLineEntry=cXdslLineEntry, ciscoXdslLineMIBGroups=ciscoXdslLineMIBGroups, cXdslModeGroup=cXdslModeGroup, ciscoXdslLineMIB=ciscoXdslLineMIB, ciscoXdslLineMIBCompliance=ciscoXdslLineMIBCompliance, cXdslModeLoopback=cXdslModeLoopback, cXdslLineConfProfileEntry=cXdslLineConfProfileEntry, cXdslModeTable=cXdslModeTable, cXdslTestStatus=cXdslTestStatus, cXdslTestTrigger=cXdslTestTrigger, cXdslLineConfProfileGroup=cXdslLineConfProfileGroup, PYSNMP_MODULE_ID=ciscoXdslLineMIB, ciscoXdslLineMIBObjects=ciscoXdslLineMIBObjects, cXdslTestType=cXdslTestType, cXdslTestBertRunTime=cXdslTestBertRunTime, ciscoXdslLineMIBConformance=ciscoXdslLineMIBConformance, cXdslModeEntry=cXdslModeEntry, cXdslLineGroup=cXdslLineGroup, cXdslLineConfProfileTable=cXdslLineConfProfileTable, cXdslTestBertBitRate=cXdslTestBertBitRate, cXdslLineConfAlarmsEnabled=cXdslLineConfAlarmsEnabled, ciscoXdslLineMIBCompliances=ciscoXdslLineMIBCompliances, cXdslTestTable=cXdslTestTable, cXdslTestBertErrors=cXdslTestBertErrors, cXdslModeSpectrum=cXdslModeSpectrum, cXdslLineTimeSinceLastChange=cXdslLineTimeSinceLastChange, cXdslLineTable=cXdslLineTable, cXdslTestGroup=cXdslTestGroup, cXdslLineNoOfChanges=cXdslLineNoOfChanges, cXdslTestTime=cXdslTestTime, cXdslTestBertBitErrors=cXdslTestBertBitErrors, cXdslTestEntry=cXdslTestEntry)

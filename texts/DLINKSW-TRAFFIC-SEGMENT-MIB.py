@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module DLINKSW-TRAFFIC-SEGMENT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-TRAFFIC-SEGMENT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:27 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 ifIndex, InterfaceIndex = mibBuilder.importSymbols("IF-MIB", "ifIndex", "InterfaceIndex")
 PortList, = mibBuilder.importSymbols("Q-BRIDGE-MIB", "PortList")
-ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
-Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Integer32, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Integer32", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
-TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+Counter64, TimeTicks, Integer32, ModuleIdentity, iso, IpAddress, NotificationType, Counter32, ObjectIdentity, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "Integer32", "ModuleIdentity", "iso", "IpAddress", "NotificationType", "Counter32", "ObjectIdentity", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "MibIdentifier")
+DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 dlinkSwTrafficSegMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 26))
 dlinkSwTrafficSegMIB.setRevisions(('2013-03-01 00:00',))
 
@@ -46,4 +46,4 @@ dTrafficSegIfCfgGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 26, 2, 2, 1)).se
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dTrafficSegIfCfgGroup = dTrafficSegIfCfgGroup.setStatus('current')
 if mibBuilder.loadTexts: dTrafficSegIfCfgGroup.setDescription('A collection of objects providing management of the Traffic\n            Segmentation feature.')
-mibBuilder.exportSymbols("DLINKSW-TRAFFIC-SEGMENT-MIB", dTrafficSegForwardDomainEntry=dTrafficSegForwardDomainEntry, dTrafficSegMIBCompliance=dTrafficSegMIBCompliance, dTrafficSegForwardDomainTable=dTrafficSegForwardDomainTable, dTrafficSegIfCfgGroup=dTrafficSegIfCfgGroup, dTrafficSegMIBCompliances=dTrafficSegMIBCompliances, dTrafficSegMIBGroups=dTrafficSegMIBGroups, PYSNMP_MODULE_ID=dlinkSwTrafficSegMIB, dTrafficSegForwardPorts=dTrafficSegForwardPorts, dlinkSwTrafficSegMIB=dlinkSwTrafficSegMIB, dTrafficSegNotifications=dTrafficSegNotifications, dTrafficSegObjects=dTrafficSegObjects, dTrafficSegConformance=dTrafficSegConformance)
+mibBuilder.exportSymbols("DLINKSW-TRAFFIC-SEGMENT-MIB", dTrafficSegMIBCompliances=dTrafficSegMIBCompliances, dTrafficSegConformance=dTrafficSegConformance, dTrafficSegMIBCompliance=dTrafficSegMIBCompliance, dTrafficSegIfCfgGroup=dTrafficSegIfCfgGroup, dTrafficSegForwardPorts=dTrafficSegForwardPorts, dTrafficSegMIBGroups=dTrafficSegMIBGroups, dTrafficSegForwardDomainEntry=dTrafficSegForwardDomainEntry, dTrafficSegObjects=dTrafficSegObjects, dTrafficSegForwardDomainTable=dTrafficSegForwardDomainTable, dlinkSwTrafficSegMIB=dlinkSwTrafficSegMIB, dTrafficSegNotifications=dTrafficSegNotifications, PYSNMP_MODULE_ID=dlinkSwTrafficSegMIB)

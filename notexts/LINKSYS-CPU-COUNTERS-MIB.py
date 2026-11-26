@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module LINKSYS-CPU-COUNTERS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/linksys/LINKSYS-CPU-COUNTERS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:08 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:11:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection")
+ConstraintsUnion, SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint")
 rnd, = mibBuilder.importSymbols("LINKSYS-MIB", "rnd")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Bits, iso, IpAddress, Unsigned32, Integer32, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, MibIdentifier, NotificationType, ObjectIdentity, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "iso", "IpAddress", "Unsigned32", "Integer32", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "MibIdentifier", "NotificationType", "ObjectIdentity", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TruthValue")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+Gauge32, ModuleIdentity, Bits, ObjectIdentity, iso, Unsigned32, Counter32, IpAddress, TimeTicks, MibIdentifier, NotificationType, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "ModuleIdentity", "Bits", "ObjectIdentity", "iso", "Unsigned32", "Counter32", "IpAddress", "TimeTicks", "MibIdentifier", "NotificationType", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32")
+TruthValue, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "TextualConvention", "DisplayString")
 rlCpuCounters = ModuleIdentity((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 124))
 rlCpuCounters.setRevisions(('2007-05-15 00:00',))
 if mibBuilder.loadTexts: rlCpuCounters.setLastUpdated('2007010600Z')
@@ -42,4 +42,4 @@ rlCpuCountersReset = MibScalar((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 124, 2), Trut
 if mibBuilder.loadTexts: rlCpuCountersReset.setStatus('current')
 rlCpuCountersEnabled = MibScalar((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 124, 3), TruthValue().clone('false')).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlCpuCountersEnabled.setStatus('current')
-mibBuilder.exportSymbols("LINKSYS-CPU-COUNTERS-MIB", rlCpuCountersRxOctets=rlCpuCountersRxOctets, rlCpuCountersTxBC=rlCpuCountersTxBC, rlCpuCountersEnabled=rlCpuCountersEnabled, rlCpuCountersTable=rlCpuCountersTable, PYSNMP_MODULE_ID=rlCpuCounters, rlCpuCountersTarget=rlCpuCountersTarget, rlCpuCountersTxOctets=rlCpuCountersTxOctets, rlCpuCountersTxUC=rlCpuCountersTxUC, rlCpuCountersRxUC=rlCpuCountersRxUC, rlCpuCountersRxMC=rlCpuCountersRxMC, rlCpuCounters=rlCpuCounters, rlCpuCountersRxBC=rlCpuCountersRxBC, rlCpuCountersReset=rlCpuCountersReset, rlCpuCountersEntry=rlCpuCountersEntry, rlCpuCountersTxMC=rlCpuCountersTxMC)
+mibBuilder.exportSymbols("LINKSYS-CPU-COUNTERS-MIB", rlCpuCountersRxOctets=rlCpuCountersRxOctets, rlCpuCountersTable=rlCpuCountersTable, rlCpuCountersTxMC=rlCpuCountersTxMC, rlCpuCountersRxUC=rlCpuCountersRxUC, rlCpuCountersEntry=rlCpuCountersEntry, rlCpuCountersTxBC=rlCpuCountersTxBC, rlCpuCountersRxMC=rlCpuCountersRxMC, rlCpuCounters=rlCpuCounters, rlCpuCountersTxOctets=rlCpuCountersTxOctets, rlCpuCountersEnabled=rlCpuCountersEnabled, rlCpuCountersTarget=rlCpuCountersTarget, rlCpuCountersReset=rlCpuCountersReset, PYSNMP_MODULE_ID=rlCpuCounters, rlCpuCountersRxBC=rlCpuCountersRxBC, rlCpuCountersTxUC=rlCpuCountersTxUC)

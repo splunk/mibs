@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module TIMERANGE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/TIMERANGE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:27 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlink_common_mgmt, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlink-common-mgmt")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Unsigned32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Unsigned32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
-DateAndTime, TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "TextualConvention", "RowStatus", "DisplayString")
+Counter64, TimeTicks, ModuleIdentity, iso, Integer32, IpAddress, NotificationType, Counter32, ObjectIdentity, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "ModuleIdentity", "iso", "Integer32", "IpAddress", "NotificationType", "Counter32", "ObjectIdentity", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "MibIdentifier")
+DateAndTime, RowStatus, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "RowStatus", "DisplayString", "TextualConvention")
 swTimeRangeMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 12, 50))
 if mibBuilder.loadTexts: swTimeRangeMIB.setLastUpdated('0811200000Z')
 if mibBuilder.loadTexts: swTimeRangeMIB.setOrganization('D-Link Corp.')
@@ -71,4 +71,4 @@ if mibBuilder.loadTexts: swTimeRangeCPUACLAccessID.setDescription('The ID of the
 swTimeRangeCPUACLTimeRangeName = MibTableColumn((1, 3, 6, 1, 4, 1, 171, 12, 50, 3, 3, 1, 3), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 32))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: swTimeRangeCPUACLTimeRangeName.setStatus('current')
 if mibBuilder.loadTexts: swTimeRangeCPUACLTimeRangeName.setDescription('Specifies a time-range name associated with a specific CPU ACL\n                entry. The time-range name must first be created before being\n                associated with the access rule. If this name is an empty\n                string, it means the time-range profile will no longer be\n                associated with the access rule. When a rule is de-associated\n                with a time range, the access rule will be enabled all the\n                time.')
-mibBuilder.exportSymbols("TIMERANGE-MIB", swTimeRangeMgmtStartTime=swTimeRangeMgmtStartTime, swTimeRangeCPUACLTable=swTimeRangeCPUACLTable, swTimeRangeACLAccessID=swTimeRangeACLAccessID, PYSNMP_MODULE_ID=swTimeRangeMIB, swTimeRangeCtrl=swTimeRangeCtrl, swTimeRangeMgmtEntry=swTimeRangeMgmtEntry, swTimeRangeACLTable=swTimeRangeACLTable, swimeRangeMgmtStatus=swimeRangeMgmtStatus, swTimeRangeACLEntry=swTimeRangeACLEntry, swTimeRangeCPUACLProfileID=swTimeRangeCPUACLProfileID, swTimeRangeCPUACLEntry=swTimeRangeCPUACLEntry, swTimeRangeACLTimeRangeName=swTimeRangeACLTimeRangeName, swTimeRangeMgmtSelectDays=swTimeRangeMgmtSelectDays, swTimeRangeACLProfileID=swTimeRangeACLProfileID, swTimeRangeInfo=swTimeRangeInfo, swTimeRangeCPUACLAccessID=swTimeRangeCPUACLAccessID, swTimeRangeMgmtEndTime=swTimeRangeMgmtEndTime, swTimeRangeMIB=swTimeRangeMIB, swTimeRangeMgmtTable=swTimeRangeMgmtTable, swTimeRangeMgmt=swTimeRangeMgmt, swTimeRangeCPUACLTimeRangeName=swTimeRangeCPUACLTimeRangeName, swTimeRangeMgmtRangeName=swTimeRangeMgmtRangeName)
+mibBuilder.exportSymbols("TIMERANGE-MIB", swTimeRangeInfo=swTimeRangeInfo, swTimeRangeMgmtSelectDays=swTimeRangeMgmtSelectDays, swTimeRangeCPUACLTimeRangeName=swTimeRangeCPUACLTimeRangeName, swTimeRangeCPUACLTable=swTimeRangeCPUACLTable, swTimeRangeMgmtRangeName=swTimeRangeMgmtRangeName, swimeRangeMgmtStatus=swimeRangeMgmtStatus, swTimeRangeCPUACLProfileID=swTimeRangeCPUACLProfileID, swTimeRangeMgmtEntry=swTimeRangeMgmtEntry, swTimeRangeCtrl=swTimeRangeCtrl, swTimeRangeCPUACLAccessID=swTimeRangeCPUACLAccessID, PYSNMP_MODULE_ID=swTimeRangeMIB, swTimeRangeACLProfileID=swTimeRangeACLProfileID, swTimeRangeMgmtStartTime=swTimeRangeMgmtStartTime, swTimeRangeMgmt=swTimeRangeMgmt, swTimeRangeMgmtTable=swTimeRangeMgmtTable, swTimeRangeACLTimeRangeName=swTimeRangeACLTimeRangeName, swTimeRangeMgmtEndTime=swTimeRangeMgmtEndTime, swTimeRangeACLTable=swTimeRangeACLTable, swTimeRangeACLEntry=swTimeRangeACLEntry, swTimeRangeCPUACLEntry=swTimeRangeCPUACLEntry, swTimeRangeMIB=swTimeRangeMIB, swTimeRangeACLAccessID=swTimeRangeACLAccessID)

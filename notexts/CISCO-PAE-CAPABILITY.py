@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-PAE-CAPABILITY (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-PAE-CAPABILITY
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoAgentCapability, = mibBuilder.importSymbols("CISCO-SMI", "ciscoAgentCapability")
 VlanIndex, = mibBuilder.importSymbols("CISCO-VTP-MIB", "VlanIndex")
-ModuleCompliance, AgentCapabilities, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "AgentCapabilities", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, MibIdentifier, Bits, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "MibIdentifier", "Bits", "iso", "Unsigned32", "Counter32")
+AgentCapabilities, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "AgentCapabilities", "ModuleCompliance", "NotificationGroup")
+Counter64, TimeTicks, NotificationType, Integer32, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoPaeCapability = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 7, 319))
 ciscoPaeCapability.setRevisions(('2010-11-01 00:00', '2010-03-22 00:00', '2010-03-15 00:00', '2009-12-31 00:00', '2008-11-06 00:00', '2008-11-04 00:00', '2008-10-20 00:00', '2008-04-24 00:00', '2007-07-09 00:00', '2007-04-26 00:00', '2007-02-27 00:00', '2005-09-05 00:00', '2004-01-16 00:00', '2003-08-06 00:00',))
@@ -107,4 +107,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoPaeCapV12R0250SYPCat6K = ciscoPaeCapV12R0250SYPCat6K.setProductRelease('Cisco IOS 12.2(50)SY on Catalyst 6000/6500\n                    series devices.')
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoPaeCapV12R0250SYPCat6K = ciscoPaeCapV12R0250SYPCat6K.setStatus('current')
-mibBuilder.exportSymbols("CISCO-PAE-CAPABILITY", ciscoPaeCapCatOSV07R0601Cat6K=ciscoPaeCapCatOSV07R0601Cat6K, ciscoPaeCapV12R0233SXI4PCat6K=ciscoPaeCapV12R0233SXI4PCat6K, ciscoPaeCapCatOSV08R0501=ciscoPaeCapCatOSV08R0501, ciscoPaeCapCatOSV07R0101=ciscoPaeCapCatOSV07R0101, ciscoPaeCapCatOSV08R0101Cat4K=ciscoPaeCapCatOSV08R0101Cat4K, ciscoPaeCapV12R0111bEXCat6K=ciscoPaeCapV12R0111bEXCat6K, ciscoPaeCapV12R0233SXHPCat6K=ciscoPaeCapV12R0233SXHPCat6K, ciscoPaeCapCatOSV08R0601=ciscoPaeCapCatOSV08R0601, PYSNMP_MODULE_ID=ciscoPaeCapability, ciscoPaeCapCatOSV08R0301=ciscoPaeCapCatOSV08R0301, ciscoPaeCapCatOSV08R0101Cat6K=ciscoPaeCapCatOSV08R0101Cat6K, ciscoPaeCapability=ciscoPaeCapability, ciscoPaeCapCatOSV08R0701=ciscoPaeCapCatOSV08R0701, ciscoPaeCapCatOSV08R0602=ciscoPaeCapCatOSV08R0602, ciscoPaeCapV12R0250SYPCat6K=ciscoPaeCapV12R0250SYPCat6K, ciscoPaeCapV12R0246SECat3K=ciscoPaeCapV12R0246SECat3K, ciscoPaeCapCatOSV08R0702=ciscoPaeCapCatOSV08R0702, ciscoPaeCapCatOSV07R0501Cat6K=ciscoPaeCapCatOSV07R0501Cat6K, ciscoPaeCapV12R0233SXIPCat6K=ciscoPaeCapV12R0233SXIPCat6K, ciscoPaeCapV120252SGPCat4K=ciscoPaeCapV120252SGPCat4K)
+mibBuilder.exportSymbols("CISCO-PAE-CAPABILITY", ciscoPaeCapCatOSV07R0101=ciscoPaeCapCatOSV07R0101, ciscoPaeCapV12R0233SXHPCat6K=ciscoPaeCapV12R0233SXHPCat6K, ciscoPaeCapCatOSV08R0702=ciscoPaeCapCatOSV08R0702, ciscoPaeCapV12R0250SYPCat6K=ciscoPaeCapV12R0250SYPCat6K, ciscoPaeCapCatOSV08R0101Cat4K=ciscoPaeCapCatOSV08R0101Cat4K, ciscoPaeCapCatOSV08R0602=ciscoPaeCapCatOSV08R0602, PYSNMP_MODULE_ID=ciscoPaeCapability, ciscoPaeCapCatOSV08R0101Cat6K=ciscoPaeCapCatOSV08R0101Cat6K, ciscoPaeCapCatOSV08R0701=ciscoPaeCapCatOSV08R0701, ciscoPaeCapCatOSV08R0601=ciscoPaeCapCatOSV08R0601, ciscoPaeCapCatOSV07R0601Cat6K=ciscoPaeCapCatOSV07R0601Cat6K, ciscoPaeCapV12R0233SXI4PCat6K=ciscoPaeCapV12R0233SXI4PCat6K, ciscoPaeCapV12R0233SXIPCat6K=ciscoPaeCapV12R0233SXIPCat6K, ciscoPaeCapV12R0111bEXCat6K=ciscoPaeCapV12R0111bEXCat6K, ciscoPaeCapV120252SGPCat4K=ciscoPaeCapV120252SGPCat4K, ciscoPaeCapability=ciscoPaeCapability, ciscoPaeCapCatOSV08R0501=ciscoPaeCapCatOSV08R0501, ciscoPaeCapCatOSV08R0301=ciscoPaeCapCatOSV08R0301, ciscoPaeCapV12R0246SECat3K=ciscoPaeCapV12R0246SECat3K, ciscoPaeCapCatOSV07R0501Cat6K=ciscoPaeCapCatOSV07R0501Cat6K)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module DLINKSW-FS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-FS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:27 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
-ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
-Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, Integer32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "Integer32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
-TruthValue, RowStatus, DisplayString, TextualConvention, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "RowStatus", "DisplayString", "TextualConvention", "DateAndTime")
+ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
+Counter64, TimeTicks, ModuleIdentity, iso, Integer32, IpAddress, NotificationType, Counter32, ObjectIdentity, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "ModuleIdentity", "iso", "Integer32", "IpAddress", "NotificationType", "Counter32", "ObjectIdentity", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "MibIdentifier")
+DisplayString, DateAndTime, TruthValue, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "DateAndTime", "TruthValue", "RowStatus", "TextualConvention")
 dlinkSwFsMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 18))
 dlinkSwFsMIB.setRevisions(('2013-04-17 00:00',))
 
@@ -105,4 +105,4 @@ dFsDriveGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 18, 2, 2, 2)).setObjects
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dFsDriveGroup = dFsDriveGroup.setStatus('current')
 if mibBuilder.loadTexts: dFsDriveGroup.setDescription('A collection of objects executes drive operation of FS.')
-mibBuilder.exportSymbols("DLINKSW-FS-MIB", dFsFileRenameSourceUrl=dFsFileRenameSourceUrl, dlinkSwFsMIB=dlinkSwFsMIB, dFsDriveInfoEntry=dFsDriveInfoEntry, dFsDriveInfoDriveID=dFsDriveInfoDriveID, dFsCurrentDirItemName=dFsCurrentDirItemName, dFsCurrentDirItemTime=dFsCurrentDirItemTime, dFsCurrentDirectoryTable=dFsCurrentDirectoryTable, dFsConformance=dFsConformance, dFsCurrentDirItemSize=dFsCurrentDirItemSize, dFsDriveInfoMediaType=dFsDriveInfoMediaType, dFsDriveInfoSize=dFsDriveInfoSize, dFsBasicOperation=dFsBasicOperation, dFsCurrentDirUrl=dFsCurrentDirUrl, dFsCurrentDirectoryEntry=dFsCurrentDirectoryEntry, dFsCompliances=dFsCompliances, dFsDriveGroup=dFsDriveGroup, dFsCurrentDirItemMode=dFsCurrentDirItemMode, dFsFileRenameTargetUrl=dFsFileRenameTargetUrl, dFsFileRenameCtrl=dFsFileRenameCtrl, PYSNMP_MODULE_ID=dlinkSwFsMIB, dFsDriveInfoFormatDrive=dFsDriveInfoFormatDrive, dFsDriveCtrl=dFsDriveCtrl, dFsBasicInfoCtrlStatus=dFsBasicInfoCtrlStatus, dFsGroups=dFsGroups, dFsDriveInfoFsType=dFsDriveInfoFsType, dFsFileRenameActivity=dFsFileRenameActivity, dFsNotifications=dFsNotifications, dFsBasicGroup=dFsBasicGroup, dFsDriveInfoLabel=dFsDriveInfoLabel, dFsMIBCompliance=dFsMIBCompliance, dFsCurrentDirItemRawStatus=dFsCurrentDirItemRawStatus, dFsObjects=dFsObjects, dFsDriveInfoTable=dFsDriveInfoTable, dFsDriveInfoUnitID=dFsDriveInfoUnitID)
+mibBuilder.exportSymbols("DLINKSW-FS-MIB", dFsFileRenameActivity=dFsFileRenameActivity, dFsObjects=dFsObjects, dFsDriveInfoFsType=dFsDriveInfoFsType, dFsFileRenameCtrl=dFsFileRenameCtrl, dFsCompliances=dFsCompliances, dFsFileRenameTargetUrl=dFsFileRenameTargetUrl, dFsDriveInfoSize=dFsDriveInfoSize, dFsDriveInfoDriveID=dFsDriveInfoDriveID, dFsNotifications=dFsNotifications, dFsCurrentDirectoryTable=dFsCurrentDirectoryTable, dFsDriveInfoTable=dFsDriveInfoTable, dFsBasicInfoCtrlStatus=dFsBasicInfoCtrlStatus, dFsDriveInfoUnitID=dFsDriveInfoUnitID, dFsDriveInfoLabel=dFsDriveInfoLabel, dFsCurrentDirItemName=dFsCurrentDirItemName, dFsCurrentDirItemTime=dFsCurrentDirItemTime, dFsDriveGroup=dFsDriveGroup, dFsBasicGroup=dFsBasicGroup, dFsGroups=dFsGroups, PYSNMP_MODULE_ID=dlinkSwFsMIB, dFsDriveInfoMediaType=dFsDriveInfoMediaType, dFsConformance=dFsConformance, dFsDriveCtrl=dFsDriveCtrl, dFsCurrentDirItemSize=dFsCurrentDirItemSize, dFsDriveInfoEntry=dFsDriveInfoEntry, dFsMIBCompliance=dFsMIBCompliance, dFsBasicOperation=dFsBasicOperation, dFsDriveInfoFormatDrive=dFsDriveInfoFormatDrive, dFsCurrentDirectoryEntry=dFsCurrentDirectoryEntry, dFsCurrentDirItemRawStatus=dFsCurrentDirItemRawStatus, dFsFileRenameSourceUrl=dFsFileRenameSourceUrl, dFsCurrentDirUrl=dFsCurrentDirUrl, dlinkSwFsMIB=dlinkSwFsMIB, dFsCurrentDirItemMode=dFsCurrentDirItemMode)

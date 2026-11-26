@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCO-ANNOUNCEMENT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ANNOUNCEMENT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 cmgwIndex, = mibBuilder.importSymbols("CISCO-MEDIA-GATEWAY-MIB", "cmgwIndex")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
+InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString")
 ciscoAnnouncementMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 8888))
 ciscoAnnouncementMIB.setRevisions(('2003-03-25 00:00',))
 
@@ -114,4 +114,4 @@ cannoAudioFileGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 8888, 2, 2, 2)).setOb
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cannoAudioFileGroup = cannoAudioFileGroup.setStatus('current')
 if mibBuilder.loadTexts: cannoAudioFileGroup.setDescription('This group contains objects related to announcement \n             files on media gateway.\n             ')
-mibBuilder.exportSymbols("CISCO-ANNOUNCEMENT-MIB", cannoControlTable=cannoControlTable, cannoAudioFileAdminDeletion=cannoAudioFileAdminDeletion, cannoAgeTime=cannoAgeTime, PYSNMP_MODULE_ID=ciscoAnnouncementMIB, cannoAudioFileType=cannoAudioFileType, cannoAudioFileGroup=cannoAudioFileGroup, cannoDnResolution=cannoDnResolution, cannoAudioFileNumber=cannoAudioFileNumber, cannoReqTimeout=cannoReqTimeout, ciscoAnnouncementMIBObjects=ciscoAnnouncementMIBObjects, ciscoAnnouncementMIBNotifs=ciscoAnnouncementMIBNotifs, ciscoAnnouncementMIBConformance=ciscoAnnouncementMIBConformance, cannoAudioFileOperStatus=cannoAudioFileOperStatus, ciscoAnnouncementMIB=ciscoAnnouncementMIB, cannoAudioFileEntry=cannoAudioFileEntry, cannoAudioFileConfig=cannoAudioFileConfig, cannoAudioFilePlayNoc=cannoAudioFilePlayNoc, cannoSubDirPath=cannoSubDirPath, cannoAudioFileName=cannoAudioFileName, cannoAudioFileDescr=cannoAudioFileDescr, cannoControlGroup=cannoControlGroup, cannoAudioFileDuration=cannoAudioFileDuration, cannoControlEntry=cannoControlEntry, cannoMaxPermanent=cannoMaxPermanent, cannoIpAddress=cannoIpAddress, cannoAudioFileStatus=cannoAudioFileStatus, cannoIpAddressType=cannoIpAddressType, cannoAudioFileAge=cannoAudioFileAge, cannoGeneric=cannoGeneric, cannoMIBCompliances=cannoMIBCompliances, cannoControlConfig=cannoControlConfig, cannoAudioFileServerName=cannoAudioFileServerName, cannoMIBGroups=cannoMIBGroups, cannoMIBCompliance=cannoMIBCompliance, cannoAudioFileRowStatus=cannoAudioFileRowStatus, cannoAudioFileTable=cannoAudioFileTable)
+mibBuilder.exportSymbols("CISCO-ANNOUNCEMENT-MIB", cannoControlConfig=cannoControlConfig, cannoAudioFileNumber=cannoAudioFileNumber, cannoAudioFileAge=cannoAudioFileAge, cannoReqTimeout=cannoReqTimeout, cannoAudioFileAdminDeletion=cannoAudioFileAdminDeletion, cannoControlEntry=cannoControlEntry, cannoMaxPermanent=cannoMaxPermanent, cannoControlTable=cannoControlTable, ciscoAnnouncementMIBNotifs=ciscoAnnouncementMIBNotifs, cannoAudioFilePlayNoc=cannoAudioFilePlayNoc, cannoMIBCompliance=cannoMIBCompliance, cannoGeneric=cannoGeneric, cannoAudioFileTable=cannoAudioFileTable, cannoAudioFileRowStatus=cannoAudioFileRowStatus, cannoIpAddress=cannoIpAddress, cannoSubDirPath=cannoSubDirPath, cannoDnResolution=cannoDnResolution, ciscoAnnouncementMIBConformance=ciscoAnnouncementMIBConformance, cannoAudioFileServerName=cannoAudioFileServerName, cannoAudioFileDescr=cannoAudioFileDescr, cannoAudioFileConfig=cannoAudioFileConfig, cannoAudioFileEntry=cannoAudioFileEntry, cannoAudioFileName=cannoAudioFileName, cannoAudioFileOperStatus=cannoAudioFileOperStatus, cannoMIBCompliances=cannoMIBCompliances, cannoControlGroup=cannoControlGroup, cannoAudioFileDuration=cannoAudioFileDuration, cannoMIBGroups=cannoMIBGroups, cannoAudioFileStatus=cannoAudioFileStatus, ciscoAnnouncementMIB=ciscoAnnouncementMIB, PYSNMP_MODULE_ID=ciscoAnnouncementMIB, cannoAudioFileGroup=cannoAudioFileGroup, cannoAgeTime=cannoAgeTime, cannoAudioFileType=cannoAudioFileType, cannoIpAddressType=cannoIpAddressType, ciscoAnnouncementMIBObjects=ciscoAnnouncementMIBObjects)

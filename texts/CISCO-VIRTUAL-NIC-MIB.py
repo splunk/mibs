@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCO-VIRTUAL-NIC-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-VIRTUAL-NIC-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 InterfaceIndex, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndex")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, MacAddress, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "MacAddress", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, MacAddress, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "MacAddress", "DisplayString")
 ciscoVirtualNicMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 710))
 ciscoVirtualNicMIB.setRevisions(('2009-10-26 00:00',))
 
@@ -123,4 +123,4 @@ cvnConnecteeGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 710, 2, 2, 3)).setObjec
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cvnConnecteeGroup = cvnConnecteeGroup.setStatus('current')
 if mibBuilder.loadTexts: cvnConnecteeGroup.setDescription('A collection of objects providing management\n        information of connectee.')
-mibBuilder.exportSymbols("CISCO-VIRTUAL-NIC-MIB", cvnInterfaceObjects=cvnInterfaceObjects, cvnConnecteeGroup=cvnConnecteeGroup, cvnVethAdapter=cvnVethAdapter, cvnConnecteeDeviceName=cvnConnecteeDeviceName, ciscoVirtualNicMIBNotifs=ciscoVirtualNicMIBNotifs, cvnPinningGroup=cvnPinningGroup, cvnVethPortProfileUsed=cvnVethPortProfileUsed, cvnVethHostID=cvnVethHostID, cvnVethOwner=cvnVethOwner, cvnPinnedSubGrpId=cvnPinnedSubGrpId, cvnConnecteeUuid=cvnConnecteeUuid, cvnConnecteeType=cvnConnecteeType, cvnConnecteeDeviceType=cvnConnecteeDeviceType, cvnVethIfEntry=cvnVethIfEntry, cvnConnecteeEntry=cvnConnecteeEntry, cvnConnecteeObjects=cvnConnecteeObjects, cvnConnecteeName=cvnConnecteeName, cvnConnecteeTable=cvnConnecteeTable, cvnVethIfAdditionalState=cvnVethIfAdditionalState, ciscoVirtualNicMIBConformance=ciscoVirtualNicMIBConformance, cvnVethInterface=cvnVethInterface, cvnVethStateReason=cvnVethStateReason, cvnVethHostAddrType=cvnVethHostAddrType, virtualNicMIBCompliance=virtualNicMIBCompliance, ciscoVirtualNicMIBCompliances=ciscoVirtualNicMIBCompliances, cvnVethGroup=cvnVethGroup, ciscoVirtualNicMIB=ciscoVirtualNicMIB, cvnConnecteeAttachType=cvnConnecteeAttachType, cvnVethHostAddr=cvnVethHostAddr, ciscoVirtualNicMIBObjects=ciscoVirtualNicMIBObjects, cvnPinningEntry=cvnPinningEntry, cvnVethIfProfileAlias=cvnVethIfProfileAlias, cvnVethIfTable=cvnVethIfTable, PYSNMP_MODULE_ID=ciscoVirtualNicMIB, cvnDVSPort=cvnDVSPort, cvnPinningTable=cvnPinningTable, cvnConnecteeMac=cvnConnecteeMac, ciscoVirtualNicMIBGroups=ciscoVirtualNicMIBGroups)
+mibBuilder.exportSymbols("CISCO-VIRTUAL-NIC-MIB", cvnVethIfProfileAlias=cvnVethIfProfileAlias, virtualNicMIBCompliance=virtualNicMIBCompliance, cvnPinningGroup=cvnPinningGroup, ciscoVirtualNicMIB=ciscoVirtualNicMIB, ciscoVirtualNicMIBObjects=ciscoVirtualNicMIBObjects, cvnVethGroup=cvnVethGroup, cvnPinnedSubGrpId=cvnPinnedSubGrpId, cvnVethIfEntry=cvnVethIfEntry, cvnVethPortProfileUsed=cvnVethPortProfileUsed, cvnVethHostAddrType=cvnVethHostAddrType, cvnConnecteeGroup=cvnConnecteeGroup, cvnConnecteeMac=cvnConnecteeMac, cvnVethIfAdditionalState=cvnVethIfAdditionalState, ciscoVirtualNicMIBNotifs=ciscoVirtualNicMIBNotifs, cvnConnecteeObjects=cvnConnecteeObjects, cvnConnecteeDeviceType=cvnConnecteeDeviceType, cvnDVSPort=cvnDVSPort, cvnPinningTable=cvnPinningTable, cvnConnecteeAttachType=cvnConnecteeAttachType, cvnVethHostID=cvnVethHostID, cvnInterfaceObjects=cvnInterfaceObjects, ciscoVirtualNicMIBGroups=ciscoVirtualNicMIBGroups, cvnConnecteeUuid=cvnConnecteeUuid, cvnConnecteeType=cvnConnecteeType, ciscoVirtualNicMIBConformance=ciscoVirtualNicMIBConformance, cvnConnecteeTable=cvnConnecteeTable, cvnPinningEntry=cvnPinningEntry, cvnConnecteeEntry=cvnConnecteeEntry, PYSNMP_MODULE_ID=ciscoVirtualNicMIB, cvnVethInterface=cvnVethInterface, cvnVethIfTable=cvnVethIfTable, cvnConnecteeDeviceName=cvnConnecteeDeviceName, cvnVethHostAddr=cvnVethHostAddr, cvnVethStateReason=cvnVethStateReason, cvnVethAdapter=cvnVethAdapter, cvnConnecteeName=cvnConnecteeName, cvnVethOwner=cvnVethOwner, ciscoVirtualNicMIBCompliances=ciscoVirtualNicMIBCompliances)

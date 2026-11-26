@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCOSB-LOCALIZATION-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-LOCALIZATION-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-TruthValue, DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "DisplayString", "RowStatus", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, IpAddress, Counter32, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "IpAddress", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString", "TruthValue")
 rlLocalization = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 103))
 rlLocalization.setRevisions(('2005-03-15 00:00',))
 
@@ -79,4 +79,4 @@ if mibBuilder.loadTexts: rlLocalizationVersion.setDescription('The version of th
 rlLocalizationMd5ChksumFile = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 103, 10, 1, 15), DisplayString()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlLocalizationMd5ChksumFile.setStatus('current')
 if mibBuilder.loadTexts: rlLocalizationMd5ChksumFile.setDescription('The MD5 of the language file (as string)')
-mibBuilder.exportSymbols("CISCOSB-LOCALIZATION-MIB", rlLocalizationShortButtonWidthPercentage=rlLocalizationShortButtonWidthPercentage, rlLocalizationLongButtonWidthPercentage=rlLocalizationLongButtonWidthPercentage, rlLocalizationLanguagesEntry=rlLocalizationLanguagesEntry, rlLocalizationDateFormat=rlLocalizationDateFormat, rlLocalizationLanguagesUnicodeName=rlLocalizationLanguagesUnicodeName, rlLocalizationTimeFormat=rlLocalizationTimeFormat, rlLocalizationNumOfSections=rlLocalizationNumOfSections, rlLocalizationVersion=rlLocalizationVersion, rlLocalizationMd5ChksumFile=rlLocalizationMd5ChksumFile, rlLocalizationLanguagesUrlHelpDir=rlLocalizationLanguagesUrlHelpDir, PYSNMP_MODULE_ID=rlLocalization, rlLocalizationLanguagesUrlDir=rlLocalizationLanguagesUrlDir, rlLocalizationDirection=rlLocalizationDirection, rlLocalization=rlLocalization, rlLocalizationActivelanguage=rlLocalizationActivelanguage, rlLocalizationLoginlanguage=rlLocalizationLoginlanguage, rlLocalizationLanguageCode=rlLocalizationLanguageCode, rlLocalizationLanguagesTable=rlLocalizationLanguagesTable, rlLocalizationNumOfEmbSections=rlLocalizationNumOfEmbSections, rlLocalizationNumberFormat=rlLocalizationNumberFormat, rlLocalizationLanguagesName=rlLocalizationLanguagesName)
+mibBuilder.exportSymbols("CISCOSB-LOCALIZATION-MIB", rlLocalizationActivelanguage=rlLocalizationActivelanguage, rlLocalizationLongButtonWidthPercentage=rlLocalizationLongButtonWidthPercentage, rlLocalizationVersion=rlLocalizationVersion, rlLocalizationLanguagesEntry=rlLocalizationLanguagesEntry, rlLocalizationLanguagesTable=rlLocalizationLanguagesTable, rlLocalizationNumberFormat=rlLocalizationNumberFormat, rlLocalizationMd5ChksumFile=rlLocalizationMd5ChksumFile, rlLocalizationLanguagesUrlDir=rlLocalizationLanguagesUrlDir, rlLocalizationLanguagesName=rlLocalizationLanguagesName, rlLocalizationNumOfSections=rlLocalizationNumOfSections, PYSNMP_MODULE_ID=rlLocalization, rlLocalizationLoginlanguage=rlLocalizationLoginlanguage, rlLocalizationTimeFormat=rlLocalizationTimeFormat, rlLocalizationDirection=rlLocalizationDirection, rlLocalization=rlLocalization, rlLocalizationLanguagesUnicodeName=rlLocalizationLanguagesUnicodeName, rlLocalizationLanguagesUrlHelpDir=rlLocalizationLanguagesUrlHelpDir, rlLocalizationLanguageCode=rlLocalizationLanguageCode, rlLocalizationNumOfEmbSections=rlLocalizationNumOfEmbSections, rlLocalizationDateFormat=rlLocalizationDateFormat, rlLocalizationShortButtonWidthPercentage=rlLocalizationShortButtonWidthPercentage)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module OLD-CISCO-MEMORY-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/OLD-CISCO-MEMORY-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 local, = mibBuilder.importSymbols("CISCO-SMI", "local")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, ModuleIdentity, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, NotificationType, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "ModuleIdentity", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "NotificationType", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, TimeTicks, ModuleIdentity, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "TimeTicks", "ModuleIdentity", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 lmem = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 2, 1))
 freeMem = MibScalar((1, 3, 6, 1, 4, 1, 9, 2, 1, 8), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: freeMem.setStatus('obsolete')
@@ -157,4 +157,4 @@ if mibBuilder.loadTexts: bufferHgTrim.setDescription('Contains the number of hug
 bufferHgCreate = MibScalar((1, 3, 6, 1, 4, 1, 9, 2, 1, 69), Integer32()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: bufferHgCreate.setStatus('mandatory')
 if mibBuilder.loadTexts: bufferHgCreate.setDescription('Contains the number of huge buffer creates.')
-mibBuilder.exportSymbols("OLD-CISCO-MEMORY-MIB", bufferMdTrim=bufferMdTrim, bufferSmTotal=bufferSmTotal, bufferLgSize=bufferLgSize, bufferSmTrim=bufferSmTrim, bufferHgTotal=bufferHgTotal, bufferHgFree=bufferHgFree, bufferBgTrim=bufferBgTrim, bufferSmCreate=bufferSmCreate, bufferElHit=bufferElHit, bufferSmMax=bufferSmMax, bufferElMax=bufferElMax, bufferBgFree=bufferBgFree, bufferLgTrim=bufferLgTrim, bufferLgFree=bufferLgFree, bufferHgMax=bufferHgMax, bufferMdSize=bufferMdSize, bufferLgCreate=bufferLgCreate, bufferMdCreate=bufferMdCreate, bufferSmMiss=bufferSmMiss, bufferMdMiss=bufferMdMiss, bufferBgSize=bufferBgSize, bufferHgHit=bufferHgHit, bufferLgHit=bufferLgHit, bufferHgCreate=bufferHgCreate, bufferMdMax=bufferMdMax, bufferSmHit=bufferSmHit, bufferMdFree=bufferMdFree, bufferBgHit=bufferBgHit, bufferFail=bufferFail, bufferMdHit=bufferMdHit, bufferHgTrim=bufferHgTrim, bufferElMiss=bufferElMiss, bufferHgSize=bufferHgSize, bufferMdTotal=bufferMdTotal, bufferSmFree=bufferSmFree, bufferLgMiss=bufferLgMiss, bufferBgMax=bufferBgMax, bufferHgMiss=bufferHgMiss, lmem=lmem, bufferLgTotal=bufferLgTotal, bufferElFree=bufferElFree, bufferBgCreate=bufferBgCreate, bufferSmSize=bufferSmSize, bufferBgTotal=bufferBgTotal, bufferLgMax=bufferLgMax, freeMem=freeMem, bufferBgMiss=bufferBgMiss, bufferElCreate=bufferElCreate, bufferNoMem=bufferNoMem)
+mibBuilder.exportSymbols("OLD-CISCO-MEMORY-MIB", bufferSmSize=bufferSmSize, bufferHgTrim=bufferHgTrim, bufferHgTotal=bufferHgTotal, bufferMdSize=bufferMdSize, bufferSmMax=bufferSmMax, bufferSmCreate=bufferSmCreate, bufferLgTrim=bufferLgTrim, bufferLgCreate=bufferLgCreate, bufferSmMiss=bufferSmMiss, bufferElFree=bufferElFree, bufferLgHit=bufferLgHit, bufferBgHit=bufferBgHit, bufferBgMax=bufferBgMax, bufferMdMax=bufferMdMax, bufferMdTotal=bufferMdTotal, bufferBgCreate=bufferBgCreate, bufferNoMem=bufferNoMem, bufferLgMiss=bufferLgMiss, bufferBgTotal=bufferBgTotal, bufferHgMax=bufferHgMax, bufferBgMiss=bufferBgMiss, bufferHgFree=bufferHgFree, bufferSmTotal=bufferSmTotal, bufferSmFree=bufferSmFree, bufferHgMiss=bufferHgMiss, bufferMdHit=bufferMdHit, bufferHgHit=bufferHgHit, bufferLgSize=bufferLgSize, bufferHgCreate=bufferHgCreate, bufferElMax=bufferElMax, bufferMdMiss=bufferMdMiss, bufferHgSize=bufferHgSize, bufferSmHit=bufferSmHit, bufferBgSize=bufferBgSize, bufferLgMax=bufferLgMax, bufferElCreate=bufferElCreate, bufferElMiss=bufferElMiss, bufferSmTrim=bufferSmTrim, bufferMdTrim=bufferMdTrim, bufferBgTrim=bufferBgTrim, bufferLgTotal=bufferLgTotal, lmem=lmem, bufferBgFree=bufferBgFree, bufferFail=bufferFail, bufferMdFree=bufferMdFree, bufferMdCreate=bufferMdCreate, bufferElHit=bufferElHit, freeMem=freeMem, bufferLgFree=bufferLgFree)

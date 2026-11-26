@@ -1,16 +1,16 @@
 #
 # PySNMP MIB module CISCO-TEMPERATURE-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-TEMPERATURE-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:01 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoTempMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 870))
 ciscoTempMIB.setRevisions(('2020-05-28 00:00',))
@@ -39,4 +39,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoTempMIBGlobalGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 870, 2, 2, 1)).setObjects(("CISCO-TEMPERATURE-MIB", "ciscoTempValue"), ("CISCO-TEMPERATURE-MIB", "ciscoTempHyst"), ("CISCO-TEMPERATURE-MIB", "ciscoTempOs"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoTempMIBGlobalGroup = ciscoTempMIBGlobalGroup.setStatus('current')
-mibBuilder.exportSymbols("CISCO-TEMPERATURE-MIB", ciscoTempMIB=ciscoTempMIB, ciscoTempEntry=ciscoTempEntry, ciscoTempMIBGlobalGroup=ciscoTempMIBGlobalGroup, ciscoTempMIBConform=ciscoTempMIBConform, ciscoTempHyst=ciscoTempHyst, ciscoTempMIBCompliances=ciscoTempMIBCompliances, ciscoTempMIBCompliance=ciscoTempMIBCompliance, ciscoTempMIBInformation=ciscoTempMIBInformation, ciscoTempOs=ciscoTempOs, ciscoTempTable=ciscoTempTable, ciscoTempIndex=ciscoTempIndex, ciscoTempValue=ciscoTempValue, PYSNMP_MODULE_ID=ciscoTempMIB, ciscoTempMIBConformGroups=ciscoTempMIBConformGroups)
+mibBuilder.exportSymbols("CISCO-TEMPERATURE-MIB", ciscoTempTable=ciscoTempTable, ciscoTempMIBCompliances=ciscoTempMIBCompliances, ciscoTempHyst=ciscoTempHyst, ciscoTempIndex=ciscoTempIndex, ciscoTempMIBConformGroups=ciscoTempMIBConformGroups, ciscoTempOs=ciscoTempOs, ciscoTempMIB=ciscoTempMIB, ciscoTempMIBCompliance=ciscoTempMIBCompliance, ciscoTempEntry=ciscoTempEntry, ciscoTempMIBInformation=ciscoTempMIBInformation, ciscoTempMIBConform=ciscoTempMIBConform, ciscoTempValue=ciscoTempValue, PYSNMP_MODULE_ID=ciscoTempMIB, ciscoTempMIBGlobalGroup=ciscoTempMIBGlobalGroup)

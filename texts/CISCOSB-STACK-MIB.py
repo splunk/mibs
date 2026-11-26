@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-STACK-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-STACK-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-TruthValue, MacAddress, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "MacAddress", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, MacAddress, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "MacAddress", "DisplayString", "TruthValue")
 rlStack = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 107))
 rlStack.setRevisions(('2005-04-14 00:00',))
 
@@ -49,4 +49,4 @@ if mibBuilder.loadTexts: rlStackTopology.setDescription('show stack topology typ
 rlStackMode = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 107, 7), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1, 2))).clone(namedValues=NamedValues(("native", 1), ("hybrid", 2)))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlStackMode.setStatus('current')
 if mibBuilder.loadTexts: rlStackMode.setDescription('Set the stack mode that would be taken after reset - native or hybrid.')
-mibBuilder.exportSymbols("CISCOSB-STACK-MIB", rlStackMode=rlStackMode, rlStackUnitMode=rlStackUnitMode, rlStackActiveUnitIdAfterReset=rlStackActiveUnitIdAfterReset, rlStackActiveUnitIdEntry=rlStackActiveUnitIdEntry, PYSNMP_MODULE_ID=rlStack, rlStackUnitMacAddressAfterReset=rlStackUnitMacAddressAfterReset, rlStackTopology=rlStackTopology, rlStackCurrentUnitId=rlStackCurrentUnitId, rlStack=rlStack, rlStackActiveUnitIdTable=rlStackActiveUnitIdTable, rlStackUnitModeAfterReset=rlStackUnitModeAfterReset)
+mibBuilder.exportSymbols("CISCOSB-STACK-MIB", PYSNMP_MODULE_ID=rlStack, rlStackUnitMacAddressAfterReset=rlStackUnitMacAddressAfterReset, rlStack=rlStack, rlStackMode=rlStackMode, rlStackActiveUnitIdEntry=rlStackActiveUnitIdEntry, rlStackTopology=rlStackTopology, rlStackUnitModeAfterReset=rlStackUnitModeAfterReset, rlStackUnitMode=rlStackUnitMode, rlStackActiveUnitIdTable=rlStackActiveUnitIdTable, rlStackActiveUnitIdAfterReset=rlStackActiveUnitIdAfterReset, rlStackCurrentUnitId=rlStackCurrentUnitId)

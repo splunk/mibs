@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module OLD-CISCO-SYSTEM-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/OLD-CISCO-SYSTEM-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 local, = mibBuilder.importSymbols("CISCO-SMI", "local")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, iso, Counter32, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "iso", "Counter32", "IpAddress", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, TimeTicks, ModuleIdentity, MibIdentifier, iso, IpAddress, Counter32, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "TimeTicks", "ModuleIdentity", "MibIdentifier", "iso", "IpAddress", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 lsystem = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 2, 1))
 romId = MibScalar((1, 3, 6, 1, 4, 1, 9, 2, 1, 1), DisplayString()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: romId.setStatus('mandatory')
@@ -79,4 +79,4 @@ if mibBuilder.loadTexts: sysClearARP.setDescription('Perform a clearing of the e
 sysClearInt = MibScalar((1, 3, 6, 1, 4, 1, 9, 2, 1, 76), Integer32()).setMaxAccess("writeonly")
 if mibBuilder.loadTexts: sysClearInt.setStatus('mandatory')
 if mibBuilder.loadTexts: sysClearInt.setDescription('Clear interface given IfIndex as value.')
-mibBuilder.exportSymbols("OLD-CISCO-SYSTEM-MIB", writeMem=writeMem, hostConfigName=hostConfigName, hostName=hostName, hostConfigAddr=hostConfigAddr, sysClearARP=sysClearARP, lsystem=lsystem, netConfigProto=netConfigProto, netConfigAddr=netConfigAddr, romId=romId, hostConfigSet=hostConfigSet, authAddr=authAddr, ciscoContactInfo=ciscoContactInfo, bootHost=bootHost, hostConfigProto=hostConfigProto, domainName=domainName, sysConfigAddr=sysConfigAddr, netConfigName=netConfigName, sysConfigProto=sysConfigProto, sysConfigName=sysConfigName, writeNet=writeNet, sysClearInt=sysClearInt, netConfigSet=netConfigSet, whyReload=whyReload)
+mibBuilder.exportSymbols("OLD-CISCO-SYSTEM-MIB", sysConfigName=sysConfigName, hostName=hostName, authAddr=authAddr, hostConfigAddr=hostConfigAddr, hostConfigName=hostConfigName, lsystem=lsystem, sysClearInt=sysClearInt, netConfigSet=netConfigSet, romId=romId, domainName=domainName, netConfigName=netConfigName, writeNet=writeNet, netConfigAddr=netConfigAddr, whyReload=whyReload, bootHost=bootHost, sysConfigAddr=sysConfigAddr, sysConfigProto=sysConfigProto, hostConfigSet=hostConfigSet, netConfigProto=netConfigProto, writeMem=writeMem, ciscoContactInfo=ciscoContactInfo, sysClearARP=sysClearARP, hostConfigProto=hostConfigProto)

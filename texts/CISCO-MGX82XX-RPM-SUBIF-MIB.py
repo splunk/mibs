@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-MGX82XX-RPM-SUBIF-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MGX82XX-RPM-SUBIF-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 rpmPort, = mibBuilder.importSymbols("BASIS-MIB", "rpmPort")
 ciscoWan, = mibBuilder.importSymbols("CISCOWAN-SMI", "ciscoWan")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, iso, Counter32, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "iso", "Counter32", "IpAddress", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, IpAddress, Counter32, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "IpAddress", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoMgx82xxRpmSubIfMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 351, 150, 60))
 ciscoMgx82xxRpmSubIfMIB.setRevisions(('2002-09-08 00:00',))
 
@@ -61,4 +61,4 @@ cmrSubIfMIBGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 351, 150, 60, 2, 2, 1)).setObj
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmrSubIfMIBGroup = cmrSubIfMIBGroup.setStatus('current')
 if mibBuilder.loadTexts: cmrSubIfMIBGroup.setDescription('Objects related to ATM Subinterface in RPM module.')
-mibBuilder.exportSymbols("CISCO-MGX82XX-RPM-SUBIF-MIB", PYSNMP_MODULE_ID=ciscoMgx82xxRpmSubIfMIB, rpmPortIpAddress=rpmPortIpAddress, rpmPortEntry=rpmPortEntry, cmrSubIfMIBGroups=cmrSubIfMIBGroups, cmrSubIfMIBConformance=cmrSubIfMIBConformance, cmrSubIfMIBCompliance=cmrSubIfMIBCompliance, rpmPortTable=rpmPortTable, rpmPortInterface=rpmPortInterface, rpmPortState=rpmPortState, rpmPortSubInterface=rpmPortSubInterface, rpmPortRowStatus=rpmPortRowStatus, rpmPortSlotNum=rpmPortSlotNum, cmrSubIfMIBCompliances=cmrSubIfMIBCompliances, ciscoMgx82xxRpmSubIfMIB=ciscoMgx82xxRpmSubIfMIB, cmrSubIfMIBGroup=cmrSubIfMIBGroup, rpmPortSubNetMask=rpmPortSubNetMask)
+mibBuilder.exportSymbols("CISCO-MGX82XX-RPM-SUBIF-MIB", rpmPortState=rpmPortState, ciscoMgx82xxRpmSubIfMIB=ciscoMgx82xxRpmSubIfMIB, rpmPortRowStatus=rpmPortRowStatus, rpmPortSubInterface=rpmPortSubInterface, rpmPortIpAddress=rpmPortIpAddress, cmrSubIfMIBGroup=cmrSubIfMIBGroup, rpmPortEntry=rpmPortEntry, rpmPortTable=rpmPortTable, cmrSubIfMIBGroups=cmrSubIfMIBGroups, rpmPortSubNetMask=rpmPortSubNetMask, cmrSubIfMIBCompliance=cmrSubIfMIBCompliance, PYSNMP_MODULE_ID=ciscoMgx82xxRpmSubIfMIB, rpmPortInterface=rpmPortInterface, cmrSubIfMIBConformance=cmrSubIfMIBConformance, rpmPortSlotNum=rpmPortSlotNum, cmrSubIfMIBCompliances=cmrSubIfMIBCompliances)

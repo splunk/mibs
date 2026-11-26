@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module LINKSYS-UDP (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/linksys/LINKSYS-UDP
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:08 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:11:59 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
+Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion", "ConstraintsIntersection")
+ConstraintsUnion, SingleValueConstraint, ValueRangeConstraint, ConstraintsIntersection, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "SingleValueConstraint", "ValueRangeConstraint", "ConstraintsIntersection", "ValueSizeConstraint")
 InetAddress, InetAddressType = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddress", "InetAddressType")
-ipCidrRouteMask, ipCidrRouteTos, ipCidrRouteNextHop, ipCidrRouteEntry, ipCidrRouteDest = mibBuilder.importSymbols("IP-FORWARD-MIB", "ipCidrRouteMask", "ipCidrRouteTos", "ipCidrRouteNextHop", "ipCidrRouteEntry", "ipCidrRouteDest")
+ipCidrRouteEntry, ipCidrRouteDest, ipCidrRouteNextHop, ipCidrRouteMask, ipCidrRouteTos = mibBuilder.importSymbols("IP-FORWARD-MIB", "ipCidrRouteEntry", "ipCidrRouteDest", "ipCidrRouteNextHop", "ipCidrRouteMask", "ipCidrRouteTos")
 ipAddrEntry, = mibBuilder.importSymbols("IP-MIB", "ipAddrEntry")
 rnd, = mibBuilder.importSymbols("LINKSYS-MIB", "rnd")
-ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Bits, iso, IpAddress, Unsigned32, Integer32, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, MibIdentifier, NotificationType, ObjectIdentity, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "Bits", "iso", "IpAddress", "Unsigned32", "Integer32", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "MibIdentifier", "NotificationType", "ObjectIdentity", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, RowStatus, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TruthValue", "TextualConvention")
+NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
+Gauge32, ModuleIdentity, Bits, ObjectIdentity, iso, Unsigned32, Counter32, IpAddress, TimeTicks, MibIdentifier, NotificationType, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32 = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "ModuleIdentity", "Bits", "ObjectIdentity", "iso", "Unsigned32", "Counter32", "IpAddress", "TimeTicks", "MibIdentifier", "NotificationType", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32")
+TruthValue, TextualConvention, RowStatus, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "TextualConvention", "RowStatus", "DisplayString")
 rsUDP = ModuleIdentity((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 42))
 rsUDP.setRevisions(('2004-06-01 00:00',))
 if mibBuilder.loadTexts: rsUDP.setLastUpdated('200406010000Z')
@@ -49,4 +49,4 @@ rlUdpSessionAppInst = MibTableColumn((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 42, 3, 
 if mibBuilder.loadTexts: rlUdpSessionAppInst.setStatus('current')
 rlUdpSessionAppName = MibTableColumn((1, 3, 6, 1, 4, 1, 3955, 1000, 201, 42, 3, 1, 5), DisplayString().subtype(subtypeSpec=ValueSizeConstraint(0, 12))).setMaxAccess("readonly")
 if mibBuilder.loadTexts: rlUdpSessionAppName.setStatus('current')
-mibBuilder.exportSymbols("LINKSYS-UDP", rsUdpRelayEntry=rsUdpRelayEntry, rsUdpRelayDstIpAddr=rsUdpRelayDstIpAddr, rlUdpSessionTable=rlUdpSessionTable, rlUdpSessionLocalAddr=rlUdpSessionLocalAddr, rlUdpSessionLocalPort=rlUdpSessionLocalPort, rsUdpRelayMibVersion=rsUdpRelayMibVersion, rsUDP=rsUDP, rlUdpSessionEntry=rlUdpSessionEntry, PYSNMP_MODULE_ID=rsUDP, rsUdpRelayStatus=rsUdpRelayStatus, rlUdpSessionAppName=rlUdpSessionAppName, rsUdpRelayTable=rsUdpRelayTable, rsUdpRelaySrcIpInf=rsUdpRelaySrcIpInf, rsUdpRelayUserInfo=rsUdpRelayUserInfo, rlUdpSessionAppInst=rlUdpSessionAppInst, rsUdpRelayDstPort=rsUdpRelayDstPort, rlUdpSessionLocalAddrType=rlUdpSessionLocalAddrType)
+mibBuilder.exportSymbols("LINKSYS-UDP", rsUdpRelayTable=rsUdpRelayTable, rsUdpRelayEntry=rsUdpRelayEntry, rsUdpRelayStatus=rsUdpRelayStatus, rlUdpSessionLocalPort=rlUdpSessionLocalPort, rsUdpRelayUserInfo=rsUdpRelayUserInfo, rlUdpSessionAppName=rlUdpSessionAppName, rsUDP=rsUDP, rsUdpRelayDstIpAddr=rsUdpRelayDstIpAddr, rsUdpRelayMibVersion=rsUdpRelayMibVersion, PYSNMP_MODULE_ID=rsUDP, rlUdpSessionLocalAddr=rlUdpSessionLocalAddr, rlUdpSessionLocalAddrType=rlUdpSessionLocalAddrType, rsUdpRelaySrcIpInf=rsUdpRelaySrcIpInf, rlUdpSessionAppInst=rlUdpSessionAppInst, rlUdpSessionTable=rlUdpSessionTable, rlUdpSessionEntry=rlUdpSessionEntry, rsUdpRelayDstPort=rsUdpRelayDstPort)

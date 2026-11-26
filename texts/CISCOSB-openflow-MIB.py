@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-openflow-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-openflow-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, iso, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, NotificationType, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "iso", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "NotificationType", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TruthValue, TimeStamp, RowStatus, DateAndTime, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TimeStamp", "RowStatus", "DateAndTime", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, TimeTicks, ModuleIdentity, MibIdentifier, iso, IpAddress, Counter32, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "TimeTicks", "ModuleIdentity", "MibIdentifier", "iso", "IpAddress", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TimeStamp, RowStatus, DisplayString, TruthValue, TextualConvention, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "RowStatus", "DisplayString", "TruthValue", "TextualConvention", "DateAndTime")
 rlOpenFlow = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 319))
 rlOpenFlowSupported = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 319, 1), TruthValue()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlOpenFlowSupported.setStatus('current')
@@ -34,4 +34,4 @@ if mibBuilder.loadTexts: rlOpenFlowEnable.setDescription('OpenFlow global enable
 rlOpenFlowEnableAfterReset = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 319, 7), TruthValue().clone('false')).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlOpenFlowEnableAfterReset.setStatus('current')
 if mibBuilder.loadTexts: rlOpenFlowEnableAfterReset.setDescription('OpenFlow global enable mode after reset.')
-mibBuilder.exportSymbols("CISCOSB-openflow-MIB", rlOpenFlowSupported=rlOpenFlowSupported, rlOpenFlowTcpPort=rlOpenFlowTcpPort, rlOpenFlowProtocolType=rlOpenFlowProtocolType, rlOpenFlowEnable=rlOpenFlowEnable, rlOpenFlowServerIpAddr=rlOpenFlowServerIpAddr, rlOpenFlow=rlOpenFlow, rlOpenFlowDefaultForwardAction=rlOpenFlowDefaultForwardAction, rlOpenFlowEnableAfterReset=rlOpenFlowEnableAfterReset)
+mibBuilder.exportSymbols("CISCOSB-openflow-MIB", rlOpenFlowEnableAfterReset=rlOpenFlowEnableAfterReset, rlOpenFlowSupported=rlOpenFlowSupported, rlOpenFlowProtocolType=rlOpenFlowProtocolType, rlOpenFlowTcpPort=rlOpenFlowTcpPort, rlOpenFlowDefaultForwardAction=rlOpenFlowDefaultForwardAction, rlOpenFlowServerIpAddr=rlOpenFlowServerIpAddr, rlOpenFlowEnable=rlOpenFlowEnable, rlOpenFlow=rlOpenFlow)

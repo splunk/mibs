@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module DLINKSW-DDP-CLIENT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/dlink/DLINKSW-DDP-CLIENT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:45 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:27 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-Integer, ObjectIdentifier, OctetString = mibBuilder.importSymbols("ASN1", "Integer", "ObjectIdentifier", "OctetString")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsUnion")
+ValueRangeConstraint, SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 dlinkIndustrialCommon, = mibBuilder.importSymbols("DLINK-ID-REC-MIB", "dlinkIndustrialCommon")
 ifIndex, = mibBuilder.importSymbols("IF-MIB", "ifIndex")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-Counter32, ModuleIdentity, TimeTicks, Gauge32, iso, NotificationType, Bits, MibScalar, MibTable, MibTableRow, MibTableColumn, Unsigned32, Integer32, ObjectIdentity, MibIdentifier, IpAddress, Counter64 = mibBuilder.importSymbols("SNMPv2-SMI", "Counter32", "ModuleIdentity", "TimeTicks", "Gauge32", "iso", "NotificationType", "Bits", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Unsigned32", "Integer32", "ObjectIdentity", "MibIdentifier", "IpAddress", "Counter64")
-TextualConvention, TruthValue, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "TruthValue", "DisplayString")
+Counter64, TimeTicks, ModuleIdentity, iso, Integer32, IpAddress, NotificationType, Counter32, ObjectIdentity, Gauge32, Unsigned32, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, MibIdentifier = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "ModuleIdentity", "iso", "Integer32", "IpAddress", "NotificationType", "Counter32", "ObjectIdentity", "Gauge32", "Unsigned32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "MibIdentifier")
+DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "TextualConvention")
 dlinkSwDdpClientMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 171, 14, 161))
 dlinkSwDdpClientMIB.setRevisions(('2013-08-05 00:00',))
 
@@ -52,4 +52,4 @@ dDdpClientControlGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 171, 14, 161, 2, 2, 1)).
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     dDdpClientControlGroup = dDdpClientControlGroup.setStatus('current')
 if mibBuilder.loadTexts: dDdpClientControlGroup.setDescription('A collection of objects providing accessing to global status and report time or the status of a port.')
-mibBuilder.exportSymbols("DLINKSW-DDP-CLIENT-MIB", PYSNMP_MODULE_ID=dlinkSwDdpClientMIB, dDdpClientNotifications=dDdpClientNotifications, dDdpClientReportTimer=dDdpClientReportTimer, dDdpClientGlobalState=dDdpClientGlobalState, dDdpClientConformance=dDdpClientConformance, dDdpClientTable=dDdpClientTable, dDdpClientEntry=dDdpClientEntry, dDdpClientGroups=dDdpClientGroups, dDdpClientCtrl=dDdpClientCtrl, dlinkSwDdpClientMIB=dlinkSwDdpClientMIB, dDdpClientObjects=dDdpClientObjects, dDdpClientCompliance=dDdpClientCompliance, dDdpClientControlGroup=dDdpClientControlGroup, dDdpClientCompliances=dDdpClientCompliances, dDdpClientPortState=dDdpClientPortState)
+mibBuilder.exportSymbols("DLINKSW-DDP-CLIENT-MIB", dlinkSwDdpClientMIB=dlinkSwDdpClientMIB, dDdpClientControlGroup=dDdpClientControlGroup, dDdpClientPortState=dDdpClientPortState, dDdpClientCompliances=dDdpClientCompliances, dDdpClientCompliance=dDdpClientCompliance, dDdpClientObjects=dDdpClientObjects, dDdpClientConformance=dDdpClientConformance, dDdpClientReportTimer=dDdpClientReportTimer, dDdpClientNotifications=dDdpClientNotifications, dDdpClientTable=dDdpClientTable, dDdpClientEntry=dDdpClientEntry, dDdpClientGroups=dDdpClientGroups, PYSNMP_MODULE_ID=dlinkSwDdpClientMIB, dDdpClientCtrl=dDdpClientCtrl, dDdpClientGlobalState=dDdpClientGlobalState)

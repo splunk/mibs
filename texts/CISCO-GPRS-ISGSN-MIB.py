@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-GPRS-ISGSN-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-GPRS-ISGSN-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoGprsIsgsnMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 9992))
 if mibBuilder.loadTexts: ciscoGprsIsgsnMIB.setLastUpdated('9810150000Z')
 if mibBuilder.loadTexts: ciscoGprsIsgsnMIB.setOrganization('Cisco Systems, Inc.')
@@ -49,4 +49,4 @@ cgprsIsgsnStatsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 9992, 3, 1, 1)).setO
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cgprsIsgsnStatsGroup = cgprsIsgsnStatsGroup.setStatus('current')
 if mibBuilder.loadTexts: cgprsIsgsnStatsGroup.setDescription(' A collection of statistics for ISGSN.\n        ')
-mibBuilder.exportSymbols("CISCO-GPRS-ISGSN-MIB", cgprsIsgsnCompliance1=cgprsIsgsnCompliance1, cgprsIsgsnGroups=cgprsIsgsnGroups, cgprsIsgsnErrorCountRxToTnode=cgprsIsgsnErrorCountRxToTnode, cgprsIsgsnRxPacketCountFromTnode=cgprsIsgsnRxPacketCountFromTnode, cgprsIsgsnTxPacketCountToTnode=cgprsIsgsnTxPacketCountToTnode, cgprsIsgsnErrorCountRxFromTnode=cgprsIsgsnErrorCountRxFromTnode, ciscoGprsIsgsnConformances=ciscoGprsIsgsnConformances, ciscoGprsIsgsnMIBObjects=ciscoGprsIsgsnMIBObjects, ciscoGprsIsgsnMIB=ciscoGprsIsgsnMIB, PYSNMP_MODULE_ID=ciscoGprsIsgsnMIB, ciscoGprsIsgsnStats=ciscoGprsIsgsnStats, cgprsIsgsnTxOctetCountToTnode=cgprsIsgsnTxOctetCountToTnode, cgprsIsgsnCompliances=cgprsIsgsnCompliances, cgprsIsgsnStatsGroup=cgprsIsgsnStatsGroup, cgprsIsgsnRxOctetCountFromTnode=cgprsIsgsnRxOctetCountFromTnode)
+mibBuilder.exportSymbols("CISCO-GPRS-ISGSN-MIB", cgprsIsgsnTxPacketCountToTnode=cgprsIsgsnTxPacketCountToTnode, cgprsIsgsnErrorCountRxToTnode=cgprsIsgsnErrorCountRxToTnode, cgprsIsgsnRxPacketCountFromTnode=cgprsIsgsnRxPacketCountFromTnode, cgprsIsgsnCompliances=cgprsIsgsnCompliances, cgprsIsgsnCompliance1=cgprsIsgsnCompliance1, ciscoGprsIsgsnConformances=ciscoGprsIsgsnConformances, cgprsIsgsnStatsGroup=cgprsIsgsnStatsGroup, PYSNMP_MODULE_ID=ciscoGprsIsgsnMIB, ciscoGprsIsgsnStats=ciscoGprsIsgsnStats, cgprsIsgsnTxOctetCountToTnode=cgprsIsgsnTxOctetCountToTnode, ciscoGprsIsgsnMIB=ciscoGprsIsgsnMIB, cgprsIsgsnGroups=cgprsIsgsnGroups, cgprsIsgsnRxOctetCountFromTnode=cgprsIsgsnRxOctetCountFromTnode, ciscoGprsIsgsnMIBObjects=ciscoGprsIsgsnMIBObjects, cgprsIsgsnErrorCountRxFromTnode=cgprsIsgsnErrorCountRxFromTnode)

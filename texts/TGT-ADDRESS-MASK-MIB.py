@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module TGT-ADDRESS-MASK-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/audiocodes/TGT-ADDRESS-MASK-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:33:50 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:05:38 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, SingleValueConstraint, ConstraintsUnion, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsUnion", "ValueSizeConstraint")
+ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion, SingleValueConstraint, ValueSizeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion", "SingleValueConstraint", "ValueSizeConstraint")
 snmpTargetAddrEntry, = mibBuilder.importSymbols("SNMP-TARGET-MIB", "snmpTargetAddrEntry")
-NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
-IpAddress, enterprises, Integer32, NotificationType, MibIdentifier, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ObjectIdentity, ModuleIdentity, Unsigned32, Bits, TimeTicks, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "IpAddress", "enterprises", "Integer32", "NotificationType", "MibIdentifier", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ObjectIdentity", "ModuleIdentity", "Unsigned32", "Bits", "TimeTicks", "Counter64", "Counter32")
-TAddress, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TAddress", "TextualConvention", "DisplayString")
+ModuleCompliance, NotificationGroup, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup", "ObjectGroup")
+ModuleIdentity, iso, Bits, Gauge32, ObjectIdentity, enterprises, Counter64, MibIdentifier, IpAddress, Integer32, Unsigned32, NotificationType, Counter32, MibScalar, MibTable, MibTableRow, MibTableColumn, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "ModuleIdentity", "iso", "Bits", "Gauge32", "ObjectIdentity", "enterprises", "Counter64", "MibIdentifier", "IpAddress", "Integer32", "Unsigned32", "NotificationType", "Counter32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "TimeTicks")
+DisplayString, TAddress, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TAddress", "TextualConvention")
 snmpResearch = MibIdentifier((1, 3, 6, 1, 4, 1, 99))
 snmpResearchMIBs = MibIdentifier((1, 3, 6, 1, 4, 1, 99, 12))
 tgtAddressMaskMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 99, 12, 36))
@@ -32,4 +32,4 @@ if mibBuilder.loadTexts: tgtAddressMaskEntry.setDescription('Adds an address mas
 tgtAddressMask = MibTableColumn((1, 3, 6, 1, 4, 1, 99, 12, 36, 1, 1, 1, 1), TAddress().clone(hexValue="")).setMaxAccess("readcreate")
 if mibBuilder.loadTexts: tgtAddressMask.setStatus('current')
 if mibBuilder.loadTexts: tgtAddressMask.setDescription('This object is used to qualify the value of the\n               corresponding instance of snmpTargetAddrTAddress.\n               The format of this object is determined by the\n               corresponding instance of snmpTargetAddrTDomain.\n\n               When performing transport address validation on\n               a received packet, the value of this object is\n               used as a mask to determine whether a source\n               address matches a particular entry in the\n               snmpTargetAddrTable.  In general, the comparison\n               using this mask value is performed as follows for\n               each octet contained in the source address and\n               snmpTargetAddrTAddress value:\n                   (sourceAddr & tgtAddressMask) ==\n                      (snmpTargetAddrTAddress & tgtAddressMask)\n               if the values are equal for all octets, the source\n               address matches the entry.')
-mibBuilder.exportSymbols("TGT-ADDRESS-MASK-MIB", tgtAddressMaskTable=tgtAddressMaskTable, tgtAddressMaskObjects=tgtAddressMaskObjects, PYSNMP_MODULE_ID=tgtAddressMaskMIB, snmpResearch=snmpResearch, tgtAddressMaskMIB=tgtAddressMaskMIB, tgtAddressMaskConformance=tgtAddressMaskConformance, tgtAddressMask=tgtAddressMask, snmpResearchMIBs=snmpResearchMIBs, tgtAddressMaskEntry=tgtAddressMaskEntry)
+mibBuilder.exportSymbols("TGT-ADDRESS-MASK-MIB", tgtAddressMaskMIB=tgtAddressMaskMIB, tgtAddressMaskEntry=tgtAddressMaskEntry, tgtAddressMaskObjects=tgtAddressMaskObjects, snmpResearchMIBs=snmpResearchMIBs, PYSNMP_MODULE_ID=tgtAddressMaskMIB, snmpResearch=snmpResearch, tgtAddressMask=tgtAddressMask, tgtAddressMaskConformance=tgtAddressMaskConformance, tgtAddressMaskTable=tgtAddressMaskTable)

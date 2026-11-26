@@ -1,22 +1,22 @@
 #
 # PySNMP MIB module CISCO-UNIFIED-COMPUTING-ORG-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-UNIFIED-COMPUTING-ORG-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:43 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-CiscoNetworkAddress, CiscoInetAddressMask, Unsigned64, TimeIntervalSec, CiscoAlarmSeverity = mibBuilder.importSymbols("CISCO-TC", "CiscoNetworkAddress", "CiscoInetAddressMask", "Unsigned64", "TimeIntervalSec", "CiscoAlarmSeverity")
-CucsManagedObjectDn, ciscoUnifiedComputingMIBObjects, CucsManagedObjectId = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "CucsManagedObjectDn", "ciscoUnifiedComputingMIBObjects", "CucsManagedObjectId")
+CiscoInetAddressMask, CiscoAlarmSeverity, Unsigned64, TimeIntervalSec, CiscoNetworkAddress = mibBuilder.importSymbols("CISCO-TC", "CiscoInetAddressMask", "CiscoAlarmSeverity", "Unsigned64", "TimeIntervalSec", "CiscoNetworkAddress")
+ciscoUnifiedComputingMIBObjects, CucsManagedObjectDn, CucsManagedObjectId = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-MIB", "ciscoUnifiedComputingMIBObjects", "CucsManagedObjectDn", "CucsManagedObjectId")
 CucsOrgSrcMask, CucsOrgLevel = mibBuilder.importSymbols("CISCO-UNIFIED-COMPUTING-TC-MIB", "CucsOrgSrcMask", "CucsOrgLevel")
 InetAddressIPv4, InetAddressIPv6 = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressIPv4", "InetAddressIPv6")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
-DisplayString, TextualConvention, TimeStamp, RowPointer, MacAddress, TimeInterval, TruthValue, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention", "TimeStamp", "RowPointer", "MacAddress", "TimeInterval", "TruthValue", "DateAndTime")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
+TimeStamp, TruthValue, TextualConvention, TimeInterval, DisplayString, MacAddress, RowPointer, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "TruthValue", "TextualConvention", "TimeInterval", "DisplayString", "MacAddress", "RowPointer", "DateAndTime")
 cucsOrgObjects = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 34))
 if mibBuilder.loadTexts: cucsOrgObjects.setLastUpdated('201601180000Z')
 if mibBuilder.loadTexts: cucsOrgObjects.setOrganization('Cisco Systems Inc.')
@@ -52,4 +52,4 @@ cucsOrgSourceMaskRn = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 34, 2, 1, 
 if mibBuilder.loadTexts: cucsOrgSourceMaskRn.setStatus('current')
 cucsOrgSourceMaskMask = MibTableColumn((1, 3, 6, 1, 4, 1, 9, 9, 719, 1, 34, 2, 1, 4), CucsOrgSrcMask()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: cucsOrgSourceMaskMask.setStatus('current')
-mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-ORG-MIB", PYSNMP_MODULE_ID=cucsOrgObjects, cucsOrgOrgName=cucsOrgOrgName, cucsOrgSourceMaskTable=cucsOrgSourceMaskTable, cucsOrgSourceMaskEntry=cucsOrgSourceMaskEntry, cucsOrgOrgTable=cucsOrgOrgTable, cucsOrgOrgDescr=cucsOrgOrgDescr, cucsOrgOrgLevel=cucsOrgOrgLevel, cucsOrgObjects=cucsOrgObjects, cucsOrgSourceMaskDn=cucsOrgSourceMaskDn, cucsOrgSourceMaskRn=cucsOrgSourceMaskRn, cucsOrgOrgInstanceId=cucsOrgOrgInstanceId, cucsOrgSourceMaskInstanceId=cucsOrgSourceMaskInstanceId, cucsOrgOrgPermAccess=cucsOrgOrgPermAccess, cucsOrgOrgFltAggr=cucsOrgOrgFltAggr, cucsOrgOrgDn=cucsOrgOrgDn, cucsOrgSourceMaskMask=cucsOrgSourceMaskMask, cucsOrgOrgEntry=cucsOrgOrgEntry, cucsOrgOrgRn=cucsOrgOrgRn)
+mibBuilder.exportSymbols("CISCO-UNIFIED-COMPUTING-ORG-MIB", cucsOrgOrgRn=cucsOrgOrgRn, cucsOrgOrgFltAggr=cucsOrgOrgFltAggr, PYSNMP_MODULE_ID=cucsOrgObjects, cucsOrgSourceMaskEntry=cucsOrgSourceMaskEntry, cucsOrgOrgTable=cucsOrgOrgTable, cucsOrgOrgEntry=cucsOrgOrgEntry, cucsOrgOrgLevel=cucsOrgOrgLevel, cucsOrgObjects=cucsOrgObjects, cucsOrgOrgPermAccess=cucsOrgOrgPermAccess, cucsOrgSourceMaskRn=cucsOrgSourceMaskRn, cucsOrgSourceMaskMask=cucsOrgSourceMaskMask, cucsOrgOrgName=cucsOrgOrgName, cucsOrgSourceMaskInstanceId=cucsOrgSourceMaskInstanceId, cucsOrgSourceMaskTable=cucsOrgSourceMaskTable, cucsOrgOrgInstanceId=cucsOrgOrgInstanceId, cucsOrgSourceMaskDn=cucsOrgSourceMaskDn, cucsOrgOrgDn=cucsOrgOrgDn, cucsOrgOrgDescr=cucsOrgOrgDescr)

@@ -1,15 +1,15 @@
 #
 # PySNMP MIB module LANOPTICS-ALERTS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/LANOPTICS-ALERTS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, ModuleIdentity, MibIdentifier, enterprises, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "ModuleIdentity", "MibIdentifier", "enterprises", "iso", "Counter64", "Counter32")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, enterprises, Integer32, ModuleIdentity, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "enterprises", "Integer32", "ModuleIdentity", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity", "IpAddress")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 lanOptics = MibIdentifier((1, 3, 6, 1, 4, 1, 224))
 alerts = MibIdentifier((1, 3, 6, 1, 4, 1, 224, 9))
@@ -26,11 +26,11 @@ lanOpticsCurrentAlertId = MibScalar((1, 3, 6, 1, 4, 1, 224, 9, 2, 5), Integer32(
 if mibBuilder.loadTexts: lanOpticsCurrentAlertId.setStatus('mandatory')
 lanOpticsAlertsRegisterTable = MibTable((1, 3, 6, 1, 4, 1, 224, 9, 2, 10), )
 if mibBuilder.loadTexts: lanOpticsAlertsRegisterTable.setStatus('mandatory')
-pysmiFakeCol1009 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1) + (1009, ), Integer32())
-pysmiFakeCol1010 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1) + (1010, ), Integer32())
-pysmiFakeCol1011 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1) + (1011, ), Integer32())
-pysmiFakeCol1012 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1) + (1012, ), Integer32())
-lanOpticsAlertsRegisterEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1), ).setIndexNames((0, "LANOPTICS-ALERTS-MIB", "pysmiFakeCol1009"), (0, "LANOPTICS-ALERTS-MIB", "pysmiFakeCol1010"), (0, "LANOPTICS-ALERTS-MIB", "pysmiFakeCol1011"), (0, "LANOPTICS-ALERTS-MIB", "pysmiFakeCol1012"))
+pysmiFakeCol1000 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1) + (1000, ), Integer32())
+pysmiFakeCol1001 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1) + (1001, ), Integer32())
+pysmiFakeCol1002 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1) + (1002, ), Integer32())
+pysmiFakeCol1003 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1) + (1003, ), Integer32())
+lanOpticsAlertsRegisterEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1), ).setIndexNames((0, "LANOPTICS-ALERTS-MIB", "pysmiFakeCol1000"), (0, "LANOPTICS-ALERTS-MIB", "pysmiFakeCol1001"), (0, "LANOPTICS-ALERTS-MIB", "pysmiFakeCol1002"), (0, "LANOPTICS-ALERTS-MIB", "pysmiFakeCol1003"))
 if mibBuilder.loadTexts: lanOpticsAlertsRegisterEntry.setStatus('mandatory')
 lanOpticsAlertsRegister = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 10, 1, 1), Integer32().subtype(subtypeSpec=ConstraintsUnion(SingleValueConstraint(1))).clone(namedValues=NamedValues(("register", 1)))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: lanOpticsAlertsRegister.setStatus('mandatory')
@@ -42,4 +42,4 @@ lanOpticsAlertId = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 11, 1, 1), Integ
 if mibBuilder.loadTexts: lanOpticsAlertId.setStatus('mandatory')
 lanOpticsAlertData = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 9, 2, 11, 1, 2), OctetString()).setMaxAccess("readonly")
 if mibBuilder.loadTexts: lanOpticsAlertData.setStatus('mandatory')
-mibBuilder.exportSymbols("LANOPTICS-ALERTS-MIB", lanOpticsMaxLogTableEntries=lanOpticsMaxLogTableEntries, lanOpticsCurrentAlertId=lanOpticsCurrentAlertId, lanOpticsMaxAlertsPerTime=lanOpticsMaxAlertsPerTime, lanOpticsAlertsRegisterEntry=lanOpticsAlertsRegisterEntry, alerts=alerts, lanOpticsAlertId=lanOpticsAlertId, lanOpticsAlertsRegister=lanOpticsAlertsRegister, lanOpticsAlertsEnabled=lanOpticsAlertsEnabled, lanOptics=lanOptics, pysmiFakeCol1009=pysmiFakeCol1009, alerts_mgmt=alerts_mgmt, lanOpticsAlertsEntry=lanOpticsAlertsEntry, lanOpticsAlertData=lanOpticsAlertData, lanOpticsAlertsRegisterTable=lanOpticsAlertsRegisterTable, lanOpticsAlertsTable=lanOpticsAlertsTable, pysmiFakeCol1011=pysmiFakeCol1011, pysmiFakeCol1012=pysmiFakeCol1012, pysmiFakeCol1010=pysmiFakeCol1010, lanOpticsWindowTime=lanOpticsWindowTime)
+mibBuilder.exportSymbols("LANOPTICS-ALERTS-MIB", pysmiFakeCol1000=pysmiFakeCol1000, lanOpticsMaxLogTableEntries=lanOpticsMaxLogTableEntries, pysmiFakeCol1001=pysmiFakeCol1001, lanOpticsAlertsTable=lanOpticsAlertsTable, lanOpticsAlertsRegister=lanOpticsAlertsRegister, lanOpticsAlertId=lanOpticsAlertId, lanOpticsAlertsEntry=lanOpticsAlertsEntry, lanOpticsAlertsEnabled=lanOpticsAlertsEnabled, alerts=alerts, lanOptics=lanOptics, alerts_mgmt=alerts_mgmt, lanOpticsMaxAlertsPerTime=lanOpticsMaxAlertsPerTime, lanOpticsAlertsRegisterTable=lanOpticsAlertsRegisterTable, lanOpticsWindowTime=lanOpticsWindowTime, lanOpticsAlertsRegisterEntry=lanOpticsAlertsRegisterEntry, pysmiFakeCol1003=pysmiFakeCol1003, lanOpticsCurrentAlertId=lanOpticsCurrentAlertId, lanOpticsAlertData=lanOpticsAlertData, pysmiFakeCol1002=pysmiFakeCol1002)

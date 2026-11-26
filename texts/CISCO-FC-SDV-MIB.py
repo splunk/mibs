@@ -1,21 +1,21 @@
 #
 # PySNMP MIB module CISCO-FC-SDV-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-FC-SDV-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-FcAddressId, FcNameIdOrZero, DomainIdOrZero = mibBuilder.importSymbols("CISCO-ST-TC", "FcAddressId", "FcNameIdOrZero", "DomainIdOrZero")
+FcAddressId, DomainIdOrZero, FcNameIdOrZero = mibBuilder.importSymbols("CISCO-ST-TC", "FcAddressId", "DomainIdOrZero", "FcNameIdOrZero")
 vsanIndex, = mibBuilder.importSymbols("CISCO-VSAN-MIB", "vsanIndex")
 FcList, = mibBuilder.importSymbols("CISCO-ZS-MIB", "FcList")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, StorageType, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "StorageType", "RowStatus", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowStatus, DisplayString, StorageType = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowStatus", "DisplayString", "StorageType")
 ciscoFcSdvMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 593))
 ciscoFcSdvMIB.setRevisions(('2006-09-26 00:00',))
 
@@ -117,4 +117,4 @@ ciscoFcSdvConfigGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 593, 2, 2, 1)).setO
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoFcSdvConfigGroup = ciscoFcSdvConfigGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoFcSdvConfigGroup.setDescription('A collection of objects for FC SDV configuration.')
-mibBuilder.exportSymbols("CISCO-FC-SDV-MIB", cFcSdvVdName=cFcSdvVdName, cFcSdvVirtRealDevMapType=cFcSdvVirtRealDevMapType, cFcSdvVirtRealDevMapTable=cFcSdvVirtRealDevMapTable, cFcSdvVdFcId=cFcSdvVdFcId, cFcSdvVirtRealDevMapRowStatus=cFcSdvVirtRealDevMapRowStatus, cFcSdvVdVirtDomain=cFcSdvVdVirtDomain, cFcSdvVdAssignedFcId=cFcSdvVdAssignedFcId, cFcSdvVirtRealDeviceId=cFcSdvVirtRealDeviceId, cFcSdvVirtRealDeviceIdType=cFcSdvVirtRealDeviceIdType, ciscoFcSdvMIBConform=ciscoFcSdvMIBConform, CiscoFcSdvDevIdType=CiscoFcSdvDevIdType, PYSNMP_MODULE_ID=ciscoFcSdvMIB, CiscoFcSdvDevId=CiscoFcSdvDevId, cFcSdvVdStorageType=cFcSdvVdStorageType, cFcSdvVdPwwn=cFcSdvVdPwwn, ciscoFcSdvMIBCompliance=ciscoFcSdvMIBCompliance, ciscoFcSdvMIBGroups=ciscoFcSdvMIBGroups, ciscoFcSdvMIBObjects=ciscoFcSdvMIBObjects, cFcSdvVdNwwn=cFcSdvVdNwwn, cFcSdvVirtDeviceEntry=cFcSdvVirtDeviceEntry, cFcSdvVirtDeviceTable=cFcSdvVirtDeviceTable, cFcSdvVdIndex=cFcSdvVdIndex, cFcSdvVdRowStatus=cFcSdvVdRowStatus, cFcSdvVirtRealDevMapIndex=cFcSdvVirtRealDevMapIndex, ciscoFcSdvMIBCompliances=ciscoFcSdvMIBCompliances, CiscoFcSdvRealDevMapType=CiscoFcSdvRealDevMapType, cFcSdvVirtRealDevMapEntry=cFcSdvVirtRealDevMapEntry, ciscoFcSdvMIB=ciscoFcSdvMIB, cFcSdvVdRealDevMapList=cFcSdvVdRealDevMapList, cFcSdvConfig=cFcSdvConfig, cFcSdvVirtRealDevMapStorageType=cFcSdvVirtRealDevMapStorageType, ciscoFcSdvConfigGroup=ciscoFcSdvConfigGroup, ciscoFcSdvMIBNotifs=ciscoFcSdvMIBNotifs)
+mibBuilder.exportSymbols("CISCO-FC-SDV-MIB", cFcSdvVdAssignedFcId=cFcSdvVdAssignedFcId, ciscoFcSdvConfigGroup=ciscoFcSdvConfigGroup, CiscoFcSdvDevId=CiscoFcSdvDevId, cFcSdvConfig=cFcSdvConfig, cFcSdvVirtDeviceTable=cFcSdvVirtDeviceTable, cFcSdvVirtRealDevMapType=cFcSdvVirtRealDevMapType, ciscoFcSdvMIBObjects=ciscoFcSdvMIBObjects, cFcSdvVirtRealDevMapEntry=cFcSdvVirtRealDevMapEntry, ciscoFcSdvMIBNotifs=ciscoFcSdvMIBNotifs, cFcSdvVdName=cFcSdvVdName, ciscoFcSdvMIBCompliances=ciscoFcSdvMIBCompliances, cFcSdvVirtDeviceEntry=cFcSdvVirtDeviceEntry, PYSNMP_MODULE_ID=ciscoFcSdvMIB, cFcSdvVdNwwn=cFcSdvVdNwwn, ciscoFcSdvMIBGroups=ciscoFcSdvMIBGroups, cFcSdvVdIndex=cFcSdvVdIndex, cFcSdvVirtRealDevMapStorageType=cFcSdvVirtRealDevMapStorageType, cFcSdvVirtRealDeviceId=cFcSdvVirtRealDeviceId, cFcSdvVdVirtDomain=cFcSdvVdVirtDomain, ciscoFcSdvMIBCompliance=ciscoFcSdvMIBCompliance, CiscoFcSdvRealDevMapType=CiscoFcSdvRealDevMapType, cFcSdvVirtRealDevMapIndex=cFcSdvVirtRealDevMapIndex, cFcSdvVdFcId=cFcSdvVdFcId, cFcSdvVirtRealDevMapRowStatus=cFcSdvVirtRealDevMapRowStatus, CiscoFcSdvDevIdType=CiscoFcSdvDevIdType, ciscoFcSdvMIBConform=ciscoFcSdvMIBConform, ciscoFcSdvMIB=ciscoFcSdvMIB, cFcSdvVirtRealDeviceIdType=cFcSdvVirtRealDeviceIdType, cFcSdvVdStorageType=cFcSdvVdStorageType, cFcSdvVdRealDevMapList=cFcSdvVdRealDevMapList, cFcSdvVirtRealDevMapTable=cFcSdvVirtRealDevMapTable, cFcSdvVdRowStatus=cFcSdvVdRowStatus, cFcSdvVdPwwn=cFcSdvVdPwwn)

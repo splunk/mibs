@@ -8,19 +8,19 @@
       "InterfaceIndex"
     ],
     "INET-ADDRESS-MIB": [
+      "InetAddressPrefixLength",
       "InetAddressType",
-      "InetAddress",
-      "InetAddressPrefixLength"
+      "InetAddress"
     ],
     "ISIS-MIB": [
-      "isisISAdjState",
-      "SystemID",
-      "isisSysL2State",
       "SNPAAddress",
       "isisISAdjEntry",
-      "isisSysL1State",
       "isisManAreaAddrExistState",
-      "isisSysInstance"
+      "isisSysL2State",
+      "isisSysInstance",
+      "isisSysL1State",
+      "isisISAdjState",
+      "SystemID"
     ],
     "SNMPv2-CONF": [
       "NOTIFICATION-GROUP",
@@ -28,28 +28,28 @@
       "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "Integer32",
-      "Bits",
-      "IpAddress",
-      "OBJECT-TYPE",
-      "Gauge32",
-      "Counter64",
-      "iso",
-      "OBJECT-IDENTITY",
-      "NOTIFICATION-TYPE",
-      "MibIdentifier",
       "Unsigned32",
+      "Counter64",
+      "MibIdentifier",
+      "IpAddress",
+      "Bits",
       "Counter32",
+      "OBJECT-IDENTITY",
+      "Integer32",
+      "OBJECT-TYPE",
+      "NOTIFICATION-TYPE",
+      "iso",
+      "MODULE-IDENTITY",
       "TimeTicks",
-      "MODULE-IDENTITY"
+      "Gauge32"
     ],
     "SNMPv2-TC": [
       "RowStatus",
       "TimeStamp",
-      "TimeInterval",
-      "TEXTUAL-CONVENTION",
       "TruthValue",
-      "DisplayString"
+      "DisplayString",
+      "TimeInterval",
+      "TEXTUAL-CONVENTION"
     ]
   },
   "timetraIsisMIBModule": {
@@ -5754,9 +5754,9 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/nokia/ALCATEL-ISIS-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 14:38:55 2026",
-      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
-      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+      "Produced by pysmi-1.1.12 at Thu Nov 26 06:13:05 2026",
+      "On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner",
+      "Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]"
     ],
     "module": "ALCATEL-ISIS-MIB"
   }

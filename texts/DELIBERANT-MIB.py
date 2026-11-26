@@ -1,15 +1,15 @@
 #
 # PySNMP MIB module DELIBERANT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/deliberant/DELIBERANT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:31 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:08:05 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
+Integer, OctetString, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "Integer", "OctetString", "ObjectIdentifier")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ConstraintsUnion, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ConstraintsUnion", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint")
+ValueRangeConstraint, ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueRangeConstraint", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ConstraintsUnion")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-Gauge32, Unsigned32, enterprises, ModuleIdentity, Bits, iso, Counter32, NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, TimeTicks, MibIdentifier, Counter64, ObjectIdentity, Integer32, IpAddress = mibBuilder.importSymbols("SNMPv2-SMI", "Gauge32", "Unsigned32", "enterprises", "ModuleIdentity", "Bits", "iso", "Counter32", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "TimeTicks", "MibIdentifier", "Counter64", "ObjectIdentity", "Integer32", "IpAddress")
+Integer32, MibIdentifier, Gauge32, Counter64, MibScalar, MibTable, MibTableRow, MibTableColumn, enterprises, Bits, Unsigned32, ModuleIdentity, TimeTicks, Counter32, ObjectIdentity, IpAddress, NotificationType, iso = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "MibIdentifier", "Gauge32", "Counter64", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "enterprises", "Bits", "Unsigned32", "ModuleIdentity", "TimeTicks", "Counter32", "ObjectIdentity", "IpAddress", "NotificationType", "iso")
 TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 deliberant = ModuleIdentity((1, 3, 6, 1, 4, 1, 32761))
 deliberant.setRevisions(('2008-09-05 00:00',))
@@ -24,4 +24,4 @@ dlbProducts = MibIdentifier((1, 3, 6, 1, 4, 1, 32761, 1))
 dlbAdmin = MibIdentifier((1, 3, 6, 1, 4, 1, 32761, 2))
 dlbMgmt = MibIdentifier((1, 3, 6, 1, 4, 1, 32761, 3))
 dlbExperimental = MibIdentifier((1, 3, 6, 1, 4, 1, 32761, 7))
-mibBuilder.exportSymbols("DELIBERANT-MIB", PYSNMP_MODULE_ID=deliberant, dlbProducts=dlbProducts, dlbMgmt=dlbMgmt, dlbExperimental=dlbExperimental, deliberant=deliberant, dlbAdmin=dlbAdmin)
+mibBuilder.exportSymbols("DELIBERANT-MIB", dlbMgmt=dlbMgmt, dlbExperimental=dlbExperimental, PYSNMP_MODULE_ID=deliberant, dlbAdmin=dlbAdmin, dlbProducts=dlbProducts, deliberant=deliberant)

@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-SDWAN-OMP-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-SDWAN-OMP-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoSdwanOmpMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 1003))
 ciscoSdwanOmpMIB.setRevisions(('2021-03-03 00:00',))
 
@@ -101,4 +101,4 @@ cSdwanOmpNotifsGroup = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 1003, 3, 2, 2)
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cSdwanOmpNotifsGroup = cSdwanOmpNotifsGroup.setStatus('current')
 if mibBuilder.loadTexts: cSdwanOmpNotifsGroup.setDescription('This is a collection of OMP notifications.')
-mibBuilder.exportSymbols("CISCO-SDWAN-OMP-MIB", ciscoSdwanOmpOmpNumberOfVsmartsChange=ciscoSdwanOmpOmpNumberOfVsmartsChange, PYSNMP_MODULE_ID=ciscoSdwanOmpMIB, ciscoSdwanOmpOmpPeerStateChange=ciscoSdwanOmpOmpPeerStateChange, OmpPolicyState=OmpPolicyState, ciscoSdwanOmpNewState=ciscoSdwanOmpNewState, PeerState=PeerState, ciscoSdwanOmpMIBCompliances=ciscoSdwanOmpMIBCompliances, ciscoSdwanOmpNumberOfVsmarts=ciscoSdwanOmpNumberOfVsmarts, ciscoSdwanOmpVsmartPeer=ciscoSdwanOmpVsmartPeer, cSdwanOmpNotifObjsGroup=cSdwanOmpNotifObjsGroup, ciscoSdwanOmpMIBNotifObjects=ciscoSdwanOmpMIBNotifObjects, ciscoSdwanOmpMIBConform=ciscoSdwanOmpMIBConform, ciscoSdwanOmpPeer=ciscoSdwanOmpPeer, ciscoSdwanOmpMIBCompliance=ciscoSdwanOmpMIBCompliance, ciscoSdwanOmpMIBObjects=ciscoSdwanOmpMIBObjects, netconfNotificationSeverity=netconfNotificationSeverity, ciscoSdwanOmpMIBNotifs=ciscoSdwanOmpMIBNotifs, ciscoSdwanOmpMIBGroups=ciscoSdwanOmpMIBGroups, ciscoSdwanOmpOmpPolicy=ciscoSdwanOmpOmpPolicy, ciscoSdwanOmpOmpStateChange=ciscoSdwanOmpOmpStateChange, ciscoSdwanOmpMIB=ciscoSdwanOmpMIB, OperState=OperState, ciscoSdwanOmpPeerNewState=ciscoSdwanOmpPeerNewState, ciscoSdwanOmpPolicy=ciscoSdwanOmpPolicy, InetAddressIP=InetAddressIP, NotificationSeverity=NotificationSeverity, cSdwanOmpNotifsGroup=cSdwanOmpNotifsGroup)
+mibBuilder.exportSymbols("CISCO-SDWAN-OMP-MIB", ciscoSdwanOmpNewState=ciscoSdwanOmpNewState, ciscoSdwanOmpMIB=ciscoSdwanOmpMIB, cSdwanOmpNotifObjsGroup=cSdwanOmpNotifObjsGroup, ciscoSdwanOmpMIBCompliances=ciscoSdwanOmpMIBCompliances, NotificationSeverity=NotificationSeverity, netconfNotificationSeverity=netconfNotificationSeverity, cSdwanOmpNotifsGroup=cSdwanOmpNotifsGroup, ciscoSdwanOmpNumberOfVsmarts=ciscoSdwanOmpNumberOfVsmarts, ciscoSdwanOmpOmpNumberOfVsmartsChange=ciscoSdwanOmpOmpNumberOfVsmartsChange, ciscoSdwanOmpMIBNotifObjects=ciscoSdwanOmpMIBNotifObjects, ciscoSdwanOmpOmpPeerStateChange=ciscoSdwanOmpOmpPeerStateChange, InetAddressIP=InetAddressIP, PYSNMP_MODULE_ID=ciscoSdwanOmpMIB, ciscoSdwanOmpPolicy=ciscoSdwanOmpPolicy, OmpPolicyState=OmpPolicyState, PeerState=PeerState, ciscoSdwanOmpMIBConform=ciscoSdwanOmpMIBConform, ciscoSdwanOmpOmpStateChange=ciscoSdwanOmpOmpStateChange, ciscoSdwanOmpMIBCompliance=ciscoSdwanOmpMIBCompliance, ciscoSdwanOmpMIBNotifs=ciscoSdwanOmpMIBNotifs, ciscoSdwanOmpOmpPolicy=ciscoSdwanOmpOmpPolicy, ciscoSdwanOmpPeerNewState=ciscoSdwanOmpPeerNewState, ciscoSdwanOmpMIBObjects=ciscoSdwanOmpMIBObjects, OperState=OperState, ciscoSdwanOmpVsmartPeer=ciscoSdwanOmpVsmartPeer, ciscoSdwanOmpPeer=ciscoSdwanOmpPeer, ciscoSdwanOmpMIBGroups=ciscoSdwanOmpMIBGroups)

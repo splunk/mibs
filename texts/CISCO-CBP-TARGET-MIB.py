@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-CBP-TARGET-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-CBP-TARGET-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
-CcbptTargetType, CcbptPolicyIdentifierOrZero, CcbptTargetDirection, CcbptPolicySourceType, CcbptTargetId, CcbptPolicyIdentifier = mibBuilder.importSymbols("CISCO-CBP-TARGET-TC-MIB", "CcbptTargetType", "CcbptPolicyIdentifierOrZero", "CcbptTargetDirection", "CcbptPolicySourceType", "CcbptTargetId", "CcbptPolicyIdentifier")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+CcbptPolicySourceType, CcbptPolicyIdentifierOrZero, CcbptTargetId, CcbptPolicyIdentifier, CcbptTargetType, CcbptTargetDirection = mibBuilder.importSymbols("CISCO-CBP-TARGET-TC-MIB", "CcbptPolicySourceType", "CcbptPolicyIdentifierOrZero", "CcbptTargetId", "CcbptPolicyIdentifier", "CcbptTargetType", "CcbptTargetDirection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TimeStamp, RowStatus, StorageType, RowPointer, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TimeStamp", "RowStatus", "StorageType", "RowPointer", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TimeStamp, RowStatus, DisplayString, StorageType, TextualConvention, RowPointer = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "RowStatus", "DisplayString", "StorageType", "TextualConvention", "RowPointer")
 ciscoCbpTargetMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 533))
 ciscoCbpTargetMIB.setRevisions(('2006-05-24 00:00',))
 
@@ -83,4 +83,4 @@ ccbptTargetTimeGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 533, 2, 2, 2)).setOb
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ccbptTargetTimeGroup = ccbptTargetTimeGroup.setStatus('current')
 if mibBuilder.loadTexts: ccbptTargetTimeGroup.setDescription('A collection of managed objects describing the target and \n         class-based policy attachment timestamp data.\n        ')
-mibBuilder.exportSymbols("CISCO-CBP-TARGET-MIB", ccbptTargetId=ccbptTargetId, ccbptTargetStorageType=ccbptTargetStorageType, ccbptPolicyMap=ccbptPolicyMap, ciscoCbpTargetMIBObjects=ciscoCbpTargetMIBObjects, PYSNMP_MODULE_ID=ciscoCbpTargetMIB, ccbptTargetTable=ccbptTargetTable, ccbptPolicyIdNext=ccbptPolicyIdNext, ccbptTargetDir=ccbptTargetDir, ccbptTargetStatus=ccbptTargetStatus, ccbptTargetEntry=ccbptTargetEntry, ccbptTargetAttachCfg=ccbptTargetAttachCfg, ccbptPolicyInstance=ccbptPolicyInstance, ccbptPolicyId=ccbptPolicyId, ciscoCbpTargetMIBCompliance=ciscoCbpTargetMIBCompliance, ccbptTargetTimeGroup=ccbptTargetTimeGroup, ciscoCbpTargetMIBConform=ciscoCbpTargetMIBConform, ccbptTargetTableLastChange=ccbptTargetTableLastChange, ccbptTargetType=ccbptTargetType, ccbptPolicySourceType=ccbptPolicySourceType, ciscoCbpTargetMIBCompliances=ciscoCbpTargetMIBCompliances, ccbptPolicyAttachTime=ccbptPolicyAttachTime, ccbptTargetProvisioningGroup=ccbptTargetProvisioningGroup, ciscoCbpTargetMIBNotifs=ciscoCbpTargetMIBNotifs, ciscoCbpTargetMIBMIBGroups=ciscoCbpTargetMIBMIBGroups, ciscoCbpTargetMIB=ciscoCbpTargetMIB)
+mibBuilder.exportSymbols("CISCO-CBP-TARGET-MIB", ccbptTargetEntry=ccbptTargetEntry, ccbptPolicyInstance=ccbptPolicyInstance, ccbptTargetProvisioningGroup=ccbptTargetProvisioningGroup, ccbptPolicyIdNext=ccbptPolicyIdNext, ciscoCbpTargetMIBNotifs=ciscoCbpTargetMIBNotifs, ccbptTargetTimeGroup=ccbptTargetTimeGroup, ciscoCbpTargetMIBObjects=ciscoCbpTargetMIBObjects, ciscoCbpTargetMIB=ciscoCbpTargetMIB, PYSNMP_MODULE_ID=ciscoCbpTargetMIB, ciscoCbpTargetMIBConform=ciscoCbpTargetMIBConform, ccbptTargetTableLastChange=ccbptTargetTableLastChange, ccbptPolicySourceType=ccbptPolicySourceType, ccbptTargetId=ccbptTargetId, ccbptTargetDir=ccbptTargetDir, ccbptPolicyAttachTime=ccbptPolicyAttachTime, ccbptPolicyId=ccbptPolicyId, ccbptTargetType=ccbptTargetType, ccbptTargetAttachCfg=ccbptTargetAttachCfg, ccbptTargetStorageType=ccbptTargetStorageType, ciscoCbpTargetMIBMIBGroups=ciscoCbpTargetMIBMIBGroups, ciscoCbpTargetMIBCompliance=ciscoCbpTargetMIBCompliance, ciscoCbpTargetMIBCompliances=ciscoCbpTargetMIBCompliances, ccbptPolicyMap=ccbptPolicyMap, ccbptTargetStatus=ccbptTargetStatus, ccbptTargetTable=ccbptTargetTable)

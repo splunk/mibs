@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module APEMS-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/oracle/APEMS-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:38:52 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:13:03 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
 acmepacketMgmt, = mibBuilder.importSymbols("ACMEPACKET-SMI", "acmepacketMgmt")
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+OctetString, ObjectIdentifier, Integer = mibBuilder.importSymbols("ASN1", "OctetString", "ObjectIdentifier", "Integer")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ValueSizeConstraint, SingleValueConstraint, ConstraintsIntersection, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "SingleValueConstraint", "ConstraintsIntersection", "ValueRangeConstraint", "ConstraintsUnion")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-Integer32, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn, Gauge32, iso, TimeTicks, NotificationType, ObjectIdentity, Counter32, MibIdentifier, Counter64, ModuleIdentity, Unsigned32, Bits = mibBuilder.importSymbols("SNMPv2-SMI", "Integer32", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Gauge32", "iso", "TimeTicks", "NotificationType", "ObjectIdentity", "Counter32", "MibIdentifier", "Counter64", "ModuleIdentity", "Unsigned32", "Bits")
-TruthValue, TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "TextualConvention", "DisplayString")
+ConstraintsUnion, SingleValueConstraint, ValueSizeConstraint, ConstraintsIntersection, ValueRangeConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsUnion", "SingleValueConstraint", "ValueSizeConstraint", "ConstraintsIntersection", "ValueRangeConstraint")
+ModuleCompliance, ObjectGroup, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "ObjectGroup", "NotificationGroup")
+NotificationType, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Counter32, Integer32, Counter64, IpAddress, MibIdentifier, iso, Gauge32, Unsigned32, ObjectIdentity, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Counter32", "Integer32", "Counter64", "IpAddress", "MibIdentifier", "iso", "Gauge32", "Unsigned32", "ObjectIdentity", "ModuleIdentity", "TimeTicks")
+TruthValue, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "DisplayString", "TextualConvention")
 apEMSModule = ModuleIdentity((1, 3, 6, 1, 4, 1, 9148, 3, 8))
 apEMSModule.setRevisions(('2012-07-16 00:00', '2014-06-26 00:00',))
 
@@ -86,4 +86,4 @@ apEMSNotificationObjectsGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9148, 3, 8, 4, 3,
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     apEMSNotificationObjectsGroup = apEMSNotificationObjectsGroup.setStatus('current')
 if mibBuilder.loadTexts: apEMSNotificationObjectsGroup.setDescription('Objects for EMS Server reachability notifications.')
-mibBuilder.exportSymbols("APEMS-MIB", apEMSInvalidConfigDiscovered=apEMSInvalidConfigDiscovered, apEMSModule=apEMSModule, apEMSDeviceAddress=apEMSDeviceAddress, apEMSNotificationObjectsGroup=apEMSNotificationObjectsGroup, apEMSConfigNotificationsPrefix=apEMSConfigNotificationsPrefix, apEMSActivateFailure=apEMSActivateFailure, apEMSConfigNotifications=apEMSConfigNotifications, apEMSStartTime=apEMSStartTime, apEMSInvalidConfigInventory=apEMSInvalidConfigInventory, apEMSNotificationsGroups=apEMSNotificationsGroups, apEMSDiscoveryFailure=apEMSDiscoveryFailure, apEMSNodeUnreachable=apEMSNodeUnreachable, apEMSNotificationObjectsGroups=apEMSNotificationObjectsGroups, apEMSNotifications=apEMSNotifications, apEMSSaveFailure=apEMSSaveFailure, apEMSDiscoveryMode=apEMSDiscoveryMode, apEMSModuleConformance=apEMSModuleConformance, apEMSDeviceHealthNotificationsGroup=apEMSDeviceHealthNotificationsGroup, apEMSDateTime=apEMSDateTime, apEMSUser=apEMSUser, apEMSNotificationObjects=apEMSNotificationObjects, apEMSMIBObjects=apEMSMIBObjects, apEMSDeviceHealthNotificationsPrefix=apEMSDeviceHealthNotificationsPrefix, apEMSGroups=apEMSGroups, PYSNMP_MODULE_ID=apEMSModule, apEMSConfigNotificationsGroup=apEMSConfigNotificationsGroup, apEMSNodeID=apEMSNodeID, apEMSFunction=apEMSFunction, apEMSDeviceHealthNotifications=apEMSDeviceHealthNotifications, apEMSNodeUnreachableClear=apEMSNodeUnreachableClear)
+mibBuilder.exportSymbols("APEMS-MIB", apEMSNodeUnreachable=apEMSNodeUnreachable, apEMSDiscoveryMode=apEMSDiscoveryMode, apEMSNotificationObjectsGroup=apEMSNotificationObjectsGroup, apEMSNotificationObjectsGroups=apEMSNotificationObjectsGroups, apEMSActivateFailure=apEMSActivateFailure, apEMSDateTime=apEMSDateTime, apEMSNodeUnreachableClear=apEMSNodeUnreachableClear, apEMSGroups=apEMSGroups, apEMSDeviceHealthNotifications=apEMSDeviceHealthNotifications, apEMSFunction=apEMSFunction, apEMSConfigNotificationsGroup=apEMSConfigNotificationsGroup, apEMSConfigNotificationsPrefix=apEMSConfigNotificationsPrefix, apEMSModule=apEMSModule, PYSNMP_MODULE_ID=apEMSModule, apEMSInvalidConfigInventory=apEMSInvalidConfigInventory, apEMSConfigNotifications=apEMSConfigNotifications, apEMSDeviceHealthNotificationsPrefix=apEMSDeviceHealthNotificationsPrefix, apEMSSaveFailure=apEMSSaveFailure, apEMSInvalidConfigDiscovered=apEMSInvalidConfigDiscovered, apEMSNotificationsGroups=apEMSNotificationsGroups, apEMSDeviceHealthNotificationsGroup=apEMSDeviceHealthNotificationsGroup, apEMSNodeID=apEMSNodeID, apEMSMIBObjects=apEMSMIBObjects, apEMSStartTime=apEMSStartTime, apEMSDeviceAddress=apEMSDeviceAddress, apEMSUser=apEMSUser, apEMSDiscoveryFailure=apEMSDiscoveryFailure, apEMSNotifications=apEMSNotifications, apEMSNotificationObjects=apEMSNotificationObjects, apEMSModuleConformance=apEMSModuleConformance)

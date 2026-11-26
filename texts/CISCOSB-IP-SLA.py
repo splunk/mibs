@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCOSB-IP-SLA (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-IP-SLA
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:46 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 InetAddressType, InetAddress = mibBuilder.importSymbols("INET-ADDRESS-MIB", "InetAddressType", "InetAddress")
 NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, iso, Counter32, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "iso", "Counter32", "IpAddress", "TimeTicks")
-DisplayString, TruthValue, MacAddress, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TruthValue", "MacAddress", "RowStatus", "TextualConvention")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, IpAddress, Counter32, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "IpAddress", "Counter32", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+RowStatus, DisplayString, TruthValue, TextualConvention, MacAddress = mibBuilder.importSymbols("SNMPv2-TC", "RowStatus", "DisplayString", "TruthValue", "TextualConvention", "MacAddress")
 rlSLA = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 231))
 rlSLA.setRevisions(('2016-02-28 00:00',))
 
@@ -115,4 +115,4 @@ if mibBuilder.loadTexts: rlSLATrackRowStatus.setDescription("This variable displ
 rlSLAClearCounters = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 231, 3), Integer32().subtype(subtypeSpec=ValueRangeConstraint(-1, 64))).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlSLAClearCounters.setStatus('current')
 if mibBuilder.loadTexts: rlSLAClearCounters.setDescription('Clear SLA counters.\n           Setting a value of zero clears counters of all operations.\n           Setting a non-zero value clears the specific operation counters.')
-mibBuilder.exportSymbols("CISCOSB-IP-SLA", rlSLAOperTable=rlSLAOperTable, rlSLAOperId=rlSLAOperId, rlSLAOperState=rlSLAOperState, rlSLATrackEntry=rlSLATrackEntry, rlSLAOperSuccessCounter=rlSLAOperSuccessCounter, rlSLAICMPErrorCounter=rlSLAICMPErrorCounter, rlSLAOperFrequency=rlSLAOperFrequency, rlSLAOperTimeout=rlSLAOperTimeout, rlSLAOperType=rlSLAOperType, rlSLADownDelay=rlSLADownDelay, rlSLAICMPEchoNonHostUnreachCounter=rlSLAICMPEchoNonHostUnreachCounter, PYSNMP_MODULE_ID=rlSLA, rlSLATrackTable=rlSLATrackTable, rlSLAClearCounters=rlSLAClearCounters, rlSLAOperNextHopAddr=rlSLAOperNextHopAddr, rlSLATrackRowStatus=rlSLATrackRowStatus, rlSLAOperDestAddr=rlSLAOperDestAddr, rlSLA=rlSLA, rlSLAICMPEchoHostUnreachCounter=rlSLAICMPEchoHostUnreachCounter, rlSLAOperReqDataSize=rlSLAOperReqDataSize, rlSLAICMPEchoRequestCounter=rlSLAICMPEchoRequestCounter, rlSLAUpDelay=rlSLAUpDelay, rlSLAOperReturnCode=rlSLAOperReturnCode, rlSLATrackObjState=rlSLATrackObjState, rlSLATrackOperId=rlSLATrackOperId, rlSLATrackObj=rlSLATrackObj, rlSLAICMPEchoReplyCounter=rlSLAICMPEchoReplyCounter, rlSLARowStatus=rlSLARowStatus, rlSLAOperFailureCounter=rlSLAOperFailureCounter, rlSLAOperDestAddrType=rlSLAOperDestAddrType, rlSLAOperEntry=rlSLAOperEntry, rlSLADelayReminder=rlSLADelayReminder, rlSLAOperSrcAddr=rlSLAOperSrcAddr)
+mibBuilder.exportSymbols("CISCOSB-IP-SLA", rlSLAICMPEchoNonHostUnreachCounter=rlSLAICMPEchoNonHostUnreachCounter, PYSNMP_MODULE_ID=rlSLA, rlSLAOperSrcAddr=rlSLAOperSrcAddr, rlSLATrackTable=rlSLATrackTable, rlSLAOperId=rlSLAOperId, rlSLAOperTimeout=rlSLAOperTimeout, rlSLAICMPEchoHostUnreachCounter=rlSLAICMPEchoHostUnreachCounter, rlSLAOperFailureCounter=rlSLAOperFailureCounter, rlSLAICMPErrorCounter=rlSLAICMPErrorCounter, rlSLAOperTable=rlSLAOperTable, rlSLADownDelay=rlSLADownDelay, rlSLAUpDelay=rlSLAUpDelay, rlSLAOperType=rlSLAOperType, rlSLATrackRowStatus=rlSLATrackRowStatus, rlSLA=rlSLA, rlSLAOperDestAddrType=rlSLAOperDestAddrType, rlSLATrackObjState=rlSLATrackObjState, rlSLAOperNextHopAddr=rlSLAOperNextHopAddr, rlSLAOperFrequency=rlSLAOperFrequency, rlSLARowStatus=rlSLARowStatus, rlSLAICMPEchoRequestCounter=rlSLAICMPEchoRequestCounter, rlSLAClearCounters=rlSLAClearCounters, rlSLAOperReturnCode=rlSLAOperReturnCode, rlSLAOperSuccessCounter=rlSLAOperSuccessCounter, rlSLADelayReminder=rlSLADelayReminder, rlSLAOperDestAddr=rlSLAOperDestAddr, rlSLATrackOperId=rlSLATrackOperId, rlSLAICMPEchoReplyCounter=rlSLAICMPEchoReplyCounter, rlSLAOperReqDataSize=rlSLAOperReqDataSize, rlSLAOperState=rlSLAOperState, rlSLATrackObj=rlSLATrackObj, rlSLATrackEntry=rlSLATrackEntry, rlSLAOperEntry=rlSLAOperEntry)

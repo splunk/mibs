@@ -2,15 +2,15 @@
   "imports": {
     "class": "imports",
     "INET-ADDRESS-MIB": [
-      "InetPortNumber",
+      "InetAddress",
       "InetAddressType",
-      "InetAddressPrefixLength",
-      "InetAddress"
+      "InetPortNumber",
+      "InetAddressPrefixLength"
     ],
     "IPV6-TC": [
-      "Ipv6AddressIfIdentifier",
+      "Ipv6AddressPrefix",
       "Ipv6Address",
-      "Ipv6AddressPrefix"
+      "Ipv6AddressIfIdentifier"
     ],
     "JUNIPER-MBG-SMI": [
       "jnxMobileGatewayPgwGgsn"
@@ -19,32 +19,32 @@
       "EnabledStatus"
     ],
     "JUNIPER-MOBILE-GATEWAYS": [
-      "jnxMbgGwName",
-      "jnxMbgGwIndex"
+      "jnxMbgGwIndex",
+      "jnxMbgGwName"
     ],
     "SNMPv2-CONF": [
-      "MODULE-COMPLIANCE",
-      "NOTIFICATION-GROUP"
+      "NOTIFICATION-GROUP",
+      "MODULE-COMPLIANCE"
     ],
     "SNMPv2-SMI": [
-      "OBJECT-IDENTITY",
       "Integer32",
-      "Counter32",
-      "iso",
-      "Gauge32",
+      "Counter64",
+      "IpAddress",
       "MibIdentifier",
+      "TimeTicks",
+      "Unsigned32",
       "OBJECT-TYPE",
       "Bits",
-      "MODULE-IDENTITY",
+      "Gauge32",
+      "OBJECT-IDENTITY",
       "NOTIFICATION-TYPE",
-      "TimeTicks",
-      "Counter64",
-      "Unsigned32",
-      "IpAddress"
+      "Counter32",
+      "MODULE-IDENTITY",
+      "iso"
     ],
     "SNMPv2-TC": [
-      "TruthValue",
       "RowStatus",
+      "TruthValue",
       "DisplayString",
       "TEXTUAL-CONVENTION"
     ]
@@ -19578,9 +19578,9 @@
   "meta": {
     "comments": [
       "ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/juniper/JUNIPER-MOBILE-GATEWAY-GTP-MIB",
-      "Produced by pysmi-1.1.12 at Thu Nov 19 14:38:05 2026",
-      "On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner",
-      "Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]"
+      "Produced by pysmi-1.1.12 at Thu Nov 26 06:11:52 2026",
+      "On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner",
+      "Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]"
     ],
     "module": "JUNIPER-MOBILE-GATEWAY-GTP-MIB"
   }

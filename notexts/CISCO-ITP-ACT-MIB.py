@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCO-ITP-ACT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ITP-ACT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
-CItpTcGlobalTitleSelectorName, CItpTcGtaAddr, CItpTcPointCode, CItpTcLinksetId, CItpTcServiceIndicator = mibBuilder.importSymbols("CISCO-ITP-TC-MIB", "CItpTcGlobalTitleSelectorName", "CItpTcGtaAddr", "CItpTcPointCode", "CItpTcLinksetId", "CItpTcServiceIndicator")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
+CItpTcPointCode, CItpTcGlobalTitleSelectorName, CItpTcServiceIndicator, CItpTcLinksetId, CItpTcGtaAddr = mibBuilder.importSymbols("CISCO-ITP-TC-MIB", "CItpTcPointCode", "CItpTcGlobalTitleSelectorName", "CItpTcServiceIndicator", "CItpTcLinksetId", "CItpTcGtaAddr")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, ModuleIdentity, Integer32, Bits, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Counter64", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, ModuleIdentity, IpAddress, Bits, Gauge32, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 ciscoItpActMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 230))
 ciscoItpActMIB.setRevisions(('2002-12-18 00:00', '2001-09-26 00:00',))
@@ -72,4 +72,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 cItpActGttGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 230, 2, 2, 2)).setObjects(("CISCO-ITP-ACT-MIB", "cItpActGttPackets"), ("CISCO-ITP-ACT-MIB", "cItpActGttBytes"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cItpActGttGroup = cItpActGttGroup.setStatus('deprecated')
-mibBuilder.exportSymbols("CISCO-ITP-ACT-MIB", cItpActMIBNotifs=cItpActMIBNotifs, cItpActMIBConformance=cItpActMIBConformance, cItpActMtp3Dpc=cItpActMtp3Dpc, cItpActMtp3=cItpActMtp3, cItpActGttGroup=cItpActGttGroup, cItpActMtp3TableId=cItpActMtp3TableId, cItpActMtp3Table=cItpActMtp3Table, cItpActGttGta=cItpActGttGta, cItpActMtp3SentBytes=cItpActMtp3SentBytes, cItpActGttPackets=cItpActGttPackets, cItpActMtp3SentPackets=cItpActMtp3SentPackets, cItpActMtp3Group=cItpActMtp3Group, cItpActGttTable=cItpActGttTable, cItpActGttTranslatedPc=cItpActGttTranslatedPc, cItpActGttLinksetName=cItpActGttLinksetName, cItpActGttTableEntry=cItpActGttTableEntry, cItpActMIBGroups=cItpActMIBGroups, cItpActGtt=cItpActGtt, cItpActMtp3TableEntry=cItpActMtp3TableEntry, cItpActMtp3SI=cItpActMtp3SI, cItpActGttBytes=cItpActGttBytes, cItpActMIBCompliances=cItpActMIBCompliances, cItpActGttSelectorName=cItpActGttSelectorName, cItpActMtp3RcvdBytes=cItpActMtp3RcvdBytes, PYSNMP_MODULE_ID=ciscoItpActMIB, cItpActMIBCompliance=cItpActMIBCompliance, cItpActMtp3RcvdPackets=cItpActMtp3RcvdPackets, cItpActMtp3Opc=cItpActMtp3Opc, cItpActMtp3LinksetName=cItpActMtp3LinksetName, ciscoItpActMIB=ciscoItpActMIB, cItpActMIBObjects=cItpActMIBObjects)
+mibBuilder.exportSymbols("CISCO-ITP-ACT-MIB", ciscoItpActMIB=ciscoItpActMIB, cItpActMtp3TableEntry=cItpActMtp3TableEntry, cItpActMtp3TableId=cItpActMtp3TableId, cItpActGttTableEntry=cItpActGttTableEntry, cItpActGttLinksetName=cItpActGttLinksetName, cItpActMtp3RcvdPackets=cItpActMtp3RcvdPackets, cItpActGttSelectorName=cItpActGttSelectorName, cItpActMtp3Table=cItpActMtp3Table, cItpActMtp3Dpc=cItpActMtp3Dpc, cItpActGtt=cItpActGtt, cItpActMtp3=cItpActMtp3, cItpActGttGta=cItpActGttGta, cItpActMIBObjects=cItpActMIBObjects, cItpActMtp3SentPackets=cItpActMtp3SentPackets, cItpActMtp3RcvdBytes=cItpActMtp3RcvdBytes, cItpActMIBGroups=cItpActMIBGroups, cItpActGttTranslatedPc=cItpActGttTranslatedPc, cItpActMtp3Opc=cItpActMtp3Opc, cItpActMIBCompliances=cItpActMIBCompliances, cItpActMtp3SentBytes=cItpActMtp3SentBytes, cItpActGttPackets=cItpActGttPackets, cItpActMtp3Group=cItpActMtp3Group, cItpActGttGroup=cItpActGttGroup, cItpActMtp3SI=cItpActMtp3SI, cItpActMtp3LinksetName=cItpActMtp3LinksetName, cItpActMIBCompliance=cItpActMIBCompliance, PYSNMP_MODULE_ID=ciscoItpActMIB, cItpActMIBConformance=cItpActMIBConformance, cItpActGttTable=cItpActGttTable, cItpActGttBytes=cItpActGttBytes, cItpActMIBNotifs=cItpActMIBNotifs)

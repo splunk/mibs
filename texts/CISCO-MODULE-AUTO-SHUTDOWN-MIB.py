@@ -1,19 +1,19 @@
 #
 # PySNMP MIB module CISCO-MODULE-AUTO-SHUTDOWN-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-MODULE-AUTO-SHUTDOWN-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
-entPhysicalIndex, entPhysicalModelName, entPhysicalName = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex", "entPhysicalModelName", "entPhysicalName")
+entPhysicalName, entPhysicalIndex, entPhysicalModelName = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalName", "entPhysicalIndex", "entPhysicalModelName")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, iso, MibIdentifier, Unsigned32, Counter64, ObjectIdentity, IpAddress, NotificationType, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "iso", "MibIdentifier", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "NotificationType", "Counter32", "ModuleIdentity", "TimeTicks")
-DateAndTime, TruthValue, DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "TruthValue", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+DateAndTime, DisplayString, TruthValue, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DateAndTime", "DisplayString", "TruthValue", "TextualConvention")
 ciscoModuleAutoShutdownMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 386))
 ciscoModuleAutoShutdownMIB.setRevisions(('2008-03-12 00:00', '2003-12-29 00:00',))
 
@@ -110,4 +110,4 @@ cmasNotificationsGroup2 = NotificationGroup((1, 3, 6, 1, 4, 1, 9, 9, 386, 2, 2, 
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cmasNotificationsGroup2 = cmasNotificationsGroup2.setStatus('current')
 if mibBuilder.loadTexts: cmasNotificationsGroup2.setDescription('A collection of notifications for the system initiated\n        module action feature.')
-mibBuilder.exportSymbols("CISCO-MODULE-AUTO-SHUTDOWN-MIB", cmasModuleNumResets=cmasModuleNumResets, cmasModuleSysActionObjects=cmasModuleSysActionObjects, cmasNotificationsGroup=cmasNotificationsGroup, cmasModuleSysActionNotifEnable=cmasModuleSysActionNotifEnable, CiscoModuleAutoShutSysAction=CiscoModuleAutoShutSysAction, cmasFrequency=cmasFrequency, cmasNotificationsGroup2=cmasNotificationsGroup2, ciscoModuleAutoShutdownMIB=ciscoModuleAutoShutdownMIB, cmasMIBCompliance2=cmasMIBCompliance2, cmasModuleLastResetTime=cmasModuleLastResetTime, cmasModuleGroup=cmasModuleGroup, cmasModuleSysActionReason=cmasModuleSysActionReason, cmasNotifObjects=cmasNotifObjects, cmasModuleSysActionNotif=cmasModuleSysActionNotif, PYSNMP_MODULE_ID=ciscoModuleAutoShutdownMIB, cmasModuleAutoShutdown=cmasModuleAutoShutdown, cmasModuleEntry=cmasModuleEntry, cmasPeriod=cmasPeriod, cmasMIBNotifs=cmasMIBNotifs, cmasGlobal=cmasGlobal, cmasModuleTable=cmasModuleTable, cmasMIBConformance=cmasMIBConformance, cmasMIBEnableNotification=cmasMIBEnableNotification, cmasMIBObjects=cmasMIBObjects, cmasMIBCompliances=cmasMIBCompliances, cmasModuleSysActionGroup=cmasModuleSysActionGroup, cmasModuleSysAction=cmasModuleSysAction, cmasNotificationEnableGroup=cmasNotificationEnableGroup, cmasMIBCompliance=cmasMIBCompliance, cmasModuleLastResetReason=cmasModuleLastResetReason, cmasModuleEnable=cmasModuleEnable, cmasModule=cmasModule, cmasMIBGroups=cmasMIBGroups)
+mibBuilder.exportSymbols("CISCO-MODULE-AUTO-SHUTDOWN-MIB", cmasMIBNotifs=cmasMIBNotifs, cmasModuleEnable=cmasModuleEnable, cmasMIBConformance=cmasMIBConformance, ciscoModuleAutoShutdownMIB=ciscoModuleAutoShutdownMIB, cmasModuleSysActionObjects=cmasModuleSysActionObjects, cmasMIBCompliance=cmasMIBCompliance, cmasPeriod=cmasPeriod, cmasModuleTable=cmasModuleTable, PYSNMP_MODULE_ID=ciscoModuleAutoShutdownMIB, cmasMIBCompliance2=cmasMIBCompliance2, cmasModuleSysActionGroup=cmasModuleSysActionGroup, cmasModuleEntry=cmasModuleEntry, cmasNotificationsGroup=cmasNotificationsGroup, cmasModuleSysActionReason=cmasModuleSysActionReason, cmasNotificationsGroup2=cmasNotificationsGroup2, cmasGlobal=cmasGlobal, cmasModuleNumResets=cmasModuleNumResets, cmasModuleLastResetTime=cmasModuleLastResetTime, cmasMIBCompliances=cmasMIBCompliances, cmasModuleSysActionNotifEnable=cmasModuleSysActionNotifEnable, cmasNotifObjects=cmasNotifObjects, cmasMIBEnableNotification=cmasMIBEnableNotification, cmasModuleAutoShutdown=cmasModuleAutoShutdown, cmasModuleSysActionNotif=cmasModuleSysActionNotif, cmasNotificationEnableGroup=cmasNotificationEnableGroup, cmasMIBObjects=cmasMIBObjects, cmasMIBGroups=cmasMIBGroups, CiscoModuleAutoShutSysAction=CiscoModuleAutoShutSysAction, cmasModuleLastResetReason=cmasModuleLastResetReason, cmasFrequency=cmasFrequency, cmasModule=cmasModule, cmasModuleGroup=cmasModuleGroup, cmasModuleSysAction=cmasModuleSysAction)

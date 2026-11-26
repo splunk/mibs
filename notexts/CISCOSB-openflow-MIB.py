@@ -1,17 +1,17 @@
 #
 # PySNMP MIB module CISCOSB-openflow-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCOSB-openflow-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 switch001, = mibBuilder.importSymbols("CISCOSB-MIB", "switch001")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Counter64, MibIdentifier, NotificationType, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Counter64", "MibIdentifier", "NotificationType", "iso", "Unsigned32", "Counter32")
-DisplayString, RowStatus, TextualConvention, TimeStamp, TruthValue, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention", "TimeStamp", "TruthValue", "DateAndTime")
+Counter64, TimeTicks, NotificationType, IpAddress, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, Integer32, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "IpAddress", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "Integer32", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
+TimeStamp, TruthValue, TextualConvention, DisplayString, RowStatus, DateAndTime = mibBuilder.importSymbols("SNMPv2-TC", "TimeStamp", "TruthValue", "TextualConvention", "DisplayString", "RowStatus", "DateAndTime")
 rlOpenFlow = MibIdentifier((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 319))
 rlOpenFlowSupported = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 319, 1), TruthValue()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlOpenFlowSupported.setStatus('current')
@@ -27,4 +27,4 @@ rlOpenFlowEnable = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 319, 6), TruthValu
 if mibBuilder.loadTexts: rlOpenFlowEnable.setStatus('current')
 rlOpenFlowEnableAfterReset = MibScalar((1, 3, 6, 1, 4, 1, 9, 6, 1, 101, 319, 7), TruthValue().clone('false')).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: rlOpenFlowEnableAfterReset.setStatus('current')
-mibBuilder.exportSymbols("CISCOSB-openflow-MIB", rlOpenFlowDefaultForwardAction=rlOpenFlowDefaultForwardAction, rlOpenFlowProtocolType=rlOpenFlowProtocolType, rlOpenFlowServerIpAddr=rlOpenFlowServerIpAddr, rlOpenFlowTcpPort=rlOpenFlowTcpPort, rlOpenFlow=rlOpenFlow, rlOpenFlowEnable=rlOpenFlowEnable, rlOpenFlowEnableAfterReset=rlOpenFlowEnableAfterReset, rlOpenFlowSupported=rlOpenFlowSupported)
+mibBuilder.exportSymbols("CISCOSB-openflow-MIB", rlOpenFlowDefaultForwardAction=rlOpenFlowDefaultForwardAction, rlOpenFlowServerIpAddr=rlOpenFlowServerIpAddr, rlOpenFlowProtocolType=rlOpenFlowProtocolType, rlOpenFlowTcpPort=rlOpenFlowTcpPort, rlOpenFlowEnableAfterReset=rlOpenFlowEnableAfterReset, rlOpenFlow=rlOpenFlow, rlOpenFlowEnable=rlOpenFlowEnable, rlOpenFlowSupported=rlOpenFlowSupported)

@@ -1,20 +1,20 @@
 #
 # PySNMP MIB module CISCO-IKE-FLOW-EXT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-IKE-FLOW-EXT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:14 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
-cisgIpsSgTunIndex, cisgIpsSgProtocol = mibBuilder.importSymbols("CISCO-IPSEC-SIGNALING-MIB", "cisgIpsSgTunIndex", "cisgIpsSgProtocol")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
+cisgIpsSgProtocol, cisgIpsSgTunIndex = mibBuilder.importSymbols("CISCO-IPSEC-SIGNALING-MIB", "cisgIpsSgProtocol", "cisgIpsSgTunIndex")
 CIKEIsakmpDoi, CIPsecPhase1PeerIdentityType = mibBuilder.importSymbols("CISCO-IPSEC-TC", "CIKEIsakmpDoi", "CIPsecPhase1PeerIdentityType")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoIkeFlowExtMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 428))
 ciscoIkeFlowExtMIB.setRevisions(('2004-09-14 00:00',))
 
@@ -67,4 +67,4 @@ cifeTunnelExtGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 428, 2, 2, 2)).setObje
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     cifeTunnelExtGroup = cifeTunnelExtGroup.setStatus('current')
 if mibBuilder.loadTexts: cifeTunnelExtGroup.setDescription('The collection of objects providing IKE tunnels\n                 info. ')
-mibBuilder.exportSymbols("CISCO-IKE-FLOW-EXT-MIB", cifeTunnelExtDoi=cifeTunnelExtDoi, ciscoIkeFlowExtMIBConform=ciscoIkeFlowExtMIBConform, cifeTunnelExtLocalIdentity=cifeTunnelExtLocalIdentity, cifeTunnelExtLocalIdenType=cifeTunnelExtLocalIdenType, cifeTunnelExtTable=cifeTunnelExtTable, cifeTunnelExtGroup=cifeTunnelExtGroup, cifeIkeGlobals=cifeIkeGlobals, cifeMIBConformances=cifeMIBConformances, cifeClearAllTunnels=cifeClearAllTunnels, cifeMIBGroups=cifeMIBGroups, ciscoIkeFlowExtMIBNotifs=ciscoIkeFlowExtMIBNotifs, cifeTunnelExtRemoteIdentity=cifeTunnelExtRemoteIdentity, cifeGlobalsGroup=cifeGlobalsGroup, PYSNMP_MODULE_ID=ciscoIkeFlowExtMIB, cifeTunnelExtRemoteIdenType=cifeTunnelExtRemoteIdenType, ciscoIkeFlowExtMIB=ciscoIkeFlowExtMIB, cifeTunnelExtEntry=cifeTunnelExtEntry, cifeMIBCompliance=cifeMIBCompliance, ciscoIkeFlowExtMIBObjects=ciscoIkeFlowExtMIBObjects)
+mibBuilder.exportSymbols("CISCO-IKE-FLOW-EXT-MIB", cifeClearAllTunnels=cifeClearAllTunnels, cifeTunnelExtLocalIdentity=cifeTunnelExtLocalIdentity, cifeTunnelExtDoi=cifeTunnelExtDoi, cifeTunnelExtLocalIdenType=cifeTunnelExtLocalIdenType, cifeTunnelExtGroup=cifeTunnelExtGroup, cifeGlobalsGroup=cifeGlobalsGroup, cifeTunnelExtTable=cifeTunnelExtTable, PYSNMP_MODULE_ID=ciscoIkeFlowExtMIB, ciscoIkeFlowExtMIBConform=ciscoIkeFlowExtMIBConform, cifeMIBConformances=cifeMIBConformances, cifeTunnelExtEntry=cifeTunnelExtEntry, ciscoIkeFlowExtMIB=ciscoIkeFlowExtMIB, ciscoIkeFlowExtMIBNotifs=ciscoIkeFlowExtMIBNotifs, cifeIkeGlobals=cifeIkeGlobals, cifeMIBGroups=cifeMIBGroups, cifeTunnelExtRemoteIdentity=cifeTunnelExtRemoteIdentity, ciscoIkeFlowExtMIBObjects=ciscoIkeFlowExtMIBObjects, cifeMIBCompliance=cifeMIBCompliance, cifeTunnelExtRemoteIdenType=cifeTunnelExtRemoteIdenType)

@@ -1,15 +1,15 @@
 #
 # PySNMP MIB module LANOPTICS-SYSTEM-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/LANOPTICS-SYSTEM-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:00 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Unsigned32, Gauge32, MibScalar, MibTable, MibTableRow, MibTableColumn, Integer32, Bits, ModuleIdentity, MibIdentifier, enterprises, iso, Counter64, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Unsigned32", "Gauge32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Integer32", "Bits", "ModuleIdentity", "MibIdentifier", "enterprises", "iso", "Counter64", "Counter32")
+Counter64, IpAddress, TimeTicks, iso, MibScalar, MibTable, MibTableRow, MibTableColumn, enterprises, Integer32, NotificationType, Bits, Gauge32, ModuleIdentity, Unsigned32, MibIdentifier, Counter32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "IpAddress", "TimeTicks", "iso", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "enterprises", "Integer32", "NotificationType", "Bits", "Gauge32", "ModuleIdentity", "Unsigned32", "MibIdentifier", "Counter32", "ObjectIdentity")
 DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
 lanOptics = MibIdentifier((1, 3, 6, 1, 4, 1, 224))
 lanOpticsSystem = MibIdentifier((1, 3, 6, 1, 4, 1, 224, 2))
@@ -28,8 +28,8 @@ snAgentVersion = MibScalar((1, 3, 6, 1, 4, 1, 224, 2, 2), Integer32()).setMaxAcc
 if mibBuilder.loadTexts: snAgentVersion.setStatus('mandatory')
 snSysCMOSIpInterfaceTable = MibTable((1, 3, 6, 1, 4, 1, 224, 2, 3, 1, 1), )
 if mibBuilder.loadTexts: snSysCMOSIpInterfaceTable.setStatus('mandatory')
-pysmiFakeCol1005 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 1, 1, 1) + (1005, ), Integer32())
-snSysCMOSIpInterfaceEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 2, 3, 1, 1, 1), ).setIndexNames((0, "LANOPTICS-SYSTEM-MIB", "pysmiFakeCol1005"))
+pysmiFakeCol1012 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 1, 1, 1) + (1012, ), Integer32())
+snSysCMOSIpInterfaceEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 2, 3, 1, 1, 1), ).setIndexNames((0, "LANOPTICS-SYSTEM-MIB", "pysmiFakeCol1012"))
 if mibBuilder.loadTexts: snSysCMOSIpInterfaceEntry.setStatus('mandatory')
 snSysCMOSIpIpAddr = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 1, 1, 1, 1), IpAddress()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: snSysCMOSIpIpAddr.setStatus('mandatory')
@@ -47,8 +47,8 @@ snSysCMOSIpTFTPDrive = MibScalar((1, 3, 6, 1, 4, 1, 224, 2, 3, 1, 6), Integer32(
 if mibBuilder.loadTexts: snSysCMOSIpTFTPDrive.setStatus('mandatory')
 snSysCMOSHubSlotConfigTable = MibTable((1, 3, 6, 1, 4, 1, 224, 2, 3, 2, 1), )
 if mibBuilder.loadTexts: snSysCMOSHubSlotConfigTable.setStatus('mandatory')
-pysmiFakeCol1006 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 2, 1, 1) + (1006, ), Integer32())
-snSysCMOSHubSlotConfigEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 2, 3, 2, 1, 1), ).setIndexNames((0, "LANOPTICS-SYSTEM-MIB", "pysmiFakeCol1006"))
+pysmiFakeCol1013 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 2, 1, 1) + (1013, ), Integer32())
+snSysCMOSHubSlotConfigEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 2, 3, 2, 1, 1), ).setIndexNames((0, "LANOPTICS-SYSTEM-MIB", "pysmiFakeCol1013"))
 if mibBuilder.loadTexts: snSysCMOSHubSlotConfigEntry.setStatus('mandatory')
 snSysSlotLastOperations = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 2, 1, 1, 1), OctetString()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: snSysSlotLastOperations.setStatus('mandatory')
@@ -80,8 +80,8 @@ snSysCMOSSNMPTrapManagersNum = MibScalar((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 2), In
 if mibBuilder.loadTexts: snSysCMOSSNMPTrapManagersNum.setStatus('mandatory')
 snSysCMOSSNMPCommunitiesTable = MibTable((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 3), )
 if mibBuilder.loadTexts: snSysCMOSSNMPCommunitiesTable.setStatus('mandatory')
-pysmiFakeCol1007 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 3, 1) + (1007, ), Integer32())
-snSysCMOSSNMPCommunitiesEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 3, 1), ).setIndexNames((0, "LANOPTICS-SYSTEM-MIB", "pysmiFakeCol1007"))
+pysmiFakeCol1014 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 3, 1) + (1014, ), Integer32())
+snSysCMOSSNMPCommunitiesEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 3, 1), ).setIndexNames((0, "LANOPTICS-SYSTEM-MIB", "pysmiFakeCol1014"))
 if mibBuilder.loadTexts: snSysCMOSSNMPCommunitiesEntry.setStatus('mandatory')
 snSysCMOSSNMPCommunityName = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 3, 1, 1), DisplayString()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: snSysCMOSSNMPCommunityName.setStatus('mandatory')
@@ -89,8 +89,8 @@ snSysCMOSSNMPCommunityPrivs = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 3,
 if mibBuilder.loadTexts: snSysCMOSSNMPCommunityPrivs.setStatus('mandatory')
 snSysCMOSSNMPTrapCommunitiesTable = MibTable((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 4), )
 if mibBuilder.loadTexts: snSysCMOSSNMPTrapCommunitiesTable.setStatus('mandatory')
-pysmiFakeCol1008 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 4, 1) + (1008, ), Integer32())
-snSysCMOSSNMPTrapCommunitiesEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 4, 1), ).setIndexNames((0, "LANOPTICS-SYSTEM-MIB", "pysmiFakeCol1008"))
+pysmiFakeCol1015 = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 4, 1) + (1015, ), Integer32())
+snSysCMOSSNMPTrapCommunitiesEntry = MibTableRow((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 4, 1), ).setIndexNames((0, "LANOPTICS-SYSTEM-MIB", "pysmiFakeCol1015"))
 if mibBuilder.loadTexts: snSysCMOSSNMPTrapCommunitiesEntry.setStatus('mandatory')
 snSysCMOSSNMPTrapCommunityIpAddr = MibTableColumn((1, 3, 6, 1, 4, 1, 224, 2, 3, 6, 4, 1, 1), IpAddress()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: snSysCMOSSNMPTrapCommunityIpAddr.setStatus('mandatory')
@@ -106,4 +106,4 @@ snSysCMOSBRDGlinkNumber = MibScalar((1, 3, 6, 1, 4, 1, 224, 2, 3, 8, 2), Integer
 if mibBuilder.loadTexts: snSysCMOSBRDGlinkNumber.setStatus('mandatory')
 snSysCMOSBRDGpassword = MibScalar((1, 3, 6, 1, 4, 1, 224, 2, 3, 8, 3), DisplayString()).setMaxAccess("readwrite")
 if mibBuilder.loadTexts: snSysCMOSBRDGpassword.setStatus('mandatory')
-mibBuilder.exportSymbols("LANOPTICS-SYSTEM-MIB", snSysCMOSACCESSOffset=snSysCMOSACCESSOffset, snSysCMOSBRDGradius=snSysCMOSBRDGradius, snSysCMOSSNMPCommunitiesEntry=snSysCMOSSNMPCommunitiesEntry, snSysCMOSSNMPCommunityPrivs=snSysCMOSSNMPCommunityPrivs, snSysCMOSIpTFTPAddr=snSysCMOSIpTFTPAddr, snSysCMOSSNMPTrapCommunitiesTable=snSysCMOSSNMPTrapCommunitiesTable, snSysCMOSIpInterfaceTable=snSysCMOSIpInterfaceTable, snSysCMOSSerialStopBits=snSysCMOSSerialStopBits, snSysCMOSIpDefGw=snSysCMOSIpDefGw, snSysCMOSBRDGlinkNumber=snSysCMOSBRDGlinkNumber, snSysDirectory=snSysDirectory, snSysCMOSIpInterfaceEntry=snSysCMOSIpInterfaceEntry, snSysCMOSSerialParityCheck=snSysCMOSSerialParityCheck, lanOpticsSystemCMOSSerial=lanOpticsSystemCMOSSerial, snSysCMOSSRAMKeepAliveSecInterval=snSysCMOSSRAMKeepAliveSecInterval, lanOptics=lanOptics, lanOpticsSystemCMOS=lanOpticsSystemCMOS, lanOpticsSystemCMOSIp=lanOpticsSystemCMOSIp, snSysCMOSHubSaveHubFunctions=snSysCMOSHubSaveHubFunctions, lanOpticsSystemCMOSACCESS=lanOpticsSystemCMOSACCESS, snSysCMOSSNMPTrapManagersNum=snSysCMOSSNMPTrapManagersNum, snSysCMOSIpNetMask=snSysCMOSIpNetMask, snSysCMOSIpTFTPDrive=snSysCMOSIpTFTPDrive, snSysCMOSSerialWordLength=snSysCMOSSerialWordLength, snSysCMOSSNMPTrapCommunityIpAddr=snSysCMOSSNMPTrapCommunityIpAddr, snSysCMOSACCESSLength=snSysCMOSACCESSLength, snSysCMOSACCESSSequence=snSysCMOSACCESSSequence, lanOpticsSystemCMOSSNMP=lanOpticsSystemCMOSSNMP, snSysCMOSIpTFTPOp=snSysCMOSIpTFTPOp, snSysCMOSSerialMode=snSysCMOSSerialMode, pysmiFakeCol1008=pysmiFakeCol1008, snSysCMOSSerialBaudRate=snSysCMOSSerialBaudRate, snSysCMOSSNMPCommunityName=snSysCMOSSNMPCommunityName, pysmiFakeCol1005=pysmiFakeCol1005, snSysCMOSHubSlotConfigTable=snSysCMOSHubSlotConfigTable, snSysCMOSFlashMode=snSysCMOSFlashMode, snSysCMOSSerialComSelect=snSysCMOSSerialComSelect, lanOpticsSystemCMOSRPL=lanOpticsSystemCMOSRPL, lanOpticsSystem=lanOpticsSystem, snSysCMOSIpTFTPFileName=snSysCMOSIpTFTPFileName, pysmiFakeCol1006=pysmiFakeCol1006, snSysSlotLastOperations=snSysSlotLastOperations, snSysCMOSRPLMode=snSysCMOSRPLMode, pysmiFakeCol1007=pysmiFakeCol1007, snSysCMOSBRDGpassword=snSysCMOSBRDGpassword, snSysCMOSHubSlotConfigEntry=snSysCMOSHubSlotConfigEntry, snSysCMOSSNMPTrapCommunitiesEntry=snSysCMOSSNMPTrapCommunitiesEntry, snSysCMOSSNMPCommunitiesTable=snSysCMOSSNMPCommunitiesTable, snSysCMOSIpIpAddr=snSysCMOSIpIpAddr, snAgentVersion=snAgentVersion, lanOpticsSystemCMOSSRAM=lanOpticsSystemCMOSSRAM, lanOpticsSystemCMOSHub=lanOpticsSystemCMOSHub, snSysResetSlotQueue=snSysResetSlotQueue, snSysCMOSSNMPCommunitiesNum=snSysCMOSSNMPCommunitiesNum, lanOpticsSystemCMOSBRDG=lanOpticsSystemCMOSBRDG)
+mibBuilder.exportSymbols("LANOPTICS-SYSTEM-MIB", snSysCMOSFlashMode=snSysCMOSFlashMode, snSysSlotLastOperations=snSysSlotLastOperations, snAgentVersion=snAgentVersion, snSysCMOSSerialWordLength=snSysCMOSSerialWordLength, snSysCMOSBRDGradius=snSysCMOSBRDGradius, pysmiFakeCol1014=pysmiFakeCol1014, lanOpticsSystemCMOSRPL=lanOpticsSystemCMOSRPL, lanOpticsSystemCMOSSerial=lanOpticsSystemCMOSSerial, lanOpticsSystemCMOSBRDG=lanOpticsSystemCMOSBRDG, lanOpticsSystemCMOSACCESS=lanOpticsSystemCMOSACCESS, lanOpticsSystemCMOSSNMP=lanOpticsSystemCMOSSNMP, snSysCMOSIpTFTPAddr=snSysCMOSIpTFTPAddr, snSysCMOSHubSlotConfigEntry=snSysCMOSHubSlotConfigEntry, snSysCMOSSerialMode=snSysCMOSSerialMode, snSysCMOSIpIpAddr=snSysCMOSIpIpAddr, lanOpticsSystemCMOS=lanOpticsSystemCMOS, pysmiFakeCol1013=pysmiFakeCol1013, snSysCMOSSNMPTrapCommunitiesEntry=snSysCMOSSNMPTrapCommunitiesEntry, snSysCMOSIpDefGw=snSysCMOSIpDefGw, snSysCMOSHubSaveHubFunctions=snSysCMOSHubSaveHubFunctions, snSysCMOSSNMPCommunityName=snSysCMOSSNMPCommunityName, snSysCMOSSNMPCommunityPrivs=snSysCMOSSNMPCommunityPrivs, lanOpticsSystemCMOSIp=lanOpticsSystemCMOSIp, snSysCMOSACCESSOffset=snSysCMOSACCESSOffset, snSysCMOSSerialComSelect=snSysCMOSSerialComSelect, snSysCMOSSNMPCommunitiesTable=snSysCMOSSNMPCommunitiesTable, snSysCMOSACCESSLength=snSysCMOSACCESSLength, snSysCMOSHubSlotConfigTable=snSysCMOSHubSlotConfigTable, lanOpticsSystem=lanOpticsSystem, snSysCMOSSNMPCommunitiesNum=snSysCMOSSNMPCommunitiesNum, pysmiFakeCol1015=pysmiFakeCol1015, lanOptics=lanOptics, snSysCMOSSNMPTrapCommunityIpAddr=snSysCMOSSNMPTrapCommunityIpAddr, snSysDirectory=snSysDirectory, lanOpticsSystemCMOSSRAM=lanOpticsSystemCMOSSRAM, snSysCMOSIpTFTPOp=snSysCMOSIpTFTPOp, snSysCMOSACCESSSequence=snSysCMOSACCESSSequence, snSysCMOSSNMPTrapCommunitiesTable=snSysCMOSSNMPTrapCommunitiesTable, snSysCMOSSerialStopBits=snSysCMOSSerialStopBits, snSysCMOSBRDGlinkNumber=snSysCMOSBRDGlinkNumber, pysmiFakeCol1012=pysmiFakeCol1012, snSysCMOSBRDGpassword=snSysCMOSBRDGpassword, snSysCMOSSerialBaudRate=snSysCMOSSerialBaudRate, lanOpticsSystemCMOSHub=lanOpticsSystemCMOSHub, snSysResetSlotQueue=snSysResetSlotQueue, snSysCMOSIpTFTPFileName=snSysCMOSIpTFTPFileName, snSysCMOSIpTFTPDrive=snSysCMOSIpTFTPDrive, snSysCMOSSRAMKeepAliveSecInterval=snSysCMOSSRAMKeepAliveSecInterval, snSysCMOSSerialParityCheck=snSysCMOSSerialParityCheck, snSysCMOSSNMPTrapManagersNum=snSysCMOSSNMPTrapManagersNum, snSysCMOSIpNetMask=snSysCMOSIpNetMask, snSysCMOSSNMPCommunitiesEntry=snSysCMOSSNMPCommunitiesEntry, snSysCMOSRPLMode=snSysCMOSRPLMode, snSysCMOSIpInterfaceEntry=snSysCMOSIpInterfaceEntry, snSysCMOSIpInterfaceTable=snSysCMOSIpInterfaceTable)

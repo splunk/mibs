@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-ITP-SP2-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-ITP-SP2-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:34:44 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:06:58 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-OctetString, Integer, ObjectIdentifier = mibBuilder.importSymbols("ASN1", "OctetString", "Integer", "ObjectIdentifier")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueRangeConstraint, ValueSizeConstraint, ConstraintsUnion, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueRangeConstraint", "ValueSizeConstraint", "ConstraintsUnion", "SingleValueConstraint")
+ConstraintsIntersection, SingleValueConstraint, ValueSizeConstraint, ValueRangeConstraint, ConstraintsUnion = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "SingleValueConstraint", "ValueSizeConstraint", "ValueRangeConstraint", "ConstraintsUnion")
 CItpTcAclId, = mibBuilder.importSymbols("CISCO-ITP-TC-MIB", "CItpTcAclId")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 SnmpAdminString, = mibBuilder.importSymbols("SNMP-FRAMEWORK-MIB", "SnmpAdminString")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-NotificationType, TimeTicks, IpAddress, ObjectIdentity, Gauge32, ModuleIdentity, Integer32, Bits, Counter64, MibIdentifier, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, Unsigned32, Counter32 = mibBuilder.importSymbols("SNMPv2-SMI", "NotificationType", "TimeTicks", "IpAddress", "ObjectIdentity", "Gauge32", "ModuleIdentity", "Integer32", "Bits", "Counter64", "MibIdentifier", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "Unsigned32", "Counter32")
+NotificationGroup, ModuleCompliance, ObjectGroup = mibBuilder.importSymbols("SNMPv2-CONF", "NotificationGroup", "ModuleCompliance", "ObjectGroup")
+Counter64, TimeTicks, NotificationType, Integer32, MibScalar, MibTable, MibTableRow, MibTableColumn, iso, ModuleIdentity, IpAddress, Bits, Gauge32, MibIdentifier, Counter32, Unsigned32, ObjectIdentity = mibBuilder.importSymbols("SNMPv2-SMI", "Counter64", "TimeTicks", "NotificationType", "Integer32", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "iso", "ModuleIdentity", "IpAddress", "Bits", "Gauge32", "MibIdentifier", "Counter32", "Unsigned32", "ObjectIdentity")
 DisplayString, RowStatus, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "RowStatus", "TextualConvention")
 ciscoItpSp2MIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 248))
 ciscoItpSp2MIB.setRevisions(('2002-09-16 00:00', '2002-02-21 00:00',))
@@ -71,4 +71,4 @@ if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
 ciscoItpSp2QosGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 248, 2, 2, 2)).setObjects(("CISCO-ITP-SP2-MIB", "cisQosType"), ("CISCO-ITP-SP2-MIB", "cisQosPrecedenceValue"), ("CISCO-ITP-SP2-MIB", "cisQosIpDscp"), ("CISCO-ITP-SP2-MIB", "cisQosAclId"), ("CISCO-ITP-SP2-MIB", "cisQosRowStatus"))
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoItpSp2QosGroup = ciscoItpSp2QosGroup.setStatus('deprecated')
-mibBuilder.exportSymbols("CISCO-ITP-SP2-MIB", cisEvents=cisEvents, ciscoItpSp2MIBCompliances=ciscoItpSp2MIBCompliances, cisEventHistoryMaxEntries=cisEventHistoryMaxEntries, cisQosIpDscp=cisQosIpDscp, cisQosTableEntry=cisQosTableEntry, cisQos=cisQos, cisQosPrecedenceValue=cisQosPrecedenceValue, cisEventSummryDroppedEvents=cisEventSummryDroppedEvents, ciscoItpSp2EventsGroup=ciscoItpSp2EventsGroup, ciscoItpSp2MIBObjects=ciscoItpSp2MIBObjects, PYSNMP_MODULE_ID=ciscoItpSp2MIB, cisEventHistoryTableEntry=cisEventHistoryTableEntry, cisQosAclId=cisQosAclId, ciscoItpSp2MIB=ciscoItpSp2MIB, cisQosTable=cisQosTable, cisQosRowStatus=cisQosRowStatus, ciscoItpSp2MIBCompliance=ciscoItpSp2MIBCompliance, cisEventSummryLoggedEvents=cisEventSummryLoggedEvents, cisEventHistoryTableEntAllowed=cisEventHistoryTableEntAllowed, cisEventHistoryIndex=cisEventHistoryIndex, cisEventHistoryDescr=cisEventHistoryDescr, cisEventHistoryTable=cisEventHistoryTable, cisQosClass=cisQosClass, cisQosType=cisQosType, ciscoItpSp2MIBGroups=ciscoItpSp2MIBGroups, ciscoItpSp2QosGroup=ciscoItpSp2QosGroup, ciscoItpSp2MIBNotifications=ciscoItpSp2MIBNotifications, ciscoItpSp2MIBConformance=ciscoItpSp2MIBConformance, CisTcQosClass=CisTcQosClass)
+mibBuilder.exportSymbols("CISCO-ITP-SP2-MIB", ciscoItpSp2MIBCompliances=ciscoItpSp2MIBCompliances, cisQosRowStatus=cisQosRowStatus, PYSNMP_MODULE_ID=ciscoItpSp2MIB, cisEventSummryLoggedEvents=cisEventSummryLoggedEvents, cisEvents=cisEvents, cisQosClass=cisQosClass, cisQosTable=cisQosTable, ciscoItpSp2MIB=ciscoItpSp2MIB, cisEventHistoryDescr=cisEventHistoryDescr, CisTcQosClass=CisTcQosClass, ciscoItpSp2MIBConformance=ciscoItpSp2MIBConformance, ciscoItpSp2MIBNotifications=ciscoItpSp2MIBNotifications, ciscoItpSp2MIBGroups=ciscoItpSp2MIBGroups, cisQosType=cisQosType, ciscoItpSp2MIBCompliance=ciscoItpSp2MIBCompliance, cisEventHistoryTableEntAllowed=cisEventHistoryTableEntAllowed, cisQosIpDscp=cisQosIpDscp, cisQos=cisQos, cisEventHistoryIndex=cisEventHistoryIndex, cisQosPrecedenceValue=cisQosPrecedenceValue, cisEventHistoryTable=cisEventHistoryTable, ciscoItpSp2QosGroup=ciscoItpSp2QosGroup, cisEventHistoryMaxEntries=cisEventHistoryMaxEntries, cisEventSummryDroppedEvents=cisEventSummryDroppedEvents, cisQosTableEntry=cisQosTableEntry, ciscoItpSp2EventsGroup=ciscoItpSp2EventsGroup, ciscoItpSp2MIBObjects=ciscoItpSp2MIBObjects, cisEventHistoryTableEntry=cisEventHistoryTableEntry, cisQosAclId=cisQosAclId)

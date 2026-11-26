@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-NETINT-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-NETINT-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:45 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 entPhysicalIndex, = mibBuilder.importSymbols("ENTITY-MIB", "entPhysicalIndex")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, IpAddress, iso, Counter32, ModuleIdentity, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "IpAddress", "iso", "Counter32", "ModuleIdentity", "TimeTicks")
-DisplayString, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "DisplayString", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, DisplayString = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "DisplayString")
 ciscoNetintMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 490))
 ciscoNetintMIB.setRevisions(('2005-09-26 00:00',))
 
@@ -46,4 +46,4 @@ ciscoThrottleGroup = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 490, 2, 2, 1)).setObje
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     ciscoThrottleGroup = ciscoThrottleGroup.setStatus('current')
 if mibBuilder.loadTexts: ciscoThrottleGroup.setDescription('A collection of object providing network interrupt throttle\n             count.')
-mibBuilder.exportSymbols("CISCO-NETINT-MIB", PYSNMP_MODULE_ID=ciscoNetintMIB, ciscoNetintMIB=ciscoNetintMIB, cniThrottleCount=cniThrottleCount, cniThrottleTable=cniThrottleTable, ciscoNetintMIBConformance=ciscoNetintMIBConformance, ciscoNetintMIBCompliances=ciscoNetintMIBCompliances, ciscoNetintMIBNotifs=ciscoNetintMIBNotifs, cniThrottleEntry=cniThrottleEntry, cniThrottle=cniThrottle, ciscoNetintMIBCompliance=ciscoNetintMIBCompliance, ciscoNetintMIBObjects=ciscoNetintMIBObjects, ciscoThrottleGroup=ciscoThrottleGroup, ciscoNetintMIBGroups=ciscoNetintMIBGroups)
+mibBuilder.exportSymbols("CISCO-NETINT-MIB", cniThrottleTable=cniThrottleTable, ciscoThrottleGroup=ciscoThrottleGroup, ciscoNetintMIBConformance=ciscoNetintMIBConformance, ciscoNetintMIB=ciscoNetintMIB, ciscoNetintMIBGroups=ciscoNetintMIBGroups, ciscoNetintMIBNotifs=ciscoNetintMIBNotifs, cniThrottle=cniThrottle, ciscoNetintMIBCompliances=ciscoNetintMIBCompliances, cniThrottleEntry=cniThrottleEntry, ciscoNetintMIBObjects=ciscoNetintMIBObjects, ciscoNetintMIBCompliance=ciscoNetintMIBCompliance, cniThrottleCount=cniThrottleCount, PYSNMP_MODULE_ID=ciscoNetintMIB)

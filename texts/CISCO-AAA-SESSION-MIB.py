@@ -1,18 +1,18 @@
 #
 # PySNMP MIB module CISCO-AAA-SESSION-MIB (http://snmplabs.com/pysmi)
 # ASN.1 source file:///home/runner/work/mibs/mibs/src/vendor/cisco/CISCO-AAA-SESSION-MIB
-# Produced by pysmi-1.1.12 at Thu Nov 19 14:35:13 2026
-# On host runnervmccnms platform Linux version 7.0.0-1019-azure by user runner
-# Using Python version 3.11.18 (main, Oct 26 2026, 02:48:29) [GCC 15.2.0]
+# Produced by pysmi-1.1.12 at Thu Nov 26 06:07:44 2026
+# On host runnervm0hi8g platform Linux version 7.0.0-1020-azure by user runner
+# Using Python version 3.13.18 (main, Oct 26 2026, 14:19:33) [GCC 15.2.0]
 #
-ObjectIdentifier, OctetString, Integer = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "OctetString", "Integer")
+ObjectIdentifier, Integer, OctetString = mibBuilder.importSymbols("ASN1", "ObjectIdentifier", "Integer", "OctetString")
 NamedValues, = mibBuilder.importSymbols("ASN1-ENUMERATION", "NamedValues")
-ConstraintsIntersection, ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint = mibBuilder.importSymbols("ASN1-REFINEMENT", "ConstraintsIntersection", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint")
+ValueSizeConstraint, ConstraintsUnion, ValueRangeConstraint, SingleValueConstraint, ConstraintsIntersection = mibBuilder.importSymbols("ASN1-REFINEMENT", "ValueSizeConstraint", "ConstraintsUnion", "ValueRangeConstraint", "SingleValueConstraint", "ConstraintsIntersection")
 ciscoMgmt, = mibBuilder.importSymbols("CISCO-SMI", "ciscoMgmt")
 InterfaceIndexOrZero, = mibBuilder.importSymbols("IF-MIB", "InterfaceIndexOrZero")
-ObjectGroup, ModuleCompliance, NotificationGroup = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "ModuleCompliance", "NotificationGroup")
-MibScalar, MibTable, MibTableRow, MibTableColumn, Bits, Integer32, Gauge32, ModuleIdentity, MibIdentifier, NotificationType, Unsigned32, Counter64, ObjectIdentity, iso, Counter32, IpAddress, TimeTicks = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Bits", "Integer32", "Gauge32", "ModuleIdentity", "MibIdentifier", "NotificationType", "Unsigned32", "Counter64", "ObjectIdentity", "iso", "Counter32", "IpAddress", "TimeTicks")
-TruthValue, DisplayString, RowPointer, TextualConvention = mibBuilder.importSymbols("SNMPv2-TC", "TruthValue", "DisplayString", "RowPointer", "TextualConvention")
+ObjectGroup, NotificationGroup, ModuleCompliance = mibBuilder.importSymbols("SNMPv2-CONF", "ObjectGroup", "NotificationGroup", "ModuleCompliance")
+MibScalar, MibTable, MibTableRow, MibTableColumn, Counter64, ModuleIdentity, TimeTicks, MibIdentifier, iso, Counter32, IpAddress, Integer32, NotificationType, ObjectIdentity, Unsigned32, Bits, Gauge32 = mibBuilder.importSymbols("SNMPv2-SMI", "MibScalar", "MibTable", "MibTableRow", "MibTableColumn", "Counter64", "ModuleIdentity", "TimeTicks", "MibIdentifier", "iso", "Counter32", "IpAddress", "Integer32", "NotificationType", "ObjectIdentity", "Unsigned32", "Bits", "Gauge32")
+TextualConvention, RowPointer, DisplayString, TruthValue = mibBuilder.importSymbols("SNMPv2-TC", "TextualConvention", "RowPointer", "DisplayString", "TruthValue")
 ciscoAAASessionMIB = ModuleIdentity((1, 3, 6, 1, 4, 1, 9, 9, 150))
 ciscoAAASessionMIB.setRevisions(('2006-03-21 00:00', '2002-04-11 00:00', '1999-11-16 00:00',))
 
@@ -103,4 +103,4 @@ casnActiveGroupSup1 = ObjectGroup((1, 3, 6, 1, 4, 1, 9, 9, 150, 3, 2, 3)).setObj
 if getattr(mibBuilder, 'version', (0, 0, 0)) > (4, 4, 0):
     casnActiveGroupSup1 = casnActiveGroupSup1.setStatus('current')
 if mibBuilder.loadTexts: casnActiveGroupSup1.setDescription('A collection of objects that supplements\n             the casnActiveGroup.\n            ')
-mibBuilder.exportSymbols("CISCO-AAA-SESSION-MIB", casnMIBGroups=casnMIBGroups, casnIpAddr=casnIpAddr, casnActiveTable=casnActiveTable, casnMIBNotificationPrefix=casnMIBNotificationPrefix, casnMIBNotifications=casnMIBNotifications, casnDisconnectedSessions=casnDisconnectedSessions, casnDisconnect=casnDisconnect, casnUserId=casnUserId, ciscoAAASessionMIB=ciscoAAASessionMIB, casnGeneralGroup=casnGeneralGroup, casnActiveTableHighWaterMark=casnActiveTableHighWaterMark, casnActiveGroupSup1=casnActiveGroupSup1, casnVaiIfIndex=casnVaiIfIndex, PYSNMP_MODULE_ID=ciscoAAASessionMIB, casnMIBCompliance=casnMIBCompliance, casnMIBObjects=casnMIBObjects, casnCallTrackerId=casnCallTrackerId, casnActiveGroup=casnActiveGroup, CasnSessionId=CasnSessionId, casnMIBComplianceRev1=casnMIBComplianceRev1, casnActiveEntry=casnActiveEntry, casnActive=casnActive, casnTotalSessions=casnTotalSessions, casnSessionId=casnSessionId, casnGeneral=casnGeneral, casnMIBCompliances=casnMIBCompliances, casnMIBConformance=casnMIBConformance, casnActiveTableEntries=casnActiveTableEntries, CctCallId=CctCallId, casnIdleTime=casnIdleTime, casnNasPort=casnNasPort)
+mibBuilder.exportSymbols("CISCO-AAA-SESSION-MIB", casnActiveGroup=casnActiveGroup, casnMIBObjects=casnMIBObjects, casnMIBCompliance=casnMIBCompliance, CctCallId=CctCallId, casnTotalSessions=casnTotalSessions, casnMIBComplianceRev1=casnMIBComplianceRev1, casnActiveTable=casnActiveTable, casnNasPort=casnNasPort, casnVaiIfIndex=casnVaiIfIndex, PYSNMP_MODULE_ID=ciscoAAASessionMIB, casnCallTrackerId=casnCallTrackerId, casnActiveTableEntries=casnActiveTableEntries, casnMIBConformance=casnMIBConformance, casnSessionId=casnSessionId, CasnSessionId=CasnSessionId, casnActiveTableHighWaterMark=casnActiveTableHighWaterMark, casnDisconnectedSessions=casnDisconnectedSessions, casnGeneralGroup=casnGeneralGroup, casnDisconnect=casnDisconnect, casnActive=casnActive, casnGeneral=casnGeneral, casnMIBCompliances=casnMIBCompliances, casnMIBNotifications=casnMIBNotifications, casnUserId=casnUserId, casnIpAddr=casnIpAddr, casnActiveGroupSup1=casnActiveGroupSup1, casnMIBNotificationPrefix=casnMIBNotificationPrefix, casnMIBGroups=casnMIBGroups, casnIdleTime=casnIdleTime, casnActiveEntry=casnActiveEntry, ciscoAAASessionMIB=ciscoAAASessionMIB)
